@@ -10,7 +10,7 @@ const apiDocumentationUrl = ``;
  * Frontend URL.
  */
 const frontendUrl = {
-  host: 'https://aipetto-rkvz523aka-uc.a.run.app',
+  host: 'https://aipetto-frontend-business.vercel.app',
   protocol: 'https',
 };
 
