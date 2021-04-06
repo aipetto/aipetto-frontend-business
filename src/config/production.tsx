@@ -1,16 +1,16 @@
 // Place the URL here with the /api suffix.
 // Ex.:`https://domain.com/api`;
-const backendUrl = `/api`;
+const backendUrl = `https://aipetto-rkvz523aka-uc.a.run.app/api`;
 
 // SwaggerUI Documentation URL
 // Leave black if documentation should be hidden
-const apiDocumentationUrl = `/documentation`;
+const apiDocumentationUrl = ``;
 
 /**
  * Frontend URL.
  */
 const frontendUrl = {
-  host: 'domain.com',
+  host: 'https://aipetto-rkvz523aka-uc.a.run.app',
   protocol: 'https',
 };
 
@@ -26,7 +26,7 @@ const tenantMode = 'multi';
  * Plan payments configuration.
  */
 const isPlanEnabled = true;
-const stripePublishableKey = '';
+const stripePublishableKey = 'pk_test_51IEGgMG6omRg8rbChKIMC22bkc5DcAkc83eAvdf88clUos20vNb9p3oXv117Q0lQZX0Oe5gervb0V200Yrs4h8EH00c0rCqrlw';
 
 export default {
   frontendUrl,
