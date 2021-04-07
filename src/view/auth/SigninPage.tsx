@@ -219,12 +219,12 @@ function SigninPage() {
         </div>
 
         <div className="bg-gray-100 dark:bg-gray-700 py-4 rounded-b-md">
-          <Link
+{/*          <Link
             className="block text-xs text-center font-medium text-gray-800 dark:text-gray-200 hover:underline"
             to="/auth/signup"
           >
             {i18n('auth.createAnAccount')}
-          </Link>
+          </Link>*/}
         </div>
       </div>
     </div>
