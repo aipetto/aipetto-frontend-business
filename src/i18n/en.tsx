@@ -699,9 +699,29 @@ const en = {
       label: 'Admin',
       description: 'Full access to all resources',
     },
-    custom: {
-      label: 'Custom Role',
-      description: 'Custom role access',
+    adminPetshop: {
+      label: 'Admin Petshop',
+      description: 'Full access to resources related to Petshop',
+    },
+    adminVeterinary: {
+      label: 'Admin Veterinary',
+      description: 'Full access to resources related to Veterinary',
+    },
+    employee: {
+      label: 'Petshop/Vet Employee',
+      description: 'Have general basic access',
+    },
+    petOwner: {
+      label: 'Pet Owner',
+      description: 'End user with access to public general resources',
+    },
+    veterinarian: {
+      label: 'Veterinarian',
+      description: 'End user with access to public general resources',
+    },
+    transporter: {
+      label: 'Transporter',
+      description: 'Provides services of transportation',
     },
   },
 
