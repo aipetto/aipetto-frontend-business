@@ -90,7 +90,7 @@ function SigninPage() {
     <div
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/signin.jpg'
+          backgroundImageUrl || '/images/pets.jpeg'
         })`,
       }}
       className="bg-cover h-screen flex items-center justify-center"

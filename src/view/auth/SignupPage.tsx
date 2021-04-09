@@ -67,7 +67,7 @@ function SignupPage() {
     <div
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/signup.jpg'
+          backgroundImageUrl || '/images/pets.jpeg'
         })`,
       }}
       className="bg-cover h-screen flex items-center justify-center"
