@@ -921,7 +921,7 @@ const en = {
   },
   dashboard: {
     menu: 'Dashboard',
-    message: `This page uses fake data for demonstration purposes only. You can edit it at frontend/view/dashboard/DashboardPage.ts.`,
+    message: `This page uses fake data.`,
     charts: {
       day: 'Day',
       red: 'Red',

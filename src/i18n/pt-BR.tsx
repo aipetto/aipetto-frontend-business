@@ -896,7 +896,7 @@ const ptBR = {
   },
   dashboard: {
     menu: 'Inicial',
-    message: `Esta página usa dados falsos apenas para fins de demonstração. Você pode editá-la em frontend/view/dashboard/DashboardPage.ts.`,
+    message: `Esta página usa dados falsos apenas para fins de demonstração.`,
     charts: {
       day: 'Dia',
       red: 'Vermelho',

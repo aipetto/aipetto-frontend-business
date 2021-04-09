@@ -917,7 +917,7 @@ const es = {
   dashboard: {
     menu: 'Tablero',
     message:
-      'Esta página utiliza datos falsos solo con fines de demostración. Puede editarlo en frontend/view/dashboard/DashboardPage.ts.',
+      'Esta página utiliza datos falsos solamente con fines de demostración.',
     charts: {
       day: 'Día',
       red: 'Rojo',
