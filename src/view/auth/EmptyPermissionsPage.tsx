@@ -21,7 +21,7 @@ function EmptyPermissionsPage() {
       style={{
         backgroundImage: `url(${
           backgroundImageUrl ||
-          '/images/emptyPermissions.jpg'
+          '/images/pets.jpeg'
         })`,
       }}
       className="bg-cover h-screen flex items-center justify-center"
