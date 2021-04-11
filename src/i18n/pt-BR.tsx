@@ -697,7 +697,7 @@ const ptBR = {
             description: 'Acesso a todos os recursos da plataforma',
         },
         businessOwner: {
-            label: 'Business Owner',
+            label: 'Dono dos negócios',
             description: 'Donos de negócios',
         },
         adminPetshop: {
@@ -705,23 +705,23 @@ const ptBR = {
             description: 'Admin para operações com petshop',
         },
         adminVeterinary: {
-            label: 'Admin Veterinary',
+            label: 'Admin Veterinária',
             description: 'Admin para operações com veterinária',
         },
         employee: {
-            label: 'Petshop/Vet Employee',
+            label: 'Funcionário da Veterinária e Petshop',
             description: 'Funcionário do veterinário e petshop',
         },
         petOwner: {
-            label: 'Pet Owner',
+            label: 'Dono do pet',
             description: 'Dono de animais de estimação',
         },
         veterinarian: {
-            label: 'Veterinarian',
+            label: 'Veterinário',
             description: 'Veterinário',
         },
         transporter: {
-            label: 'Transporter',
+            label: 'Transportador',
             description: 'Negócio que trabalha transportando animais de estimação',
         },
     },
