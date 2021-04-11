@@ -691,18 +691,40 @@ const ptBR = {
         'Aguarde um momento, seu email está sendo verificado...',
     },
   },
-
-  roles: {
-    admin: {
-      label: 'Administrador',
-      description: 'Acesso completo a todos os recursos',
+    roles: {
+        aipettoAdmin: {
+            label: 'AIPETTO Admin',
+            description: 'Acesso a todos os recursos da plataforma',
+        },
+        businessOwner: {
+            label: 'Business Owner',
+            description: 'Donos de negócios',
+        },
+        adminPetshop: {
+            label: 'Admin Petshop',
+            description: 'Admin para operações com petshop',
+        },
+        adminVeterinary: {
+            label: 'Admin Veterinary',
+            description: 'Admin para operações com veterinária',
+        },
+        employee: {
+            label: 'Petshop/Vet Employee',
+            description: 'Funcionário do veterinário e petshop',
+        },
+        petOwner: {
+            label: 'Pet Owner',
+            description: 'Dono de animais de estimação',
+        },
+        veterinarian: {
+            label: 'Veterinarian',
+            description: 'Veterinário',
+        },
+        transporter: {
+            label: 'Transporter',
+            description: 'Negócio que trabalha transportando animais de estimação',
+        },
     },
-    custom: {
-      label: 'Perfil Customizado',
-      description: 'Acesso customizado',
-    },
-  },
-
   user: {
     fields: {
       id: 'Id',

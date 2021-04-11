@@ -749,16 +749,40 @@ const es = {
         'La URL de su espacio de trabajo solo puede contener letras minúsculas, números y guiones (y debe comenzar con una letra o número).',
     },
   },
-  roles: {
-    admin: {
-      label: 'Administración',
-      description: 'Acceso total a todos los recursos.',
+    roles: {
+        aipettoAdmin: {
+            label: 'AIPETTO Admin',
+            description: 'Acceso a todos los recursos de la plataforma',
+        },
+        businessOwner: {
+            label: 'Business Owner',
+            description: 'Dueños de negócios',
+        },
+        adminPetshop: {
+            label: 'Admin Petshop',
+            description: 'Admin para operaciones relacionadas a Petshop',
+        },
+        adminVeterinary: {
+            label: 'Admin Veterinary',
+            description: 'Admin para operaciones relacionadas a veterinárias',
+        },
+        employee: {
+            label: 'Petshop/Vet Employee',
+            description: 'Empleado de la veterinária e petshop',
+        },
+        petOwner: {
+            label: 'Pet Owner',
+            description: 'Dueño de mascotas',
+        },
+        veterinarian: {
+            label: 'Veterinarian',
+            description: 'Veterinário',
+        },
+        transporter: {
+            label: 'Transporter',
+            description: 'Negocio que ofrece servicios de transporte de mascotas',
+        },
     },
-    custom: {
-      label: 'Rol personalizado',
-      description: 'Acceso personalizado a recursos',
-    },
-  },
   user: {
     invite: 'Invitación',
     title: 'Usuarios',

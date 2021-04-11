@@ -695,9 +695,13 @@ const en = {
   },
 
   roles: {
-    admin: {
-      label: 'Admin',
+    aipettoAdmin: {
+      label: 'AIPETTO Admin',
       description: 'Full access to all resources',
+    },
+    businessOwner: {
+      label: 'Business Owner',
+      description: 'Full access to all resources that business has access',
     },
     adminPetshop: {
       label: 'Admin Petshop',
