@@ -20,6 +20,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Menu } from '@headlessui/react';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
+import tenantSelectors from "../../modules/tenant/tenantSelectors";
 
 function Header(props) {
   const dispatch = useDispatch();
@@ -57,6 +58,10 @@ function Header(props) {
   const doNavigateToTenants = () => {
     getHistory().push('/tenant');
   };
+
+  const hasPermissionToEdit = useSelector(
+      tenantSelectors.selectPermissionToEdit,
+  );
 
   return (
     <nav className="bg-white shadow dark:bg-gray-800">
@@ -158,7 +163,7 @@ function Header(props) {
                     {[
                       'multi',
                       'multi-with-subdomain',
-                    ].includes(config.tenantMode) && (
+                    ].includes(config.tenantMode) && hasPermissionToEdit && (
                       <Menu.Item>
                         <button
                           onClick={doNavigateToTenants}

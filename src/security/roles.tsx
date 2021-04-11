@@ -3,7 +3,8 @@ import { i18n } from 'src/i18n';
 class Roles {
   static get values() {
     return {
-      admin: 'admin',
+      aipettoAdmin: 'aipettoAdmin',
+      businessOwner: 'businessOwner',
       adminPetshop: 'adminPetshop',
       employee: 'employee',
       adminVeterinary: 'adminVeterinary',
