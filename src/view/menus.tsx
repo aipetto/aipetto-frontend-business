@@ -117,5 +117,12 @@ export default [
     permissionRequired: permissions.serviceReservationRead,
     icon: faChevronRight,
     label: i18n('entities.serviceReservation.menu'),
-  },  
+  },
+
+  {
+    path: '/reservation-agenda',
+    permissionRequired: permissions.reservationAgendaRead,
+    icon: faChevronRight,
+    label: i18n('entities.reservationAgenda.menu'),
+  },
 ].filter(Boolean);

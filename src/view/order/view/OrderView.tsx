@@ -6,6 +6,7 @@ import UserViewItem from 'src/view/user/view/UserViewItem';
 import FilesViewItem from 'src/view/shared/view/FilesViewItem';
 import CustomerViewItem from 'src/view/customer/view/CustomerViewItem';
 import ProductViewItem from 'src/view/product/view/ProductViewItem';
+import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
 
 function OrderView(props) {
   const { record, loading } = props;
@@ -45,6 +46,11 @@ function OrderView(props) {
           'entities.order.fields.attachments',
         )}
         value={record.attachments}
+      />
+
+      <BusinessViewItem
+        label={i18n('entities.order.fields.businessId')}
+        value={record.businessId}
       />
     </div>
   );

@@ -47,4 +47,12 @@ export default [
       },
     ),
   },
+  {
+    name: 'businessId',
+    label: i18n('entities.product.fields.businessId'),
+    schema: schemas.relationToOne(
+      i18n('entities.product.fields.businessId'),
+      {},
+    ),
+  },
 ];

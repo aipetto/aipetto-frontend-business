@@ -15,6 +15,7 @@ import Storage from 'src/security/storage';
 import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
 import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 import ProductAutocompleteFormItem from 'src/view/product/autocomplete/ProductAutocompleteFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -45,6 +46,10 @@ const schema = yup.object().shape({
       "max": 3
     },
   ),
+  businessId: yupFormSchemas.relationToOne(
+    i18n('entities.order.fields.businessId'),
+    {},
+  ),
 });
 
 function OrderForm(props) {
@@ -59,6 +64,7 @@ function OrderForm(props) {
       employee: record.employee,
       delivered: record.delivered,
       attachments: record.attachments || [],
+      businessId: record.businessId,
     };
   });
 
@@ -120,6 +126,14 @@ function OrderForm(props) {
             storage={Storage.values.orderAttachments}
             max={3}
             formats={["txt","pdf"]}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessAutocompleteFormItem
+            name="businessId"
+            label={i18n('entities.order.fields.businessId')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

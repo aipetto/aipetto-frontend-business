@@ -520,6 +520,46 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
+
+      reservationAgendaImport: {
+        id: 'reservationAgendaImport',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
+      reservationAgendaCreate: {
+        id: 'reservationAgendaCreate',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedStorage: [
+
+        ],
+      },
+      reservationAgendaEdit: {
+        id: 'reservationAgendaEdit',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedStorage: [
+
+        ],
+      },
+      reservationAgendaDestroy: {
+        id: 'reservationAgendaDestroy',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedStorage: [
+
+        ],
+      },
+      reservationAgendaRead: {
+        id: 'reservationAgendaRead',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
+      reservationAgendaAutocomplete: {
+        id: 'reservationAgendaAutocomplete',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
     };
   }
 

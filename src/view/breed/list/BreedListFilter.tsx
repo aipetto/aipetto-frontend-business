@@ -15,6 +15,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
+import breedEnumerators from 'src/modules/breed/breedEnumerators';
 import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
 
 const schema = yup.object().shape({
@@ -24,11 +26,51 @@ const schema = yup.object().shape({
   type: yupFilterSchemas.relationToOne(
     i18n('entities.breed.fields.type'),
   ),
+  size: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.size'),
+  ),
+  exercise: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.exercise'),
+  ),
+  sizeOfHome: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.sizeOfHome'),
+  ),
+  grooming: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.grooming'),
+  ),
+  coatLength: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.coatLength'),
+  ),
+  sheds: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.sheds'),
+  ),
+  lifespan: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.lifespan'),
+  ),
+  vulnerableNativeBreed: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.vulnerableNativeBreed'),
+  ),
+  townOrCountry: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.townOrCountry'),
+  ),
+  sizeOfGarden: yupFilterSchemas.enumerator(
+    i18n('entities.breed.fields.sizeOfGarden'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   type: null,
+  size: null,
+  exercise: null,
+  sizeOfHome: null,
+  grooming: null,
+  coatLength: null,
+  sheds: null,
+  lifespan: null,
+  vulnerableNativeBreed: null,
+  townOrCountry: null,
+  sizeOfGarden: null,
 }
 
 const previewRenders = {
@@ -40,6 +82,46 @@ const previewRenders = {
       label: i18n('entities.breed.fields.type'),
       render: filterRenders.relationToOne(),
     },
+  size: {
+    label: i18n('entities.breed.fields.size'),
+    render: filterRenders.enumerator('entities.breed.enumerators.size',),
+  },
+  exercise: {
+    label: i18n('entities.breed.fields.exercise'),
+    render: filterRenders.enumerator('entities.breed.enumerators.exercise',),
+  },
+  sizeOfHome: {
+    label: i18n('entities.breed.fields.sizeOfHome'),
+    render: filterRenders.enumerator('entities.breed.enumerators.sizeOfHome',),
+  },
+  grooming: {
+    label: i18n('entities.breed.fields.grooming'),
+    render: filterRenders.enumerator('entities.breed.enumerators.grooming',),
+  },
+  coatLength: {
+    label: i18n('entities.breed.fields.coatLength'),
+    render: filterRenders.enumerator('entities.breed.enumerators.coatLength',),
+  },
+  sheds: {
+    label: i18n('entities.breed.fields.sheds'),
+    render: filterRenders.enumerator('entities.breed.enumerators.sheds',),
+  },
+  lifespan: {
+    label: i18n('entities.breed.fields.lifespan'),
+    render: filterRenders.enumerator('entities.breed.enumerators.lifespan',),
+  },
+  vulnerableNativeBreed: {
+    label: i18n('entities.breed.fields.vulnerableNativeBreed'),
+    render: filterRenders.enumerator('entities.breed.enumerators.vulnerableNativeBreed',),
+  },
+  townOrCountry: {
+    label: i18n('entities.breed.fields.townOrCountry'),
+    render: filterRenders.enumerator('entities.breed.enumerators.townOrCountry',),
+  },
+  sizeOfGarden: {
+    label: i18n('entities.breed.fields.sizeOfGarden'),
+    render: filterRenders.enumerator('entities.breed.enumerators.sizeOfGarden',),
+  },
 }
 
 function BreedListFilter(props) {
@@ -107,6 +189,126 @@ function BreedListFilter(props) {
                 name="type"
                 label={i18n('entities.breed.fields.type')}        
               />
+              <SelectFormItem
+                  name="size"
+                  label={i18n('entities.breed.fields.size')}
+                  options={breedEnumerators.size.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.size.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="exercise"
+                  label={i18n('entities.breed.fields.exercise')}
+                  options={breedEnumerators.exercise.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.exercise.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="sizeOfHome"
+                  label={i18n('entities.breed.fields.sizeOfHome')}
+                  options={breedEnumerators.sizeOfHome.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.sizeOfHome.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="grooming"
+                  label={i18n('entities.breed.fields.grooming')}
+                  options={breedEnumerators.grooming.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.grooming.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="coatLength"
+                  label={i18n('entities.breed.fields.coatLength')}
+                  options={breedEnumerators.coatLength.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.coatLength.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="sheds"
+                  label={i18n('entities.breed.fields.sheds')}
+                  options={breedEnumerators.sheds.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.sheds.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="lifespan"
+                  label={i18n('entities.breed.fields.lifespan')}
+                  options={breedEnumerators.lifespan.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.lifespan.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="vulnerableNativeBreed"
+                  label={i18n('entities.breed.fields.vulnerableNativeBreed')}
+                  options={breedEnumerators.vulnerableNativeBreed.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.vulnerableNativeBreed.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="townOrCountry"
+                  label={i18n('entities.breed.fields.townOrCountry')}
+                  options={breedEnumerators.townOrCountry.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.townOrCountry.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="sizeOfGarden"
+                  label={i18n('entities.breed.fields.sizeOfGarden')}
+                  options={breedEnumerators.sizeOfGarden.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.breed.enumerators.sizeOfGarden.${value}`,
+                      ),
+                    }),
+                  )}
+                />
             </div>
 
             <div className="px-4 py-2 text-right">

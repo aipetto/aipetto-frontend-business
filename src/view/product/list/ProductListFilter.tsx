@@ -16,6 +16,7 @@ import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -24,11 +25,15 @@ const schema = yup.object().shape({
   unitPriceRange: yupFilterSchemas.decimalRange(
     i18n('entities.product.fields.unitPriceRange'),
   ),
+  businessId: yupFilterSchemas.relationToOne(
+    i18n('entities.product.fields.businessId'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   unitPriceRange: [],
+  businessId: null,
 }
 
 const previewRenders = {
@@ -40,6 +45,10 @@ const previewRenders = {
     label: i18n('entities.product.fields.unitPriceRange'),
     render: filterRenders.decimalRange(2),
   },
+  businessId: {
+      label: i18n('entities.product.fields.businessId'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function ProductListFilter(props) {
@@ -106,6 +115,10 @@ function ProductListFilter(props) {
               <InputRangeFormItem
                 name="unitPriceRange"
                 label={i18n('entities.product.fields.unitPriceRange')}      
+              />
+              <BusinessAutocompleteFormItem
+                name="businessId"
+                label={i18n('entities.product.fields.businessId')}
               />
             </div>
 

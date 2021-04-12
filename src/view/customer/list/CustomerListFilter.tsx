@@ -19,6 +19,7 @@ import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocomplet
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import customerEnumerators from 'src/modules/customer/customerEnumerators';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -33,6 +34,9 @@ const schema = yup.object().shape({
   userId: yupFilterSchemas.relationToOne(
     i18n('entities.customer.fields.userId'),
   ),
+  businessId: yupFilterSchemas.relationToOne(
+    i18n('entities.customer.fields.businessId'),
+  ),
 });
 
 const emptyValues = {
@@ -40,6 +44,7 @@ const emptyValues = {
   birthdateRange: [],
   gender: null,
   userId: null,
+  businessId: null,
 }
 
 const previewRenders = {
@@ -59,6 +64,10 @@ const previewRenders = {
     label: i18n('entities.customer.fields.userId'),
     render: filterRenders.relationToOne(),
   },
+  businessId: {
+      label: i18n('entities.customer.fields.businessId'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function CustomerListFilter(props) {
@@ -141,6 +150,10 @@ function CustomerListFilter(props) {
               <UserAutocompleteFormItem  
                 name="userId"
                 label={i18n('entities.customer.fields.userId')}        
+              />
+              <BusinessAutocompleteFormItem
+                name="businessId"
+                label={i18n('entities.customer.fields.businessId')}
               />
             </div>
 

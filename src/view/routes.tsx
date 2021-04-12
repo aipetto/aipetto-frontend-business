@@ -482,6 +482,44 @@ const privateRoutes = [
     permissionRequired: permissions.serviceReservationRead,
     exact: true,
   },
+
+  {
+    path: '/reservation-agenda',
+    loader: () =>
+      import('src/view/reservationAgenda/list/ReservationAgendaListPage'),
+    permissionRequired: permissions.reservationAgendaRead,
+    exact: true,
+  },
+  {
+    path: '/reservation-agenda/new',
+    loader: () =>
+      import('src/view/reservationAgenda/form/ReservationAgendaFormPage'),
+    permissionRequired: permissions.reservationAgendaCreate,
+    exact: true,
+  },
+  {
+    path: '/reservation-agenda/importer',
+    loader: () =>
+      import(
+        'src/view/reservationAgenda/importer/ReservationAgendaImporterPage'
+      ),
+    permissionRequired: permissions.reservationAgendaImport,
+    exact: true,
+  },
+  {
+    path: '/reservation-agenda/:id/edit',
+    loader: () =>
+      import('src/view/reservationAgenda/form/ReservationAgendaFormPage'),
+    permissionRequired: permissions.reservationAgendaEdit,
+    exact: true,
+  },
+  {
+    path: '/reservation-agenda/:id',
+    loader: () =>
+      import('src/view/reservationAgenda/view/ReservationAgendaViewPage'),
+    permissionRequired: permissions.reservationAgendaRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [

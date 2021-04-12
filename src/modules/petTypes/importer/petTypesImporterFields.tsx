@@ -18,12 +18,4 @@ export default [
       {},
     ),
   },
-  {
-    name: 'breeds',
-    label: i18n('entities.petTypes.fields.breeds'),
-    schema: schemas.relationToMany(
-      i18n('entities.petTypes.fields.breeds'),
-      {},
-    ),
-  },
 ];

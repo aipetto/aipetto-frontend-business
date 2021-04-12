@@ -24,6 +24,11 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'businessId',
+    label: i18n('entities.customer.fields.businessId'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.customer.fields.createdAt'),
     render: exporterRenders.datetime(),

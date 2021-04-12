@@ -16,6 +16,7 @@ import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
 import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
   customer: yupFilterSchemas.relationToOne(
@@ -24,11 +25,15 @@ const schema = yup.object().shape({
   employee: yupFilterSchemas.relationToOne(
     i18n('entities.order.fields.employee'),
   ),
+  businessId: yupFilterSchemas.relationToOne(
+    i18n('entities.order.fields.businessId'),
+  ),
 });
 
 const emptyValues = {
   customer: null,
   employee: null,
+  businessId: null,
 }
 
 const previewRenders = {
@@ -40,6 +45,10 @@ const previewRenders = {
     label: i18n('entities.order.fields.employee'),
     render: filterRenders.relationToOne(),
   },
+  businessId: {
+      label: i18n('entities.order.fields.businessId'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function OrderListFilter(props) {
@@ -106,6 +115,10 @@ function OrderListFilter(props) {
               <UserAutocompleteFormItem  
                 name="employee"
                 label={i18n('entities.order.fields.employee')}        
+              />
+              <BusinessAutocompleteFormItem
+                name="businessId"
+                label={i18n('entities.order.fields.businessId')}
               />
             </div>
 

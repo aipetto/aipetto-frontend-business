@@ -16,11 +16,6 @@ export default [
     render: exporterRenders.filesOrImages(),
   },
   {
-    name: 'breeds',
-    label: i18n('entities.petTypes.fields.breeds'),
-    render: exporterRenders.relationToMany(),
-  },
-  {
     name: 'createdAt',
     label: i18n('entities.petTypes.fields.createdAt'),
     render: exporterRenders.datetime(),

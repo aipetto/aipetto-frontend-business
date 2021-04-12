@@ -32,6 +32,11 @@ export default [
     render: exporterRenders.filesOrImages(),
   },
   {
+    name: 'businessId',
+    label: i18n('entities.order.fields.businessId'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.order.fields.createdAt'),
     render: exporterRenders.datetime(),

@@ -3,6 +3,7 @@ import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import UserViewItem from 'src/view/user/view/UserViewItem';
+import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
 
 function CustomerView(props) {
   const { record, loading } = props;
@@ -36,6 +37,11 @@ function CustomerView(props) {
       <UserViewItem
         label={i18n('entities.customer.fields.userId')}
         value={record.userId}
+      />
+
+      <BusinessViewItem
+        label={i18n('entities.customer.fields.businessId')}
+        value={record.businessId}
       />
     </div>
   );

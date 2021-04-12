@@ -12,7 +12,6 @@ import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
-import BreedAutocompleteFormItem from 'src/view/breed/autocomplete/BreedAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -22,10 +21,6 @@ const schema = yup.object().shape({
   ),
   image: yupFormSchemas.images(
     i18n('entities.petTypes.fields.image'),
-    {},
-  ),
-  breeds: yupFormSchemas.relationToMany(
-    i18n('entities.petTypes.fields.breeds'),
     {},
   ),
 });
@@ -39,7 +34,6 @@ function PetTypesForm(props) {
     return {
       name: record.name,
       image: record.image || [],
-      breeds: record.breeds || [],
     };
   });
 
@@ -77,15 +71,6 @@ function PetTypesForm(props) {
             required={false}
             storage={Storage.values.petTypesImage}
             max={undefined}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <BreedAutocompleteFormItem  
-            name="breeds"
-            label={i18n('entities.petTypes.fields.breeds')}
-            required={false}
-            showCreate={!props.modal}
-            mode="multiple"
           />
         </div>
 

@@ -16,6 +16,7 @@ import business from 'src/modules/business/businessReducers';
 import place from 'src/modules/place/placeReducers';
 import businessServicesTypes from 'src/modules/businessServicesTypes/businessServicesTypesReducers';
 import serviceReservation from 'src/modules/serviceReservation/serviceReservationReducers';
+import reservationAgenda from 'src/modules/reservationAgenda/reservationAgendaReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -38,4 +39,5 @@ export default (history) =>
     place,
     businessServicesTypes,
     serviceReservation,
+    reservationAgenda,
   });

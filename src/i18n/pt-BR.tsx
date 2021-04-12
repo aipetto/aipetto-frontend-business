@@ -65,6 +65,7 @@ const ptBR = {
           'birthdate': 'Birthdate',
           'gender': 'Gender',
           'userId': 'UserId',
+          'businessId': 'BusinessId',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -126,6 +127,7 @@ const ptBR = {
           'unitPriceRange': 'Unit Price',
           'unitPrice': 'Unit Price',
           'photos': 'Photos',
+          'businessId': 'BusinessId',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -184,6 +186,7 @@ const ptBR = {
           'employee': 'Employee',
           'delivered': 'Delivered',
           'attachments': 'Attachments',
+          'businessId': 'BusinessId',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -314,18 +317,77 @@ const ptBR = {
           id: 'Id',
           'name': 'Name',
           'type': 'Type',
+          'size': 'Size',
+          'exercise': 'Exercise',
+          'sizeOfHome': 'SizeOfHome',
+          'grooming': 'Grooming',
+          'coatLength': 'CoatLength',
+          'sheds': 'Sheds',
+          'lifespan': 'Lifespan',
+          'vulnerableNativeBreed': 'VulnerableNativeBreed',
+          'townOrCountry': 'TownOrCountry',
+          'sizeOfGarden': 'SizeOfGarden',
+          'image': 'Image',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
         },
         enumerators: {
-
+          'size': {
+            'Small': 'Small',
+            'Medium': 'Medium',
+            'Large': 'Large',
+          },
+          'exercise': {
+            'up_to_30_minutes_per_day': 'Up_to_30_minutes_per_day',
+            'up_to_1_hour_per_day': 'Up_to_1_hour_per_day',
+            'more_than_2_hours_per_day': 'More_than_2_hours_per_day',
+          },
+          'sizeOfHome': {
+            'flat_apartment': 'Flat_apartment',
+            'small_house': 'Small_house',
+            'large_house': 'Large_house',
+          },
+          'grooming': {
+            'more_than_once_a_week': 'More_than_once_a_week',
+            'every_day': 'Every_day',
+            'once_a_week': 'Once_a_week',
+          },
+          'coatLength': {
+            'short': 'Short',
+            'medium': 'Medium',
+            'long': 'Long',
+          },
+          'sheds': {
+            'yes': 'Yes',
+            'no': 'No',
+          },
+          'lifespan': {
+            'under_10_years': 'Under_10_years',
+            'over_10_years': 'Over_10_years',
+            'over_12_years': 'Over_12_years',
+          },
+          'vulnerableNativeBreed': {
+            'yes': 'Yes',
+            'no': 'No',
+          },
+          'townOrCountry': {
+            'country': 'Country',
+            'town': 'Town',
+            'either': 'Either',
+          },
+          'sizeOfGarden': {
+            'small': 'Small',
+            'medium': 'Medium',
+            'small_medium': 'Small_medium',
+            'large': 'Large',
+          },
         },
         placeholders: {
 
         },
         hints: {
-
+          'grooming': 'How many times you should brush and clean the coat of pet',
         },
         new: {
           title: 'Novo Breed',
@@ -369,7 +431,6 @@ const ptBR = {
           id: 'Id',
           'name': 'Name',
           'image': 'Image',
-          'breeds': 'Breeds',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -631,6 +692,95 @@ const ptBR = {
         importer: {
           title: 'Importar ServiceReservations',
           fileName: 'serviceReservation_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    reservationAgenda: {
+        name: 'ReservationAgenda',
+        label: 'ReservationAgenda',
+        menu: 'ReservationAgenda',
+        exporterFileName: 'ReservationAgenda_exportados',
+        list: {
+          menu: 'ReservationAgenda',
+          title: 'ReservationAgenda',
+        },
+        create: {
+          success: 'ReservationAgenda salvo com sucesso',
+        },
+        update: {
+          success: 'ReservationAgenda salvo com sucesso',
+        },
+        destroy: {
+          success: 'ReservationAgenda deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'ReservationAgenda(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar ReservationAgenda',
+        },
+        fields: {
+          id: 'Id',
+          'businessId': 'BusinessId',
+          'timeSlot': 'TimeSlot',
+          'serviceType': 'ServiceType',
+          'name': 'Name',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+          'timeSlot': {
+            '06_00': '06_00',
+            '06_30': '06_30',
+            '07_00': '07_00',
+            '07_30': '07_30',
+            '08_00': '08_00',
+            '08_30': '08_30',
+            '09_00': '09_00',
+            '09_30': '09_30',
+            '10_00': '10_00',
+            '10_30': '10_30',
+            '11_00': '11_00',
+            '11_30': '11_30',
+            '12_00': '12_00',
+            '12_30': '12_30',
+            '13_00': '13_00',
+            '13_30': '13_30',
+            '14_00': '14_00',
+            '14_30': '14_30',
+            '15_00': '15_00',
+            '15_30': '15_30',
+            '16_00': '16_00',
+            '16_30': '16_30',
+            '17': '17',
+            '17_30': '17_30',
+            '18_00': '18_00',
+            '18_30': '18_30',
+            '19_00': '19_00',
+            '19_30': '19_30',
+            '20_00': '20_00',
+            '20_30': '20_30',
+            '21_00': '21_00',
+          },
+        },
+        placeholders: {
+          'name': 'Agenda Reservation Availability Name',
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo ReservationAgenda',
+        },
+        view: {
+          title: 'Visualizar ReservationAgenda',
+        },
+        importer: {
+          title: 'Importar ReservationAgenda',
+          fileName: 'reservationAgenda_template_importacao',
           hint:
             'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
         },

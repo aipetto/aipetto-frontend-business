@@ -13,6 +13,7 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -45,6 +46,10 @@ const schema = yup.object().shape({
       "max": 3
     },
   ),
+  businessId: yupFormSchemas.relationToOne(
+    i18n('entities.product.fields.businessId'),
+    {},
+  ),
 });
 
 function ProductForm(props) {
@@ -58,6 +63,7 @@ function ProductForm(props) {
       description: record.description,
       unitPrice: record.unitPrice,
       photos: record.photos || [],
+      businessId: record.businessId,
     };
   });
 
@@ -109,6 +115,14 @@ function ProductForm(props) {
             required={false}
             storage={Storage.values.productPhotos}
             max={3}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessAutocompleteFormItem
+            name="businessId"
+            label={i18n('entities.product.fields.businessId')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

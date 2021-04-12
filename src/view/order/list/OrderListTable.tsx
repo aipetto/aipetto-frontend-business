@@ -21,6 +21,7 @@ import UserListItem from 'src/view/user/list/UserListItem';
 import FilesListView from 'src/view/shared/table/FileListView';
 import CustomerListItem from 'src/view/customer/list/CustomerListItem';
 import ProductListItem from 'src/view/product/list/ProductListItem';
+import BusinessListItem from 'src/view/business/list/BusinessListItem';
 
 function OrderListTable(props) {
   const [
@@ -132,6 +133,11 @@ function OrderListTable(props) {
                     'entities.order.fields.attachments',
                   )}
                 />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.order.fields.businessId',
+                  )}
+                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -183,6 +189,9 @@ function OrderListTable(props) {
                     <FilesListView
                       value={row.attachments}
                     />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <BusinessListItem value={row.businessId} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

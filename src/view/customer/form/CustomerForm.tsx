@@ -15,6 +15,7 @@ import RadioFormItem from 'src/view/shared/form/items/RadioFormItem';
 import customerEnumerators from 'src/modules/customer/customerEnumerators';
 import moment from 'moment';
 import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -40,6 +41,10 @@ const schema = yup.object().shape({
     i18n('entities.customer.fields.userId'),
     {},
   ),
+  businessId: yupFormSchemas.relationToOne(
+    i18n('entities.customer.fields.businessId'),
+    {},
+  ),
 });
 
 function CustomerForm(props) {
@@ -53,6 +58,7 @@ function CustomerForm(props) {
       birthdate: record.birthdate ? moment(record.birthdate, 'YYYY-MM-DD').toDate() : null,
       gender: record.gender,
       userId: record.userId,
+      businessId: record.businessId,
     };
   });
 
@@ -109,6 +115,14 @@ function CustomerForm(props) {
           <UserAutocompleteFormItem  
             name="userId"
             label={i18n('entities.customer.fields.userId')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessAutocompleteFormItem
+            name="businessId"
+            label={i18n('entities.customer.fields.businessId')}
             required={false}
             showCreate={!props.modal}
           />

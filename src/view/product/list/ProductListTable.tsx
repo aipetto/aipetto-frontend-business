@@ -18,6 +18,7 @@ import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import ImagesListView from 'src/view/shared/table/ImagesListView';
+import BusinessListItem from 'src/view/business/list/BusinessListItem';
 
 function ProductListTable(props) {
   const [
@@ -133,6 +134,11 @@ function ProductListTable(props) {
                     'entities.product.fields.photos',
                   )}
                 />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.product.fields.businessId',
+                  )}
+                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -179,6 +185,9 @@ function ProductListTable(props) {
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <ImagesListView value={row.photos} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <BusinessListItem value={row.businessId} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
