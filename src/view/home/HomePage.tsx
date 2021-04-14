@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import IndexNavbar from "../layout/IndexNavbar";
+import { i18n } from 'src/i18n';
 import AnimatedLogoExample from '../../socialpets.svg';
 
 const HomePage = (props) => {
@@ -13,10 +14,10 @@ const HomePage = (props) => {
                     <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
                         <div className="pt-32 sm:pt-0">
                             <h2 className="font-semibold text-4xl text-blueGray-600">
-                               All your pet needs in one place
+                                {i18n('public.homeTitle')}
                             </h2>
                             <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                                Whenever you go, local vets can help you out, you can find places where your pet can play and get best discounts to have your pet looking good, this and much more...
+                                {i18n('public.homeSubtitle')}
                             </p>
 
                             <div className="h-48 flex content-center">

@@ -28,6 +28,10 @@ const es = {
   app: {
     title: 'AIPETTO',
   },
+  public: {
+    homeTitle: '¿Amas a las mascotas?¡Entonces este es tu lugar!',
+    homeSubtitle: 'Donde quiera que estes, encuentre veterinários para ayudarte, obtener descuentos especiales en comida y accesorios, encuentre lugares donde tu mascota puede jugar y tener un lindo peinado, eso y mucho más...'
+  },
   api: {
     menu: 'API',
   },
@@ -1019,7 +1023,7 @@ const es = {
     title: 'Planes',
     free: {
       label: 'Gratuito',
-      price: '$0',
+      price: '£0',
     },
     premium: {
       label: 'Premium',

@@ -24,7 +24,10 @@ const ptBR = {
     continue: 'Continuar',
     filters: 'Filtros',
   },
-
+  public: {
+    homeTitle: 'Você ama os animais de estimação? Então esse é seu lugar!',
+    homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...'
+  },
   app: {
     title: 'AIPETTO',
   },
@@ -999,7 +1002,7 @@ const ptBR = {
 
     free: {
       label: 'Gratuito',
-      price: '$0',
+      price: '£',
     },
     premium: {
       label: 'Premium',

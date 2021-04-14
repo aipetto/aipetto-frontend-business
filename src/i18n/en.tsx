@@ -29,6 +29,11 @@ const en = {
     title: 'AIPETTO',
   },
 
+  public: {
+      homeTitle: 'You love pets? Then this your place!',
+      homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...'
+  },
+
   api: {
     menu: 'API',
   },
@@ -1004,8 +1009,8 @@ const en = {
     title: 'Plans',
 
     free: {
-      label: 'Gratuito',
-      price: '$0',
+      label: 'Free',
+      price: '£0',
     },
     premium: {
       label: 'Premium',
