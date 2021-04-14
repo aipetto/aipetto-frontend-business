@@ -14,8 +14,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       tenantDestroy: {
@@ -23,8 +22,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       planEdit: {
@@ -32,8 +30,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       planRead: {
@@ -41,8 +38,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       userEdit: {
@@ -50,8 +46,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       userDestroy: {
@@ -59,8 +54,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       userCreate: {
@@ -68,8 +62,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       userImport: {
@@ -77,8 +70,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       userRead: {
@@ -86,8 +78,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       userAutocomplete: {
@@ -95,8 +86,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       auditLogRead: {
@@ -104,8 +94,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
       },
       settingsEdit: {
@@ -113,8 +102,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
          allowedPlans: [
           plans.free,
-          plans.growth,
-          plans.enterprise,
+          plans.premium
         ],
         allowedStorage: [
           storage.settingsBackgroundImages,
@@ -124,12 +112,12 @@ class Permissions {
       customerImport: {
         id: 'customerImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       customerCreate: {
         id: 'customerCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -137,7 +125,7 @@ class Permissions {
       customerEdit: {
         id: 'customerEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -145,7 +133,7 @@ class Permissions {
       customerDestroy: {
         id: 'customerDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -153,23 +141,23 @@ class Permissions {
       customerRead: {
         id: 'customerRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       customerAutocomplete: {
         id: 'customerAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       productImport: {
         id: 'productImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       productCreate: {
         id: 'productCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.productPhotos,
         ],
@@ -177,7 +165,7 @@ class Permissions {
       productEdit: {
         id: 'productEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.productPhotos,
         ],
@@ -185,7 +173,7 @@ class Permissions {
       productDestroy: {
         id: 'productDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.productPhotos,
         ],
@@ -193,23 +181,23 @@ class Permissions {
       productRead: {
         id: 'productRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       productAutocomplete: {
         id: 'productAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       orderImport: {
         id: 'orderImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       orderCreate: {
         id: 'orderCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.orderAttachments,
         ],
@@ -217,7 +205,7 @@ class Permissions {
       orderEdit: {
         id: 'orderEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.orderAttachments,
         ],
@@ -225,7 +213,7 @@ class Permissions {
       orderDestroy: {
         id: 'orderDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.orderAttachments,
         ],
@@ -233,23 +221,23 @@ class Permissions {
       orderRead: {
         id: 'orderRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       orderAutocomplete: {
         id: 'orderAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       petImport: {
         id: 'petImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       petCreate: {
         id: 'petCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.petProfileImage,
         ],
@@ -257,7 +245,7 @@ class Permissions {
       petEdit: {
         id: 'petEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.petProfileImage,
         ],
@@ -265,7 +253,7 @@ class Permissions {
       petDestroy: {
         id: 'petDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.petProfileImage,
         ],
@@ -273,23 +261,23 @@ class Permissions {
       petRead: {
         id: 'petRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       petAutocomplete: {
         id: 'petAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       breedImport: {
         id: 'breedImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       breedCreate: {
         id: 'breedCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -297,7 +285,7 @@ class Permissions {
       breedEdit: {
         id: 'breedEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -305,7 +293,7 @@ class Permissions {
       breedDestroy: {
         id: 'breedDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -313,23 +301,23 @@ class Permissions {
       breedRead: {
         id: 'breedRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       breedAutocomplete: {
         id: 'breedAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       petTypesImport: {
         id: 'petTypesImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       petTypesCreate: {
         id: 'petTypesCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.petTypesImage,
         ],
@@ -337,7 +325,7 @@ class Permissions {
       petTypesEdit: {
         id: 'petTypesEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.petTypesImage,
         ],
@@ -345,7 +333,7 @@ class Permissions {
       petTypesDestroy: {
         id: 'petTypesDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
           storage.petTypesImage,
         ],
@@ -353,23 +341,23 @@ class Permissions {
       petTypesRead: {
         id: 'petTypesRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       petTypesAutocomplete: {
         id: 'petTypesAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       businessImport: {
         id: 'businessImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       businessCreate: {
         id: 'businessCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -377,7 +365,7 @@ class Permissions {
       businessEdit: {
         id: 'businessEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -385,7 +373,7 @@ class Permissions {
       businessDestroy: {
         id: 'businessDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -393,23 +381,23 @@ class Permissions {
       businessRead: {
         id: 'businessRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       businessAutocomplete: {
         id: 'businessAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       placeImport: {
         id: 'placeImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       placeCreate: {
         id: 'placeCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -417,7 +405,7 @@ class Permissions {
       placeEdit: {
         id: 'placeEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -425,7 +413,7 @@ class Permissions {
       placeDestroy: {
         id: 'placeDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -433,23 +421,23 @@ class Permissions {
       placeRead: {
         id: 'placeRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       placeAutocomplete: {
         id: 'placeAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       businessServicesTypesImport: {
         id: 'businessServicesTypesImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       businessServicesTypesCreate: {
         id: 'businessServicesTypesCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -457,7 +445,7 @@ class Permissions {
       businessServicesTypesEdit: {
         id: 'businessServicesTypesEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -465,7 +453,7 @@ class Permissions {
       businessServicesTypesDestroy: {
         id: 'businessServicesTypesDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -473,23 +461,23 @@ class Permissions {
       businessServicesTypesRead: {
         id: 'businessServicesTypesRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       businessServicesTypesAutocomplete: {
         id: 'businessServicesTypesAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       serviceReservationImport: {
         id: 'serviceReservationImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       serviceReservationCreate: {
         id: 'serviceReservationCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -497,7 +485,7 @@ class Permissions {
       serviceReservationEdit: {
         id: 'serviceReservationEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -505,7 +493,7 @@ class Permissions {
       serviceReservationDestroy: {
         id: 'serviceReservationDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -513,23 +501,23 @@ class Permissions {
       serviceReservationRead: {
         id: 'serviceReservationRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       serviceReservationAutocomplete: {
         id: 'serviceReservationAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
 
       reservationAgendaImport: {
         id: 'reservationAgendaImport',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       reservationAgendaCreate: {
         id: 'reservationAgendaCreate',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -537,7 +525,7 @@ class Permissions {
       reservationAgendaEdit: {
         id: 'reservationAgendaEdit',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -545,7 +533,7 @@ class Permissions {
       reservationAgendaDestroy: {
         id: 'reservationAgendaDestroy',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
@@ -553,12 +541,12 @@ class Permissions {
       reservationAgendaRead: {
         id: 'reservationAgendaRead',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
       reservationAgendaAutocomplete: {
         id: 'reservationAgendaAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedPlans: [plans.free, plans.premium],
       },
     };
   }

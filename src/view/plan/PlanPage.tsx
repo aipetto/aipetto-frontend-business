@@ -25,10 +25,7 @@ function PlanPage(props) {
             <PlanCardFree />
           </div>
           <div>
-            <PlanCardPaid plan={Plans.values.growth} />
-          </div>
-          <div>
-            <PlanCardPaid plan={Plans.values.enterprise} />
+            <PlanCardPaid plan={Plans.values.premium} />
           </div>
         </div>
       </div>

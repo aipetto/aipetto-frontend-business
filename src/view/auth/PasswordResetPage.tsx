@@ -53,7 +53,7 @@ function PasswordResetPage() {
     <div
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/pets.jpeg'
+          backgroundImageUrl || '/images/pets-background.jpeg'
         })`,
       }}
       className="bg-cover h-screen flex items-center justify-center"

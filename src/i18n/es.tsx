@@ -1018,16 +1018,12 @@ const es = {
     menu: 'Planes',
     title: 'Planes',
     free: {
-      label: 'Gratis',
+      label: 'Gratuito',
       price: '$0',
     },
-    growth: {
-      label: 'Crecimiento',
-      price: '$10',
-    },
-    enterprise: {
-      label: 'Empresa',
-      price: '$50',
+    premium: {
+      label: 'Premium',
+      price: '£50',
     },
     pricingPeriod: '/mes',
     current: 'Plan Actual',

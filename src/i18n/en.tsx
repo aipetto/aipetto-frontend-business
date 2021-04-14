@@ -1004,16 +1004,12 @@ const en = {
     title: 'Plans',
 
     free: {
-      label: 'Free',
+      label: 'Gratuito',
       price: '$0',
     },
-    growth: {
-      label: 'Growth',
-      price: '$10',
-    },
-    enterprise: {
-      label: 'Enterprise',
-      price: '$50',
+    premium: {
+      label: 'Premium',
+      price: '£50',
     },
 
     pricingPeriod: '/month',

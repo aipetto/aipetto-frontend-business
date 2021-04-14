@@ -40,7 +40,7 @@ function VerifyEmailPage() {
       style={{
         backgroundImage: `url(${
           backgroundImageUrl ||
-          '/images/pets.jpeg'
+          '/images/pets-background.jpeg'
         })`,
       }}
       className="bg-cover h-screen flex items-center justify-center"

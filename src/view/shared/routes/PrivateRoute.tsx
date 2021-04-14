@@ -31,7 +31,7 @@ function PrivateRoute({
           return (
             <Redirect
               to={{
-                pathname: '/auth/signin',
+                pathname: '/home',
                 state: { from: location },
               }}
             />
