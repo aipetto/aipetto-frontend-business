@@ -43,8 +43,8 @@ export default class AuthService {
       password,
       invitationToken,
       tenantId: tenantSubdomain.isSubdomain
-        ? AuthCurrentTenant.get()
-        : undefined,
+          ? AuthCurrentTenant.get()
+          : undefined,
     });
 
     AuthInvitationToken.clear();

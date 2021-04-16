@@ -8,6 +8,9 @@ import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
 import selectors from 'src/modules/auth/authSelectors';
 import { tenantSubdomain } from '../tenant/tenantSubdomain';
 import SettingsService from '../settings/settingsService';
+import TenantService from "../tenant/tenantService";
+
+import { v4 as uuidv4 } from 'uuid';
 
 const prefix = 'AUTH';
 
@@ -108,6 +111,12 @@ const authActions = {
       AuthToken.set(token, true);
 
       const currentUser = await service.fetchMe();
+
+      // If currentUser does not have a tenant then we assign a random generated one
+      // This is a user with petOwner role and does not belong to any Business workspace
+      if(!currentUser.tenants.length) {
+        await TenantService.create({name: `aipetto${uuidv4()}`});
+      }
 
       dispatch({
         type: authActions.AUTH_SUCCESS,

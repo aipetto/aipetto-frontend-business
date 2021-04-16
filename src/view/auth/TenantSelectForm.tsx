@@ -74,16 +74,6 @@ function TenantSelectForm(props) {
             {i18n('tenant.invitation.accept')}
           </button>
         </div>
-
-        <div className="mt-2">
-          <button
-            type="button"
-            className="w-full disabled:opacity-50 disabled:cursor-default px-4 py-2 tracking-wide dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-600 dark:text-white text-gray-700 border border-gray-300 transition-colors duration-200 transform bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-            onClick={props.onViewToggle}
-          >
-            {i18n('tenant.new.title')}
-          </button>
-        </div>
       </form>
     </FormProvider>
   );

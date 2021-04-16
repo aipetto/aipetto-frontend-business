@@ -33,6 +33,7 @@ export default class PermissionChecker {
   }
 
   match(permission) {
+
     if (!permission) {
       return true;
     }

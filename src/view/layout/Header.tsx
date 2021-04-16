@@ -60,7 +60,7 @@ function Header(props) {
   };
 
   const hasPermissionToEdit = useSelector(
-      tenantSelectors.selectPermissionToEdit,
+      tenantSelectors.selectPermissionToEditPassingTheCurrentTenant,
   );
 
   return (
@@ -178,7 +178,7 @@ function Header(props) {
                         </button>
                       </Menu.Item>
                     )}
-                    {config.apiDocumentationUrl && (
+                    {config.apiDocumentationUrl && hasPermissionToEdit && (
                       <Menu.Item>
                         <a
                           href={config.apiDocumentationUrl}

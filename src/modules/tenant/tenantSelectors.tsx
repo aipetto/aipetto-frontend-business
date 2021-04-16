@@ -11,6 +11,17 @@ const selectPermissionToEdit = createSelector(
     ),
 );
 
+const selectPermissionToEditPassingTheCurrentTenant = createSelector(
+    [
+        authSelectors.selectCurrentTenant,
+        authSelectors.selectCurrentUser
+    ],
+    (currentTenant, currentUser) =>
+        new PermissionChecker(currentTenant, currentUser).match(
+            Permissions.values.tenantEdit,
+        ),
+);
+
 const selectPermissionToDestroy = createSelector(
   [authSelectors.selectCurrentUser],
   (currentUser) => (tenant) =>
@@ -41,6 +52,7 @@ const selectInvitationToken = createSelector(
 );
 
 const tenantSelectors = {
+  selectPermissionToEditPassingTheCurrentTenant,
   selectPermissionToEdit,
   selectPermissionToDestroy,
   selectInvitationToken,
