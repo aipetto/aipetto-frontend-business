@@ -26,10 +26,12 @@ const HomePage = (props) => {
 
                     <div className="text-center fade-in fade-in-second">
 
+                        <div className="">
+                            <div className="hero-mockup w-5/8 sm:col-4/6 w-4/5 lg:w-full mx-auto relative">
 
-
-                                <img src={AnimatedLogoExample} alt="AIPETTO" className="pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 md:max-w-xl lg:max-w-4xl mx-auto z-10 relative"/>
-
+                                <img src="images/woman-pet-searching.png" alt="AIPETTO" className="pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 md:max-w-xl lg:max-w-4xl mx-auto z-10 relative"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -40,8 +42,8 @@ const HomePage = (props) => {
 
                     <div className="mb-8">
                         <div className="w-full lg:w-8/12 text-center mx-auto">
-                            <h2 className="text-2xl md:text-4xl leading-tight font-bold">Headline that discribes how your product solves a problem your customer has</h2>
-                            <p className="text-lg py-2 text-gray-700">Start by defining the pain your customer has right now, for example; clients not paying their invoices. Than write how your solution solves this problem for your customers.</p>
+                            <h2 className="text-2xl md:text-4xl leading-tight font-bold">Simple and easy reservations</h2>
+                            <p className="text-lg py-2 text-gray-700">Save your time and also money with awesome discounts!</p>
                         </div>
                     </div>
 
@@ -49,46 +51,31 @@ const HomePage = (props) => {
 
 
                         <div className="my-8 lg:my-0 w-full lg:w-2/6 text-center mt-4 flex flex-col justify-between align-content-start px-4">
-                            <img src="images/drawing-music.png" className="lg:w-2/3 lazy self-start mx-auto py-2 md:py-4 w-1/2 md:w-1/3 lg:w-auto" alt="Music Drawing"/>
+                            <img src="images/pablo-861.png" className="lg:w-2/3 lazy self-start mx-auto py-2 md:py-4 w-1/2 md:w-1/3 lg:w-auto" alt="Music Drawing"/>
 
                             <div>
-                                <h3 className="font-semibold text-xl md:text-2xl lg:text-xl">First main benefit of your product</h3>
-                                <p className="text-gray-600">Brief explanation of why and how this benefit will help your customers</p>
+                                <h3 className="font-semibold text-xl md:text-2xl lg:text-xl">Vet attention and vaccines</h3>
+                                <p className="text-gray-600">Get an appointment online or physically to a veterinarian 24 hours a day</p>
                             </div>
                         </div>
 
                         <div className="my-8 lg:my-0 w-full lg:w-2/6 text-center mt-4  flex flex-col align-content-start justify-between px-4">
-                            <img src="images/drawing-task.png" className="lg:w-2/3 lazy self-start mx-auto py-2 md:py-4 w-1/2 md:w-1/3 lg:w-auto" alt="Task Drawing"/>
+                            <img src="images/conifer-1076.png" className="lg:w-2/3 lazy self-start mx-auto py-2 md:py-4 w-1/2 md:w-1/3 lg:w-auto" alt="Task Drawing"/>
 
                             <div>
-                                <h3 className="font-semibold text-xl md:text-2xl lg:text-xl">Second main benefit of your product</h3>
-                                <p className="text-gray-600">Brief explanation of why and how this benefit will help your customers</p>
+                                <h3 className="font-semibold text-xl md:text-2xl lg:text-xl">Pet walking</h3>
+                                <p className="text-gray-600">Get someone to walk your dog for 30 minutes or 1 hour any times you want.</p>
                             </div>
                         </div>
 
                         <div className="my-8 lg:my-0 w-full lg:w-2/6 text-center mt-4  flex flex-col align-content-start justify-between px-4">
-                            <img src="images/drawing-coffee.png" className="lg:w-1/2 lazy self-start mx-auto py-2 md:py-4 w-1/2 md:w-1/3 lg:w-auto" alt="Coffee Drawing"/>
+                            <img src="images/conifer-1097.png" className="lg:w-1/2 lazy self-start mx-auto py-2 md:py-4 w-1/2 md:w-1/3 lg:w-auto" alt="Pet Care and Hair Cut"/>
 
-                            <h3 className="font-semibold text-xl md:text-2xl lg:text-xl">Third main benefit of your product</h3>
-                            <p className="text-gray-600">Brief explanation of why and how this benefit will help your customers</p>
+                            <h3 className="font-semibold text-xl md:text-2xl lg:text-xl">Hair cut and shower</h3>
+                            <p className="text-gray-600">Get an appointment to have your pet clean and with a nice hair cut.</p>
                         </div>
 
                     </div>
-
-
-                    <div className=" mt-4">
-                        <div className="lg:w-1/2 mx-auto text-center mt-4">
-                            <blockquote className="italic text-lg text-gray-700">
-                                “Powerfull and relevant testimonial of Customer X. This content should focus on the result the product had for this customer or answer a doubt your potential customer could have. "
-                            </blockquote>
-                            <div className="mt-3 flex justify-center content-center items-center">
-                                <img src="images/avatar/avatar-1.png" className="w-8 lazy self-start" alt="Testimonial Avatar"/>
-
-                                <span className="ml-2 font-bold text-gray-900">Name</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
@@ -99,19 +86,19 @@ const HomePage = (props) => {
                     <div className="flex flex-col md:flex-row items-center content-center py-12 lg:pt-16 lg:pb-32">
 
                         <div className="feature-1 md:w-1/2 text-center mb-4 lg:mb-0 relative">
-                            <img src="images/device-mobile.png" className="lazy mx-auto z-10 relative w-2/3 md:w-2/5 lg:w-1/3" alt="Mobile Device"/>
+                            <img src="images/mocks/appMockVersion1AIPETTO.png" className="lazy mx-auto z-10 relative w-3/3 md:w-4/5 lg:w-3/3" alt="Mobile Device"/>
 
                         </div>
 
                         <div className="w-full md:w-1/2 ">
-                            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">Now go deeper into what your product offers. But, word it as benefits, not as features.</h2>
+                            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">Have all the features of the platform in your smartphone</h2>
                             <p className="text-md lg:text-lg pt-4 pb-8 text-gray-700">
-                                “Save your favorites links” is a feature. “Never lose your favorite websites again” is a benefit. Users don’t care about your product, they only care about what’s in it for them.
+                                “Save time on reservations. Never lose an appoitnment. Whatever you go you can find all the services to take your pet in the best way you can.”
                             </p>
                             <ul className="usps">
-                                <li className="text-gray-900 py-1">Summarize the content above</li>
-                                <li className="text-gray-900 py-1">For visitors that don't like to read</li>
-                                <li className="text-gray-900 py-1">And just scan the page</li>
+                                <li className="text-gray-900 py-1">Get closest vets, petshops, dog walkers, playgrounds.</li>
+                                <li className="text-gray-900 py-1">Chat in real time with veterinaries.</li>
+                                <li className="text-gray-900 py-1">Check your pet profile including medical history and documentation.</li>
                             </ul>
                             <div className="lg:w-full">
                                 <ul className="list-none flex justify-center items-center content-center mt-1">
@@ -136,7 +123,6 @@ const HomePage = (props) => {
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -145,15 +131,11 @@ const HomePage = (props) => {
                 <div className="container mx-auto">
                     <div className="flex flex-col lg:flex-row justify-center content-center items-center text-center lg:text-left">
 
-                        <img src="images/drawing-try.png" className="lazy px-4 self-start mx-auto lg:mx-0 w-32" alt="Drawing Try"/>
-
-
                         <div className="px-4 flex flex-col content-center my-2 md:my-4 mx-4 md:my-0">
-                            <h4 className="text-lg font-semibold pb-0 mb-0 mb-md-0">Get notify on your pet appointments</h4>
-                            <p className="mb-0 text-gray-700">This a in between CTA for visitors that already got convinced.</p>
+                            <h4 className="text-lg font-semibold pb-0 mb-0 mb-md-0">More you use, more benefits you get!</h4>
                         </div>
 
-                        <a href="#" className="px-4 btn btn-secundary bg-green-500 rounded text-white font-semibold border border-green-700 shadow py-2 hover:bg-green-600"> Clear CTA Text</a>
+                        <a href="/auth/signup" className="px-4 btn btn-secundary bg-green-500 rounded text-white font-semibold border border-green-700 shadow py-2 hover:bg-green-600">Sign up</a>
 
                     </div>
                 </div>
@@ -164,7 +146,7 @@ const HomePage = (props) => {
 
                     <div className="py-8">
                         <div className="lg:w-4/6 text-center mx-auto">
-                            <h2 className="text-2xl md:text-4xl font-bold">Over 130.000 users like AIPETTO. See what they say.</h2>
+                            <h2 className="text-2xl md:text-4xl font-bold">Over 130.000 users like AIPETTO! Woof woof for that! See what they say.</h2>
                         </div>
                     </div>
 
@@ -174,189 +156,35 @@ const HomePage = (props) => {
                             <blockquote className="italic text-gray-700 text-sm md:text-md lg:text-lg">
                                 “Amazing app, with it I could take care of my pet so much easily.“
                             </blockquote>
-                            <div className="mt-3 flex justify-center content-center items-center">
-                                <img src="images/avatar/avatar-1.png" className="w-8 lazy self-start" alt="Testimonial Avatar"/>
-
-                                <span className="ml-2 font-bold text-gray-900 md:text-sm">Name</span>
-                            </div>
                         </div>
 
                         <div className="md:w-1/2  my-4 lg:my-0 md:px-4">
                             <blockquote className="italic text-gray-700 text-sm md:text-md lg:text-lg">
-                                “Powerfull and relevant testimonial of Customer X. This content should focus on the result the product had for this customer or answer a doubt your potential customer could have. "
+                                “Gracias, gracias, gracias. Tuve que llevar mi mascota al médico a las 3 de la mañana y con AIPETTO pude encontrar rápidamente una veterinária y un médico que me diera indicaciones online.“
                             </blockquote>
-                            <div className="mt-3 flex justify-center content-center items-center">
-                                <img src="images/avatar/avatar-1.png" className="w-8 lazy self-start" alt="Testimonial Avatar"/>
 
-                                <span className="ml-2 font-bold text-gray-900 md:text-sm">Name</span>
-                            </div>
                         </div>
-
                     </div>
 
-
-
                     <div className=" text-center flex ">
-                        <img src="images/drawing-friends.png" className="w-64 lazy mx-auto" alt="Drawing Friends"/>
+                        <img src="images/girl-cat-friend.png" className="w-64 lazy mx-auto" alt="Drawing Friends"/>
                     </div>
 
                     <div className="  text-center flex flex-col md:flex-row">
 
                         <div className="md:w-1/2 flex flex-col   my-4 lg:my-0 md:px-4">
                             <blockquote className="italic text-gray-700 text-sm md:text-md lg:text-lg lg:order-last order-first">
-                                “Powerfull and relevant testimonial of Customer X. This content should focus on the result the product had for this customer or answer a doubt your potential customer could have. "
+                                “Sempre tive que usar uma app diferente para tudo. Uma para encontrar cruza para meu cachorro, uma para passer meu pet, outra para comprar, outra para encontrar pets que adotar, outra para ver quais pets meus amigos tem... com AIPETTO eu consigo fazer tudo e muito mais e em uma plataforma só, amei!“
                             </blockquote>
-                            <div className="mt-3 flex justify-center content-center items-center order-last lg:order-first">
-                                <img src="images/avatar/avatar-1.png" className="w-8 lazy self-start" alt="Testimonial Avatar"/>
-
-                                <span className="ml-2 font-bold text-gray-900 md:text-sm">Name</span>
-                            </div>
                         </div>
 
                         <div className="md:w-1/2 flex flex-col   my-4 lg:my-0 md:px-4">
                             <blockquote className="italic text-gray-700 text-sm md:text-md lg:text-lg lg:order-last order-first">
-                                “Powerfull and relevant testimonial of Customer X. This content should focus on the result the product had for this customer or answer a doubt your potential customer could have. "
+                                “It's so amazing the commitment that the AIPETTO team have, they worked so hard to help me out find my pet and get me feeling supported all the time. You got a lifetime fan!“
                             </blockquote>
-                            <div className="mt-3 flex justify-center content-center items-center order-last lg:order-first">
-                                <img src="images/avatar/avatar-1.png" className="w-8 lazy self-start" alt="Testimonial Avatar"/>
-
-                                <span className="ml-2 font-bold text-gray-900 md:text-sm">Name</span>
-                            </div>
                         </div>
 
                     </div>
-                </div>
-            </div>
-
-            <div className="bg-gray-100 text-center md:text-left py-16 px-4">
-                <div className="container mx-auto">
-
-                    <div className="pb-4 lg:pb-8">
-                        <div className="lg:w-full text-center">
-                            <h2 className="text-2xl md:text-4xl font-bold">Main benefits</h2>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row md:flex-wrap">
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-settings.png" className="w-10 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">First main product benefit</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-star.png" className="w-10 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Second main product benefit</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-idea.png" className="w-6 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Third main product benefit</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-user.png" className="w-6 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Fourth main product benefit</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div className="flex  flex-col md:flex-row md:flex-wrap my-4">
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-idea.png" className="w-6 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Another claim</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-user.png" className="w-6 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Another claim</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-star.png" className="w-10 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Another claim</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-star.png" className="w-10 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Another claim</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div className="flex  flex-col md:flex-row md:flex-wrap my-4">
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-settings.png" className="w-10 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Free migration</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-star.png" className="w-10 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Usefull intergration</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-idea.png" className="w-6 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Awesome support</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/4 md:w-1/2 text-center lg:text-left mt-4 flex flex-col justify-between">
-                            <img src="images/icon-user.png" className="w-6 lazy self-start py-2 mx-auto lg:mx-0" alt="Benefit Icon"/>
-
-                            <div>
-                                <h4 className="mb-0 font-bold">Full refund</h4>
-                                <p className="mb-0">Short text to support claim</p>
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
 
@@ -365,20 +193,19 @@ const HomePage = (props) => {
 
                     <div className=" py-4">
                         <div className="lg:w-3/12 col-md-4 mx-auto text-center">
-                            <img src="images/features-drawing-moonlanding.png" className="lazy mx-auto w-100 w-1/2 lg:w-full" alt="Drawing Moonlanding"/>
+                            <img src="images/man-pet-playing.png" className="lazy mx-auto w-100 w-1/2 lg:w-full" alt="AIPETTO"/>
                         </div>
                     </div>
 
                     <div className="">
                         <div className="lg:w-3/6 mx-auto text-center">
-                            <h2 className="text-2xl md:text-4xl lg:text-4xl font-bold">Or,ask if your visitor wants to solve problem X today</h2>
-                            <p className="text-md md:text-xl lg:text-lg pt-4 pb-8 text-gray-800">Explain how your solution will solve this problem and ask them to start a free trial, or any other low-key CTA they could take.</p>
+                            <h2 className="text-2xl md:text-4xl lg:text-4xl font-bold">Because we love and care our pets</h2>
+                            <p className="text-md md:text-xl lg:text-lg pt-4 pb-8 text-gray-800">All service providers and interactions in our platform are strongly validated in order to garantee the quality of services and safeness of everyone using it, paying extra attention on protecting your pet data and private information.</p>
                             <div className="flex justify-center items-center flex- mb-2">
-                                <a className="bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 hover:border-yellow-700 shadow font-semibold px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">Make a new reservation</a>
+                                <a href="/auth/signup" className="bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 hover:border-yellow-700 shadow font-semibold px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">Sign up</a>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -387,25 +214,22 @@ const HomePage = (props) => {
                 <div className="container mx-auto">
                     <div className=" flex flex-col lg:flex-row content-center items-center justify-between">
                         <div className="flex items-center flex-col lg:flex-row mx-auto">
-                            <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">AIPETTO Copyright &copy; 2021</span>
+                            <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">AIPETTO, Copyright &copy; 2021</span>
                         </div>
 
                         <div className="navbar mx-auto">
                             <ul className="navbar-nav flex flex-">
-                                <li className=" active px-md-3 px-2">
-                                    <a className=" text-gray-700 text-sm hover:text-gray-900 transition duration-500 ease-in-out" href="/">Home</a>
-                                </li>
-                                <li className=" px-md-3 px-2">
-                                    <a className=" text-gray-700 text-sm hover:text-gray-900 transition duration-500 ease-in-out" href="#">Features</a>
-                                </li>
-                                <li className=" px-md-3 px-2">
-                                    <a className=" text-gray-700 text-sm hover:text-gray-900 transition duration-500 ease-in-out" href="#">Become a Business</a>
+                                <li className="active">
+                                    <a className="px-md-2 px-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="#">Home</a>
                                 </li>
                                 <li>
-                                    <a className="text-gray-700 text-sm hover:text-gray-900 transition duration-500 ease-in-out" href="/auth/signin">Login</a>
+                                    <a className="px-md-2 px-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="#">Features</a>
                                 </li>
-                                <li className="nav-item px-2 signup">
-                                    <a className="text-md text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold cursor-pointer transition duration-500 ease-in-out" href="/auth/signup">{i18n('auth.signup')}</a>
+                                <li>
+                                    <a className="px-md-2 px-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="#">Business</a>
+                                </li>
+                                <li className="px-md-2 px-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded">
+                                    <a className=" " href="/auth/signin">Login</a>
                                 </li>
                             </ul>
                         </div>
