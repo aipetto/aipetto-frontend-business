@@ -72,7 +72,7 @@ const HomePage = (props) => {
                             <img src="images/conifer-1097.png" className="lg:w-1/2 lazy self-start mx-auto py-2 md:py-4 w-1/2 md:w-1/3 lg:w-auto" alt="Pet Care and Hair Cut"/>
 
                             <h3 className="font-semibold text-xl md:text-2xl lg:text-xl">Hair cut and shower</h3>
-                            <p className="text-gray-600">Get an appointment to have your pet clean and with a nice hair cut.</p>
+                            <p className="text-gray-600">Get an appointment to have your pet with a brand new looking.</p>
                         </div>
 
                     </div>
@@ -93,7 +93,7 @@ const HomePage = (props) => {
                         <div className="w-full md:w-1/2 ">
                             <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">Have all the features of the platform in your smartphone</h2>
                             <p className="text-md lg:text-lg pt-4 pb-8 text-gray-700">
-                                “Save time on reservations. Never lose an appoitnment. Whatever you go you can find all the services to take your pet in the best way you can.”
+                                “Save time on reservations. Never lose an appoitnment. Find local services providers for your pet whetever you go.”
                             </p>
                             <ul className="usps">
                                 <li className="text-gray-900 py-1">Get closest vets, petshops, dog walkers, playgrounds.</li>
@@ -146,7 +146,7 @@ const HomePage = (props) => {
 
                     <div className="py-8">
                         <div className="lg:w-4/6 text-center mx-auto">
-                            <h2 className="text-2xl md:text-4xl font-bold">Over 130.000 users like AIPETTO! Woof woof for that! See what they say.</h2>
+                            <h2 className="text-2xl md:text-4xl font-bold">Over 23.000 people like AIPETTO! Woof woof for that! See what they say.</h2>
                         </div>
                     </div>
 
