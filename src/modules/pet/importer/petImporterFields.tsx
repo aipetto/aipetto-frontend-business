@@ -79,4 +79,20 @@ export default [
       {},
     ),
   },
+  {
+    name: 'customerId',
+    label: i18n('entities.pet.fields.customerId'),
+    schema: schemas.relationToOne(
+      i18n('entities.pet.fields.customerId'),
+      {},
+    ),
+  },
+  {
+    name: 'petOwners',
+    label: i18n('entities.pet.fields.petOwners'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.petOwners'),
+      {},
+    ),
+  },
 ];

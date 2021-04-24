@@ -32,13 +32,13 @@ function BusinessServicesTypesListItem(props) {
             className="text-blue-500 dark:text-blue-400 focus:text-blue-400 hover:text-blue-400"
             to={`/business-services-types/${record.id}`}
           >
-            {record.nome}
+            {record.name}
           </Link>
         </div>
       );
     }
 
-    return <div key={record.id}>{record.nome}</div>;
+    return <div key={record.id}>{record.name}</div>;
   };
 
   if (!valueAsArray().length) {

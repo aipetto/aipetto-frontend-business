@@ -7,8 +7,8 @@ export default [
     label: i18n('entities.businessServicesTypes.fields.id'),
   },
   {
-    name: 'nome',
-    label: i18n('entities.businessServicesTypes.fields.nome'),
+    name: 'name',
+    label: i18n('entities.businessServicesTypes.fields.name'),
   },
   {
     name: 'createdAt',

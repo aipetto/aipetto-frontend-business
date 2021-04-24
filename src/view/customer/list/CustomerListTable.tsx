@@ -111,12 +111,40 @@ function CustomerListTable(props) {
                 )}
               </TableColumnHeader>
                 <TableColumnHeader
+                  label={i18n(
+                    'entities.customer.fields.businessId',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'source'}
+                  label={i18n(
+                    'entities.customer.fields.source',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.customer.fields.userId',
+                  )}
+                />
+                <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
                   name={'name'}
                   label={i18n(
                     'entities.customer.fields.name',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'surname'}
+                  label={i18n(
+                    'entities.customer.fields.surname',
                   )}
                 />
                 <TableColumnHeader
@@ -138,13 +166,156 @@ function CustomerListTable(props) {
                   )}
                 />
                 <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'whatsApp'}
                   label={i18n(
-                    'entities.customer.fields.userId',
+                    'entities.customer.fields.whatsApp',
                   )}
                 />
                 <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'phoneNumber'}
                   label={i18n(
-                    'entities.customer.fields.businessId',
+                    'entities.customer.fields.phoneNumber',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'address'}
+                  label={i18n(
+                    'entities.customer.fields.address',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'zipCode'}
+                  label={i18n(
+                    'entities.customer.fields.zipCode',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'city'}
+                  label={i18n(
+                    'entities.customer.fields.city',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'state'}
+                  label={i18n(
+                    'entities.customer.fields.state',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'country'}
+                  label={i18n(
+                    'entities.customer.fields.country',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'billingAddressStreet'}
+                  label={i18n(
+                    'entities.customer.fields.billingAddressStreet',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'billingAddressCity'}
+                  label={i18n(
+                    'entities.customer.fields.billingAddressCity',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'billingAddressState'}
+                  label={i18n(
+                    'entities.customer.fields.billingAddressState',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'billingAddressZipCode'}
+                  label={i18n(
+                    'entities.customer.fields.billingAddressZipCode',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'billingAddressCountry'}
+                  label={i18n(
+                    'entities.customer.fields.billingAddressCountry',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'shippingAddressStreet'}
+                  label={i18n(
+                    'entities.customer.fields.shippingAddressStreet',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'shippingAddressCity'}
+                  label={i18n(
+                    'entities.customer.fields.shippingAddressCity',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'shippingAddressState'}
+                  label={i18n(
+                    'entities.customer.fields.shippingAddressState',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'shippingAddressZipCode'}
+                  label={i18n(
+                    'entities.customer.fields.shippingAddressZipCode',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'shippingAddressCountry'}
+                  label={i18n(
+                    'entities.customer.fields.shippingAddressCountry',
                   )}
                 />
               <TableColumnHeader />
@@ -185,7 +356,21 @@ function CustomerListTable(props) {
                       }
                     />
                   </th>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <BusinessListItem value={row.businessId} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.source
+                      ? i18n(
+                          `entities.customer.enumerators.source.${row.source}`,
+                        )
+                      : null}
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <UserListItem value={row.userId} />
+                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.surname}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.birthdate}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.gender
@@ -194,12 +379,23 @@ function CustomerListTable(props) {
                         )
                       : null}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <UserListItem value={row.userId} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <BusinessListItem value={row.businessId} />
-                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.whatsApp}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.phoneNumber}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.address}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.zipCode}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.city}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.state}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.country}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.billingAddressStreet}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.billingAddressCity}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.billingAddressState}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.billingAddressZipCode}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.billingAddressCountry}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.shippingAddressStreet}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.shippingAddressCity}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.shippingAddressState}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.shippingAddressZipCode}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.shippingAddressCountry}</td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
                     align="right"

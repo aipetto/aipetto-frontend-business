@@ -38,9 +38,12 @@ export default [
   {
     name: 'time',
     label: i18n('entities.serviceReservation.fields.time'),
-    schema: schemas.string(
+    schema: schemas.enumerator(
       i18n('entities.serviceReservation.fields.time'),
-      {},
+      {
+        "required": true,
+        "options": serviceReservationEnumerators.time
+      },
     ),
   },
   {

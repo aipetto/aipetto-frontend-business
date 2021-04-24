@@ -17,18 +17,18 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 
 const schema = yup.object().shape({
-  nome: yupFilterSchemas.string(
-    i18n('entities.businessServicesTypes.fields.nome'),
+  name: yupFilterSchemas.string(
+    i18n('entities.businessServicesTypes.fields.name'),
   ),
 });
 
 const emptyValues = {
-  nome: null,
+  name: null,
 }
 
 const previewRenders = {
-  nome: {
-    label: i18n('entities.businessServicesTypes.fields.nome'),
+  name: {
+    label: i18n('entities.businessServicesTypes.fields.name'),
     render: filterRenders.generic(),
   },
 }
@@ -91,8 +91,8 @@ function BusinessServicesTypesListFilter(props) {
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
               <InputFormItem
-                name="nome"
-                label={i18n('entities.businessServicesTypes.fields.nome')}      
+                name="name"
+                label={i18n('entities.businessServicesTypes.fields.name')}
               />
             </div>
 

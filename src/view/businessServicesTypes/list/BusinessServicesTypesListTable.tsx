@@ -113,9 +113,9 @@ function BusinessServicesTypesListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'nome'}
+                  name={'name'}
                   label={i18n(
-                    'entities.businessServicesTypes.fields.nome',
+                    'entities.businessServicesTypes.fields.name',
                   )}
                 />
               <TableColumnHeader />
@@ -156,7 +156,7 @@ function BusinessServicesTypesListTable(props) {
                       }
                     />
                   </th>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.nome}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
                     align="right"

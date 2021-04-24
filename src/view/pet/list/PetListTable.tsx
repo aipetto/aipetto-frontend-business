@@ -20,6 +20,7 @@ import Pagination from 'src/view/shared/table/Pagination';
 import ImagesListView from 'src/view/shared/table/ImagesListView';
 import BreedListItem from 'src/view/breed/list/BreedListItem';
 import PetTypesListItem from 'src/view/petTypes/list/PetTypesListItem';
+import CustomerListItem from 'src/view/customer/list/CustomerListItem';
 
 function PetListTable(props) {
   const [
@@ -181,6 +182,11 @@ function PetListTable(props) {
                     'entities.pet.fields.type',
                   )}
                 />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.pet.fields.customerId',
+                  )}
+                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -245,6 +251,9 @@ function PetListTable(props) {
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <PetTypesListItem value={row.type} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <CustomerListItem value={row.customerId} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

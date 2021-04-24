@@ -484,40 +484,230 @@ const privateRoutes = [
   },
 
   {
-    path: '/reservation-agenda',
+    path: '/business-place-service-availability',
     loader: () =>
-      import('src/view/reservationAgenda/list/ReservationAgendaListPage'),
-    permissionRequired: permissions.reservationAgendaRead,
+      import('src/view/businessPlaceServiceAvailability/list/BusinessPlaceServiceAvailabilityListPage'),
+    permissionRequired: permissions.businessPlaceServiceAvailabilityRead,
     exact: true,
   },
   {
-    path: '/reservation-agenda/new',
+    path: '/business-place-service-availability/new',
     loader: () =>
-      import('src/view/reservationAgenda/form/ReservationAgendaFormPage'),
-    permissionRequired: permissions.reservationAgendaCreate,
+      import('src/view/businessPlaceServiceAvailability/form/BusinessPlaceServiceAvailabilityFormPage'),
+    permissionRequired: permissions.businessPlaceServiceAvailabilityCreate,
     exact: true,
   },
   {
-    path: '/reservation-agenda/importer',
+    path: '/business-place-service-availability/importer',
     loader: () =>
       import(
-        'src/view/reservationAgenda/importer/ReservationAgendaImporterPage'
+        'src/view/businessPlaceServiceAvailability/importer/BusinessPlaceServiceAvailabilityImporterPage'
       ),
-    permissionRequired: permissions.reservationAgendaImport,
+    permissionRequired: permissions.businessPlaceServiceAvailabilityImport,
     exact: true,
   },
   {
-    path: '/reservation-agenda/:id/edit',
+    path: '/business-place-service-availability/:id/edit',
     loader: () =>
-      import('src/view/reservationAgenda/form/ReservationAgendaFormPage'),
-    permissionRequired: permissions.reservationAgendaEdit,
+      import('src/view/businessPlaceServiceAvailability/form/BusinessPlaceServiceAvailabilityFormPage'),
+    permissionRequired: permissions.businessPlaceServiceAvailabilityEdit,
     exact: true,
   },
   {
-    path: '/reservation-agenda/:id',
+    path: '/business-place-service-availability/:id',
     loader: () =>
-      import('src/view/reservationAgenda/view/ReservationAgendaViewPage'),
-    permissionRequired: permissions.reservationAgendaRead,
+      import('src/view/businessPlaceServiceAvailability/view/BusinessPlaceServiceAvailabilityViewPage'),
+    permissionRequired: permissions.businessPlaceServiceAvailabilityRead,
+    exact: true,
+  },
+
+  {
+    path: '/country',
+    loader: () =>
+      import('src/view/country/list/CountryListPage'),
+    permissionRequired: permissions.countryRead,
+    exact: true,
+  },
+  {
+    path: '/country/new',
+    loader: () =>
+      import('src/view/country/form/CountryFormPage'),
+    permissionRequired: permissions.countryCreate,
+    exact: true,
+  },
+  {
+    path: '/country/importer',
+    loader: () =>
+      import(
+        'src/view/country/importer/CountryImporterPage'
+      ),
+    permissionRequired: permissions.countryImport,
+    exact: true,
+  },
+  {
+    path: '/country/:id/edit',
+    loader: () =>
+      import('src/view/country/form/CountryFormPage'),
+    permissionRequired: permissions.countryEdit,
+    exact: true,
+  },
+  {
+    path: '/country/:id',
+    loader: () =>
+      import('src/view/country/view/CountryViewPage'),
+    permissionRequired: permissions.countryRead,
+    exact: true,
+  },
+
+  {
+    path: '/city',
+    loader: () =>
+      import('src/view/city/list/CityListPage'),
+    permissionRequired: permissions.cityRead,
+    exact: true,
+  },
+  {
+    path: '/city/new',
+    loader: () =>
+      import('src/view/city/form/CityFormPage'),
+    permissionRequired: permissions.cityCreate,
+    exact: true,
+  },
+  {
+    path: '/city/importer',
+    loader: () =>
+      import(
+        'src/view/city/importer/CityImporterPage'
+      ),
+    permissionRequired: permissions.cityImport,
+    exact: true,
+  },
+  {
+    path: '/city/:id/edit',
+    loader: () =>
+      import('src/view/city/form/CityFormPage'),
+    permissionRequired: permissions.cityEdit,
+    exact: true,
+  },
+  {
+    path: '/city/:id',
+    loader: () =>
+      import('src/view/city/view/CityViewPage'),
+    permissionRequired: permissions.cityRead,
+    exact: true,
+  },
+
+  {
+    path: '/state',
+    loader: () =>
+      import('src/view/state/list/StateListPage'),
+    permissionRequired: permissions.stateRead,
+    exact: true,
+  },
+  {
+    path: '/state/new',
+    loader: () =>
+      import('src/view/state/form/StateFormPage'),
+    permissionRequired: permissions.stateCreate,
+    exact: true,
+  },
+  {
+    path: '/state/importer',
+    loader: () =>
+      import(
+        'src/view/state/importer/StateImporterPage'
+      ),
+    permissionRequired: permissions.stateImport,
+    exact: true,
+  },
+  {
+    path: '/state/:id/edit',
+    loader: () =>
+      import('src/view/state/form/StateFormPage'),
+    permissionRequired: permissions.stateEdit,
+    exact: true,
+  },
+  {
+    path: '/state/:id',
+    loader: () =>
+      import('src/view/state/view/StateViewPage'),
+    permissionRequired: permissions.stateRead,
+    exact: true,
+  },
+
+  {
+    path: '/messages',
+    loader: () =>
+      import('src/view/messages/list/MessagesListPage'),
+    permissionRequired: permissions.messagesRead,
+    exact: true,
+  },
+  {
+    path: '/messages/new',
+    loader: () =>
+      import('src/view/messages/form/MessagesFormPage'),
+    permissionRequired: permissions.messagesCreate,
+    exact: true,
+  },
+  {
+    path: '/messages/importer',
+    loader: () =>
+      import(
+        'src/view/messages/importer/MessagesImporterPage'
+      ),
+    permissionRequired: permissions.messagesImport,
+    exact: true,
+  },
+  {
+    path: '/messages/:id/edit',
+    loader: () =>
+      import('src/view/messages/form/MessagesFormPage'),
+    permissionRequired: permissions.messagesEdit,
+    exact: true,
+  },
+  {
+    path: '/messages/:id',
+    loader: () =>
+      import('src/view/messages/view/MessagesViewPage'),
+    permissionRequired: permissions.messagesRead,
+    exact: true,
+  },
+
+  {
+    path: '/professionals-service-availability',
+    loader: () =>
+      import('src/view/professionalsServiceAvailability/list/ProfessionalsServiceAvailabilityListPage'),
+    permissionRequired: permissions.professionalsServiceAvailabilityRead,
+    exact: true,
+  },
+  {
+    path: '/professionals-service-availability/new',
+    loader: () =>
+      import('src/view/professionalsServiceAvailability/form/ProfessionalsServiceAvailabilityFormPage'),
+    permissionRequired: permissions.professionalsServiceAvailabilityCreate,
+    exact: true,
+  },
+  {
+    path: '/professionals-service-availability/importer',
+    loader: () =>
+      import(
+        'src/view/professionalsServiceAvailability/importer/ProfessionalsServiceAvailabilityImporterPage'
+      ),
+    permissionRequired: permissions.professionalsServiceAvailabilityImport,
+    exact: true,
+  },
+  {
+    path: '/professionals-service-availability/:id/edit',
+    loader: () =>
+      import('src/view/professionalsServiceAvailability/form/ProfessionalsServiceAvailabilityFormPage'),
+    permissionRequired: permissions.professionalsServiceAvailabilityEdit,
+    exact: true,
+  },
+  {
+    path: '/professionals-service-availability/:id',
+    loader: () =>
+      import('src/view/professionalsServiceAvailability/view/ProfessionalsServiceAvailabilityViewPage'),
+    permissionRequired: permissions.professionalsServiceAvailabilityRead,
     exact: true,
   },
 ].filter(Boolean);

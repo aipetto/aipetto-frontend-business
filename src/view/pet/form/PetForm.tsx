@@ -11,6 +11,7 @@ import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputNumberFormItem from 'src/view/shared/form/items/InputNumberFormItem';
+import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
 import RadioFormItem from 'src/view/shared/form/items/RadioFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import petEnumerators from 'src/modules/pet/petEnumerators';
@@ -20,6 +21,7 @@ import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BreedAutocompleteFormItem from 'src/view/breed/autocomplete/BreedAutocompleteFormItem';
 import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
+import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -63,6 +65,14 @@ const schema = yup.object().shape({
     i18n('entities.pet.fields.type'),
     {},
   ),
+  customerId: yupFormSchemas.relationToOne(
+    i18n('entities.pet.fields.customerId'),
+    {},
+  ),
+  petOwners: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.petOwners'),
+    {},
+  ),
 });
 
 function PetForm(props) {
@@ -81,6 +91,8 @@ function PetForm(props) {
       sex: record.sex,
       breed: record.breed,
       type: record.type,
+      customerId: record.customerId,
+      petOwners: record.petOwners || [],
     };
   });
 
@@ -185,6 +197,23 @@ function PetForm(props) {
             label={i18n('entities.pet.fields.type')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CustomerAutocompleteFormItem
+            name="customerId"
+            label={i18n('entities.pet.fields.customerId')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <UserAutocompleteFormItem
+            name="petOwners"
+            label={i18n('entities.pet.fields.petOwners')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
           />
         </div>
 

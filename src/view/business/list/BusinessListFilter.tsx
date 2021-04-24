@@ -15,15 +15,58 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
+import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
     i18n('entities.business.fields.name'),
   ),
+  contactName: yupFilterSchemas.string(
+    i18n('entities.business.fields.contactName'),
+  ),
+  contactPhone: yupFilterSchemas.string(
+    i18n('entities.business.fields.contactPhone'),
+  ),
+  contactWhatsApp: yupFilterSchemas.string(
+    i18n('entities.business.fields.contactWhatsApp'),
+  ),
+  contactEmail: yupFilterSchemas.string(
+    i18n('entities.business.fields.contactEmail'),
+  ),
+  addressStreet: yupFilterSchemas.string(
+    i18n('entities.business.fields.addressStreet'),
+  ),
+  addressStreetNumber: yupFilterSchemas.string(
+    i18n('entities.business.fields.addressStreetNumber'),
+  ),
+  addressPostCode: yupFilterSchemas.string(
+    i18n('entities.business.fields.addressPostCode'),
+  ),
+  city: yupFilterSchemas.relationToOne(
+    i18n('entities.business.fields.city'),
+  ),
+  state: yupFilterSchemas.relationToOne(
+    i18n('entities.business.fields.state'),
+  ),
+  country: yupFilterSchemas.relationToOne(
+    i18n('entities.business.fields.country'),
+  ),
 });
 
 const emptyValues = {
   name: null,
+  contactName: null,
+  contactPhone: null,
+  contactWhatsApp: null,
+  contactEmail: null,
+  addressStreet: null,
+  addressStreetNumber: null,
+  addressPostCode: null,
+  city: null,
+  state: null,
+  country: null,
 }
 
 const previewRenders = {
@@ -31,6 +74,46 @@ const previewRenders = {
     label: i18n('entities.business.fields.name'),
     render: filterRenders.generic(),
   },
+  contactName: {
+    label: i18n('entities.business.fields.contactName'),
+    render: filterRenders.generic(),
+  },
+  contactPhone: {
+    label: i18n('entities.business.fields.contactPhone'),
+    render: filterRenders.generic(),
+  },
+  contactWhatsApp: {
+    label: i18n('entities.business.fields.contactWhatsApp'),
+    render: filterRenders.generic(),
+  },
+  contactEmail: {
+    label: i18n('entities.business.fields.contactEmail'),
+    render: filterRenders.generic(),
+  },
+  addressStreet: {
+    label: i18n('entities.business.fields.addressStreet'),
+    render: filterRenders.generic(),
+  },
+  addressStreetNumber: {
+    label: i18n('entities.business.fields.addressStreetNumber'),
+    render: filterRenders.generic(),
+  },
+  addressPostCode: {
+    label: i18n('entities.business.fields.addressPostCode'),
+    render: filterRenders.generic(),
+  },
+  city: {
+      label: i18n('entities.business.fields.city'),
+      render: filterRenders.relationToOne(),
+    },
+  state: {
+      label: i18n('entities.business.fields.state'),
+      render: filterRenders.relationToOne(),
+    },
+  country: {
+      label: i18n('entities.business.fields.country'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function BusinessListFilter(props) {
@@ -93,6 +176,46 @@ function BusinessListFilter(props) {
               <InputFormItem
                 name="name"
                 label={i18n('entities.business.fields.name')}      
+              />
+              <InputFormItem
+                name="contactName"
+                label={i18n('entities.business.fields.contactName')}
+              />
+              <InputFormItem
+                name="contactPhone"
+                label={i18n('entities.business.fields.contactPhone')}
+              />
+              <InputFormItem
+                name="contactWhatsApp"
+                label={i18n('entities.business.fields.contactWhatsApp')}
+              />
+              <InputFormItem
+                name="contactEmail"
+                label={i18n('entities.business.fields.contactEmail')}
+              />
+              <InputFormItem
+                name="addressStreet"
+                label={i18n('entities.business.fields.addressStreet')}
+              />
+              <InputFormItem
+                name="addressStreetNumber"
+                label={i18n('entities.business.fields.addressStreetNumber')}
+              />
+              <InputFormItem
+                name="addressPostCode"
+                label={i18n('entities.business.fields.addressPostCode')}
+              />
+              <CityAutocompleteFormItem
+                name="city"
+                label={i18n('entities.business.fields.city')}
+              />
+              <StateAutocompleteFormItem
+                name="state"
+                label={i18n('entities.business.fields.state')}
+              />
+              <CountryAutocompleteFormItem
+                name="country"
+                label={i18n('entities.business.fields.country')}
               />
             </div>
 

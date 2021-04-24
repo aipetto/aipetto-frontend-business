@@ -216,7 +216,13 @@ function ServiceReservationListTable(props) {
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessServicesTypesListItem value={row.serviceType} />
                   </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.time}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.time
+                      ? i18n(
+                          `entities.serviceReservation.enumerators.time.${row.time}`,
+                        )
+                      : null}
+                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.needTransportation
                       ? i18n('common.yes')

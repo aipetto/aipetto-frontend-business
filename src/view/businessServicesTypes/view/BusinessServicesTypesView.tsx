@@ -13,8 +13,8 @@ function BusinessServicesTypesView(props) {
   return (
     <div>
       <TextViewItem
-        label={i18n('entities.businessServicesTypes.fields.nome')}
-        value={record.nome}
+        label={i18n('entities.businessServicesTypes.fields.name')}
+        value={record.name}
       />
     </div>
   );

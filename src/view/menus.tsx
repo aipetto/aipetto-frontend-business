@@ -120,9 +120,44 @@ export default [
   },
 
   {
-    path: '/reservation-agenda',
-    permissionRequired: permissions.reservationAgendaRead,
+    path: '/business-place-service-availability',
+    permissionRequired: permissions.businessPlaceServiceAvailabilityRead,
     icon: faChevronRight,
-    label: i18n('entities.reservationAgenda.menu'),
+    label: i18n('entities.businessPlaceServiceAvailability.menu'),
+  },
+
+  {
+    path: '/country',
+    permissionRequired: permissions.countryRead,
+    icon: faChevronRight,
+    label: i18n('entities.country.menu'),
+  },
+
+  {
+    path: '/city',
+    permissionRequired: permissions.cityRead,
+    icon: faChevronRight,
+    label: i18n('entities.city.menu'),
+  },
+
+  {
+    path: '/state',
+    permissionRequired: permissions.stateRead,
+    icon: faChevronRight,
+    label: i18n('entities.state.menu'),
+  },
+
+  {
+    path: '/messages',
+    permissionRequired: permissions.messagesRead,
+    icon: faChevronRight,
+    label: i18n('entities.messages.menu'),
+  },
+
+  {
+    path: '/professionals-service-availability',
+    permissionRequired: permissions.professionalsServiceAvailabilityRead,
+    icon: faChevronRight,
+    label: i18n('entities.professionalsServiceAvailability.menu'),
   },
 ].filter(Boolean);

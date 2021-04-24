@@ -10,11 +10,59 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
+import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
+import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
   name: yupFormSchemas.string(
     i18n('entities.business.fields.name'),
+    {},
+  ),
+  services: yupFormSchemas.relationToMany(
+    i18n('entities.business.fields.services'),
+    {},
+  ),
+  contactName: yupFormSchemas.string(
+    i18n('entities.business.fields.contactName'),
+    {},
+  ),
+  contactPhone: yupFormSchemas.string(
+    i18n('entities.business.fields.contactPhone'),
+    {},
+  ),
+  contactWhatsApp: yupFormSchemas.string(
+    i18n('entities.business.fields.contactWhatsApp'),
+    {},
+  ),
+  contactEmail: yupFormSchemas.string(
+    i18n('entities.business.fields.contactEmail'),
+    {},
+  ),
+  addressStreet: yupFormSchemas.string(
+    i18n('entities.business.fields.addressStreet'),
+    {},
+  ),
+  addressStreetNumber: yupFormSchemas.string(
+    i18n('entities.business.fields.addressStreetNumber'),
+    {},
+  ),
+  addressPostCode: yupFormSchemas.string(
+    i18n('entities.business.fields.addressPostCode'),
+    {},
+  ),
+  city: yupFormSchemas.relationToOne(
+    i18n('entities.business.fields.city'),
+    {},
+  ),
+  state: yupFormSchemas.relationToOne(
+    i18n('entities.business.fields.state'),
+    {},
+  ),
+  country: yupFormSchemas.relationToOne(
+    i18n('entities.business.fields.country'),
     {},
   ),
 });
@@ -27,6 +75,17 @@ function BusinessForm(props) {
 
     return {
       name: record.name,
+      services: record.services || [],
+      contactName: record.contactName,
+      contactPhone: record.contactPhone,
+      contactWhatsApp: record.contactWhatsApp,
+      contactEmail: record.contactEmail,
+      addressStreet: record.addressStreet,
+      addressStreetNumber: record.addressStreetNumber,
+      addressPostCode: record.addressPostCode,
+      city: record.city,
+      state: record.state,
+      country: record.country,
     };
   });
 
@@ -55,6 +114,88 @@ function BusinessForm(props) {
             label={i18n('entities.business.fields.name')}
             required={false}
           autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessServicesTypesAutocompleteFormItem
+            name="services"
+            label={i18n('entities.business.fields.services')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="contactName"
+            label={i18n('entities.business.fields.contactName')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="contactPhone"
+            label={i18n('entities.business.fields.contactPhone')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="contactWhatsApp"
+            label={i18n('entities.business.fields.contactWhatsApp')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="contactEmail"
+            label={i18n('entities.business.fields.contactEmail')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="addressStreet"
+            label={i18n('entities.business.fields.addressStreet')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="addressStreetNumber"
+            label={i18n('entities.business.fields.addressStreetNumber')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="addressPostCode"
+            label={i18n('entities.business.fields.addressPostCode')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CityAutocompleteFormItem
+            name="city"
+            label={i18n('entities.business.fields.city')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <StateAutocompleteFormItem
+            name="state"
+            label={i18n('entities.business.fields.state')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CountryAutocompleteFormItem
+            name="country"
+            label={i18n('entities.business.fields.country')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

@@ -9,8 +9,8 @@ import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
-import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
+import RadioFormItem from 'src/view/shared/form/items/RadioFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
 import moment from 'moment';
@@ -38,9 +38,12 @@ const schema = yup.object().shape({
     i18n('entities.serviceReservation.fields.serviceType'),
     {},
   ),
-  time: yupFormSchemas.string(
+  time: yupFormSchemas.enumerator(
     i18n('entities.serviceReservation.fields.time'),
-    {},
+    {
+      "required": true,
+      "options": serviceReservationEnumerators.time
+    },
   ),
   needTransportation: yupFormSchemas.boolean(
     i18n('entities.serviceReservation.fields.needTransportation'),
@@ -128,10 +131,18 @@ function ServiceReservationForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
+          <RadioFormItem
             name="time"
             label={i18n('entities.serviceReservation.fields.time')}
-            required={false}
+            options={serviceReservationEnumerators.time.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.serviceReservation.enumerators.time.${value}`,
+                ),
+              }),
+            )}
+            required={true}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">

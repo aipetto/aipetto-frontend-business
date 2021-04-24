@@ -13,8 +13,8 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  nome: yupFormSchemas.string(
-    i18n('entities.businessServicesTypes.fields.nome'),
+  name: yupFormSchemas.string(
+    i18n('entities.businessServicesTypes.fields.name'),
     {},
   ),
 });
@@ -26,7 +26,7 @@ function BusinessServicesTypesForm(props) {
     const record = props.record || {};
 
     return {
-      nome: record.nome,
+      name: record.name,
     };
   });
 
@@ -51,8 +51,8 @@ function BusinessServicesTypesForm(props) {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="w-full sm:w-md md:w-md lg:w-md">
           <InputFormItem
-            name="nome"
-            label={i18n('entities.businessServicesTypes.fields.nome')}
+            name="name"
+            label={i18n('entities.businessServicesTypes.fields.name')}
             required={false}
           autoFocus
           />

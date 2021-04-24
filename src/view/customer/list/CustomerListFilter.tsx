@@ -22,8 +22,20 @@ import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeF
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
+  businessId: yupFilterSchemas.relationToOne(
+    i18n('entities.customer.fields.businessId'),
+  ),
+  source: yupFilterSchemas.enumerator(
+    i18n('entities.customer.fields.source'),
+  ),
+  userId: yupFilterSchemas.relationToOne(
+    i18n('entities.customer.fields.userId'),
+  ),
   name: yupFilterSchemas.string(
     i18n('entities.customer.fields.name'),
+  ),
+  surname: yupFilterSchemas.string(
+    i18n('entities.customer.fields.surname'),
   ),
   birthdateRange: yupFilterSchemas.dateRange(
     i18n('entities.customer.fields.birthdateRange'),
@@ -31,25 +43,105 @@ const schema = yup.object().shape({
   gender: yupFilterSchemas.enumerator(
     i18n('entities.customer.fields.gender'),
   ),
-  userId: yupFilterSchemas.relationToOne(
-    i18n('entities.customer.fields.userId'),
+  whatsApp: yupFilterSchemas.string(
+    i18n('entities.customer.fields.whatsApp'),
   ),
-  businessId: yupFilterSchemas.relationToOne(
-    i18n('entities.customer.fields.businessId'),
+  phoneNumber: yupFilterSchemas.string(
+    i18n('entities.customer.fields.phoneNumber'),
+  ),
+  address: yupFilterSchemas.string(
+    i18n('entities.customer.fields.address'),
+  ),
+  zipCode: yupFilterSchemas.string(
+    i18n('entities.customer.fields.zipCode'),
+  ),
+  city: yupFilterSchemas.string(
+    i18n('entities.customer.fields.city'),
+  ),
+  state: yupFilterSchemas.string(
+    i18n('entities.customer.fields.state'),
+  ),
+  country: yupFilterSchemas.string(
+    i18n('entities.customer.fields.country'),
+  ),
+  billingAddressStreet: yupFilterSchemas.string(
+    i18n('entities.customer.fields.billingAddressStreet'),
+  ),
+  billingAddressCity: yupFilterSchemas.string(
+    i18n('entities.customer.fields.billingAddressCity'),
+  ),
+  billingAddressState: yupFilterSchemas.string(
+    i18n('entities.customer.fields.billingAddressState'),
+  ),
+  billingAddressZipCode: yupFilterSchemas.string(
+    i18n('entities.customer.fields.billingAddressZipCode'),
+  ),
+  billingAddressCountry: yupFilterSchemas.string(
+    i18n('entities.customer.fields.billingAddressCountry'),
+  ),
+  shippingAddressStreet: yupFilterSchemas.string(
+    i18n('entities.customer.fields.shippingAddressStreet'),
+  ),
+  shippingAddressCity: yupFilterSchemas.string(
+    i18n('entities.customer.fields.shippingAddressCity'),
+  ),
+  shippingAddressState: yupFilterSchemas.string(
+    i18n('entities.customer.fields.shippingAddressState'),
+  ),
+  shippingAddressZipCode: yupFilterSchemas.string(
+    i18n('entities.customer.fields.shippingAddressZipCode'),
+  ),
+  shippingAddressCountry: yupFilterSchemas.string(
+    i18n('entities.customer.fields.shippingAddressCountry'),
   ),
 });
 
 const emptyValues = {
+  businessId: null,
+  source: null,
+  userId: null,
   name: null,
+  surname: null,
   birthdateRange: [],
   gender: null,
-  userId: null,
-  businessId: null,
+  whatsApp: null,
+  phoneNumber: null,
+  address: null,
+  zipCode: null,
+  city: null,
+  state: null,
+  country: null,
+  billingAddressStreet: null,
+  billingAddressCity: null,
+  billingAddressState: null,
+  billingAddressZipCode: null,
+  billingAddressCountry: null,
+  shippingAddressStreet: null,
+  shippingAddressCity: null,
+  shippingAddressState: null,
+  shippingAddressZipCode: null,
+  shippingAddressCountry: null,
 }
 
 const previewRenders = {
+  businessId: {
+      label: i18n('entities.customer.fields.businessId'),
+      render: filterRenders.relationToOne(),
+    },
+  source: {
+    label: i18n('entities.customer.fields.source'),
+    render: filterRenders.enumerator('entities.customer.enumerators.source',),
+  },
+  userId: {
+    label: i18n('entities.customer.fields.userId'),
+    render: filterRenders.relationToOne(),
+  },
   name: {
     label: i18n('entities.customer.fields.name'),
+    render: filterRenders.generic(),
+  },
+  surname: {
+    label: i18n('entities.customer.fields.surname'),
     render: filterRenders.generic(),
   },
   birthdateRange: {
@@ -60,14 +152,74 @@ const previewRenders = {
     label: i18n('entities.customer.fields.gender'),
     render: filterRenders.enumerator('entities.customer.enumerators.gender',),
   },
-  userId: {
-    label: i18n('entities.customer.fields.userId'),
-    render: filterRenders.relationToOne(),
+  whatsApp: {
+    label: i18n('entities.customer.fields.whatsApp'),
+    render: filterRenders.generic(),
   },
-  businessId: {
-      label: i18n('entities.customer.fields.businessId'),
-      render: filterRenders.relationToOne(),
-    },
+  phoneNumber: {
+    label: i18n('entities.customer.fields.phoneNumber'),
+    render: filterRenders.generic(),
+  },
+  address: {
+    label: i18n('entities.customer.fields.address'),
+    render: filterRenders.generic(),
+  },
+  zipCode: {
+    label: i18n('entities.customer.fields.zipCode'),
+    render: filterRenders.generic(),
+  },
+  city: {
+    label: i18n('entities.customer.fields.city'),
+    render: filterRenders.generic(),
+  },
+  state: {
+    label: i18n('entities.customer.fields.state'),
+    render: filterRenders.generic(),
+  },
+  country: {
+    label: i18n('entities.customer.fields.country'),
+    render: filterRenders.generic(),
+  },
+  billingAddressStreet: {
+    label: i18n('entities.customer.fields.billingAddressStreet'),
+    render: filterRenders.generic(),
+  },
+  billingAddressCity: {
+    label: i18n('entities.customer.fields.billingAddressCity'),
+    render: filterRenders.generic(),
+  },
+  billingAddressState: {
+    label: i18n('entities.customer.fields.billingAddressState'),
+    render: filterRenders.generic(),
+  },
+  billingAddressZipCode: {
+    label: i18n('entities.customer.fields.billingAddressZipCode'),
+    render: filterRenders.generic(),
+  },
+  billingAddressCountry: {
+    label: i18n('entities.customer.fields.billingAddressCountry'),
+    render: filterRenders.generic(),
+  },
+  shippingAddressStreet: {
+    label: i18n('entities.customer.fields.shippingAddressStreet'),
+    render: filterRenders.generic(),
+  },
+  shippingAddressCity: {
+    label: i18n('entities.customer.fields.shippingAddressCity'),
+    render: filterRenders.generic(),
+  },
+  shippingAddressState: {
+    label: i18n('entities.customer.fields.shippingAddressState'),
+    render: filterRenders.generic(),
+  },
+  shippingAddressZipCode: {
+    label: i18n('entities.customer.fields.shippingAddressZipCode'),
+    render: filterRenders.generic(),
+  },
+  shippingAddressCountry: {
+    label: i18n('entities.customer.fields.shippingAddressCountry'),
+    render: filterRenders.generic(),
+  },
 }
 
 function CustomerListFilter(props) {
@@ -127,9 +279,33 @@ function CustomerListFilter(props) {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+              <BusinessAutocompleteFormItem
+                name="businessId"
+                label={i18n('entities.customer.fields.businessId')}
+              />
+              <SelectFormItem
+                  name="source"
+                  label={i18n('entities.customer.fields.source')}
+                  options={customerEnumerators.source.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.customer.enumerators.source.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <UserAutocompleteFormItem
+                name="userId"
+                label={i18n('entities.customer.fields.userId')}
+              />
               <InputFormItem
                 name="name"
                 label={i18n('entities.customer.fields.name')}      
+              />
+              <InputFormItem
+                name="surname"
+                label={i18n('entities.customer.fields.surname')}
               />
               <DatePickerRangeFormItem
                 name="birthdateRange"
@@ -147,13 +323,73 @@ function CustomerListFilter(props) {
                     }),
                   )}
                 />
-              <UserAutocompleteFormItem  
-                name="userId"
-                label={i18n('entities.customer.fields.userId')}        
+              <InputFormItem
+                name="whatsApp"
+                label={i18n('entities.customer.fields.whatsApp')}
               />
-              <BusinessAutocompleteFormItem
-                name="businessId"
-                label={i18n('entities.customer.fields.businessId')}
+              <InputFormItem
+                name="phoneNumber"
+                label={i18n('entities.customer.fields.phoneNumber')}
+              />
+              <InputFormItem
+                name="address"
+                label={i18n('entities.customer.fields.address')}
+              />
+              <InputFormItem
+                name="zipCode"
+                label={i18n('entities.customer.fields.zipCode')}
+              />
+              <InputFormItem
+                name="city"
+                label={i18n('entities.customer.fields.city')}
+              />
+              <InputFormItem
+                name="state"
+                label={i18n('entities.customer.fields.state')}
+              />
+              <InputFormItem
+                name="country"
+                label={i18n('entities.customer.fields.country')}
+              />
+              <InputFormItem
+                name="billingAddressStreet"
+                label={i18n('entities.customer.fields.billingAddressStreet')}
+              />
+              <InputFormItem
+                name="billingAddressCity"
+                label={i18n('entities.customer.fields.billingAddressCity')}
+              />
+              <InputFormItem
+                name="billingAddressState"
+                label={i18n('entities.customer.fields.billingAddressState')}
+              />
+              <InputFormItem
+                name="billingAddressZipCode"
+                label={i18n('entities.customer.fields.billingAddressZipCode')}
+              />
+              <InputFormItem
+                name="billingAddressCountry"
+                label={i18n('entities.customer.fields.billingAddressCountry')}
+              />
+              <InputFormItem
+                name="shippingAddressStreet"
+                label={i18n('entities.customer.fields.shippingAddressStreet')}
+              />
+              <InputFormItem
+                name="shippingAddressCity"
+                label={i18n('entities.customer.fields.shippingAddressCity')}
+              />
+              <InputFormItem
+                name="shippingAddressState"
+                label={i18n('entities.customer.fields.shippingAddressState')}
+              />
+              <InputFormItem
+                name="shippingAddressZipCode"
+                label={i18n('entities.customer.fields.shippingAddressZipCode')}
+              />
+              <InputFormItem
+                name="shippingAddressCountry"
+                label={i18n('entities.customer.fields.shippingAddressCountry')}
               />
             </div>
 

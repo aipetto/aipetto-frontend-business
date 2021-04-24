@@ -21,6 +21,7 @@ import petEnumerators from 'src/modules/pet/petEnumerators';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import BreedAutocompleteFormItem from 'src/view/breed/autocomplete/BreedAutocompleteFormItem';
 import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
+import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -47,6 +48,9 @@ const schema = yup.object().shape({
   type: yupFilterSchemas.relationToOne(
     i18n('entities.pet.fields.type'),
   ),
+  customerId: yupFilterSchemas.relationToOne(
+    i18n('entities.pet.fields.customerId'),
+  ),
 });
 
 const emptyValues = {
@@ -58,6 +62,7 @@ const emptyValues = {
   sex: null,
   breed: null,
   type: null,
+  customerId: null,
 }
 
 const previewRenders = {
@@ -91,6 +96,10 @@ const previewRenders = {
     },
   type: {
       label: i18n('entities.pet.fields.type'),
+      render: filterRenders.relationToOne(),
+    },
+  customerId: {
+      label: i18n('entities.pet.fields.customerId'),
       render: filterRenders.relationToOne(),
     },
 }
@@ -199,6 +208,10 @@ function PetListFilter(props) {
               <PetTypesAutocompleteFormItem  
                 name="type"
                 label={i18n('entities.pet.fields.type')}        
+              />
+              <CustomerAutocompleteFormItem
+                name="customerId"
+                label={i18n('entities.pet.fields.customerId')}
               />
             </div>
 

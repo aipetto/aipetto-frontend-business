@@ -279,7 +279,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.breedImage,
         ],
       },
       breedEdit: {
@@ -287,7 +287,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.breedImage,
         ],
       },
       breedDestroy: {
@@ -295,7 +295,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.breedImage,
         ],
       },
       breedRead: {
@@ -509,42 +509,242 @@ class Permissions {
         allowedPlans: [plans.free, plans.premium],
       },
 
-      reservationAgendaImport: {
-        id: 'reservationAgendaImport',
+      businessPlaceServiceAvailabilityImport: {
+        id: 'businessPlaceServiceAvailabilityImport',
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
       },
-      reservationAgendaCreate: {
-        id: 'reservationAgendaCreate',
-        allowedRoles: [roles.aipettoAdmin],
-        allowedPlans: [plans.free, plans.premium],
-        allowedStorage: [
-
-        ],
-      },
-      reservationAgendaEdit: {
-        id: 'reservationAgendaEdit',
+      businessPlaceServiceAvailabilityCreate: {
+        id: 'businessPlaceServiceAvailabilityCreate',
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
       },
-      reservationAgendaDestroy: {
-        id: 'reservationAgendaDestroy',
+      businessPlaceServiceAvailabilityEdit: {
+        id: 'businessPlaceServiceAvailabilityEdit',
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
 
         ],
       },
-      reservationAgendaRead: {
-        id: 'reservationAgendaRead',
+      businessPlaceServiceAvailabilityDestroy: {
+        id: 'businessPlaceServiceAvailabilityDestroy',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      businessPlaceServiceAvailabilityRead: {
+        id: 'businessPlaceServiceAvailabilityRead',
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
       },
-      reservationAgendaAutocomplete: {
-        id: 'reservationAgendaAutocomplete',
+      businessPlaceServiceAvailabilityAutocomplete: {
+        id: 'businessPlaceServiceAvailabilityAutocomplete',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+
+      countryImport: {
+        id: 'countryImport',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      countryCreate: {
+        id: 'countryCreate',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      countryEdit: {
+        id: 'countryEdit',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      countryDestroy: {
+        id: 'countryDestroy',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      countryRead: {
+        id: 'countryRead',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      countryAutocomplete: {
+        id: 'countryAutocomplete',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+
+      cityImport: {
+        id: 'cityImport',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      cityCreate: {
+        id: 'cityCreate',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      cityEdit: {
+        id: 'cityEdit',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      cityDestroy: {
+        id: 'cityDestroy',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      cityRead: {
+        id: 'cityRead',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      cityAutocomplete: {
+        id: 'cityAutocomplete',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+
+      stateImport: {
+        id: 'stateImport',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      stateCreate: {
+        id: 'stateCreate',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      stateEdit: {
+        id: 'stateEdit',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      stateDestroy: {
+        id: 'stateDestroy',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      stateRead: {
+        id: 'stateRead',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      stateAutocomplete: {
+        id: 'stateAutocomplete',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+
+      messagesImport: {
+        id: 'messagesImport',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      messagesCreate: {
+        id: 'messagesCreate',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      messagesEdit: {
+        id: 'messagesEdit',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      messagesDestroy: {
+        id: 'messagesDestroy',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      messagesRead: {
+        id: 'messagesRead',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      messagesAutocomplete: {
+        id: 'messagesAutocomplete',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+
+      professionalsServiceAvailabilityImport: {
+        id: 'professionalsServiceAvailabilityImport',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      professionalsServiceAvailabilityCreate: {
+        id: 'professionalsServiceAvailabilityCreate',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      professionalsServiceAvailabilityEdit: {
+        id: 'professionalsServiceAvailabilityEdit',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      professionalsServiceAvailabilityDestroy: {
+        id: 'professionalsServiceAvailabilityDestroy',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      professionalsServiceAvailabilityRead: {
+        id: 'professionalsServiceAvailabilityRead',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      professionalsServiceAvailabilityAutocomplete: {
+        id: 'professionalsServiceAvailabilityAutocomplete',
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
       },

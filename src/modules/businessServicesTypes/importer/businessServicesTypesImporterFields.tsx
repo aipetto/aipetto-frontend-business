@@ -3,10 +3,10 @@ import { i18n } from 'src/i18n';
 
 export default [
   {
-    name: 'nome',
-    label: i18n('entities.businessServicesTypes.fields.nome'),
+    name: 'name',
+    label: i18n('entities.businessServicesTypes.fields.name'),
     schema: schemas.string(
-      i18n('entities.businessServicesTypes.fields.nome'),
+      i18n('entities.businessServicesTypes.fields.name'),
       {},
     ),
   },

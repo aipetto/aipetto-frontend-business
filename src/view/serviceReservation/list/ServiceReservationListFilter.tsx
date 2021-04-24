@@ -14,7 +14,6 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
-import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
@@ -32,7 +31,7 @@ const schema = yup.object().shape({
   customerId: yupFilterSchemas.relationToOne(
     i18n('entities.serviceReservation.fields.customerId'),
   ),
-  time: yupFilterSchemas.string(
+  time: yupFilterSchemas.enumerator(
     i18n('entities.serviceReservation.fields.time'),
   ),
   needTransportation: yupFilterSchemas.boolean(
@@ -71,7 +70,7 @@ const previewRenders = {
     },
   time: {
     label: i18n('entities.serviceReservation.fields.time'),
-    render: filterRenders.generic(),
+    render: filterRenders.enumerator('entities.serviceReservation.enumerators.time',),
   },
   needTransportation: {
     label: i18n('entities.serviceReservation.fields.needTransportation'),
@@ -156,10 +155,18 @@ function ServiceReservationListFilter(props) {
                 name="customerId"
                 label={i18n('entities.serviceReservation.fields.customerId')}        
               />
-              <InputFormItem
-                name="time"
-                label={i18n('entities.serviceReservation.fields.time')}      
-              />
+              <SelectFormItem
+                  name="time"
+                  label={i18n('entities.serviceReservation.fields.time')}
+                  options={serviceReservationEnumerators.time.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.serviceReservation.enumerators.time.${value}`,
+                      ),
+                    }),
+                  )}
+                />
               <SelectFormItem
                 name="needTransportation"
                 label={i18n('entities.serviceReservation.fields.needTransportation')}

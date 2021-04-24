@@ -2,9 +2,11 @@ import React from 'react';
 import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
+import UserViewItem from 'src/view/user/view/UserViewItem';
 import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
 import BreedViewItem from 'src/view/breed/view/BreedViewItem';
 import PetTypesViewItem from 'src/view/petTypes/view/PetTypesViewItem';
+import CustomerViewItem from 'src/view/customer/view/CustomerViewItem';
 
 function PetView(props) {
   const { record, loading } = props;
@@ -68,6 +70,16 @@ function PetView(props) {
       <PetTypesViewItem
         label={i18n('entities.pet.fields.type')}
         value={record.type}
+      />
+
+      <CustomerViewItem
+        label={i18n('entities.pet.fields.customerId')}
+        value={record.customerId}
+      />
+
+      <UserViewItem
+        label={i18n('entities.pet.fields.petOwners')}
+        value={record.petOwners}
       />
     </div>
   );

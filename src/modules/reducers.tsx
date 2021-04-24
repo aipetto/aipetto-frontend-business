@@ -16,7 +16,12 @@ import business from 'src/modules/business/businessReducers';
 import place from 'src/modules/place/placeReducers';
 import businessServicesTypes from 'src/modules/businessServicesTypes/businessServicesTypesReducers';
 import serviceReservation from 'src/modules/serviceReservation/serviceReservationReducers';
-import reservationAgenda from 'src/modules/reservationAgenda/reservationAgendaReducers';
+import businessPlaceServiceAvailability from 'src/modules/businessPlaceServiceAvailability/businessPlaceServiceAvailabilityReducers';
+import country from 'src/modules/country/countryReducers';
+import city from 'src/modules/city/cityReducers';
+import state from 'src/modules/state/stateReducers';
+import messages from 'src/modules/messages/messagesReducers';
+import professionalsServiceAvailability from 'src/modules/professionalsServiceAvailability/professionalsServiceAvailabilityReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -39,5 +44,10 @@ export default (history) =>
     place,
     businessServicesTypes,
     serviceReservation,
-    reservationAgenda,
+    businessPlaceServiceAvailability,
+    country,
+    city,
+    state,
+    messages,
+    professionalsServiceAvailability,
   });

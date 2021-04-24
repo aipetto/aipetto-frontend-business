@@ -46,6 +46,16 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'customerId',
+    label: i18n('entities.pet.fields.customerId'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'petOwners',
+    label: i18n('entities.pet.fields.petOwners'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.pet.fields.createdAt'),
     render: exporterRenders.datetime(),
