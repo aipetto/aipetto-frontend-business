@@ -31,13 +31,13 @@ function PlaceViewItem(props) {
             className="text-blue-500 dark:text-blue-400 focus:text-blue-400 hover:text-blue-400"
             to={`/place/${record.id}`}
           >
-            {record.id}
+            {record.name}
           </Link>
         </div>
       );
     }
 
-    return <div key={record.id}>{record.id}</div>;
+    return <div key={record.id}>{record.name}</div>;
   };
 
   if (!valueAsArray().length) {

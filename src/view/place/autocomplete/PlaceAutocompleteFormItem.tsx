@@ -51,8 +51,8 @@ function PlaceAutocompleteFormItem(props) {
       const value = originalValue.id;
       let label = originalValue.label;
 
-      if (originalValue.id) {
-        label = originalValue.id;
+      if (originalValue.name) {
+        label = originalValue.name;
       }
 
       return {

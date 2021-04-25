@@ -334,15 +334,26 @@ const yupImporterSchemas = {
       .mixed()
       .nullable(true)
       .label(label)
+      .transform((value) => {
+        if (!value) {
+          return null;
+        }
+
+        if (!(value instanceof Date)) {
+          return 'Invalid date';
+        }
+
+        return moment(value).format('YYYY-MM-DD');
+      })
       .test(
         'is-date',
         i18n('validation.mixed.default'),
-        (value) => {
-          if (!value) {
-            return true;
+        (value, context: any) => {
+          if (context.originalValue === 'Invalid date') {
+            return false;
           }
 
-          return moment(value, 'YYYY-MM-DD').isValid();
+          return true;
         },
       );
 
