@@ -797,8 +797,8 @@ const es = {
         menu: 'BusinessPlaceServiceAvailabilities',
         exporterFileName: 'exportacion_businessPlaceServiceAvailability',
         list: {
-          menu: 'ReservationAgenda',
-          title: 'ReservationAgenda',
+          menu: 'BusinessPlaceServiceAvailabilities',
+          title: 'BusinessPlaceServiceAvailabilities',
         },
         create: {
           success: 'BusinessPlaceServiceAvailability guardado con éxito',
@@ -1354,40 +1354,16 @@ const es = {
         'La URL de su espacio de trabajo solo puede contener letras minúsculas, números y guiones (y debe comenzar con una letra o número).',
     },
   },
-    roles: {
-        aipettoAdmin: {
-            label: 'AIPETTO Admin',
-            description: 'Acceso a todos los recursos de la plataforma',
-        },
-        businessOwner: {
-            label: 'Dueño del negócio',
-            description: 'Dueños de negócios',
-        },
-        adminPetshop: {
-            label: 'Admin Petshop',
-            description: 'Admin para operaciones relacionadas a Petshop',
-        },
-        adminVeterinary: {
-            label: 'Admin Veterinária',
-            description: 'Admin para operaciones relacionadas a veterinárias',
-        },
-        employee: {
-            label: 'Empleado de la veterinária o petshop',
-            description: 'Empleado de la veterinária e petshop',
-        },
-        petOwner: {
-            label: 'Dueño del pet',
-            description: 'Dueño de mascotas',
-        },
-        veterinarian: {
-            label: 'Veterinario',
-            description: 'Veterinário',
-        },
-        transporter: {
-            label: 'Transportador',
-            description: 'Negocio que ofrece servicios de transporte de mascotas',
-        },
+  roles: {
+    admin: {
+      label: 'Administración',
+      description: 'Acceso total a todos los recursos.',
     },
+    custom: {
+      label: 'Rol personalizado',
+      description: 'Acceso personalizado a recursos',
+    },
+  },
   user: {
     invite: 'Invitación',
     title: 'Usuarios',

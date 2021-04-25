@@ -69,13 +69,41 @@ const en = {
           'birthdateRange': 'Birthdate',
           'birthdate': 'Birthdate',
           'gender': 'Gender',
-          'userId': 'UserId',
-          'businessId': 'BusinessId',
+          'whatsApp': 'WhatsApp',
+          'phoneNumber': 'PhoneNumber',
+          'address': 'Address',
+          'zipCode': 'ZipCode',
+          'city': 'City',
+          'state': 'State',
+          'country': 'Country',
+          'billingAddressStreet': 'BillingAddressStreet',
+          'billingAddressCity': 'BillingAddressCity',
+          'billingAddressState': 'BillingAddressState',
+          'billingAddressZipCode': 'BillingAddressZipCode',
+          'billingAddressCountry': 'BillingAddressCountry',
+          'shippingAddressStreet': 'ShippingAddressStreet',
+          'shippingAddressCity': 'ShippingAddressCity',
+          'shippingAddressState': 'ShippingAddressState',
+          'shippingAddressZipCode': 'ShippingAddressZipCode',
+          'shippingAddressCountry': 'ShippingAddressCountry',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
         },
         enumerators: {
+          'source': {
+            'aipetto': 'Aipetto',
+            'facebook': 'Facebook',
+            'twitter': 'Twitter',
+            'instagram': 'Instagram',
+            'youtube': 'Youtube',
+            'telegram': 'Telegram',
+            'whatsapp': 'Whatsapp',
+            'email': 'Email',
+            'phone': 'Phone',
+            'direct': 'Direct',
+            'friend_recomendation': 'Friend_recomendation',
+          },
           'gender': {
             'male': 'Male',
             'female': 'Female',
@@ -256,6 +284,8 @@ const en = {
           'sex': 'Sex',
           'breed': 'Breed',
           'type': 'Type',
+          'customerId': 'CustomerId',
+          'petOwners': 'PetOwners',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -490,6 +520,17 @@ const en = {
         fields: {
           id: 'Id',
           'name': 'Name',
+          'services': 'Services',
+          'contactName': 'ContactName',
+          'contactPhone': 'ContactPhone',
+          'contactWhatsApp': 'ContactWhatsApp',
+          'contactEmail': 'ContactEmail',
+          'addressStreet': 'AddressStreet',
+          'addressStreetNumber': 'AddressStreetNumber',
+          'addressPostCode': 'AddressPostCode',
+          'city': 'City',
+          'state': 'State',
+          'country': 'Country',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -607,7 +648,7 @@ const en = {
         },
         fields: {
           id: 'Id',
-          'nome': 'Nome',
+          'name': 'Name',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -675,6 +716,53 @@ const en = {
           createdAtRange: 'Created at',
         },
         enumerators: {
+          'time': {
+            '06_00AM': '06_00AM',
+            '06_30AM': '06_30AM',
+            '07_00AM': '07_00AM',
+            '07_30AM': '07_30AM',
+            '08_00AM': '08_00AM',
+            '08_30AM': '08_30AM',
+            '09_00AM': '09_00AM',
+            '09_30AM': '09_30AM',
+            '10_00AM': '10_00AM',
+            '10_30AM': '10_30AM',
+            '11_00AM': '11_00AM',
+            '11_30AM': '11_30AM',
+            '12_00AM': '12_00AM',
+            '12_30PM': '12_30PM',
+            '01_30PM': '01_30PM',
+            '02_00PM': '02_00PM',
+            '02_30PM': '02_30PM',
+            '03_00PM': '03_00PM',
+            '03_30PM': '03_30PM',
+            '04_00PM': '04_00PM',
+            '04_30PM': '04_30PM',
+            '05_00PM': '05_00PM',
+            '05_30PM': '05_30PM',
+            '06_00PM': '06_00PM',
+            '06_30PM': '06_30PM',
+            '07_00PM': '07_00PM',
+            '07_30PM': '07_30PM',
+            '08_00PM': '08_00PM',
+            '09_30PM': '09_30PM',
+            '10_00PM': '10_00PM',
+            '10_30PM': '10_30PM',
+            '11_00PM': '11_00PM',
+            '11_30PM': '11_30PM',
+            '00_00AM': '00_00AM',
+            '00_30AM': '00_30AM',
+            '01_00AM': '01_00AM',
+            '01_30AM': '01_30AM',
+            '02_00AM': '02_00AM',
+            '02_30AM': '02_30AM',
+            '03_00AM': '03_00AM',
+            '03_30AM': '03_30AM',
+            '04_00AM': '04_00AM',
+            '04_30AM': '04_30AM',
+            '05_00': '05_00',
+            '05_30AM': '05_30AM',
+          },
           'status': {
             'user_approval_pending': 'User_approval_pending',
             'business_approval_pending': 'Business_approval_pending',
@@ -702,73 +790,99 @@ const en = {
         },
       },
 
-    reservationAgenda: {
-        name: 'reservationAgenda',
-        label: 'ReservationAgenda',
-        menu: 'ReservationAgenda',
-        exporterFileName: 'reservationAgenda_export',
+    businessPlaceServiceAvailability: {
+        name: 'businessPlaceServiceAvailability',
+        label: 'BusinessPlaceServiceAvailabilities',
+        menu: 'BusinessPlaceServiceAvailabilities',
+        exporterFileName: 'businessPlaceServiceAvailability_export',
         list: {
-          menu: 'ReservationAgenda',
-          title: 'ReservationAgenda',
+          menu: 'BusinessPlaceServiceAvailabilities',
+          title: 'BusinessPlaceServiceAvailabilities',
         },
         create: {
-          success: 'ReservationAgenda successfully saved',
+          success: 'BusinessPlaceServiceAvailability successfully saved',
         },
         update: {
-          success: 'ReservationAgenda successfully saved',
+          success: 'BusinessPlaceServiceAvailability successfully saved',
         },
         destroy: {
-          success: 'ReservationAgenda successfully deleted',
+          success: 'BusinessPlaceServiceAvailability successfully deleted',
         },
         destroyAll: {
-          success: 'ReservationAgenda(s) successfully deleted',
+          success: 'BusinessPlaceServiceAvailability(s) successfully deleted',
         },
         edit: {
-          title: 'Edit ReservationAgenda',
+          title: 'Edit BusinessPlaceServiceAvailability',
         },
         fields: {
           id: 'Id',
+          'name': 'Name',
           'businessId': 'BusinessId',
           'timeSlot': 'TimeSlot',
+          'days': 'Days',
+          'workOnHolidays': 'WorkOnHolidays',
           'serviceType': 'ServiceType',
-          'name': 'Name',
+          'places': 'Places',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
         },
         enumerators: {
           'timeSlot': {
-            '06_00': '06_00',
-            '06_30': '06_30',
-            '07_00': '07_00',
-            '07_30': '07_30',
-            '08_00': '08_00',
-            '08_30': '08_30',
-            '09_00': '09_00',
-            '09_30': '09_30',
-            '10_00': '10_00',
-            '10_30': '10_30',
-            '11_00': '11_00',
-            '11_30': '11_30',
-            '12_00': '12_00',
-            '12_30': '12_30',
-            '13_00': '13_00',
-            '13_30': '13_30',
-            '14_00': '14_00',
-            '14_30': '14_30',
-            '15_00': '15_00',
-            '15_30': '15_30',
-            '16_00': '16_00',
-            '16_30': '16_30',
-            '17': '17',
-            '17_30': '17_30',
-            '18_00': '18_00',
-            '18_30': '18_30',
-            '19_00': '19_00',
-            '19_30': '19_30',
-            '20_00': '20_00',
-            '20_30': '20_30',
-            '21_00': '21_00',
+            '06_00AM': '06_00AM',
+            '06_30AM': '06_30AM',
+            '07_00AM': '07_00AM',
+            '07_30AM': '07_30AM',
+            '08_00AM': '08_00AM',
+            '08_30AM': '08_30AM',
+            '09_00AM': '09_00AM',
+            '09_30AM': '09_30AM',
+            '10_00AM': '10_00AM',
+            '10_30AM': '10_30AM',
+            '11_00AM': '11_00AM',
+            '11_30AM': '11_30AM',
+            '12_00AM': '12_00AM',
+            '12_30PM': '12_30PM',
+            '01_30PM': '01_30PM',
+            '02_00PM': '02_00PM',
+            '02_30PM': '02_30PM',
+            '03_00PM': '03_00PM',
+            '03_30PM': '03_30PM',
+            '04_00PM': '04_00PM',
+            '04_30PM': '04_30PM',
+            '05_00PM': '05_00PM',
+            '05_30PM': '05_30PM',
+            '06_00PM': '06_00PM',
+            '06_30PM': '06_30PM',
+            '07_00PM': '07_00PM',
+            '07_30PM': '07_30PM',
+            '08_00PM': '08_00PM',
+            '09_30PM': '09_30PM',
+            '10_00PM': '10_00PM',
+            '10_30PM': '10_30PM',
+            '11_00PM': '11_00PM',
+            '11_30PM': '11_30PM',
+            '00_00AM': '00_00AM',
+            '00_30AM': '00_30AM',
+            '01_00AM': '01_00AM',
+            '01_30AM': '01_30AM',
+            '02_00AM': '02_00AM',
+            '02_30AM': '02_30AM',
+            '03_00AM': '03_00AM',
+            '03_30AM': '03_30AM',
+            '04_00AM': '04_00AM',
+            '04_30AM': '04_30AM',
+            '05_00': '05_00',
+            '05_30AM': '05_30AM',
+          },
+          'days': {
+            'sunday': 'Sunday',
+            'monday': 'Monday',
+            'tuesday': 'Tuesday',
+            'wednesday': 'Wednesday',
+            'thursday': 'Thursday',
+            'friday': 'Friday',
+            'saturday': 'Saturday',
           },
         },
         placeholders: {
@@ -778,14 +892,347 @@ const en = {
 
         },
         new: {
-          title: 'New ReservationAgenda',
+          title: 'New BusinessPlaceServiceAvailability',
         },
         view: {
-          title: 'View ReservationAgenda',
+          title: 'View BusinessPlaceServiceAvailability',
         },
         importer: {
-          title: 'Import ReservationAgenda',
-          fileName: 'reservationAgenda_import_template',
+          title: 'Import BusinessPlaceServiceAvailabilities',
+          fileName: 'businessPlaceServiceAvailability_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    country: {
+        name: 'country',
+        label: 'Countries',
+        menu: 'Countries',
+        exporterFileName: 'country_export',
+        list: {
+          menu: 'Countries',
+          title: 'Countries',
+        },
+        create: {
+          success: 'Country successfully saved',
+        },
+        update: {
+          success: 'Country successfully saved',
+        },
+        destroy: {
+          success: 'Country successfully deleted',
+        },
+        destroyAll: {
+          success: 'Country(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Country',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'initials': 'Initials',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Country',
+        },
+        view: {
+          title: 'View Country',
+        },
+        importer: {
+          title: 'Import Countries',
+          fileName: 'country_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    city: {
+        name: 'city',
+        label: 'Cities',
+        menu: 'Cities',
+        exporterFileName: 'city_export',
+        list: {
+          menu: 'Cities',
+          title: 'Cities',
+        },
+        create: {
+          success: 'City successfully saved',
+        },
+        update: {
+          success: 'City successfully saved',
+        },
+        destroy: {
+          success: 'City successfully deleted',
+        },
+        destroyAll: {
+          success: 'City(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit City',
+        },
+        fields: {
+          id: 'Id',
+          'country': 'Country',
+          'name': 'Name',
+          'latitudeRange': 'Latitude',
+          'latitude': 'Latitude',
+          'longitudeRange': 'Longitude',
+          'longitude': 'Longitude',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New City',
+        },
+        view: {
+          title: 'View City',
+        },
+        importer: {
+          title: 'Import Cities',
+          fileName: 'city_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    state: {
+        name: 'state',
+        label: 'States',
+        menu: 'States',
+        exporterFileName: 'state_export',
+        list: {
+          menu: 'States',
+          title: 'States',
+        },
+        create: {
+          success: 'State successfully saved',
+        },
+        update: {
+          success: 'State successfully saved',
+        },
+        destroy: {
+          success: 'State successfully deleted',
+        },
+        destroyAll: {
+          success: 'State(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit State',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'country': 'Country',
+          'initials': 'Initials',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New State',
+        },
+        view: {
+          title: 'View State',
+        },
+        importer: {
+          title: 'Import States',
+          fileName: 'state_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    messages: {
+        name: 'messages',
+        label: 'Messages',
+        menu: 'Messages',
+        exporterFileName: 'messages_export',
+        list: {
+          menu: 'Messages',
+          title: 'Messages',
+        },
+        create: {
+          success: 'Messages successfully saved',
+        },
+        update: {
+          success: 'Messages successfully saved',
+        },
+        destroy: {
+          success: 'Messages successfully deleted',
+        },
+        destroyAll: {
+          success: 'Messages(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Messages',
+        },
+        fields: {
+          id: 'Id',
+          'from': 'From',
+          'to': 'To',
+          'message': 'Message',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Messages',
+        },
+        view: {
+          title: 'View Messages',
+        },
+        importer: {
+          title: 'Import Messages',
+          fileName: 'messages_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    professionalsServiceAvailability: {
+        name: 'professionalsServiceAvailability',
+        label: 'ProfessionalsServiceAvailabilities',
+        menu: 'ProfessionalsServiceAvailabilities',
+        exporterFileName: 'professionalsServiceAvailability_export',
+        list: {
+          menu: 'ProfessionalsServiceAvailabilities',
+          title: 'ProfessionalsServiceAvailabilities',
+        },
+        create: {
+          success: 'ProfessionalsServiceAvailability successfully saved',
+        },
+        update: {
+          success: 'ProfessionalsServiceAvailability successfully saved',
+        },
+        destroy: {
+          success: 'ProfessionalsServiceAvailability successfully deleted',
+        },
+        destroyAll: {
+          success: 'ProfessionalsServiceAvailability(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit ProfessionalsServiceAvailability',
+        },
+        fields: {
+          id: 'Id',
+          'userId': 'UserId',
+          'businessId': 'BusinessId',
+          'serviceType': 'ServiceType',
+          'timeSlot': 'TimeSlot',
+          'dateAvailabilityStartRange': 'DateAvailabilityStart',
+          'dateAvailabilityStart': 'DateAvailabilityStart',
+          'dateAvailabilityEndRange': 'DateAvailabilityEnd',
+          'dateAvailabilityEnd': 'DateAvailabilityEnd',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'timeSlot': {
+            '06_00AM': '06_00AM',
+            '06_30AM': '06_30AM',
+            '07_00AM': '07_00AM',
+            '07_30AM': '07_30AM',
+            '08_00AM': '08_00AM',
+            '08_30AM': '08_30AM',
+            '09_00AM': '09_00AM',
+            '09_30AM': '09_30AM',
+            '10_00AM': '10_00AM',
+            '10_30AM': '10_30AM',
+            '11_00AM': '11_00AM',
+            '11_30AM': '11_30AM',
+            '12_00AM': '12_00AM',
+            '12_30PM': '12_30PM',
+            '01_30PM': '01_30PM',
+            '02_00PM': '02_00PM',
+            '02_30PM': '02_30PM',
+            '03_00PM': '03_00PM',
+            '03_30PM': '03_30PM',
+            '04_00PM': '04_00PM',
+            '04_30PM': '04_30PM',
+            '05_00PM': '05_00PM',
+            '05_30PM': '05_30PM',
+            '06_00PM': '06_00PM',
+            '06_30PM': '06_30PM',
+            '07_00PM': '07_00PM',
+            '07_30PM': '07_30PM',
+            '08_00PM': '08_00PM',
+            '09_30PM': '09_30PM',
+            '10_00PM': '10_00PM',
+            '10_30PM': '10_30PM',
+            '11_00PM': '11_00PM',
+            '11_30PM': '11_30PM',
+            '00_00AM': '00_00AM',
+            '00_30AM': '00_30AM',
+            '01_00AM': '01_00AM',
+            '01_30AM': '01_30AM',
+            '02_00AM': '02_00AM',
+            '02_30AM': '02_30AM',
+            '03_00AM': '03_00AM',
+            '03_30AM': '03_30AM',
+            '04_00AM': '04_00AM',
+            '04_30AM': '04_30AM',
+            '05_00': '05_00',
+            '05_30AM': '05_30AM',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New ProfessionalsServiceAvailability',
+        },
+        view: {
+          title: 'View ProfessionalsServiceAvailability',
+        },
+        importer: {
+          title: 'Import ProfessionalsServiceAvailabilities',
+          fileName: 'professionalsServiceAvailability_import_template',
           hint:
             'Files/Images columns must be the URLs of the files separated by space.',
         },
@@ -849,41 +1296,40 @@ const en = {
     },
   },
 
-  roles: {
-    aipettoAdmin: {
-      label: 'AIPETTO Admin',
-      description: 'Full access to all resources',
+    roles: {
+        aipettoAdmin: {
+            label: 'AIPETTO Admin',
+            description: 'Acesso a todos os recursos da plataforma',
+        },
+        businessOwner: {
+            label: 'Business Owner',
+            description: 'Business Owner',
+        },
+        adminPetshop: {
+            label: 'Admin Petshop',
+            description: 'Admin Petshop',
+        },
+        adminVeterinary: {
+            label: 'Admin Veterinarian',
+            description: 'Admin Veterinarian',
+        },
+        employee: {
+            label: 'Employee',
+            description: 'Employee',
+        },
+        petOwner: {
+            label: 'Pet Owner',
+            description: 'Owner of pets',
+        },
+        veterinarian: {
+            label: 'Veterinarian',
+            description: 'Veterinarian',
+        },
+        transporter: {
+            label: 'Transporter',
+            description: 'Transporter',
+        },
     },
-    businessOwner: {
-      label: 'Business Owner',
-      description: 'Full access to all resources that business has access',
-    },
-    adminPetshop: {
-      label: 'Admin Petshop',
-      description: 'Full access to resources related to Petshop',
-    },
-    adminVeterinary: {
-      label: 'Admin Veterinary',
-      description: 'Full access to resources related to Veterinary',
-    },
-    employee: {
-      label: 'Petshop/Vet Employee',
-      description: 'Have general basic access',
-    },
-    petOwner: {
-      label: 'Pet Owner',
-      description: 'End user with access to public general resources',
-    },
-    veterinarian: {
-      label: 'Veterinarian',
-      description: 'End user with access to public general resources',
-    },
-    transporter: {
-      label: 'Transporter',
-      description: 'Provides services of transportation',
-    },
-  },
-
   user: {
     fields: {
       id: 'Id',
@@ -1010,11 +1456,15 @@ const en = {
 
     free: {
       label: 'Free',
-      price: '£0',
+      price: '$0',
     },
-    premium: {
-      label: 'Premium',
-      price: '£50',
+    growth: {
+      label: 'Growth',
+      price: '$10',
+    },
+    enterprise: {
+      label: 'Enterprise',
+      price: '$50',
     },
 
     pricingPeriod: '/month',
@@ -1076,7 +1526,7 @@ const en = {
   },
   dashboard: {
     menu: 'Dashboard',
-    message: `This page uses fake data.`,
+    message: `This page uses fake data for demonstration purposes only. You can edit it at frontend/view/dashboard/DashboardPage.ts.`,
     charts: {
       day: 'Day',
       red: 'Red',
