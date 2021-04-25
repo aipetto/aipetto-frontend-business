@@ -65,7 +65,11 @@ const en = {
         },
         fields: {
           id: 'Id',
+          'businessId': 'BusinessId',
+          'source': 'Source',
+          'userId': 'UserId',
           'name': 'Name',
+          'surname': 'Surname',
           'birthdateRange': 'Birthdate',
           'birthdate': 'Birthdate',
           'gender': 'Gender',
@@ -584,6 +588,7 @@ const en = {
         },
         fields: {
           id: 'Id',
+          'name': 'Name',
           'businessId': 'BusinessId',
           'latitudeRange': 'Latitude',
           'latitude': 'Latitude',

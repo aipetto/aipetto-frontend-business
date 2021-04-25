@@ -586,6 +586,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
+          'name': 'Name',
           'businessId': 'BusinessId',
           'latitudeRange': 'Latitude',
           'latitude': 'Latitude',

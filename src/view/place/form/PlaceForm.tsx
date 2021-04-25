@@ -15,6 +15,12 @@ import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/Busines
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
+  name: yupFormSchemas.string(
+    i18n('entities.place.fields.name'),
+    {
+      "required": true
+    },
+  ),
   businessId: yupFormSchemas.relationToOne(
     i18n('entities.place.fields.businessId'),
     {},
@@ -60,6 +66,7 @@ function PlaceForm(props) {
     const record = props.record || {};
 
     return {
+      name: record.name,
       businessId: record.businessId,
       latitude: record.latitude,
       longitude: record.longitude,
@@ -92,7 +99,15 @@ function PlaceForm(props) {
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="w-full sm:w-md md:w-md lg:w-md">
-          <BusinessAutocompleteFormItem  
+          <InputFormItem
+            name="name"
+            label={i18n('entities.place.fields.name')}
+            required={true}
+          autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessAutocompleteFormItem
             name="businessId"
             label={i18n('entities.place.fields.businessId')}
             required={false}

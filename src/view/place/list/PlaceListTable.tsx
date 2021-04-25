@@ -110,6 +110,15 @@ function PlaceListTable(props) {
                 )}
               </TableColumnHeader>
                 <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'name'}
+                  label={i18n(
+                    'entities.place.fields.name',
+                  )}
+                />
+                <TableColumnHeader
                   label={i18n(
                     'entities.place.fields.businessId',
                   )}
@@ -226,6 +235,7 @@ function PlaceListTable(props) {
                       }
                     />
                   </th>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessListItem value={row.businessId} />
                   </td>

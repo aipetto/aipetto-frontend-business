@@ -20,6 +20,9 @@ import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
+  name: yupFilterSchemas.string(
+    i18n('entities.place.fields.name'),
+  ),
   businessId: yupFilterSchemas.relationToOne(
     i18n('entities.place.fields.businessId'),
   ),
@@ -50,6 +53,7 @@ const schema = yup.object().shape({
 });
 
 const emptyValues = {
+  name: null,
   businessId: null,
   latitudeRange: [],
   longitudeRange: [],
@@ -62,6 +66,10 @@ const emptyValues = {
 }
 
 const previewRenders = {
+  name: {
+    label: i18n('entities.place.fields.name'),
+    render: filterRenders.generic(),
+  },
   businessId: {
       label: i18n('entities.place.fields.businessId'),
       render: filterRenders.relationToOne(),
@@ -157,7 +165,11 @@ function PlaceListFilter(props) {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-              <BusinessAutocompleteFormItem  
+              <InputFormItem
+                name="name"
+                label={i18n('entities.place.fields.name')}
+              />
+              <BusinessAutocompleteFormItem
                 name="businessId"
                 label={i18n('entities.place.fields.businessId')}        
               />

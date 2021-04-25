@@ -3,6 +3,16 @@ import { i18n } from 'src/i18n';
 
 export default [
   {
+    name: 'name',
+    label: i18n('entities.place.fields.name'),
+    schema: schemas.string(
+      i18n('entities.place.fields.name'),
+      {
+        "required": true
+      },
+    ),
+  },
+  {
     name: 'businessId',
     label: i18n('entities.place.fields.businessId'),
     schema: schemas.relationToOne(

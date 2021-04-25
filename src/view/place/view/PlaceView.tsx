@@ -13,6 +13,11 @@ function PlaceView(props) {
 
   return (
     <div>
+      <TextViewItem
+        label={i18n('entities.place.fields.name')}
+        value={record.name}
+      />
+
       <BusinessViewItem
         label={i18n('entities.place.fields.businessId')}
         value={record.businessId}

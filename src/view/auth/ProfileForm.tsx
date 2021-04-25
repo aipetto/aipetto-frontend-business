@@ -86,7 +86,7 @@ function ProfileFormPage(props) {
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="w-full sm:w-md md:w-md lg:w-md">
+        <div className="w-full md:w-md lg:w-md">
           <label className="block text-sm text-gray-800 dark:text-gray-200">
             {i18n('user.fields.email')}
           </label>

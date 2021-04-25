@@ -53,7 +53,7 @@ function SignupPage() {
 
   const form = useForm({
     resolver: yupResolver(schema),
-    mode: 'all',
+    mode: 'onSubmit',
     defaultValues: initialValues,
   });
 
