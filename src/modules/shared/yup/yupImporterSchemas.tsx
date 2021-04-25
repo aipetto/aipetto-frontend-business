@@ -310,13 +310,16 @@ const yupImporterSchemas = {
       .mixed()
       .nullable(true)
       .label(label)
-      .transform((value, originalValue) =>
-        originalValue
-          ? moment(
-              originalValue,
-              'YYYY-MM-DD HH:mm',
-            ).toISOString()
-          : null,
+      .test(
+        'is-date',
+        i18n('validation.mixed.default'),
+        (value) => {
+          if (!value) {
+            return true;
+          }
+
+          return value instanceof Date;
+        },
       );
 
     if (config.required) {

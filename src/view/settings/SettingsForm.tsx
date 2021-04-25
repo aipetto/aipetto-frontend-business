@@ -63,7 +63,7 @@ function SettingsForm(props) {
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="w-full sm:w-md md:w-md lg:w-md">
+        <div className="w-full md:w-md lg:w-md">
           <ImagesFormItem
             name="logos"
             label={i18n('settings.fields.logos')}

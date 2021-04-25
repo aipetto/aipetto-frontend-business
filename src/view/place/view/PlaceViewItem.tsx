@@ -45,8 +45,8 @@ function PlaceViewItem(props) {
   }
 
   return (
-    <div style={{ marginBottom: '16px' }}>
-      <label className="col-form-label">
+    <div className="mb-4">
+      <label className="text-medium text-gray-600 dark:text-gray-400">
         {props.label}
       </label>
       {valueAsArray().map((value) =>

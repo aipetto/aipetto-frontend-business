@@ -37,7 +37,6 @@ export default class Importer {
         header: 1,
         blankrows: false,
         range: skipHeader ? 1 : undefined,
-        raw: true,
       },
     );
 
@@ -49,6 +48,7 @@ export default class Importer {
       const data = await this._readFile(file);
       return XLSX.read(data, {
         type: 'array',
+        cellDates: true,
       });
     } catch (error) {
       throw new Error(

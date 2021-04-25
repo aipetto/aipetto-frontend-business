@@ -1,6 +1,7 @@
 import schemas from 'src/modules/shared/yup/yupImporterSchemas';
 import { i18n } from 'src/i18n';
 import customerEnumerators from 'src/modules/customer/customerEnumerators';
+import moment from 'moment';
 
 export default [
   {
@@ -56,6 +57,7 @@ export default [
       i18n('entities.customer.fields.birthdate'),
       {},
     ),
+   render: (value) => value && value instanceof Date ? moment(value).format('YYYY-MM-DD') : value,
   },
   {
     name: 'gender',

@@ -146,7 +146,7 @@ const HomePage = (props) => {
 
                     <div className="py-8">
                         <div className="lg:w-4/6 text-center mx-auto">
-                            <h2 className="text-2xl md:text-4xl font-bold">Over 23.000 people like AIPETTO! Woof woof for that! See what they say.</h2>
+                            <h2 className="text-2xl md:text-4xl font-bold">See what people say about AIPETTO! Woof woof for that!</h2>
                         </div>
                     </div>
 
@@ -166,9 +166,9 @@ const HomePage = (props) => {
                         </div>
                     </div>
 
-                    <div className=" text-center flex ">
+                    {/*<div className=" text-center flex ">
                         <img src="images/girl-cat-friend.png" className="w-64 lazy mx-auto" alt="Drawing Friends"/>
-                    </div>
+                    </div>*/}
 
                     <div className="  text-center flex flex-col md:flex-row">
 

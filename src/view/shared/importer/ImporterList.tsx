@@ -96,7 +96,15 @@ export default (selectors, actions, fields) => {
                       className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm"
                       key={schemaItem.name}
                     >
-                      {row[schemaItem.name]}
+                      <pre
+                        style={{ fontFamily: 'inherit' }}
+                      >{schemaItem.render
+                            ? schemaItem.render(
+                                row[schemaItem.name],
+                              )
+                            : row[schemaItem.name] != null
+                            ? String(row[schemaItem.name])
+                            : null}</pre>
                     </td>
                   ))}
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">

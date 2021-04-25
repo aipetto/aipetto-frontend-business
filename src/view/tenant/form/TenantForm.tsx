@@ -74,7 +74,7 @@ function TenantForm(props) {
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="w-full sm:w-md md:w-md lg:w-md">
+        <div className="w-full md:w-md lg:w-md">
           <InputFormItem
             name="name"
             label={i18n('tenant.fields.name')}

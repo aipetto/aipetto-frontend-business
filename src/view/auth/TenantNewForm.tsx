@@ -55,7 +55,7 @@ function TenantNewForm(props) {
 
   const form = useForm({
     resolver: yupResolver(schema),
-    mode: 'all',
+    mode: 'onSubmit',
     defaultValues: initialValues,
   });
 
@@ -65,8 +65,8 @@ function TenantNewForm(props) {
     authSelectors.selectInvitedTenants,
   );
 
-  const onSubmit = ({ name }) => {
-    dispatch(actions.doCreate({ name }));
+  const onSubmit = (values) => {
+    dispatch(actions.doCreate(values));
   };
 
   return (

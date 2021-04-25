@@ -1,5 +1,6 @@
 import schemas from 'src/modules/shared/yup/yupImporterSchemas';
 import { i18n } from 'src/i18n';
+import moment from 'moment';
 
 export default [
   {
@@ -41,6 +42,7 @@ export default [
       i18n('entities.professionalsServiceAvailability.fields.dateAvailabilityStart'),
       {},
     ),
+   render: (value) => value && value instanceof Date ? moment(value).format('YYYY-MM-DD') : value,
   },
   {
     name: 'dateAvailabilityEnd',
@@ -49,5 +51,6 @@ export default [
       i18n('entities.professionalsServiceAvailability.fields.dateAvailabilityEnd'),
       {},
     ),
+   render: (value) => value && value instanceof Date ? moment(value).format('YYYY-MM-DD') : value,
   },
 ];

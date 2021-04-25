@@ -10,6 +10,7 @@ export default [
       i18n('entities.serviceReservation.fields.date'),
       {},
     ),
+   render: (value) => value && value instanceof Date ? moment(value).format('YYYY-MM-DD') : value,
   },
   {
     name: 'businessId',

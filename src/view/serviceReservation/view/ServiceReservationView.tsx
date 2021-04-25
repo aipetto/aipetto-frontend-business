@@ -38,7 +38,12 @@ function ServiceReservationView(props) {
 
       <TextViewItem
         label={i18n('entities.serviceReservation.fields.time')}
-        value={record.time}
+        value={
+          record.time &&
+          i18n(
+            `entities.serviceReservation.enumerators.time.${record.time}`,
+          )
+        }
       />
 
       <TextViewItem
