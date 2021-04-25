@@ -10,7 +10,6 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
-import RadioFormItem from 'src/view/shared/form/items/RadioFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
 import moment from 'moment';
@@ -131,7 +130,7 @@ function ServiceReservationForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <RadioFormItem
+          <SelectFormItem
             name="time"
             label={i18n('entities.serviceReservation.fields.time')}
             options={serviceReservationEnumerators.time.map(
