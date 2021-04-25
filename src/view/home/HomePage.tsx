@@ -146,7 +146,7 @@ const HomePage = (props) => {
 
                     <div className="py-8">
                         <div className="lg:w-4/6 text-center mx-auto">
-                            <h2 className="text-2xl md:text-4xl font-bold">See what people say about AIPETTO! Woof woof for that!</h2>
+                            <h2 className="text-2xl md:text-4xl font-bold">See what people are saying about AIPETTO! Woof woof for that!</h2>
                         </div>
                     </div>
 

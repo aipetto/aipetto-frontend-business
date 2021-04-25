@@ -1,5 +1,6 @@
 import schemas from 'src/modules/shared/yup/yupImporterSchemas';
 import { i18n } from 'src/i18n';
+import moment from 'moment';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
 
 export default [
