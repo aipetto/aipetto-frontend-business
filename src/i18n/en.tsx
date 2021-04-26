@@ -628,28 +628,28 @@ const en = {
       },
 
     businessServicesTypes: {
-        name: 'businessServicesTypes',
-        label: 'BusinessServicesTypes',
-        menu: 'BusinessServicesTypes',
+        name: 'Service Types',
+        label: 'Service Types',
+        menu: 'Service Types',
         exporterFileName: 'businessServicesTypes_export',
         list: {
-          menu: 'BusinessServicesTypes',
-          title: 'BusinessServicesTypes',
+          menu: 'Service Types',
+          title: 'Service Types',
         },
         create: {
-          success: 'BusinessServicesTypes successfully saved',
+          success: 'Service type successfully saved',
         },
         update: {
-          success: 'BusinessServicesTypes successfully saved',
+          success: 'Service type successfully saved',
         },
         destroy: {
-          success: 'BusinessServicesTypes successfully deleted',
+          success: 'Service type successfully deleted',
         },
         destroyAll: {
-          success: 'BusinessServicesTypes(s) successfully deleted',
+          success: 'Service type(s) successfully deleted',
         },
         edit: {
-          title: 'Edit BusinessServicesTypes',
+          title: 'Edit Service type',
         },
         fields: {
           id: 'Id',
@@ -668,13 +668,13 @@ const en = {
 
         },
         new: {
-          title: 'New BusinessServicesTypes',
+          title: 'New service type',
         },
         view: {
-          title: 'View BusinessServicesTypes',
+          title: 'View service type',
         },
         importer: {
-          title: 'Import BusinessServicesTypes',
+          title: 'Import service type',
           fileName: 'businessServicesTypes_import_template',
           hint:
             'Files/Images columns must be the URLs of the files separated by space.',
@@ -1467,9 +1467,9 @@ const en = {
       label: 'Growth',
       price: '$10',
     },
-    enterprise: {
-      label: 'Enterprise',
-      price: '$50',
+    premium: {
+      label: 'Premium',
+      price: '£50',
     },
 
     pricingPeriod: '/month',
