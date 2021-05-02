@@ -1,6 +1,6 @@
 // Place the URL here with the /api suffix.
 // Ex.:`https://domain.com/api`;
-const backendUrl = `https://aipetto-rkvz523aka-uc.a.run.app/api`;
+const backendUrl = `https://aipetto-312421-sjvjr4rqhq-rj.a.run.app/api`;
 
 // SwaggerUI Documentation URL
 // Leave black if documentation should be hidden

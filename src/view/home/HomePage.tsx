@@ -154,13 +154,13 @@ const HomePage = (props) => {
 
                             <div className="md:w-1/2 my-4 lg:my-0 md:px-4">
                                 <blockquote className="italic text-gray-700 text-sm md:text-md lg:text-lg">
-                                    “Amazing app, with it I could take care of my pet so much easily.“
+                                    “Amazing app, I could take care of my pet so much easily with it.“
                                 </blockquote>
                             </div>
 
                             <div className="md:w-1/2  my-4 lg:my-0 md:px-4">
                                 <blockquote className="italic text-gray-700 text-sm md:text-md lg:text-lg">
-                                    “Gracias, gracias, gracias. Tuve que llevar mi mascota al médico a las 3 de la mañana y con AIPETTO pude encontrar rápidamente una veterinária y un médico que me diera indicaciones online.“
+                                    “Gracias, gracias, gracias. Tuve que llevar mi mascota al médico a las 3 de la mañana y con AIPETTO pude encontrar rápidamente una veterinária y un médico que me diera indicaciones en tiempo real.“
                                 </blockquote>
 
                             </div>
