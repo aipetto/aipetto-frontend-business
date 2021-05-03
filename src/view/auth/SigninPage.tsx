@@ -13,6 +13,7 @@ import I18nFlags from 'src/view/layout/I18nFlags';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import Message from 'src/view/shared/message';
 import * as yup from 'yup';
+import IndexNavbar from "../layout/IndexNavbar";
 
 const schema = yup.object().shape({
   email: yupFormSchemas.string(i18n('user.fields.email'), {
@@ -87,147 +88,138 @@ function SigninPage() {
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${
-          backgroundImageUrl || '/images/pets-background.jpeg'
-        })`,
-      }}
-      className="bg-cover h-screen flex items-center justify-center"
-    >
-      <div className="w-full md:max-w-sm lg:max-w-sm m-auto bg-white md:rounded-md lg:rounded-md shadow-md dark:bg-gray-800">
-        <div className="p-6">
-          <div className="w-full flex justify-center items-center">
-            {logoUrl ? (
-              <img
-                src={logoUrl}
-                className="w-72 max-h-14 object-cover"
-                alt={i18n('app.title')}
-              />
-            ) : (
-              <h1 className="text-3xl font-semibold text-center text-gray-700 dark:text-white">
-                {i18n('app.title')}
-              </h1>
-            )}
-          </div>
-          <FormProvider {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="mt-6"
-            >
-              <InputFormItem
-                name="email"
-                label={i18n('user.fields.email')}
-                autoComplete="email"
-                autoFocus
-                externalErrorMessage={externalErrorMessage}
-              />
-
-              <div className="mt-4">
-                <InputFormItem
-                  name="password"
-                  label={i18n('user.fields.password')}
-                  autoComplete="password"
-                  type="password"
-                />
-              </div>
-
-              <div className="flex items-center justify-between mt-4">
-                <div className="">
-                  <input
-                    className="cursor-pointer rounded border-gray-300 dark:bg-gray-800 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                    type="checkbox"
-                    id={'rememberMe'}
-                    name={'rememberMe'}
-                    ref={form.register}
+      <>
+      <IndexNavbar fixed />
+        <div
+            style={{
+              backgroundImage: `url(${
+                  backgroundImageUrl || '/images/pets-background.jpeg'
+              })`,
+            }}
+            className="bg-cover h-screen flex justify-center"
+        >
+      <div className="w-full fade-in fade-in-first">
+        <div className="w-full max-w-lg mx-auto mt-32">
+          <div className="bg-white rounded-lg shadow p-8 text-center">
+            <h1 className="text-2xl font-semibold">{i18n('auth.welcomeBack')}</h1>
+            <div className="my-4">
+              <FormProvider {...form}>
+                <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="mt-6"
+                >
+                  <InputFormItem
+                      name="email"
+                      label={i18n('user.fields.email')}
+                      autoComplete="email"
+                      autoFocus
+                      externalErrorMessage={externalErrorMessage}
                   />
 
-                  <label
-                    className="cursor-pointer ml-1 text-sm text-gray-600 dark:text-gray-400"
-                    htmlFor={'rememberMe'}
-                  >
-                    {i18n('user.fields.rememberMe')}
-                  </label>
-                </div>
+                  <div className="mt-4">
+                    <InputFormItem
+                        name="password"
+                        label={i18n('user.fields.password')}
+                        autoComplete="password"
+                        type="password"
+                    />
+                  </div>
 
-                <div className="pr-0">
-                  <Link
-                    className="cursor-pointer text-sm text-gray-600 dark:text-gray-400"
-                    to="/auth/forgot-password"
-                  >
-                    {i18n('auth.forgotPassword')}
-                  </Link>
-                </div>
-              </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <div className="">
+                      <input
+                          className="cursor-pointer rounded border-gray-300 dark:bg-gray-800 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                          type="checkbox"
+                          id={'rememberMe'}
+                          name={'rememberMe'}
+                          ref={form.register}
+                      />
 
-              <div className="mt-6">
+                      <label
+                          className="cursor-pointer ml-1 text-sm text-gray-600 dark:text-gray-400"
+                          htmlFor={'rememberMe'}
+                      >
+                        {i18n('user.fields.rememberMe')}
+                      </label>
+                    </div>
+
+                    <div className="pr-0">
+                      <Link
+                          className="cursor-pointer text-sm text-gray-600 dark:text-gray-400"
+                          to="/auth/forgot-password"
+                      >
+                        {i18n('auth.forgotPassword')}
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="mt-6">
+                    <button
+                        disabled={loading}
+                        type="submit"
+                        className="disabled:opacity-50 disabled:cursor-default bg-yellow-500 rounded p-4 border border-yellow-600 block w-full font-semibold"
+                    >
+                      {i18n('auth.signin')}
+                    </button>
+                  </div>
+                </form>
+              </FormProvider>
+            </div>
+            <div className="flex justify-between">
+              <Link
+                  className="text-blue-500 text-sm text-center"
+                  to="/auth/forgot-password"
+              >
+                {i18n('auth.forgotPassword')}
+              </Link>
+              <Link
+                  className="text-blue-500 text-sm text-center"
+                  to="/auth/signup"
+              >
+                {i18n('auth.createAnAccount')}
+              </Link>
+            </div>
+            <div className="my-4">
+              <a
+                  href={`${config.backendUrl}/auth/social/google`}
+                  className="focus:outline-none"
+                  >
                 <button
-                  disabled={loading}
-                  type="submit"
-                  className="disabled:opacity-50 disabled:cursor-default w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-                >
-                  {i18n('auth.signin')}
+                    className="bg-yellow-500 rounded p-4 block w-full font-semibold flex justify-center items-center content-center text-white mb-2"
+                    style={{background:"#4385F5"}}>
+                  <svg
+                      className="w-4 h-4 mx-2 fill-current"
+                      viewBox="0 0 24 24"
+                  >
+                    <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"></path>
+                  </svg>
+                  {i18n('auth.social.signinWithGoogle')}
                 </button>
-              </div>
-            </form>
-          </FormProvider>
-
-          <div className="flex items-center justify-between mt-4">
-            <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/5"></span>
-
-            <span className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">
-              {i18n('auth.social.header')}
-            </span>
-
-            <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
-          </div>
-          <div className="flex items-center mt-6 space-x-3">
-            <a
-              href={`${config.backendUrl}/auth/social/google`}
-              className="flex items-center justify-center w-full px-6 py-2 text-sm font-medium text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
-            >
-              <svg
-                className="w-4 h-4 mx-2 fill-current"
-                viewBox="0 0 24 24"
+              </a>
+              <a
+                  href={`${config.backendUrl}/auth/social/facebook`}
+                  className="focus:outline-none"
               >
-                <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"></path>
-              </svg>
-
-              <span className="mx-2">
-                {i18n('auth.social.signinWithGoogle')}
-              </span>
-            </a>
-
-            <a
-              href={`${config.backendUrl}/auth/social/facebook`}
-              className="p-2 text-sm font-medium text-gray-500 transition-colors duration-200 transform bg-gray-300 rounded-md hover:bg-gray-200"
-            >
-              <svg
-                className="w-5 h-5 fill-current"
-                viewBox="0 0 320 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-                />
-              </svg>
-            </a>
+                <button
+                    className="bg-yellow-500 rounded p-4 block w-full font-semibold flex justify-center items-center content-center text-white"
+                    style={{background:"#3B5A99"}}>
+                  <svg
+                      className="w-5 h-5 fill-current"
+                      viewBox="0 0 320 512"
+                  >
+                    <path
+                        fill="currentColor"
+                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    />
+                  </svg>
+                </button>
+              </a>
+            </div>
           </div>
-          <div className="mt-8">
-            <I18nFlags />
-          </div>
-        </div>
-
-        <div className="bg-gray-100 dark:bg-gray-700 py-4 rounded-b-md">
-          <Link
-            className="block text-xs text-center font-medium text-gray-800 dark:text-gray-200 hover:underline"
-            to="/auth/signup"
-          >
-            {i18n('auth.createAnAccount')}
-          </Link>
         </div>
       </div>
-    </div>
+        </div>
+     </>
   );
 }
 

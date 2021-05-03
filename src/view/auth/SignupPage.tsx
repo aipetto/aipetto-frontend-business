@@ -10,6 +10,7 @@ import selectors from 'src/modules/auth/authSelectors';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import * as yup from 'yup';
+import IndexNavbar from "../layout/IndexNavbar";
 
 const schema = yup.object().shape({
   email: yupFormSchemas.string(i18n('user.fields.email'), {
@@ -64,29 +65,20 @@ function SignupPage() {
   };
 
   return (
+    <>
+    <IndexNavbar fixed />
     <div
       style={{
         backgroundImage: `url(${
           backgroundImageUrl || '/images/pets-background.jpeg'
         })`,
       }}
-      className="bg-cover h-screen flex items-center justify-center"
+      className="bg-cover h-screen flex justify-center"
     >
-      <div className="w-full md:max-w-sm lg:max-w-sm m-auto bg-white md:rounded-md lg:rounded-md shadow-md dark:bg-gray-800">
-        <div className="p-6">
-          <div className="w-full flex justify-center items-center">
-            {logoUrl ? (
-              <img
-                src={logoUrl}
-                className="w-72 max-h-14 object-cover"
-                alt={i18n('app.title')}
-              />
-            ) : (
-              <h1 className="text-3xl font-semibold text-center text-gray-700 dark:text-white">
-                {i18n('app.title')}
-              </h1>
-            )}
-          </div>
+      <div className="w-full fade-in fade-in-first">
+        <div className="w-full max-w-lg mx-auto mt-32">
+          <div className="bg-white rounded-lg shadow p-8 text-center">
+          <h1 className="text-2xl font-semibold">{i18n('auth.signup')}</h1>
           <FormProvider {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -113,7 +105,7 @@ function SignupPage() {
                 <button
                   disabled={loading}
                   type="submit"
-                  className="disabled:opacity-50 disabled:cursor-default w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+                  className="disabled:opacity-50 disabled:cursor-default bg-yellow-500 rounded p-4 border border-yellow-600 block w-full font-semibold"
                 >
                   {i18n('auth.signup')}
                 </button>
@@ -130,8 +122,10 @@ function SignupPage() {
             {i18n('auth.alreadyHaveAnAccount')}
           </Link>
         </div>
+       </div>
       </div>
     </div>
+    </>
   );
 }
 

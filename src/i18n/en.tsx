@@ -1250,6 +1250,7 @@ const en = {
       title: 'Profile',
       success: 'Profile successfully updated',
     },
+    welcomeBack: 'Welcome back',
     rememberMe: 'Remember me',
     forgotPassword: 'Forgot password',
     signin: 'Sign in',
