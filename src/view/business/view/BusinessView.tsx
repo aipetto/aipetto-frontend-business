@@ -3,6 +3,7 @@ import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/BusinessServicesTypesViewItem';
+import BusinessCategoryViewItem from 'src/view/businessCategory/view/BusinessCategoryViewItem';
 import CityViewItem from 'src/view/city/view/CityViewItem';
 import StateViewItem from 'src/view/state/view/StateViewItem';
 import CountryViewItem from 'src/view/country/view/CountryViewItem';
@@ -17,6 +18,11 @@ function BusinessView(props) {
   return (
     <div>
       <TextViewItem
+        label={i18n('entities.business.fields.businessID')}
+        value={record.businessID}
+      />
+
+      <TextViewItem
         label={i18n('entities.business.fields.name')}
         value={record.name}
       />
@@ -24,6 +30,11 @@ function BusinessView(props) {
       <BusinessServicesTypesViewItem
         label={i18n('entities.business.fields.services')}
         value={record.services}
+      />
+
+      <BusinessCategoryViewItem
+        label={i18n('entities.business.fields.categories')}
+        value={record.categories}
       />
 
       <TextViewItem

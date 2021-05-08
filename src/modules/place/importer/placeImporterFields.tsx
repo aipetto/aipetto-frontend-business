@@ -13,6 +13,14 @@ export default [
     ),
   },
   {
+    name: 'placeType',
+    label: i18n('entities.place.fields.placeType'),
+    schema: schemas.relationToOne(
+      i18n('entities.place.fields.placeType'),
+      {},
+    ),
+  },
+  {
     name: 'businessId',
     label: i18n('entities.place.fields.businessId'),
     schema: schemas.relationToOne(

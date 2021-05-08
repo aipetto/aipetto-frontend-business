@@ -3,6 +3,16 @@ import { i18n } from 'src/i18n';
 
 export default [
   {
+    name: 'businessID',
+    label: i18n('entities.business.fields.businessID'),
+    schema: schemas.string(
+      i18n('entities.business.fields.businessID'),
+      {
+        "required": true
+      },
+    ),
+  },
+  {
     name: 'name',
     label: i18n('entities.business.fields.name'),
     schema: schemas.string(
@@ -15,6 +25,14 @@ export default [
     label: i18n('entities.business.fields.services'),
     schema: schemas.relationToMany(
       i18n('entities.business.fields.services'),
+      {},
+    ),
+  },
+  {
+    name: 'categories',
+    label: i18n('entities.business.fields.categories'),
+    schema: schemas.relationToMany(
+      i18n('entities.business.fields.categories'),
       {},
     ),
   },

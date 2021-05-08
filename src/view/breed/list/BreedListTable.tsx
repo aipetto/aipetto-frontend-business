@@ -18,6 +18,7 @@ import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import ImagesListView from 'src/view/shared/table/ImagesListView';
+import LanguagesListItem from 'src/view/languages/list/LanguagesListItem';
 import PetTypesListItem from 'src/view/petTypes/list/PetTypesListItem';
 
 function BreedListTable(props) {
@@ -117,6 +118,11 @@ function BreedListTable(props) {
                   name={'name'}
                   label={i18n(
                     'entities.breed.fields.name',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.breed.fields.language',
                   )}
                 />
                 <TableColumnHeader
@@ -258,6 +264,9 @@ function BreedListTable(props) {
                     />
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <LanguagesListItem value={row.language} />
+                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <PetTypesListItem value={row.type} />
                   </td>

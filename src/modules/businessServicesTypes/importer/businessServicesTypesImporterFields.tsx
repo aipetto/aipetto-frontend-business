@@ -10,4 +10,20 @@ export default [
       {},
     ),
   },
+  {
+    name: 'category',
+    label: i18n('entities.businessServicesTypes.fields.category'),
+    schema: schemas.relationToOne(
+      i18n('entities.businessServicesTypes.fields.category'),
+      {},
+    ),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.businessServicesTypes.fields.language'),
+    schema: schemas.relationToOne(
+      i18n('entities.businessServicesTypes.fields.language'),
+      {},
+    ),
+  },
 ];

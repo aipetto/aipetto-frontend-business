@@ -352,6 +352,7 @@ const es = {
         fields: {
           id: 'Id',
           'name': 'Name',
+          'language': 'Language',
           'type': 'Type',
           'size': 'Size',
           'exercise': 'Exercise',
@@ -467,6 +468,7 @@ const es = {
           id: 'Id',
           'name': 'Name',
           'image': 'Image',
+          'language': 'Language',
           createdAt: 'Creado el',
           updatedAt: 'Actualizado el',
           createdAtRange: 'Creado el',
@@ -520,8 +522,10 @@ const es = {
         },
         fields: {
           id: 'Id',
+          'businessID': 'BusinessID',
           'name': 'Name',
           'services': 'Services',
+          'categories': 'Categories',
           'contactName': 'ContactName',
           'contactPhone': 'ContactPhone',
           'contactWhatsApp': 'ContactWhatsApp',
@@ -585,6 +589,8 @@ const es = {
         },
         fields: {
           id: 'Id',
+          'name': 'Name',
+          'placeType': 'PlaceType',
           'businessId': 'BusinessId',
           'latitudeRange': 'Latitude',
           'latitude': 'Latitude',
@@ -650,6 +656,8 @@ const es = {
         fields: {
           id: 'Id',
           'name': 'Name',
+          'category': 'Category',
+          'language': 'Language',
           createdAt: 'Creado el',
           updatedAt: 'Actualizado el',
           createdAtRange: 'Creado el',
@@ -708,10 +716,16 @@ const es = {
           'businessId': 'BusinessId',
           'customerId': 'CustomerId',
           'serviceType': 'ServiceType',
+          'serviceProviderIDs': 'ServiceProviderIDs',
           'time': 'Time',
           'needTransportation': 'NeedTransportation',
           'place': 'Place',
           'status': 'Status',
+          'totalPriceRange': 'TotalPrice',
+          'totalPrice': 'TotalPrice',
+          'totalPriceWithDiscountRange': 'TotalPriceWithDiscount',
+          'totalPriceWithDiscount': 'TotalPriceWithDiscount',
+          'discountCode': 'DiscountCode',
           createdAt: 'Creado el',
           updatedAt: 'Actualizado el',
           createdAtRange: 'Creado el',
@@ -1234,6 +1248,525 @@ const es = {
         importer: {
           title: 'Importar ProfessionalsServiceAvailabilities',
           fileName: 'professionalsServiceAvailability_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    languages: {
+        name: 'languages',
+        label: 'Languages',
+        menu: 'Languages',
+        exporterFileName: 'exportacion_languages',
+        list: {
+          menu: 'Languages',
+          title: 'Languages',
+        },
+        create: {
+          success: 'Languages guardado con éxito',
+        },
+        update: {
+          success: 'Languages guardado con éxito',
+        },
+        destroy: {
+          success: 'Languages eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'Languages(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar Languages',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'active': 'Active',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo Languages',
+        },
+        view: {
+          title: 'Ver Languages',
+        },
+        importer: {
+          title: 'Importar Languages',
+          fileName: 'languages_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    currency: {
+        name: 'currency',
+        label: 'Currencies',
+        menu: 'Currencies',
+        exporterFileName: 'exportacion_currency',
+        list: {
+          menu: 'Currencies',
+          title: 'Currencies',
+        },
+        create: {
+          success: 'Currency guardado con éxito',
+        },
+        update: {
+          success: 'Currency guardado con éxito',
+        },
+        destroy: {
+          success: 'Currency eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'Currency(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar Currency',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'symbol': 'Symbol',
+          'active': 'Active',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo Currency',
+        },
+        view: {
+          title: 'Ver Currency',
+        },
+        importer: {
+          title: 'Importar Currencies',
+          fileName: 'currency_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    discounts: {
+        name: 'discounts',
+        label: 'Discounts',
+        menu: 'Discounts',
+        exporterFileName: 'exportacion_discounts',
+        list: {
+          menu: 'Discounts',
+          title: 'Discounts',
+        },
+        create: {
+          success: 'Discounts guardado con éxito',
+        },
+        update: {
+          success: 'Discounts guardado con éxito',
+        },
+        destroy: {
+          success: 'Discounts eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'Discounts(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar Discounts',
+        },
+        fields: {
+          id: 'Id',
+          'codeName': 'CodeName',
+          'discountPercentageRange': 'DiscountPercentage',
+          'discountPercentage': 'DiscountPercentage',
+          'expirationDateRange': 'ExpirationDate',
+          'expirationDate': 'ExpirationDate',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo Discounts',
+        },
+        view: {
+          title: 'Ver Discounts',
+        },
+        importer: {
+          title: 'Importar Discounts',
+          fileName: 'discounts_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    wallet: {
+        name: 'wallet',
+        label: 'Wallets',
+        menu: 'Wallets',
+        exporterFileName: 'exportacion_wallet',
+        list: {
+          menu: 'Wallets',
+          title: 'Wallets',
+        },
+        create: {
+          success: 'Wallet guardado con éxito',
+        },
+        update: {
+          success: 'Wallet guardado con éxito',
+        },
+        destroy: {
+          success: 'Wallet eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'Wallet(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar Wallet',
+        },
+        fields: {
+          id: 'Id',
+          'totalCreditsRange': 'TotalCredits',
+          'totalCredits': 'TotalCredits',
+          'aipettoPointsRange': 'AipettoPoints',
+          'aipettoPoints': 'AipettoPoints',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo Wallet',
+        },
+        view: {
+          title: 'Ver Wallet',
+        },
+        importer: {
+          title: 'Importar Wallets',
+          fileName: 'wallet_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    businessCategory: {
+        name: 'businessCategory',
+        label: 'BusinessCategories',
+        menu: 'BusinessCategories',
+        exporterFileName: 'exportacion_businessCategory',
+        list: {
+          menu: 'BusinessCategories',
+          title: 'BusinessCategories',
+        },
+        create: {
+          success: 'BusinessCategory guardado con éxito',
+        },
+        update: {
+          success: 'BusinessCategory guardado con éxito',
+        },
+        destroy: {
+          success: 'BusinessCategory eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'BusinessCategory(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar BusinessCategory',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'language': 'Language',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo BusinessCategory',
+        },
+        view: {
+          title: 'Ver BusinessCategory',
+        },
+        importer: {
+          title: 'Importar BusinessCategories',
+          fileName: 'businessCategory_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    providers: {
+        name: 'providers',
+        label: 'Providers',
+        menu: 'Providers',
+        exporterFileName: 'exportacion_providers',
+        list: {
+          menu: 'Providers',
+          title: 'Providers',
+        },
+        create: {
+          success: 'Providers guardado con éxito',
+        },
+        update: {
+          success: 'Providers guardado con éxito',
+        },
+        destroy: {
+          success: 'Providers eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'Providers(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar Providers',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'businessID': 'BusinessID',
+          'providerID': 'ProviderID',
+          'category': 'Category',
+          'serviceTypes': 'ServiceTypes',
+          'contactName': 'ContactName',
+          'contactPhone': 'ContactPhone',
+          'contactWhatsApp': 'ContactWhatsApp',
+          'addressStreet': 'AddressStreet',
+          'addressStreetNumber': 'AddressStreetNumber',
+          'addressPostCode': 'AddressPostCode',
+          'city': 'City',
+          'state': 'State',
+          'country': 'Country',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo Providers',
+        },
+        view: {
+          title: 'Ver Providers',
+        },
+        importer: {
+          title: 'Importar Providers',
+          fileName: 'providers_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    vaccineTypes: {
+        name: 'vaccineTypes',
+        label: 'VaccineTypes',
+        menu: 'VaccineTypes',
+        exporterFileName: 'exportacion_vaccineTypes',
+        list: {
+          menu: 'VaccineTypes',
+          title: 'VaccineTypes',
+        },
+        create: {
+          success: 'VaccineTypes guardado con éxito',
+        },
+        update: {
+          success: 'VaccineTypes guardado con éxito',
+        },
+        destroy: {
+          success: 'VaccineTypes eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'VaccineTypes(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar VaccineTypes',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'country': 'Country',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo VaccineTypes',
+        },
+        view: {
+          title: 'Ver VaccineTypes',
+        },
+        importer: {
+          title: 'Importar VaccineTypes',
+          fileName: 'vaccineTypes_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    petVaccines: {
+        name: 'petVaccines',
+        label: 'PetVaccines',
+        menu: 'PetVaccines',
+        exporterFileName: 'exportacion_petVaccines',
+        list: {
+          menu: 'PetVaccines',
+          title: 'PetVaccines',
+        },
+        create: {
+          success: 'PetVaccines guardado con éxito',
+        },
+        update: {
+          success: 'PetVaccines guardado con éxito',
+        },
+        destroy: {
+          success: 'PetVaccines eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'PetVaccines(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar PetVaccines',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'uniqueVetVaccineCode': 'UniqueVetVaccineCode',
+          'datetimeTakenRange': 'DatetimeTaken',
+          'datetimeTaken': 'DatetimeTaken',
+          'veterinarianID': 'VeterinarianID',
+          'placeTaken': 'PlaceTaken',
+          'businessID': 'BusinessID',
+          'country': 'Country',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo PetVaccines',
+        },
+        view: {
+          title: 'Ver PetVaccines',
+        },
+        importer: {
+          title: 'Importar PetVaccines',
+          fileName: 'petVaccines_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    placeType: {
+        name: 'placeType',
+        label: 'PlaceTypes',
+        menu: 'PlaceTypes',
+        exporterFileName: 'exportacion_placeType',
+        list: {
+          menu: 'PlaceTypes',
+          title: 'PlaceTypes',
+        },
+        create: {
+          success: 'PlaceType guardado con éxito',
+        },
+        update: {
+          success: 'PlaceType guardado con éxito',
+        },
+        destroy: {
+          success: 'PlaceType eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'PlaceType(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar PlaceType',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'language': 'Language',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo PlaceType',
+        },
+        view: {
+          title: 'Ver PlaceType',
+        },
+        importer: {
+          title: 'Importar PlaceTypes',
+          fileName: 'placeType_import_template',
           hint:
             'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
         },

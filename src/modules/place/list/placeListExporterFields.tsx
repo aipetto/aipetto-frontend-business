@@ -11,6 +11,11 @@ export default [
     label: i18n('entities.place.fields.name'),
   },
   {
+    name: 'placeType',
+    label: i18n('entities.place.fields.placeType'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'businessId',
     label: i18n('entities.place.fields.businessId'),
     render: exporterRenders.relationToOne(),

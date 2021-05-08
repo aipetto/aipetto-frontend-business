@@ -26,6 +26,11 @@ export default [
     render: exporterRenders.relationToMany(),
   },
   {
+    name: 'serviceProviderIDs',
+    label: i18n('entities.serviceReservation.fields.serviceProviderIDs'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
     name: 'time',
     label: i18n('entities.serviceReservation.fields.time'),
   },
@@ -42,6 +47,21 @@ export default [
   {
     name: 'status',
     label: i18n('entities.serviceReservation.fields.status'),
+  },
+  {
+    name: 'totalPrice',
+    label: i18n('entities.serviceReservation.fields.totalPrice'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'totalPriceWithDiscount',
+    label: i18n('entities.serviceReservation.fields.totalPriceWithDiscount'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'discountCode',
+    label: i18n('entities.serviceReservation.fields.discountCode'),
+    render: exporterRenders.relationToOne(),
   },
   {
     name: 'createdAt',

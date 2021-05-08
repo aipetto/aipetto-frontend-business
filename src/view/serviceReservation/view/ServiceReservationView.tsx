@@ -5,7 +5,9 @@ import TextViewItem from 'src/view/shared/view/TextViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
 import CustomerViewItem from 'src/view/customer/view/CustomerViewItem';
 import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/BusinessServicesTypesViewItem';
+import ProvidersViewItem from 'src/view/providers/view/ProvidersViewItem';
 import PlaceViewItem from 'src/view/place/view/PlaceViewItem';
+import DiscountsViewItem from 'src/view/discounts/view/DiscountsViewItem';
 
 function ServiceReservationView(props) {
   const { record, loading } = props;
@@ -34,6 +36,11 @@ function ServiceReservationView(props) {
       <BusinessServicesTypesViewItem
         label={i18n('entities.serviceReservation.fields.serviceType')}
         value={record.serviceType}
+      />
+
+      <ProvidersViewItem
+        label={i18n('entities.serviceReservation.fields.serviceProviderIDs')}
+        value={record.serviceProviderIDs}
       />
 
       <TextViewItem
@@ -68,6 +75,21 @@ function ServiceReservationView(props) {
             `entities.serviceReservation.enumerators.status.${record.status}`,
           )
         }
+      />
+
+      <TextViewItem
+        label={i18n('entities.serviceReservation.fields.totalPrice')}
+        value={record.totalPrice}
+      />
+
+      <TextViewItem
+        label={i18n('entities.serviceReservation.fields.totalPriceWithDiscount')}
+        value={record.totalPriceWithDiscount}
+      />
+
+      <DiscountsViewItem
+        label={i18n('entities.serviceReservation.fields.discountCode')}
+        value={record.discountCode}
       />
     </div>
   );

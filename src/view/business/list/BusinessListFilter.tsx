@@ -20,6 +20,9 @@ import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocomp
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
+  businessID: yupFilterSchemas.string(
+    i18n('entities.business.fields.businessID'),
+  ),
   name: yupFilterSchemas.string(
     i18n('entities.business.fields.name'),
   ),
@@ -56,6 +59,7 @@ const schema = yup.object().shape({
 });
 
 const emptyValues = {
+  businessID: null,
   name: null,
   contactName: null,
   contactPhone: null,
@@ -70,6 +74,10 @@ const emptyValues = {
 }
 
 const previewRenders = {
+  businessID: {
+    label: i18n('entities.business.fields.businessID'),
+    render: filterRenders.generic(),
+  },
   name: {
     label: i18n('entities.business.fields.name'),
     render: filterRenders.generic(),
@@ -173,6 +181,10 @@ function BusinessListFilter(props) {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+              <InputFormItem
+                name="businessID"
+                label={i18n('entities.business.fields.businessID')}
+              />
               <InputFormItem
                 name="name"
                 label={i18n('entities.business.fields.name')}      

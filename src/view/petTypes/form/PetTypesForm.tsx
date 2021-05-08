@@ -12,6 +12,7 @@ import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -21,6 +22,10 @@ const schema = yup.object().shape({
   ),
   image: yupFormSchemas.images(
     i18n('entities.petTypes.fields.image'),
+    {},
+  ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.petTypes.fields.language'),
     {},
   ),
 });
@@ -34,6 +39,7 @@ function PetTypesForm(props) {
     return {
       name: record.name,
       image: record.image || [],
+      language: record.language,
     };
   });
 
@@ -71,6 +77,14 @@ function PetTypesForm(props) {
             required={false}
             storage={Storage.values.petTypesImage}
             max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <LanguagesAutocompleteFormItem
+            name="language"
+            label={i18n('entities.petTypes.fields.language')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

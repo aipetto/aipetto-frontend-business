@@ -11,6 +11,7 @@ import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
+import PlaceTypeAutocompleteFormItem from 'src/view/placeType/autocomplete/PlaceTypeAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import * as yup from 'yup';
 
@@ -20,6 +21,10 @@ const schema = yup.object().shape({
     {
       "required": true
     },
+  ),
+  placeType: yupFormSchemas.relationToOne(
+    i18n('entities.place.fields.placeType'),
+    {},
   ),
   businessId: yupFormSchemas.relationToOne(
     i18n('entities.place.fields.businessId'),
@@ -67,6 +72,7 @@ function PlaceForm(props) {
 
     return {
       name: record.name,
+      placeType: record.placeType,
       businessId: record.businessId,
       latitude: record.latitude,
       longitude: record.longitude,
@@ -104,6 +110,14 @@ function PlaceForm(props) {
             label={i18n('entities.place.fields.name')}
             required={true}
           autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PlaceTypeAutocompleteFormItem
+            name="placeType"
+            label={i18n('entities.place.fields.placeType')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">

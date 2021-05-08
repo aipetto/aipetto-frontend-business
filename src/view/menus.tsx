@@ -160,4 +160,67 @@ export default [
     icon: faChevronRight,
     label: i18n('entities.professionalsServiceAvailability.menu'),
   },
+
+  {
+    path: '/languages',
+    permissionRequired: permissions.languagesRead,
+    icon: faChevronRight,
+    label: i18n('entities.languages.menu'),
+  },
+
+  {
+    path: '/currency',
+    permissionRequired: permissions.currencyRead,
+    icon: faChevronRight,
+    label: i18n('entities.currency.menu'),
+  },
+
+  {
+    path: '/discounts',
+    permissionRequired: permissions.discountsRead,
+    icon: faChevronRight,
+    label: i18n('entities.discounts.menu'),
+  },
+
+  {
+    path: '/wallet',
+    permissionRequired: permissions.walletRead,
+    icon: faChevronRight,
+    label: i18n('entities.wallet.menu'),
+  },
+
+  {
+    path: '/business-category',
+    permissionRequired: permissions.businessCategoryRead,
+    icon: faChevronRight,
+    label: i18n('entities.businessCategory.menu'),
+  },
+
+  {
+    path: '/providers',
+    permissionRequired: permissions.providersRead,
+    icon: faChevronRight,
+    label: i18n('entities.providers.menu'),
+  },
+
+  {
+    path: '/vaccine-types',
+    permissionRequired: permissions.vaccineTypesRead,
+    icon: faChevronRight,
+    label: i18n('entities.vaccineTypes.menu'),
+  },
+
+  {
+    path: '/pet-vaccines',
+    permissionRequired: permissions.petVaccinesRead,
+    icon: faChevronRight,
+    label: i18n('entities.petVaccines.menu'),
+  },
+
+  {
+    path: '/place-type',
+    permissionRequired: permissions.placeTypeRead,
+    icon: faChevronRight,
+    label: i18n('entities.placeType.menu'),
+  },
 ].filter(Boolean);

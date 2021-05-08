@@ -16,6 +16,11 @@ export default [
     render: exporterRenders.filesOrImages(),
   },
   {
+    name: 'language',
+    label: i18n('entities.petTypes.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.petTypes.fields.createdAt'),
     render: exporterRenders.datetime(),

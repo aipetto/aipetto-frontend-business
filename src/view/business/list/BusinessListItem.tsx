@@ -32,13 +32,13 @@ function BusinessListItem(props) {
             className="text-blue-500 dark:text-blue-400 focus:text-blue-400 hover:text-blue-400"
             to={`/business/${record.id}`}
           >
-            {record.name}
+            {record.businessID}
           </Link>
         </div>
       );
     }
 
-    return <div key={record.id}>{record.name}</div>;
+    return <div key={record.id}>{record.businessID}</div>;
   };
 
   if (!valueAsArray().length) {

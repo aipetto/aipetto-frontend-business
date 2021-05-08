@@ -11,6 +11,16 @@ export default [
     label: i18n('entities.businessServicesTypes.fields.name'),
   },
   {
+    name: 'category',
+    label: i18n('entities.businessServicesTypes.fields.category'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.businessServicesTypes.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.businessServicesTypes.fields.createdAt'),
     render: exporterRenders.datetime(),

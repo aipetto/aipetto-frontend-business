@@ -710,6 +710,348 @@ const privateRoutes = [
     permissionRequired: permissions.professionalsServiceAvailabilityRead,
     exact: true,
   },
+
+  {
+    path: '/languages',
+    loader: () =>
+      import('src/view/languages/list/LanguagesListPage'),
+    permissionRequired: permissions.languagesRead,
+    exact: true,
+  },
+  {
+    path: '/languages/new',
+    loader: () =>
+      import('src/view/languages/form/LanguagesFormPage'),
+    permissionRequired: permissions.languagesCreate,
+    exact: true,
+  },
+  {
+    path: '/languages/importer',
+    loader: () =>
+      import(
+        'src/view/languages/importer/LanguagesImporterPage'
+      ),
+    permissionRequired: permissions.languagesImport,
+    exact: true,
+  },
+  {
+    path: '/languages/:id/edit',
+    loader: () =>
+      import('src/view/languages/form/LanguagesFormPage'),
+    permissionRequired: permissions.languagesEdit,
+    exact: true,
+  },
+  {
+    path: '/languages/:id',
+    loader: () =>
+      import('src/view/languages/view/LanguagesViewPage'),
+    permissionRequired: permissions.languagesRead,
+    exact: true,
+  },
+
+  {
+    path: '/currency',
+    loader: () =>
+      import('src/view/currency/list/CurrencyListPage'),
+    permissionRequired: permissions.currencyRead,
+    exact: true,
+  },
+  {
+    path: '/currency/new',
+    loader: () =>
+      import('src/view/currency/form/CurrencyFormPage'),
+    permissionRequired: permissions.currencyCreate,
+    exact: true,
+  },
+  {
+    path: '/currency/importer',
+    loader: () =>
+      import(
+        'src/view/currency/importer/CurrencyImporterPage'
+      ),
+    permissionRequired: permissions.currencyImport,
+    exact: true,
+  },
+  {
+    path: '/currency/:id/edit',
+    loader: () =>
+      import('src/view/currency/form/CurrencyFormPage'),
+    permissionRequired: permissions.currencyEdit,
+    exact: true,
+  },
+  {
+    path: '/currency/:id',
+    loader: () =>
+      import('src/view/currency/view/CurrencyViewPage'),
+    permissionRequired: permissions.currencyRead,
+    exact: true,
+  },
+
+  {
+    path: '/discounts',
+    loader: () =>
+      import('src/view/discounts/list/DiscountsListPage'),
+    permissionRequired: permissions.discountsRead,
+    exact: true,
+  },
+  {
+    path: '/discounts/new',
+    loader: () =>
+      import('src/view/discounts/form/DiscountsFormPage'),
+    permissionRequired: permissions.discountsCreate,
+    exact: true,
+  },
+  {
+    path: '/discounts/importer',
+    loader: () =>
+      import(
+        'src/view/discounts/importer/DiscountsImporterPage'
+      ),
+    permissionRequired: permissions.discountsImport,
+    exact: true,
+  },
+  {
+    path: '/discounts/:id/edit',
+    loader: () =>
+      import('src/view/discounts/form/DiscountsFormPage'),
+    permissionRequired: permissions.discountsEdit,
+    exact: true,
+  },
+  {
+    path: '/discounts/:id',
+    loader: () =>
+      import('src/view/discounts/view/DiscountsViewPage'),
+    permissionRequired: permissions.discountsRead,
+    exact: true,
+  },
+
+  {
+    path: '/wallet',
+    loader: () =>
+      import('src/view/wallet/list/WalletListPage'),
+    permissionRequired: permissions.walletRead,
+    exact: true,
+  },
+  {
+    path: '/wallet/new',
+    loader: () =>
+      import('src/view/wallet/form/WalletFormPage'),
+    permissionRequired: permissions.walletCreate,
+    exact: true,
+  },
+  {
+    path: '/wallet/importer',
+    loader: () =>
+      import(
+        'src/view/wallet/importer/WalletImporterPage'
+      ),
+    permissionRequired: permissions.walletImport,
+    exact: true,
+  },
+  {
+    path: '/wallet/:id/edit',
+    loader: () =>
+      import('src/view/wallet/form/WalletFormPage'),
+    permissionRequired: permissions.walletEdit,
+    exact: true,
+  },
+  {
+    path: '/wallet/:id',
+    loader: () =>
+      import('src/view/wallet/view/WalletViewPage'),
+    permissionRequired: permissions.walletRead,
+    exact: true,
+  },
+
+  {
+    path: '/business-category',
+    loader: () =>
+      import('src/view/businessCategory/list/BusinessCategoryListPage'),
+    permissionRequired: permissions.businessCategoryRead,
+    exact: true,
+  },
+  {
+    path: '/business-category/new',
+    loader: () =>
+      import('src/view/businessCategory/form/BusinessCategoryFormPage'),
+    permissionRequired: permissions.businessCategoryCreate,
+    exact: true,
+  },
+  {
+    path: '/business-category/importer',
+    loader: () =>
+      import(
+        'src/view/businessCategory/importer/BusinessCategoryImporterPage'
+      ),
+    permissionRequired: permissions.businessCategoryImport,
+    exact: true,
+  },
+  {
+    path: '/business-category/:id/edit',
+    loader: () =>
+      import('src/view/businessCategory/form/BusinessCategoryFormPage'),
+    permissionRequired: permissions.businessCategoryEdit,
+    exact: true,
+  },
+  {
+    path: '/business-category/:id',
+    loader: () =>
+      import('src/view/businessCategory/view/BusinessCategoryViewPage'),
+    permissionRequired: permissions.businessCategoryRead,
+    exact: true,
+  },
+
+  {
+    path: '/providers',
+    loader: () =>
+      import('src/view/providers/list/ProvidersListPage'),
+    permissionRequired: permissions.providersRead,
+    exact: true,
+  },
+  {
+    path: '/providers/new',
+    loader: () =>
+      import('src/view/providers/form/ProvidersFormPage'),
+    permissionRequired: permissions.providersCreate,
+    exact: true,
+  },
+  {
+    path: '/providers/importer',
+    loader: () =>
+      import(
+        'src/view/providers/importer/ProvidersImporterPage'
+      ),
+    permissionRequired: permissions.providersImport,
+    exact: true,
+  },
+  {
+    path: '/providers/:id/edit',
+    loader: () =>
+      import('src/view/providers/form/ProvidersFormPage'),
+    permissionRequired: permissions.providersEdit,
+    exact: true,
+  },
+  {
+    path: '/providers/:id',
+    loader: () =>
+      import('src/view/providers/view/ProvidersViewPage'),
+    permissionRequired: permissions.providersRead,
+    exact: true,
+  },
+
+  {
+    path: '/vaccine-types',
+    loader: () =>
+      import('src/view/vaccineTypes/list/VaccineTypesListPage'),
+    permissionRequired: permissions.vaccineTypesRead,
+    exact: true,
+  },
+  {
+    path: '/vaccine-types/new',
+    loader: () =>
+      import('src/view/vaccineTypes/form/VaccineTypesFormPage'),
+    permissionRequired: permissions.vaccineTypesCreate,
+    exact: true,
+  },
+  {
+    path: '/vaccine-types/importer',
+    loader: () =>
+      import(
+        'src/view/vaccineTypes/importer/VaccineTypesImporterPage'
+      ),
+    permissionRequired: permissions.vaccineTypesImport,
+    exact: true,
+  },
+  {
+    path: '/vaccine-types/:id/edit',
+    loader: () =>
+      import('src/view/vaccineTypes/form/VaccineTypesFormPage'),
+    permissionRequired: permissions.vaccineTypesEdit,
+    exact: true,
+  },
+  {
+    path: '/vaccine-types/:id',
+    loader: () =>
+      import('src/view/vaccineTypes/view/VaccineTypesViewPage'),
+    permissionRequired: permissions.vaccineTypesRead,
+    exact: true,
+  },
+
+  {
+    path: '/pet-vaccines',
+    loader: () =>
+      import('src/view/petVaccines/list/PetVaccinesListPage'),
+    permissionRequired: permissions.petVaccinesRead,
+    exact: true,
+  },
+  {
+    path: '/pet-vaccines/new',
+    loader: () =>
+      import('src/view/petVaccines/form/PetVaccinesFormPage'),
+    permissionRequired: permissions.petVaccinesCreate,
+    exact: true,
+  },
+  {
+    path: '/pet-vaccines/importer',
+    loader: () =>
+      import(
+        'src/view/petVaccines/importer/PetVaccinesImporterPage'
+      ),
+    permissionRequired: permissions.petVaccinesImport,
+    exact: true,
+  },
+  {
+    path: '/pet-vaccines/:id/edit',
+    loader: () =>
+      import('src/view/petVaccines/form/PetVaccinesFormPage'),
+    permissionRequired: permissions.petVaccinesEdit,
+    exact: true,
+  },
+  {
+    path: '/pet-vaccines/:id',
+    loader: () =>
+      import('src/view/petVaccines/view/PetVaccinesViewPage'),
+    permissionRequired: permissions.petVaccinesRead,
+    exact: true,
+  },
+
+  {
+    path: '/place-type',
+    loader: () =>
+      import('src/view/placeType/list/PlaceTypeListPage'),
+    permissionRequired: permissions.placeTypeRead,
+    exact: true,
+  },
+  {
+    path: '/place-type/new',
+    loader: () =>
+      import('src/view/placeType/form/PlaceTypeFormPage'),
+    permissionRequired: permissions.placeTypeCreate,
+    exact: true,
+  },
+  {
+    path: '/place-type/importer',
+    loader: () =>
+      import(
+        'src/view/placeType/importer/PlaceTypeImporterPage'
+      ),
+    permissionRequired: permissions.placeTypeImport,
+    exact: true,
+  },
+  {
+    path: '/place-type/:id/edit',
+    loader: () =>
+      import('src/view/placeType/form/PlaceTypeFormPage'),
+    permissionRequired: permissions.placeTypeEdit,
+    exact: true,
+  },
+  {
+    path: '/place-type/:id',
+    loader: () =>
+      import('src/view/placeType/view/PlaceTypeViewPage'),
+    permissionRequired: permissions.placeTypeRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [

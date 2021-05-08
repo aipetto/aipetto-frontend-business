@@ -18,6 +18,7 @@ import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import BusinessServicesTypesListItem from 'src/view/businessServicesTypes/list/BusinessServicesTypesListItem';
+import BusinessCategoryListItem from 'src/view/businessCategory/list/BusinessCategoryListItem';
 import CityListItem from 'src/view/city/list/CityListItem';
 import StateListItem from 'src/view/state/list/StateListItem';
 import CountryListItem from 'src/view/country/list/CountryListItem';
@@ -116,6 +117,15 @@ function BusinessListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
+                  name={'businessID'}
+                  label={i18n(
+                    'entities.business.fields.businessID',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
                   name={'name'}
                   label={i18n(
                     'entities.business.fields.name',
@@ -124,6 +134,11 @@ function BusinessListTable(props) {
                 <TableColumnHeader
                   label={i18n(
                     'entities.business.fields.services',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.business.fields.categories',
                   )}
                 />
                 <TableColumnHeader
@@ -242,9 +257,13 @@ function BusinessListTable(props) {
                       }
                     />
                   </th>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.businessID}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessServicesTypesListItem value={row.services} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <BusinessCategoryListItem value={row.categories} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactName}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactPhone}</td>

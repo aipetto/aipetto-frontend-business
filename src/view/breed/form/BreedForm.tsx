@@ -15,12 +15,17 @@ import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import breedEnumerators from 'src/modules/breed/breedEnumerators';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
   name: yupFormSchemas.string(
     i18n('entities.breed.fields.name'),
+    {},
+  ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.breed.fields.language'),
     {},
   ),
   type: yupFormSchemas.relationToOne(
@@ -101,6 +106,7 @@ function BreedForm(props) {
 
     return {
       name: record.name,
+      language: record.language,
       type: record.type,
       size: record.size,
       exercise: record.exercise,
@@ -141,6 +147,14 @@ function BreedForm(props) {
             label={i18n('entities.breed.fields.name')}
             required={false}
           autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <LanguagesAutocompleteFormItem
+            name="language"
+            label={i18n('entities.breed.fields.language')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">

@@ -7,12 +7,21 @@ export default [
     label: i18n('entities.business.fields.id'),
   },
   {
+    name: 'businessID',
+    label: i18n('entities.business.fields.businessID'),
+  },
+  {
     name: 'name',
     label: i18n('entities.business.fields.name'),
   },
   {
     name: 'services',
     label: i18n('entities.business.fields.services'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
+    name: 'categories',
+    label: i18n('entities.business.fields.categories'),
     render: exporterRenders.relationToMany(),
   },
   {
