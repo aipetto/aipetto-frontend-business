@@ -2,6 +2,7 @@ import React from 'react';
 import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
+import PlaceTypeViewItem from 'src/view/placeType/view/PlaceTypeViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
 
 function PlaceView(props) {
@@ -16,6 +17,11 @@ function PlaceView(props) {
       <TextViewItem
         label={i18n('entities.place.fields.name')}
         value={record.name}
+      />
+
+      <PlaceTypeViewItem
+        label={i18n('entities.place.fields.placeType')}
+        value={record.placeType}
       />
 
       <BusinessViewItem

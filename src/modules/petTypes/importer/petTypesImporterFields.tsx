@@ -18,4 +18,12 @@ export default [
       {},
     ),
   },
+  {
+    name: 'language',
+    label: i18n('entities.petTypes.fields.language'),
+    schema: schemas.relationToOne(
+      i18n('entities.petTypes.fields.language'),
+      {},
+    ),
+  },
 ];

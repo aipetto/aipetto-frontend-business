@@ -11,18 +11,29 @@ import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
+import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
 import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
+  businessID: yupFormSchemas.string(
+    i18n('entities.business.fields.businessID'),
+    {
+      "required": true
+    },
+  ),
   name: yupFormSchemas.string(
     i18n('entities.business.fields.name'),
     {},
   ),
   services: yupFormSchemas.relationToMany(
     i18n('entities.business.fields.services'),
+    {},
+  ),
+  categories: yupFormSchemas.relationToMany(
+    i18n('entities.business.fields.categories'),
     {},
   ),
   contactName: yupFormSchemas.string(
@@ -74,8 +85,10 @@ function BusinessForm(props) {
     const record = props.record || {};
 
     return {
+      businessID: record.businessID,
       name: record.name,
       services: record.services || [],
+      categories: record.categories || [],
       contactName: record.contactName,
       contactPhone: record.contactPhone,
       contactWhatsApp: record.contactWhatsApp,
@@ -110,6 +123,14 @@ function BusinessForm(props) {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="w-full sm:w-md md:w-md lg:w-md">
           <InputFormItem
+            name="businessID"
+            label={i18n('entities.business.fields.businessID')}
+            required={true}
+          autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
             name="name"
             label={i18n('entities.business.fields.name')}
             required={false}
@@ -120,6 +141,15 @@ function BusinessForm(props) {
           <BusinessServicesTypesAutocompleteFormItem
             name="services"
             label={i18n('entities.business.fields.services')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessCategoryAutocompleteFormItem
+            name="categories"
+            label={i18n('entities.business.fields.categories')}
             required={false}
             showCreate={!props.modal}
             mode="multiple"

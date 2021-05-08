@@ -38,6 +38,14 @@ export default [
     ),
   },
   {
+    name: 'serviceProviderIDs',
+    label: i18n('entities.serviceReservation.fields.serviceProviderIDs'),
+    schema: schemas.relationToMany(
+      i18n('entities.serviceReservation.fields.serviceProviderIDs'),
+      {},
+    ),
+  },
+  {
     name: 'time',
     label: i18n('entities.serviceReservation.fields.time'),
     schema: schemas.enumerator(
@@ -72,6 +80,30 @@ export default [
       {
         "options": serviceReservationEnumerators.status
       },
+    ),
+  },
+  {
+    name: 'totalPrice',
+    label: i18n('entities.serviceReservation.fields.totalPrice'),
+    schema: schemas.decimal(
+      i18n('entities.serviceReservation.fields.totalPrice'),
+      {},
+    ),
+  },
+  {
+    name: 'totalPriceWithDiscount',
+    label: i18n('entities.serviceReservation.fields.totalPriceWithDiscount'),
+    schema: schemas.decimal(
+      i18n('entities.serviceReservation.fields.totalPriceWithDiscount'),
+      {},
+    ),
+  },
+  {
+    name: 'discountCode',
+    label: i18n('entities.serviceReservation.fields.discountCode'),
+    schema: schemas.relationToOne(
+      i18n('entities.serviceReservation.fields.discountCode'),
+      {},
     ),
   },
 ];

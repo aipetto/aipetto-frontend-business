@@ -10,11 +10,21 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
   name: yupFormSchemas.string(
     i18n('entities.businessServicesTypes.fields.name'),
+    {},
+  ),
+  category: yupFormSchemas.relationToOne(
+    i18n('entities.businessServicesTypes.fields.category'),
+    {},
+  ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.businessServicesTypes.fields.language'),
     {},
   ),
 });
@@ -27,6 +37,8 @@ function BusinessServicesTypesForm(props) {
 
     return {
       name: record.name,
+      category: record.category,
+      language: record.language,
     };
   });
 
@@ -55,6 +67,22 @@ function BusinessServicesTypesForm(props) {
             label={i18n('entities.businessServicesTypes.fields.name')}
             required={false}
           autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessCategoryAutocompleteFormItem
+            name="category"
+            label={i18n('entities.businessServicesTypes.fields.category')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <LanguagesAutocompleteFormItem
+            name="language"
+            label={i18n('entities.businessServicesTypes.fields.language')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

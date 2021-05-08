@@ -15,15 +15,20 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
     i18n('entities.petTypes.fields.name'),
   ),
+  language: yupFilterSchemas.relationToOne(
+    i18n('entities.petTypes.fields.language'),
+  ),
 });
 
 const emptyValues = {
   name: null,
+  language: null,
 }
 
 const previewRenders = {
@@ -31,6 +36,10 @@ const previewRenders = {
     label: i18n('entities.petTypes.fields.name'),
     render: filterRenders.generic(),
   },
+  language: {
+      label: i18n('entities.petTypes.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function PetTypesListFilter(props) {
@@ -93,6 +102,10 @@ function PetTypesListFilter(props) {
               <InputFormItem
                 name="name"
                 label={i18n('entities.petTypes.fields.name')}      
+              />
+              <LanguagesAutocompleteFormItem
+                name="language"
+                label={i18n('entities.petTypes.fields.language')}
               />
             </div>
 

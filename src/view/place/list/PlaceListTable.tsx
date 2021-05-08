@@ -17,6 +17,7 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
+import PlaceTypeListItem from 'src/view/placeType/list/PlaceTypeListItem';
 import BusinessListItem from 'src/view/business/list/BusinessListItem';
 
 function PlaceListTable(props) {
@@ -116,6 +117,11 @@ function PlaceListTable(props) {
                   name={'name'}
                   label={i18n(
                     'entities.place.fields.name',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.place.fields.placeType',
                   )}
                 />
                 <TableColumnHeader
@@ -236,6 +242,9 @@ function PlaceListTable(props) {
                     />
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <PlaceTypeListItem value={row.placeType} />
+                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessListItem value={row.businessId} />
                   </td>

@@ -11,6 +11,11 @@ export default [
     label: i18n('entities.breed.fields.name'),
   },
   {
+    name: 'language',
+    label: i18n('entities.breed.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'type',
     label: i18n('entities.breed.fields.type'),
     render: exporterRenders.relationToOne(),

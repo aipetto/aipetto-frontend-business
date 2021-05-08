@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
+import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
@@ -17,7 +18,9 @@ import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
+import ProvidersAutocompleteFormItem from 'src/view/providers/autocomplete/ProvidersAutocompleteFormItem';
 import PlaceAutocompleteFormItem from 'src/view/place/autocomplete/PlaceAutocompleteFormItem';
+import DiscountsAutocompleteFormItem from 'src/view/discounts/autocomplete/DiscountsAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -35,6 +38,10 @@ const schema = yup.object().shape({
   ),
   serviceType: yupFormSchemas.relationToMany(
     i18n('entities.serviceReservation.fields.serviceType'),
+    {},
+  ),
+  serviceProviderIDs: yupFormSchemas.relationToMany(
+    i18n('entities.serviceReservation.fields.serviceProviderIDs'),
     {},
   ),
   time: yupFormSchemas.enumerator(
@@ -58,6 +65,18 @@ const schema = yup.object().shape({
       "options": serviceReservationEnumerators.status
     },
   ),
+  totalPrice: yupFormSchemas.decimal(
+    i18n('entities.serviceReservation.fields.totalPrice'),
+    {},
+  ),
+  totalPriceWithDiscount: yupFormSchemas.decimal(
+    i18n('entities.serviceReservation.fields.totalPriceWithDiscount'),
+    {},
+  ),
+  discountCode: yupFormSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.discountCode'),
+    {},
+  ),
 });
 
 function ServiceReservationForm(props) {
@@ -71,10 +90,14 @@ function ServiceReservationForm(props) {
       businessId: record.businessId,
       customerId: record.customerId,
       serviceType: record.serviceType || [],
+      serviceProviderIDs: record.serviceProviderIDs || [],
       time: record.time,
       needTransportation: record.needTransportation,
       place: record.place,
       status: record.status,
+      totalPrice: record.totalPrice,
+      totalPriceWithDiscount: record.totalPriceWithDiscount,
+      discountCode: record.discountCode,
     };
   });
 
@@ -130,6 +153,15 @@ function ServiceReservationForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ProvidersAutocompleteFormItem
+            name="serviceProviderIDs"
+            label={i18n('entities.serviceReservation.fields.serviceProviderIDs')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <SelectFormItem
             name="time"
             label={i18n('entities.serviceReservation.fields.time')}
@@ -171,6 +203,28 @@ function ServiceReservationForm(props) {
               }),
             )}
             required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="totalPrice"
+            label={i18n('entities.serviceReservation.fields.totalPrice')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="totalPriceWithDiscount"
+            label={i18n('entities.serviceReservation.fields.totalPriceWithDiscount')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <DiscountsAutocompleteFormItem
+            name="discountCode"
+            label={i18n('entities.serviceReservation.fields.discountCode')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

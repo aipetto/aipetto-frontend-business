@@ -20,7 +20,9 @@ import Pagination from 'src/view/shared/table/Pagination';
 import BusinessListItem from 'src/view/business/list/BusinessListItem';
 import CustomerListItem from 'src/view/customer/list/CustomerListItem';
 import BusinessServicesTypesListItem from 'src/view/businessServicesTypes/list/BusinessServicesTypesListItem';
+import ProvidersListItem from 'src/view/providers/list/ProvidersListItem';
 import PlaceListItem from 'src/view/place/list/PlaceListItem';
+import DiscountsListItem from 'src/view/discounts/list/DiscountsListItem';
 
 function ServiceReservationListTable(props) {
   const [
@@ -137,6 +139,11 @@ function ServiceReservationListTable(props) {
                   )}
                 />
                 <TableColumnHeader
+                  label={i18n(
+                    'entities.serviceReservation.fields.serviceProviderIDs',
+                  )}
+                />
+                <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
@@ -166,6 +173,31 @@ function ServiceReservationListTable(props) {
                   name={'status'}
                   label={i18n(
                     'entities.serviceReservation.fields.status',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'totalPrice'}
+                  label={i18n(
+                    'entities.serviceReservation.fields.totalPrice',
+                  )}
+                  align="right"
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'totalPriceWithDiscount'}
+                  label={i18n(
+                    'entities.serviceReservation.fields.totalPriceWithDiscount',
+                  )}
+                  align="right"
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.serviceReservation.fields.discountCode',
                   )}
                 />
               <TableColumnHeader />
@@ -217,6 +249,9 @@ function ServiceReservationListTable(props) {
                     <BusinessServicesTypesListItem value={row.serviceType} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <ProvidersListItem value={row.serviceProviderIDs} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.time
                       ? i18n(
                           `entities.serviceReservation.enumerators.time.${row.time}`,
@@ -237,6 +272,15 @@ function ServiceReservationListTable(props) {
                           `entities.serviceReservation.enumerators.status.${row.status}`,
                         )
                       : null}
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.totalPrice}
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.totalPriceWithDiscount}
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <DiscountsListItem value={row.discountCode} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

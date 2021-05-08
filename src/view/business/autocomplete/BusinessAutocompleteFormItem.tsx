@@ -51,8 +51,8 @@ function BusinessAutocompleteFormItem(props) {
       const value = originalValue.id;
       let label = originalValue.label;
 
-      if (originalValue.name) {
-        label = originalValue.name;
+      if (originalValue.businessID) {
+        label = originalValue.businessID;
       }
 
       return {

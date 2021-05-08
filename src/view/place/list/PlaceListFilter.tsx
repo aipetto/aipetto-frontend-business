@@ -17,11 +17,15 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
+import PlaceTypeAutocompleteFormItem from 'src/view/placeType/autocomplete/PlaceTypeAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
     i18n('entities.place.fields.name'),
+  ),
+  placeType: yupFilterSchemas.relationToOne(
+    i18n('entities.place.fields.placeType'),
   ),
   businessId: yupFilterSchemas.relationToOne(
     i18n('entities.place.fields.businessId'),
@@ -54,6 +58,7 @@ const schema = yup.object().shape({
 
 const emptyValues = {
   name: null,
+  placeType: null,
   businessId: null,
   latitudeRange: [],
   longitudeRange: [],
@@ -70,6 +75,10 @@ const previewRenders = {
     label: i18n('entities.place.fields.name'),
     render: filterRenders.generic(),
   },
+  placeType: {
+      label: i18n('entities.place.fields.placeType'),
+      render: filterRenders.relationToOne(),
+    },
   businessId: {
       label: i18n('entities.place.fields.businessId'),
       render: filterRenders.relationToOne(),
@@ -168,6 +177,10 @@ function PlaceListFilter(props) {
               <InputFormItem
                 name="name"
                 label={i18n('entities.place.fields.name')}
+              />
+              <PlaceTypeAutocompleteFormItem
+                name="placeType"
+                label={i18n('entities.place.fields.placeType')}
               />
               <BusinessAutocompleteFormItem
                 name="businessId"

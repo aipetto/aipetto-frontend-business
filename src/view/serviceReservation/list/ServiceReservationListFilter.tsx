@@ -14,12 +14,14 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
+import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 import PlaceAutocompleteFormItem from 'src/view/place/autocomplete/PlaceAutocompleteFormItem';
+import DiscountsAutocompleteFormItem from 'src/view/discounts/autocomplete/DiscountsAutocompleteFormItem';
 
 const schema = yup.object().shape({
   dateRange: yupFilterSchemas.dateRange(
@@ -43,6 +45,15 @@ const schema = yup.object().shape({
   status: yupFilterSchemas.enumerator(
     i18n('entities.serviceReservation.fields.status'),
   ),
+  totalPriceRange: yupFilterSchemas.decimalRange(
+    i18n('entities.serviceReservation.fields.totalPriceRange'),
+  ),
+  totalPriceWithDiscountRange: yupFilterSchemas.decimalRange(
+    i18n('entities.serviceReservation.fields.totalPriceWithDiscountRange'),
+  ),
+  discountCode: yupFilterSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.discountCode'),
+  ),
 });
 
 const emptyValues = {
@@ -53,6 +64,9 @@ const emptyValues = {
   needTransportation: null,
   place: null,
   status: null,
+  totalPriceRange: [],
+  totalPriceWithDiscountRange: [],
+  discountCode: null,
 }
 
 const previewRenders = {
@@ -84,6 +98,18 @@ const previewRenders = {
     label: i18n('entities.serviceReservation.fields.status'),
     render: filterRenders.enumerator('entities.serviceReservation.enumerators.status',),
   },
+  totalPriceRange: {
+    label: i18n('entities.serviceReservation.fields.totalPriceRange'),
+    render: filterRenders.decimalRange(),
+  },
+  totalPriceWithDiscountRange: {
+    label: i18n('entities.serviceReservation.fields.totalPriceWithDiscountRange'),
+    render: filterRenders.decimalRange(),
+  },
+  discountCode: {
+      label: i18n('entities.serviceReservation.fields.discountCode'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function ServiceReservationListFilter(props) {
@@ -197,6 +223,18 @@ function ServiceReservationListFilter(props) {
                     }),
                   )}
                 />
+              <InputRangeFormItem
+                name="totalPriceRange"
+                label={i18n('entities.serviceReservation.fields.totalPriceRange')}
+              />
+              <InputRangeFormItem
+                name="totalPriceWithDiscountRange"
+                label={i18n('entities.serviceReservation.fields.totalPriceWithDiscountRange')}
+              />
+              <DiscountsAutocompleteFormItem
+                name="discountCode"
+                label={i18n('entities.serviceReservation.fields.discountCode')}
+              />
             </div>
 
             <div className="px-4 py-2 text-right">

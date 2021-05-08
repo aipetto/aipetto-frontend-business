@@ -15,15 +15,25 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
     i18n('entities.businessServicesTypes.fields.name'),
   ),
+  category: yupFilterSchemas.relationToOne(
+    i18n('entities.businessServicesTypes.fields.category'),
+  ),
+  language: yupFilterSchemas.relationToOne(
+    i18n('entities.businessServicesTypes.fields.language'),
+  ),
 });
 
 const emptyValues = {
   name: null,
+  category: null,
+  language: null,
 }
 
 const previewRenders = {
@@ -31,6 +41,14 @@ const previewRenders = {
     label: i18n('entities.businessServicesTypes.fields.name'),
     render: filterRenders.generic(),
   },
+  category: {
+      label: i18n('entities.businessServicesTypes.fields.category'),
+      render: filterRenders.relationToOne(),
+    },
+  language: {
+      label: i18n('entities.businessServicesTypes.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function BusinessServicesTypesListFilter(props) {
@@ -93,6 +111,14 @@ function BusinessServicesTypesListFilter(props) {
               <InputFormItem
                 name="name"
                 label={i18n('entities.businessServicesTypes.fields.name')}
+              />
+              <BusinessCategoryAutocompleteFormItem
+                name="category"
+                label={i18n('entities.businessServicesTypes.fields.category')}
+              />
+              <LanguagesAutocompleteFormItem
+                name="language"
+                label={i18n('entities.businessServicesTypes.fields.language')}
               />
             </div>
 

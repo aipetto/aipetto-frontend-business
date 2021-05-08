@@ -3,6 +3,7 @@ import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
+import LanguagesViewItem from 'src/view/languages/view/LanguagesViewItem';
 import PetTypesViewItem from 'src/view/petTypes/view/PetTypesViewItem';
 
 function BreedView(props) {
@@ -17,6 +18,11 @@ function BreedView(props) {
       <TextViewItem
         label={i18n('entities.breed.fields.name')}
         value={record.name}
+      />
+
+      <LanguagesViewItem
+        label={i18n('entities.breed.fields.language')}
+        value={record.language}
       />
 
       <PetTypesViewItem
