@@ -17,11 +17,15 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import breedEnumerators from 'src/modules/breed/breedEnumerators';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
     i18n('entities.breed.fields.name'),
+  ),
+  language: yupFilterSchemas.relationToOne(
+    i18n('entities.breed.fields.language'),
   ),
   type: yupFilterSchemas.relationToOne(
     i18n('entities.breed.fields.type'),
@@ -60,6 +64,7 @@ const schema = yup.object().shape({
 
 const emptyValues = {
   name: null,
+  language: null,
   type: null,
   size: null,
   exercise: null,
@@ -78,6 +83,10 @@ const previewRenders = {
     label: i18n('entities.breed.fields.name'),
     render: filterRenders.generic(),
   },
+  language: {
+      label: i18n('entities.breed.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
   type: {
       label: i18n('entities.breed.fields.type'),
       render: filterRenders.relationToOne(),
@@ -185,7 +194,11 @@ function BreedListFilter(props) {
                 name="name"
                 label={i18n('entities.breed.fields.name')}      
               />
-              <PetTypesAutocompleteFormItem  
+              <LanguagesAutocompleteFormItem
+                name="language"
+                label={i18n('entities.breed.fields.language')}
+              />
+              <PetTypesAutocompleteFormItem
                 name="type"
                 label={i18n('entities.breed.fields.type')}        
               />

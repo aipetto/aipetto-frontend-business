@@ -22,6 +22,15 @@ import city from 'src/modules/city/cityReducers';
 import state from 'src/modules/state/stateReducers';
 import messages from 'src/modules/messages/messagesReducers';
 import professionalsServiceAvailability from 'src/modules/professionalsServiceAvailability/professionalsServiceAvailabilityReducers';
+import languages from 'src/modules/languages/languagesReducers';
+import currency from 'src/modules/currency/currencyReducers';
+import discounts from 'src/modules/discounts/discountsReducers';
+import wallet from 'src/modules/wallet/walletReducers';
+import businessCategory from 'src/modules/businessCategory/businessCategoryReducers';
+import providers from 'src/modules/providers/providersReducers';
+import vaccineTypes from 'src/modules/vaccineTypes/vaccineTypesReducers';
+import petVaccines from 'src/modules/petVaccines/petVaccinesReducers';
+import placeType from 'src/modules/placeType/placeTypeReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -50,4 +59,13 @@ export default (history) =>
     state,
     messages,
     professionalsServiceAvailability,
+    languages,
+    currency,
+    discounts,
+    wallet,
+    businessCategory,
+    providers,
+    vaccineTypes,
+    petVaccines,
+    placeType,
   });

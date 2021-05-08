@@ -106,6 +106,7 @@ function BreedForm(props) {
 
     return {
       name: record.name,
+      language: record.language,
       type: record.type,
       size: record.size,
       exercise: record.exercise,
