@@ -30,8 +30,33 @@ const es = {
   },
   public: {
     homeTitle: '¿Amas a las mascotas?¡Entonces este es tu lugar!',
-    homeSubtitle: 'Donde quiera que estes, encuentre veterinários para ayudarte, obtener descuentos especiales en comida y accesorios, encuentre lugares donde tu mascota puede jugar y tener un lindo peinado, eso y mucho más...'
+    homeSubtitle: 'Donde quiera que estes, encuentre veterinários para ayudarte, obtener descuentos especiales en comida y accesorios, encuentre lugares donde tu mascota puede jugar y tener un lindo peinado, eso y mucho más...',
+    landingTitle: '¡Pronto un lugar en la web para vos y tus mascotas!',
+    landingSubtitle: 'Por favor colabore con tus comentários abajo, no nos olvidaremos de ustedes.',
   },
+
+    survey: {
+        checkboxTitle: '¿Qué te gustaría que nuestra plataforma hiciera por vos y tus mascotas?',
+        nameTitle: 'Tu nombre',
+        emailTitle: 'Tu correo',
+        numberOfPets: '¿Cuántas mascotas tienes?',
+        checkboxChoices: {
+            saveMoneyOnServices: 'Obtener descuentos en servicios',
+            reserveServices: 'Reservar en línea el horário y lugar de los servicios (vacunación, exámen médico, cirurgías, cuidados estéticos)',
+            findTheClosestPlaceToGetServices: 'Encontrar veterinarias, petshops más cercanos con disponibilidad de reserva',
+            findWhereToPlayWithMyPet: 'Encontrar lugares para jugar con mi mascota de manera segura',
+            knowMoreAboutPets: 'Obtener más información sobre mis mascotas',
+            adoptAPet: 'Obtener ayuda especializada al donar o adoptar una mascota',
+            getMoreMedicalInformation: 'Tener el historial médico en uno sólo lugar',
+            beAbleToChatWithAVeterinarian: 'Poder mandar mensajes via chat a tu veterinário en una emergencia sin costo extra',
+            seeWhatPetsMyFriendsHave: 'Conocer más de las mascotas de mis amigos',
+            findATrustedPersonToWalkMyPet: 'Encontrar una persona confiable para pasear mi mascota',
+        },
+        extraInfo: '¿Algo que te gustaría encontrar en una plataforma de mascotas y no incluímos?',
+        surveyCompleteMessage: '¡Muchas gracias por completar nuestro formulário, que tengas un excelente día!',
+        surveyCompleteButton: 'Completar'
+    },
+
   api: {
     menu: 'API',
   },

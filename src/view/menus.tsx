@@ -14,7 +14,7 @@ const permissions = Permissions.values;
 
 export default [
   {
-    path: '/',
+    path: '/network',
     exact: true,
     icon: faThLarge,
     label: i18n('dashboard.menu'),

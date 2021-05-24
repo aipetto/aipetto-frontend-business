@@ -26,7 +26,7 @@ function UserNewPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('user.menu'), '/user'],
           [i18n('user.new.title')],
         ]}

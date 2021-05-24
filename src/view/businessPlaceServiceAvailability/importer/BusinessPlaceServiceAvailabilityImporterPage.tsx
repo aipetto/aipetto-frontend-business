@@ -18,7 +18,7 @@ function BusinessPlaceServiceAvailabilityImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.businessPlaceServiceAvailability.menu'), '/business-place-service-availability'],
           [i18n('entities.businessPlaceServiceAvailability.importer.title')],
         ]}

@@ -5,7 +5,7 @@ const permissions = Permissions.values;
 
 const privateRoutes = [
   {
-    path: '/',
+    path: '/network',
     loader: () =>
       import('src/view/dashboard/DashboardPage'),
     permissionRequired: null,
@@ -1055,6 +1055,13 @@ const privateRoutes = [
 ].filter(Boolean);
 
 const publicRoutes = [
+  {
+    path: '/',
+    loader: () =>
+        import('src/view/home/LandingPage'),
+    permissionRequired: null,
+    exact: true,
+  },
   {
     path: '/home',
     loader: () => import('src/view/home/HomePage'),

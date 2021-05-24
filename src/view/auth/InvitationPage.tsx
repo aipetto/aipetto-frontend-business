@@ -41,7 +41,7 @@ function InviationPage() {
 
   const doSignout = async () => {
     await dispatch(authActions.doSignout());
-    getHistory().push('/');
+    getHistory().push('/network');
   };
 
   return (

@@ -26,8 +26,33 @@ const ptBR = {
   },
   public: {
     homeTitle: 'Você ama os animais de estimação? Então esse é seu lugar!',
-    homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...'
+    homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...',
+    landingTitle: 'Logo logo um lugar na internet para você e seus pets!',
+    landingSubtitle: 'Por favor colabore com seus comentários abaixo, não esqueceremos de vocês.',
   },
+
+    survey: {
+        checkboxTitle: 'O que você gostaria de encontrar na nossa plataforma?',
+        nameTitle: 'Seu nome',
+        emailTitle: 'Seu email',
+        numberOfPets: 'Quantos pets você têm?',
+        checkboxChoices: {
+            saveMoneyOnServices: 'Conseguir descontos especiais em serviços para pet',
+            reserveServices: 'Agendar online a hora e lugar dos serviços (vacinação, exame médico, cirurgias, banho e tosa)',
+            findTheClosestPlaceToGetServices: 'Ajudar a encontrar veterinárias, petshops mais próximas com disponibilidade de atendimento',
+            findWhereToPlayWithMyPet: 'Encontrar lugares para brincar de maneira segura',
+            knowMoreAboutPets: 'Ter mais informação sobre o meu pet e como cuidar dele melhor',
+            adoptAPet: 'Ter ajuda especializada ao adotar ou doar um pet',
+            getMoreMedicalInformation: 'Ter a ficha médica em um só lugar',
+            beAbleToChatWithAVeterinarian: 'Poder mandar mensagens ao meu veterinário a qualquer hora sem custo adicional',
+            seeWhatPetsMyFriendsHave: 'Saber quais pets têm meus amigos',
+            findATrustedPersonToWalkMyPet: 'Encontrar uma pessoa confiável para passear meu pet',
+        },
+        extraInfo: 'O que mais você gostaria de encontrar e não incluímos na lista?',
+        surveyCompleteMessage: 'Obrigado por completar nosso formulário, tenha um ótimo dia!',
+        surveyCompleteButton: 'Completar'
+    },
+
   app: {
     title: 'AIPETTO',
   },

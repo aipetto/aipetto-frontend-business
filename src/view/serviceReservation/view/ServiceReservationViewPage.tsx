@@ -23,7 +23,7 @@ function ServiceReservationPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.serviceReservation.menu'), '/service-reservation'],
           [i18n('entities.serviceReservation.view.title')],
         ]}
