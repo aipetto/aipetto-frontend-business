@@ -46,7 +46,7 @@ const en = {
         reserveServices: 'Reserve online the time and place of the services (vaccine, medical exam, surgeries, grooming)',
         findTheClosestPlaceToGetServices: 'Find vet centers, pet stores, playgrounds nearby',
         findWhereToPlayWithMyPet: 'Find where to take my pet to play safely',
-        knowMoreAboutPets: 'Get more information about my pet',
+        knowMoreAboutPets: 'Have your pet medical history in one place wherever you go',
         adoptAPet: 'Have specialized help on how to adopt or donate a pet',
         getMoreMedicalInformation: 'Get more medical information',
         beAbleToChatWithAVeterinarian: 'Chat with your veterinarian in an emergency without extra cost',

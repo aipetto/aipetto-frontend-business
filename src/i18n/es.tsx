@@ -47,7 +47,7 @@ const es = {
             findWhereToPlayWithMyPet: 'Encontrar lugares para jugar con mi mascota de manera segura',
             knowMoreAboutPets: 'Obtener más información sobre mis mascotas',
             adoptAPet: 'Obtener ayuda especializada al donar o adoptar una mascota',
-            getMoreMedicalInformation: 'Tener el historial médico en uno sólo lugar',
+            getMoreMedicalInformation: 'Tener el historial médico en uno sólo lugar válido en diferentes paises',
             beAbleToChatWithAVeterinarian: 'Poder mandar mensajes via chat a tu veterinário en una emergencia sin costo extra',
             seeWhatPetsMyFriendsHave: 'Conocer más de las mascotas de mis amigos',
             findATrustedPersonToWalkMyPet: 'Encontrar una persona confiable para pasear mi mascota',
