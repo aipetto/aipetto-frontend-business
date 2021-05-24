@@ -18,7 +18,7 @@ function PublicRoute({
         );
 
         if (permissionChecker.isAuthenticated) {
-          return <Redirect to="/" />;
+          return <Redirect to="/network" />;
         }
 
         return <Component {...props} />;

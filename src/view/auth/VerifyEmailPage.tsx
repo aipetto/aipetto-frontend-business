@@ -32,7 +32,7 @@ function VerifyEmailPage() {
 
   const doSignout = async () => {
     await dispatch(actions.doSignout());
-    getHistory().push('/');
+    getHistory().push('/network');
   };
 
   return (

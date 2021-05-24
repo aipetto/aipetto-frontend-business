@@ -18,7 +18,7 @@ function OrderImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.order.menu'), '/order'],
           [i18n('entities.order.importer.title')],
         ]}

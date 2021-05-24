@@ -30,8 +30,30 @@ const es = {
   },
   public: {
     homeTitle: '¿Amas a las mascotas?¡Entonces este es tu lugar!',
-    homeSubtitle: 'Donde quiera que estes, encuentre veterinários para ayudarte, obtener descuentos especiales en comida y accesorios, encuentre lugares donde tu mascota puede jugar y tener un lindo peinado, eso y mucho más...'
+    homeSubtitle: 'Donde quiera que estes, encuentre veterinários para ayudarte, obtener descuentos especiales en comida y accesorios, encuentre lugares donde tu mascota puede jugar y tener un lindo peinado, eso y mucho más...',
+    landingTitle: 'Soon an awesome place on internet for you and your pets',
+    landingSubtitle: 'Please help us with your comments below',
   },
+
+    survey: {
+        checkboxTitle: 'What would you like us to provide for you and your pet?',
+        nameTitle: 'Tu nombre',
+        emailTitle: 'Tu correo',
+        numberOfPets: '¿Cuántas mascotas tienes?',
+        checkboxChoices: {
+            saveMoneyOnServices: 'Get discounts on pet services',
+            findTheClosestPlaceToGetServices: 'Find vet centers, petshops, playgrounds nearby',
+            findWhereToPlayWithMyPet: 'Find where you can take your pet to play',
+            knowMoreAboutPets: 'Get more information about your pet',
+            adoptAPet: 'Adopt a pet',
+            getMoreMedicalInformation: 'Get more medical information',
+            beAbleToChatWithAVeterinarian: 'Chat with a veterinarian anytime a day without extra cost',
+            seeWhatPetsMyFriendsHave: 'See what pets my friends have',
+            findATrustedPersonToWalkMyPet: 'Find a trusted person to walk my pet',
+        },
+        extraInfo: 'Something you would like and we didn\'t include?'
+    },
+
   api: {
     menu: 'API',
   },

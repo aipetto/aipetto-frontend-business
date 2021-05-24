@@ -18,7 +18,7 @@ function PetTypesImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.petTypes.menu'), '/pet-types'],
           [i18n('entities.petTypes.importer.title')],
         ]}

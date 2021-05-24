@@ -18,7 +18,7 @@ function CountryImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.country.menu'), '/country'],
           [i18n('entities.country.importer.title')],
         ]}

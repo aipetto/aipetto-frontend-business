@@ -18,7 +18,7 @@ function MessagesImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.messages.menu'), '/messages'],
           [i18n('entities.messages.importer.title')],
         ]}

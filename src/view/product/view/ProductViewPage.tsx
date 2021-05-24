@@ -23,7 +23,7 @@ function ProductPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.product.menu'), '/product'],
           [i18n('entities.product.view.title')],
         ]}

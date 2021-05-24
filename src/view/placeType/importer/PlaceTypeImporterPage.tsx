@@ -18,7 +18,7 @@ function PlaceTypeImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.placeType.menu'), '/place-type'],
           [i18n('entities.placeType.importer.title')],
         ]}

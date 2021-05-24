@@ -44,7 +44,7 @@ function StateFormPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.state.menu'), '/state'],
           [title],
         ]}

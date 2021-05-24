@@ -31,7 +31,28 @@ const en = {
 
   public: {
       homeTitle: 'Do you love pets? Then this your place!',
-      homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...'
+      homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
+      landingTitle: 'Soon an awesome place on internet for you and your pets',
+      landingSubtitle: 'Please help us with your comments below',
+  },
+
+  survey: {
+    checkboxTitle: 'What would you like us to provide for you and your pet?',
+    nameTitle: 'Your name',
+    emailTitle: 'Your email',
+    numberOfPets: 'How many pets do you have?',
+    checkboxChoices: {
+        saveMoneyOnServices: 'Get discounts on pet services',
+        findTheClosestPlaceToGetServices: 'Find vet centers, petshops, playgrounds nearby',
+        findWhereToPlayWithMyPet: 'Find where you can take your pet to play',
+        knowMoreAboutPets: 'Get more information about your pet',
+        adoptAPet: 'Adopt a pet',
+        getMoreMedicalInformation: 'Get more medical information',
+        beAbleToChatWithAVeterinarian: 'Chat with a veterinarian anytime a day without extra cost',
+        seeWhatPetsMyFriendsHave: 'See what pets my friends have',
+        findATrustedPersonToWalkMyPet: 'Find a trusted person to walk my pet',
+    },
+    extraInfo: 'Something you would like and we didn\'t include?'
   },
 
   api: {

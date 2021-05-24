@@ -10,7 +10,7 @@ function MessagesListPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.messages.menu')],
         ]}
       />

@@ -23,7 +23,7 @@ function CurrencyPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.currency.menu'), '/currency'],
           [i18n('entities.currency.view.title')],
         ]}

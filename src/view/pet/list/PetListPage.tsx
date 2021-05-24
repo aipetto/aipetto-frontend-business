@@ -10,7 +10,7 @@ function PetListPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.pet.menu')],
         ]}
       />

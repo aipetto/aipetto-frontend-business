@@ -26,8 +26,30 @@ const ptBR = {
   },
   public: {
     homeTitle: 'Você ama os animais de estimação? Então esse é seu lugar!',
-    homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...'
+    homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...',
+    landingTitle: 'Soon an awesome place on internet for you and your pets',
+    landingSubtitle: 'Please help us with your comments below',
   },
+
+    survey: {
+        checkboxTitle: 'What would you like us to provide for you and your pet?',
+        nameTitle: 'Your name',
+        emailTitle: 'Your email',
+        numberOfPets: 'How many pets you have?',
+        checkboxChoices: {
+            saveMoneyOnServices: 'Get discounts on pet services',
+            findTheClosestPlaceToGetServices: 'Find vet centers, petshops, playgrounds nearby',
+            findWhereToPlayWithMyPet: 'Find where you can take your pet to play',
+            knowMoreAboutPets: 'Get more information about your pet',
+            adoptAPet: 'Adopt a pet',
+            getMoreMedicalInformation: 'Get more medical information',
+            beAbleToChatWithAVeterinarian: 'Chat with a veterinarian anytime a day without extra cost',
+            seeWhatPetsMyFriendsHave: 'See what pets my friends have',
+            findATrustedPersonToWalkMyPet: 'Find a trusted person to walk my pet',
+        },
+        extraInfo: 'Something you would like and we didn\'t include?'
+    },
+
   app: {
     title: 'AIPETTO',
   },

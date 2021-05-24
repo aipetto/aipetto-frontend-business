@@ -23,7 +23,7 @@ function BusinessServicesTypesPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/'],
+          [i18n('dashboard.menu'), '/network'],
           [i18n('entities.businessServicesTypes.menu'), '/business-services-types'],
           [i18n('entities.businessServicesTypes.view.title')],
         ]}
