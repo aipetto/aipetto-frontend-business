@@ -43,7 +43,7 @@ const ptBR = {
             findWhereToPlayWithMyPet: 'Encontrar lugares para brincar de maneira segura',
             knowMoreAboutPets: 'Ter mais informação sobre o meu pet e como cuidar dele melhor',
             adoptAPet: 'Ter ajuda especializada ao adotar ou doar um pet',
-            getMoreMedicalInformation: 'Ter a ficha médica em um só lugar',
+            getMoreMedicalInformation: 'Ter a ficha médica em um lugar só e válido para diferentes países',
             beAbleToChatWithAVeterinarian: 'Poder mandar mensagens ao meu veterinário a qualquer hora sem custo adicional',
             seeWhatPetsMyFriendsHave: 'Saber quais pets têm meus amigos',
             findATrustedPersonToWalkMyPet: 'Encontrar uma pessoa confiável para passear meu pet',
