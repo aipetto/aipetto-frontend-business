@@ -1,8 +1,13 @@
+import {
+    faGifts,
+} from '@fortawesome/free-solid-svg-icons';
 import React, {Component} from 'react';
 import LandingNavbar from "../layout/LandingNavbar";
 import * as Survey from "survey-react";
 import "survey-react/modern.css";
 import { i18n } from 'src/i18n';
+import {faEdit} from "@fortawesome/free-regular-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 Survey.StylesManager.applyTheme("modern");
 
@@ -34,6 +39,8 @@ class LandingPage extends Component {
             ]};
         var survey = new Survey.Model(json);
         survey.locale = localStorage.getItem('language') || 'en';
+        survey.completeText = i18n('survey.surveyCompleteButton');
+        survey.completedHtml = i18n('survey.surveyCompleteMessage');
 
         return(
         <>
@@ -47,7 +54,7 @@ class LandingPage extends Component {
 
                     <div className="py-0 md:py-16 hero__content text-center w-4/5 mx-auto fade-in fade-in-first">
                         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{i18n('public.landingTitle')}</h1>
-                        <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingSubtitle')}</p>
+                        <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingSubtitle')} <FontAwesomeIcon icon={faGifts} /> <FontAwesomeIcon icon={faGifts} /></p>
                     </div>
 
                 </div>

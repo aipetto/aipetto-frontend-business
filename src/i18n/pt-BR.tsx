@@ -27,27 +27,30 @@ const ptBR = {
   public: {
     homeTitle: 'Você ama os animais de estimação? Então esse é seu lugar!',
     homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...',
-    landingTitle: 'Soon an awesome place on internet for you and your pets',
-    landingSubtitle: 'Please help us with your comments below',
+    landingTitle: 'Logo logo um lugar na internet para você e seus pets!',
+    landingSubtitle: 'Por favor colabore com seus comentários abaixo, não esqueceremos de vocês.',
   },
 
     survey: {
-        checkboxTitle: 'What would you like us to provide for you and your pet?',
-        nameTitle: 'Your name',
-        emailTitle: 'Your email',
-        numberOfPets: 'How many pets you have?',
+        checkboxTitle: 'O que você gostaria de encontrar na nossa plataforma?',
+        nameTitle: 'Seu nome',
+        emailTitle: 'Seu email',
+        numberOfPets: 'Quantos pets você têm?',
         checkboxChoices: {
-            saveMoneyOnServices: 'Get discounts on pet services',
-            findTheClosestPlaceToGetServices: 'Find vet centers, petshops, playgrounds nearby',
-            findWhereToPlayWithMyPet: 'Find where you can take your pet to play',
-            knowMoreAboutPets: 'Get more information about your pet',
-            adoptAPet: 'Adopt a pet',
-            getMoreMedicalInformation: 'Get more medical information',
-            beAbleToChatWithAVeterinarian: 'Chat with a veterinarian anytime a day without extra cost',
-            seeWhatPetsMyFriendsHave: 'See what pets my friends have',
-            findATrustedPersonToWalkMyPet: 'Find a trusted person to walk my pet',
+            saveMoneyOnServices: 'Conseguir descontos especiais em serviços para pet',
+            reserveServices: 'Agendar online a hora e lugar dos serviços (vacinação, exame médico, cirurgias, banho e tosa)',
+            findTheClosestPlaceToGetServices: 'Ajudar a encontrar veterinárias, petshops mais próximas com disponibilidade de atendimento',
+            findWhereToPlayWithMyPet: 'Encontrar lugares para brincar de maneira segura',
+            knowMoreAboutPets: 'Ter mais informação sobre o meu pet e como cuidar dele melhor',
+            adoptAPet: 'Ter ajuda especializada ao adotar ou doar um pet',
+            getMoreMedicalInformation: 'Ter a ficha médica em um só lugar',
+            beAbleToChatWithAVeterinarian: 'Poder mandar mensagens ao meu veterinário a qualquer hora sem custo adicional',
+            seeWhatPetsMyFriendsHave: 'Saber quais pets têm meus amigos',
+            findATrustedPersonToWalkMyPet: 'Encontrar uma pessoa confiável para passear meu pet',
         },
-        extraInfo: 'Something you would like and we didn\'t include?'
+        extraInfo: 'O que mais você gostaria de encontrar e não incluímos na lista?',
+        surveyCompleteMessage: 'Obrigado por completar nosso formulário, tenha um ótimo dia!',
+        surveyCompleteButton: 'Completar'
     },
 
   app: {
