@@ -1,6 +1,6 @@
 {
   "name": "app-frontend",
-  "version": "alpha-v1.0.1",
+  "version": "v1.0.1-alpha",
   "private": true,
   "dependencies": {
     "@craco/craco": "6.1.1",
