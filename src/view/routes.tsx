@@ -1093,6 +1093,20 @@ const privateRoutes = [
 
 const publicRoutes = [
   {
+    path: '/',
+    loader: () =>
+        import('src/view/home/LandingPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
+    path: '/home',
+    loader: () =>
+        import('src/view/home/HomePage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     path: '/auth/signin',
     loader: () => import('src/view/auth/SigninPage'),
   },

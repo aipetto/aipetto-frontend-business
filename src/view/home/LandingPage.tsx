@@ -6,15 +6,16 @@ import LandingNavbar from "../layout/LandingNavbar";
 import * as Survey from "survey-react";
 import "survey-react/modern.css";
 import { i18n } from 'src/i18n';
-import {faEdit} from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import surveyService from 'src/modules/landingSurvey/landingSurveyService';
 
 Survey.StylesManager.applyTheme("modern");
 
 class LandingPage extends Component {
 
-    onComplete(survey, options){
-        console.log("Survey results: " + JSON.stringify(survey.data));
+    async onComplete(survey, options) {
+        //console.log("Survey results: " + JSON.stringify(survey.data));
+        await surveyService.create(survey.data);
     }
 
     render (){

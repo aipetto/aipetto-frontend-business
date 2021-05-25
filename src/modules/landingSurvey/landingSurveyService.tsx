@@ -40,7 +40,10 @@ export default class LandingSurveyService {
       data,
     };
 
-    const tenantId = AuthCurrentTenant.get();
+    //const tenantId = AuthCurrentTenant.get();
+
+    // Survey is going to be only for AIPETTO MANAGEMENT Workspace
+    const tenantId = '606c9c61826963485fbde0ed';
 
     const response = await authAxios.post(
       `/tenant/${tenantId}/landing-survey`,
