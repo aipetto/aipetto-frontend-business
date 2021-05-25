@@ -223,4 +223,11 @@ export default [
     icon: faChevronRight,
     label: i18n('entities.placeType.menu'),
   },
+
+  {
+    path: '/landing-survey',
+    permissionRequired: permissions.landingSurveyRead,
+    icon: faChevronRight,
+    label: i18n('entities.landingSurvey.menu'),
+  },
 ].filter(Boolean);

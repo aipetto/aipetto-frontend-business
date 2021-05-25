@@ -1052,20 +1052,46 @@ const privateRoutes = [
     permissionRequired: permissions.placeTypeRead,
     exact: true,
   },
-].filter(Boolean);
-
-const publicRoutes = [
   {
-    path: '/',
+    path: '/landing-survey',
     loader: () =>
-        import('src/view/home/LandingPage'),
-    permissionRequired: null,
+        import('src/view/landingSurvey/list/LandingSurveyListPage'),
+    permissionRequired: permissions.landingSurveyRead,
     exact: true,
   },
   {
-    path: '/home',
-    loader: () => import('src/view/home/HomePage'),
+    path: '/landing-survey/new',
+    loader: () =>
+        import('src/view/landingSurvey/form/LandingSurveyFormPage'),
+    permissionRequired: permissions.landingSurveyCreate,
+    exact: true,
   },
+  {
+    path: '/landing-survey/importer',
+    loader: () =>
+        import(
+            'src/view/landingSurvey/importer/LandingSurveyImporterPage'
+            ),
+    permissionRequired: permissions.landingSurveyImport,
+    exact: true,
+  },
+  {
+    path: '/landing-survey/:id/edit',
+    loader: () =>
+        import('src/view/landingSurvey/form/LandingSurveyFormPage'),
+    permissionRequired: permissions.landingSurveyEdit,
+    exact: true,
+  },
+  {
+    path: '/landing-survey/:id',
+    loader: () =>
+        import('src/view/landingSurvey/view/LandingSurveyViewPage'),
+    permissionRequired: permissions.landingSurveyRead,
+    exact: true,
+  },
+].filter(Boolean);
+
+const publicRoutes = [
   {
     path: '/auth/signin',
     loader: () => import('src/view/auth/SigninPage'),
