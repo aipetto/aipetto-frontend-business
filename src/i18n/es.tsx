@@ -1415,6 +1415,7 @@ const es = {
         },
         fields: {
           id: 'Id',
+          'businessID': 'BusinessID',
           'codeName': 'CodeName',
           'discountPercentageRange': 'DiscountPercentage',
           'discountPercentage': 'DiscountPercentage',
@@ -1477,6 +1478,7 @@ const es = {
           'totalCredits': 'TotalCredits',
           'aipettoPointsRange': 'AipettoPoints',
           'aipettoPoints': 'AipettoPoints',
+          'user': 'User',
           createdAt: 'Creado el',
           updatedAt: 'Actualizado el',
           createdAtRange: 'Creado el',

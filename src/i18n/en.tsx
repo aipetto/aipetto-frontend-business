@@ -1417,6 +1417,7 @@ const en = {
         },
         fields: {
           id: 'Id',
+          'businessID': 'BusinessID',
           'codeName': 'CodeName',
           'discountPercentageRange': 'DiscountPercentage',
           'discountPercentage': 'DiscountPercentage',
@@ -1479,6 +1480,7 @@ const en = {
           'totalCredits': 'TotalCredits',
           'aipettoPointsRange': 'AipettoPoints',
           'aipettoPoints': 'AipettoPoints',
+          'user': 'User',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -1794,6 +1796,66 @@ const en = {
         importer: {
           title: 'Import PlaceTypes',
           fileName: 'placeType_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    landingSurvey: {
+        name: 'landingSurvey',
+        label: 'LandingSurveys',
+        menu: 'LandingSurveys',
+        exporterFileName: 'landingSurvey_export',
+        list: {
+          menu: 'LandingSurveys',
+          title: 'LandingSurveys',
+        },
+        create: {
+          success: 'LandingSurvey successfully saved',
+        },
+        update: {
+          success: 'LandingSurvey successfully saved',
+        },
+        destroy: {
+          success: 'LandingSurvey successfully deleted',
+        },
+        destroyAll: {
+          success: 'LandingSurvey(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit LandingSurvey',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'email': 'Email',
+          'numberOfPets': 'NumberOfPets',
+          'interests': 'Interests',
+          'extraInfo': 'ExtraInfo',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'interests': {
+            '': '',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New LandingSurvey',
+        },
+        view: {
+          title: 'View LandingSurvey',
+        },
+        importer: {
+          title: 'Import LandingSurveys',
+          fileName: 'landingSurvey_import_template',
           hint:
             'Files/Images columns must be the URLs of the files separated by space.',
         },

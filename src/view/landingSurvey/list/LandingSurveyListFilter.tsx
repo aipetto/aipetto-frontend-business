@@ -4,8 +4,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';    
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/wallet/list/walletListActions';
-import selectors from 'src/modules/wallet/list/walletListSelectors';
+import actions from 'src/modules/landingSurvey/list/landingSurveyListActions';
+import selectors from 'src/modules/landingSurvey/list/landingSurveyListSelectors';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm, FormProvider } from 'react-hook-form';
@@ -14,44 +14,60 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
-import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
-import InputNumberRangeFormItem from 'src/view/shared/form/items/InputNumberRangeFormItem';
-import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
+import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
+import landingSurveyEnumerators from 'src/modules/landingSurvey/landingSurveyEnumerators';
 
 const schema = yup.object().shape({
-  totalCreditsRange: yupFilterSchemas.decimalRange(
-    i18n('entities.wallet.fields.totalCreditsRange'),
+  name: yupFilterSchemas.string(
+    i18n('entities.landingSurvey.fields.name'),
   ),
-  aipettoPointsRange: yupFilterSchemas.integerRange(
-    i18n('entities.wallet.fields.aipettoPointsRange'),
+  email: yupFilterSchemas.string(
+    i18n('entities.landingSurvey.fields.email'),
   ),
-  user: yupFilterSchemas.relationToOne(
-    i18n('entities.wallet.fields.user'),
+  numberOfPets: yupFilterSchemas.string(
+    i18n('entities.landingSurvey.fields.numberOfPets'),
+  ),
+  interests: yupFilterSchemas.stringArray(
+    i18n('entities.landingSurvey.fields.interests'),
+  ),
+  extraInfo: yupFilterSchemas.string(
+    i18n('entities.landingSurvey.fields.extraInfo'),
   ),
 });
 
 const emptyValues = {
-  totalCreditsRange: [],
-  aipettoPointsRange: [],
-  user: null,
+  name: null,
+  email: null,
+  numberOfPets: null,
+  interests: [],
+  extraInfo: null,
 }
 
 const previewRenders = {
-  totalCreditsRange: {
-    label: i18n('entities.wallet.fields.totalCreditsRange'),
-    render: filterRenders.decimalRange(),
+  name: {
+    label: i18n('entities.landingSurvey.fields.name'),
+    render: filterRenders.generic(),
   },
-  aipettoPointsRange: {
-    label: i18n('entities.wallet.fields.aipettoPointsRange'),
-    render: filterRenders.range(),
+  email: {
+    label: i18n('entities.landingSurvey.fields.email'),
+    render: filterRenders.generic(),
   },
-  user: {
-    label: i18n('entities.wallet.fields.user'),
-    render: filterRenders.relationToOne(),
+  numberOfPets: {
+    label: i18n('entities.landingSurvey.fields.numberOfPets'),
+    render: filterRenders.generic(),
+  },
+  interests: {
+    label: i18n('entities.landingSurvey.fields.interests'),
+    render: filterRenders.enumeratorMultiple('entities.landingSurvey.enumerators.interests',),
+  },
+  extraInfo: {
+    label: i18n('entities.landingSurvey.fields.extraInfo'),
+    render: filterRenders.generic(),
   },
 }
 
-function WalletListFilter(props) {
+function LandingSurveyListFilter(props) {
   const rawFilter = useSelector(selectors.selectRawFilter);
   const dispatch = useDispatch();
   const [expanded, setExpanded] = useState(false);
@@ -108,17 +124,34 @@ function WalletListFilter(props) {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-              <InputRangeFormItem
-                name="totalCreditsRange"
-                label={i18n('entities.wallet.fields.totalCreditsRange')}      
+              <InputFormItem
+                name="name"
+                label={i18n('entities.landingSurvey.fields.name')}      
               />
-              <InputNumberRangeFormItem
-                name="aipettoPointsRange"
-                label={i18n('entities.wallet.fields.aipettoPointsRange')}      
+              <InputFormItem
+                name="email"
+                label={i18n('entities.landingSurvey.fields.email')}      
               />
-              <UserAutocompleteFormItem
-                name="user"
-                label={i18n('entities.wallet.fields.user')}
+              <InputFormItem
+                name="numberOfPets"
+                label={i18n('entities.landingSurvey.fields.numberOfPets')}      
+              />
+              <SelectFormItem
+                name="interests"
+                label={i18n('entities.landingSurvey.fields.interests')}
+                options={landingSurveyEnumerators.interests.map(
+                  (value) => ({
+                    value,
+                    label: i18n(
+                      `entities.landingSurvey.enumerators.interests.${value}`,
+                    ),
+                  }),
+                )}
+                mode="multiple"
+              />
+              <InputFormItem
+                name="extraInfo"
+                label={i18n('entities.landingSurvey.fields.extraInfo')}      
               />
             </div>
 
@@ -154,4 +187,4 @@ function WalletListFilter(props) {
   );
 }
 
-export default WalletListFilter;
+export default LandingSurveyListFilter;

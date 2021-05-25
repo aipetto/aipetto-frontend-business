@@ -1052,6 +1052,43 @@ const privateRoutes = [
     permissionRequired: permissions.placeTypeRead,
     exact: true,
   },
+  {
+    path: '/landing-survey',
+    loader: () =>
+        import('src/view/landingSurvey/list/LandingSurveyListPage'),
+    permissionRequired: permissions.landingSurveyRead,
+    exact: true,
+  },
+  {
+    path: '/landing-survey/new',
+    loader: () =>
+        import('src/view/landingSurvey/form/LandingSurveyFormPage'),
+    permissionRequired: permissions.landingSurveyCreate,
+    exact: true,
+  },
+  {
+    path: '/landing-survey/importer',
+    loader: () =>
+        import(
+            'src/view/landingSurvey/importer/LandingSurveyImporterPage'
+            ),
+    permissionRequired: permissions.landingSurveyImport,
+    exact: true,
+  },
+  {
+    path: '/landing-survey/:id/edit',
+    loader: () =>
+        import('src/view/landingSurvey/form/LandingSurveyFormPage'),
+    permissionRequired: permissions.landingSurveyEdit,
+    exact: true,
+  },
+  {
+    path: '/landing-survey/:id',
+    loader: () =>
+        import('src/view/landingSurvey/view/LandingSurveyViewPage'),
+    permissionRequired: permissions.landingSurveyRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [
@@ -1064,7 +1101,10 @@ const publicRoutes = [
   },
   {
     path: '/home',
-    loader: () => import('src/view/home/HomePage'),
+    loader: () =>
+        import('src/view/home/HomePage'),
+    permissionRequired: null,
+    exact: true,
   },
   {
     path: '/auth/signin',

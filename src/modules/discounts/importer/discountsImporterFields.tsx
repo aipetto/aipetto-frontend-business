@@ -3,6 +3,14 @@ import { i18n } from 'src/i18n';import moment from 'moment';
 
 export default [
   {
+    name: 'businessID',
+    label: i18n('entities.discounts.fields.businessID'),
+    schema: schemas.relationToOne(
+      i18n('entities.discounts.fields.businessID'),
+      {},
+    ),
+  },
+  {
     name: 'codeName',
     label: i18n('entities.discounts.fields.codeName'),
     schema: schemas.string(

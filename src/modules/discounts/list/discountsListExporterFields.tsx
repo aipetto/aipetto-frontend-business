@@ -7,6 +7,11 @@ export default [
     label: i18n('entities.discounts.fields.id'),
   },
   {
+    name: 'businessID',
+    label: i18n('entities.discounts.fields.businessID'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'codeName',
     label: i18n('entities.discounts.fields.codeName'),
   },

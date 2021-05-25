@@ -31,6 +31,7 @@ import providers from 'src/modules/providers/providersReducers';
 import vaccineTypes from 'src/modules/vaccineTypes/vaccineTypesReducers';
 import petVaccines from 'src/modules/petVaccines/petVaccinesReducers';
 import placeType from 'src/modules/placeType/placeTypeReducers';
+import landingSurvey from 'src/modules/landingSurvey/landingSurveyReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -68,4 +69,5 @@ export default (history) =>
     vaccineTypes,
     petVaccines,
     placeType,
+    landingSurvey,
   });

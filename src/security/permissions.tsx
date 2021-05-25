@@ -1108,6 +1108,46 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
       },
+
+      landingSurveyImport: {
+        id: 'landingSurveyImport',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      landingSurveyCreate: {
+        id: 'landingSurveyCreate',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      landingSurveyEdit: {
+        id: 'landingSurveyEdit',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      landingSurveyDestroy: {
+        id: 'landingSurveyDestroy',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+        allowedStorage: [
+
+        ],
+      },
+      landingSurveyRead: {
+        id: 'landingSurveyRead',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
+      landingSurveyAutocomplete: {
+        id: 'landingSurveyAutocomplete',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [plans.free, plans.premium],
+      },
     };
   }
 

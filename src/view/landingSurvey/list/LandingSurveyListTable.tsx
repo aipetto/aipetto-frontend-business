@@ -8,18 +8,18 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import walletSelectors from 'src/modules/wallet/walletSelectors';
-import destroyActions from 'src/modules/wallet/destroy/walletDestroyActions';
-import destroySelectors from 'src/modules/wallet/destroy/walletDestroySelectors';
-import actions from 'src/modules/wallet/list/walletListActions';
-import selectors from 'src/modules/wallet/list/walletListSelectors';
+import landingSurveySelectors from 'src/modules/landingSurvey/landingSurveySelectors';
+import destroyActions from 'src/modules/landingSurvey/destroy/landingSurveyDestroyActions';
+import destroySelectors from 'src/modules/landingSurvey/destroy/landingSurveyDestroySelectors';
+import actions from 'src/modules/landingSurvey/list/landingSurveyListActions';
+import selectors from 'src/modules/landingSurvey/list/landingSurveyListSelectors';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
-import UserListItem from 'src/view/user/list/UserListItem';
 
-function WalletListTable(props) {
+
+function LandingSurveyListTable(props) {
   const [
     recordIdToDestroy,
     setRecordIdToDestroy,
@@ -47,10 +47,10 @@ function WalletListTable(props) {
     selectors.selectIsAllSelected,
   );
   const hasPermissionToEdit = useSelector(
-    walletSelectors.selectPermissionToEdit,
+    landingSurveySelectors.selectPermissionToEdit,
   );
   const hasPermissionToDestroy = useSelector(
-    walletSelectors.selectPermissionToDestroy,
+    landingSurveySelectors.selectPermissionToDestroy,
   );
 
   const doOpenDestroyConfirmModal = (id) => {
@@ -113,25 +113,27 @@ function WalletListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'totalCredits'}
+                  name={'name'}
                   label={i18n(
-                    'entities.wallet.fields.totalCredits',
+                    'entities.landingSurvey.fields.name',
                   )}
-                  align="right"
                 />
                 <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'aipettoPoints'}
+                  name={'email'}
                   label={i18n(
-                    'entities.wallet.fields.aipettoPoints',
+                    'entities.landingSurvey.fields.email',
                   )}
-                  align="right"
                 />
                 <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'numberOfPets'}
                   label={i18n(
-                    'entities.wallet.fields.user',
+                    'entities.landingSurvey.fields.numberOfPets',
                   )}
                 />
               <TableColumnHeader />
@@ -172,20 +174,16 @@ function WalletListTable(props) {
                       }
                     />
                   </th>
-                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.totalCredits}
-                  </td>
-                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.aipettoPoints}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <UserListItem value={row.user} />
-                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.email}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.numberOfPets}</td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
                     align="right"
                   >
                     <Link
                       className="inline-flex justify-center items-center w-9 h-9 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
-                      to={`/wallet/${row.id}`}
+                      to={`/landing-survey/${row.id}`}
                       title={i18n('common.view')}
                     >
                       <FontAwesomeIcon icon={faSearch} />
@@ -193,7 +191,7 @@ function WalletListTable(props) {
                     {hasPermissionToEdit && (
                       <Link
                         className="inline-flex justify-center items-center w-9 h-9 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
-                        to={`/wallet/${row.id}/edit`}
+                        to={`/landing-survey/${row.id}/edit`}
                         title={i18n('common.edit')}
                       >
                         <FontAwesomeIcon icon={faEdit} />
@@ -239,4 +237,4 @@ function WalletListTable(props) {
   );
 }
 
-export default WalletListTable;
+export default LandingSurveyListTable;

@@ -10,39 +10,49 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
-import InputNumberFormItem from 'src/view/shared/form/items/InputNumberFormItem';
-import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
+import landingSurveyEnumerators from 'src/modules/landingSurvey/landingSurveyEnumerators';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  totalCredits: yupFormSchemas.decimal(
-    i18n('entities.wallet.fields.totalCredits'),
+  name: yupFormSchemas.string(
+    i18n('entities.landingSurvey.fields.name'),
     {
-      "min": 0
+      "required": true
     },
   ),
-  aipettoPoints: yupFormSchemas.integer(
-    i18n('entities.wallet.fields.aipettoPoints'),
+  email: yupFormSchemas.string(
+    i18n('entities.landingSurvey.fields.email'),
     {
-      "min": 0
+      "required": true
     },
   ),
-  user: yupFormSchemas.relationToOne(
-    i18n('entities.wallet.fields.user'),
+  numberOfPets: yupFormSchemas.string(
+    i18n('entities.landingSurvey.fields.numberOfPets'),
+    {},
+  ),
+  interests: yupFormSchemas.stringArray(
+    i18n('entities.landingSurvey.fields.interests'),
+    {},
+  ),
+  extraInfo: yupFormSchemas.string(
+    i18n('entities.landingSurvey.fields.extraInfo'),
     {},
   ),
 });
 
-function WalletForm(props) {
+function LandingSurveyForm(props) {
   const { saveLoading } = props;
 
   const [initialValues] = useState(() => {
     const record = props.record || {};
 
     return {
-      totalCredits: record.totalCredits,
-      aipettoPoints: record.aipettoPoints,
-      user: record.user,
+      name: record.name,
+      email: record.email,
+      numberOfPets: record.numberOfPets,
+      interests: record.interests || [],
+      extraInfo: record.extraInfo,
     };
   });
 
@@ -67,25 +77,47 @@ function WalletForm(props) {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="w-full sm:w-md md:w-md lg:w-md">
           <InputFormItem
-            name="totalCredits"
-            label={i18n('entities.wallet.fields.totalCredits')}  
-            required={false}
+            name="name"
+            label={i18n('entities.landingSurvey.fields.name')}
+            required={true}
           autoFocus
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputNumberFormItem
-            name="aipettoPoints"
-            label={i18n('entities.wallet.fields.aipettoPoints')}  
+          <InputFormItem
+            name="email"
+            label={i18n('entities.landingSurvey.fields.email')}
+            required={true}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="numberOfPets"
+            label={i18n('entities.landingSurvey.fields.numberOfPets')}
             required={false}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <UserAutocompleteFormItem
-            name="user"
-            label={i18n('entities.wallet.fields.user')}
+          <SelectFormItem
+            name="interests"
+            label={i18n('entities.landingSurvey.fields.interests')}
+            options={landingSurveyEnumerators.interests.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.landingSurvey.enumerators.interests.${value}`,
+                ),
+              }),
+            )}
             required={false}
-            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="extraInfo"
+            label={i18n('entities.landingSurvey.fields.extraInfo')}
+            required={false}
           />
         </div>
 
@@ -136,4 +168,4 @@ function WalletForm(props) {
   );
 }
 
-export default WalletForm;
+export default LandingSurveyForm;

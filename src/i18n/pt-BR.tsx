@@ -1416,6 +1416,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
+          'businessID': 'BusinessID',
           'codeName': 'CodeName',
           'discountPercentageRange': 'DiscountPercentage',
           'discountPercentage': 'DiscountPercentage',
@@ -1478,6 +1479,7 @@ const ptBR = {
           'totalCredits': 'TotalCredits',
           'aipettoPointsRange': 'AipettoPoints',
           'aipettoPoints': 'AipettoPoints',
+          'user': 'User',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -1793,6 +1795,66 @@ const ptBR = {
         importer: {
           title: 'Importar PlaceTypes',
           fileName: 'placeType_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    landingSurvey: {
+        name: 'LandingSurvey',
+        label: 'LandingSurveys',
+        menu: 'LandingSurveys',
+        exporterFileName: 'LandingSurvey_exportados',
+        list: {
+          menu: 'LandingSurveys',
+          title: 'LandingSurveys',
+        },
+        create: {
+          success: 'LandingSurvey salvo com sucesso',
+        },
+        update: {
+          success: 'LandingSurvey salvo com sucesso',
+        },
+        destroy: {
+          success: 'LandingSurvey deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'LandingSurvey(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar LandingSurvey',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'email': 'Email',
+          'numberOfPets': 'NumberOfPets',
+          'interests': 'Interests',
+          'extraInfo': 'ExtraInfo',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+          'interests': {
+            '': '',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo LandingSurvey',
+        },
+        view: {
+          title: 'Visualizar LandingSurvey',
+        },
+        importer: {
+          title: 'Importar LandingSurveys',
+          fileName: 'landingSurvey_template_importacao',
           hint:
             'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
         },
