@@ -112,6 +112,11 @@ function BreedListTable(props) {
                 )}
               </TableColumnHeader>
                 <TableColumnHeader
+                    label={i18n(
+                        'entities.breed.fields.image',
+                    )}
+                />
+                <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
@@ -137,92 +142,6 @@ function BreedListTable(props) {
                   name={'size'}
                   label={i18n(
                     'entities.breed.fields.size',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'exercise'}
-                  label={i18n(
-                    'entities.breed.fields.exercise',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'sizeOfHome'}
-                  label={i18n(
-                    'entities.breed.fields.sizeOfHome',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'grooming'}
-                  label={i18n(
-                    'entities.breed.fields.grooming',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'coatLength'}
-                  label={i18n(
-                    'entities.breed.fields.coatLength',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'sheds'}
-                  label={i18n(
-                    'entities.breed.fields.sheds',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'lifespan'}
-                  label={i18n(
-                    'entities.breed.fields.lifespan',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'vulnerableNativeBreed'}
-                  label={i18n(
-                    'entities.breed.fields.vulnerableNativeBreed',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'townOrCountry'}
-                  label={i18n(
-                    'entities.breed.fields.townOrCountry',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'sizeOfGarden'}
-                  label={i18n(
-                    'entities.breed.fields.sizeOfGarden',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.breed.fields.image',
                   )}
                 />
               <TableColumnHeader />
@@ -263,85 +182,15 @@ function BreedListTable(props) {
                       }
                     />
                   </th>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <ImagesListView value={row.image} />
+                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <LanguagesListItem value={row.language} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <PetTypesListItem value={row.type} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.size
-                      ? i18n(
-                          `entities.breed.enumerators.size.${row.size}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.exercise
-                      ? i18n(
-                          `entities.breed.enumerators.exercise.${row.exercise}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.sizeOfHome
-                      ? i18n(
-                          `entities.breed.enumerators.sizeOfHome.${row.sizeOfHome}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.grooming
-                      ? i18n(
-                          `entities.breed.enumerators.grooming.${row.grooming}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.coatLength
-                      ? i18n(
-                          `entities.breed.enumerators.coatLength.${row.coatLength}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.sheds
-                      ? i18n(
-                          `entities.breed.enumerators.sheds.${row.sheds}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.lifespan
-                      ? i18n(
-                          `entities.breed.enumerators.lifespan.${row.lifespan}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.vulnerableNativeBreed
-                      ? i18n(
-                          `entities.breed.enumerators.vulnerableNativeBreed.${row.vulnerableNativeBreed}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.townOrCountry
-                      ? i18n(
-                          `entities.breed.enumerators.townOrCountry.${row.townOrCountry}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.sizeOfGarden
-                      ? i18n(
-                          `entities.breed.enumerators.sizeOfGarden.${row.sizeOfGarden}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <ImagesListView value={row.image} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
