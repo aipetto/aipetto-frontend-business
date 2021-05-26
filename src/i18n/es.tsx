@@ -31,8 +31,8 @@ const es = {
   public: {
     homeTitle: '¿Amas a las mascotas?¡Entonces este es tu lugar!',
     homeSubtitle: 'Donde quiera que estes, encuentre veterinários para ayudarte, obtener descuentos especiales en comida y accesorios, encuentre lugares donde tu mascota puede jugar y tener un lindo peinado, eso y mucho más...',
-    landingTitle: '¡Pronto un lugar en la web para vos y tus mascotas!',
-    landingSubtitle: 'Por favor colabore con tus comentários abajo, no nos olvidaremos de ustedes.',
+    landingTitle: '¡Muy pronto un lugar en la web para vos y tus mascotas!',
+    landingSubtitle: 'Por favor, ayúdanos con tus comentarios abajo. No nos olvidaremos de ustedes',
   },
 
     survey: {
@@ -52,7 +52,7 @@ const es = {
             seeWhatPetsMyFriendsHave: 'Conocer más de las mascotas de mis amigos',
             findATrustedPersonToWalkMyPet: 'Encontrar una persona confiable para pasear mi mascota',
         },
-        extraInfo: '¿Algo que te gustaría encontrar en una plataforma de mascotas y no incluímos?',
+        extraInfo: '¿Algo que te gustaría encontrar en una plataforma de mascotas y no hemos incluido?',
         surveyCompleteMessage: '¡Muchas gracias por completar nuestro formulário, que tengas un excelente día!',
         surveyCompleteButton: 'Completar'
     },
