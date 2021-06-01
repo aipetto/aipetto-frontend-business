@@ -21,14 +21,14 @@ const languages: {
   en: {
     id: 'en',
     label: 'English',
-    flag: '/images/flags/United-States.png',
+    flag: '/images/flags/United-Kingdom.png',
     dateFns: null,
     dictionary: null,
   },
   es: {
     id: 'es',
     label: 'Español',
-    flag: '/images/flags/Spain.png',
+    flag: '/images/flags/Argentina.png',
     dateFns: null,
     dictionary: null,
   },
