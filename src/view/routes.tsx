@@ -1100,6 +1100,13 @@ const publicRoutes = [
     exact: true,
   },
   {
+    path: '/business',
+    loader: () =>
+        import('src/view/home/BusinessLandingPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     path: '/home',
     loader: () =>
         import('src/view/home/HomePage'),

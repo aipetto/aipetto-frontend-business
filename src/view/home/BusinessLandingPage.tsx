@@ -11,7 +11,7 @@ import surveyService from 'src/modules/landingSurvey/landingSurveyService';
 
 Survey.StylesManager.applyTheme("modern");
 
-class LandingPage extends Component {
+class BusinessLandingPage extends Component {
 
     async onComplete(survey, options) {
         //console.log("Survey results: " + JSON.stringify(survey.data));
@@ -23,7 +23,7 @@ class LandingPage extends Component {
                 {type: "text", name: "name", title: i18n('survey.nameTitle'), isRequired: true},
                 {type: "text", name: "email", title: i18n('survey.emailTitle'), isRequired: true},
                 {type: "text", name: "numberOfPets", title: i18n('survey.numberOfPets'), isRequired: true},
-                { type: "checkbox", name: "interests", title: i18n('survey.checkboxTitle'), isRequired: true, colCount: 6,
+                { type: "checkbox", name: "services", title: i18n('survey.checkboxTitle'), isRequired: true, colCount: 6,
                  choices:
                      [
                      i18n('survey.checkboxChoices.saveMoneyOnServices'),
@@ -52,12 +52,10 @@ class LandingPage extends Component {
                 <LandingNavbar fixed />
 
                 <div className="container mx-auto mt-8">
-
                     <div className="py-0 md:py-16 hero__content text-center w-4/5 mx-auto fade-in fade-in-first">
                         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{i18n('public.landingTitle')}</h1>
                         <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingSubtitle')} <FontAwesomeIcon icon={faGifts} /> <FontAwesomeIcon icon={faGifts} /></p>
                     </div>
-
                 </div>
 
                 <div className="container mx-auto mt-8">
@@ -69,7 +67,7 @@ class LandingPage extends Component {
                             <div className="text-center fade-in fade-in-second hidden md:block">
                                 <div className="">
                                     <div className="hero-mockup w-5/8 sm:col-4/6 w-4/5 lg:w-full mx-auto relative">
-                                        <img src="images/woman-pet-searching.png" alt="AIPETTO" className="lazy"/>
+                                        <img src="images/pet-business-services.png" alt="AIPETTO" className="lazy"/>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +82,6 @@ class LandingPage extends Component {
                         <div className="flex items-center flex-col lg:flex-row mx-auto">
                             <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">AIPETTO, Copyright &copy; 2021</span>
                         </div>
-
                     </div>
                 </div>
             </footer>
@@ -94,4 +91,4 @@ class LandingPage extends Component {
     };
 };
 
-export default LandingPage;
+export default BusinessLandingPage;
