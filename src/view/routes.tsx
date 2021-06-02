@@ -1089,6 +1089,44 @@ const privateRoutes = [
     permissionRequired: permissions.landingSurveyRead,
     exact: true,
   },
+
+  {
+    path: '/new-business-survey',
+    loader: () =>
+      import('src/view/newBusinessSurvey/list/NewBusinessSurveyListPage'),
+    permissionRequired: permissions.newBusinessSurveyRead,
+    exact: true,
+  },
+  {
+    path: '/new-business-survey/new',
+    loader: () =>
+      import('src/view/newBusinessSurvey/form/NewBusinessSurveyFormPage'),
+    permissionRequired: permissions.newBusinessSurveyCreate,
+    exact: true,
+  },
+  {
+    path: '/new-business-survey/importer',
+    loader: () =>
+      import(
+        'src/view/newBusinessSurvey/importer/NewBusinessSurveyImporterPage'
+      ),
+    permissionRequired: permissions.newBusinessSurveyImport,
+    exact: true,
+  },
+  {
+    path: '/new-business-survey/:id/edit',
+    loader: () =>
+      import('src/view/newBusinessSurvey/form/NewBusinessSurveyFormPage'),
+    permissionRequired: permissions.newBusinessSurveyEdit,
+    exact: true,
+  },
+  {
+    path: '/new-business-survey/:id',
+    loader: () =>
+      import('src/view/newBusinessSurvey/view/NewBusinessSurveyViewPage'),
+    permissionRequired: permissions.newBusinessSurveyRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [

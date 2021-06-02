@@ -18,13 +18,6 @@ const languages: {
     dictionary: any;
   };
 } = {
-  en: {
-    id: 'en',
-    label: 'English',
-    flag: '/images/flags/United-Kingdom.png',
-    dateFns: null,
-    dictionary: null,
-  },
   es: {
     id: 'es',
     label: 'Español',
@@ -36,6 +29,13 @@ const languages: {
     id: 'pt-BR',
     label: 'Português',
     flag: '/images/flags/Brazil.png',
+    dateFns: null,
+    dictionary: null,
+  },
+  en: {
+    id: 'en',
+    label: 'English',
+    flag: '/images/flags/United-Kingdom.png',
     dateFns: null,
     dictionary: null,
   },
