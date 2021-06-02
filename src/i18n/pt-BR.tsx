@@ -1859,6 +1859,70 @@ const ptBR = {
             'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
         },
       },
+
+    newBusinessSurvey: {
+        name: 'NewBusinessSurvey',
+        label: 'NewBusinessSurveys',
+        menu: 'NewBusinessSurveys',
+        exporterFileName: 'NewBusinessSurvey_exportados',
+        list: {
+          menu: 'NewBusinessSurveys',
+          title: 'NewBusinessSurveys',
+        },
+        create: {
+          success: 'NewBusinessSurvey salvo com sucesso',
+        },
+        update: {
+          success: 'NewBusinessSurvey salvo com sucesso',
+        },
+        destroy: {
+          success: 'NewBusinessSurvey deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'NewBusinessSurvey(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar NewBusinessSurvey',
+        },
+        fields: {
+          id: 'Id',
+          'nameBusiness': 'NameBusiness',
+          'numberOfPlaces': 'NumberOfPlaces',
+          'contactName': 'ContactName',
+          'contactEmail': 'ContactEmail',
+          'contactPhone': 'ContactPhone',
+          'cellphoneForSMS': 'CellphoneForSMS',
+          'digitalNetworks': 'DigitalNetworks',
+          'allowReceiveNotifications': 'AllowReceiveNotifications',
+          'services': 'Services',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+          'services': {
+            '': '',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo NewBusinessSurvey',
+        },
+        view: {
+          title: 'Visualizar NewBusinessSurvey',
+        },
+        importer: {
+          title: 'Importar NewBusinessSurveys',
+          fileName: 'newBusinessSurvey_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
   },
 
   auth: {

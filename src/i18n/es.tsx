@@ -1798,6 +1798,131 @@ const es = {
             'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
         },
       },
+
+    landingSurvey: {
+        name: 'landingSurvey',
+        label: 'LandingSurveys',
+        menu: 'LandingSurveys',
+        exporterFileName: 'exportacion_landingSurvey',
+        list: {
+          menu: 'LandingSurveys',
+          title: 'LandingSurveys',
+        },
+        create: {
+          success: 'LandingSurvey guardado con éxito',
+        },
+        update: {
+          success: 'LandingSurvey guardado con éxito',
+        },
+        destroy: {
+          success: 'LandingSurvey eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'LandingSurvey(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar LandingSurvey',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'email': 'Email',
+          'numberOfPets': 'NumberOfPets',
+          'interests': 'Interests',
+          'extraInfo': 'ExtraInfo',
+          'allowReceiveNotifications': 'AllowReceiveNotifications',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+          'interests': {
+            '': '',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo LandingSurvey',
+        },
+        view: {
+          title: 'Ver LandingSurvey',
+        },
+        importer: {
+          title: 'Importar LandingSurveys',
+          fileName: 'landingSurvey_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    newBusinessSurvey: {
+        name: 'newBusinessSurvey',
+        label: 'NewBusinessSurveys',
+        menu: 'NewBusinessSurveys',
+        exporterFileName: 'exportacion_newBusinessSurvey',
+        list: {
+          menu: 'NewBusinessSurveys',
+          title: 'NewBusinessSurveys',
+        },
+        create: {
+          success: 'NewBusinessSurvey guardado con éxito',
+        },
+        update: {
+          success: 'NewBusinessSurvey guardado con éxito',
+        },
+        destroy: {
+          success: 'NewBusinessSurvey eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'NewBusinessSurvey(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar NewBusinessSurvey',
+        },
+        fields: {
+          id: 'Id',
+          'nameBusiness': 'NameBusiness',
+          'numberOfPlaces': 'NumberOfPlaces',
+          'contactName': 'ContactName',
+          'contactEmail': 'ContactEmail',
+          'contactPhone': 'ContactPhone',
+          'cellphoneForSMS': 'CellphoneForSMS',
+          'digitalNetworks': 'DigitalNetworks',
+          'allowReceiveNotifications': 'AllowReceiveNotifications',
+          'services': 'Services',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+          'services': {
+            '': '',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo NewBusinessSurvey',
+        },
+        view: {
+          title: 'Ver NewBusinessSurvey',
+        },
+        importer: {
+          title: 'Importar NewBusinessSurveys',
+          fileName: 'newBusinessSurvey_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
   },
   auth: {
     tenants: 'Espacios de trabajo',

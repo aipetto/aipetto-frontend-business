@@ -48,6 +48,15 @@ function LandingSurveyView(props) {
         label={i18n('entities.landingSurvey.fields.extraInfo')}
         value={record.extraInfo}
       />
+
+      <TextViewItem
+        label={i18n('entities.landingSurvey.fields.allowReceiveNotifications')}
+        value={
+          record.allowReceiveNotifications
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
     </div>
   );
 }

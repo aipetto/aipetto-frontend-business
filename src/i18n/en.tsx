@@ -1860,6 +1860,70 @@ const en = {
             'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
+
+    newBusinessSurvey: {
+        name: 'newBusinessSurvey',
+        label: 'NewBusinessSurveys',
+        menu: 'NewBusinessSurveys',
+        exporterFileName: 'newBusinessSurvey_export',
+        list: {
+          menu: 'NewBusinessSurveys',
+          title: 'NewBusinessSurveys',
+        },
+        create: {
+          success: 'NewBusinessSurvey successfully saved',
+        },
+        update: {
+          success: 'NewBusinessSurvey successfully saved',
+        },
+        destroy: {
+          success: 'NewBusinessSurvey successfully deleted',
+        },
+        destroyAll: {
+          success: 'NewBusinessSurvey(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit NewBusinessSurvey',
+        },
+        fields: {
+          id: 'Id',
+          'nameBusiness': 'NameBusiness',
+          'numberOfPlaces': 'NumberOfPlaces',
+          'contactName': 'ContactName',
+          'contactEmail': 'ContactEmail',
+          'contactPhone': 'ContactPhone',
+          'cellphoneForSMS': 'CellphoneForSMS',
+          'digitalNetworks': 'DigitalNetworks',
+          'allowReceiveNotifications': 'AllowReceiveNotifications',
+          'services': 'Services',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'services': {
+            '': '',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New NewBusinessSurvey',
+        },
+        view: {
+          title: 'View NewBusinessSurvey',
+        },
+        importer: {
+          title: 'Import NewBusinessSurveys',
+          fileName: 'newBusinessSurvey_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
   },
 
   auth: {
