@@ -26,15 +26,7 @@ class BusinessLandingPage extends Component {
                 { type: "checkbox", name: "services", title: i18n('survey.checkboxTitle'), isRequired: true, colCount: 6,
                  choices:
                      [
-                     i18n('survey.checkboxChoices.saveMoneyOnServices'),
-                     i18n('survey.checkboxChoices.findTheClosestPlaceToGetServices'),
-                     i18n('survey.checkboxChoices.findWhereToPlayWithMyPet'),
-                     i18n('survey.checkboxChoices.knowMoreAboutPets'),
-                     i18n('survey.checkboxChoices.adoptAPet'),
-                     i18n('survey.checkboxChoices.getMoreMedicalInformation'),
-                     i18n('survey.checkboxChoices.beAbleToChatWithAVeterinarian'),
-                     i18n('survey.checkboxChoices.seeWhatPetsMyFriendsHave'),
-                     i18n('survey.checkboxChoices.findATrustedPersonToWalkMyPet'),
+                     i18n('businessSurvey.checkboxChoices.acupultura'),
                    ]},
                 {type: "text", name: "extraInfo", title: i18n('survey.extraInfo')},
             ]};

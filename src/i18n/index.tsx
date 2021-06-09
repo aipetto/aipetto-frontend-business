@@ -43,10 +43,11 @@ const languages: {
 
 export async function init() {
   currentLanguageCode =
-    localStorage.getItem('language') || 'en';
+    localStorage.getItem('language') || getLangFromBrowserNavigator();
+
   setLanguageCode(currentLanguageCode);
 
-  if (currentLanguageCode === 'en') {
+  if (currentLanguageCode === 'en' || 'en-US') {
     await initEn();
   }
 
@@ -149,6 +150,12 @@ function format(message, args) {
     console.error(message, error);
     throw error;
   }
+}
+
+export function getLangFromBrowserNavigator(){
+  if(navigator.languages != undefined)
+    return navigator.languages[0];
+  return navigator.language || 'en';
 }
 
 export function getLanguages() {
