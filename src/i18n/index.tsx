@@ -42,8 +42,9 @@ const languages: {
 };
 
 export async function init() {
+
   currentLanguageCode =
-    getLangFromBrowserNavigator() || localStorage.getItem('language') || 'en';
+     localStorage.getItem('language') || getLangFromBrowserNavigator() || 'en';
 
   setLanguageCode(currentLanguageCode);
 
