@@ -7,31 +7,98 @@ import * as Survey from "survey-react";
 import "survey-react/modern.css";
 import { i18n } from 'src/i18n';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import surveyService from 'src/modules/landingSurvey/landingSurveyService';
+import businessSurveyService from 'src/modules/newBusinessSurvey/newBusinessSurveyService';
 
 Survey.StylesManager.applyTheme("modern");
 
 class BusinessLandingPage extends Component {
 
     async onComplete(survey, options) {
-        //console.log("Survey results: " + JSON.stringify(survey.data));
-        await surveyService.create(survey.data);
+        await businessSurveyService.create(survey.data);
     }
 
     render (){
         var json = { questions: [
-                {type: "text", name: "name", title: i18n('survey.nameTitle'), isRequired: true},
-                {type: "text", name: "email", title: i18n('survey.emailTitle'), isRequired: true},
-                {type: "text", name: "numberOfPets", title: i18n('survey.numberOfPets'), isRequired: true},
-                { type: "checkbox", name: "services", title: i18n('survey.checkboxTitle'), isRequired: true, colCount: 6,
+                {type: "text", name: "name", title: i18n('businessSurvey.businessNameTitle'), isRequired: true},
+                {type: "text", name: "name", title: i18n('businessSurvey.numberPlaces'), isRequired: true},
+                {type: "text", name: "name", title: i18n('businessSurvey.nameTitle'), isRequired: true},
+                {type: "text", name: "email", title: i18n('businessSurvey.emailTitle'), isRequired: true},
+                {type: "text", name: "name", title: i18n('businessSurvey.contactPhone'), isRequired: true},
+                {type: "text", name: "numberOfPets", title: i18n('businessSurvey.websiteSocialNetwork'), isRequired: true},
+                { type: "checkbox", name: "services", title: i18n('businessSurvey.checkboxTitle'), isRequired: true, colCount: 6,
                  choices:
                      [
-                     i18n('businessSurvey.checkboxChoices.acupultura'),
+                         i18n('businessSurvey.checkboxChoices.acupultura'),
+                         i18n('businessSurvey.checkboxChoices.analgesiaTratamentoDolor'),
+                         i18n('businessSurvey.checkboxChoices.analisisDeHeces'),
+                         i18n('businessSurvey.checkboxChoices.analisisDeOrina'),
+                         i18n('businessSurvey.checkboxChoices.analisisDeSangre'),
+                         i18n('businessSurvey.checkboxChoices.analisisHormonales'),
+                         i18n('businessSurvey.checkboxChoices.anestesia'),
+                         i18n('businessSurvey.checkboxChoices.artroscopia'),
+                         i18n('businessSurvey.checkboxChoices.castracionDeGatos'),
+                         i18n('businessSurvey.checkboxChoices.castracionDePerros'),
+                         i18n('businessSurvey.checkboxChoices.castracionQuimicaDelPerro'),
+                         i18n('businessSurvey.checkboxChoices.certificadosVeterinarios'),
+                         i18n('businessSurvey.checkboxChoices.chequeoMedicoVeterinario'),
+                         i18n('businessSurvey.checkboxChoices.cirurgiaAbdominal'),
+                         i18n('businessSurvey.checkboxChoices.cirurgiaArticular'),
+                         i18n('businessSurvey.checkboxChoices.cirurgiaCardiaca'),
+                         i18n('businessSurvey.checkboxChoices.cirurgiaCutaneaYMamaria'),
+                         i18n('businessSurvey.checkboxChoices.cirurgiaDeFracturasOseas'),
+                         i18n('businessSurvey.checkboxChoices.cirurgiaDeHernias'),
+                         i18n('businessSurvey.checkboxChoices.cirurgiaDeUrgencia'),
+                         i18n('businessSurvey.checkboxChoices.cirurgiaOtorrinolaringologica'),
+                         i18n('businessSurvey.checkboxChoices.colonoscopia'),
+                         i18n('businessSurvey.checkboxChoices.corteDeUnas'),
+                         i18n('businessSurvey.checkboxChoices.cuidadosIntesivos'),
+                         i18n('businessSurvey.checkboxChoices.cultivoBacteriano'),
+                         i18n('businessSurvey.checkboxChoices.dermatologia'),
+                         i18n('businessSurvey.checkboxChoices.desparasitacionDeGatos'),
+                         i18n('businessSurvey.checkboxChoices.desparasitacionDePerros'),
+                         i18n('businessSurvey.checkboxChoices.diagnosticoDeGestacion'),
+                         i18n('businessSurvey.checkboxChoices.ecocardiogramaYElectrocardiograma'),
+                         i18n('businessSurvey.checkboxChoices.ecografia'),
+                         i18n('businessSurvey.checkboxChoices.electroterapia'),
+                         i18n('businessSurvey.checkboxChoices.endodoncia'),
+                         i18n('businessSurvey.checkboxChoices.endoscopia'),
+                         i18n('businessSurvey.checkboxChoices.entrenamientoDeEstabilidad'),
+                         i18n('businessSurvey.checkboxChoices.estiramientos'),
+                         i18n('businessSurvey.checkboxChoices.eutanasiaEIncineracion'),
+                         i18n('businessSurvey.checkboxChoices.examenMedico'),
+                         i18n('businessSurvey.checkboxChoices.examenNeurologico'),
+                         i18n('businessSurvey.checkboxChoices.examenOftalmologico:'),
+                         i18n('businessSurvey.checkboxChoices.examenReproductivo'),
+                         i18n('businessSurvey.checkboxChoices.extraccionDental'),
+                         i18n('businessSurvey.checkboxChoices.gastroscopia'),
+                         i18n('businessSurvey.checkboxChoices.hospitalizacion'),
+                         i18n('businessSurvey.checkboxChoices.identificacionAnimal'),
+                         i18n('businessSurvey.checkboxChoices.masaje'),
+                         i18n('businessSurvey.checkboxChoices.movilizacionDeLasArticulaciones'),
+                         i18n('businessSurvey.checkboxChoices.muestrasDeTejidoYMuestrasCelulares'),
+                         i18n('businessSurvey.checkboxChoices.odontologia'),
+                         i18n('businessSurvey.checkboxChoices.oncologia'),
+                         i18n('businessSurvey.checkboxChoices.pasaporteComunitarioParaAnimalesDeCompania'),
+                         i18n('businessSurvey.checkboxChoices.pastillasAnticonceptivasParaGatas'),
+                         i18n('businessSurvey.checkboxChoices.peluqueria'),
+                         i18n('businessSurvey.checkboxChoices.programaDeReduccionDePeso'),
+                         i18n('businessSurvey.checkboxChoices.pruebaDeAlergia'),
+                         i18n('businessSurvey.checkboxChoices.quimioterapia'),
+                         i18n('businessSurvey.checkboxChoices.radiografia'),
+                         i18n('businessSurvey.checkboxChoices.reconocimientoClinico'),
+                         i18n('businessSurvey.checkboxChoices.radiografiaDeContraste'),
+                         i18n('businessSurvey.checkboxChoices.rehabilitacion'),
+                         i18n('businessSurvey.checkboxChoices.tienda'),
+                         i18n('businessSurvey.checkboxChoices.tranquilizantes'),
+                         i18n('businessSurvey.checkboxChoices.traumatologia'),
+                         i18n('businessSurvey.checkboxChoices.urgencias'),
+                         i18n('businessSurvey.checkboxChoices.vacunacionDeGato'),
+                         i18n('businessSurvey.checkboxChoices.vacunacionDePerro'),
                    ]},
-                {type: "text", name: "extraInfo", title: i18n('survey.extraInfo')},
             ]};
         var survey = new Survey.Model(json);
-        survey.locale = localStorage.getItem('language') || 'en';
+
+        survey.locale = localStorage.getItem('language') || navigator.languages[0] || 'en';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 
@@ -45,8 +112,8 @@ class BusinessLandingPage extends Component {
 
                 <div className="container mx-auto mt-8">
                     <div className="py-0 md:py-16 hero__content text-center w-4/5 mx-auto fade-in fade-in-first">
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{i18n('public.landingTitle')}</h1>
-                        <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingSubtitle')} <FontAwesomeIcon icon={faGifts} /> <FontAwesomeIcon icon={faGifts} /></p>
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{i18n('public.landingBusinessTitle')}</h1>
+                        <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingBusinessSubtitle')} <FontAwesomeIcon icon={faGifts} /> <FontAwesomeIcon icon={faGifts} /></p>
                     </div>
                 </div>
 

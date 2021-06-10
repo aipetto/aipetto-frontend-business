@@ -34,6 +34,8 @@ const en = {
       homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
       landingTitle: 'Soon an awesome place on internet for you and your pets!',
       landingSubtitle: 'Please help us with your comments below, we\'ll not forget you.',
+      landingBusinessTitle: 'We are connecting service providers to pet owners',
+      landingBusinessSubtitle: 'Be part of our platform and lets us help your business grow.',
   },
 
   survey: {
@@ -61,8 +63,10 @@ const en = {
     checkboxTitle: 'What services do you provide?',
     nameTitle: 'Your name',
     emailTitle: 'Your email',
+    contactPhone: 'Phone',
     businessNameTitle: 'Your business name',
     numberPlaces: 'How many places do you have?',
+    websiteSocialNetwork: 'Website / Social Network',
     checkboxChoices: {
         acupultura: 'Acupultura',
         analgesiaTratamentoDolor: 'Analgesia/Tratamiento del dolor',
