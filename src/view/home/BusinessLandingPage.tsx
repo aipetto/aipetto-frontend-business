@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import LandingNavbar from "../layout/LandingNavbar";
 import * as Survey from "survey-react";
 import "survey-react/modern.css";
-import { i18n } from 'src/i18n';
+import { i18n, getLangFromBrowserNavigator } from 'src/i18n';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import businessSurveyService from 'src/modules/newBusinessSurvey/newBusinessSurveyService';
 
@@ -98,8 +98,7 @@ class BusinessLandingPage extends Component {
             ]};
         var survey = new Survey.Model(json);
 
-        survey.locale = localStorage.getItem('language') || 'en';
-            // || navigator.languages[0] || 'en';
+        survey.locale = getLangFromBrowserNavigator() || localStorage.getItem('language') || 'en';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 

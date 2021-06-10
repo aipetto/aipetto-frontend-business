@@ -9,7 +9,6 @@ import I18nFlags from "./I18nFlags";
 export default function LandingNavbar(props) {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     const history = useHistory();
-    console.log(history);
 
     return (
         <>

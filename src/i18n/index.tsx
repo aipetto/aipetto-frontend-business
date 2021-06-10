@@ -42,17 +42,16 @@ const languages: {
 };
 
 export async function init() {
-  currentLanguageCode = localStorage.getItem('language') || 'en';
-  // || getLangFromBrowserNavigator();
+  currentLanguageCode =
+    getLangFromBrowserNavigator() || localStorage.getItem('language') || 'en';
 
   setLanguageCode(currentLanguageCode);
-  // || 'en-US'
 
-  if (currentLanguageCode === 'en') {
+  if (currentLanguageCode === 'en' || currentLanguageCode === 'en-US') {
     await initEn();
   }
 
-  if (currentLanguageCode === 'pt-BR') {
+  if (currentLanguageCode === 'pt-BR' || currentLanguageCode === 'pt') {
     await initPtBr();
   }
 
@@ -153,10 +152,31 @@ function format(message, args) {
   }
 }
 
+function checkAgainstOurSystemLanguages(lang) {
+
+  if (lang === 'en-US' || lang === 'en') {
+    return 'en';
+  }
+
+  if (lang === 'pt' || lang === 'pt-BR') {
+    return 'pt-BR';
+  }
+
+  if (lang === 'es') {
+    return 'es';
+  }
+  // We want return undefined on purpose
+  // If is undefined we go check if language is set on LocalStorage otherwise take default language (english)
+  return undefined;
+}
+
 export function getLangFromBrowserNavigator(){
-  if(navigator.languages != undefined)
-    return navigator.languages[0];
-  return navigator.language || 'en';
+  if(navigator.languages !== undefined){
+    return checkAgainstOurSystemLanguages(navigator.languages[0]);
+  }else{
+    // Backward compatibility with older browsers
+    return checkAgainstOurSystemLanguages(navigator.language);
+  }
 }
 
 export function getLanguages() {
@@ -170,6 +190,7 @@ export function getLanguageCode() {
 }
 
 export function setLanguageCode(arg) {
+
   if (!languages[arg]) {
     throw new Error(`Invalid language ${arg}.`);
   }
