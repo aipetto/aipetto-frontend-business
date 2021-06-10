@@ -33,7 +33,7 @@ const ptBR = {
     landingBusinessSubtitle: 'Seja parte e permita que ajudemos seu negócio crescer.',
     menu: {
           business: 'Negócios',
-          petOwners: '愛',
+          petsSurvey: '愛',
       }
   },
 
