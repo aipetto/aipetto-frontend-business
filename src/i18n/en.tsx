@@ -34,8 +34,12 @@ const en = {
       homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
       landingTitle: 'Soon an awesome place on internet for you and your pets!',
       landingSubtitle: 'Please help us with your comments below, we\'ll not forget you.',
-      landingBusinessTitle: 'We are connecting service providers to pet owners',
-      landingBusinessSubtitle: 'Be part of our platform and lets us help your business grow.',
+      landingBusinessTitle: 'Our mission is to unify services to pet owners',
+      landingBusinessSubtitle: 'Be part and let us help your business grow.',
+      menu: {
+          business: 'Business',
+          petsSurvey: '愛',
+      }
   },
 
   survey: {
@@ -60,7 +64,7 @@ const en = {
     surveyCompleteButton: 'Complete'
   },
   businessSurvey: {
-    checkboxTitle: 'What services do you provide?',
+    checkboxTitle: 'What services do your business provide?',
     nameTitle: 'Your name',
     emailTitle: 'Your email',
     contactPhone: 'Phone',

@@ -29,6 +29,12 @@ const ptBR = {
     homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...',
     landingTitle: 'Logo logo um lugar na internet para você e seus pets!',
     landingSubtitle: 'Por favor colabore com seus comentários abaixo, não esqueceremos de vocês.',
+    landingBusinessTitle: 'Nossa missão é unificar serviços para os donos de animais de estimação',
+    landingBusinessSubtitle: 'Seja parte e permita que ajudemos seu negócio crescer.',
+    menu: {
+          business: 'Negócios',
+          petOwners: '愛',
+      }
   },
 
     survey: {

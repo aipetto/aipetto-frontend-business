@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 // components
 import IndexDropdown from "../../components/DropDowns/IndexDropdown";
 import {i18n} from "../../i18n";
@@ -8,11 +8,14 @@ import I18nFlags from "./I18nFlags";
 
 export default function LandingNavbar(props) {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
+    const history = useHistory();
+    console.log(history);
+
     return (
         <>
             <nav className="p-4 nav-section w-full">
                 <div className="container mx-auto">
-                    <div className="flex justify-between flex- content-center items-center py-2 lg:py-0 px-0 lg:px-0">
+                    <div className="flex justify-between flex content-center items-center py-2 lg:py-0 px-0 lg:px-0">
 
                         <Link
                             to="/"
@@ -24,9 +27,16 @@ export default function LandingNavbar(props) {
                         <div className="">
                             <ul className="flex flex-row">
                                 <I18nFlags />
-                                <li className="nav-item px-2 signup">
-                                    <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/business">Business</a>
-                                </li>
+                                {
+                                 history.location.pathname == '/business' ?
+                                     <li className="nav-item px-2 signup">
+                                         <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/">{i18n('public.menu.petsSurvey')}</a>
+                                     </li>
+                                     :
+                                     <li className="nav-item px-2 signup">
+                                         <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/business">{i18n('public.menu.business')}</a>
+                                     </li>
+                                }
                             </ul>
                         </div>
                     </div>

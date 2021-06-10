@@ -1,5 +1,5 @@
 import {
-    faGifts,
+    faStore,
 } from '@fortawesome/free-solid-svg-icons';
 import React, {Component} from 'react';
 import LandingNavbar from "../layout/LandingNavbar";
@@ -19,12 +19,12 @@ class BusinessLandingPage extends Component {
 
     render (){
         var json = { questions: [
-                {type: "text", name: "name", title: i18n('businessSurvey.businessNameTitle'), isRequired: true},
-                {type: "text", name: "name", title: i18n('businessSurvey.numberPlaces'), isRequired: true},
-                {type: "text", name: "name", title: i18n('businessSurvey.nameTitle'), isRequired: true},
-                {type: "text", name: "email", title: i18n('businessSurvey.emailTitle'), isRequired: true},
-                {type: "text", name: "name", title: i18n('businessSurvey.contactPhone'), isRequired: true},
-                {type: "text", name: "numberOfPets", title: i18n('businessSurvey.websiteSocialNetwork'), isRequired: true},
+                {type: "text", name: "nameBusiness", title: i18n('businessSurvey.businessNameTitle'), isRequired: true},
+                {type: "text", name: "numberOfPlaces", title: i18n('businessSurvey.numberPlaces'), isRequired: true},
+                {type: "text", name: "contactName", title: i18n('businessSurvey.nameTitle'), isRequired: true},
+                {type: "text", name: "contactEmail", title: i18n('businessSurvey.emailTitle'), isRequired: true},
+                {type: "text", name: "contactPhone", title: i18n('businessSurvey.contactPhone'), isRequired: true},
+                {type: "text", name: "digitalNetworks", title: i18n('businessSurvey.websiteSocialNetwork'), isRequired: true},
                 { type: "checkbox", name: "services", title: i18n('businessSurvey.checkboxTitle'), isRequired: true, colCount: 6,
                  choices:
                      [
@@ -113,7 +113,7 @@ class BusinessLandingPage extends Component {
                 <div className="container mx-auto mt-8">
                     <div className="py-0 md:py-16 hero__content text-center w-4/5 mx-auto fade-in fade-in-first">
                         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{i18n('public.landingBusinessTitle')}</h1>
-                        <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingBusinessSubtitle')} <FontAwesomeIcon icon={faGifts} /> <FontAwesomeIcon icon={faGifts} /></p>
+                        <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingBusinessSubtitle')} <FontAwesomeIcon icon={faStore} /></p>
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@ class BusinessLandingPage extends Component {
                 <div className="container mx-auto">
                     <div className=" flex flex-col lg:flex-row content-center items-center justify-between">
                         <div className="flex items-center flex-col lg:flex-row mx-auto">
-                            <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">AIPETTO, Copyright &copy; 2021</span>
+                            <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">愛ペット AIPETTO, Copyright &copy; 2021</span>
                         </div>
                     </div>
                 </div>

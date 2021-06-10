@@ -33,6 +33,12 @@ const es = {
     homeSubtitle: 'Donde quiera que estes, encuentre veterinários para ayudarte, obtener descuentos especiales en comida y accesorios, encuentre lugares donde tu mascota puede jugar y tener un lindo peinado, eso y mucho más...',
     landingTitle: '¡Muy pronto un lugar en la web para vos y tus mascotas!',
     landingSubtitle: 'Por favor, ayúdanos con tus comentarios abajo. No nos olvidaremos de ustedes',
+    landingBusinessTitle: 'Nuestra misión es unificar los servicios para dueños de mascotas',
+    landingBusinessSubtitle: 'Sea parte y permita ayudarnos a hacer tu negocio crescer.',
+      menu: {
+          business: 'Negocios',
+          petsSurvey: '愛',
+      }
   },
 
     survey: {
@@ -62,13 +68,13 @@ const es = {
   },
 
   businessSurvey: {
-    checkboxTitle: 'Que serviços seu negócio oferece?',
-    nameTitle: 'Seu nome',
-    emailTitle: 'Seu email',
-    contactPhone: 'Telefone',
-    businessNameTitle: 'Nome do seu negócio',
-    numberPlaces: 'Quantos locais seu negócio têm',
-    websiteSocialNetwork: 'Website / Rede social',
+    checkboxTitle: 'Que servicios tu negocio ofrece?',
+    nameTitle: 'Tu nombre',
+    emailTitle: 'Tu correo',
+    contactPhone: 'Teléfono',
+    businessNameTitle: 'Nombre de tu negocio',
+    numberPlaces: '¿Cuántos locales tienen?',
+    websiteSocialNetwork: 'Website / Red social',
     checkboxChoices: {
         acupultura: 'Acupultura',
         analgesiaTratamentoDolor: 'Analgesia/Tratamiento del dolor',
