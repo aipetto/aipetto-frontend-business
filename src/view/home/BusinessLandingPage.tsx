@@ -67,7 +67,7 @@ class BusinessLandingPage extends Component {
                          i18n('businessSurvey.checkboxChoices.eutanasiaEIncineracion'),
                          i18n('businessSurvey.checkboxChoices.examenMedico'),
                          i18n('businessSurvey.checkboxChoices.examenNeurologico'),
-                         i18n('businessSurvey.checkboxChoices.examenOftalmologico:'),
+                         i18n('businessSurvey.checkboxChoices.examenOftalmologico'),
                          i18n('businessSurvey.checkboxChoices.examenReproductivo'),
                          i18n('businessSurvey.checkboxChoices.extraccionDental'),
                          i18n('businessSurvey.checkboxChoices.gastroscopia'),
