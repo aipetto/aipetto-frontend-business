@@ -38,7 +38,7 @@ class LandingPage extends Component {
                 {type: "text", name: "extraInfo", title: i18n('survey.extraInfo')},
             ]};
         var survey = new Survey.Model(json);
-        survey.locale = localStorage.getItem('language') || navigator.languages[0] || 'en';
+        survey.locale = localStorage.getItem('language') || 'en';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 

@@ -42,12 +42,13 @@ const languages: {
 };
 
 export async function init() {
-  currentLanguageCode =
-    localStorage.getItem('language') || getLangFromBrowserNavigator();
+  currentLanguageCode = localStorage.getItem('language') || 'en';
+  // || getLangFromBrowserNavigator();
 
   setLanguageCode(currentLanguageCode);
+  // || 'en-US'
 
-  if (currentLanguageCode === 'en' || 'en-US') {
+  if (currentLanguageCode === 'en') {
     await initEn();
   }
 
