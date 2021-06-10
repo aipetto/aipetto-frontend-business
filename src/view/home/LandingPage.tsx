@@ -39,7 +39,7 @@ class LandingPage extends Component {
             ]};
         var survey = new Survey.Model(json);
 
-        survey.locale = getLangFromBrowserNavigator() || localStorage.getItem('language') || 'en';
+        survey.locale =  localStorage.getItem('language') || getLangFromBrowserNavigator() || 'en';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 
