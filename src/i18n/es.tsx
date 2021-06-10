@@ -60,6 +60,85 @@ const es = {
   api: {
     menu: 'API',
   },
+
+  businessSurvey: {
+    checkboxTitle: 'Que serviços seu negócio oferece?',
+    nameTitle: 'Seu nome',
+    emailTitle: 'Seu email',
+    contactPhone: 'Telefone',
+    businessNameTitle: 'Nome do seu negócio',
+    numberPlaces: 'Quantos locais seu negócio têm',
+    websiteSocialNetwork: 'Website / Rede social',
+    checkboxChoices: {
+        acupultura: 'Acupultura',
+        analgesiaTratamentoDolor: 'Analgesia/Tratamiento del dolor',
+        analisisDeHeces: 'Análisis de heces',
+        analisisDeOrina: 'Análisis de orina',
+        analisisDeSangre: 'Análisis de sangre',
+        analisisHormonales: 'Análisis hormonales',
+        anestesia: 'Anestesia',
+        artroscopia: 'Artroscopia',
+        castracionDeGatos: 'Castración de gatos',
+        castracionDePerros: 'Castración de perros',
+        castracionQuimicaDelPerro: 'Castración química del perro',
+        certificadosVeterinarios: 'Certificados veterinarios',
+        chequeoMedicoVeterinario: 'Chequeo médico vetertinario',
+        cirurgiaAbdominal: 'Cirugía abdominal',
+        cirurgiaArticular: 'Cirugía articular',
+        cirurgiaCardiaca: 'Cirugía cardiaca',
+        cirurgiaCutaneaYMamaria: 'Cirugía cutánea y mamaria',
+        cirurgiaDeFracturasOseas: 'Cirugía de fracturas óseas',
+        cirurgiaDeHernias: 'Cirugía de hernias',
+        cirurgiaDeUrgencia: 'Cirugía de urgencia',
+        cirurgiaOtorrinolaringologica: 'Cirugía otorrinolaringológica',
+        colonoscopia: 'Colonoscopia',
+        corteDeUnas: 'Corte de uñas',
+        cuidadosIntesivos: 'Cuidados intensivos',
+        cultivoBacteriano: 'Cultivo bacteriano',
+        dermatologia: 'Dermatología',
+        desparasitacionDeGatos: 'Desparasitación de gatos',
+        desparasitacionDePerros: 'Desparasitación de perros',
+        diagnosticoDeGestacion: 'Diagnóstico de gestación',
+        ecocardiogramaYElectrocardiograma: 'Ecocardiograma y electrocardiograma',
+        ecografia: 'Ecografía',
+        electroterapia: 'Electroterapia',
+        endodoncia: 'Endodoncia',
+        endoscopia: 'Endoscopia',
+        entrenamientoDeEstabilidad: 'Entrenamiento de estabilidad',
+        estiramientos: 'Estiramientos',
+        eutanasiaEIncineracion: 'Eutanasia e incineración',
+        examenMedico: 'Examen médico',
+        examenNeurologico: 'Examen neurológico',
+        examenOftalmologico: 'Examen oftalmológico',
+        examenReproductivo: 'Examen reproductivo',
+        extraccionDental: 'Extracción dental',
+        gastroscopia: 'Gastroscopia',
+        hospitalizacion: 'Hospitalización',
+        identificacionAnimal: 'Identificación animal',
+        masaje: 'Masaje',
+        movilizacionDeLasArticulaciones: 'Movilización de las articulaciones',
+        muestrasDeTejidoYMuestrasCelulares: 'Muestras de tejido y muestras celulares',
+        odontologia: 'Odontología',
+        oncologia: 'Oncología',
+        pasaporteComunitarioParaAnimalesDeCompania: 'Pasaporte comunitario para animales de compañía',
+        pastillasAnticonceptivasParaGatas: 'Pastillas anticonceptivas para gatas',
+        peluqueria: 'Peluquería',
+        programaDeReduccionDePeso: 'Programa de reducción de peso',
+        pruebaDeAlergia: 'Prueba de alergia',
+        quimioterapia: 'Quimioterapia',
+        radiografia: 'Radiografía',
+        radiografiaDeContraste: 'Radiografía de contraste',
+        reconocimientoClinico: 'Reconocimiento clínico',
+        rehabilitacion: 'Rehabilitación',
+        tienda: 'Tienda',
+        tranquilizantes: 'Tranquilizantes',
+        traumatologia: 'Traumatología',
+        urgencias: 'Urgencias',
+        vacunacionDeGato: 'Vacunación de gato',
+        vacunacionDePerro: 'Vacunación de perro',
+    },
+  },
+
   entities: {
     customer: {
         name: 'customer',
@@ -1794,6 +1873,131 @@ const es = {
         importer: {
           title: 'Importar PlaceTypes',
           fileName: 'placeType_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    landingSurvey: {
+        name: 'landingSurvey',
+        label: 'LandingSurveys',
+        menu: 'LandingSurveys',
+        exporterFileName: 'exportacion_landingSurvey',
+        list: {
+          menu: 'LandingSurveys',
+          title: 'LandingSurveys',
+        },
+        create: {
+          success: 'LandingSurvey guardado con éxito',
+        },
+        update: {
+          success: 'LandingSurvey guardado con éxito',
+        },
+        destroy: {
+          success: 'LandingSurvey eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'LandingSurvey(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar LandingSurvey',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'email': 'Email',
+          'numberOfPets': 'NumberOfPets',
+          'interests': 'Interests',
+          'extraInfo': 'ExtraInfo',
+          'allowReceiveNotifications': 'AllowReceiveNotifications',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+          'interests': {
+            '': '',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo LandingSurvey',
+        },
+        view: {
+          title: 'Ver LandingSurvey',
+        },
+        importer: {
+          title: 'Importar LandingSurveys',
+          fileName: 'landingSurvey_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    newBusinessSurvey: {
+        name: 'newBusinessSurvey',
+        label: 'NewBusinessSurveys',
+        menu: 'NewBusinessSurveys',
+        exporterFileName: 'exportacion_newBusinessSurvey',
+        list: {
+          menu: 'NewBusinessSurveys',
+          title: 'NewBusinessSurveys',
+        },
+        create: {
+          success: 'NewBusinessSurvey guardado con éxito',
+        },
+        update: {
+          success: 'NewBusinessSurvey guardado con éxito',
+        },
+        destroy: {
+          success: 'NewBusinessSurvey eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'NewBusinessSurvey(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar NewBusinessSurvey',
+        },
+        fields: {
+          id: 'Id',
+          'nameBusiness': 'NameBusiness',
+          'numberOfPlaces': 'NumberOfPlaces',
+          'contactName': 'ContactName',
+          'contactEmail': 'ContactEmail',
+          'contactPhone': 'ContactPhone',
+          'cellphoneForSMS': 'CellphoneForSMS',
+          'digitalNetworks': 'DigitalNetworks',
+          'allowReceiveNotifications': 'AllowReceiveNotifications',
+          'services': 'Services',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+          'services': {
+            '': '',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo NewBusinessSurvey',
+        },
+        view: {
+          title: 'Ver NewBusinessSurvey',
+        },
+        importer: {
+          title: 'Importar NewBusinessSurveys',
+          fileName: 'newBusinessSurvey_import_template',
           hint:
             'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
         },

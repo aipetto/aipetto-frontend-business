@@ -12,53 +12,66 @@ import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
-import landingSurveyEnumerators from 'src/modules/landingSurvey/landingSurveyEnumerators';
+import newBusinessSurveyEnumerators from 'src/modules/newBusinessSurvey/newBusinessSurveyEnumerators';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  name: yupFormSchemas.string(
-    i18n('entities.landingSurvey.fields.name'),
+  nameBusiness: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.nameBusiness'),
     {
       "required": true
     },
   ),
-  email: yupFormSchemas.string(
-    i18n('entities.landingSurvey.fields.email'),
-    {
-      "required": true
-    },
-  ),
-  numberOfPets: yupFormSchemas.string(
-    i18n('entities.landingSurvey.fields.numberOfPets'),
+  numberOfPlaces: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.numberOfPlaces'),
     {},
   ),
-  interests: yupFormSchemas.stringArray(
-    i18n('entities.landingSurvey.fields.interests'),
+  contactName: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.contactName'),
     {},
   ),
-  extraInfo: yupFormSchemas.string(
-    i18n('entities.landingSurvey.fields.extraInfo'),
+  contactEmail: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.contactEmail'),
+    {},
+  ),
+  contactPhone: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.contactPhone'),
+    {},
+  ),
+  cellphoneForSMS: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.cellphoneForSMS'),
+    {},
+  ),
+  digitalNetworks: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.digitalNetworks'),
     {},
   ),
   allowReceiveNotifications: yupFormSchemas.boolean(
-    i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
+    i18n('entities.newBusinessSurvey.fields.allowReceiveNotifications'),
+    {},
+  ),
+  services: yupFormSchemas.stringArray(
+    i18n('entities.newBusinessSurvey.fields.services'),
     {},
   ),
 });
 
-function LandingSurveyForm(props) {
+function NewBusinessSurveyForm(props) {
   const { saveLoading } = props;
 
   const [initialValues] = useState(() => {
     const record = props.record || {};
 
     return {
-      name: record.name,
-      email: record.email,
-      numberOfPets: record.numberOfPets,
-      interests: record.interests || [],
-      extraInfo: record.extraInfo,
+      nameBusiness: record.nameBusiness,
+      numberOfPlaces: record.numberOfPlaces,
+      contactName: record.contactName,
+      contactEmail: record.contactEmail,
+      contactPhone: record.contactPhone,
+      cellphoneForSMS: record.cellphoneForSMS,
+      digitalNetworks: record.digitalNetworks,
       allowReceiveNotifications: record.allowReceiveNotifications,
+      services: record.services || [],
     };
   });
 
@@ -83,53 +96,74 @@ function LandingSurveyForm(props) {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="w-full sm:w-md md:w-md lg:w-md">
           <InputFormItem
-            name="name"
-            label={i18n('entities.landingSurvey.fields.name')}
+            name="nameBusiness"
+            label={i18n('entities.newBusinessSurvey.fields.nameBusiness')}
             required={true}
           autoFocus
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
-            name="email"
-            label={i18n('entities.landingSurvey.fields.email')}
-            required={true}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="numberOfPets"
-            label={i18n('entities.landingSurvey.fields.numberOfPets')}
+            name="numberOfPlaces"
+            label={i18n('entities.newBusinessSurvey.fields.numberOfPlaces')}
             required={false}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <SelectFormItem
-            name="interests"
-            label={i18n('entities.landingSurvey.fields.interests')}
-            options={landingSurveyEnumerators.interests.map(
-              (value) => ({
-                value,
-                label: i18n(
-                  `entities.landingSurvey.enumerators.interests.${value}`,
-                ),
-              }),
-            )}
+          <InputFormItem
+            name="contactName"
+            label={i18n('entities.newBusinessSurvey.fields.contactName')}
             required={false}
-            mode="multiple"
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
-            name="extraInfo"
-            label={i18n('entities.landingSurvey.fields.extraInfo')}
+            name="contactEmail"
+            label={i18n('entities.newBusinessSurvey.fields.contactEmail')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="contactPhone"
+            label={i18n('entities.newBusinessSurvey.fields.contactPhone')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="cellphoneForSMS"
+            label={i18n('entities.newBusinessSurvey.fields.cellphoneForSMS')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="digitalNetworks"
+            label={i18n('entities.newBusinessSurvey.fields.digitalNetworks')}
             required={false}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <SwitchFormItem
             name="allowReceiveNotifications"
-            label={i18n('entities.landingSurvey.fields.allowReceiveNotifications')}
+            label={i18n('entities.newBusinessSurvey.fields.allowReceiveNotifications')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="services"
+            label={i18n('entities.newBusinessSurvey.fields.services')}
+            options={newBusinessSurveyEnumerators.services.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.newBusinessSurvey.enumerators.services.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+            mode="multiple"
           />
         </div>
 
@@ -180,4 +214,4 @@ function LandingSurveyForm(props) {
   );
 }
 
-export default LandingSurveyForm;
+export default NewBusinessSurveyForm;

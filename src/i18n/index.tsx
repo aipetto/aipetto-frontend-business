@@ -18,13 +18,6 @@ const languages: {
     dictionary: any;
   };
 } = {
-  en: {
-    id: 'en',
-    label: 'English',
-    flag: '/images/flags/United-Kingdom.png',
-    dateFns: null,
-    dictionary: null,
-  },
   es: {
     id: 'es',
     label: 'Español',
@@ -39,14 +32,22 @@ const languages: {
     dateFns: null,
     dictionary: null,
   },
+  en: {
+    id: 'en',
+    label: 'English',
+    flag: '/images/flags/United-Kingdom.png',
+    dateFns: null,
+    dictionary: null,
+  },
 };
 
 export async function init() {
   currentLanguageCode =
-    localStorage.getItem('language') || 'en';
+    localStorage.getItem('language') || getLangFromBrowserNavigator();
+
   setLanguageCode(currentLanguageCode);
 
-  if (currentLanguageCode === 'en') {
+  if (currentLanguageCode === 'en' || 'en-US') {
     await initEn();
   }
 
@@ -149,6 +150,12 @@ function format(message, args) {
     console.error(message, error);
     throw error;
   }
+}
+
+export function getLangFromBrowserNavigator(){
+  if(navigator.languages != undefined)
+    return navigator.languages[0];
+  return navigator.language || 'en';
 }
 
 export function getLanguages() {

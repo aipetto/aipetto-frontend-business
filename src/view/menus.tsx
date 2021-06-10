@@ -230,4 +230,11 @@ export default [
     icon: faChevronRight,
     label: i18n('entities.landingSurvey.menu'),
   },
+
+  {
+    path: '/new-business-survey',
+    permissionRequired: permissions.newBusinessSurveyRead,
+    icon: faChevronRight,
+    label: i18n('entities.newBusinessSurvey.menu'),
+  },
 ].filter(Boolean);

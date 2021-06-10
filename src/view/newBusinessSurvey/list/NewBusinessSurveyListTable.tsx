@@ -8,18 +8,18 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import landingSurveySelectors from 'src/modules/landingSurvey/landingSurveySelectors';
-import destroyActions from 'src/modules/landingSurvey/destroy/landingSurveyDestroyActions';
-import destroySelectors from 'src/modules/landingSurvey/destroy/landingSurveyDestroySelectors';
-import actions from 'src/modules/landingSurvey/list/landingSurveyListActions';
-import selectors from 'src/modules/landingSurvey/list/landingSurveyListSelectors';
+import newBusinessSurveySelectors from 'src/modules/newBusinessSurvey/newBusinessSurveySelectors';
+import destroyActions from 'src/modules/newBusinessSurvey/destroy/newBusinessSurveyDestroyActions';
+import destroySelectors from 'src/modules/newBusinessSurvey/destroy/newBusinessSurveyDestroySelectors';
+import actions from 'src/modules/newBusinessSurvey/list/newBusinessSurveyListActions';
+import selectors from 'src/modules/newBusinessSurvey/list/newBusinessSurveyListSelectors';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 
 
-function LandingSurveyListTable(props) {
+function NewBusinessSurveyListTable(props) {
   const [
     recordIdToDestroy,
     setRecordIdToDestroy,
@@ -47,10 +47,10 @@ function LandingSurveyListTable(props) {
     selectors.selectIsAllSelected,
   );
   const hasPermissionToEdit = useSelector(
-    landingSurveySelectors.selectPermissionToEdit,
+    newBusinessSurveySelectors.selectPermissionToEdit,
   );
   const hasPermissionToDestroy = useSelector(
-    landingSurveySelectors.selectPermissionToDestroy,
+    newBusinessSurveySelectors.selectPermissionToDestroy,
   );
 
   const doOpenDestroyConfirmModal = (id) => {
@@ -113,27 +113,63 @@ function LandingSurveyListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'name'}
+                  name={'nameBusiness'}
                   label={i18n(
-                    'entities.landingSurvey.fields.name',
+                    'entities.newBusinessSurvey.fields.nameBusiness',
                   )}
                 />
                 <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'email'}
+                  name={'numberOfPlaces'}
                   label={i18n(
-                    'entities.landingSurvey.fields.email',
+                    'entities.newBusinessSurvey.fields.numberOfPlaces',
                   )}
                 />
                 <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'numberOfPets'}
+                  name={'contactName'}
                   label={i18n(
-                    'entities.landingSurvey.fields.numberOfPets',
+                    'entities.newBusinessSurvey.fields.contactName',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'contactEmail'}
+                  label={i18n(
+                    'entities.newBusinessSurvey.fields.contactEmail',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'contactPhone'}
+                  label={i18n(
+                    'entities.newBusinessSurvey.fields.contactPhone',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'cellphoneForSMS'}
+                  label={i18n(
+                    'entities.newBusinessSurvey.fields.cellphoneForSMS',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'digitalNetworks'}
+                  label={i18n(
+                    'entities.newBusinessSurvey.fields.digitalNetworks',
                   )}
                 />
                 <TableColumnHeader
@@ -142,7 +178,7 @@ function LandingSurveyListTable(props) {
                   sorter={sorter}
                   name={'allowReceiveNotifications'}
                   label={i18n(
-                    'entities.landingSurvey.fields.allowReceiveNotifications',
+                    'entities.newBusinessSurvey.fields.allowReceiveNotifications',
                   )}
                 />
               <TableColumnHeader />
@@ -183,9 +219,13 @@ function LandingSurveyListTable(props) {
                       }
                     />
                   </th>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.email}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.numberOfPets}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.nameBusiness}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.numberOfPlaces}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactName}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactEmail}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactPhone}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.cellphoneForSMS}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.digitalNetworks}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.allowReceiveNotifications
                       ? i18n('common.yes')
@@ -197,7 +237,7 @@ function LandingSurveyListTable(props) {
                   >
                     <Link
                       className="inline-flex justify-center items-center w-9 h-9 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
-                      to={`/landing-survey/${row.id}`}
+                      to={`/new-business-survey/${row.id}`}
                       title={i18n('common.view')}
                     >
                       <FontAwesomeIcon icon={faSearch} />
@@ -205,7 +245,7 @@ function LandingSurveyListTable(props) {
                     {hasPermissionToEdit && (
                       <Link
                         className="inline-flex justify-center items-center w-9 h-9 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
-                        to={`/landing-survey/${row.id}/edit`}
+                        to={`/new-business-survey/${row.id}/edit`}
                         title={i18n('common.edit')}
                       >
                         <FontAwesomeIcon icon={faEdit} />
@@ -251,4 +291,4 @@ function LandingSurveyListTable(props) {
   );
 }
 
-export default LandingSurveyListTable;
+export default NewBusinessSurveyListTable;

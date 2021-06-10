@@ -4,8 +4,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';    
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/landingSurvey/list/landingSurveyListActions';
-import selectors from 'src/modules/landingSurvey/list/landingSurveyListSelectors';
+import actions from 'src/modules/newBusinessSurvey/list/newBusinessSurveyListActions';
+import selectors from 'src/modules/newBusinessSurvey/list/newBusinessSurveyListSelectors';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm, FormProvider } from 'react-hook-form';
@@ -16,66 +16,90 @@ import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
-import landingSurveyEnumerators from 'src/modules/landingSurvey/landingSurveyEnumerators';
+import newBusinessSurveyEnumerators from 'src/modules/newBusinessSurvey/newBusinessSurveyEnumerators';
 
 const schema = yup.object().shape({
-  name: yupFilterSchemas.string(
-    i18n('entities.landingSurvey.fields.name'),
+  nameBusiness: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.nameBusiness'),
   ),
-  email: yupFilterSchemas.string(
-    i18n('entities.landingSurvey.fields.email'),
+  numberOfPlaces: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.numberOfPlaces'),
   ),
-  numberOfPets: yupFilterSchemas.string(
-    i18n('entities.landingSurvey.fields.numberOfPets'),
+  contactName: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.contactName'),
   ),
-  interests: yupFilterSchemas.stringArray(
-    i18n('entities.landingSurvey.fields.interests'),
+  contactEmail: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.contactEmail'),
   ),
-  extraInfo: yupFilterSchemas.string(
-    i18n('entities.landingSurvey.fields.extraInfo'),
+  contactPhone: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.contactPhone'),
+  ),
+  cellphoneForSMS: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.cellphoneForSMS'),
+  ),
+  digitalNetworks: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.digitalNetworks'),
   ),
   allowReceiveNotifications: yupFilterSchemas.boolean(
-    i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
+    i18n('entities.newBusinessSurvey.fields.allowReceiveNotifications'),
+  ),
+  services: yupFilterSchemas.stringArray(
+    i18n('entities.newBusinessSurvey.fields.services'),
   ),
 });
 
 const emptyValues = {
-  name: null,
-  email: null,
-  numberOfPets: null,
-  interests: [],
-  extraInfo: null,
+  nameBusiness: null,
+  numberOfPlaces: null,
+  contactName: null,
+  contactEmail: null,
+  contactPhone: null,
+  cellphoneForSMS: null,
+  digitalNetworks: null,
   allowReceiveNotifications: null,
+  services: [],
 }
 
 const previewRenders = {
-  name: {
-    label: i18n('entities.landingSurvey.fields.name'),
+  nameBusiness: {
+    label: i18n('entities.newBusinessSurvey.fields.nameBusiness'),
     render: filterRenders.generic(),
   },
-  email: {
-    label: i18n('entities.landingSurvey.fields.email'),
+  numberOfPlaces: {
+    label: i18n('entities.newBusinessSurvey.fields.numberOfPlaces'),
     render: filterRenders.generic(),
   },
-  numberOfPets: {
-    label: i18n('entities.landingSurvey.fields.numberOfPets'),
+  contactName: {
+    label: i18n('entities.newBusinessSurvey.fields.contactName'),
     render: filterRenders.generic(),
   },
-  interests: {
-    label: i18n('entities.landingSurvey.fields.interests'),
-    render: filterRenders.enumeratorMultiple('entities.landingSurvey.enumerators.interests',),
+  contactEmail: {
+    label: i18n('entities.newBusinessSurvey.fields.contactEmail'),
+    render: filterRenders.generic(),
   },
-  extraInfo: {
-    label: i18n('entities.landingSurvey.fields.extraInfo'),
+  contactPhone: {
+    label: i18n('entities.newBusinessSurvey.fields.contactPhone'),
+    render: filterRenders.generic(),
+  },
+  cellphoneForSMS: {
+    label: i18n('entities.newBusinessSurvey.fields.cellphoneForSMS'),
+    render: filterRenders.generic(),
+  },
+  digitalNetworks: {
+    label: i18n('entities.newBusinessSurvey.fields.digitalNetworks'),
     render: filterRenders.generic(),
   },
   allowReceiveNotifications: {
-    label: i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
+    label: i18n('entities.newBusinessSurvey.fields.allowReceiveNotifications'),
     render: filterRenders.boolean(),
+  },
+  services: {
+    label: i18n('entities.newBusinessSurvey.fields.services'),
+    render: filterRenders.enumeratorMultiple('entities.newBusinessSurvey.enumerators.services',),
   },
 }
 
-function LandingSurveyListFilter(props) {
+function NewBusinessSurveyListFilter(props) {
   const rawFilter = useSelector(selectors.selectRawFilter);
   const dispatch = useDispatch();
   const [expanded, setExpanded] = useState(false);
@@ -133,37 +157,36 @@ function LandingSurveyListFilter(props) {
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
               <InputFormItem
-                name="name"
-                label={i18n('entities.landingSurvey.fields.name')}      
+                name="nameBusiness"
+                label={i18n('entities.newBusinessSurvey.fields.nameBusiness')}      
               />
               <InputFormItem
-                name="email"
-                label={i18n('entities.landingSurvey.fields.email')}      
+                name="numberOfPlaces"
+                label={i18n('entities.newBusinessSurvey.fields.numberOfPlaces')}      
               />
               <InputFormItem
-                name="numberOfPets"
-                label={i18n('entities.landingSurvey.fields.numberOfPets')}      
-              />
-              <SelectFormItem
-                name="interests"
-                label={i18n('entities.landingSurvey.fields.interests')}
-                options={landingSurveyEnumerators.interests.map(
-                  (value) => ({
-                    value,
-                    label: i18n(
-                      `entities.landingSurvey.enumerators.interests.${value}`,
-                    ),
-                  }),
-                )}
-                mode="multiple"
+                name="contactName"
+                label={i18n('entities.newBusinessSurvey.fields.contactName')}      
               />
               <InputFormItem
-                name="extraInfo"
-                label={i18n('entities.landingSurvey.fields.extraInfo')}      
+                name="contactEmail"
+                label={i18n('entities.newBusinessSurvey.fields.contactEmail')}      
+              />
+              <InputFormItem
+                name="contactPhone"
+                label={i18n('entities.newBusinessSurvey.fields.contactPhone')}      
+              />
+              <InputFormItem
+                name="cellphoneForSMS"
+                label={i18n('entities.newBusinessSurvey.fields.cellphoneForSMS')}      
+              />
+              <InputFormItem
+                name="digitalNetworks"
+                label={i18n('entities.newBusinessSurvey.fields.digitalNetworks')}      
               />
               <SelectFormItem
                 name="allowReceiveNotifications"
-                label={i18n('entities.landingSurvey.fields.allowReceiveNotifications')}
+                label={i18n('entities.newBusinessSurvey.fields.allowReceiveNotifications')}
                 options={[
                   {
                     value: true,
@@ -174,6 +197,19 @@ function LandingSurveyListFilter(props) {
                     label: i18n('common.no'),
                   },
                 ]}
+              />
+              <SelectFormItem
+                name="services"
+                label={i18n('entities.newBusinessSurvey.fields.services')}
+                options={newBusinessSurveyEnumerators.services.map(
+                  (value) => ({
+                    value,
+                    label: i18n(
+                      `entities.newBusinessSurvey.enumerators.services.${value}`,
+                    ),
+                  }),
+                )}
+                mode="multiple"
               />
             </div>
 
@@ -209,4 +245,4 @@ function LandingSurveyListFilter(props) {
   );
 }
 
-export default LandingSurveyListFilter;
+export default NewBusinessSurveyListFilter;

@@ -1,70 +1,68 @@
-const ptBR = {
+const en = {
   common: {
-    or: 'ou',
-    cancel: 'Cancelar',
-    reset: 'Limpar',
-    save: 'Salvar',
-    search: 'Buscar',
-    edit: 'Editar',
-    new: 'Novo',
-    export: 'Exportar para Excel',
-    noDataToExport: 'Não há dados para exportar',
-    import: 'Importar',
-    discard: 'Descartar',
-    yes: 'Sim',
-    no: 'Não',
-    pause: 'Pausar',
-    areYouSure: 'Tem certeza?',
-    view: 'Visualizar',
-    destroy: 'Deletar',
-    mustSelectARow: 'Selecine uma linha',
-    start: 'Inicio',
-    end: 'Fim',
-    select: 'Selecionar',
-    continue: 'Continuar',
-    filters: 'Filtros',
+    or: 'or',
+    cancel: 'Cancel',
+    reset: 'Reset',
+    save: 'Save',
+    search: 'Search',
+    edit: 'Edit',
+    new: 'New',
+    export: 'Export to Excel',
+    noDataToExport: 'No data to export',
+    import: 'Import',
+    discard: 'Discard',
+    yes: 'Yes',
+    no: 'No',
+    pause: 'Pause',
+    areYouSure: 'Are you sure?',
+    view: 'View',
+    destroy: 'Delete',
+    mustSelectARow: 'Must select a row',
+    start: 'Start',
+    end: 'End',
+    select: 'Select',
+    continue: 'Continue',
+    filters: 'Filters',
   },
-  public: {
-    homeTitle: 'Você ama os animais de estimação? Então esse é seu lugar!',
-    homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...',
-    landingTitle: 'Logo logo um lugar na internet para você e seus pets!',
-    landingSubtitle: 'Por favor colabore com seus comentários abaixo, não esqueceremos de vocês.',
-  },
-
-    survey: {
-        checkboxTitle: 'O que você gostaria de encontrar na nossa plataforma?',
-        nameTitle: 'Seu nome',
-        emailTitle: 'Seu email',
-        numberOfPets: 'Quantos pets você têm?',
-        checkboxChoices: {
-            saveMoneyOnServices: 'Conseguir descontos especiais em serviços para pet',
-            reserveServices: 'Agendar online a hora e lugar dos serviços (vacinação, exame médico, cirurgias, banho e tosa)',
-            findTheClosestPlaceToGetServices: 'Ajudar a encontrar veterinárias, petshops mais próximas com disponibilidade de atendimento',
-            findWhereToPlayWithMyPet: 'Encontrar lugares para brincar de maneira segura',
-            knowMoreAboutPets: 'Ter mais informação sobre o meu pet e como cuidar dele melhor',
-            adoptAPet: 'Ter ajuda especializada ao adotar ou doar um pet',
-            getMoreMedicalInformation: 'Ter a ficha médica em um lugar só e válido para diferentes países',
-            beAbleToChatWithAVeterinarian: 'Poder mandar mensagens ao meu veterinário a qualquer hora sem custo adicional',
-            seeWhatPetsMyFriendsHave: 'Saber quais pets têm meus amigos',
-            findATrustedPersonToWalkMyPet: 'Encontrar uma pessoa confiável para passear meu pet',
-        },
-        extraInfo: 'O que mais você gostaria de encontrar e não incluímos na lista?',
-        surveyCompleteMessage: 'Obrigado por completar nosso formulário, tenha um ótimo dia!',
-        surveyCompleteButton: 'Completar'
-    },
 
   app: {
     title: 'AIPETTO',
   },
 
+  public: {
+      homeTitle: 'Do you love pets? Then this your place!',
+      homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
+      landingTitle: 'Soon an awesome place on internet for you and your pets!',
+      landingSubtitle: 'Please help us with your comments below, we\'ll not forget you.',
+  },
+
+  survey: {
+    checkboxTitle: 'What would you like us to provide for you and your pets?',
+    nameTitle: 'Your name',
+    emailTitle: 'Your email',
+    numberOfPets: 'How many pets do you have?',
+    checkboxChoices: {
+        saveMoneyOnServices: 'Get discounts on pet services',
+        reserveServices: 'Reserve online the time and place of the services (vaccine, medical exam, surgeries, grooming)',
+        findTheClosestPlaceToGetServices: 'Find vet centers, pet stores, playgrounds nearby',
+        findWhereToPlayWithMyPet: 'Find where to take my pet to play safely',
+        knowMoreAboutPets: 'Have your pet medical history in one place wherever you go',
+        adoptAPet: 'Have specialized help on how to adopt or donate a pet',
+        getMoreMedicalInformation: 'Get more medical information',
+        beAbleToChatWithAVeterinarian: 'Chat with your veterinarian in an emergency without extra cost',
+        seeWhatPetsMyFriendsHave: 'See what pets my friends have',
+        findATrustedPersonToWalkMyPet: 'Find a trusted person to walk my pet',
+    },
+    extraInfo: 'Something you would like to find here and we didn\'t include?',
+    surveyCompleteMessage: 'Thank you for completing our survey, have a nice day!',
+    surveyCompleteButton: 'Complete'
+  },
   businessSurvey: {
-    checkboxTitle: 'Que serviços seu negócio oferece?',
-    nameTitle: 'Seu nome',
-    emailTitle: 'Seu email',
-    contactPhone: 'Telefone',
-    businessNameTitle: 'Nome do seu negócio',
-    numberPlaces: 'Quantos locais seu negócio têm',
-    websiteSocialNetwork: 'Website / Rede social',
+    checkboxTitle: 'What services do you provide?',
+    nameTitle: 'Your name',
+    emailTitle: 'Your email',
+    businessNameTitle: 'Your business name',
+    numberPlaces: 'How many places do you have?',
     checkboxChoices: {
         acupultura: 'Acupultura',
         analgesiaTratamentoDolor: 'Analgesia/Tratamiento del dolor',
@@ -133,36 +131,38 @@ const ptBR = {
         vacunacionDeGato: 'Vacunación de gato',
         vacunacionDePerro: 'Vacunación de perro',
     },
+    extraInfo: 'Something you would like to find here and we didn\'t include?',
+    surveyCompleteMessage: 'Thank you for completing our pre-registration, we will soon get in contact with you!',
+    surveyCompleteButton: 'Complete'
   },
-
   api: {
     menu: 'API',
   },
 
   entities: {
     customer: {
-        name: 'Customer',
+        name: 'customer',
         label: 'Customers',
         menu: 'Customers',
-        exporterFileName: 'Customer_exportados',
+        exporterFileName: 'customer_export',
         list: {
           menu: 'Customers',
           title: 'Customers',
         },
         create: {
-          success: 'Customer salvo com sucesso',
+          success: 'Customer successfully saved',
         },
         update: {
-          success: 'Customer salvo com sucesso',
+          success: 'Customer successfully saved',
         },
         destroy: {
-          success: 'Customer deletado com sucesso',
+          success: 'Customer successfully deleted',
         },
         destroyAll: {
-          success: 'Customer(s) deletado com sucesso',
+          success: 'Customer(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Customer',
+          title: 'Edit Customer',
         },
         fields: {
           id: 'Id',
@@ -191,9 +191,9 @@ const ptBR = {
           'shippingAddressState': 'ShippingAddressState',
           'shippingAddressZipCode': 'ShippingAddressZipCode',
           'shippingAddressCountry': 'ShippingAddressCountry',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
           'source': {
@@ -221,42 +221,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Customer',
+          title: 'New Customer',
         },
         view: {
-          title: 'Visualizar Customer',
+          title: 'View Customer',
         },
         importer: {
-          title: 'Importar Customers',
-          fileName: 'customer_template_importacao',
+          title: 'Import Customers',
+          fileName: 'customer_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     product: {
-        name: 'Product',
+        name: 'product',
         label: 'Products',
         menu: 'Products',
-        exporterFileName: 'Product_exportados',
+        exporterFileName: 'product_export',
         list: {
           menu: 'Products',
           title: 'Products',
         },
         create: {
-          success: 'Product salvo com sucesso',
+          success: 'Product successfully saved',
         },
         update: {
-          success: 'Product salvo com sucesso',
+          success: 'Product successfully saved',
         },
         destroy: {
-          success: 'Product deletado com sucesso',
+          success: 'Product successfully deleted',
         },
         destroyAll: {
-          success: 'Product(s) deletado com sucesso',
+          success: 'Product(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Product',
+          title: 'Edit Product',
         },
         fields: {
           id: 'Id',
@@ -266,9 +266,9 @@ const ptBR = {
           'unitPrice': 'Unit Price',
           'photos': 'Photos',
           'businessId': 'BusinessId',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -280,42 +280,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Product',
+          title: 'New Product',
         },
         view: {
-          title: 'Visualizar Product',
+          title: 'View Product',
         },
         importer: {
-          title: 'Importar Products',
-          fileName: 'product_template_importacao',
+          title: 'Import Products',
+          fileName: 'product_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     order: {
-        name: 'Order',
+        name: 'order',
         label: 'Orders',
         menu: 'Orders',
-        exporterFileName: 'Order_exportados',
+        exporterFileName: 'order_export',
         list: {
           menu: 'Orders',
           title: 'Orders',
         },
         create: {
-          success: 'Order salvo com sucesso',
+          success: 'Order successfully saved',
         },
         update: {
-          success: 'Order salvo com sucesso',
+          success: 'Order successfully saved',
         },
         destroy: {
-          success: 'Order deletado com sucesso',
+          success: 'Order successfully deleted',
         },
         destroyAll: {
-          success: 'Order(s) deletado com sucesso',
+          success: 'Order(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Order',
+          title: 'Edit Order',
         },
         fields: {
           id: 'Id',
@@ -325,9 +325,9 @@ const ptBR = {
           'delivered': 'Delivered',
           'attachments': 'Attachments',
           'businessId': 'BusinessId',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -339,42 +339,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Order',
+          title: 'New Order',
         },
         view: {
-          title: 'Visualizar Order',
+          title: 'View Order',
         },
         importer: {
-          title: 'Importar Orders',
-          fileName: 'order_template_importacao',
+          title: 'Import Orders',
+          fileName: 'order_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     pet: {
-        name: 'Pet',
+        name: 'pet',
         label: 'Pets',
         menu: 'Pets',
-        exporterFileName: 'Pet_exportados',
+        exporterFileName: 'pet_export',
         list: {
           menu: 'Pets',
           title: 'Pets',
         },
         create: {
-          success: 'Pet salvo com sucesso',
+          success: 'Pet successfully saved',
         },
         update: {
-          success: 'Pet salvo com sucesso',
+          success: 'Pet successfully saved',
         },
         destroy: {
-          success: 'Pet deletado com sucesso',
+          success: 'Pet successfully deleted',
         },
         destroyAll: {
-          success: 'Pet(s) deletado com sucesso',
+          success: 'Pet(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Pet',
+          title: 'Edit Pet',
         },
         fields: {
           id: 'Id',
@@ -391,9 +391,9 @@ const ptBR = {
           'type': 'Type',
           'customerId': 'CustomerId',
           'petOwners': 'PetOwners',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
           'color': {
@@ -416,42 +416,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Pet',
+          title: 'New Pet',
         },
         view: {
-          title: 'Visualizar Pet',
+          title: 'View Pet',
         },
         importer: {
-          title: 'Importar Pets',
-          fileName: 'pet_template_importacao',
+          title: 'Import Pets',
+          fileName: 'pet_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     breed: {
-        name: 'Breed',
+        name: 'breed',
         label: 'Breeds',
         menu: 'Breeds',
-        exporterFileName: 'Breed_exportados',
+        exporterFileName: 'breed_export',
         list: {
           menu: 'Breeds',
           title: 'Breeds',
         },
         create: {
-          success: 'Breed salvo com sucesso',
+          success: 'Breed successfully saved',
         },
         update: {
-          success: 'Breed salvo com sucesso',
+          success: 'Breed successfully saved',
         },
         destroy: {
-          success: 'Breed deletado com sucesso',
+          success: 'Breed successfully deleted',
         },
         destroyAll: {
-          success: 'Breed(s) deletado com sucesso',
+          success: 'Breed(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Breed',
+          title: 'Edit Breed',
         },
         fields: {
           id: 'Id',
@@ -469,9 +469,9 @@ const ptBR = {
           'townOrCountry': 'TownOrCountry',
           'sizeOfGarden': 'SizeOfGarden',
           'image': 'Image',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
           'size': {
@@ -531,51 +531,51 @@ const ptBR = {
           'grooming': 'How many times you should brush and clean the coat of pet',
         },
         new: {
-          title: 'Novo Breed',
+          title: 'New Breed',
         },
         view: {
-          title: 'Visualizar Breed',
+          title: 'View Breed',
         },
         importer: {
-          title: 'Importar Breeds',
-          fileName: 'breed_template_importacao',
+          title: 'Import Breeds',
+          fileName: 'breed_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     petTypes: {
-        name: 'PetTypes',
+        name: 'petTypes',
         label: 'PetTypes',
         menu: 'PetTypes',
-        exporterFileName: 'PetTypes_exportados',
+        exporterFileName: 'petTypes_export',
         list: {
           menu: 'PetTypes',
           title: 'PetTypes',
         },
         create: {
-          success: 'PetTypes salvo com sucesso',
+          success: 'PetTypes successfully saved',
         },
         update: {
-          success: 'PetTypes salvo com sucesso',
+          success: 'PetTypes successfully saved',
         },
         destroy: {
-          success: 'PetTypes deletado com sucesso',
+          success: 'PetTypes successfully deleted',
         },
         destroyAll: {
-          success: 'PetTypes(s) deletado com sucesso',
+          success: 'PetTypes(s) successfully deleted',
         },
         edit: {
-          title: 'Editar PetTypes',
+          title: 'Edit PetTypes',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'image': 'Image',
           'language': 'Language',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -587,42 +587,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo PetTypes',
+          title: 'New PetTypes',
         },
         view: {
-          title: 'Visualizar PetTypes',
+          title: 'View PetTypes',
         },
         importer: {
-          title: 'Importar PetTypes',
-          fileName: 'petTypes_template_importacao',
+          title: 'Import PetTypes',
+          fileName: 'petTypes_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     business: {
-        name: 'Business',
+        name: 'business',
         label: 'Businesses',
         menu: 'Businesses',
-        exporterFileName: 'Business_exportados',
+        exporterFileName: 'business_export',
         list: {
           menu: 'Businesses',
           title: 'Businesses',
         },
         create: {
-          success: 'Business salvo com sucesso',
+          success: 'Business successfully saved',
         },
         update: {
-          success: 'Business salvo com sucesso',
+          success: 'Business successfully saved',
         },
         destroy: {
-          success: 'Business deletado com sucesso',
+          success: 'Business successfully deleted',
         },
         destroyAll: {
-          success: 'Business(s) deletado com sucesso',
+          success: 'Business(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Business',
+          title: 'Edit Business',
         },
         fields: {
           id: 'Id',
@@ -640,9 +640,9 @@ const ptBR = {
           'city': 'City',
           'state': 'State',
           'country': 'Country',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -654,42 +654,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Business',
+          title: 'New Business',
         },
         view: {
-          title: 'Visualizar Business',
+          title: 'View Business',
         },
         importer: {
-          title: 'Importar Businesses',
-          fileName: 'business_template_importacao',
+          title: 'Import Businesses',
+          fileName: 'business_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     place: {
-        name: 'Place',
+        name: 'place',
         label: 'Places',
         menu: 'Places',
-        exporterFileName: 'Place_exportados',
+        exporterFileName: 'place_export',
         list: {
           menu: 'Places',
           title: 'Places',
         },
         create: {
-          success: 'Place salvo com sucesso',
+          success: 'Place successfully saved',
         },
         update: {
-          success: 'Place salvo com sucesso',
+          success: 'Place successfully saved',
         },
         destroy: {
-          success: 'Place deletado com sucesso',
+          success: 'Place successfully deleted',
         },
         destroyAll: {
-          success: 'Place(s) deletado com sucesso',
+          success: 'Place(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Place',
+          title: 'Edit Place',
         },
         fields: {
           id: 'Id',
@@ -706,9 +706,9 @@ const ptBR = {
           'openTime': 'OpenTime',
           'closeTime': 'CloseTime',
           'is24hours': 'Is24hours',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -720,51 +720,51 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Place',
+          title: 'New Place',
         },
         view: {
-          title: 'Visualizar Place',
+          title: 'View Place',
         },
         importer: {
-          title: 'Importar Places',
-          fileName: 'place_template_importacao',
+          title: 'Import Places',
+          fileName: 'place_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     businessServicesTypes: {
-        name: 'BusinessServicesTypes',
+        name: 'businessServicesTypes',
         label: 'BusinessServicesTypes',
         menu: 'BusinessServicesTypes',
-        exporterFileName: 'BusinessServicesTypes_exportados',
+        exporterFileName: 'businessServicesTypes_export',
         list: {
           menu: 'BusinessServicesTypes',
           title: 'BusinessServicesTypes',
         },
         create: {
-          success: 'BusinessServicesTypes salvo com sucesso',
+          success: 'BusinessServicesTypes successfully saved',
         },
         update: {
-          success: 'BusinessServicesTypes salvo com sucesso',
+          success: 'BusinessServicesTypes successfully saved',
         },
         destroy: {
-          success: 'BusinessServicesTypes deletado com sucesso',
+          success: 'BusinessServicesTypes successfully deleted',
         },
         destroyAll: {
-          success: 'BusinessServicesTypes(s) deletado com sucesso',
+          success: 'BusinessServicesTypes(s) successfully deleted',
         },
         edit: {
-          title: 'Editar BusinessServicesTypes',
+          title: 'Edit BusinessServicesTypes',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'category': 'Category',
           'language': 'Language',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -776,42 +776,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo BusinessServicesTypes',
+          title: 'New BusinessServicesTypes',
         },
         view: {
-          title: 'Visualizar BusinessServicesTypes',
+          title: 'View BusinessServicesTypes',
         },
         importer: {
-          title: 'Importar BusinessServicesTypes',
-          fileName: 'businessServicesTypes_template_importacao',
+          title: 'Import BusinessServicesTypes',
+          fileName: 'businessServicesTypes_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     serviceReservation: {
-        name: 'ServiceReservation',
+        name: 'serviceReservation',
         label: 'ServiceReservations',
         menu: 'ServiceReservations',
-        exporterFileName: 'ServiceReservation_exportados',
+        exporterFileName: 'serviceReservation_export',
         list: {
           menu: 'ServiceReservations',
           title: 'ServiceReservations',
         },
         create: {
-          success: 'ServiceReservation salvo com sucesso',
+          success: 'ServiceReservation successfully saved',
         },
         update: {
-          success: 'ServiceReservation salvo com sucesso',
+          success: 'ServiceReservation successfully saved',
         },
         destroy: {
-          success: 'ServiceReservation deletado com sucesso',
+          success: 'ServiceReservation successfully deleted',
         },
         destroyAll: {
-          success: 'ServiceReservation(s) deletado com sucesso',
+          success: 'ServiceReservation(s) successfully deleted',
         },
         edit: {
-          title: 'Editar ServiceReservation',
+          title: 'Edit ServiceReservation',
         },
         fields: {
           id: 'Id',
@@ -830,9 +830,9 @@ const ptBR = {
           'totalPriceWithDiscountRange': 'TotalPriceWithDiscount',
           'totalPriceWithDiscount': 'TotalPriceWithDiscount',
           'discountCode': 'DiscountCode',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
           'time': {
@@ -896,42 +896,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo ServiceReservation',
+          title: 'New ServiceReservation',
         },
         view: {
-          title: 'Visualizar ServiceReservation',
+          title: 'View ServiceReservation',
         },
         importer: {
-          title: 'Importar ServiceReservations',
-          fileName: 'serviceReservation_template_importacao',
+          title: 'Import ServiceReservations',
+          fileName: 'serviceReservation_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     businessPlaceServiceAvailability: {
-        name: 'BusinessPlaceServiceAvailability',
+        name: 'businessPlaceServiceAvailability',
         label: 'BusinessPlaceServiceAvailabilities',
         menu: 'BusinessPlaceServiceAvailabilities',
-        exporterFileName: 'BusinessPlaceServiceAvailability_exportados',
+        exporterFileName: 'businessPlaceServiceAvailability_export',
         list: {
           menu: 'BusinessPlaceServiceAvailabilities',
           title: 'BusinessPlaceServiceAvailabilities',
         },
         create: {
-          success: 'BusinessPlaceServiceAvailability salvo com sucesso',
+          success: 'BusinessPlaceServiceAvailability successfully saved',
         },
         update: {
-          success: 'BusinessPlaceServiceAvailability salvo com sucesso',
+          success: 'BusinessPlaceServiceAvailability successfully saved',
         },
         destroy: {
-          success: 'BusinessPlaceServiceAvailability deletado com sucesso',
+          success: 'BusinessPlaceServiceAvailability successfully deleted',
         },
         destroyAll: {
-          success: 'BusinessPlaceServiceAvailability(s) deletado com sucesso',
+          success: 'BusinessPlaceServiceAvailability(s) successfully deleted',
         },
         edit: {
-          title: 'Editar BusinessPlaceServiceAvailability',
+          title: 'Edit BusinessPlaceServiceAvailability',
         },
         fields: {
           id: 'Id',
@@ -942,9 +942,9 @@ const ptBR = {
           'workOnHolidays': 'WorkOnHolidays',
           'serviceType': 'ServiceType',
           'places': 'Places',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
           'timeSlot': {
@@ -1011,50 +1011,50 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo BusinessPlaceServiceAvailability',
+          title: 'New BusinessPlaceServiceAvailability',
         },
         view: {
-          title: 'Visualizar BusinessPlaceServiceAvailability',
+          title: 'View BusinessPlaceServiceAvailability',
         },
         importer: {
-          title: 'Importar BusinessPlaceServiceAvailabilities',
-          fileName: 'businessPlaceServiceAvailability_template_importacao',
+          title: 'Import BusinessPlaceServiceAvailabilities',
+          fileName: 'businessPlaceServiceAvailability_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     country: {
-        name: 'Country',
+        name: 'country',
         label: 'Countries',
         menu: 'Countries',
-        exporterFileName: 'Country_exportados',
+        exporterFileName: 'country_export',
         list: {
           menu: 'Countries',
           title: 'Countries',
         },
         create: {
-          success: 'Country salvo com sucesso',
+          success: 'Country successfully saved',
         },
         update: {
-          success: 'Country salvo com sucesso',
+          success: 'Country successfully saved',
         },
         destroy: {
-          success: 'Country deletado com sucesso',
+          success: 'Country successfully deleted',
         },
         destroyAll: {
-          success: 'Country(s) deletado com sucesso',
+          success: 'Country(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Country',
+          title: 'Edit Country',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'initials': 'Initials',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1066,42 +1066,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Country',
+          title: 'New Country',
         },
         view: {
-          title: 'Visualizar Country',
+          title: 'View Country',
         },
         importer: {
-          title: 'Importar Countries',
-          fileName: 'country_template_importacao',
+          title: 'Import Countries',
+          fileName: 'country_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     city: {
-        name: 'City',
+        name: 'city',
         label: 'Cities',
         menu: 'Cities',
-        exporterFileName: 'City_exportados',
+        exporterFileName: 'city_export',
         list: {
           menu: 'Cities',
           title: 'Cities',
         },
         create: {
-          success: 'City salvo com sucesso',
+          success: 'City successfully saved',
         },
         update: {
-          success: 'City salvo com sucesso',
+          success: 'City successfully saved',
         },
         destroy: {
-          success: 'City deletado com sucesso',
+          success: 'City successfully deleted',
         },
         destroyAll: {
-          success: 'City(s) deletado com sucesso',
+          success: 'City(s) successfully deleted',
         },
         edit: {
-          title: 'Editar City',
+          title: 'Edit City',
         },
         fields: {
           id: 'Id',
@@ -1111,9 +1111,9 @@ const ptBR = {
           'latitude': 'Latitude',
           'longitudeRange': 'Longitude',
           'longitude': 'Longitude',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1125,51 +1125,51 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo City',
+          title: 'New City',
         },
         view: {
-          title: 'Visualizar City',
+          title: 'View City',
         },
         importer: {
-          title: 'Importar Cities',
-          fileName: 'city_template_importacao',
+          title: 'Import Cities',
+          fileName: 'city_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     state: {
-        name: 'State',
+        name: 'state',
         label: 'States',
         menu: 'States',
-        exporterFileName: 'State_exportados',
+        exporterFileName: 'state_export',
         list: {
           menu: 'States',
           title: 'States',
         },
         create: {
-          success: 'State salvo com sucesso',
+          success: 'State successfully saved',
         },
         update: {
-          success: 'State salvo com sucesso',
+          success: 'State successfully saved',
         },
         destroy: {
-          success: 'State deletado com sucesso',
+          success: 'State successfully deleted',
         },
         destroyAll: {
-          success: 'State(s) deletado com sucesso',
+          success: 'State(s) successfully deleted',
         },
         edit: {
-          title: 'Editar State',
+          title: 'Edit State',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'country': 'Country',
           'initials': 'Initials',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1181,51 +1181,51 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo State',
+          title: 'New State',
         },
         view: {
-          title: 'Visualizar State',
+          title: 'View State',
         },
         importer: {
-          title: 'Importar States',
-          fileName: 'state_template_importacao',
+          title: 'Import States',
+          fileName: 'state_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     messages: {
-        name: 'Messages',
+        name: 'messages',
         label: 'Messages',
         menu: 'Messages',
-        exporterFileName: 'Messages_exportados',
+        exporterFileName: 'messages_export',
         list: {
           menu: 'Messages',
           title: 'Messages',
         },
         create: {
-          success: 'Messages salvo com sucesso',
+          success: 'Messages successfully saved',
         },
         update: {
-          success: 'Messages salvo com sucesso',
+          success: 'Messages successfully saved',
         },
         destroy: {
-          success: 'Messages deletado com sucesso',
+          success: 'Messages successfully deleted',
         },
         destroyAll: {
-          success: 'Messages(s) deletado com sucesso',
+          success: 'Messages(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Messages',
+          title: 'Edit Messages',
         },
         fields: {
           id: 'Id',
           'from': 'From',
           'to': 'To',
           'message': 'Message',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1237,42 +1237,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Messages',
+          title: 'New Messages',
         },
         view: {
-          title: 'Visualizar Messages',
+          title: 'View Messages',
         },
         importer: {
-          title: 'Importar Messages',
-          fileName: 'messages_template_importacao',
+          title: 'Import Messages',
+          fileName: 'messages_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     professionalsServiceAvailability: {
-        name: 'ProfessionalsServiceAvailability',
+        name: 'professionalsServiceAvailability',
         label: 'ProfessionalsServiceAvailabilities',
         menu: 'ProfessionalsServiceAvailabilities',
-        exporterFileName: 'ProfessionalsServiceAvailability_exportados',
+        exporterFileName: 'professionalsServiceAvailability_export',
         list: {
           menu: 'ProfessionalsServiceAvailabilities',
           title: 'ProfessionalsServiceAvailabilities',
         },
         create: {
-          success: 'ProfessionalsServiceAvailability salvo com sucesso',
+          success: 'ProfessionalsServiceAvailability successfully saved',
         },
         update: {
-          success: 'ProfessionalsServiceAvailability salvo com sucesso',
+          success: 'ProfessionalsServiceAvailability successfully saved',
         },
         destroy: {
-          success: 'ProfessionalsServiceAvailability deletado com sucesso',
+          success: 'ProfessionalsServiceAvailability successfully deleted',
         },
         destroyAll: {
-          success: 'ProfessionalsServiceAvailability(s) deletado com sucesso',
+          success: 'ProfessionalsServiceAvailability(s) successfully deleted',
         },
         edit: {
-          title: 'Editar ProfessionalsServiceAvailability',
+          title: 'Edit ProfessionalsServiceAvailability',
         },
         fields: {
           id: 'Id',
@@ -1284,9 +1284,9 @@ const ptBR = {
           'dateAvailabilityStart': 'DateAvailabilityStart',
           'dateAvailabilityEndRange': 'DateAvailabilityEnd',
           'dateAvailabilityEnd': 'DateAvailabilityEnd',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
           'timeSlot': {
@@ -1344,50 +1344,50 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo ProfessionalsServiceAvailability',
+          title: 'New ProfessionalsServiceAvailability',
         },
         view: {
-          title: 'Visualizar ProfessionalsServiceAvailability',
+          title: 'View ProfessionalsServiceAvailability',
         },
         importer: {
-          title: 'Importar ProfessionalsServiceAvailabilities',
-          fileName: 'professionalsServiceAvailability_template_importacao',
+          title: 'Import ProfessionalsServiceAvailabilities',
+          fileName: 'professionalsServiceAvailability_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     languages: {
-        name: 'Languages',
+        name: 'languages',
         label: 'Languages',
         menu: 'Languages',
-        exporterFileName: 'Languages_exportados',
+        exporterFileName: 'languages_export',
         list: {
           menu: 'Languages',
           title: 'Languages',
         },
         create: {
-          success: 'Languages salvo com sucesso',
+          success: 'Languages successfully saved',
         },
         update: {
-          success: 'Languages salvo com sucesso',
+          success: 'Languages successfully saved',
         },
         destroy: {
-          success: 'Languages deletado com sucesso',
+          success: 'Languages successfully deleted',
         },
         destroyAll: {
-          success: 'Languages(s) deletado com sucesso',
+          success: 'Languages(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Languages',
+          title: 'Edit Languages',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'active': 'Active',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1399,51 +1399,51 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Languages',
+          title: 'New Languages',
         },
         view: {
-          title: 'Visualizar Languages',
+          title: 'View Languages',
         },
         importer: {
-          title: 'Importar Languages',
-          fileName: 'languages_template_importacao',
+          title: 'Import Languages',
+          fileName: 'languages_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     currency: {
-        name: 'Currency',
+        name: 'currency',
         label: 'Currencies',
         menu: 'Currencies',
-        exporterFileName: 'Currency_exportados',
+        exporterFileName: 'currency_export',
         list: {
           menu: 'Currencies',
           title: 'Currencies',
         },
         create: {
-          success: 'Currency salvo com sucesso',
+          success: 'Currency successfully saved',
         },
         update: {
-          success: 'Currency salvo com sucesso',
+          success: 'Currency successfully saved',
         },
         destroy: {
-          success: 'Currency deletado com sucesso',
+          success: 'Currency successfully deleted',
         },
         destroyAll: {
-          success: 'Currency(s) deletado com sucesso',
+          success: 'Currency(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Currency',
+          title: 'Edit Currency',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'symbol': 'Symbol',
           'active': 'Active',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1455,42 +1455,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Currency',
+          title: 'New Currency',
         },
         view: {
-          title: 'Visualizar Currency',
+          title: 'View Currency',
         },
         importer: {
-          title: 'Importar Currencies',
-          fileName: 'currency_template_importacao',
+          title: 'Import Currencies',
+          fileName: 'currency_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     discounts: {
-        name: 'Discounts',
+        name: 'discounts',
         label: 'Discounts',
         menu: 'Discounts',
-        exporterFileName: 'Discounts_exportados',
+        exporterFileName: 'discounts_export',
         list: {
           menu: 'Discounts',
           title: 'Discounts',
         },
         create: {
-          success: 'Discounts salvo com sucesso',
+          success: 'Discounts successfully saved',
         },
         update: {
-          success: 'Discounts salvo com sucesso',
+          success: 'Discounts successfully saved',
         },
         destroy: {
-          success: 'Discounts deletado com sucesso',
+          success: 'Discounts successfully deleted',
         },
         destroyAll: {
-          success: 'Discounts(s) deletado com sucesso',
+          success: 'Discounts(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Discounts',
+          title: 'Edit Discounts',
         },
         fields: {
           id: 'Id',
@@ -1500,9 +1500,9 @@ const ptBR = {
           'discountPercentage': 'DiscountPercentage',
           'expirationDateRange': 'ExpirationDate',
           'expirationDate': 'ExpirationDate',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1514,42 +1514,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Discounts',
+          title: 'New Discounts',
         },
         view: {
-          title: 'Visualizar Discounts',
+          title: 'View Discounts',
         },
         importer: {
-          title: 'Importar Discounts',
-          fileName: 'discounts_template_importacao',
+          title: 'Import Discounts',
+          fileName: 'discounts_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     wallet: {
-        name: 'Wallet',
+        name: 'wallet',
         label: 'Wallets',
         menu: 'Wallets',
-        exporterFileName: 'Wallet_exportados',
+        exporterFileName: 'wallet_export',
         list: {
           menu: 'Wallets',
           title: 'Wallets',
         },
         create: {
-          success: 'Wallet salvo com sucesso',
+          success: 'Wallet successfully saved',
         },
         update: {
-          success: 'Wallet salvo com sucesso',
+          success: 'Wallet successfully saved',
         },
         destroy: {
-          success: 'Wallet deletado com sucesso',
+          success: 'Wallet successfully deleted',
         },
         destroyAll: {
-          success: 'Wallet(s) deletado com sucesso',
+          success: 'Wallet(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Wallet',
+          title: 'Edit Wallet',
         },
         fields: {
           id: 'Id',
@@ -1558,9 +1558,9 @@ const ptBR = {
           'aipettoPointsRange': 'AipettoPoints',
           'aipettoPoints': 'AipettoPoints',
           'user': 'User',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1572,50 +1572,50 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Wallet',
+          title: 'New Wallet',
         },
         view: {
-          title: 'Visualizar Wallet',
+          title: 'View Wallet',
         },
         importer: {
-          title: 'Importar Wallets',
-          fileName: 'wallet_template_importacao',
+          title: 'Import Wallets',
+          fileName: 'wallet_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     businessCategory: {
-        name: 'BusinessCategory',
+        name: 'businessCategory',
         label: 'BusinessCategories',
         menu: 'BusinessCategories',
-        exporterFileName: 'BusinessCategory_exportados',
+        exporterFileName: 'businessCategory_export',
         list: {
           menu: 'BusinessCategories',
           title: 'BusinessCategories',
         },
         create: {
-          success: 'BusinessCategory salvo com sucesso',
+          success: 'BusinessCategory successfully saved',
         },
         update: {
-          success: 'BusinessCategory salvo com sucesso',
+          success: 'BusinessCategory successfully saved',
         },
         destroy: {
-          success: 'BusinessCategory deletado com sucesso',
+          success: 'BusinessCategory successfully deleted',
         },
         destroyAll: {
-          success: 'BusinessCategory(s) deletado com sucesso',
+          success: 'BusinessCategory(s) successfully deleted',
         },
         edit: {
-          title: 'Editar BusinessCategory',
+          title: 'Edit BusinessCategory',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'language': 'Language',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1627,42 +1627,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo BusinessCategory',
+          title: 'New BusinessCategory',
         },
         view: {
-          title: 'Visualizar BusinessCategory',
+          title: 'View BusinessCategory',
         },
         importer: {
-          title: 'Importar BusinessCategories',
-          fileName: 'businessCategory_template_importacao',
+          title: 'Import BusinessCategories',
+          fileName: 'businessCategory_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     providers: {
-        name: 'Providers',
+        name: 'providers',
         label: 'Providers',
         menu: 'Providers',
-        exporterFileName: 'Providers_exportados',
+        exporterFileName: 'providers_export',
         list: {
           menu: 'Providers',
           title: 'Providers',
         },
         create: {
-          success: 'Providers salvo com sucesso',
+          success: 'Providers successfully saved',
         },
         update: {
-          success: 'Providers salvo com sucesso',
+          success: 'Providers successfully saved',
         },
         destroy: {
-          success: 'Providers deletado com sucesso',
+          success: 'Providers successfully deleted',
         },
         destroyAll: {
-          success: 'Providers(s) deletado com sucesso',
+          success: 'Providers(s) successfully deleted',
         },
         edit: {
-          title: 'Editar Providers',
+          title: 'Edit Providers',
         },
         fields: {
           id: 'Id',
@@ -1680,9 +1680,9 @@ const ptBR = {
           'city': 'City',
           'state': 'State',
           'country': 'Country',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1694,50 +1694,50 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo Providers',
+          title: 'New Providers',
         },
         view: {
-          title: 'Visualizar Providers',
+          title: 'View Providers',
         },
         importer: {
-          title: 'Importar Providers',
-          fileName: 'providers_template_importacao',
+          title: 'Import Providers',
+          fileName: 'providers_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     vaccineTypes: {
-        name: 'VaccineTypes',
+        name: 'vaccineTypes',
         label: 'VaccineTypes',
         menu: 'VaccineTypes',
-        exporterFileName: 'VaccineTypes_exportados',
+        exporterFileName: 'vaccineTypes_export',
         list: {
           menu: 'VaccineTypes',
           title: 'VaccineTypes',
         },
         create: {
-          success: 'VaccineTypes salvo com sucesso',
+          success: 'VaccineTypes successfully saved',
         },
         update: {
-          success: 'VaccineTypes salvo com sucesso',
+          success: 'VaccineTypes successfully saved',
         },
         destroy: {
-          success: 'VaccineTypes deletado com sucesso',
+          success: 'VaccineTypes successfully deleted',
         },
         destroyAll: {
-          success: 'VaccineTypes(s) deletado com sucesso',
+          success: 'VaccineTypes(s) successfully deleted',
         },
         edit: {
-          title: 'Editar VaccineTypes',
+          title: 'Edit VaccineTypes',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'country': 'Country',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1749,42 +1749,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo VaccineTypes',
+          title: 'New VaccineTypes',
         },
         view: {
-          title: 'Visualizar VaccineTypes',
+          title: 'View VaccineTypes',
         },
         importer: {
-          title: 'Importar VaccineTypes',
-          fileName: 'vaccineTypes_template_importacao',
+          title: 'Import VaccineTypes',
+          fileName: 'vaccineTypes_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     petVaccines: {
-        name: 'PetVaccines',
+        name: 'petVaccines',
         label: 'PetVaccines',
         menu: 'PetVaccines',
-        exporterFileName: 'PetVaccines_exportados',
+        exporterFileName: 'petVaccines_export',
         list: {
           menu: 'PetVaccines',
           title: 'PetVaccines',
         },
         create: {
-          success: 'PetVaccines salvo com sucesso',
+          success: 'PetVaccines successfully saved',
         },
         update: {
-          success: 'PetVaccines salvo com sucesso',
+          success: 'PetVaccines successfully saved',
         },
         destroy: {
-          success: 'PetVaccines deletado com sucesso',
+          success: 'PetVaccines successfully deleted',
         },
         destroyAll: {
-          success: 'PetVaccines(s) deletado com sucesso',
+          success: 'PetVaccines(s) successfully deleted',
         },
         edit: {
-          title: 'Editar PetVaccines',
+          title: 'Edit PetVaccines',
         },
         fields: {
           id: 'Id',
@@ -1796,9 +1796,9 @@ const ptBR = {
           'placeTaken': 'PlaceTaken',
           'businessID': 'BusinessID',
           'country': 'Country',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1810,50 +1810,50 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo PetVaccines',
+          title: 'New PetVaccines',
         },
         view: {
-          title: 'Visualizar PetVaccines',
+          title: 'View PetVaccines',
         },
         importer: {
-          title: 'Importar PetVaccines',
-          fileName: 'petVaccines_template_importacao',
+          title: 'Import PetVaccines',
+          fileName: 'petVaccines_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     placeType: {
-        name: 'PlaceType',
+        name: 'placeType',
         label: 'PlaceTypes',
         menu: 'PlaceTypes',
-        exporterFileName: 'PlaceType_exportados',
+        exporterFileName: 'placeType_export',
         list: {
           menu: 'PlaceTypes',
           title: 'PlaceTypes',
         },
         create: {
-          success: 'PlaceType salvo com sucesso',
+          success: 'PlaceType successfully saved',
         },
         update: {
-          success: 'PlaceType salvo com sucesso',
+          success: 'PlaceType successfully saved',
         },
         destroy: {
-          success: 'PlaceType deletado com sucesso',
+          success: 'PlaceType successfully deleted',
         },
         destroyAll: {
-          success: 'PlaceType(s) deletado com sucesso',
+          success: 'PlaceType(s) successfully deleted',
         },
         edit: {
-          title: 'Editar PlaceType',
+          title: 'Edit PlaceType',
         },
         fields: {
           id: 'Id',
           'name': 'Name',
           'language': 'Language',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
 
@@ -1865,42 +1865,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo PlaceType',
+          title: 'New PlaceType',
         },
         view: {
-          title: 'Visualizar PlaceType',
+          title: 'View PlaceType',
         },
         importer: {
-          title: 'Importar PlaceTypes',
-          fileName: 'placeType_template_importacao',
+          title: 'Import PlaceTypes',
+          fileName: 'placeType_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     landingSurvey: {
-        name: 'LandingSurvey',
+        name: 'landingSurvey',
         label: 'LandingSurveys',
         menu: 'LandingSurveys',
-        exporterFileName: 'LandingSurvey_exportados',
+        exporterFileName: 'landingSurvey_export',
         list: {
           menu: 'LandingSurveys',
           title: 'LandingSurveys',
         },
         create: {
-          success: 'LandingSurvey salvo com sucesso',
+          success: 'LandingSurvey successfully saved',
         },
         update: {
-          success: 'LandingSurvey salvo com sucesso',
+          success: 'LandingSurvey successfully saved',
         },
         destroy: {
-          success: 'LandingSurvey deletado com sucesso',
+          success: 'LandingSurvey successfully deleted',
         },
         destroyAll: {
-          success: 'LandingSurvey(s) deletado com sucesso',
+          success: 'LandingSurvey(s) successfully deleted',
         },
         edit: {
-          title: 'Editar LandingSurvey',
+          title: 'Edit LandingSurvey',
         },
         fields: {
           id: 'Id',
@@ -1909,9 +1909,9 @@ const ptBR = {
           'numberOfPets': 'NumberOfPets',
           'interests': 'Interests',
           'extraInfo': 'ExtraInfo',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
           'interests': {
@@ -1925,42 +1925,42 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo LandingSurvey',
+          title: 'New LandingSurvey',
         },
         view: {
-          title: 'Visualizar LandingSurvey',
+          title: 'View LandingSurvey',
         },
         importer: {
-          title: 'Importar LandingSurveys',
-          fileName: 'landingSurvey_template_importacao',
+          title: 'Import LandingSurveys',
+          fileName: 'landingSurvey_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
 
     newBusinessSurvey: {
-        name: 'NewBusinessSurvey',
+        name: 'newBusinessSurvey',
         label: 'NewBusinessSurveys',
         menu: 'NewBusinessSurveys',
-        exporterFileName: 'NewBusinessSurvey_exportados',
+        exporterFileName: 'newBusinessSurvey_export',
         list: {
           menu: 'NewBusinessSurveys',
           title: 'NewBusinessSurveys',
         },
         create: {
-          success: 'NewBusinessSurvey salvo com sucesso',
+          success: 'NewBusinessSurvey successfully saved',
         },
         update: {
-          success: 'NewBusinessSurvey salvo com sucesso',
+          success: 'NewBusinessSurvey successfully saved',
         },
         destroy: {
-          success: 'NewBusinessSurvey deletado com sucesso',
+          success: 'NewBusinessSurvey successfully deleted',
         },
         destroyAll: {
-          success: 'NewBusinessSurvey(s) deletado com sucesso',
+          success: 'NewBusinessSurvey(s) successfully deleted',
         },
         edit: {
-          title: 'Editar NewBusinessSurvey',
+          title: 'Edit NewBusinessSurvey',
         },
         fields: {
           id: 'Id',
@@ -1973,9 +1973,9 @@ const ptBR = {
           'digitalNetworks': 'DigitalNetworks',
           'allowReceiveNotifications': 'AllowReceiveNotifications',
           'services': 'Services',
-          createdAt: 'Criado em',
-          updatedAt: 'Atualizado em',
-          createdAtRange: 'Criado em',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
         },
         enumerators: {
           'services': {
@@ -1989,106 +1989,110 @@ const ptBR = {
 
         },
         new: {
-          title: 'Novo NewBusinessSurvey',
+          title: 'New NewBusinessSurvey',
         },
         view: {
-          title: 'Visualizar NewBusinessSurvey',
+          title: 'View NewBusinessSurvey',
         },
         importer: {
-          title: 'Importar NewBusinessSurveys',
-          fileName: 'newBusinessSurvey_template_importacao',
+          title: 'Import NewBusinessSurveys',
+          fileName: 'newBusinessSurvey_import_template',
           hint:
-            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+            'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
   },
 
   auth: {
-    tenants: 'Áreas de Trabalho',
+    tenants: 'Workspaces',
     profile: {
-      title: 'Perfil',
-      success: 'Perfil atualizado com sucesso',
+      title: 'Profile',
+      success: 'Profile successfully updated',
     },
-    rememberMe: 'Lembrar-me',
-    forgotPassword: 'Esqueci minha senha',
-    signin: 'Entrar',
-    signup: 'Registrar',
-    signout: 'Sair',
-    alreadyHaveAnAccount: 'Já possui uma conta? Entre.',
-    createAnAccount: 'Não possui conta? Criar uma.',
+    welcomeBack: 'Welcome back',
+    rememberMe: 'Remember me',
+    forgotPassword: 'Forgot password',
+    signin: 'Sign in',
+    signup: 'Sign up',
+    signout: 'Sign out',
+    alreadyHaveAnAccount:
+      'Already have an account? Sign in.',
+    createAnAccount: `Don't have an account? Create one.`,
     social: {
-      header: 'ou entrar com uma rede social',
-      signinWithGoogle: 'Entrar com Google',
+      header: 'or sign in with Social Media',
+      signinWithGoogle: 'Sign in with Google',
       errors: {
         'auth-invalid-provider':
-          'Este email está registrado para outro provedor.',
-        'auth-no-email': `O email associado a esta conta é privado ou não existe.`,
+          'This email is already registered to another provider.',
+        'auth-no-email': `The email associated with this account is private or inexistent.`,
       },
     },
-    signinWithAnotherAccount: 'Entrar com outra conta',
+    signinWithAnotherAccount:
+      'Sign in with another account',
     emailUnverified: {
-      message: `Por favor, confirme seu email em <strong>{0}</strong> para continuar.`,
-      submit: `Reenviar confirmação por email`,
-    },
-    passwordResetEmail: {
-      message: 'Enviar email de redefinição de senha',
-      error: `Email não encontrado`,
+      message: `Please confirm your email at <strong>{0}</strong> to continue.`,
+      submit: `Resend email verification`,
     },
     emptyPermissions: {
-      message: `Você ainda não possui permissões. Aguarde o administrador conceder seus privilégios.`,
+      message: `You have no permissions yet. Wait for the admin to grant you privileges.`,
+    },
+    passwordResetEmail: {
+      message: 'Send password reset email',
+      error: `Email not recognized`,
     },
     passwordReset: {
-      message: 'Alterar senha',
+      message: 'Reset password',
     },
     passwordChange: {
-      title: 'Mudar a Senha',
-      success: 'Senha alterada com sucesso',
-      mustMatch: 'Senhas devem ser iguais',
+      title: 'Change Password',
+      success: 'Password successfully changed',
+      mustMatch: 'Passwords must match',
     },
     emailAddressVerificationEmail: {
-      error: `Email não encontrado`,
+      error: `Email not recognized`,
     },
-    verificationEmailSuccess: `Verificação de email enviada com sucesso`,
-    passwordResetEmailSuccess: `Email de redefinição de senha enviado com sucesso`,
-    passwordResetSuccess: `Senha alterada com sucesso`,
+    verificationEmailSuccess: `Verification email successfully sent`,
+    passwordResetEmailSuccess: `Password reset email successfully sent`,
+    passwordResetSuccess: `Password successfully changed`,
     verifyEmail: {
-      success: 'Email verificado com sucesso.',
+      success: 'Email successfully verified.',
       message:
-        'Aguarde um momento, seu email está sendo verificado...',
+        'Just a moment, your email is being verified...',
     },
   },
+
     roles: {
         aipettoAdmin: {
             label: 'AIPETTO Admin',
             description: 'Acesso a todos os recursos da plataforma',
         },
         businessOwner: {
-            label: 'Dono dos negócios',
-            description: 'Donos de negócios',
+            label: 'Business Owner',
+            description: 'Business Owner',
         },
         adminPetshop: {
             label: 'Admin Petshop',
-            description: 'Admin para operações com petshop',
+            description: 'Admin Petshop',
         },
         adminVeterinary: {
-            label: 'Admin Veterinária',
-            description: 'Admin para operações com veterinária',
+            label: 'Admin Veterinarian',
+            description: 'Admin Veterinarian',
         },
         employee: {
-            label: 'Funcionário da Veterinária e Petshop',
-            description: 'Funcionário do veterinário e petshop',
+            label: 'Employee',
+            description: 'Employee',
         },
         petOwner: {
-            label: 'Dono do pet',
-            description: 'Dono de animais de estimação',
+            label: 'Pet Owner',
+            description: 'Owner of pets',
         },
         veterinarian: {
-            label: 'Veterinário',
-            description: 'Veterinário',
+            label: 'Veterinarian',
+            description: 'Veterinarian',
         },
         transporter: {
-            label: 'Transportador',
-            description: 'Negócio que trabalha transportando animais de estimação',
+            label: 'Transporter',
+            description: 'Transporter',
         },
     },
   user: {
@@ -2097,367 +2101,372 @@ const ptBR = {
       avatars: 'Avatar',
       email: 'Email',
       emails: 'Email(s)',
-      fullName: 'Nome',
-      firstName: 'Nome',
-      lastName: 'Sobrenome',
-      status: 'Estado',
-      phoneNumber: 'Telefone',
-      role: 'Perfil',
-      createdAt: 'Criado em',
-      updatedAt: 'Atualizado em',
-      roleUser: 'Perfil/Usuário',
-      roles: 'Perfis',
-      createdAtRange: 'Criado em',
-      password: 'Senha',
-      oldPassword: 'Senha Antiga',
-      newPassword: 'Nova Senha',
-      newPasswordConfirmation: 'Confirmação da Nova Senha',
-      rememberMe: 'Lembrar-me',
+      fullName: 'Name',
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      status: 'Status',
+      phoneNumber: 'Phone Number',
+      role: 'Role',
+      createdAt: 'Created at',
+      updatedAt: 'Updated at',
+      roleUser: 'Role/User',
+      roles: 'Roles',
+      createdAtRange: 'Created at',
+      password: 'Password',
+      oldPassword: 'Old Password',
+      newPassword: 'New Password',
+      newPasswordConfirmation: 'New Password Confirmation',
+      rememberMe: 'Remember me',
     },
     status: {
-      active: 'Ativo',
-      invited: 'Convidado',
-      'empty-permissions': 'Aguardando Permissões',
+      active: 'Active',
+      invited: 'Invited',
+      'empty-permissions': 'Waiting for Permissions',
     },
-    invite: 'Convidar',
+    invite: 'Invite',
     validations: {
       // eslint-disable-next-line
-      email: 'Email ${value} é inválido',
+      email: 'Email ${value} is invalid',
     },
-    title: 'Usuários',
-    menu: 'Usuários',
-    doAddSuccess: 'Usuário(s) salvos com sucesso',
-    doUpdateSuccess: 'Usuário salvo com sucesso',
-    exporterFileName: 'usuarios_exportados',
-    doDestroySuccess: 'Usuário deletado com sucesso',
+    title: 'Users',
+    menu: 'Users',
+    doAddSuccess: 'User(s) successfully saved',
+    doUpdateSuccess: 'User successfully saved',
+    exporterFileName: 'users_export',
+    doDestroySuccess: 'User successfully deleted',
     doDestroyAllSelectedSuccess:
-      'Usuários deletado com sucesso',
+      'Users successfully deleted',
     edit: {
-      title: 'Editar usuário',
+      title: 'Edit User',
     },
     new: {
-      title: 'Novo(s) Usuário(s)',
-      titleModal: 'Novo Usuário',
+      title: 'Invite User(s)',
+      titleModal: 'Invite User',
       emailsHint:
-        'Separe múltiplos endereços de e-mail usando a vírgula.',
+        'Separate multiple email addresses using the comma character.',
     },
     view: {
-      title: 'Visualizar Usuário',
-      activity: 'Atividades',
+      title: 'View User',
+      activity: 'Activity',
     },
     importer: {
-      title: 'Importar Usuários',
-      fileName: 'usuarios_template_importacao',
+      title: 'Import Users',
+      fileName: 'users_import_template',
       hint:
-        'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        'Files/Images columns must be the URLs of the files separated by space. Relationships must be the ID of the referenced records separated by space. Roles must be the role ids separated by space.',
     },
     errors: {
-      userAlreadyExists: 'Usuário com este email já existe',
-      userNotFound: 'Usuário não encontrado',
-      revokingOwnPermission: `Você não pode revogar sua própria permissão de proprietário`,
+      userAlreadyExists:
+        'User with this email already exists',
+      userNotFound: 'User not found',
+      revokingOwnPermission: `You can't revoke your own admin permission`,
     },
   },
 
   tenant: {
     name: 'tenant',
-    label: 'Área de Trabalho',
-    menu: 'Áreas de Trabalho',
+    label: 'Workspaces',
+    menu: 'Workspaces',
     list: {
-      menu: 'Áreas de Trabalho',
-      title: 'Áreas de Trabalho',
+      menu: 'Workspaces',
+      title: 'Workspaces',
     },
     create: {
-      button: 'Criar Área de Trabalho',
-      success: 'Área de Trabalho salva com sucesso',
+      button: 'Create Workspace',
+      success: 'Workspace successfully saved',
     },
     update: {
-      success: 'Área de Trabalho salva com sucesso',
+      success: 'Workspace successfully saved',
     },
     destroy: {
-      success: 'Área de Trabalho deletada com sucesso',
+      success: 'Workspace successfully deleted',
     },
     destroyAll: {
-      success: 'Área(s) de Trabalho deletadas com sucesso',
+      success: 'Workspace(s) successfully deleted',
     },
     edit: {
-      title: 'Editar Área de Trabalho',
+      title: 'Edit Workspace',
     },
     fields: {
       id: 'Id',
-      name: 'Nome',
-      tenantName: 'Nome da Área de Trabalho',
-      tenantUrl: 'URL da Área de Trabalho',
-      tenantId: 'Área de Trabalho',
-      plan: 'Plano',
+      name: 'Name',
+      url: 'URL',
+      tenantName: 'Workspace Name',
+      tenantId: 'Workspace',
+      tenantUrl: 'Workspace URL',
+      plan: 'Plan',
     },
     enumerators: {},
     new: {
-      title: 'Nova Área de Trabalho',
+      title: 'New Workspace',
     },
     invitation: {
-      view: 'Ver Convites',
-      invited: 'Convidado',
-      accept: 'Aceitar Convite',
-      decline: 'Recusar Convite',
-      declined: 'Convite recusado com sucesso',
-      acceptWrongEmail: 'Aceitar Convite Com Este Email',
+      view: 'View Invitations',
+      invited: 'Invited',
+      accept: 'Accept Invitation',
+      decline: 'Decline Invitation',
+      declined: 'Invitation successfully declined',
+      acceptWrongEmail: 'Accept Invitation With This Email',
     },
-    select: 'Selecionar Área de Trabalho',
-    url: {
-      exists:
-        'Esta URL de área de trabalho já está em uso.',
+    select: 'Select Workspace',
+    validation: {
+      url:
+        'Your workspace URL can only contain lowercase letters, numbers and dashes (and must start with a letter or number).',
     },
   },
 
   plan: {
-    menu: 'Planos',
-    title: 'Planos',
+    menu: 'Plans',
+    title: 'Plans',
 
     free: {
-      label: 'Gratuito',
-      price: '£',
+      label: 'Free',
+      price: '$0',
+    },
+    growth: {
+      label: 'Growth',
+      price: '$10',
     },
     premium: {
       label: 'Premium',
       price: '£50',
     },
 
-    pricingPeriod: '/mês',
-    current: 'Plano Atual',
-    subscribe: 'Assinar',
-    manage: 'Gerenciar Assinatura',
-    somethingWrong:
-      'Há algo errado com sua assinatura. Por favor clique em Gerenciar Assinatura para mais informações.',
+    pricingPeriod: '/month',
+    current: 'Current Plan',
+    subscribe: 'Subscribe',
+    manage: 'Manage Subscription',
     cancelAtPeriodEnd:
-      'O plano será cancelado no fim do período.',
-    notPlanUser: `Esta assinatura não é controlada por você.`,
+      'This plan will be canceled at the end of the period.',
+    somethingWrong:
+      'There is something wrong with your subscription. Please go to manage subscription for more details.',
+    notPlanUser: `You are not the manager of this subscription.`,
   },
 
   auditLog: {
-    menu: 'Registros de Auditoria',
-    title: 'Registros de Auditoria',
-    exporterFileName: 'registros_autoria_exportados',
+    menu: 'Audit Logs',
+    title: 'Audit Logs',
+    exporterFileName: 'audit_log_export',
     entityNamesHint:
-      'Separe múltiplas entidades por vírgula',
+      'Separate multiple entities using the comma character.',
     fields: {
       id: 'Id',
-      timestampRange: 'Período',
-      entityName: 'Entidade',
-      entityNames: 'Entidades',
-      entityId: 'ID da Entidade',
-      action: 'Ação',
-      values: 'Valores',
-      timestamp: 'Data',
-      createdByEmail: 'Email do Usuário',
+      timestampRange: 'Period',
+      entityName: 'Entity',
+      entityNames: 'Entities',
+      entityId: 'Entity ID',
+      action: 'Action',
+      values: 'Values',
+      timestamp: 'Date',
+      createdByEmail: 'User Email',
     },
   },
   settings: {
-    title: 'Configurações',
-    menu: 'Configurações',
+    title: 'Settings',
+    menu: 'Settings',
     save: {
-      success: 'Configurações salvas com sucesso.',
+      success:
+        'Settings successfully saved. The page will reload in {0} seconds for changes to take effect.',
     },
     fields: {
-      theme: 'Tema',
+      theme: 'Theme',
       logos: 'Logo',
-      backgroundImages: 'Papel de Parede',
+      backgroundImages: 'Background Image',
     },
     colors: {
-      default: 'Escuro',
-      light: 'Claro',
-      cyan: 'Ciano',
-      'geek-blue': 'Azul escuro',
-      gold: 'Ouro',
-      lime: 'Limão',
+      default: 'Dark',
+      light: 'Light',
+      cyan: 'Cyan',
+      'geek-blue': 'Geek Blue',
+      gold: 'Gold',
+      lime: 'Lime',
       magenta: 'Magenta',
-      orange: 'Laranja',
-      'polar-green': 'Verde polar',
-      purple: 'Roxo',
-      red: 'Vermelho',
-      volcano: 'Vúlcão',
-      yellow: 'Amarelo',
+      orange: 'Orange',
+      'polar-green': 'Polar Green',
+      purple: 'Purple',
+      red: 'Red',
+      volcano: 'Volcano',
+      yellow: 'Yellow',
     },
   },
   dashboard: {
-    menu: 'Inicial',
-    message: `Esta página usa dados falsos apenas para fins de demonstração.`,
+    menu: 'Dashboard',
+    message: `This page uses fake data for demonstration purposes only. You can edit it at frontend/view/dashboard/DashboardPage.ts.`,
     charts: {
-      day: 'Dia',
-      red: 'Vermelho',
-      green: 'Verde',
-      yellow: 'Amarelho',
-      grey: 'Cinza',
-      blue: 'Azul',
-      orange: 'Laranja',
+      day: 'Day',
+      red: 'Red',
+      green: 'Green',
+      yellow: 'Yellow',
+      grey: 'Grey',
+      blue: 'Blue',
+      orange: 'Orange',
       months: {
-        1: 'Janeiro',
-        2: 'Fevereiro',
-        3: 'Março',
-        4: 'Abril',
-        5: 'Maio',
-        6: 'Junho',
-        7: 'Julho',
+        1: 'January',
+        2: 'February',
+        3: 'March',
+        4: 'April',
+        5: 'May',
+        6: 'June',
+        7: 'July',
       },
-      eating: 'Comendo',
-      drinking: 'Bebendo',
-      sleeping: 'Dormindo',
-      designing: 'Projetando',
-      coding: 'Codificando',
-      cycling: 'Pedalando',
-      running: 'Correndo',
-      customer: 'Cliente',
+      eating: 'Eating',
+      drinking: 'Drinking',
+      sleeping: 'Sleeping',
+      designing: 'Designing',
+      coding: 'Coding',
+      cycling: 'Cycling',
+      running: 'Running',
+      customer: 'Customer',
     },
   },
   errors: {
-    backToHome: 'Voltar a página inicial',
-    403: `Desculpe, você não tem acesso a esta página`,
-    404: 'Desculpe, a página que você visitou não existe',
-    500: 'Desculpe, o servidor está relatando um erro',
-    429: 'Muitas requisições. Por favor, tente novamente mais tarde.',
+    backToHome: 'Back to home',
+    403: `Sorry, you don't have access to this page`,
+    404: 'Sorry, the page you visited does not exist',
+    500: 'Sorry, the server is reporting an error',
+    429: 'Too many requests. Please try again later.',
     forbidden: {
-      message: 'Acesso negado',
+      message: 'Forbidden',
     },
     validation: {
-      message: 'Ocorreu um erro',
+      message: 'An error occurred',
     },
-    defaultErrorMessage: 'Ops, ocorreu um erro',
+    defaultErrorMessage: 'Ops, an error occurred',
   },
 
   preview: {
     error:
-      'Desculpe, esta operação não é permitida em modo de demonstração.',
+      'Sorry, this operation is not allowed in preview mode.',
   },
 
   // See https://github.com/jquense/yup#using-a-custom-locale-dictionary
   /* eslint-disable */
   validation: {
     mixed: {
-      default: '${path} é inválido',
-      required: '${path} é obrigatório',
+      default: '${path} is invalid',
+      required: '${path} is required',
       oneOf:
-        '${path} deve ser um dos seguintes valores: ${values}',
+        '${path} must be one of the following values: ${values}',
       notOneOf:
-        '${path} não deve ser um dos seguintes valores: ${values}',
+        '${path} must not be one of the following values: ${values}',
       notType: ({ path, type, value, originalValue }) => {
-        return `${path} deve ser um ${type}`;
+        return `${path} must be a ${type}`;
       },
     },
     string: {
-      length: '${path} deve possuir ${length} caracteres',
-      min:
-        '${path} deve possuir ao menos ${min} caracteres',
-      max:
-        '${path} deve possui no máximo ${max} caracteres',
+      length:
+        '${path} must be exactly ${length} characters',
+      min: '${path} must be at least ${min} characters',
+      max: '${path} must be at most ${max} characters',
       matches:
-        '${path} deve respeitar o padrão: "${regex}"',
-      email: '${path} deve ser um email válido',
-      url: '${path} deve ser uma URL válida',
-      trim:
-        '${path} deve ser uma palavra sem espaços em branco',
-      lowercase: '${path} deve ser minúsculo',
-      uppercase: '${path} deve ser maiúsculo',
-      selected: '${path} deve ser selecionado',
+        '${path} must match the following: "${regex}"',
+      email: '${path} must be a valid email',
+      url: '${path} must be a valid URL',
+      trim: '${path} must be a trimmed string',
+      lowercase: '${path} must be a lowercase string',
+      uppercase: '${path} must be a upper case string',
+      selected: '${path} must be selected',
     },
     number: {
-      min: '${path} deve ser maior ou igual a ${min}',
-      max: '${path} deve ser menor ou igual a ${max}',
-      lessThan: '${path} deve ser menor que ${less}',
-      moreThan: '${path} deve ser maior que ${more}',
-      notEqual: '${path} não deve ser igual a ${notEqual}',
-      positive: '${path} deve ser um número positivo',
-      negative: '${path} deve ser um número negativo',
-      integer: '${path} deve ser um inteiro',
+      min:
+        '${path} must be greater than or equal to ${min}',
+      max: '${path} must be less than or equal to ${max}',
+      lessThan: '${path} must be less than ${less}',
+      moreThan: '${path} must be greater than ${more}',
+      notEqual: '${path} must be not equal to ${notEqual}',
+      positive: '${path} must be a positive number',
+      negative: '${path} must be a negative number',
+      integer: '${path} must be an integer',
     },
     date: {
-      min: '${path} deve ser posterior a ${min}',
-      max: '${path} deve ser mais cedo do que ${max}',
+      min: '${path} field must be later than ${min}',
+      max: '${path} field must be at earlier than ${max}',
     },
     boolean: {},
     object: {
       noUnknown:
-        '${path} não pode ter atributos não especificados no formato do objeto',
+        '${path} field cannot have keys not specified in the object shape',
     },
     array: {
       min: ({ min, path }) =>
         min === 1
-          ? `${path} é obrigatório`
-          : `'${path} deve possuir ao menos ${min} itens`,
-      max: '${path} deve possuir no máximo ${max} itens',
+          ? `${path} is required`
+          : `${path} field must have at least ${min} items`,
+      max:
+        '${path} field must have less than or equal to ${max} items',
     },
   },
   /* eslint-disable */
   fileUploader: {
     upload: 'Upload',
-    image: 'Você deve fazer upload de uma imagem',
-    size:
-      'O arquivo é muito grande. O tamanho máximo permitido é {0}',
-    formats: `Formato inválido. Deve ser um destes: {0}.`,
+    image: 'You must upload an image',
+    size: 'File is too big. Max allowed size is {0}',
+    formats: `Invalid format. Must be one of: {0}.`,
   },
   importer: {
-    line: 'Linha',
-    status: 'Estado',
-    pending: 'Pendente',
-    imported: 'Importado',
-    error: 'Erro',
-    total: `{0} importado, {1} pendente e {2} com erro`,
-    importedMessage: `Processados {0} de {1}.`,
+    line: 'Line',
+    status: 'Status',
+    pending: 'Pending',
+    imported: 'Imported',
+    error: 'Error',
+    total: `{0} imported, {1} pending and {2} with error`,
+    importedMessage: `Processed {0} of {1}.`,
     noNavigateAwayMessage:
-      'Não saia desta página ou a importação será interrompida.',
+      'Do not navigate away from this page or import will be stopped.',
     completed: {
       success:
-        'Importação concluída. Todas as linhas foram importadas com sucesso.',
+        'Import completed. All rows were successfully imported.',
       someErrors:
-        'O processamento foi concluído, mas algumas linhas não puderam ser importadas.',
-      allErrors:
-        'Importação falhou. Não há linhas válidas.',
+        'Processing completed, but some rows were unable to be imported.',
+      allErrors: 'Import failed. There are no valid rows.',
     },
     form: {
-      downloadTemplate: 'Baixe o modelo',
+      downloadTemplate: 'Download the template',
       hint:
-        'Clique ou arraste o arquivo para esta área para continuar.',
+        'Click or drag the file to this area to continue',
     },
     list: {
       discardConfirm:
-        'Você tem certeza? Dados não importados serão perdidos.',
+        'Are you sure? Non-imported data will be lost.',
     },
     errors: {
-      invalidFileEmpty: 'O arquivo está vazio',
+      invalidFileEmpty: 'The file is empty',
       invalidFileExcel:
-        'Apenas arquivos Excel (.xlsx) são permitidos',
+        'Only excel (.xlsx) files are allowed',
       invalidFileUpload:
-        'Arquivo inválido. Verifique se você está usando a última versão do modelo.',
-      importHashRequired: 'Hash de importação é necessário',
-      importHashExistent: 'Dados já foram importados',
+        'Invalid file. Make sure you are using the last version of the template.',
+      importHashRequired: 'Import hash is required',
+      importHashExistent: 'Data has already been imported',
     },
   },
 
   autocomplete: {
-    loading: 'Carregando...',
-    noOptions: 'Não foram encontrados resultados',
+    loading: 'Loading...',
+    noOptions: 'No data found',
   },
 
   imagesViewer: {
-    noImage: 'Sem imagem',
+    noImage: 'No image',
   },
 
   table: {
-    noData: 'Nenhum Registro Encontrado',
-    loading: 'Carregando...',
+    noData: 'No records found',
+    loading: 'Loading...',
   },
 
   pagination: {
-    items_per_page: '/ página',
-    jump_to: 'Vá até',
-    jump_to_confirm: 'confirme',
+    items_per_page: '/ page',
+    jump_to: 'Goto',
+    jump_to_confirm: 'confirm',
     page: '',
 
-    prev_page: 'Página anterior',
-    next_page: 'Próxima página',
-    prev_5: '5 páginas anteriores',
-    next_5: '5 próximas páginas',
-    prev_3: '3 páginas anteriores',
-    next_3: '3 próximas páginas',
+    prev_page: 'Previous Page',
+    next_page: 'Next Page',
+    prev_5: 'Previous 5 Pages',
+    next_5: 'Next 5 Pages',
+    prev_3: 'Previous 3 Pages',
+    next_3: 'Next 3 Pages',
   },
 };
 
-export default ptBR;
+export default en;

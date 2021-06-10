@@ -1,7 +1,7 @@
 import authAxios from 'src/modules/shared/axios/authAxios';
 import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
 
-export default class LandingSurveyService {
+export default class NewBusinessSurveyService {
   static async update(id, data) {
     const body = {
       id,
@@ -9,10 +9,12 @@ export default class LandingSurveyService {
     };
 
     const tenantId = AuthCurrentTenant.get();
+
     const response = await authAxios.put(
-      `/tenant/${tenantId}/landing-survey/${id}`,
+      `/tenant/${tenantId}/new-business-survey/${id}`,
       body,
     );
+
     return response.data;
   }
 
@@ -20,9 +22,11 @@ export default class LandingSurveyService {
     const params = {
       ids,
     };
+
     const tenantId = AuthCurrentTenant.get();
+
     const response = await authAxios.delete(
-      `/tenant/${tenantId}/landing-survey`,
+      `/tenant/${tenantId}/new-business-survey`,
       {
         params,
       },
@@ -40,10 +44,12 @@ export default class LandingSurveyService {
 
     // Survey is going to be only for AIPETTO MANAGEMENT Workspace
     const tenantId = '606c9c61826963485fbde0ed';
+
     const response = await authAxios.post(
-      `/tenant/${tenantId}/landing-survey`,
+      `/tenant/${tenantId}/new-business-survey`,
       body,
     );
+
     return response.data;
   }
 
@@ -52,11 +58,14 @@ export default class LandingSurveyService {
       data: values,
       importHash,
     };
+
     const tenantId = AuthCurrentTenant.get();
+
     const response = await authAxios.post(
-      `/tenant/${tenantId}/landing-survey/import`,
+      `/tenant/${tenantId}/new-business-survey/import`,
       body,
     );
+
     return response.data;
   }
 
@@ -64,10 +73,12 @@ export default class LandingSurveyService {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
-      `/tenant/${tenantId}/landing-survey/${id}`,
+      `/tenant/${tenantId}/new-business-survey/${id}`,
     );
+
     return response.data;
   }
+
   static async list(filter, orderBy, limit, offset) {
     const params = {
       filter,
@@ -75,13 +86,16 @@ export default class LandingSurveyService {
       limit,
       offset,
     };
+
     const tenantId = AuthCurrentTenant.get();
+
     const response = await authAxios.get(
-      `/tenant/${tenantId}/landing-survey`,
+      `/tenant/${tenantId}/new-business-survey`,
       {
         params,
       },
     );
+
     return response.data;
   }
 
@@ -90,9 +104,11 @@ export default class LandingSurveyService {
       query,
       limit,
     };
+
     const tenantId = AuthCurrentTenant.get();
+
     const response = await authAxios.get(
-      `/tenant/${tenantId}/landing-survey/autocomplete`,
+      `/tenant/${tenantId}/new-business-survey/autocomplete`,
       {
         params,
       },
