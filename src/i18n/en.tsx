@@ -38,7 +38,7 @@ const en = {
       landingBusinessSubtitle: 'Be part and let us help your business grow.',
       menu: {
           business: 'Business',
-          petsSurvey: '愛',
+          petsSurvey: 'Home',
       }
   },
 

@@ -11,7 +11,13 @@ const privateRoutes = [
     permissionRequired: null,
     exact: true,
   },
-
+  {
+    path: '/reservation',
+    loader: () =>
+        import('src/view/serviceReservation/public/reservationInitialPage'),
+    permissionRequired: null,
+    exact: true,
+  },
   {
     path: '/profile',
     loader: () => import('src/view/auth/ProfileFormPage'),
@@ -1130,10 +1136,14 @@ const privateRoutes = [
 ].filter(Boolean);
 
 const publicRoutes = [
-  {
-    path: '/',
+    {
+      path: '/',
+      loader: () => import('src/view/home/LandingPage'),
+    },
+    {
+    path: '/beta',
     loader: () =>
-        import('src/view/home/LandingPage'),
+        import('src/view/auth/SigninPage'),
     permissionRequired: null,
     exact: true,
   },

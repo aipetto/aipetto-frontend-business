@@ -37,7 +37,7 @@ const es = {
     landingBusinessSubtitle: 'Sea parte y permita ayudarnos a hacer tu negocio crescer.',
       menu: {
           business: 'Negocios',
-          petsSurvey: '愛',
+          petsSurvey: 'Home',
       }
   },
 

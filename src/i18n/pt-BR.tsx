@@ -27,13 +27,15 @@ const ptBR = {
   public: {
     homeTitle: 'Você ama os animais de estimação? Então esse é seu lugar!',
     homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...',
+    reservationHomeTitle: 'Encontre e reserve um serviço para se pet de maneira fácil e rápida!',
+    reservationHomeSubtitle: 'Banho e tosa, vacinação e muito mais',
     landingTitle: 'Logo logo um lugar na internet para você e seus pets!',
     landingSubtitle: 'Por favor colabore com seus comentários abaixo, não esqueceremos de vocês.',
     landingBusinessTitle: 'Nossa missão é unificar serviços para os donos de animais de estimação',
     landingBusinessSubtitle: 'Seja parte e permita que ajudemos seu negócio crescer.',
     menu: {
           business: 'Negócios',
-          petsSurvey: '愛',
+          petsSurvey: 'Home',
       }
   },
 

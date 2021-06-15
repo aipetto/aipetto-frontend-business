@@ -1,12 +1,10 @@
 import React from 'react';
 import Header from 'src/view/layout/Header';
 import Menu from 'src/view/layout/Menu';
-import { useRouteMatch } from 'react-router-dom';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
 import { useSelector } from 'react-redux';
 
 function Layout(props) {
-  const match = useRouteMatch();
 
   const menuVisible = useSelector(
     layoutSelectors.selectMenuVisible,
@@ -14,7 +12,6 @@ function Layout(props) {
 
   return (
     <div className="flex h-full dark:bg-gray-600">
-      <Menu url={match.url} />
       <div
         className={`${
           menuVisible ? 'hidden' : 'flex'
