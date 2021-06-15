@@ -102,7 +102,7 @@ function SigninPage() {
 
               <div className="text-center fade-in fade-in-second">
                 <div className="sm:hidden">
-                  <img src="images/woman-pet-searching.png" alt="AIPETTO" className="lazy"/>
+                  <img src="images/pet-medical-draw.png" alt="AIPETTO" className="lazy"/>
                 </div>
               </div>
               <div className="flex space-x-4 container mx-auto mt-8">
@@ -169,20 +169,11 @@ function SigninPage() {
                       </form>
                     </FormProvider>
                   </div>
-                  <div className="flex justify-between">
-                    <Link
-                        className="text-blue-500 text-sm text-center"
-                        to="/auth/forgot-password"
-                    >
-                      {i18n('auth.forgotPassword')}
-                    </Link>
-
-                  </div>
                 </div>
                 <div className="flex-1 hidden sm:block">
                   <div className="text-center fade-in fade-in-second">
                     <div className="w-1/2 md:w-full">
-                      <img src="images/woman-pet-searching.png" alt="AIPETTO" className="lazy"/>
+                      <img src="images/pet-medical-draw.png" alt="AIPETTO" className="lazy"/>
                     </div>
                   </div>
                 </div>

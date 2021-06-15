@@ -11,6 +11,7 @@ import config from 'src/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUser,
+  faPaw,
   faBars,
   faLock,
   faMoon,
@@ -73,51 +74,23 @@ function Header(props) {
                 className="focus:outline-none text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
                 onClick={doToggleMenu}
               >
-                <FontAwesomeIcon icon={faBars} />
+                <FontAwesomeIcon icon={faPaw} />
               </button>
             </div>
 
-            <div className="flex items-center mt-0">
+            <div className="flex w-3/5 items-center mt-0">
+              <input type="search" name="" id="" placeholder="Search"
+                     className="w-full pl-3 text-sm text-black outline-none focus:outline-none bg-transparent"/>
               <button className="outline-none focus:outline-none">
                 <svg className="w-5 text-gray-600 h-5 cursor-pointer" fill="none" stroke-linecap="round"
                      stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
               </button>
-              <input type="search" name="" id="" placeholder="Search"
-                     className="w-full pl-3 text-sm text-black outline-none focus:outline-none bg-transparent"/>
             </div>
 
             <div className="flex items-center mt-0">
 
-              <div className="mr-6">
-                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                  <input
-                    type="checkbox"
-                    name="darkMode"
-                    id="darkMode"
-                    checked={darkMode}
-                    onChange={(event) =>
-                      dispatch(
-                        layoutActions.doDarkModeChange(
-                          event.target.checked,
-                        ),
-                      )
-                    }
-                    className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-                  />
-                  <label
-                    htmlFor="darkMode"
-                    className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
-                  ></label>
-                </div>
-                <label
-                  htmlFor="darkMode"
-                  className="text-xs text-gray-700 dark:text-white"
-                >
-                  <FontAwesomeIcon icon={faMoon} />
-                </label>
-              </div>
               <div className="mr-6 md:block lg:block hidden">
                 <I18nSelect />
               </div>
