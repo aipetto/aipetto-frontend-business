@@ -176,48 +176,7 @@ function SigninPage() {
                     >
                       {i18n('auth.forgotPassword')}
                     </Link>
-                    <Link
-                        className="text-blue-500 text-sm text-center"
-                        to="/auth/signup"
-                    >
-                      {i18n('auth.createAnAccount')}
-                    </Link>
-                  </div>
-                  <div className="my-4">
-                    <a
-                        href={`${config.backendUrl}/auth/social/google`}
-                        className="focus:outline-none"
-                    >
-                      <button
-                          className="bg-yellow-500 rounded p-4 block w-full font-semibold flex justify-center items-center content-center text-white mb-2"
-                          style={{background:"#4385F5"}}>
-                        <svg
-                            className="w-4 h-4 mx-2 fill-current"
-                            viewBox="0 0 24 24"
-                        >
-                          <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"></path>
-                        </svg>
-                        {i18n('auth.social.signinWithGoogle')}
-                      </button>
-                    </a>
-                    <a
-                        href={`${config.backendUrl}/auth/social/facebook`}
-                        className="focus:outline-none"
-                    >
-                      <button
-                          className="bg-yellow-500 rounded p-4 block w-full font-semibold flex justify-center items-center content-center text-white"
-                          style={{background:"#3B5A99"}}>
-                        <svg
-                            className="w-5 h-5 fill-current"
-                            viewBox="0 0 320 512"
-                        >
-                          <path
-                              fill="currentColor"
-                              d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-                          />
-                        </svg>
-                      </button>
-                    </a>
+
                   </div>
                 </div>
                 <div className="flex-1 hidden sm:block">
