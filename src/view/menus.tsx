@@ -9,7 +9,7 @@ const permissions = Permissions.values;
 
 export default [
   {
-    path: '/network',
+    path: '/dashboard',
     exact: true,
     icon: faChevronRight,
     label: i18n('dashboard.menu'),

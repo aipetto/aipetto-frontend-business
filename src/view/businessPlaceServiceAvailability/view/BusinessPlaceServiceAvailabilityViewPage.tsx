@@ -23,7 +23,7 @@ function BusinessPlaceServiceAvailabilityPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.businessPlaceServiceAvailability.menu'), '/business-place-service-availability'],
           [i18n('entities.businessPlaceServiceAvailability.view.title')],
         ]}

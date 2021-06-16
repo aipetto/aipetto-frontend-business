@@ -44,7 +44,7 @@ function WalletFormPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.wallet.menu'), '/wallet'],
           [title],
         ]}

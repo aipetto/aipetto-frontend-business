@@ -69,7 +69,7 @@ function Menu(props) {
 
       return (
         url === option.path ||
-        url.startsWith(option.path + '/network')
+        url.startsWith(option.path + '/dashboard')
       );
     });
 

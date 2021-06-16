@@ -54,16 +54,12 @@ const DashboardPage = (props) => {
                       match(menu.permissionRequired),
                   )
                   .map((menu, index) => (
-                      <Link className='flex flex-col items-center w-40 h-28 border border-indigo-50 rounded-2xl hover:text-indigo-500 cursor-pointer py-2 bg-white'
+                      <Link className='flex flex-col items-center w-40 h-20 border border-indigo-50 rounded-2xl hover:text-indigo-500 cursor-pointer py-2 bg-white'
                           onClick={doToggleMenuIfSmall}
                           key={menu.path}
                           to={menu.path}
                       >
-                        <FontAwesomeIcon
-                            className="w-5 h-20"
-                            icon={menu.icon}
-                        />
-                        <span className="text-gray-600 text-sm mt-1">
+                        <span className="text-gray-600 text-sm mt-5">
                     {menu.label}
                   </span>
                       </Link>
@@ -77,10 +73,7 @@ const DashboardPage = (props) => {
                       <div
                           className={`mt-4 opacity-50 flex items-center px-4 py-2 text-gray-600 rounded-md dark:text-gray-400`}
                       >
-                        <FontAwesomeIcon
-                            className="w-5 h-5"
-                            icon={menu.icon}
-                        />
+
                         <span className="mx-4 font-medium truncate">
                     {menu.label}
                   </span>

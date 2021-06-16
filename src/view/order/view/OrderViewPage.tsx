@@ -23,7 +23,7 @@ function OrderPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.order.menu'), '/order'],
           [i18n('entities.order.view.title')],
         ]}

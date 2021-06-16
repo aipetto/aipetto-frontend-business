@@ -44,7 +44,7 @@ function PlaceTypeFormPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.placeType.menu'), '/place-type'],
           [title],
         ]}

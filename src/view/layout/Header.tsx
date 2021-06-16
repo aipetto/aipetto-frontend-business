@@ -85,8 +85,8 @@ function Header(props) {
                     <path
                         d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
                   </svg>
-                <input id="search-toggle" type="search" placeholder="search"
-                       className="block w-full bg-gray-200 focus:outline-none focus:bg-white focus:shadow-md text-gray-700 font-bold rounded-full pl-12 pr-4 py-3"
+                <input id="search-toggle" type="search" placeholder="Search for services"
+                       className="block w-full bg-white-200 focus:outline-none focus:bg-white focus:shadow-md text-white-700 font-bold rounded-full pl-12 pr-4 py-3"
                       />
 
             </div>

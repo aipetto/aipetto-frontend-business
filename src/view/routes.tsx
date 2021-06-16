@@ -5,10 +5,10 @@ const permissions = Permissions.values;
 
 const privateRoutes = [
   {
-    path: '/network',
+    path: '/dashboard',
     loader: () =>
       import('src/view/dashboard/DashboardPage'),
-    permissionRequired: null,
+    permissionRequired: permissions.dashboardAccess,
     exact: true,
   },
   {
