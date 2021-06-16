@@ -54,12 +54,12 @@ const DashboardPage = (props) => {
                       match(menu.permissionRequired),
                   )
                   .map((menu, index) => (
-                      <Link className='flex flex-col items-center w-40 h-20 border border-indigo-50 rounded-2xl hover:text-indigo-500 cursor-pointer py-2 bg-white'
+                      <Link className='flex flex-col items-center w-40 h-32 border border-indigo-50 hover:bg-purple-400 hover:text-white rounded-2xl cursor-pointer py-2 bg-white'
                           onClick={doToggleMenuIfSmall}
                           key={menu.path}
                           to={menu.path}
                       >
-                        <span className="text-gray-600 text-sm mt-5">
+                        <span className="text-base md:text-lg text-black-800 text-sm mt-11 ">
                     {menu.label}
                   </span>
                       </Link>

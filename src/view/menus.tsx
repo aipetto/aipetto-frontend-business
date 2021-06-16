@@ -13,7 +13,7 @@ export default [
     exact: true,
     icon: faChevronRight,
     label: i18n('dashboard.menu'),
-    permissionRequired: null,
+    permissionRequired: permissions.dashboardAccess,
   },
   {
     path: '/reservation',

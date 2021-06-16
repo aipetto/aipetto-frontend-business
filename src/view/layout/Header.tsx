@@ -12,12 +12,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUser,
   faPaw,
-  faBars,
   faLock,
-  faMoon,
   faSignOutAlt,
   faThLarge,
-  faCode,
+  faCode, faHeart, faBars,
 } from '@fortawesome/free-solid-svg-icons';
 import { Menu } from '@headlessui/react';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
@@ -74,7 +72,7 @@ function Header(props) {
                 className="focus:outline-none text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
                 onClick={doToggleMenu}
               >
-                <FontAwesomeIcon icon={faPaw} />
+                <FontAwesomeIcon icon={faBars} />
               </button>
             </div>
 
@@ -93,30 +91,27 @@ function Header(props) {
 
             <div className="flex items-center mt-0">
 
-              <div className="mr-6 md:block lg:block hidden">
-                <I18nSelect />
-              </div>
-
               <Menu>
-                <Menu.Button className="flex items-center focus:outline-none">
-                  <Avatar
-                    size="small"
-                    src={userAvatar || undefined}
-                    alt="avatar"
-                  />
 
-                  <div className="text-left mx-2 text-sm font-medium text-gray-700 dark:text-gray-200 hidden md:block lg:block">
-                    {userText}
-                    {[
-                      'multi',
-                      'multi-with-subdomain',
-                    ].includes(config.tenantMode) && (
-                      <div className="text-xs font-medium">
-                        {currentTenant &&
-                          currentTenant.name}
-                      </div>
-                    )}
-                  </div>
+                <div className="mr-6 ml-6 md:block lg:block">
+                  <I18nSelect />
+                </div>
+
+                <Menu.Button className="flex items-center focus:outline-none mr-6">
+                  <Avatar
+                      size="large"
+                      className="mr-9"
+                      src={userAvatar || undefined}
+                      alt="avatar"
+                  />
+                </Menu.Button>
+
+                <Menu.Button className="flex items-center focus:outline-none mr-6">
+                  8500 <FontAwesomeIcon
+                    className="ml-1 mr-2"
+                    size="lg"
+                    icon={faPaw}
+                />
                 </Menu.Button>
 
                 <Menu.Items>
