@@ -3,11 +3,6 @@ import { i18n } from 'src/i18n';
 import config from 'src/config';
 import {
   faChevronRight,
-  faCog,
-  faCreditCard,
-  faHistory,
-  faThLarge,
-  faUserPlus, faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 
 const permissions = Permissions.values;
@@ -16,15 +11,22 @@ export default [
   {
     path: '/network',
     exact: true,
-    icon: faThLarge,
+    icon: faChevronRight,
     label: i18n('dashboard.menu'),
+    permissionRequired: null,
+  },
+  {
+    path: '/reservation',
+    exact: true,
+    icon: faChevronRight,
+    label: i18n('services.reservation'),
     permissionRequired: null,
   },
 
   config.isPlanEnabled && {
     path: '/plan',
     permissionRequired: permissions.planRead,
-    icon: faCreditCard,
+    icon: faChevronRight,
     label: i18n('plan.menu'),
   },
 
@@ -32,19 +34,19 @@ export default [
     path: '/user',
     label: i18n('user.menu'),
     permissionRequired: permissions.userRead,
-    icon: faUserPlus,
+    icon: faChevronRight,
   },
 
   {
     path: '/audit-logs',
-    icon: faHistory,
+    icon: faChevronRight,
     label: i18n('auditLog.menu'),
     permissionRequired: permissions.auditLogRead,
   },
 
   {
     path: '/settings',
-    icon: faCog,
+    icon: faChevronRight,
     label: i18n('settings.menu'),
     permissionRequired: permissions.settingsEdit,
   },
@@ -52,7 +54,7 @@ export default [
   {
     path: '/customer',
     permissionRequired: permissions.customerRead,
-    icon: faUsers,
+    icon: faChevronRight,
     label: i18n('entities.customer.menu'),
   },
 

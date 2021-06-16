@@ -16,7 +16,8 @@ const reservationInitialPage = (props) => {
                         <div className="">
                             <div className="hero-mockup w-5/8 sm:col-4/6 w-4/5 lg:w-full mx-auto relative">
                                 - Google Map API Address Search form here
-                                - Services Categories + icons
+                                <br />
+                                - Services Categories
                             </div>
                         </div>
                     </div>

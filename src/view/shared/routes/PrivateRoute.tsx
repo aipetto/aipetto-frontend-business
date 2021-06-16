@@ -31,7 +31,7 @@ function PrivateRoute({
           return (
             <Redirect
               to={{
-                pathname: '/',
+                pathname: '/beta',
                 state: { from: location },
               }}
             />

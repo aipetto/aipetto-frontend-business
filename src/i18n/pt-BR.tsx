@@ -2286,6 +2286,9 @@ const ptBR = {
       yellow: 'Amarelo',
     },
   },
+  services: {
+     reservation: 'Reservas'
+  },
   dashboard: {
     menu: 'Inicial',
     message: `Esta página usa dados falsos apenas para fins de demonstração.`,

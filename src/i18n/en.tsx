@@ -2297,6 +2297,9 @@ const en = {
       yellow: 'Yellow',
     },
   },
+  services: {
+    reservation: 'Reservas'
+  },
   dashboard: {
     menu: 'Dashboard',
     message: `This page uses fake data for demonstration purposes only. You can edit it at frontend/view/dashboard/DashboardPage.ts.`,

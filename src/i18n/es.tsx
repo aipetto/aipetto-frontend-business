@@ -2285,6 +2285,9 @@ const es = {
       yellow: 'Amarillo',
     },
   },
+  services: {
+    reservation: 'Reservas'
+  },
   dashboard: {
     menu: 'Tablero',
     message:
