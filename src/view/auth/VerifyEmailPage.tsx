@@ -91,7 +91,7 @@ function VerifyEmailPage() {
         {!loading && !errorMessage && !signedIn && (
           <div className="bg-gray-100 dark:bg-gray-700 py-4 rounded-b-md">
             <Link
-              to="/auth/signin"
+              to="/"
               className="btn btn-block btn-primary"
             >
               {i18n('auth.signin')}

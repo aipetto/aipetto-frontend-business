@@ -7,7 +7,7 @@ import {
   faCreditCard,
   faHistory,
   faThLarge,
-  faUserPlus,
+  faUserPlus, faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 
 const permissions = Permissions.values;
@@ -52,7 +52,7 @@ export default [
   {
     path: '/customer',
     permissionRequired: permissions.customerRead,
-    icon: faChevronRight,
+    icon: faUsers,
     label: i18n('entities.customer.menu'),
   },
 
