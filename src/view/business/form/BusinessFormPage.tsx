@@ -45,7 +45,7 @@ function BusinessFormPage(props) {
       <Breadcrumb
         items={[
           [i18n('dashboard.menu'), '/dashboard'],
-          [i18n('entities.business.menu'), '/business'],
+          [i18n('entities.business.menu'), '/business-list'],
           [title],
         ]}
       />
@@ -64,7 +64,7 @@ function BusinessFormPage(props) {
             record={record}
             isEditing={isEditing}
             onSubmit={doSubmit}
-            onCancel={() => getHistory().push('/business')}
+            onCancel={() => getHistory().push('/business-list')}
           />
         )}
       </div>

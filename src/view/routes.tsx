@@ -338,7 +338,7 @@ const privateRoutes = [
   },
 
   {
-    path: '/business',
+    path: '/business-list',
     loader: () =>
       import('src/view/business/list/BusinessListPage'),
     permissionRequired: permissions.businessRead,

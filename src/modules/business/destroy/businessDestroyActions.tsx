@@ -34,7 +34,7 @@ const businessDestroyActions = {
 
       dispatch(listActions.doFetchCurrentFilter());
 
-      getHistory().push('/business');
+      getHistory().push('/business-list');
     } catch (error) {
       Errors.handle(error);
 
@@ -67,7 +67,7 @@ const businessDestroyActions = {
         i18n('entities.business.destroyAll.success'),
       );
 
-      getHistory().push('/business');
+      getHistory().push('/business-list');
     } catch (error) {
       Errors.handle(error);
 

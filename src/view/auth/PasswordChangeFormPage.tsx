@@ -20,7 +20,7 @@ function PasswordChangeFormPage(props) {
         </h1>
 
         <PasswordChangeForm
-          onCancel={() => getHistory().push('/network')}
+          onCancel={() => getHistory().push('/reservation')}
         />
       </div>
     </>

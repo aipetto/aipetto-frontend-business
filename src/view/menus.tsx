@@ -94,7 +94,7 @@ export default [
   },
 
   {
-    path: '/business',
+    path: '/business-list',
     permissionRequired: permissions.businessRead,
     icon: faChevronRight,
     label: i18n('entities.business.menu'),

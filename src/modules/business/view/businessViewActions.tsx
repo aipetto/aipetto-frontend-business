@@ -28,7 +28,7 @@ const businessViewActions = {
         type: businessViewActions.FIND_ERROR,
       });
 
-      getHistory().push('/business');
+      getHistory().push('/business-list');
     }
   },
 };

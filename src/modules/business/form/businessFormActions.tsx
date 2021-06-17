@@ -44,7 +44,7 @@ const businessFormActions = {
         type: businessFormActions.INIT_ERROR,
       });
 
-      getHistory().push('/business');
+      getHistory().push('/business-list');
     }
   },
 
@@ -64,7 +64,7 @@ const businessFormActions = {
         i18n('entities.business.create.success'),
       );
 
-      getHistory().push('/business');
+      getHistory().push('/business-list');
     } catch (error) {
       Errors.handle(error);
 
@@ -90,7 +90,7 @@ const businessFormActions = {
         i18n('entities.business.update.success'),
       );
 
-      getHistory().push('/business');
+      getHistory().push('/business-list');
     } catch (error) {
       Errors.handle(error);
 

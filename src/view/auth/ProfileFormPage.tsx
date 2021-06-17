@@ -20,7 +20,7 @@ function ProfileFormPage() {
         </h1>
 
         <ProfileForm
-          onCancel={() => getHistory().push('/network')}
+          onCancel={() => getHistory().push('/reservation')}
         />
       </div>
     </>
