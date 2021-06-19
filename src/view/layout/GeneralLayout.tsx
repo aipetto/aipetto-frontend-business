@@ -5,7 +5,7 @@ import layoutSelectors from 'src/modules/layout/layoutSelectors';
 import { useRouteMatch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-function Layout(props) {
+function GeneralLayout(props) {
   const match = useRouteMatch();
   const menuVisible = useSelector(
     layoutSelectors.selectMenuVisible,
@@ -26,4 +26,4 @@ function Layout(props) {
   );
 }
 
-export default Layout;
+export default GeneralLayout;

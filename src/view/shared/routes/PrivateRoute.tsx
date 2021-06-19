@@ -5,7 +5,7 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom';
-import Layout from 'src/view/layout/Layout';
+import GeneralLayout from 'src/view/layout/GeneralLayout';
 import config from 'src/config';
 import { tenantSubdomain } from 'src/modules/tenant/tenantSubdomain';
 
@@ -64,9 +64,9 @@ function PrivateRoute({
         }
 
         return (
-          <Layout {...props}>
+          <GeneralLayout {...props}>
             <Component {...props} />
-          </Layout>
+          </GeneralLayout>
         );
       }}
     />

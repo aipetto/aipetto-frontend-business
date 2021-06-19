@@ -19,6 +19,27 @@ const privateRoutes = [
     exact: true,
   },
   {
+    path: '/reservation-business',
+    loader: () =>
+        import('src/view/serviceReservation/public/reservationSecondPageBusinessSearch'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
+    path: '/reservation-appointment',
+    loader: () =>
+        import('src/view/serviceReservation/public/reservationThirdPageDateTimeAppointment'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
+    path: '/reservation-confirmation',
+    loader: () =>
+        import('src/view/serviceReservation/public/reservationFourthPageConfirmation'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     path: '/profile',
     loader: () => import('src/view/auth/ProfileFormPage'),
     permissionRequired: null,
