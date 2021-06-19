@@ -1,10 +1,10 @@
 import React from 'react';
 import ProgressBar from "../../serviceReservation/steps/ProgressBar";
 
-const reservationThirdPageDateTimeAppointment = (props) => {
+const ReservationThirdPageDateTimeAppointment = (props) => {
     return (
         <>
-            <body className="antialiased overflow-hidden overflow-y-scroll">
+            <div className="antialiased overflow-hidden overflow-y-scroll">
 
             <div className="hero w-full">
                 <div className="container mx-auto mt-2">
@@ -26,9 +26,9 @@ const reservationThirdPageDateTimeAppointment = (props) => {
                     </div>
                 </div>
             </div>
-            </body>
+            </div>
         </>
     );
 };
 
-export default reservationThirdPageDateTimeAppointment;
+export default ReservationThirdPageDateTimeAppointment;

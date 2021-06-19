@@ -1,10 +1,10 @@
 import React from 'react';
 import ProgressBar from "../../serviceReservation/steps/ProgressBar";
 
-const reservationFourthPageConfirmation = (props) => {
+const ReservationFourthPageConfirmation = (props) => {
     return (
         <>
-            <body className="antialiased overflow-hidden overflow-y-scroll">
+            <div className="antialiased overflow-hidden overflow-y-scroll">
 
             <div className="hero w-full">
                 <div className="container mx-auto mt-2">
@@ -24,9 +24,9 @@ const reservationFourthPageConfirmation = (props) => {
                     </div>
                 </div>
             </div>
-            </body>
+            </div>
         </>
     );
 };
 
-export default reservationFourthPageConfirmation;
+export default ReservationFourthPageConfirmation;

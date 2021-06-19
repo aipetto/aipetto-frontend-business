@@ -1,10 +1,28 @@
 import React from 'react';
 import ProgressBar from "../steps/ProgressBar";
+import {useLocation} from "react-router";
 
-const reservationSecondPageBusinessSearch = (props) => {
+const ReservationSecondPageBusinessSearch = (props) => {
+
+    const { state } = useLocation();
+    console.log(state);
+
+    /**const data = { user_email: 'test@example.com', user_password: 'test@123' };
+
+    const result = { ...prevUser, ...data };
+
+     const updateUser = (data) => {
+      setUser((prevUser) => ({ ...prevUser, ...data }));
+    };
+
+         const resetUser = () => {
+      setUser({});
+    };
+     **/
+
     return (
         <>
-            <body className="antialiased overflow-hidden overflow-y-scroll">
+            <div className="antialiased overflow-hidden overflow-y-scroll">
 
             <div className="hero w-full">
                 <div className="container mx-auto mt-2">
@@ -17,11 +35,6 @@ const reservationSecondPageBusinessSearch = (props) => {
 
 
 
-                                - App Search here
-
-
-
-
 
 
                             </div>
@@ -29,9 +42,9 @@ const reservationSecondPageBusinessSearch = (props) => {
                     </div>
                 </div>
             </div>
-            </body>
+            </div>
         </>
     )
 }
 
-export default reservationSecondPageBusinessSearch;
+export default ReservationSecondPageBusinessSearch;

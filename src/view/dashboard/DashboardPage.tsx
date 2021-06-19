@@ -44,7 +44,6 @@ const DashboardPage = (props) => {
         permission,
     );
   };
-
   return (
       <>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
