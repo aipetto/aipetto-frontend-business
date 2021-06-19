@@ -7,6 +7,7 @@ import InputFormItem from "../../shared/form/items/InputFormItem";
 import RadioFormItem from "../../shared/form/items/RadioFormItem";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSave} from "@fortawesome/free-regular-svg-icons";
+import { motion } from 'framer-motion';
 
 function ReservationInitialPage(props){
 
@@ -37,7 +38,11 @@ function ReservationInitialPage(props){
                         <ProgressBar />
                     </div>
                     <div className="text-center fade-in fade-in-second">
-                        <div className="">
+                        <motion.div
+                            initial={{ x: '-100vw' }}
+                            animate={{ x: 0 }}
+                            transition={{ stiffness: 150 }}
+                        >
                             <div className="hero-mockup w-5/8 sm:col-4/6 w-4/5 lg:w-full mx-auto relative">
 
                                 <FormProvider {...form}>
@@ -83,7 +88,7 @@ function ReservationInitialPage(props){
                                     </form>
                                 </FormProvider>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
