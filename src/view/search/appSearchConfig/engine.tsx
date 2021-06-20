@@ -40,10 +40,12 @@ export default {
     "name"
   ],
   "facets": [
-
+    "categories",
+    "stars"
   ],
   "querySuggestFields": [
-    "name"
+    "name",
+    "categories"
   ],
   "titleField": "name",
   "urlField": "",
