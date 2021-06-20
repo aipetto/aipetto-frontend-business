@@ -5,6 +5,7 @@
   "dependencies": {
     "@craco/craco": "6.1.1",
     "@elastic/react-search-ui": "^1.6.0",
+    "@elastic/react-search-ui-views": "^1.6.0",
     "@elastic/search-ui-app-search-connector": "^1.6.0",
     "@fortawesome/fontawesome-free": "5.15.1",
     "@fortawesome/fontawesome-svg-core": "1.2.34",
