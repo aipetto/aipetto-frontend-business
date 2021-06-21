@@ -8,6 +8,16 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.element-in-front {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #000000;
+  z-index: 10;
+  margin: 50px;
+  padding: 0;
+}
+
 .spinner,
 .spinner:after {
   border-radius: 50%;
