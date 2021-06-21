@@ -89,6 +89,7 @@
   ],
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "2.0.3",
+    "@types/googlemaps": "^3.43.3",
     "@types/jest": "26.0.20",
     "autoprefixer": "9.8.6",
     "cross-env": "7.0.3",
