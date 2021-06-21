@@ -7,25 +7,18 @@ import {
     Marker,
     InfoWindow
 } from "@react-google-maps/api";
+import {faCompass, faPause, faSearchLocation} from '@fortawesome/free-solid-svg-icons';
 import { formatRelative } from "date-fns";
-/**
- * import usePlacesAutocomplete, {
- *     getGeocode,
- *     getLatLng,
- * } from "use-places-autocomplete";
- import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption,
-  ComboboxOptionText,
-} from "@reach/combobox";
- **/
- import "@reach/combobox/styles.css";
-import config from "../../../config";
+
 import {Libraries} from "@react-google-maps/api/dist/utils/make-load-script-url";
+import "@reach/combobox/styles.css";
 import mapStyles from "./mapStyles";
+
+/*import SearchGooglePlaces from "../../search/SearchGooglePlaces";*/
+import usePlacesAutocomplete, {getGeocode, getLatLng} from "use-places-autocomplete";
+import {Combobox, ComboboxInput, ComboboxList, ComboboxOption, ComboboxPopover} from "@reach/combobox";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import config from "../../../config";
 
 interface IGoogleMapsMarker {
     lat: number,
@@ -34,6 +27,7 @@ interface IGoogleMapsMarker {
 }
 
 const libraries: Libraries = ["places"];
+
 const mapContainerStyle = {
     styles: mapStyles,
     width: "100vw",
@@ -73,16 +67,25 @@ function ReactGoogleMaps(props) {
         mapRef.current = map;
     }, []);
 
-    const renderMap = () => {
+    const panTo = React.useCallback(({ lat, lng }) => {
+        // @ts-ignore
+        mapRef.current.panTo({lat, lng});
 
+        // @ts-ignore
+        mapRef.current.setZoom(14);
+    }, []);
+
+    const renderMap = () => {
         return (
             <div>
-                {/*<h1 className="element-in-front">
-                    Something
+                {/*<h1 className="element-in-front-map">
+                    Reserve your service
                 </h1>*/}
+                <SearchGooglePlaces panTo={panTo}/>
+                <Locate panTo={panTo} />
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
-                    zoom={8}
+                    zoom={12}
                     center={center}
                     options={options}
                     onClick={onMapClick}
@@ -95,8 +98,8 @@ function ReactGoogleMaps(props) {
                                   lng: marker.lng,
                               }}
                               icon={{
-                                  url: '/images/github.svg',
-                                  scaledSize: new window.google.maps.Size(30,30),
+                                  url: '/icons/pet-shop-store-icon.svg',
+                                  scaledSize: new window.google.maps.Size(40,40),
                                   origin: new window.google.maps.Point(0,0),
                                   anchor: new window.google.maps.Point(15, 15)
                               }}
@@ -123,7 +126,70 @@ function ReactGoogleMaps(props) {
     }
 
     return isLoaded ? renderMap() : <Spinner/>
+}
 
+function Locate({panTo}){
+    return (
+        <button className="google-maps-locate-btn" onClick={() => {
+            navigator.geolocation.getCurrentPosition((position) => {
+                panTo({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                });
+            }, () => null);
+        }}>
+            <FontAwesomeIcon
+                className="mr-10 fa-3x no-underline"
+                icon={faCompass}
+            />
+        </button>
+    )
+}
+
+function SearchGooglePlaces({panTo}){
+    const { ready,
+        value,
+        suggestions: { status, data},
+        setValue,
+        clearSuggestions
+    } = usePlacesAutocomplete();
+
+    const handleInput = (e) => {
+        setValue(e.target.value);
+    };
+
+    const handleSelect = async (address) => {
+        setValue(address, false);
+        clearSuggestions();
+
+        try {
+            const result = await getGeocode({address});
+            const { lat, lng} = await getLatLng(result[0]);
+            panTo({lat, lng});
+        } catch (error) {
+            console.log("Error: ", error);
+        }
+    };
+
+    return (
+            <Combobox onSelect={handleSelect}
+            >
+                <ComboboxInput
+                    value={value}
+                    onChange={handleInput}
+                    className="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 object-center md:object-top"
+                    disabled={!ready}
+                    placeholder="Where do you need a pet service?"
+                />
+                <ComboboxPopover>
+                  <ComboboxList>
+                    {status === "OK" && data.map(({place_id, description}) => (
+                        <ComboboxOption key={place_id} value={description} />
+                    ))}
+                  </ComboboxList>
+                </ComboboxPopover>
+            </Combobox>
+    )
 }
 
 export default ReactGoogleMaps;

@@ -76,7 +76,7 @@ function Header(props) {
               </button>
             </div>
 
-            <div className="flex w-3/5 items-center mt-0">
+         {/*   <div className="flex w-3/5 items-center mt-0">
 
                   <svg className="h-4 w-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg"
                        viewBox="0 0 20 20">
@@ -87,7 +87,7 @@ function Header(props) {
                        className="block w-full bg-white-200 focus:outline-none focus:bg-white focus:shadow-md text-white-700 font-bold rounded-full pl-12 pr-4 py-3"
                       />
 
-            </div>
+            </div>*/}
 
             <div className="flex items-center mt-0">
 
