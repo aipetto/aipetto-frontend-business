@@ -1,4 +1,6 @@
 import React from "react";
+import Spinner from 'src/view/shared/Spinner';
+import { getLanguageCode } from 'src/i18n';
 import {
     GoogleMap,
     useLoadScript,
@@ -22,8 +24,9 @@ import { formatRelative } from "date-fns";
  **/
  import "@reach/combobox/styles.css";
 import config from "../../../config";
+import {Libraries} from "@react-google-maps/api/dist/utils/make-load-script-url";
 
-//const libraries = ["places"];
+const libraries: Libraries = ["places"];
 const mapContainerStyle = {
     width: "100vw",
     height: "100vh"
@@ -33,26 +36,35 @@ const center = {
     lng: -58.381592
 }
 const options = {
-
+    disableDefaultUI: true
 }
 
-function ReactGoogleMaps(props){
+function ReactGoogleMaps(props) {
     const {isLoaded, loadError} = useLoadScript({
        googleMapsApiKey: config.credentialsGoogleMapsPlaceAPI,
-       libraries: ["places"]
+       libraries,
+       language: getLanguageCode()
     });
 
-    if(loadError) return "Error Loading maps";
-    if(!isLoaded) return "Loading Maps";
+    const renderMap = () => {
 
-    return <div>
-        <GoogleMap
+        return <GoogleMap
             mapContainerStyle={mapContainerStyle}
             zoom={8}
             center={center}
             options={options}
-        ></GoogleMap>
-    </div>;
+        >{
+
+        }
+        </GoogleMap>
+    }
+
+    if (loadError) {
+        return <div>Map cannot be loaded right now, sorry.</div>
+    }
+
+    return isLoaded ? renderMap() : <Spinner/>
+
 }
 
- export default ReactGoogleMaps;
+export default ReactGoogleMaps;

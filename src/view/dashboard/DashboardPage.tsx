@@ -46,7 +46,7 @@ const DashboardPage = (props) => {
   };
   return (
       <>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+        <div className="p-6 grid grid-cols-2 md:grid-cols-6 gap-4">
 
               {menus
                   .filter((menu) =>
