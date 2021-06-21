@@ -5,6 +5,9 @@ const appSearchEndpoint = `https://aipetto-enterprise-search-deployment.ent.sout
 const appSearchKey = `search-dy647kf8nw1b8jsy6sr194d1`;
 const appSearchBusinessEngineName = `business`;
 
+// Google Maps API and Places API
+const credentialsGoogleMapsPlaceAPI = "AIzaSyCG-oM-y0fqNJ3ho5yUBy2eBgCN7UHDoGY";
+
 // SwaggerUI Documentation URL
 // Leave black if documentation should be hidden
 const apiDocumentationUrl = `http://localhost:8080/documentation`;
@@ -37,6 +40,7 @@ export default {
   appSearchEndpoint,
   appSearchKey,
   appSearchBusinessEngineName,
+  credentialsGoogleMapsPlaceAPI,
   apiDocumentationUrl,
   tenantMode,
   isPlanEnabled,

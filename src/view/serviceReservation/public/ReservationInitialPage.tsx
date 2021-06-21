@@ -8,6 +8,7 @@ import RadioFormItem from "../../shared/form/items/RadioFormItem";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSave} from "@fortawesome/free-regular-svg-icons";
 import { motion } from 'framer-motion';
+import ReactGoogleMaps from "../../shared/maps/ReactGoogleMaps";
 
 function ReservationInitialPage(props){
 
@@ -29,68 +30,7 @@ function ReservationInitialPage(props){
     }
 
     return (
-        <>
-            <div className="antialiased overflow-hidden overflow-y-scroll">
-            <div className="hero w-full">
-                <div className="container mx-auto mt-2">
-
-                    <div className="text-center fade-in fade-in-second">
-                        <motion.div
-                            initial={{ x: '-100vw' }}
-                            animate={{ x: 0 }}
-                            transition={{ stiffness: 150 }}
-                        >
-                            <div className="hero-mockup w-5/8 sm:col-4/6 w-4/5 lg:w-full mx-auto relative">
-
-                                <FormProvider {...form}>
-                                    <form onSubmit={form.handleSubmit(onSubmit)}>
-                                        <div className="w-1/3 sm:w-md md:w-md lg:w-md mt-4">
-                                            <InputFormItem
-                                                name="address"
-                                                label={i18n('reservationSteps.stepAddressToSearch')}
-                                                required={false}
-                                            />
-                                        </div>
-
-                                        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-                                            <RadioFormItem
-                                                name="gender"
-                                                label={i18n('reservationSteps.pickCategory')}
-                                                options={customerEnumerators.gender.map(
-                                                    (value) => ({
-                                                        value,
-                                                        label: i18n(
-                                                            ``,
-                                                        ),
-                                                    }),
-                                                )}
-                                                required={false}
-                                            />
-                                        </div>
-
-                                        <div className="pt-4">
-                                            <button
-                                                className="mr-2 mb-2 text-sm disabled:opacity-50 disabled:cursor-default px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-                                                disabled={saveLoading}
-                                                type="button"
-                                                onClick={form.handleSubmit(onSubmit)}
-                                            >
-                                                <FontAwesomeIcon
-                                                    className="mr-2"
-                                                    icon={faSave}
-                                                />
-                                                {i18n('reservationSteps.nextButton')}
-                                            </button>
-                                        </div>
-                                    </form>
-                                </FormProvider>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </>
+        <ReactGoogleMaps />
     );
 };
 
