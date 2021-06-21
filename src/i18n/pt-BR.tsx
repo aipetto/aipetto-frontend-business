@@ -147,6 +147,12 @@ const ptBR = {
     menu: 'API',
   },
 
+  reservationSteps:{
+    stepAddressToSearch: 'Endereço',
+    pickCategory: 'Que serviço seu pet precisa?',
+    nextButton: 'Próximo'
+  },
+
   entities: {
     customer: {
         name: 'Customer',
@@ -241,7 +247,6 @@ const ptBR = {
             'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
         },
       },
-
     product: {
         name: 'Product',
         label: 'Products',

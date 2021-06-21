@@ -67,6 +67,11 @@ const es = {
     menu: 'API',
   },
 
+  reservationSteps:{
+    stepAddressToSearch: 'Dirreción',
+    pickCategory: '¿Qué servicio tu pet necesita?',
+    nextButton: 'Próximo',
+  },
   businessSurvey: {
     checkboxTitle: 'Que servicios tu negocio ofrece?',
     nameTitle: 'Tu nombre',
@@ -239,7 +244,6 @@ const es = {
             'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
         },
       },
-
     product: {
         name: 'product',
         label: 'Products',

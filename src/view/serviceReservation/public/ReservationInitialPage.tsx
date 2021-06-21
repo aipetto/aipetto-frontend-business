@@ -33,9 +33,7 @@ function ReservationInitialPage(props){
             <div className="antialiased overflow-hidden overflow-y-scroll">
             <div className="hero w-full">
                 <div className="container mx-auto mt-2">
-                    <div className="py-0 md:py-16 hero__content text-center w-5/8 sm:col-4/6 w-4/5 lg:w-full mx-auto relative fade-in fade-in-first">
-                        <ProgressBar />
-                    </div>
+
                     <div className="text-center fade-in fade-in-second">
                         <motion.div
                             initial={{ x: '-100vw' }}
@@ -46,10 +44,10 @@ function ReservationInitialPage(props){
 
                                 <FormProvider {...form}>
                                     <form onSubmit={form.handleSubmit(onSubmit)}>
-                                        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+                                        <div className="w-1/3 sm:w-md md:w-md lg:w-md mt-4">
                                             <InputFormItem
-                                                name="surname"
-                                                label={i18n('entities.customer.fields.surname')}
+                                                name="address"
+                                                label={i18n('reservationSteps.stepAddressToSearch')}
                                                 required={false}
                                             />
                                         </div>
@@ -57,12 +55,12 @@ function ReservationInitialPage(props){
                                         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
                                             <RadioFormItem
                                                 name="gender"
-                                                label={i18n('entities.customer.fields.gender')}
+                                                label={i18n('reservationSteps.pickCategory')}
                                                 options={customerEnumerators.gender.map(
                                                     (value) => ({
                                                         value,
                                                         label: i18n(
-                                                            `entities.customer.enumerators.gender.${value}`,
+                                                            ``,
                                                         ),
                                                     }),
                                                 )}
@@ -81,7 +79,7 @@ function ReservationInitialPage(props){
                                                     className="mr-2"
                                                     icon={faSave}
                                                 />
-                                                {i18n('common.save')}
+                                                {i18n('reservationSteps.nextButton')}
                                             </button>
                                         </div>
                                     </form>
