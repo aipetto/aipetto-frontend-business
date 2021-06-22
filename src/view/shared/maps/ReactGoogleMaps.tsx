@@ -19,12 +19,8 @@ import usePlacesAutocomplete, {getGeocode, getLatLng} from "use-places-autocompl
 import {Combobox, ComboboxInput, ComboboxList, ComboboxOption, ComboboxPopover} from "@reach/combobox";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import config from "../../../config";
-
-interface IGoogleMapsMarker {
-    lat: number,
-    lng: number,
-    time: Date,
-}
+import {IMapOptions} from "./IMapOptions";
+import {IGoogleMapsMarker} from "./IGoogleMapsMarker";
 
 const libraries: Libraries = ["places"];
 
@@ -37,8 +33,9 @@ const center = {
     lat: -34.603722,
     lng: -58.381592
 }
-const options = {
+const options: IMapOptions = {
     disableDefaultUI: true,
+    styles: mapStyles
 }
 
 function ReactGoogleMaps(props) {
@@ -72,7 +69,7 @@ function ReactGoogleMaps(props) {
         mapRef.current.panTo({lat, lng});
 
         // @ts-ignore
-        mapRef.current.setZoom(14);
+        mapRef.current.setZoom(16);
     }, []);
 
     const renderMap = () => {
@@ -85,7 +82,7 @@ function ReactGoogleMaps(props) {
                 <Locate panTo={panTo} />
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
-                    zoom={12}
+                    zoom={16}
                     center={center}
                     options={options}
                     onClick={onMapClick}
@@ -99,7 +96,7 @@ function ReactGoogleMaps(props) {
                               }}
                               icon={{
                                   url: '/icons/pet-shop-store-icon.svg',
-                                  scaledSize: new window.google.maps.Size(40,40),
+                                  scaledSize: new window.google.maps.Size(50,50),
                                   origin: new window.google.maps.Point(0,0),
                                   anchor: new window.google.maps.Point(15, 15)
                               }}
@@ -177,7 +174,7 @@ function SearchGooglePlaces({panTo}){
                 <ComboboxInput
                     value={value}
                     onChange={handleInput}
-                    className="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 object-center md:object-top"
+                    className="w-full bg-white outline-none shadow-md rounded px-8 pt-6 pb-8 object-center md:object-top"
                     disabled={!ready}
                     placeholder="Where do you need a pet service?"
                 />
