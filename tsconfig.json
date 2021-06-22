@@ -16,7 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noImplicitAny": false,
-    "strict": true
+    "strict": true,
+    "types": ["google.maps"]
   },
   "include": ["src"]
 }

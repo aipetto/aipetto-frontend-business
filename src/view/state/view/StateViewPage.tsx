@@ -23,7 +23,7 @@ function StatePage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.state.menu'), '/state'],
           [i18n('entities.state.view.title')],
         ]}

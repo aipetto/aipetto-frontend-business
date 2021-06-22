@@ -23,7 +23,7 @@ function MessagesPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.messages.menu'), '/messages'],
           [i18n('entities.messages.view.title')],
         ]}

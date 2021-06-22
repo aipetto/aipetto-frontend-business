@@ -23,7 +23,7 @@ function PetVaccinesPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.petVaccines.menu'), '/pet-vaccines'],
           [i18n('entities.petVaccines.view.title')],
         ]}

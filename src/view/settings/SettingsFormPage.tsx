@@ -27,7 +27,7 @@ const SettingsFormPage = (props) => {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('settings.title')],
         ]}
       />
@@ -44,7 +44,7 @@ const SettingsFormPage = (props) => {
         {!initLoading && settings && (
           <SettingsForm
             settings={settings}
-            onCancel={() => getHistory().push('/network')}
+            onCancel={() => getHistory().push('/reservation')}
           />
         )}
       </div>

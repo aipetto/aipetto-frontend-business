@@ -44,7 +44,7 @@ function CustomerFormPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.customer.menu'), '/customer'],
           [title],
         ]}

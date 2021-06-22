@@ -8,6 +8,26 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.element-in-front-map {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #000000;
+  z-index: 10;
+  margin: 50px;
+  padding: 0;
+}
+
+.google-maps-locate-btn {
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  outline: none !important;
+  z-index: 10;
+}
+
 .spinner,
 .spinner:after {
   border-radius: 50%;

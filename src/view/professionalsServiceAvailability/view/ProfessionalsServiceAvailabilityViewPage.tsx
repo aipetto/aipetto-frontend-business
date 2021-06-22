@@ -23,7 +23,7 @@ function ProfessionalsServiceAvailabilityPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.professionalsServiceAvailability.menu'), '/professionals-service-availability'],
           [i18n('entities.professionalsServiceAvailability.view.title')],
         ]}

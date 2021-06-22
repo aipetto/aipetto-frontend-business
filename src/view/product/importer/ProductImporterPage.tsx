@@ -18,7 +18,7 @@ function ProductImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.product.menu'), '/product'],
           [i18n('entities.product.importer.title')],
         ]}

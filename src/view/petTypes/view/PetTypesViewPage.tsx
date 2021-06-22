@@ -23,7 +23,7 @@ function PetTypesPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.petTypes.menu'), '/pet-types'],
           [i18n('entities.petTypes.view.title')],
         ]}

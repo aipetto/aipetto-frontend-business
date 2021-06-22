@@ -11,12 +11,11 @@ import config from 'src/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUser,
-  faBars,
+  faPaw,
   faLock,
-  faMoon,
   faSignOutAlt,
   faThLarge,
-  faCode,
+  faCode, faHeart, faBars,
 } from '@fortawesome/free-solid-svg-icons';
 import { Menu } from '@headlessui/react';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
@@ -77,59 +76,42 @@ function Header(props) {
               </button>
             </div>
 
+         {/*   <div className="flex w-3/5 items-center mt-0">
+
+                  <svg className="h-4 w-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 20 20">
+                    <path
+                        d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                  </svg>
+                <input id="search-toggle" type="search" placeholder="Search for services"
+                       className="block w-full bg-white-200 focus:outline-none focus:bg-white focus:shadow-md text-white-700 font-bold rounded-full pl-12 pr-4 py-3"
+                      />
+
+            </div>*/}
+
             <div className="flex items-center mt-0">
-              <div className="mr-6">
-                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                  <input
-                    type="checkbox"
-                    name="darkMode"
-                    id="darkMode"
-                    checked={darkMode}
-                    onChange={(event) =>
-                      dispatch(
-                        layoutActions.doDarkModeChange(
-                          event.target.checked,
-                        ),
-                      )
-                    }
-                    className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-                  />
-                  <label
-                    htmlFor="darkMode"
-                    className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
-                  ></label>
-                </div>
-                <label
-                  htmlFor="darkMode"
-                  className="text-xs text-gray-700 dark:text-white"
-                >
-                  <FontAwesomeIcon icon={faMoon} />
-                </label>
-              </div>
-              <div className="mr-6 md:block lg:block hidden">
-                <I18nSelect />
-              </div>
 
               <Menu>
-                <Menu.Button className="flex items-center focus:outline-none">
-                  <Avatar
-                    size="small"
-                    src={userAvatar || undefined}
-                    alt="avatar"
-                  />
 
-                  <div className="text-left mx-2 text-sm font-medium text-gray-700 dark:text-gray-200 hidden md:block lg:block">
-                    {userText}
-                    {[
-                      'multi',
-                      'multi-with-subdomain',
-                    ].includes(config.tenantMode) && (
-                      <div className="text-xs font-medium">
-                        {currentTenant &&
-                          currentTenant.name}
-                      </div>
-                    )}
-                  </div>
+                <div className="mr-6 ml-6 md:block lg:block">
+                  <I18nSelect />
+                </div>
+
+                <Menu.Button className="flex items-center focus:outline-none mr-6">
+                  <Avatar
+                      size="large"
+                      className="mr-9"
+                      src={userAvatar || undefined}
+                      alt="avatar"
+                  />
+                </Menu.Button>
+
+                <Menu.Button className="flex items-center focus:outline-none mr-6">
+                  8500 <FontAwesomeIcon
+                    className="ml-1 mr-2"
+                    size="lg"
+                    icon={faPaw}
+                />
                 </Menu.Button>
 
                 <Menu.Items>

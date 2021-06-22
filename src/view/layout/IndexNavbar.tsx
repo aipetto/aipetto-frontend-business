@@ -23,14 +23,8 @@ export default function Navbar(props) {
 
             <div className="hidden md:block">
               <ul className="flex flex-row">
-                <li className="active">
-                  <a className="px-4 py-2 text-gray-900 font-semibold" href="#">Home</a>
-                </li>
                 <li>
-                  <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="#">Features</a>
-                </li>
-                <li>
-                  <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="#">Business</a>
+                  <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/business">Business</a>
                 </li>
                 <I18nFlags />
               </ul>
@@ -39,7 +33,7 @@ export default function Navbar(props) {
             <div className="hidden md:block">
               <ul className="flex flex-">
                 <li>
-                  <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded text-gray-900" href="/auth/signin">Login</a>
+                  <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded text-gray-900" href="/">Login</a>
                 </li>
                 <li className="nav-item px-2 signup">
                   <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/auth/signup">{i18n('auth.signup')}</a>
@@ -58,9 +52,6 @@ export default function Navbar(props) {
                 </div>
               </div>
               <ul className="flex flex-col text-center mt-2 pt-2 w-full">
-                <li className="active w-full">
-                  <a className="w-full font-bold text-lg border-t border-gray-200 block py-3" href="/">Home</a>
-                </li>
                 <li className="w-full">
                   <a className="w-full text-lg border-t border-gray-200 block py-3" href="#">Features</a>
                 </li>

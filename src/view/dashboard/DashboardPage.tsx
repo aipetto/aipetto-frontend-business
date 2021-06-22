@@ -1,10 +1,85 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import PermissionChecker from 'src/modules/auth/permissionChecker';
+import menus from 'src/view/menus';
+import {useDispatch, useSelector} from "react-redux";
+import {default as authSelectors, default as selectors} from "../../modules/auth/authSelectors";
+import layoutSelectors from "../../modules/layout/layoutSelectors";
+import layoutActions from "../../modules/layout/layoutActions";
 
 const DashboardPage = (props) => {
-  return (
-    <>
 
-    </>
+  const dispatch = useDispatch();
+
+  const logoUrl = useSelector(selectors.selectLogoUrl);
+
+  const currentTenant = useSelector(
+      authSelectors.selectCurrentTenant,
+  );
+  const currentUser = useSelector(
+      authSelectors.selectCurrentUser,
+  );
+  const menuVisible = useSelector(
+      layoutSelectors.selectMenuVisible,
+  );
+
+  const doToggleMenuIfSmall = () => {
+    if (window.innerWidth < 640) {
+      dispatch(layoutActions.doToggleMenu());
+    }
+  };
+
+  const permissionChecker = new PermissionChecker(
+      currentTenant,
+      currentUser,
+  );
+
+  const match = (permission) => {
+    return permissionChecker.match(permission);
+  };
+
+  const lockedForCurrentPlan = (permission) => {
+    return permissionChecker.lockedForCurrentPlan(
+        permission,
+    );
+  };
+  return (
+      <>
+        <div className="p-6 grid grid-cols-2 md:grid-cols-6 gap-4">
+
+              {menus
+                  .filter((menu) =>
+                      match(menu.permissionRequired),
+                  )
+                  .map((menu, index) => (
+                      <Link className='flex flex-col items-center w-40 h-32 border border-indigo-50 hover:bg-purple-400 hover:text-white rounded-2xl cursor-pointer py-2 bg-white'
+                          onClick={doToggleMenuIfSmall}
+                          key={menu.path}
+                          to={menu.path}
+                      >
+                        <span className="text-base md:text-lg text-black-800 text-sm mt-11 ">
+                    {menu.label}
+                  </span>
+                      </Link>
+                  ))}
+
+              {menus
+                  .filter((menu) =>
+                      lockedForCurrentPlan(menu.permissionRequired),
+                  )
+                  .map((menu) => (
+                      <div
+                          className={`mt-4 opacity-50 flex items-center px-4 py-2 text-gray-600 rounded-md dark:text-gray-400`}
+                      >
+
+                        <span className="mx-4 font-medium truncate">
+                    {menu.label}
+                  </span>
+                      </div>
+                  ))}
+            </div>
+      </>
   );
 };
 

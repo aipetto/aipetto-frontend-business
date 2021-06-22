@@ -18,7 +18,7 @@ function DiscountsImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.discounts.menu'), '/discounts'],
           [i18n('entities.discounts.importer.title')],
         ]}

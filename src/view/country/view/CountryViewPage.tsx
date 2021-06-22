@@ -23,7 +23,7 @@ function CountryPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.country.menu'), '/country'],
           [i18n('entities.country.view.title')],
         ]}

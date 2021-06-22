@@ -18,7 +18,7 @@ function LanguagesImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.languages.menu'), '/languages'],
           [i18n('entities.languages.importer.title')],
         ]}

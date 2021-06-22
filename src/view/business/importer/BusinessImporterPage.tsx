@@ -18,8 +18,8 @@ function BusinessImportPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
-          [i18n('entities.business.menu'), '/business'],
+          [i18n('dashboard.menu'), '/dashboard'],
+          [i18n('entities.business.menu'), '/business-list'],
           [i18n('entities.business.importer.title')],
         ]}
       />

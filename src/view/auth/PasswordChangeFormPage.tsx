@@ -9,7 +9,7 @@ function PasswordChangeFormPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('services.reservation'), '/reservation'],
           [i18n('auth.passwordChange.title')],
         ]}
       />
@@ -20,7 +20,7 @@ function PasswordChangeFormPage(props) {
         </h1>
 
         <PasswordChangeForm
-          onCancel={() => getHistory().push('/network')}
+          onCancel={() => getHistory().push('/reservation')}
         />
       </div>
     </>

@@ -23,7 +23,7 @@ function PlaceTypePage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.placeType.menu'), '/place-type'],
           [i18n('entities.placeType.view.title')],
         ]}

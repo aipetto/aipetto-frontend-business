@@ -9,6 +9,13 @@ const plans = Plans.values;
 class Permissions {
   static get values() {
     return {
+      dashboardAccess: {
+        id: 'dashboardAccess',
+        allowedRoles: [roles.aipettoAdmin],
+        allowedPlans: [
+          plans.premium
+        ],
+      },
       tenantEdit: {
         id: 'tenantEdit',
         allowedRoles: [roles.aipettoAdmin],

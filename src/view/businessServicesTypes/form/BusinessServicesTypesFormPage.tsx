@@ -44,7 +44,7 @@ function BusinessServicesTypesFormPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('entities.businessServicesTypes.menu'), '/business-services-types'],
           [title],
         ]}

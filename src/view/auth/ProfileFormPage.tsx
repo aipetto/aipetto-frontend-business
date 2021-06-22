@@ -9,7 +9,7 @@ function ProfileFormPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('services.reservation'), '/reservation'],
           [i18n('auth.profile.title')],
         ]}
       />
@@ -20,7 +20,7 @@ function ProfileFormPage() {
         </h1>
 
         <ProfileForm
-          onCancel={() => getHistory().push('/network')}
+          onCancel={() => getHistory().push('/reservation')}
         />
       </div>
     </>

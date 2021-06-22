@@ -3,7 +3,7 @@ import { getLanguageCode } from 'src/i18n';
 import LayoutDarkMode from 'src/modules/layout/layoutDarkMode';
 
 const initialData = {
-  menuVisible: true,
+  menuVisible: false,
   language: getLanguageCode(),
   loading: false,
   darkMode: LayoutDarkMode.get(),
@@ -29,7 +29,7 @@ export default (state = initialData, { type, payload }) => {
   if (type === actions.MENU_SHOW) {
     return {
       ...state,
-      menuVisible: true,
+      menuVisible: false,
     };
   }
 

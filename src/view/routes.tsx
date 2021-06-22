@@ -5,13 +5,40 @@ const permissions = Permissions.values;
 
 const privateRoutes = [
   {
-    path: '/network',
+    path: '/dashboard',
     loader: () =>
       import('src/view/dashboard/DashboardPage'),
+    permissionRequired: permissions.dashboardAccess,
+    exact: true,
+  },
+  {
+    path: '/reservation',
+    loader: () =>
+        import('src/view/serviceReservation/public/ReservationInitialPage'),
     permissionRequired: null,
     exact: true,
   },
-
+  {
+    path: '/reservation-business',
+    loader: () =>
+        import('src/view/serviceReservation/public/ReservationSecondPageBusinessSearch'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
+    path: '/reservation-appointment',
+    loader: () =>
+        import('src/view/serviceReservation/public/ReservationThirdPageDateTimeAppointment'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
+    path: '/reservation-confirmation',
+    loader: () =>
+        import('src/view/serviceReservation/public/ReservationFourthPageConfirmation'),
+    permissionRequired: null,
+    exact: true,
+  },
   {
     path: '/profile',
     loader: () => import('src/view/auth/ProfileFormPage'),
@@ -332,7 +359,7 @@ const privateRoutes = [
   },
 
   {
-    path: '/business',
+    path: '/business-list',
     loader: () =>
       import('src/view/business/list/BusinessListPage'),
     permissionRequired: permissions.businessRead,
@@ -1130,10 +1157,14 @@ const privateRoutes = [
 ].filter(Boolean);
 
 const publicRoutes = [
-  {
-    path: '/',
+    {
+      path: '/',
+      loader: () => import('src/view/home/LandingPage'),
+    },
+    {
+    path: '/beta',
     loader: () =>
-        import('src/view/home/LandingPage'),
+        import('src/view/auth/SigninPage'),
     permissionRequired: null,
     exact: true,
   },

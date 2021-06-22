@@ -23,7 +23,7 @@ function UserViewPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/network'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('user.menu'), '/user'],
           [i18n('user.view.title')],
         ]}

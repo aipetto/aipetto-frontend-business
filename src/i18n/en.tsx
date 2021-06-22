@@ -38,7 +38,7 @@ const en = {
       landingBusinessSubtitle: 'Be part and let us help your business grow.',
       menu: {
           business: 'Business',
-          petsSurvey: '愛',
+          petsSurvey: 'Home',
       }
   },
 
@@ -146,7 +146,11 @@ const en = {
   api: {
     menu: 'API',
   },
-
+  reservationSteps: {
+    stepAddressToSearch: 'Address',
+    pickCategory: 'Which service do your pet need?',
+    nextButton: 'Next'
+  },
   entities: {
     customer: {
         name: 'customer',
@@ -241,7 +245,6 @@ const en = {
             'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
-
     product: {
         name: 'product',
         label: 'Products',
@@ -2296,6 +2299,9 @@ const en = {
       volcano: 'Volcano',
       yellow: 'Yellow',
     },
+  },
+  services: {
+    reservation: 'Reservas'
   },
   dashboard: {
     menu: 'Dashboard',
