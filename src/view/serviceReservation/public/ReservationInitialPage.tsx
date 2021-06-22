@@ -30,7 +30,10 @@ function ReservationInitialPage(props){
     }
 
     return (
-        <ReactGoogleMaps />
+        <div>
+            <ProgressBar />
+            <ReactGoogleMaps />
+        </div>
     );
 };
 
