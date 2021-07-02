@@ -4,6 +4,7 @@ import LayoutDarkMode from 'src/modules/layout/layoutDarkMode';
 
 const initialData = {
   menuVisible: false,
+  rightSidebarMenuVisible: false,
   language: getLanguageCode(),
   loading: false,
   darkMode: LayoutDarkMode.get(),
@@ -37,6 +38,27 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       menuVisible: false,
+    };
+  }
+
+  if (type === actions.RIGHT_SIDEBAR_MENU_TOGGLE) {
+    return {
+      ...state,
+      rightSidebarMenuVisible: !state.rightSidebarMenuVisible,
+    };
+  }
+
+  if (type === actions.RIGHT_SIDEBAR_MENU_SHOW) {
+    return {
+      ...state,
+      rightSidebarMenuVisible: false,
+    };
+  }
+
+  if (type === actions.RIGHT_SIDEBAR_MENU_HIDE) {
+    return {
+      ...state,
+      rightSidebarMenuVisible: false,
     };
   }
 

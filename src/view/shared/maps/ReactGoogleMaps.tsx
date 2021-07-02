@@ -7,7 +7,7 @@ import {
     Marker,
     InfoWindow
 } from "@react-google-maps/api";
-import {faCompass, faPause, faSearchLocation} from '@fortawesome/free-solid-svg-icons';
+import {faCompass} from '@fortawesome/free-solid-svg-icons';
 import { formatRelative } from "date-fns";
 
 import {Libraries} from "@react-google-maps/api/dist/utils/make-load-script-url";
@@ -21,12 +21,13 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import config from "../../../config";
 import {IMapOptions} from "./IMapOptions";
 import {IGoogleMapsMarker} from "./IGoogleMapsMarker";
+import greenMapStyles from "./greenMapStyles";
 
 const libraries: Libraries = ["places"];
 
 const mapContainerStyle = {
     styles: mapStyles,
-    width: "100vw",
+    width: "50vw",
     height: "100vh",
 }
 const center = {
@@ -69,7 +70,7 @@ function ReactGoogleMaps(props) {
         mapRef.current.panTo({lat, lng});
 
         // @ts-ignore
-        mapRef.current.setZoom(16);
+        mapRef.current.setZoom(18);
     }, []);
 
     const renderMap = () => {
@@ -78,8 +79,8 @@ function ReactGoogleMaps(props) {
                 {/*<h1 className="element-in-front-map">
                     Reserve your service
                 </h1>*/}
-                <SearchGooglePlaces panTo={panTo}/>
-                <Locate panTo={panTo} />
+                {/*<SearchGooglePlaces panTo={panTo}/>*/}
+                {/*<Locate panTo={panTo} />*/}
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
                     zoom={16}
@@ -174,7 +175,7 @@ function SearchGooglePlaces({panTo}){
                 <ComboboxInput
                     value={value}
                     onChange={handleInput}
-                    className="w-full bg-white outline-none shadow-md rounded px-8 pt-6 pb-8 object-center md:object-top"
+                    className="bg-white outline-none w-full shadow-md rounded px-8 pt-6 pb-8 object-center md:object-top"
                     disabled={!ready}
                     placeholder="Where do you need a pet service?"
                 />

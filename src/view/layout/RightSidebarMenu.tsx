@@ -25,13 +25,13 @@ function Menu(props) {
   const currentUser = useSelector(
     authSelectors.selectCurrentUser,
   );
-  const menuVisible = useSelector(
-    layoutSelectors.selectMenuVisible,
+  const rightSidebarMenuVisible = useSelector(
+    layoutSelectors.selectRightSidebarMenuVisible,
   );
 
-  const doToggleMenuIfSmall = () => {
+  const doToggleRightSidebarMenuIfSmall = () => {
     if (window.innerWidth < 640) {
-      dispatch(layoutActions.doToggleMenu());
+      dispatch(layoutActions.doToggleRightSidebarMenu());
     }
   };
 
@@ -41,20 +41,20 @@ function Menu(props) {
   );
 
   useLayoutEffect(() => {
-    const toggleMenuOnResize = () => {
+    const toggleRightSidebarMenuOnResize = () => {
       window.innerWidth < 640
-        ? dispatch(actions.doHideMenu())
-        : dispatch(actions.doShowMenu());
+        ? dispatch(actions.doHideRightSidebarMenu())
+        : dispatch(actions.doShowRightSidebarMenu());
     };
 
-    toggleMenuOnResize();
+    toggleRightSidebarMenuOnResize();
 
-    window.addEventListener('resize', toggleMenuOnResize);
+    window.addEventListener('resize', toggleRightSidebarMenuOnResize);
 
     return () => {
       window.removeEventListener(
         'resize',
-        toggleMenuOnResize,
+        toggleRightSidebarMenuOnResize,
       );
     };
   }, [dispatch]);
@@ -93,11 +93,11 @@ function Menu(props) {
   return (
     <div
       className={`${
-        menuVisible ? 'flex flex-col w-full' : 'hidden'
+        rightSidebarMenuVisible ? 'flex flex-col w-full' : 'hidden'
       } sm:w-64 md:w-64 transition-opacity duration-200 rounded-full lg:w-64 flex-shrink-0 min-h-screen px-4 py-4 border-0 sm:border-r md:border-r lg:border-r bg-white dark:border-gray-600`}
     >
       <div className="w-full flex justify-between sm:justify-center md:justify-center lg:justify-center items-center">
-        <Link onClick={doToggleMenuIfSmall} to="/">
+        <Link onClick={doToggleRightSidebarMenuIfSmall} to="/">
           {logoUrl ? (
             <img
               src={logoUrl}
@@ -112,7 +112,7 @@ function Menu(props) {
         </Link>
         <div className="cursor-pointer block sm:hidden md:hidden lg:hidden text-gray-400 hover:text-gray-200 text-lg mr-2">
           <FontAwesomeIcon
-            onClick={doToggleMenuIfSmall}
+            onClick={doToggleRightSidebarMenuIfSmall}
             icon={faTimes}
           />
         </div>
@@ -131,7 +131,7 @@ function Menu(props) {
                     ? 'flex items-center px-4 py-2 rounded-md bg-green-300 text-black'
                     : 'flex items-center px-4 py-2 transition-colors duration-200 transform rounded-md text-gray-400 hover:bg-green-300 hover:text-black'
                 }`}
-                onClick={doToggleMenuIfSmall}
+                onClick={doToggleRightSidebarMenuIfSmall}
                 key={menu.path}
                 to={menu.path}
               >

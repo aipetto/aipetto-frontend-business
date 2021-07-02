@@ -6,6 +6,9 @@ const layoutActions = {
   MENU_TOGGLE: `${prefix}_MENU_TOGGLE`,
   MENU_HIDE: `${prefix}_MENU_HIDE`,
   MENU_SHOW: `${prefix}_MENU_SHOW`,
+  RIGHT_SIDEBAR_MENU_TOGGLE: `${prefix}_RIGHT_SIDEBAR_MENU_TOGGLE`,
+  RIGHT_SIDEBAR_MENU_HIDE: `${prefix}_RIGHT_SIDEBAR_MENU_HIDE`,
+  RIGHT_SIDEBAR_MENU_SHOW: `${prefix}_RIGHT_SIDEBAR_MENU_SHOW`,
 
   DARK_MODE_CHANGE: `${prefix}_DARK_MODE`,
 
@@ -41,6 +44,24 @@ const layoutActions = {
   doHideMenu: () => {
     return {
       type: layoutActions.MENU_HIDE,
+    };
+  },
+
+  doToggleRightSidebarMenu: () => {
+    return {
+      type: layoutActions.RIGHT_SIDEBAR_MENU_TOGGLE,
+    };
+  },
+
+  doShowRightSidebarMenu: () => {
+    return {
+      type: layoutActions.RIGHT_SIDEBAR_MENU_SHOW,
+    };
+  },
+
+  doHideRightSidebarMenu: () => {
+    return {
+      type: layoutActions.RIGHT_SIDEBAR_MENU_HIDE,
     };
   },
 };
