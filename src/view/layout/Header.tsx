@@ -15,7 +15,7 @@ import {
   faLock,
   faSignOutAlt,
   faThLarge,
-  faCode, faHeart, faBars,
+  faCode, faHeart, faBars, faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons';
 import { Menu } from '@headlessui/react';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
@@ -26,6 +26,10 @@ function Header(props) {
 
   const doToggleMenu = () => {
     dispatch(layoutActions.doToggleMenu());
+  };
+
+  const doToggleRightSidebarMenu = () => {
+    dispatch(layoutActions.doToggleRightSidebarMenu());
   };
 
   const darkMode = useSelector(
@@ -106,13 +110,15 @@ function Header(props) {
                   />
                 </Menu.Button>
 
-                <Menu.Button className="flex items-center focus:outline-none mr-6">
+                <button className="flex items-center focus:outline-none mr-6"
+                        onClick={doToggleRightSidebarMenu}
+                >
                   8500 <FontAwesomeIcon
                     className="ml-1 mr-2"
                     size="lg"
                     icon={faPaw}
                 />
-                </Menu.Button>
+                </button>
 
                 <Menu.Items>
                   <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800">
@@ -192,6 +198,12 @@ function Header(props) {
                   </div>
                 </Menu.Items>
               </Menu>
+              <button
+                  className="focus:outline-none text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
+                  onClick={doToggleRightSidebarMenu}
+              >
+                <FontAwesomeIcon icon={faShoppingCart} />
+              </button>
             </div>
           </div>
         </div>

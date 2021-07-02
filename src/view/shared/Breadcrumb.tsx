@@ -8,7 +8,7 @@ function Breadcrumb(props) {
     return item.length > 1;
   };
   return (
-    <ol className="text-sm flex items-center">
+    <ol className="text-sm flex items-center py-6">
       {props.items.map((item, index) => {
         const isFirst = index === 0;
         const isLast = props.items.length - 1 === index;
