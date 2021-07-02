@@ -13,7 +13,6 @@ import {
     WithSearch
 } from "@elastic/react-search-ui";
 import { Layout } from "@elastic/react-search-ui-views";
-import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
 import {
     buildAutocompleteQueryConfig,
@@ -23,6 +22,7 @@ import {
     getConfig,
     getFacetFields, getTitleField, getUrlField
 } from "./appSearchConfig/ConfigHelper";
+import ReactGoogleMaps from "../shared/maps/ReactGoogleMaps";
 
 const SearchBusinessServicePage = (props) => {
 
@@ -66,11 +66,20 @@ const SearchBusinessServicePage = (props) => {
                                         </div>
                                     }
                                     bodyContent={
-                                        <Results
-                                            titleField={getConfig().titleField}
-                                            urlField={getConfig().urlField}
-                                            shouldTrackClickThrough={true}
-                                        />
+                                        <>
+                                            <div className="flex">
+                                                <div className="flex-1">
+                                                    <Results
+                                                        titleField={getConfig().titleField}
+                                                        urlField={getConfig().urlField}
+                                                        shouldTrackClickThrough={true}
+                                                    />
+                                                </div>
+                                                <div className="flex-1">
+                                                    <ReactGoogleMaps />
+                                                </div>
+                                            </div>
+                                        </>
                                     }
                                     bodyHeader={
                                         <React.Fragment>

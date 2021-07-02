@@ -1,5 +1,6 @@
 import React from "react";
 import Spinner from 'src/view/shared/Spinner';
+import { withSearch } from "@elastic/react-search-ui";
 import { getLanguageCode } from 'src/i18n';
 import {
     GoogleMap,
@@ -22,6 +23,7 @@ import config from "../../../config";
 import {IMapOptions} from "./IMapOptions";
 import {IGoogleMapsMarker} from "./IGoogleMapsMarker";
 import greenMapStyles from "./greenMapStyles";
+import {useHistory} from "react-router-dom";
 
 const libraries: Libraries = ["places"];
 
@@ -31,15 +33,15 @@ const mapContainerStyle = {
     height: "100vh",
 }
 const center = {
-    lat: -34.603722,
-    lng: -58.381592
+    lat: 42.361145,
+    lng: -71.057083
 }
 const options: IMapOptions = {
-    disableDefaultUI: true,
+    disableDefaultUI: false,
     styles: mapStyles
 }
 
-function ReactGoogleMaps(props) {
+function ReactGoogleMaps({ filters, clearFilters, results, facets }) {
     const {isLoaded, loadError} = useLoadScript({
        googleMapsApiKey: config.credentialsGoogleMapsPlaceAPI,
        libraries,
@@ -55,10 +57,17 @@ function ReactGoogleMaps(props) {
             {
                 lat: event.latLng.lat(),
                 lng: event.latLng.lng(),
-                time: new Date()
+                id: new String()
             },
         ])
     }, []);
+
+    const history = useHistory();
+
+    const checkBusinessAvailability = () => {
+        let path = 'reservation-appointment';
+        history.push(path);
+    }
 
     const mapRef = React.useRef();
     const onMapLoad = React.useCallback((map) => {
@@ -83,17 +92,17 @@ function ReactGoogleMaps(props) {
                 {/*<Locate panTo={panTo} />*/}
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
-                    zoom={16}
+                    zoom={12}
                     center={center}
                     options={options}
-                    onClick={onMapClick}
+                    //onClick={onMapClick}
                     onLoad={onMapLoad}
                 >
-                  {markers.map( (marker) => (
-                      <Marker key={marker.time.toISOString()}
+                  {results.map( (marker) => (
+                      <Marker key={marker.id.raw}
                               position={{
-                                  lat: marker.lat,
-                                  lng: marker.lng,
+                                  lat: parseFloat(marker.latitude.raw),
+                                  lng: parseFloat(marker.longitude.raw),
                               }}
                               icon={{
                                   url: '/icons/pet-shop-store-icon.svg',
@@ -101,16 +110,14 @@ function ReactGoogleMaps(props) {
                                   origin: new window.google.maps.Point(0,0),
                                   anchor: new window.google.maps.Point(15, 15)
                               }}
-                              onClick={() => {
-                                  setSelected(marker);
-                              }}
+                              onClick={checkBusinessAvailability}
                       />
                   ))}
 
                   {selected ? (<InfoWindow position={{lat: selected.lat, lng: selected.lng}} onCloseClick={() => setSelected(undefined)}>
                     <div>
                        <h2>Something Detail here</h2>
-                       <p>Spotted { formatRelative(selected.time, new Date())} </p>
+                       <p>Information about the place here or link to reserve</p>
                     </div>
                   </InfoWindow>) : null}
 
@@ -190,4 +197,9 @@ function SearchGooglePlaces({panTo}){
     )
 }
 
-export default ReactGoogleMaps;
+export default withSearch(({ filters, clearFilters, results, facets }) => ({
+    filters,
+    clearFilters,
+    results,
+    facets
+}))(ReactGoogleMaps);

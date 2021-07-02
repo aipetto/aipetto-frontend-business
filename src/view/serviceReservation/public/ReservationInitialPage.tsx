@@ -32,16 +32,10 @@ function ReservationInitialPage(props){
     }
 
     return (
-        <div>
-            <div className="flex">
-                <div className="flex-1">
-                    <SearchBusinessServicesPage />
-                </div>
-                <div className="flex-1">
-                    <ReactGoogleMaps />
-                </div>
-            </div>
-        </div>
+        <>
+           <ProgressBar />
+           <SearchBusinessServicesPage />
+        </>
     );
 };
 
