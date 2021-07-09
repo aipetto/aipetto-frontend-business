@@ -19,6 +19,7 @@ import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import PlaceTypeAutocompleteFormItem from 'src/view/placeType/autocomplete/PlaceTypeAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -45,6 +46,15 @@ const schema = yup.object().shape({
   addressZipCode: yupFilterSchemas.string(
     i18n('entities.place.fields.addressZipCode'),
   ),
+  addressCity: yupFilterSchemas.string(
+    i18n('entities.place.fields.addressCity'),
+  ),
+  addressState: yupFilterSchemas.string(
+    i18n('entities.place.fields.addressState'),
+  ),
+  addressCountry: yupFilterSchemas.relationToOne(
+    i18n('entities.place.fields.addressCountry'),
+  ),
   openTime: yupFilterSchemas.string(
     i18n('entities.place.fields.openTime'),
   ),
@@ -53,6 +63,12 @@ const schema = yup.object().shape({
   ),
   is24hours: yupFilterSchemas.boolean(
     i18n('entities.place.fields.is24hours'),
+  ),
+  starsRange: yupFilterSchemas.decimalRange(
+    i18n('entities.place.fields.starsRange'),
+  ),
+  isOpen: yupFilterSchemas.boolean(
+    i18n('entities.place.fields.isOpen'),
   ),
 });
 
@@ -65,9 +81,14 @@ const emptyValues = {
   address: null,
   addressNumber: null,
   addressZipCode: null,
+  addressCity: null,
+  addressState: null,
+  addressCountry: null,
   openTime: null,
   closeTime: null,
   is24hours: null,
+  starsRange: [],
+  isOpen: null,
 }
 
 const previewRenders = {
@@ -103,6 +124,18 @@ const previewRenders = {
     label: i18n('entities.place.fields.addressZipCode'),
     render: filterRenders.generic(),
   },
+  addressCity: {
+    label: i18n('entities.place.fields.addressCity'),
+    render: filterRenders.generic(),
+  },
+  addressState: {
+    label: i18n('entities.place.fields.addressState'),
+    render: filterRenders.generic(),
+  },
+  addressCountry: {
+      label: i18n('entities.place.fields.addressCountry'),
+      render: filterRenders.relationToOne(),
+    },
   openTime: {
     label: i18n('entities.place.fields.openTime'),
     render: filterRenders.generic(),
@@ -113,6 +146,14 @@ const previewRenders = {
   },
   is24hours: {
     label: i18n('entities.place.fields.is24hours'),
+    render: filterRenders.boolean(),
+  },
+  starsRange: {
+    label: i18n('entities.place.fields.starsRange'),
+    render: filterRenders.decimalRange(),
+  },
+  isOpen: {
+    label: i18n('entities.place.fields.isOpen'),
     render: filterRenders.boolean(),
   },
 }
@@ -207,6 +248,18 @@ function PlaceListFilter(props) {
                 label={i18n('entities.place.fields.addressZipCode')}      
               />
               <InputFormItem
+                name="addressCity"
+                label={i18n('entities.place.fields.addressCity')}
+              />
+              <InputFormItem
+                name="addressState"
+                label={i18n('entities.place.fields.addressState')}
+              />
+              <CountryAutocompleteFormItem
+                name="addressCountry"
+                label={i18n('entities.place.fields.addressCountry')}
+              />
+              <InputFormItem
                 name="openTime"
                 label={i18n('entities.place.fields.openTime')}      
               />
@@ -217,6 +270,24 @@ function PlaceListFilter(props) {
               <SelectFormItem
                 name="is24hours"
                 label={i18n('entities.place.fields.is24hours')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <InputRangeFormItem
+                name="starsRange"
+                label={i18n('entities.place.fields.starsRange')}
+              />
+              <SelectFormItem
+                name="isOpen"
+                label={i18n('entities.place.fields.isOpen')}
                 options={[
                   {
                     value: true,

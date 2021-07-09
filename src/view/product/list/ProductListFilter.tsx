@@ -16,6 +16,8 @@ import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
+import InputNumberRangeFormItem from 'src/view/shared/form/items/InputNumberRangeFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
@@ -28,12 +30,20 @@ const schema = yup.object().shape({
   businessId: yupFilterSchemas.relationToOne(
     i18n('entities.product.fields.businessId'),
   ),
+  acceptPointsToShop: yupFilterSchemas.boolean(
+    i18n('entities.product.fields.acceptPointsToShop'),
+  ),
+  pointsPriceRange: yupFilterSchemas.integerRange(
+    i18n('entities.product.fields.pointsPriceRange'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   unitPriceRange: [],
   businessId: null,
+  acceptPointsToShop: null,
+  pointsPriceRange: [],
 }
 
 const previewRenders = {
@@ -49,6 +59,14 @@ const previewRenders = {
       label: i18n('entities.product.fields.businessId'),
       render: filterRenders.relationToOne(),
     },
+  acceptPointsToShop: {
+    label: i18n('entities.product.fields.acceptPointsToShop'),
+    render: filterRenders.boolean(),
+  },
+  pointsPriceRange: {
+    label: i18n('entities.product.fields.pointsPriceRange'),
+    render: filterRenders.range(),
+  },
 }
 
 function ProductListFilter(props) {
@@ -119,6 +137,24 @@ function ProductListFilter(props) {
               <BusinessAutocompleteFormItem
                 name="businessId"
                 label={i18n('entities.product.fields.businessId')}
+              />
+              <SelectFormItem
+                name="acceptPointsToShop"
+                label={i18n('entities.product.fields.acceptPointsToShop')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <InputNumberRangeFormItem
+                name="pointsPriceRange"
+                label={i18n('entities.product.fields.pointsPriceRange')}
               />
             </div>
 

@@ -33,6 +33,15 @@ import petVaccines from 'src/modules/petVaccines/petVaccinesReducers';
 import placeType from 'src/modules/placeType/placeTypeReducers';
 import landingSurvey from 'src/modules/landingSurvey/landingSurveyReducers';
 import newBusinessSurvey from 'src/modules/newBusinessSurvey/newBusinessSurveyReducers';
+import petPhotos from 'src/modules/petPhotos/petPhotosReducers';
+import petDiseases from 'src/modules/petDiseases/petDiseasesReducers';
+import businessServicesPrices from 'src/modules/businessServicesPrices/businessServicesPricesReducers';
+import posts from 'src/modules/posts/postsReducers';
+import postCategories from 'src/modules/postCategories/postCategoriesReducers';
+import postComments from 'src/modules/postComments/postCommentsReducers';
+import pointsChallenges from 'src/modules/pointsChallenges/pointsChallengesReducers';
+import challengesCategories from 'src/modules/challengesCategories/challengesCategoriesReducers';
+import productCategory from 'src/modules/productCategory/productCategoryReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -72,4 +81,13 @@ export default (history) =>
     placeType,
     landingSurvey,
     newBusinessSurvey,
+    petPhotos,
+    petDiseases,
+    businessServicesPrices,
+    posts,
+    postCategories,
+    postComments,
+    pointsChallenges,
+    challengesCategories,
+    productCategory,
   });

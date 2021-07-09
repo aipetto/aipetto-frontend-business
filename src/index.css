@@ -4,7 +4,8 @@
 /** ELASTIC APP SEARCH **/
 .rc-pagination {
   font-size: 12px;
-  font-family: ui-sans-serif,
+  font-family: "Noto Sans",
+               ui-sans-serif,
                system-ui,
                -apple-system,
                BlinkMacSystemFont,
@@ -12,7 +13,6 @@
                Roboto,
                "Helvetica Neue",
                Arial,
-               "Noto Sans",
                sans-serif,
                "Apple Color Emoji",
                "Segoe UI Emoji",
@@ -419,7 +419,7 @@ html {
     width: 100%;
     margin-top: 20px;
     padding: 10px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     font-size: 14px;
@@ -457,7 +457,7 @@ html {
   align-items: center;
   justify-content: space-around; }
 .sui-search-error {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: red;
@@ -467,7 +467,7 @@ html {
   align-items: center;
   height: calc(100vh - 180px); }
 .sui-search-error.no-error {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #333333;
@@ -477,7 +477,7 @@ html {
   align-items: center;
   height: calc(100vh - 180px); }
 .sui-facet {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   margin: 0;
@@ -658,14 +658,14 @@ html {
   font-size: 16px;
   line-height: 1.5; }
 .sui-paging-info {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #4a4b4b;
   font-size: 12px;
   display: inline-block; }
 .sui-result {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   list-style: none;
@@ -1130,7 +1130,7 @@ html {
 
 .rc-pagination {
   font-size: 12px;
-  font-family: 'Arial';
+  font-family: "Noto Sans", 'Arial';
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

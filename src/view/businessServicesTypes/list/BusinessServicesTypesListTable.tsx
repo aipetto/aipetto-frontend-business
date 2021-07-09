@@ -17,6 +17,7 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
+import ImagesListView from 'src/view/shared/table/ImagesListView';
 import BusinessCategoryListItem from 'src/view/businessCategory/list/BusinessCategoryListItem';
 import LanguagesListItem from 'src/view/languages/list/LanguagesListItem';
 
@@ -129,6 +130,11 @@ function BusinessServicesTypesListTable(props) {
                     'entities.businessServicesTypes.fields.language',
                   )}
                 />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.businessServicesTypes.fields.serviceImage',
+                  )}
+                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -173,6 +179,9 @@ function BusinessServicesTypesListTable(props) {
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <LanguagesListItem value={row.language} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <ImagesListView value={row.serviceImage} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

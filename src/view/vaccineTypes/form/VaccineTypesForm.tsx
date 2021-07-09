@@ -10,6 +10,8 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
+import vaccineTypesEnumerators from 'src/modules/vaccineTypes/vaccineTypesEnumerators';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import * as yup from 'yup';
 
@@ -24,6 +26,12 @@ const schema = yup.object().shape({
     i18n('entities.vaccineTypes.fields.country'),
     {},
   ),
+  language: yupFormSchemas.enumerator(
+    i18n('entities.vaccineTypes.fields.language'),
+    {
+      "options": vaccineTypesEnumerators.language
+    },
+  ),
 });
 
 function VaccineTypesForm(props) {
@@ -35,6 +43,7 @@ function VaccineTypesForm(props) {
     return {
       name: record.name,
       country: record.country,
+      language: record.language,
     };
   });
 
@@ -71,6 +80,21 @@ function VaccineTypesForm(props) {
             label={i18n('entities.vaccineTypes.fields.country')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="language"
+            label={i18n('entities.vaccineTypes.fields.language')}
+            options={vaccineTypesEnumerators.language.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.vaccineTypes.enumerators.language.${value}`,
+                ),
+              }),
+            )}
+            required={false}
           />
         </div>
 

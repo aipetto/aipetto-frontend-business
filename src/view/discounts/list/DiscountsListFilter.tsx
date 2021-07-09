@@ -17,8 +17,12 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
+  businessID: yupFilterSchemas.relationToOne(
+    i18n('entities.discounts.fields.businessID'),
+  ),
   codeName: yupFilterSchemas.string(
     i18n('entities.discounts.fields.codeName'),
   ),
@@ -31,12 +35,17 @@ const schema = yup.object().shape({
 });
 
 const emptyValues = {
+  businessID: null,
   codeName: null,
   discountPercentageRange: [],
   expirationDateRange: [],
 }
 
 const previewRenders = {
+  businessID: {
+      label: i18n('entities.discounts.fields.businessID'),
+      render: filterRenders.relationToOne(),
+    },
   codeName: {
     label: i18n('entities.discounts.fields.codeName'),
     render: filterRenders.generic(),
@@ -108,6 +117,10 @@ function DiscountsListFilter(props) {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+              <BusinessAutocompleteFormItem
+                name="businessID"
+                label={i18n('entities.discounts.fields.businessID')}
+              />
               <InputFormItem
                 name="codeName"
                 label={i18n('entities.discounts.fields.codeName')}      

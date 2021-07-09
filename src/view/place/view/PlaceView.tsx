@@ -4,6 +4,9 @@ import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import PlaceTypeViewItem from 'src/view/placeType/view/PlaceTypeViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
+import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/BusinessServicesTypesViewItem';
+import BusinessCategoryViewItem from 'src/view/businessCategory/view/BusinessCategoryViewItem';
+import CountryViewItem from 'src/view/country/view/CountryViewItem';
 
 function PlaceView(props) {
   const { record, loading } = props;
@@ -27,6 +30,16 @@ function PlaceView(props) {
       <BusinessViewItem
         label={i18n('entities.place.fields.businessId')}
         value={record.businessId}
+      />
+
+      <BusinessServicesTypesViewItem
+        label={i18n('entities.place.fields.services')}
+        value={record.services}
+      />
+
+      <BusinessCategoryViewItem
+        label={i18n('entities.place.fields.categories')}
+        value={record.categories}
       />
 
       <TextViewItem
@@ -55,6 +68,21 @@ function PlaceView(props) {
       />
 
       <TextViewItem
+        label={i18n('entities.place.fields.addressCity')}
+        value={record.addressCity}
+      />
+
+      <TextViewItem
+        label={i18n('entities.place.fields.addressState')}
+        value={record.addressState}
+      />
+
+      <CountryViewItem
+        label={i18n('entities.place.fields.addressCountry')}
+        value={record.addressCountry}
+      />
+
+      <TextViewItem
         label={i18n('entities.place.fields.openTime')}
         value={record.openTime}
       />
@@ -68,6 +96,20 @@ function PlaceView(props) {
         label={i18n('entities.place.fields.is24hours')}
         value={
           record.is24hours
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.place.fields.stars')}
+        value={record.stars}
+      />
+
+      <TextViewItem
+        label={i18n('entities.place.fields.isOpen')}
+        value={
+          record.isOpen
             ? i18n('common.yes')
             : i18n('common.no')
         }

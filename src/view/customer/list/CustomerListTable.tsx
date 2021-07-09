@@ -17,8 +17,8 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
-import UserListItem from 'src/view/user/list/UserListItem';
 import BusinessListItem from 'src/view/business/list/BusinessListItem';
+import UserListItem from "../../user/list/UserListItem";
 
 function CustomerListTable(props) {
   const [
@@ -119,20 +119,6 @@ function CustomerListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'source'}
-                  label={i18n(
-                    'entities.customer.fields.source',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.customer.fields.userId',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
                   name={'name'}
                   label={i18n(
                     'entities.customer.fields.name',
@@ -151,171 +137,9 @@ function CustomerListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'birthdate'}
-                  label={i18n(
-                    'entities.customer.fields.birthdate',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'gender'}
-                  label={i18n(
-                    'entities.customer.fields.gender',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'whatsApp'}
-                  label={i18n(
-                    'entities.customer.fields.whatsApp',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'phoneNumber'}
-                  label={i18n(
-                    'entities.customer.fields.phoneNumber',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'address'}
-                  label={i18n(
-                    'entities.customer.fields.address',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'zipCode'}
-                  label={i18n(
-                    'entities.customer.fields.zipCode',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'city'}
-                  label={i18n(
-                    'entities.customer.fields.city',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'state'}
-                  label={i18n(
-                    'entities.customer.fields.state',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'country'}
-                  label={i18n(
-                    'entities.customer.fields.country',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'billingAddressStreet'}
-                  label={i18n(
-                    'entities.customer.fields.billingAddressStreet',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'billingAddressCity'}
-                  label={i18n(
-                    'entities.customer.fields.billingAddressCity',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'billingAddressState'}
-                  label={i18n(
-                    'entities.customer.fields.billingAddressState',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'billingAddressZipCode'}
-                  label={i18n(
-                    'entities.customer.fields.billingAddressZipCode',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'billingAddressCountry'}
-                  label={i18n(
-                    'entities.customer.fields.billingAddressCountry',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
                   name={'shippingAddressStreet'}
                   label={i18n(
                     'entities.customer.fields.shippingAddressStreet',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'shippingAddressCity'}
-                  label={i18n(
-                    'entities.customer.fields.shippingAddressCity',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'shippingAddressState'}
-                  label={i18n(
-                    'entities.customer.fields.shippingAddressState',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'shippingAddressZipCode'}
-                  label={i18n(
-                    'entities.customer.fields.shippingAddressZipCode',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'shippingAddressCountry'}
-                  label={i18n(
-                    'entities.customer.fields.shippingAddressCountry',
                   )}
                 />
               <TableColumnHeader />

@@ -10,8 +10,10 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import InputNumberFormItem from 'src/view/shared/form/items/InputNumberFormItem';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
+import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import RadioFormItem from 'src/view/shared/form/items/RadioFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import petEnumerators from 'src/modules/pet/petEnumerators';
@@ -22,6 +24,11 @@ import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BreedAutocompleteFormItem from 'src/view/breed/autocomplete/BreedAutocompleteFormItem';
 import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
 import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
+import PetPhotosAutocompleteFormItem from 'src/view/petPhotos/autocomplete/PetPhotosAutocompleteFormItem';
+import PetVaccinesAutocompleteFormItem from 'src/view/petVaccines/autocomplete/PetVaccinesAutocompleteFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import PetDiseasesAutocompleteFormItem from 'src/view/petDiseases/autocomplete/PetDiseasesAutocompleteFormItem';
+import PetAutocompleteFormItem from 'src/view/pet/autocomplete/PetAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -31,6 +38,10 @@ const schema = yup.object().shape({
   ),
   nickname: yupFormSchemas.string(
     i18n('entities.pet.fields.nickname'),
+    {},
+  ),
+  profileImage: yupFormSchemas.images(
+    i18n('entities.pet.fields.profileImage'),
     {},
   ),
   birthdate: yupFormSchemas.date(
@@ -47,9 +58,17 @@ const schema = yup.object().shape({
       "options": petEnumerators.color
     },
   ),
-  profileImage: yupFormSchemas.images(
-    i18n('entities.pet.fields.profileImage'),
-    {},
+  secondColor: yupFormSchemas.enumerator(
+    i18n('entities.pet.fields.secondColor'),
+    {
+      "options": petEnumerators.secondColor
+    },
+  ),
+  thirdColor: yupFormSchemas.enumerator(
+    i18n('entities.pet.fields.thirdColor'),
+    {
+      "options": petEnumerators.thirdColor
+    },
   ),
   sex: yupFormSchemas.enumerator(
     i18n('entities.pet.fields.sex'),
@@ -59,6 +78,10 @@ const schema = yup.object().shape({
   ),
   breed: yupFormSchemas.relationToOne(
     i18n('entities.pet.fields.breed'),
+    {},
+  ),
+  secondBreedMixed: yupFormSchemas.relationToOne(
+    i18n('entities.pet.fields.secondBreedMixed'),
     {},
   ),
   type: yupFormSchemas.relationToOne(
@@ -73,6 +96,84 @@ const schema = yup.object().shape({
     i18n('entities.pet.fields.petOwners'),
     {},
   ),
+  photos: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.photos'),
+    {},
+  ),
+  vaccines: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.vaccines'),
+    {},
+  ),
+  maturitySize: yupFormSchemas.enumerator(
+    i18n('entities.pet.fields.maturitySize'),
+    {
+      "options": petEnumerators.maturitySize
+    },
+  ),
+  furLength: yupFormSchemas.enumerator(
+    i18n('entities.pet.fields.furLength'),
+    {
+      "options": petEnumerators.furLength
+    },
+  ),
+  hasBeenVaccinated: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.hasBeenVaccinated'),
+    {},
+  ),
+  hasBeenDewormed: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.hasBeenDewormed'),
+    {},
+  ),
+  hasBeenSterilizedSpayed: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.hasBeenSterilizedSpayed'),
+    {},
+  ),
+  health: yupFormSchemas.enumerator(
+    i18n('entities.pet.fields.health'),
+    {
+      "options": petEnumerators.health
+    },
+  ),
+  isLost: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.isLost'),
+    {},
+  ),
+  biography: yupFormSchemas.string(
+    i18n('entities.pet.fields.biography'),
+    {},
+  ),
+  usersAuthorized: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.usersAuthorized'),
+    {},
+  ),
+  businessAuthorized: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.businessAuthorized'),
+    {},
+  ),
+  isLookingForMatch: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.isLookingForMatch'),
+    {},
+  ),
+  diseases: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.diseases'),
+    {},
+  ),
+  isGuideDog: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.isGuideDog'),
+    {},
+  ),
+  numberOfLikes: yupFormSchemas.integer(
+    i18n('entities.pet.fields.numberOfLikes'),
+    {},
+  ),
+  matches: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.matches'),
+    {},
+  ),
+  petFriends: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.petFriends'),
+    {},
+  ),
 });
 
 function PetForm(props) {
@@ -84,15 +185,36 @@ function PetForm(props) {
     return {
       name: record.name,
       nickname: record.nickname,
+      profileImage: record.profileImage || [],
       birthdate: record.birthdate ? moment(record.birthdate, 'YYYY-MM-DD').toDate() : null,
       age: record.age,
       color: record.color,
-      profileImage: record.profileImage || [],
+      secondColor: record.secondColor,
+      thirdColor: record.thirdColor,
       sex: record.sex,
       breed: record.breed,
+      secondBreedMixed: record.secondBreedMixed,
       type: record.type,
       customerId: record.customerId,
       petOwners: record.petOwners || [],
+      photos: record.photos || [],
+      vaccines: record.vaccines || [],
+      maturitySize: record.maturitySize,
+      furLength: record.furLength,
+      hasBeenVaccinated: record.hasBeenVaccinated,
+      hasBeenDewormed: record.hasBeenDewormed,
+      hasBeenSterilizedSpayed: record.hasBeenSterilizedSpayed,
+      health: record.health,
+      isLost: record.isLost,
+      biography: record.biography,
+      usersAuthorized: record.usersAuthorized || [],
+      businessAuthorized: record.businessAuthorized || [],
+      isLookingForMatch: record.isLookingForMatch,
+      diseases: record.diseases || [],
+      isGuideDog: record.isGuideDog,
+      numberOfLikes: record.numberOfLikes,
+      matches: record.matches || [],
+      petFriends: record.petFriends || [],
     };
   });
 
@@ -131,6 +253,15 @@ function PetForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ImagesFormItem
+            name="profileImage"
+            label={i18n('entities.pet.fields.profileImage')}
+            required={false}
+            storage={Storage.values.petProfileImage}
+            max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <DatePickerFormItem
             name="birthdate"
             label={i18n('entities.pet.fields.birthdate')}
@@ -140,7 +271,9 @@ function PetForm(props) {
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputNumberFormItem
             name="age"
-            label={i18n('entities.pet.fields.age')}  
+            label={i18n('entities.pet.fields.age')}
+          placeholder={i18n('entities.pet.placeholders.age')}
+          hint={i18n('entities.pet.hints.age')}
             required={false}
           />
         </div>
@@ -160,12 +293,33 @@ function PetForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <ImagesFormItem
-            name="profileImage"
-            label={i18n('entities.pet.fields.profileImage')}
+          <SelectFormItem
+            name="secondColor"
+            label={i18n('entities.pet.fields.secondColor')}
+            options={petEnumerators.secondColor.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.pet.enumerators.secondColor.${value}`,
+                ),
+              }),
+            )}
             required={false}
-            storage={Storage.values.petProfileImage}
-            max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="thirdColor"
+            label={i18n('entities.pet.fields.thirdColor')}
+            options={petEnumerators.thirdColor.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.pet.enumerators.thirdColor.${value}`,
+                ),
+              }),
+            )}
+            required={false}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -192,6 +346,14 @@ function PetForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BreedAutocompleteFormItem
+            name="secondBreedMixed"
+            label={i18n('entities.pet.fields.secondBreedMixed')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <PetTypesAutocompleteFormItem  
             name="type"
             label={i18n('entities.pet.fields.type')}
@@ -211,6 +373,167 @@ function PetForm(props) {
           <UserAutocompleteFormItem
             name="petOwners"
             label={i18n('entities.pet.fields.petOwners')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PetPhotosAutocompleteFormItem
+            name="photos"
+            label={i18n('entities.pet.fields.photos')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PetVaccinesAutocompleteFormItem
+            name="vaccines"
+            label={i18n('entities.pet.fields.vaccines')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="maturitySize"
+            label={i18n('entities.pet.fields.maturitySize')}
+            options={petEnumerators.maturitySize.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.pet.enumerators.maturitySize.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="furLength"
+            label={i18n('entities.pet.fields.furLength')}
+            options={petEnumerators.furLength.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.pet.enumerators.furLength.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="hasBeenVaccinated"
+            label={i18n('entities.pet.fields.hasBeenVaccinated')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="hasBeenDewormed"
+            label={i18n('entities.pet.fields.hasBeenDewormed')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="hasBeenSterilizedSpayed"
+            label={i18n('entities.pet.fields.hasBeenSterilizedSpayed')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="health"
+            label={i18n('entities.pet.fields.health')}
+            options={petEnumerators.health.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.pet.enumerators.health.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isLost"
+            label={i18n('entities.pet.fields.isLost')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <TextAreaFormItem
+            name="biography"
+            label={i18n('entities.pet.fields.biography')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <UserAutocompleteFormItem
+            name="usersAuthorized"
+            label={i18n('entities.pet.fields.usersAuthorized')}
+          hint={i18n('entities.pet.hints.usersAuthorized')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessAutocompleteFormItem
+            name="businessAuthorized"
+            label={i18n('entities.pet.fields.businessAuthorized')}
+          hint={i18n('entities.pet.hints.businessAuthorized')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isLookingForMatch"
+            label={i18n('entities.pet.fields.isLookingForMatch')}
+          hint={i18n('entities.pet.hints.isLookingForMatch')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PetDiseasesAutocompleteFormItem
+            name="diseases"
+            label={i18n('entities.pet.fields.diseases')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isGuideDog"
+            label={i18n('entities.pet.fields.isGuideDog')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputNumberFormItem
+            name="numberOfLikes"
+            label={i18n('entities.pet.fields.numberOfLikes')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PetAutocompleteFormItem
+            name="matches"
+            label={i18n('entities.pet.fields.matches')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PetAutocompleteFormItem
+            name="petFriends"
+            label={i18n('entities.pet.fields.petFriends')}
             required={false}
             showCreate={!props.modal}
             mode="multiple"

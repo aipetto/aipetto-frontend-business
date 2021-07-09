@@ -2,19 +2,20 @@ import Permissions from 'src/security/permissions';
 import { i18n } from 'src/i18n';
 import config from 'src/config';
 import {
+  faBarcode,
   faBone,
   faBook,
   faBriefcase, faCalendarAlt,
   faCalendarCheck,
   faChevronRight, faClipboardList, faCog, faColumns,
-  faComments, faCube, faDog,
-  faLanguage,
+  faComments, faCube, faDog, faImages,
+  faLanguage, faList,
   faMapMarkedAlt, faMapMarkerAlt,
-  faMoneyBillWave, faPaw,
+  faMoneyBillWave, faNewspaper, faPaw,
   faPeopleArrows,
   faPercent,
   faPoll, faShoppingBasket, faStore,
-  faSyringe, faTags, faUser, faUsers,
+  faSyringe, faTags, faTasks, faTrophy, faUser, faUsers, faViruses,
   faWallet,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -251,5 +252,68 @@ export default [
     permissionRequired: permissions.newBusinessSurveyRead,
     icon: faPoll,
     label: i18n('entities.newBusinessSurvey.menu'),
+  },
+
+  {
+    path: '/pet-photos',
+    permissionRequired: permissions.petPhotosRead,
+    icon: faImages,
+    label: i18n('entities.petPhotos.menu'),
+  },
+
+  {
+    path: '/pet-diseases',
+    permissionRequired: permissions.petDiseasesRead,
+    icon: faViruses,
+    label: i18n('entities.petDiseases.menu'),
+  },
+
+  {
+    path: '/business-services-prices',
+    permissionRequired: permissions.businessServicesPricesRead,
+    icon: faBarcode,
+    label: i18n('entities.businessServicesPrices.menu'),
+  },
+
+  {
+    path: '/posts',
+    permissionRequired: permissions.postsRead,
+    icon: faNewspaper,
+    label: i18n('entities.posts.menu'),
+  },
+
+  {
+    path: '/post-categories',
+    permissionRequired: permissions.postCategoriesRead,
+    icon: faList,
+    label: i18n('entities.postCategories.menu'),
+  },
+
+  {
+    path: '/post-comments',
+    permissionRequired: permissions.postCommentsRead,
+    icon: faComments,
+    label: i18n('entities.postComments.menu'),
+  },
+
+  {
+    path: '/points-challenges',
+    permissionRequired: permissions.pointsChallengesRead,
+    icon: faTrophy,
+    label: i18n('entities.pointsChallenges.menu'),
+  },
+
+  {
+    path: '/challenges-categories',
+    permissionRequired: permissions.challengesCategoriesRead,
+    icon: faTasks,
+    label: i18n('entities.challengesCategories.menu'),
+  },
+
+  {
+    path: '/product-category',
+    permissionRequired: permissions.productCategoryRead,
+    icon: faTags,
+    label: i18n('entities.productCategory.menu'),
   },
 ].filter(Boolean);

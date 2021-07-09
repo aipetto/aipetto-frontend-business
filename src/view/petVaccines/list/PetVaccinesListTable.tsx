@@ -17,12 +17,7 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
-import moment from 'moment';
 import VaccineTypesListItem from 'src/view/vaccineTypes/list/VaccineTypesListItem';
-import ProvidersListItem from 'src/view/providers/list/ProvidersListItem';
-import PlaceListItem from 'src/view/place/list/PlaceListItem';
-import BusinessListItem from 'src/view/business/list/BusinessListItem';
-import CountryListItem from 'src/view/country/list/CountryListItem';
 
 function PetVaccinesListTable(props) {
   const [
@@ -128,35 +123,6 @@ function PetVaccinesListTable(props) {
                     'entities.petVaccines.fields.uniqueVetVaccineCode',
                   )}
                 />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'datetimeTaken'}
-                  label={i18n(
-                    'entities.petVaccines.fields.datetimeTaken',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.petVaccines.fields.veterinarianID',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.petVaccines.fields.placeTaken',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.petVaccines.fields.businessID',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.petVaccines.fields.country',
-                  )}
-                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -199,25 +165,6 @@ function PetVaccinesListTable(props) {
                     <VaccineTypesListItem value={row.name} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.uniqueVetVaccineCode}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.datetimeTaken
-                      ? moment(row.datetimeTaken).format(
-                          'YYYY-MM-DD HH:mm',
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <ProvidersListItem value={row.veterinarianID} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <PlaceListItem value={row.placeTaken} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <BusinessListItem value={row.businessID} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <CountryListItem value={row.country} />
-                  </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
                     align="right"

@@ -112,11 +112,6 @@ function BreedListTable(props) {
                 )}
               </TableColumnHeader>
                 <TableColumnHeader
-                    label={i18n(
-                        'entities.breed.fields.image',
-                    )}
-                />
-                <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
@@ -136,12 +131,8 @@ function BreedListTable(props) {
                   )}
                 />
                 <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'size'}
                   label={i18n(
-                    'entities.breed.fields.size',
+                    'entities.breed.fields.image',
                   )}
                 />
               <TableColumnHeader />
@@ -182,15 +173,15 @@ function BreedListTable(props) {
                       }
                     />
                   </th>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <ImagesListView value={row.image} />
-                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <LanguagesListItem value={row.language} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <PetTypesListItem value={row.type} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <ImagesListView value={row.image} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

@@ -15,6 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 
 const schema = yup.object().shape({
@@ -24,11 +25,15 @@ const schema = yup.object().shape({
   language: yupFilterSchemas.relationToOne(
     i18n('entities.placeType.fields.language'),
   ),
+  isPublicPlace: yupFilterSchemas.boolean(
+    i18n('entities.placeType.fields.isPublicPlace'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   language: null,
+  isPublicPlace: null,
 }
 
 const previewRenders = {
@@ -40,6 +45,10 @@ const previewRenders = {
       label: i18n('entities.placeType.fields.language'),
       render: filterRenders.relationToOne(),
     },
+  isPublicPlace: {
+    label: i18n('entities.placeType.fields.isPublicPlace'),
+    render: filterRenders.boolean(),
+  },
 }
 
 function PlaceTypeListFilter(props) {
@@ -106,6 +115,20 @@ function PlaceTypeListFilter(props) {
               <LanguagesAutocompleteFormItem  
                 name="language"
                 label={i18n('entities.placeType.fields.language')}        
+              />
+              <SelectFormItem
+                name="isPublicPlace"
+                label={i18n('entities.placeType.fields.isPublicPlace')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
               />
             </div>
 

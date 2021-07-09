@@ -12,9 +12,14 @@ import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import moment from 'moment';
 import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
+  businessID: yupFormSchemas.relationToOne(
+    i18n('entities.discounts.fields.businessID'),
+    {},
+  ),
   codeName: yupFormSchemas.string(
     i18n('entities.discounts.fields.codeName'),
     {
@@ -40,6 +45,7 @@ function DiscountsForm(props) {
     const record = props.record || {};
 
     return {
+      businessID: record.businessID,
       codeName: record.codeName,
       discountPercentage: record.discountPercentage,
       expirationDate: record.expirationDate ? moment(record.expirationDate, 'YYYY-MM-DD').toDate() : null,
@@ -66,6 +72,14 @@ function DiscountsForm(props) {
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="w-full sm:w-md md:w-md lg:w-md">
+          <BusinessAutocompleteFormItem
+            name="businessID"
+            label={i18n('entities.discounts.fields.businessID')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
             name="codeName"
             label={i18n('entities.discounts.fields.codeName')}

@@ -18,10 +18,6 @@ import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import BusinessListItem from 'src/view/business/list/BusinessListItem';
-import CustomerListItem from 'src/view/customer/list/CustomerListItem';
-import BusinessServicesTypesListItem from 'src/view/businessServicesTypes/list/BusinessServicesTypesListItem';
-import ProvidersListItem from 'src/view/providers/list/ProvidersListItem';
-import PlaceListItem from 'src/view/place/list/PlaceListItem';
 import DiscountsListItem from 'src/view/discounts/list/DiscountsListItem';
 
 function ServiceReservationListTable(props) {
@@ -129,53 +125,6 @@ function ServiceReservationListTable(props) {
                   )}
                 />
                 <TableColumnHeader
-                  label={i18n(
-                    'entities.serviceReservation.fields.customerId',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.serviceReservation.fields.serviceType',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.serviceReservation.fields.serviceProviderIDs',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'time'}
-                  label={i18n(
-                    'entities.serviceReservation.fields.time',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'needTransportation'}
-                  label={i18n(
-                    'entities.serviceReservation.fields.needTransportation',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.serviceReservation.fields.place',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'status'}
-                  label={i18n(
-                    'entities.serviceReservation.fields.status',
-                  )}
-                />
-                <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
@@ -241,37 +190,6 @@ function ServiceReservationListTable(props) {
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.date}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessListItem value={row.businessId} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <CustomerListItem value={row.customerId} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <BusinessServicesTypesListItem value={row.serviceType} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <ProvidersListItem value={row.serviceProviderIDs} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.time
-                      ? i18n(
-                          `entities.serviceReservation.enumerators.time.${row.time}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.needTransportation
-                      ? i18n('common.yes')
-                      : i18n('common.no')}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <PlaceListItem value={row.place} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.status
-                      ? i18n(
-                          `entities.serviceReservation.enumerators.status.${row.status}`,
-                        )
-                      : null}
                   </td>
                   <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.totalPrice}

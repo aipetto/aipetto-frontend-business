@@ -16,6 +16,16 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'placeTypeImage',
+    label: i18n('entities.placeType.fields.placeTypeImage'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
+    name: 'isPublicPlace',
+    label: i18n('entities.placeType.fields.isPublicPlace'),
+    render: exporterRenders.boolean(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.placeType.fields.createdAt'),
     render: exporterRenders.datetime(),

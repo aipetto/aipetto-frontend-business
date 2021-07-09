@@ -28,6 +28,11 @@ export default [
     label: i18n('entities.landingSurvey.fields.extraInfo'),
   },
   {
+    name: 'allowReceiveNotifications',
+    label: i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
+    render: exporterRenders.boolean(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.landingSurvey.fields.createdAt'),
     render: exporterRenders.datetime(),

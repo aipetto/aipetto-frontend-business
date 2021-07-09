@@ -16,6 +16,10 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'language',
+    label: i18n('entities.vaccineTypes.fields.language'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.vaccineTypes.fields.createdAt'),
     render: exporterRenders.datetime(),

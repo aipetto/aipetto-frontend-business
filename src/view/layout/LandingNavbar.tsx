@@ -22,9 +22,10 @@ export default function LandingNavbar(props) {
                         </Link>
 
                         <div className="">
+
                             <ul className="flex flex-row">
 
-                                <I18nFlags />
+
                                 <li className="nav-item px-2 signup">
                                     <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/beta">Beta</a>
                                 </li>
@@ -41,6 +42,7 @@ export default function LandingNavbar(props) {
                             </ul>
                         </div>
                     </div>
+                    <I18nFlags />
                 </div>
             </nav>
         </>

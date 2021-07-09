@@ -46,4 +46,12 @@ export default [
       {},
     ),
   },
+  {
+    name: 'allowReceiveNotifications',
+    label: i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
+    schema: schemas.boolean(
+      i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
+      {},
+    ),
+  },
 ];

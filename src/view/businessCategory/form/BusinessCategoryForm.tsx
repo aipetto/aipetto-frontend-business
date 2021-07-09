@@ -10,6 +10,8 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import Storage from 'src/security/storage';
+import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
 
@@ -24,6 +26,14 @@ const schema = yup.object().shape({
     i18n('entities.businessCategory.fields.language'),
     {},
   ),
+  categoryImage: yupFormSchemas.images(
+    i18n('entities.businessCategory.fields.categoryImage'),
+    {},
+  ),
+  pageUrl: yupFormSchemas.string(
+    i18n('entities.businessCategory.fields.pageUrl'),
+    {},
+  ),
 });
 
 function BusinessCategoryForm(props) {
@@ -35,6 +45,8 @@ function BusinessCategoryForm(props) {
     return {
       name: record.name,
       language: record.language,
+      categoryImage: record.categoryImage || [],
+      pageUrl: record.pageUrl,
     };
   });
 
@@ -71,6 +83,22 @@ function BusinessCategoryForm(props) {
             label={i18n('entities.businessCategory.fields.language')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ImagesFormItem
+            name="categoryImage"
+            label={i18n('entities.businessCategory.fields.categoryImage')}
+            required={false}
+            storage={Storage.values.businessCategoryCategoryImage}
+            max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="pageUrl"
+            label={i18n('entities.businessCategory.fields.pageUrl')}
+            required={false}
           />
         </div>
 

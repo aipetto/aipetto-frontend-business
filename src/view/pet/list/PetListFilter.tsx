@@ -39,17 +39,56 @@ const schema = yup.object().shape({
   color: yupFilterSchemas.enumerator(
     i18n('entities.pet.fields.color'),
   ),
+  secondColor: yupFilterSchemas.enumerator(
+    i18n('entities.pet.fields.secondColor'),
+  ),
+  thirdColor: yupFilterSchemas.enumerator(
+    i18n('entities.pet.fields.thirdColor'),
+  ),
   sex: yupFilterSchemas.enumerator(
     i18n('entities.pet.fields.sex'),
   ),
   breed: yupFilterSchemas.relationToOne(
     i18n('entities.pet.fields.breed'),
   ),
+  secondBreedMixed: yupFilterSchemas.relationToOne(
+    i18n('entities.pet.fields.secondBreedMixed'),
+  ),
   type: yupFilterSchemas.relationToOne(
     i18n('entities.pet.fields.type'),
   ),
   customerId: yupFilterSchemas.relationToOne(
     i18n('entities.pet.fields.customerId'),
+  ),
+  maturitySize: yupFilterSchemas.enumerator(
+    i18n('entities.pet.fields.maturitySize'),
+  ),
+  furLength: yupFilterSchemas.enumerator(
+    i18n('entities.pet.fields.furLength'),
+  ),
+  hasBeenVaccinated: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.hasBeenVaccinated'),
+  ),
+  hasBeenDewormed: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.hasBeenDewormed'),
+  ),
+  hasBeenSterilizedSpayed: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.hasBeenSterilizedSpayed'),
+  ),
+  health: yupFilterSchemas.enumerator(
+    i18n('entities.pet.fields.health'),
+  ),
+  isLost: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.isLost'),
+  ),
+  isLookingForMatch: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.isLookingForMatch'),
+  ),
+  isGuideDog: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.isGuideDog'),
+  ),
+  numberOfLikesRange: yupFilterSchemas.integerRange(
+    i18n('entities.pet.fields.numberOfLikesRange'),
   ),
 });
 
@@ -59,10 +98,23 @@ const emptyValues = {
   birthdateRange: [],
   ageRange: [],
   color: null,
+  secondColor: null,
+  thirdColor: null,
   sex: null,
   breed: null,
+  secondBreedMixed: null,
   type: null,
   customerId: null,
+  maturitySize: null,
+  furLength: null,
+  hasBeenVaccinated: null,
+  hasBeenDewormed: null,
+  hasBeenSterilizedSpayed: null,
+  health: null,
+  isLost: null,
+  isLookingForMatch: null,
+  isGuideDog: null,
+  numberOfLikesRange: [],
 }
 
 const previewRenders = {
@@ -86,12 +138,24 @@ const previewRenders = {
     label: i18n('entities.pet.fields.color'),
     render: filterRenders.enumerator('entities.pet.enumerators.color',),
   },
+  secondColor: {
+    label: i18n('entities.pet.fields.secondColor'),
+    render: filterRenders.enumerator('entities.pet.enumerators.secondColor',),
+  },
+  thirdColor: {
+    label: i18n('entities.pet.fields.thirdColor'),
+    render: filterRenders.enumerator('entities.pet.enumerators.thirdColor',),
+  },
   sex: {
     label: i18n('entities.pet.fields.sex'),
     render: filterRenders.enumerator('entities.pet.enumerators.sex',),
   },
   breed: {
       label: i18n('entities.pet.fields.breed'),
+      render: filterRenders.relationToOne(),
+    },
+  secondBreedMixed: {
+      label: i18n('entities.pet.fields.secondBreedMixed'),
       render: filterRenders.relationToOne(),
     },
   type: {
@@ -102,6 +166,46 @@ const previewRenders = {
       label: i18n('entities.pet.fields.customerId'),
       render: filterRenders.relationToOne(),
     },
+  maturitySize: {
+    label: i18n('entities.pet.fields.maturitySize'),
+    render: filterRenders.enumerator('entities.pet.enumerators.maturitySize',),
+  },
+  furLength: {
+    label: i18n('entities.pet.fields.furLength'),
+    render: filterRenders.enumerator('entities.pet.enumerators.furLength',),
+  },
+  hasBeenVaccinated: {
+    label: i18n('entities.pet.fields.hasBeenVaccinated'),
+    render: filterRenders.boolean(),
+  },
+  hasBeenDewormed: {
+    label: i18n('entities.pet.fields.hasBeenDewormed'),
+    render: filterRenders.boolean(),
+  },
+  hasBeenSterilizedSpayed: {
+    label: i18n('entities.pet.fields.hasBeenSterilizedSpayed'),
+    render: filterRenders.boolean(),
+  },
+  health: {
+    label: i18n('entities.pet.fields.health'),
+    render: filterRenders.enumerator('entities.pet.enumerators.health',),
+  },
+  isLost: {
+    label: i18n('entities.pet.fields.isLost'),
+    render: filterRenders.boolean(),
+  },
+  isLookingForMatch: {
+    label: i18n('entities.pet.fields.isLookingForMatch'),
+    render: filterRenders.boolean(),
+  },
+  isGuideDog: {
+    label: i18n('entities.pet.fields.isGuideDog'),
+    render: filterRenders.boolean(),
+  },
+  numberOfLikesRange: {
+    label: i18n('entities.pet.fields.numberOfLikesRange'),
+    render: filterRenders.range(),
+  },
 }
 
 function PetListFilter(props) {
@@ -190,6 +294,30 @@ function PetListFilter(props) {
                   )}
                 />
               <SelectFormItem
+                  name="secondColor"
+                  label={i18n('entities.pet.fields.secondColor')}
+                  options={petEnumerators.secondColor.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.pet.enumerators.secondColor.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="thirdColor"
+                  label={i18n('entities.pet.fields.thirdColor')}
+                  options={petEnumerators.thirdColor.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.pet.enumerators.thirdColor.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
                   name="sex"
                   label={i18n('entities.pet.fields.sex')}
                   options={petEnumerators.sex.map(
@@ -205,13 +333,141 @@ function PetListFilter(props) {
                 name="breed"
                 label={i18n('entities.pet.fields.breed')}        
               />
-              <PetTypesAutocompleteFormItem  
+              <BreedAutocompleteFormItem
+                name="secondBreedMixed"
+                label={i18n('entities.pet.fields.secondBreedMixed')}
+              />
+              <PetTypesAutocompleteFormItem
                 name="type"
                 label={i18n('entities.pet.fields.type')}        
               />
               <CustomerAutocompleteFormItem
                 name="customerId"
                 label={i18n('entities.pet.fields.customerId')}
+              />
+              <SelectFormItem
+                  name="maturitySize"
+                  label={i18n('entities.pet.fields.maturitySize')}
+                  options={petEnumerators.maturitySize.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.pet.enumerators.maturitySize.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="furLength"
+                  label={i18n('entities.pet.fields.furLength')}
+                  options={petEnumerators.furLength.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.pet.enumerators.furLength.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                name="hasBeenVaccinated"
+                label={i18n('entities.pet.fields.hasBeenVaccinated')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                name="hasBeenDewormed"
+                label={i18n('entities.pet.fields.hasBeenDewormed')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                name="hasBeenSterilizedSpayed"
+                label={i18n('entities.pet.fields.hasBeenSterilizedSpayed')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                  name="health"
+                  label={i18n('entities.pet.fields.health')}
+                  options={petEnumerators.health.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.pet.enumerators.health.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                name="isLost"
+                label={i18n('entities.pet.fields.isLost')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                name="isLookingForMatch"
+                label={i18n('entities.pet.fields.isLookingForMatch')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                name="isGuideDog"
+                label={i18n('entities.pet.fields.isGuideDog')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <InputNumberRangeFormItem
+                name="numberOfLikesRange"
+                label={i18n('entities.pet.fields.numberOfLikesRange')}
               />
             </div>
 

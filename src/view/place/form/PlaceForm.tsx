@@ -13,6 +13,9 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import PlaceTypeAutocompleteFormItem from 'src/view/placeType/autocomplete/PlaceTypeAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
+import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -28,6 +31,14 @@ const schema = yup.object().shape({
   ),
   businessId: yupFormSchemas.relationToOne(
     i18n('entities.place.fields.businessId'),
+    {},
+  ),
+  services: yupFormSchemas.relationToMany(
+    i18n('entities.place.fields.services'),
+    {},
+  ),
+  categories: yupFormSchemas.relationToMany(
+    i18n('entities.place.fields.categories'),
     {},
   ),
   latitude: yupFormSchemas.decimal(
@@ -50,6 +61,18 @@ const schema = yup.object().shape({
     i18n('entities.place.fields.addressZipCode'),
     {},
   ),
+  addressCity: yupFormSchemas.string(
+    i18n('entities.place.fields.addressCity'),
+    {},
+  ),
+  addressState: yupFormSchemas.string(
+    i18n('entities.place.fields.addressState'),
+    {},
+  ),
+  addressCountry: yupFormSchemas.relationToOne(
+    i18n('entities.place.fields.addressCountry'),
+    {},
+  ),
   openTime: yupFormSchemas.string(
     i18n('entities.place.fields.openTime'),
     {},
@@ -60,6 +83,14 @@ const schema = yup.object().shape({
   ),
   is24hours: yupFormSchemas.boolean(
     i18n('entities.place.fields.is24hours'),
+    {},
+  ),
+  stars: yupFormSchemas.decimal(
+    i18n('entities.place.fields.stars'),
+    {},
+  ),
+  isOpen: yupFormSchemas.boolean(
+    i18n('entities.place.fields.isOpen'),
     {},
   ),
 });
@@ -74,14 +105,21 @@ function PlaceForm(props) {
       name: record.name,
       placeType: record.placeType,
       businessId: record.businessId,
+      services: record.services || [],
+      categories: record.categories || [],
       latitude: record.latitude,
       longitude: record.longitude,
       address: record.address,
       addressNumber: record.addressNumber,
       addressZipCode: record.addressZipCode,
+      addressCity: record.addressCity,
+      addressState: record.addressState,
+      addressCountry: record.addressCountry,
       openTime: record.openTime,
       closeTime: record.closeTime,
       is24hours: record.is24hours,
+      stars: record.stars,
+      isOpen: record.isOpen,
     };
   });
 
@@ -129,6 +167,24 @@ function PlaceForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessServicesTypesAutocompleteFormItem
+            name="services"
+            label={i18n('entities.place.fields.services')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessCategoryAutocompleteFormItem
+            name="categories"
+            label={i18n('entities.place.fields.categories')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
             name="latitude"
             label={i18n('entities.place.fields.latitude')}  
@@ -165,6 +221,28 @@ function PlaceForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
+            name="addressCity"
+            label={i18n('entities.place.fields.addressCity')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="addressState"
+            label={i18n('entities.place.fields.addressState')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CountryAutocompleteFormItem
+            name="addressCountry"
+            label={i18n('entities.place.fields.addressCountry')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
             name="openTime"
             label={i18n('entities.place.fields.openTime')}
             required={false}
@@ -181,6 +259,19 @@ function PlaceForm(props) {
           <SwitchFormItem
             name="is24hours"
             label={i18n('entities.place.fields.is24hours')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="stars"
+            label={i18n('entities.place.fields.stars')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isOpen"
+            label={i18n('entities.place.fields.isOpen')}
           />
         </div>
 

@@ -21,6 +21,11 @@ export default [
     label: i18n('entities.messages.fields.message'),
   },
   {
+    name: 'businessId',
+    label: i18n('entities.messages.fields.businessId'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.messages.fields.createdAt'),
     render: exporterRenders.datetime(),

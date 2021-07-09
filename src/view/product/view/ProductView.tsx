@@ -38,6 +38,20 @@ function ProductView(props) {
         label={i18n('entities.product.fields.businessId')}
         value={record.businessId}
       />
+
+      <TextViewItem
+        label={i18n('entities.product.fields.acceptPointsToShop')}
+        value={
+          record.acceptPointsToShop
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.product.fields.pointsPrice')}
+        value={record.pointsPrice}
+      />
     </div>
   );
 }

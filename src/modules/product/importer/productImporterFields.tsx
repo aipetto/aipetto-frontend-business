@@ -55,4 +55,20 @@ export default [
       {},
     ),
   },
+  {
+    name: 'acceptPointsToShop',
+    label: i18n('entities.product.fields.acceptPointsToShop'),
+    schema: schemas.boolean(
+      i18n('entities.product.fields.acceptPointsToShop'),
+      {},
+    ),
+  },
+  {
+    name: 'pointsPrice',
+    label: i18n('entities.product.fields.pointsPrice'),
+    schema: schemas.integer(
+      i18n('entities.product.fields.pointsPrice'),
+      {},
+    ),
+  },
 ];

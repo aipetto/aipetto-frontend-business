@@ -21,6 +21,14 @@ export default [
     ),
   },
   {
+    name: 'profileImage',
+    label: i18n('entities.pet.fields.profileImage'),
+    schema: schemas.images(
+      i18n('entities.pet.fields.profileImage'),
+      {},
+    ),
+  },
+  {
     name: 'birthdate',
     label: i18n('entities.pet.fields.birthdate'),
     schema: schemas.date(
@@ -48,11 +56,23 @@ export default [
     ),
   },
   {
-    name: 'profileImage',
-    label: i18n('entities.pet.fields.profileImage'),
-    schema: schemas.images(
-      i18n('entities.pet.fields.profileImage'),
-      {},
+    name: 'secondColor',
+    label: i18n('entities.pet.fields.secondColor'),
+    schema: schemas.enumerator(
+      i18n('entities.pet.fields.secondColor'),
+      {
+        "options": petEnumerators.secondColor
+      },
+    ),
+  },
+  {
+    name: 'thirdColor',
+    label: i18n('entities.pet.fields.thirdColor'),
+    schema: schemas.enumerator(
+      i18n('entities.pet.fields.thirdColor'),
+      {
+        "options": petEnumerators.thirdColor
+      },
     ),
   },
   {
@@ -70,6 +90,14 @@ export default [
     label: i18n('entities.pet.fields.breed'),
     schema: schemas.relationToOne(
       i18n('entities.pet.fields.breed'),
+      {},
+    ),
+  },
+  {
+    name: 'secondBreedMixed',
+    label: i18n('entities.pet.fields.secondBreedMixed'),
+    schema: schemas.relationToOne(
+      i18n('entities.pet.fields.secondBreedMixed'),
       {},
     ),
   },
@@ -94,6 +122,156 @@ export default [
     label: i18n('entities.pet.fields.petOwners'),
     schema: schemas.relationToMany(
       i18n('entities.pet.fields.petOwners'),
+      {},
+    ),
+  },
+  {
+    name: 'photos',
+    label: i18n('entities.pet.fields.photos'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.photos'),
+      {},
+    ),
+  },
+  {
+    name: 'vaccines',
+    label: i18n('entities.pet.fields.vaccines'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.vaccines'),
+      {},
+    ),
+  },
+  {
+    name: 'maturitySize',
+    label: i18n('entities.pet.fields.maturitySize'),
+    schema: schemas.enumerator(
+      i18n('entities.pet.fields.maturitySize'),
+      {
+        "options": petEnumerators.maturitySize
+      },
+    ),
+  },
+  {
+    name: 'furLength',
+    label: i18n('entities.pet.fields.furLength'),
+    schema: schemas.enumerator(
+      i18n('entities.pet.fields.furLength'),
+      {
+        "options": petEnumerators.furLength
+      },
+    ),
+  },
+  {
+    name: 'hasBeenVaccinated',
+    label: i18n('entities.pet.fields.hasBeenVaccinated'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.hasBeenVaccinated'),
+      {},
+    ),
+  },
+  {
+    name: 'hasBeenDewormed',
+    label: i18n('entities.pet.fields.hasBeenDewormed'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.hasBeenDewormed'),
+      {},
+    ),
+  },
+  {
+    name: 'hasBeenSterilizedSpayed',
+    label: i18n('entities.pet.fields.hasBeenSterilizedSpayed'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.hasBeenSterilizedSpayed'),
+      {},
+    ),
+  },
+  {
+    name: 'health',
+    label: i18n('entities.pet.fields.health'),
+    schema: schemas.enumerator(
+      i18n('entities.pet.fields.health'),
+      {
+        "options": petEnumerators.health
+      },
+    ),
+  },
+  {
+    name: 'isLost',
+    label: i18n('entities.pet.fields.isLost'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.isLost'),
+      {},
+    ),
+  },
+  {
+    name: 'biography',
+    label: i18n('entities.pet.fields.biography'),
+    schema: schemas.string(
+      i18n('entities.pet.fields.biography'),
+      {},
+    ),
+  },
+  {
+    name: 'usersAuthorized',
+    label: i18n('entities.pet.fields.usersAuthorized'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.usersAuthorized'),
+      {},
+    ),
+  },
+  {
+    name: 'businessAuthorized',
+    label: i18n('entities.pet.fields.businessAuthorized'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.businessAuthorized'),
+      {},
+    ),
+  },
+  {
+    name: 'isLookingForMatch',
+    label: i18n('entities.pet.fields.isLookingForMatch'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.isLookingForMatch'),
+      {},
+    ),
+  },
+  {
+    name: 'diseases',
+    label: i18n('entities.pet.fields.diseases'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.diseases'),
+      {},
+    ),
+  },
+  {
+    name: 'isGuideDog',
+    label: i18n('entities.pet.fields.isGuideDog'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.isGuideDog'),
+      {},
+    ),
+  },
+  {
+    name: 'numberOfLikes',
+    label: i18n('entities.pet.fields.numberOfLikes'),
+    schema: schemas.integer(
+      i18n('entities.pet.fields.numberOfLikes'),
+      {},
+    ),
+  },
+  {
+    name: 'matches',
+    label: i18n('entities.pet.fields.matches'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.matches'),
+      {},
+    ),
+  },
+  {
+    name: 'petFriends',
+    label: i18n('entities.pet.fields.petFriends'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.petFriends'),
       {},
     ),
   },
