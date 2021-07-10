@@ -22,6 +22,16 @@ function VaccineTypesView(props) {
         label={i18n('entities.vaccineTypes.fields.country')}
         value={record.country}
       />
+
+      <TextViewItem
+        label={i18n('entities.vaccineTypes.fields.language')}
+        value={
+          record.language &&
+          i18n(
+            `entities.vaccineTypes.enumerators.language.${record.language}`,
+          )
+        }
+      />
     </div>
   );
 }

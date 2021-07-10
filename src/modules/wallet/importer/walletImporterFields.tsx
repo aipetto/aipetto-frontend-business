@@ -22,4 +22,12 @@ export default [
       },
     ),
   },
+  {
+    name: 'user',
+    label: i18n('entities.wallet.fields.user'),
+    schema: schemas.relationToOne(
+      i18n('entities.wallet.fields.user'),
+      {},
+    ),
+  },
 ];

@@ -279,6 +279,9 @@ const ptBR = {
           'unitPrice': 'Unit Price',
           'photos': 'Photos',
           'businessId': 'BusinessId',
+          'acceptPointsToShop': 'AcceptPointsToShop',
+          'pointsPriceRange': 'PointsPrice',
+          'pointsPrice': 'PointsPrice',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -393,17 +396,39 @@ const ptBR = {
           id: 'Id',
           'name': 'Name',
           'nickname': 'Nickname',
+          'profileImage': 'ProfileImage',
           'birthdateRange': 'Birthdate',
           'birthdate': 'Birthdate',
           'ageRange': 'Age',
           'age': 'Age',
           'color': 'Color',
-          'profileImage': 'ProfileImage',
+          'secondColor': 'SecondColor',
+          'thirdColor': 'ThirdColor',
           'sex': 'Sex',
           'breed': 'Breed',
+          'secondBreedMixed': 'SecondBreedMixed',
           'type': 'Type',
           'customerId': 'CustomerId',
           'petOwners': 'PetOwners',
+          'photos': 'Photos',
+          'vaccines': 'Vaccines',
+          'maturitySize': 'MaturitySize',
+          'furLength': 'FurLength',
+          'hasBeenVaccinated': 'HasBeenVaccinated',
+          'hasBeenDewormed': 'HasBeenDewormed',
+          'hasBeenSterilizedSpayed': 'HasBeenSterilizedSpayed',
+          'health': 'Health',
+          'isLost': 'IsLost',
+          'biography': 'Biography',
+          'usersAuthorized': 'UsersAuthorized',
+          'businessAuthorized': 'BusinessAuthorized',
+          'isLookingForMatch': 'IsLookingForMatch',
+          'diseases': 'Diseases',
+          'isGuideDog': 'IsGuideDog',
+          'numberOfLikesRange': 'NumberOfLikes',
+          'numberOfLikes': 'NumberOfLikes',
+          'matches': 'Matches',
+          'petFriends': 'PetFriends',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -413,20 +438,67 @@ const ptBR = {
             'black': 'Black',
             'white': 'White',
             'brown': 'Brown',
-            'black_white': 'Black_white',
-            'brown_white': 'Brown_white',
             'gray': 'Gray',
+            'chocolate': 'Chocolate',
+            'gold': 'Gold',
+            'blue': 'Blue',
+            'cream': 'Cream',
+            'yellow': 'Yellow',
+          },
+          'secondColor': {
+            'black': 'Black',
+            'white': 'White',
+            'brown': 'Brown',
+            'gray': 'Gray',
+            'chocolate': 'Chocolate',
+            'gold': 'Gold',
+            'blue': 'Blue',
+            'cream': 'Cream',
+            'yellow': 'Yellow',
+          },
+          'thirdColor': {
+            'black': 'Black',
+            'white': 'White',
+            'brown': 'Brown',
+            'gray': 'Gray',
+            'chocolate': 'Chocolate',
+            'gold': 'Gold',
+            'blue': 'Blue',
+            'cream': 'Cream',
+            'yellow': 'Yellow',
           },
           'sex': {
             'male': 'Male',
             'female': 'Female',
           },
+          'maturitySize': {
+            'small': 'Small',
+            'medium': 'Medium',
+            'large': 'Large',
+            'extra_large': 'Extra_large',
+            'not_specified': 'Not_specified',
+          },
+          'furLength': {
+            'short': 'Short',
+            'medium': 'Medium',
+            'long': 'Long',
+            'not_specified': 'Not_specified',
+          },
+          'health': {
+            'healthy': 'Healthy',
+            'minor_injury': 'Minor_injury',
+            'serious_injury': 'Serious_injury',
+            'not_specified': 'Not_specified',
+          },
         },
         placeholders: {
-
+          'age': 'Age in months',
         },
         hints: {
-
+          'age': 'Age in months',
+          'usersAuthorized': 'Users that can access this pet profile',
+          'businessAuthorized': 'Business that are authorized to access this pet profile',
+          'isLookingForMatch': 'Is your pet looking for a match?',
         },
         new: {
           title: 'Novo Pet',
@@ -709,6 +781,8 @@ const ptBR = {
           'name': 'Name',
           'placeType': 'PlaceType',
           'businessId': 'BusinessId',
+          'services': 'Services',
+          'categories': 'Categories',
           'latitudeRange': 'Latitude',
           'latitude': 'Latitude',
           'longitudeRange': 'Longitude',
@@ -716,9 +790,15 @@ const ptBR = {
           'address': 'Address',
           'addressNumber': 'AddressNumber',
           'addressZipCode': 'AddressZipCode',
+          'addressCity': 'AddressCity',
+          'addressState': 'AddressState',
+          'addressCountry': 'AddressCountry',
           'openTime': 'OpenTime',
           'closeTime': 'CloseTime',
           'is24hours': 'Is24hours',
+          'starsRange': 'Stars',
+          'stars': 'Stars',
+          'isOpen': 'IsOpen',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -775,6 +855,7 @@ const ptBR = {
           'name': 'Name',
           'category': 'Category',
           'language': 'Language',
+          'serviceImage': 'ServiceImage',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -1236,6 +1317,7 @@ const ptBR = {
           'from': 'From',
           'to': 'To',
           'message': 'Message',
+          'businessId': 'BusinessId',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -1626,6 +1708,8 @@ const ptBR = {
           id: 'Id',
           'name': 'Name',
           'language': 'Language',
+          'categoryImage': 'CategoryImage',
+          'pageUrl': 'PageUrl',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -1748,12 +1832,17 @@ const ptBR = {
           id: 'Id',
           'name': 'Name',
           'country': 'Country',
+          'language': 'Language',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
         },
         enumerators: {
-
+          'language': {
+            'en': 'En',
+            'es': 'Es',
+            'pt': 'Pt',
+          },
         },
         placeholders: {
 
@@ -1864,6 +1953,8 @@ const ptBR = {
           id: 'Id',
           'name': 'Name',
           'language': 'Language',
+          'placeTypeImage': 'PlaceTypeImage',
+          'isPublicPlace': 'IsPublicPlace',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -1922,6 +2013,7 @@ const ptBR = {
           'numberOfPets': 'NumberOfPets',
           'interests': 'Interests',
           'extraInfo': 'ExtraInfo',
+          'allowReceiveNotifications': 'AllowReceiveNotifications',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -2010,6 +2102,524 @@ const ptBR = {
         importer: {
           title: 'Importar NewBusinessSurveys',
           fileName: 'newBusinessSurvey_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    petPhotos: {
+        name: 'PetPhotos',
+        label: 'PetPhotos',
+        menu: 'PetPhotos',
+        exporterFileName: 'PetPhotos_exportados',
+        list: {
+          menu: 'PetPhotos',
+          title: 'PetPhotos',
+        },
+        create: {
+          success: 'PetPhotos salvo com sucesso',
+        },
+        update: {
+          success: 'PetPhotos salvo com sucesso',
+        },
+        destroy: {
+          success: 'PetPhotos deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'PetPhotos(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar PetPhotos',
+        },
+        fields: {
+          id: 'Id',
+          'description': 'Description',
+          'petId': 'PetId',
+          'photo': 'Photo',
+          'latitude': 'Latitude',
+          'longitude': 'Longitude',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+          'description': 'What is your pet doing in the photo',
+        },
+        new: {
+          title: 'Novo PetPhotos',
+        },
+        view: {
+          title: 'Visualizar PetPhotos',
+        },
+        importer: {
+          title: 'Importar PetPhotos',
+          fileName: 'petPhotos_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    petDiseases: {
+        name: 'PetDiseases',
+        label: 'PetDiseases',
+        menu: 'PetDiseases',
+        exporterFileName: 'PetDiseases_exportados',
+        list: {
+          menu: 'PetDiseases',
+          title: 'PetDiseases',
+        },
+        create: {
+          success: 'PetDiseases salvo com sucesso',
+        },
+        update: {
+          success: 'PetDiseases salvo com sucesso',
+        },
+        destroy: {
+          success: 'PetDiseases deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'PetDiseases(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar PetDiseases',
+        },
+        fields: {
+          id: 'Id',
+          'diseaseCommonName': 'DiseaseCommonName',
+          'diseaseScientificNames': 'DiseaseScientificNames',
+          'isHumanContagious': 'IsHumanContagious',
+          'isPetContagious': 'IsPetContagious',
+          'language': 'Language',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+          'language': {
+            'en': 'En',
+            'es': 'Es',
+            'pt': 'Pt',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo PetDiseases',
+        },
+        view: {
+          title: 'Visualizar PetDiseases',
+        },
+        importer: {
+          title: 'Importar PetDiseases',
+          fileName: 'petDiseases_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    businessServicesPrices: {
+        name: 'BusinessServicesPrices',
+        label: 'BusinessServicesPrices',
+        menu: 'BusinessServicesPrices',
+        exporterFileName: 'BusinessServicesPrices_exportados',
+        list: {
+          menu: 'BusinessServicesPrices',
+          title: 'BusinessServicesPrices',
+        },
+        create: {
+          success: 'BusinessServicesPrices salvo com sucesso',
+        },
+        update: {
+          success: 'BusinessServicesPrices salvo com sucesso',
+        },
+        destroy: {
+          success: 'BusinessServicesPrices deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'BusinessServicesPrices(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar BusinessServicesPrices',
+        },
+        fields: {
+          id: 'Id',
+          'service': 'Service',
+          'businessId': 'BusinessId',
+          'servicePriceRange': 'ServicePrice',
+          'servicePrice': 'ServicePrice',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo BusinessServicesPrices',
+        },
+        view: {
+          title: 'Visualizar BusinessServicesPrices',
+        },
+        importer: {
+          title: 'Importar BusinessServicesPrices',
+          fileName: 'businessServicesPrices_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    posts: {
+        name: 'Posts',
+        label: 'Posts',
+        menu: 'Posts',
+        exporterFileName: 'Posts_exportados',
+        list: {
+          menu: 'Posts',
+          title: 'Posts',
+        },
+        create: {
+          success: 'Posts salvo com sucesso',
+        },
+        update: {
+          success: 'Posts salvo com sucesso',
+        },
+        destroy: {
+          success: 'Posts deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'Posts(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar Posts',
+        },
+        fields: {
+          id: 'Id',
+          'title': 'Title',
+          'description': 'Description',
+          'postHeaderImage': 'PostHeaderImage',
+          'postDocRelated': 'PostDocRelated',
+          'postUrl': 'PostUrl',
+          'authors': 'Authors',
+          'postCategory': 'PostCategory',
+          'comments': 'Comments',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo Posts',
+        },
+        view: {
+          title: 'Visualizar Posts',
+        },
+        importer: {
+          title: 'Importar Posts',
+          fileName: 'posts_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    postCategories: {
+        name: 'PostCategories',
+        label: 'PostCategories',
+        menu: 'PostCategories',
+        exporterFileName: 'PostCategories_exportados',
+        list: {
+          menu: 'PostCategories',
+          title: 'PostCategories',
+        },
+        create: {
+          success: 'PostCategories salvo com sucesso',
+        },
+        update: {
+          success: 'PostCategories salvo com sucesso',
+        },
+        destroy: {
+          success: 'PostCategories deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'PostCategories(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar PostCategories',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'description': 'Description',
+          'categoryUrl': 'CategoryUrl',
+          'language': 'Language',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo PostCategories',
+        },
+        view: {
+          title: 'Visualizar PostCategories',
+        },
+        importer: {
+          title: 'Importar PostCategories',
+          fileName: 'postCategories_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    postComments: {
+        name: 'PostComments',
+        label: 'PostComments',
+        menu: 'PostComments',
+        exporterFileName: 'PostComments_exportados',
+        list: {
+          menu: 'PostComments',
+          title: 'PostComments',
+        },
+        create: {
+          success: 'PostComments salvo com sucesso',
+        },
+        update: {
+          success: 'PostComments salvo com sucesso',
+        },
+        destroy: {
+          success: 'PostComments deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'PostComments(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar PostComments',
+        },
+        fields: {
+          id: 'Id',
+          'comment': 'Comment',
+          'postId': 'PostId',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo PostComments',
+        },
+        view: {
+          title: 'Visualizar PostComments',
+        },
+        importer: {
+          title: 'Importar PostComments',
+          fileName: 'postComments_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    pointsChallenges: {
+        name: 'PointsChallenges',
+        label: 'PointsChallenges',
+        menu: 'PointsChallenges',
+        exporterFileName: 'PointsChallenges_exportados',
+        list: {
+          menu: 'PointsChallenges',
+          title: 'PointsChallenges',
+        },
+        create: {
+          success: 'PointsChallenges salvo com sucesso',
+        },
+        update: {
+          success: 'PointsChallenges salvo com sucesso',
+        },
+        destroy: {
+          success: 'PointsChallenges deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'PointsChallenges(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar PointsChallenges',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'pointsRange': 'Points',
+          'points': 'Points',
+          'country': 'Country',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+          'points': 'How many points this challenge give the user',
+        },
+        new: {
+          title: 'Novo PointsChallenges',
+        },
+        view: {
+          title: 'Visualizar PointsChallenges',
+        },
+        importer: {
+          title: 'Importar PointsChallenges',
+          fileName: 'pointsChallenges_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    challengesCategories: {
+        name: 'ChallengesCategories',
+        label: 'ChallengesCategories',
+        menu: 'ChallengesCategories',
+        exporterFileName: 'ChallengesCategories_exportados',
+        list: {
+          menu: 'ChallengesCategories',
+          title: 'ChallengesCategories',
+        },
+        create: {
+          success: 'ChallengesCategories salvo com sucesso',
+        },
+        update: {
+          success: 'ChallengesCategories salvo com sucesso',
+        },
+        destroy: {
+          success: 'ChallengesCategories deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'ChallengesCategories(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar ChallengesCategories',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'language': 'Language',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo ChallengesCategories',
+        },
+        view: {
+          title: 'Visualizar ChallengesCategories',
+        },
+        importer: {
+          title: 'Importar ChallengesCategories',
+          fileName: 'challengesCategories_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
+
+    productCategory: {
+        name: 'ProductCategory',
+        label: 'ProductCategories',
+        menu: 'ProductCategories',
+        exporterFileName: 'ProductCategory_exportados',
+        list: {
+          menu: 'ProductCategories',
+          title: 'ProductCategories',
+        },
+        create: {
+          success: 'ProductCategory salvo com sucesso',
+        },
+        update: {
+          success: 'ProductCategory salvo com sucesso',
+        },
+        destroy: {
+          success: 'ProductCategory deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'ProductCategory(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar ProductCategory',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'description': 'Description',
+          'language': 'Language',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo ProductCategory',
+        },
+        view: {
+          title: 'Visualizar ProductCategory',
+        },
+        importer: {
+          title: 'Importar ProductCategories',
+          fileName: 'productCategory_template_importacao',
           hint:
             'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
         },

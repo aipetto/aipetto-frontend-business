@@ -17,7 +17,7 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
-
+import BusinessListItem from 'src/view/business/list/BusinessListItem';
 
 function DiscountsListTable(props) {
   const [
@@ -110,6 +110,11 @@ function DiscountsListTable(props) {
                 )}
               </TableColumnHeader>
                 <TableColumnHeader
+                  label={i18n(
+                    'entities.discounts.fields.businessID',
+                  )}
+                />
+                <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
@@ -175,6 +180,9 @@ function DiscountsListTable(props) {
                       }
                     />
                   </th>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <BusinessListItem value={row.businessID} />
+                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.codeName}</td>
                   <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.discountPercentage}

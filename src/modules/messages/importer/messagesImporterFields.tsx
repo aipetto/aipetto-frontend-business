@@ -32,4 +32,12 @@ export default [
       },
     ),
   },
+  {
+    name: 'businessId',
+    label: i18n('entities.messages.fields.businessId'),
+    schema: schemas.relationToOne(
+      i18n('entities.messages.fields.businessId'),
+      {},
+    ),
+  },
 ];

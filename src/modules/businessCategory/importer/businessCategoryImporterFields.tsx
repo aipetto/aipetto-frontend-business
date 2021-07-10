@@ -20,4 +20,20 @@ export default [
       {},
     ),
   },
+  {
+    name: 'categoryImage',
+    label: i18n('entities.businessCategory.fields.categoryImage'),
+    schema: schemas.images(
+      i18n('entities.businessCategory.fields.categoryImage'),
+      {},
+    ),
+  },
+  {
+    name: 'pageUrl',
+    label: i18n('entities.businessCategory.fields.pageUrl'),
+    schema: schemas.string(
+      i18n('entities.businessCategory.fields.pageUrl'),
+      {},
+    ),
+  },
 ];

@@ -9,6 +9,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSave} from "@fortawesome/free-regular-svg-icons";
 import { motion } from 'framer-motion';
 import ReactGoogleMaps from "../../shared/maps/ReactGoogleMaps";
+import BusinessListFilter from "../../business/list/BusinessListFilter";
+import SearchBusinessServicesPage from "../../search/SearchBusinessServicesPage";
 
 function ReservationInitialPage(props){
 
@@ -30,10 +32,10 @@ function ReservationInitialPage(props){
     }
 
     return (
-        <div>
-            <ProgressBar />
-            <ReactGoogleMaps />
-        </div>
+        <>
+           <ProgressBar />
+           <SearchBusinessServicesPage />
+        </>
     );
 };
 

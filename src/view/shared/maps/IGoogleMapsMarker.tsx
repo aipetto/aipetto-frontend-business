@@ -1,5 +1,5 @@
 export interface IGoogleMapsMarker {
     lat: number,
     lng: number,
-    time: Date,
+    id: String,
 }

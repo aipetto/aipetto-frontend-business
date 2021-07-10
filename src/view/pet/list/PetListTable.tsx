@@ -17,10 +17,9 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
-import ImagesListView from 'src/view/shared/table/ImagesListView';
 import BreedListItem from 'src/view/breed/list/BreedListItem';
 import PetTypesListItem from 'src/view/petTypes/list/PetTypesListItem';
-import CustomerListItem from 'src/view/customer/list/CustomerListItem';
+import PetDiseasesListItem from 'src/view/petDiseases/list/PetDiseasesListItem';
 
 function PetListTable(props) {
   const [
@@ -122,57 +121,6 @@ function PetListTable(props) {
                   )}
                 />
                 <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'nickname'}
-                  label={i18n(
-                    'entities.pet.fields.nickname',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'birthdate'}
-                  label={i18n(
-                    'entities.pet.fields.birthdate',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'age'}
-                  label={i18n(
-                    'entities.pet.fields.age',
-                  )}
-                  align="right"
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'color'}
-                  label={i18n(
-                    'entities.pet.fields.color',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.pet.fields.profileImage',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'sex'}
-                  label={i18n(
-                    'entities.pet.fields.sex',
-                  )}
-                />
-                <TableColumnHeader
                   label={i18n(
                     'entities.pet.fields.breed',
                   )}
@@ -184,7 +132,7 @@ function PetListTable(props) {
                 />
                 <TableColumnHeader
                   label={i18n(
-                    'entities.pet.fields.customerId',
+                    'entities.pet.fields.diseases',
                   )}
                 />
               <TableColumnHeader />
@@ -226,26 +174,6 @@ function PetListTable(props) {
                     />
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.nickname}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.birthdate}</td>
-                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.age}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.color
-                      ? i18n(
-                          `entities.pet.enumerators.color.${row.color}`,
-                        )
-                      : null}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <ImagesListView value={row.profileImage} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.sex
-                      ? i18n(
-                          `entities.pet.enumerators.sex.${row.sex}`,
-                        )
-                      : null}
-                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BreedListItem value={row.breed} />
                   </td>
@@ -253,7 +181,7 @@ function PetListTable(props) {
                     <PetTypesListItem value={row.type} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <CustomerListItem value={row.customerId} />
+                    <PetDiseasesListItem value={row.diseases} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

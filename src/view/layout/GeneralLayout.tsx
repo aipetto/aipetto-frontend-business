@@ -4,6 +4,7 @@ import Menu from 'src/view/layout/Menu';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
 import { useRouteMatch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import RightSidebarMenu from "./RightSidebarMenu";
 
 function GeneralLayout(props) {
   const match = useRouteMatch();
@@ -22,6 +23,7 @@ function GeneralLayout(props) {
         <Header />
         <div className="">{props.children}</div>
       </div>
+      <RightSidebarMenu url={match.url} />
     </div>
   );
 }

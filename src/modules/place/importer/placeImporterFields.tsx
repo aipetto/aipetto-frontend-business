@@ -29,6 +29,22 @@ export default [
     ),
   },
   {
+    name: 'services',
+    label: i18n('entities.place.fields.services'),
+    schema: schemas.relationToMany(
+      i18n('entities.place.fields.services'),
+      {},
+    ),
+  },
+  {
+    name: 'categories',
+    label: i18n('entities.place.fields.categories'),
+    schema: schemas.relationToMany(
+      i18n('entities.place.fields.categories'),
+      {},
+    ),
+  },
+  {
     name: 'latitude',
     label: i18n('entities.place.fields.latitude'),
     schema: schemas.decimal(
@@ -69,6 +85,30 @@ export default [
     ),
   },
   {
+    name: 'addressCity',
+    label: i18n('entities.place.fields.addressCity'),
+    schema: schemas.string(
+      i18n('entities.place.fields.addressCity'),
+      {},
+    ),
+  },
+  {
+    name: 'addressState',
+    label: i18n('entities.place.fields.addressState'),
+    schema: schemas.string(
+      i18n('entities.place.fields.addressState'),
+      {},
+    ),
+  },
+  {
+    name: 'addressCountry',
+    label: i18n('entities.place.fields.addressCountry'),
+    schema: schemas.relationToOne(
+      i18n('entities.place.fields.addressCountry'),
+      {},
+    ),
+  },
+  {
     name: 'openTime',
     label: i18n('entities.place.fields.openTime'),
     schema: schemas.string(
@@ -89,6 +129,22 @@ export default [
     label: i18n('entities.place.fields.is24hours'),
     schema: schemas.boolean(
       i18n('entities.place.fields.is24hours'),
+      {},
+    ),
+  },
+  {
+    name: 'stars',
+    label: i18n('entities.place.fields.stars'),
+    schema: schemas.decimal(
+      i18n('entities.place.fields.stars'),
+      {},
+    ),
+  },
+  {
+    name: 'isOpen',
+    label: i18n('entities.place.fields.isOpen'),
+    schema: schemas.boolean(
+      i18n('entities.place.fields.isOpen'),
       {},
     ),
   },

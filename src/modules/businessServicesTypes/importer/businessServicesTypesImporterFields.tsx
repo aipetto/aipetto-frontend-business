@@ -26,4 +26,12 @@ export default [
       {},
     ),
   },
+  {
+    name: 'serviceImage',
+    label: i18n('entities.businessServicesTypes.fields.serviceImage'),
+    schema: schemas.images(
+      i18n('entities.businessServicesTypes.fields.serviceImage'),
+      {},
+    ),
+  },
 ];

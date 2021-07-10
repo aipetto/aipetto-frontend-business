@@ -177,6 +177,23 @@ export function buildAutocompleteQueryConfig() {
     }
 
     return {
+        results: {
+            resultsPerPage: 5,
+            result_fields: {
+                name: {
+                    snippet: {
+                        size: 100,
+                        fallback: true
+                    }
+                },
+                latitude: {
+                    raw: {}
+                },
+                longitude: {
+                    raw: {}
+                }
+            }
+        },
         suggestions: {
             types: {
                 documents: {

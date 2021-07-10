@@ -10,6 +10,9 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
+import Storage from 'src/security/storage';
+import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
 
@@ -24,6 +27,14 @@ const schema = yup.object().shape({
     i18n('entities.placeType.fields.language'),
     {},
   ),
+  placeTypeImage: yupFormSchemas.images(
+    i18n('entities.placeType.fields.placeTypeImage'),
+    {},
+  ),
+  isPublicPlace: yupFormSchemas.boolean(
+    i18n('entities.placeType.fields.isPublicPlace'),
+    {},
+  ),
 });
 
 function PlaceTypeForm(props) {
@@ -35,6 +46,8 @@ function PlaceTypeForm(props) {
     return {
       name: record.name,
       language: record.language,
+      placeTypeImage: record.placeTypeImage || [],
+      isPublicPlace: record.isPublicPlace,
     };
   });
 
@@ -71,6 +84,21 @@ function PlaceTypeForm(props) {
             label={i18n('entities.placeType.fields.language')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ImagesFormItem
+            name="placeTypeImage"
+            label={i18n('entities.placeType.fields.placeTypeImage')}
+            required={false}
+            storage={Storage.values.placeTypePlaceTypeImage}
+            max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isPublicPlace"
+            label={i18n('entities.placeType.fields.isPublicPlace')}
           />
         </div>
 

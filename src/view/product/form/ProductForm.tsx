@@ -11,6 +11,8 @@ import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
+import InputNumberFormItem from 'src/view/shared/form/items/InputNumberFormItem';
+import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
@@ -50,6 +52,14 @@ const schema = yup.object().shape({
     i18n('entities.product.fields.businessId'),
     {},
   ),
+  acceptPointsToShop: yupFormSchemas.boolean(
+    i18n('entities.product.fields.acceptPointsToShop'),
+    {},
+  ),
+  pointsPrice: yupFormSchemas.integer(
+    i18n('entities.product.fields.pointsPrice'),
+    {},
+  ),
 });
 
 function ProductForm(props) {
@@ -64,6 +74,8 @@ function ProductForm(props) {
       unitPrice: record.unitPrice,
       photos: record.photos || [],
       businessId: record.businessId,
+      acceptPointsToShop: record.acceptPointsToShop,
+      pointsPrice: record.pointsPrice,
     };
   });
 
@@ -123,6 +135,19 @@ function ProductForm(props) {
             label={i18n('entities.product.fields.businessId')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="acceptPointsToShop"
+            label={i18n('entities.product.fields.acceptPointsToShop')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputNumberFormItem
+            name="pointsPrice"
+            label={i18n('entities.product.fields.pointsPrice')}
+            required={false}
           />
         </div>
 

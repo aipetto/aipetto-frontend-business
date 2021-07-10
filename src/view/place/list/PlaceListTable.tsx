@@ -18,7 +18,7 @@ import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import PlaceTypeListItem from 'src/view/placeType/list/PlaceTypeListItem';
-import BusinessListItem from 'src/view/business/list/BusinessListItem';
+import CountryListItem from 'src/view/country/list/CountryListItem';
 
 function PlaceListTable(props) {
   const [
@@ -126,81 +126,7 @@ function PlaceListTable(props) {
                 />
                 <TableColumnHeader
                   label={i18n(
-                    'entities.place.fields.businessId',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'latitude'}
-                  label={i18n(
-                    'entities.place.fields.latitude',
-                  )}
-                  align="right"
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'longitude'}
-                  label={i18n(
-                    'entities.place.fields.longitude',
-                  )}
-                  align="right"
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'address'}
-                  label={i18n(
-                    'entities.place.fields.address',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'addressNumber'}
-                  label={i18n(
-                    'entities.place.fields.addressNumber',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'addressZipCode'}
-                  label={i18n(
-                    'entities.place.fields.addressZipCode',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'openTime'}
-                  label={i18n(
-                    'entities.place.fields.openTime',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'closeTime'}
-                  label={i18n(
-                    'entities.place.fields.closeTime',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'is24hours'}
-                  label={i18n(
-                    'entities.place.fields.is24hours',
+                    'entities.place.fields.addressCountry',
                   )}
                 />
               <TableColumnHeader />
@@ -246,23 +172,7 @@ function PlaceListTable(props) {
                     <PlaceTypeListItem value={row.placeType} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <BusinessListItem value={row.businessId} />
-                  </td>
-                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.latitude}
-                  </td>
-                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.longitude}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.address}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.addressNumber}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.addressZipCode}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.openTime}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.closeTime}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.is24hours
-                      ? i18n('common.yes')
-                      : i18n('common.no')}
+                    <CountryListItem value={row.addressCountry} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

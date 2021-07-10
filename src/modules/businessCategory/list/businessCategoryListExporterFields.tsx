@@ -16,6 +16,15 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'categoryImage',
+    label: i18n('entities.businessCategory.fields.categoryImage'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
+    name: 'pageUrl',
+    label: i18n('entities.businessCategory.fields.pageUrl'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.businessCategory.fields.createdAt'),
     render: exporterRenders.datetime(),

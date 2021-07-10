@@ -7,6 +7,11 @@ const selectMenuVisible = createSelector(
   (layout) => Boolean(layout.menuVisible),
 );
 
+const selectRightSidebarMenuVisible = createSelector(
+    [selectRaw],
+    (layout) => Boolean(layout.rightSidebarMenuVisible),
+);
+
 const selectDarkMode = createSelector(
   [selectRaw],
   (layout) => Boolean(layout.darkMode),
@@ -25,6 +30,7 @@ const selectLanguage = createSelector(
 const layoutSelectors = {
   selectRaw,
   selectMenuVisible,
+  selectRightSidebarMenuVisible,
   selectLoading,
   selectLanguage,
   selectDarkMode,

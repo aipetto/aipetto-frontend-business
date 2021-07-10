@@ -19,7 +19,6 @@ import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import UserListItem from 'src/view/user/list/UserListItem';
 import BusinessListItem from 'src/view/business/list/BusinessListItem';
-import BusinessServicesTypesListItem from 'src/view/businessServicesTypes/list/BusinessServicesTypesListItem';
 
 function ProfessionalsServiceAvailabilityListTable(props) {
   const [
@@ -121,16 +120,6 @@ function ProfessionalsServiceAvailabilityListTable(props) {
                     'entities.professionalsServiceAvailability.fields.businessId',
                   )}
                 />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.professionalsServiceAvailability.fields.serviceType',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.professionalsServiceAvailability.fields.timeSlot',
-                  )}
-                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -174,20 +163,6 @@ function ProfessionalsServiceAvailabilityListTable(props) {
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessListItem value={row.businessId} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <BusinessServicesTypesListItem value={row.serviceType} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {(row.timeSlot || []).map((value) => (
-                      <div key={value}>
-                        {value
-                          ? i18n(
-                            `entities.professionalsServiceAvailability.enumerators.timeSlot.${value}`,
-                            )
-                          : null}
-                      </div>
-                    ))}
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

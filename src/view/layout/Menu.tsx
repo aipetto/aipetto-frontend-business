@@ -94,7 +94,7 @@ function Menu(props) {
     <div
       className={`${
         menuVisible ? 'flex flex-col w-full' : 'hidden'
-      } sm:w-64 md:w-64 lg:w-64 flex-shrink-0 min-h-screen px-4 py-4 border-0 sm:border-r md:border-r lg:border-r bg-gray-800 dark:border-gray-600`}
+      } sm:w-64 md:w-64 transition-opacity duration-200 rounded-full lg:w-64 flex-shrink-0 min-h-screen px-4 py-4 border-0 sm:border-r md:border-r lg:border-r bg-white dark:border-gray-600`}
     >
       <div className="w-full flex justify-between sm:justify-center md:justify-center lg:justify-center items-center">
         <Link onClick={doToggleMenuIfSmall} to="/">
@@ -105,7 +105,7 @@ function Menu(props) {
               alt={i18n('app.title')}
             />
           ) : (
-            <div className="text-center text-3xl font-semibold text-gray-200 hover:text-white">
+            <div className="text-center text-3xl font-semibold text-black-200 hover:text-gray-400">
               <>{i18n('app.title')}</>
             </div>
           )}
@@ -128,8 +128,8 @@ function Menu(props) {
               <Link
                 className={`${index !== 0 ? 'mt-4' : ''} ${
                   selectedKeys().includes(menu.path)
-                    ? 'flex items-center px-4 py-2 rounded-md bg-gray-700 text-gray-200'
-                    : 'flex items-center px-4 py-2 transition-colors duration-200 transform rounded-md text-gray-400 hover:bg-gray-700 hover:text-gray-200'
+                    ? 'flex items-center px-4 py-2 rounded-md bg-green-300 text-black'
+                    : 'flex items-center px-4 py-2 transition-colors duration-200 transform rounded-md text-gray-400 hover:bg-green-300 hover:text-black'
                 }`}
                 onClick={doToggleMenuIfSmall}
                 key={menu.path}

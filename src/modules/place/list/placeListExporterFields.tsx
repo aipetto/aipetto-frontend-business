@@ -21,6 +21,16 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'services',
+    label: i18n('entities.place.fields.services'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
+    name: 'categories',
+    label: i18n('entities.place.fields.categories'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
     name: 'latitude',
     label: i18n('entities.place.fields.latitude'),
     render: exporterRenders.decimal(),
@@ -43,6 +53,19 @@ export default [
     label: i18n('entities.place.fields.addressZipCode'),
   },
   {
+    name: 'addressCity',
+    label: i18n('entities.place.fields.addressCity'),
+  },
+  {
+    name: 'addressState',
+    label: i18n('entities.place.fields.addressState'),
+  },
+  {
+    name: 'addressCountry',
+    label: i18n('entities.place.fields.addressCountry'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'openTime',
     label: i18n('entities.place.fields.openTime'),
   },
@@ -53,6 +76,16 @@ export default [
   {
     name: 'is24hours',
     label: i18n('entities.place.fields.is24hours'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'stars',
+    label: i18n('entities.place.fields.stars'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'isOpen',
+    label: i18n('entities.place.fields.isOpen'),
     render: exporterRenders.boolean(),
   },
   {

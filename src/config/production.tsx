@@ -3,9 +3,9 @@
 const backendUrl = `https://aipetto-312421-sjvjr4rqhq-rj.a.run.app/api`;
 
 // App Search Enterpirse
-const appSearchEndpoint = `https://aipetto-enterprise-search-deployment.ent.southamerica-east1.gcp.elastic-cloud.com`;
-const appSearchKey = `search-dy647kf8nw1b8jsy6sr194d1`;
-const appSearchBusinessEngineName = `business`;
+const appSearchEndpoint = `https://aipetto-elastic-cluster-optimized.ent.us-west1.gcp.cloud.es.io`;
+const appSearchKey = `search-rtc5zspn7h44e342hkhx8u93`;
+const appSearchBusinessEngineName = `aipetto-business-places`;
 
 // Google Maps API and Places API
 const credentialsGoogleMapsPlaceAPI = "AIzaSyCG-oM-y0fqNJ3ho5yUBy2eBgCN7UHDoGY";

@@ -10,6 +10,8 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import Storage from 'src/security/storage';
+import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
@@ -27,6 +29,10 @@ const schema = yup.object().shape({
     i18n('entities.businessServicesTypes.fields.language'),
     {},
   ),
+  serviceImage: yupFormSchemas.images(
+    i18n('entities.businessServicesTypes.fields.serviceImage'),
+    {},
+  ),
 });
 
 function BusinessServicesTypesForm(props) {
@@ -39,6 +45,7 @@ function BusinessServicesTypesForm(props) {
       name: record.name,
       category: record.category,
       language: record.language,
+      serviceImage: record.serviceImage || [],
     };
   });
 
@@ -83,6 +90,15 @@ function BusinessServicesTypesForm(props) {
             label={i18n('entities.businessServicesTypes.fields.language')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ImagesFormItem
+            name="serviceImage"
+            label={i18n('entities.businessServicesTypes.fields.serviceImage')}
+            required={false}
+            storage={Storage.values.businessServicesTypesServiceImage}
+            max={undefined}
           />
         </div>
 

@@ -20,4 +20,20 @@ export default [
       {},
     ),
   },
+  {
+    name: 'placeTypeImage',
+    label: i18n('entities.placeType.fields.placeTypeImage'),
+    schema: schemas.images(
+      i18n('entities.placeType.fields.placeTypeImage'),
+      {},
+    ),
+  },
+  {
+    name: 'isPublicPlace',
+    label: i18n('entities.placeType.fields.isPublicPlace'),
+    schema: schemas.boolean(
+      i18n('entities.placeType.fields.isPublicPlace'),
+      {},
+    ),
+  },
 ];

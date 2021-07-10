@@ -1154,14 +1154,333 @@ const privateRoutes = [
     permissionRequired: permissions.newBusinessSurveyRead,
     exact: true,
   },
+
+  {
+    path: '/pet-photos',
+    loader: () =>
+      import('src/view/petPhotos/list/PetPhotosListPage'),
+    permissionRequired: permissions.petPhotosRead,
+    exact: true,
+  },
+  {
+    path: '/pet-photos/new',
+    loader: () =>
+      import('src/view/petPhotos/form/PetPhotosFormPage'),
+    permissionRequired: permissions.petPhotosCreate,
+    exact: true,
+  },
+  {
+    path: '/pet-photos/importer',
+    loader: () =>
+      import(
+        'src/view/petPhotos/importer/PetPhotosImporterPage'
+      ),
+    permissionRequired: permissions.petPhotosImport,
+    exact: true,
+  },
+  {
+    path: '/pet-photos/:id/edit',
+    loader: () =>
+      import('src/view/petPhotos/form/PetPhotosFormPage'),
+    permissionRequired: permissions.petPhotosEdit,
+    exact: true,
+  },
+  {
+    path: '/pet-photos/:id',
+    loader: () =>
+      import('src/view/petPhotos/view/PetPhotosViewPage'),
+    permissionRequired: permissions.petPhotosRead,
+    exact: true,
+  },
+
+  {
+    path: '/pet-diseases',
+    loader: () =>
+      import('src/view/petDiseases/list/PetDiseasesListPage'),
+    permissionRequired: permissions.petDiseasesRead,
+    exact: true,
+  },
+  {
+    path: '/pet-diseases/new',
+    loader: () =>
+      import('src/view/petDiseases/form/PetDiseasesFormPage'),
+    permissionRequired: permissions.petDiseasesCreate,
+    exact: true,
+  },
+  {
+    path: '/pet-diseases/importer',
+    loader: () =>
+      import(
+        'src/view/petDiseases/importer/PetDiseasesImporterPage'
+      ),
+    permissionRequired: permissions.petDiseasesImport,
+    exact: true,
+  },
+  {
+    path: '/pet-diseases/:id/edit',
+    loader: () =>
+      import('src/view/petDiseases/form/PetDiseasesFormPage'),
+    permissionRequired: permissions.petDiseasesEdit,
+    exact: true,
+  },
+  {
+    path: '/pet-diseases/:id',
+    loader: () =>
+      import('src/view/petDiseases/view/PetDiseasesViewPage'),
+    permissionRequired: permissions.petDiseasesRead,
+    exact: true,
+  },
+
+  {
+    path: '/business-services-prices',
+    loader: () =>
+      import('src/view/businessServicesPrices/list/BusinessServicesPricesListPage'),
+    permissionRequired: permissions.businessServicesPricesRead,
+    exact: true,
+  },
+  {
+    path: '/business-services-prices/new',
+    loader: () =>
+      import('src/view/businessServicesPrices/form/BusinessServicesPricesFormPage'),
+    permissionRequired: permissions.businessServicesPricesCreate,
+    exact: true,
+  },
+  {
+    path: '/business-services-prices/importer',
+    loader: () =>
+      import(
+        'src/view/businessServicesPrices/importer/BusinessServicesPricesImporterPage'
+      ),
+    permissionRequired: permissions.businessServicesPricesImport,
+    exact: true,
+  },
+  {
+    path: '/business-services-prices/:id/edit',
+    loader: () =>
+      import('src/view/businessServicesPrices/form/BusinessServicesPricesFormPage'),
+    permissionRequired: permissions.businessServicesPricesEdit,
+    exact: true,
+  },
+  {
+    path: '/business-services-prices/:id',
+    loader: () =>
+      import('src/view/businessServicesPrices/view/BusinessServicesPricesViewPage'),
+    permissionRequired: permissions.businessServicesPricesRead,
+    exact: true,
+  },
+
+  {
+    path: '/posts',
+    loader: () =>
+      import('src/view/posts/list/PostsListPage'),
+    permissionRequired: permissions.postsRead,
+    exact: true,
+  },
+  {
+    path: '/posts/new',
+    loader: () =>
+      import('src/view/posts/form/PostsFormPage'),
+    permissionRequired: permissions.postsCreate,
+    exact: true,
+  },
+  {
+    path: '/posts/importer',
+    loader: () =>
+      import(
+        'src/view/posts/importer/PostsImporterPage'
+      ),
+    permissionRequired: permissions.postsImport,
+    exact: true,
+  },
+  {
+    path: '/posts/:id/edit',
+    loader: () =>
+      import('src/view/posts/form/PostsFormPage'),
+    permissionRequired: permissions.postsEdit,
+    exact: true,
+  },
+  {
+    path: '/posts/:id',
+    loader: () =>
+      import('src/view/posts/view/PostsViewPage'),
+    permissionRequired: permissions.postsRead,
+    exact: true,
+  },
+
+  {
+    path: '/post-categories',
+    loader: () =>
+      import('src/view/postCategories/list/PostCategoriesListPage'),
+    permissionRequired: permissions.postCategoriesRead,
+    exact: true,
+  },
+  {
+    path: '/post-categories/new',
+    loader: () =>
+      import('src/view/postCategories/form/PostCategoriesFormPage'),
+    permissionRequired: permissions.postCategoriesCreate,
+    exact: true,
+  },
+  {
+    path: '/post-categories/importer',
+    loader: () =>
+      import(
+        'src/view/postCategories/importer/PostCategoriesImporterPage'
+      ),
+    permissionRequired: permissions.postCategoriesImport,
+    exact: true,
+  },
+  {
+    path: '/post-categories/:id/edit',
+    loader: () =>
+      import('src/view/postCategories/form/PostCategoriesFormPage'),
+    permissionRequired: permissions.postCategoriesEdit,
+    exact: true,
+  },
+  {
+    path: '/post-categories/:id',
+    loader: () =>
+      import('src/view/postCategories/view/PostCategoriesViewPage'),
+    permissionRequired: permissions.postCategoriesRead,
+    exact: true,
+  },
+
+  {
+    path: '/post-comments',
+    loader: () =>
+      import('src/view/postComments/list/PostCommentsListPage'),
+    permissionRequired: permissions.postCommentsRead,
+    exact: true,
+  },
+  {
+    path: '/post-comments/new',
+    loader: () =>
+      import('src/view/postComments/form/PostCommentsFormPage'),
+    permissionRequired: permissions.postCommentsCreate,
+    exact: true,
+  },
+  {
+    path: '/post-comments/importer',
+    loader: () =>
+      import(
+        'src/view/postComments/importer/PostCommentsImporterPage'
+      ),
+    permissionRequired: permissions.postCommentsImport,
+    exact: true,
+  },
+  {
+    path: '/post-comments/:id/edit',
+    loader: () =>
+      import('src/view/postComments/form/PostCommentsFormPage'),
+    permissionRequired: permissions.postCommentsEdit,
+    exact: true,
+  },
+  {
+    path: '/post-comments/:id',
+    loader: () =>
+      import('src/view/postComments/view/PostCommentsViewPage'),
+    permissionRequired: permissions.postCommentsRead,
+    exact: true,
+  },
+
+  {
+    path: '/points-challenges',
+    loader: () =>
+      import('src/view/pointsChallenges/list/PointsChallengesListPage'),
+    permissionRequired: permissions.pointsChallengesRead,
+    exact: true,
+  },
+  {
+    path: '/points-challenges/new',
+    loader: () =>
+      import('src/view/pointsChallenges/form/PointsChallengesFormPage'),
+    permissionRequired: permissions.pointsChallengesCreate,
+    exact: true,
+  },
+  {
+    path: '/points-challenges/importer',
+    loader: () =>
+      import(
+        'src/view/pointsChallenges/importer/PointsChallengesImporterPage'
+      ),
+    permissionRequired: permissions.pointsChallengesImport,
+    exact: true,
+  },
+  {
+    path: '/points-challenges/:id/edit',
+    loader: () =>
+      import('src/view/pointsChallenges/form/PointsChallengesFormPage'),
+    permissionRequired: permissions.pointsChallengesEdit,
+    exact: true,
+  },
+  {
+    path: '/points-challenges/:id',
+    loader: () =>
+      import('src/view/pointsChallenges/view/PointsChallengesViewPage'),
+    permissionRequired: permissions.pointsChallengesRead,
+    exact: true,
+  },
+
+  {
+    path: '/challenges-categories',
+    loader: () =>
+      import('src/view/challengesCategories/list/ChallengesCategoriesListPage'),
+    permissionRequired: permissions.challengesCategoriesRead,
+    exact: true,
+  },
+  {
+    path: '/challenges-categories/new',
+    loader: () =>
+      import('src/view/challengesCategories/form/ChallengesCategoriesFormPage'),
+    permissionRequired: permissions.challengesCategoriesCreate,
+    exact: true,
+  },
+  {
+    path: '/challenges-categories/importer',
+    loader: () =>
+      import(
+        'src/view/challengesCategories/importer/ChallengesCategoriesImporterPage'
+      ),
+    permissionRequired: permissions.challengesCategoriesImport,
+    exact: true,
+  },
+  {
+    path: '/challenges-categories/:id/edit',
+    loader: () =>
+      import('src/view/challengesCategories/form/ChallengesCategoriesFormPage'),
+    permissionRequired: permissions.challengesCategoriesEdit,
+    exact: true,
+  },
+  {
+    path: '/challenges-categories/:id',
+    loader: () =>
+      import('src/view/challengesCategories/view/ChallengesCategoriesViewPage'),
+    permissionRequired: permissions.challengesCategoriesRead,
+    exact: true,
+  },
+
+  {
+    path: '/product-category',
+    loader: () =>
+      import('src/view/productCategory/list/ProductCategoryListPage'),
+    permissionRequired: permissions.productCategoryRead,
+    exact: true,
+  },
+  {
+    path: '/product-category/new',
+    loader: () =>
+      import('src/view/productCategory/form/ProductCategoryFormPage'),
+    permissionRequired: permissions.productCategoryCreate,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [
-    {
-      path: '/',
-      loader: () => import('src/view/home/LandingPage'),
-    },
-    {
+  {
+    path: '/',
+    loader: () => import('src/view/home/LandingPage'),
+  },
+  {
     path: '/beta',
     loader: () =>
         import('src/view/auth/SigninPage'),

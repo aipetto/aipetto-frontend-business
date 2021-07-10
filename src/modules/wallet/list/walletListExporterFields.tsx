@@ -16,6 +16,11 @@ export default [
     label: i18n('entities.wallet.fields.aipettoPoints'),
   },
   {
+    name: 'user',
+    label: i18n('entities.wallet.fields.user'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.wallet.fields.createdAt'),
     render: exporterRenders.datetime(),

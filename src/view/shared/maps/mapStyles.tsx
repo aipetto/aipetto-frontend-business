@@ -18,6 +18,15 @@ export default[
         ]
     },
     {
+        "featureType": "poi.park",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
         "featureType": "all",
         "elementType": "labels.text",
         "stylers": [
@@ -41,6 +50,24 @@ export default[
         "stylers": [
             {
                 "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
             }
         ]
     },
@@ -160,10 +187,10 @@ export default[
     },
     {
         "featureType": "water",
-        "elementType": "labels.text.stroke",
+        "elementType": "geometry.fill",
         "stylers": [
             {
-                "color": "#ffffff"
+                "color": "#53befc"
             }
         ]
     }

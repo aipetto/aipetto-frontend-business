@@ -9,8 +9,9 @@ import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
-import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -32,6 +33,10 @@ const schema = yup.object().shape({
       "required": true
     },
   ),
+  businessId: yupFormSchemas.relationToOne(
+    i18n('entities.messages.fields.businessId'),
+    {},
+  ),
 });
 
 function MessagesForm(props) {
@@ -44,6 +49,7 @@ function MessagesForm(props) {
       from: record.from,
       to: record.to,
       message: record.message,
+      businessId: record.businessId,
     };
   });
 
@@ -83,10 +89,18 @@ function MessagesForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
+          <TextAreaFormItem
             name="message"
             label={i18n('entities.messages.fields.message')}
             required={true}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessAutocompleteFormItem
+            name="businessId"
+            label={i18n('entities.messages.fields.businessId')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

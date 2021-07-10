@@ -1,5 +1,5 @@
 import schemas from 'src/modules/shared/yup/yupImporterSchemas';
-import { i18n } from 'src/i18n';
+import { i18n } from 'src/i18n';import vaccineTypesEnumerators from 'src/modules/vaccineTypes/vaccineTypesEnumerators';
 
 export default [
   {
@@ -18,6 +18,16 @@ export default [
     schema: schemas.relationToOne(
       i18n('entities.vaccineTypes.fields.country'),
       {},
+    ),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.vaccineTypes.fields.language'),
+    schema: schemas.enumerator(
+      i18n('entities.vaccineTypes.fields.language'),
+      {
+        "options": vaccineTypesEnumerators.language
+      },
     ),
   },
 ];

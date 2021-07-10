@@ -24,11 +24,15 @@ const schema = yup.object().shape({
   language: yupFilterSchemas.relationToOne(
     i18n('entities.businessCategory.fields.language'),
   ),
+  pageUrl: yupFilterSchemas.string(
+    i18n('entities.businessCategory.fields.pageUrl'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   language: null,
+  pageUrl: null,
 }
 
 const previewRenders = {
@@ -40,6 +44,10 @@ const previewRenders = {
       label: i18n('entities.businessCategory.fields.language'),
       render: filterRenders.relationToOne(),
     },
+  pageUrl: {
+    label: i18n('entities.businessCategory.fields.pageUrl'),
+    render: filterRenders.generic(),
+  },
 }
 
 function BusinessCategoryListFilter(props) {
@@ -106,6 +114,10 @@ function BusinessCategoryListFilter(props) {
               <LanguagesAutocompleteFormItem  
                 name="language"
                 label={i18n('entities.businessCategory.fields.language')}        
+              />
+              <InputFormItem
+                name="pageUrl"
+                label={i18n('entities.businessCategory.fields.pageUrl')}
               />
             </div>
 

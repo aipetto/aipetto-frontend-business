@@ -44,7 +44,7 @@ const languages: {
 export async function init() {
 
   currentLanguageCode =
-     localStorage.getItem('language') || getLangFromBrowserNavigator() || 'en';
+     localStorage.getItem('language') || 'es';
 
   setLanguageCode(currentLanguageCode);
 
@@ -155,16 +155,16 @@ function format(message, args) {
 
 function checkAgainstOurSystemLanguages(lang) {
 
-  if (lang === 'en-US' || lang === 'en') {
-    return 'en';
+  if (lang === 'es') {
+    return 'es';
   }
 
   if (lang === 'pt' || lang === 'pt-BR') {
     return 'pt-BR';
   }
 
-  if (lang === 'es') {
-    return 'es';
+  if (lang === 'en-US' || lang === 'en') {
+    return 'en';
   }
   // We want return undefined on purpose
   // If is undefined we go check if language is set on LocalStorage otherwise take default language (english)

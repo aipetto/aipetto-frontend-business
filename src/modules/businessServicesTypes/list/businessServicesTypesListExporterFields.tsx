@@ -21,6 +21,11 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'serviceImage',
+    label: i18n('entities.businessServicesTypes.fields.serviceImage'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.businessServicesTypes.fields.createdAt'),
     render: exporterRenders.datetime(),

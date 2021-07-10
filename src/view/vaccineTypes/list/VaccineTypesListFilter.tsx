@@ -15,6 +15,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
+import vaccineTypesEnumerators from 'src/modules/vaccineTypes/vaccineTypesEnumerators';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
@@ -24,11 +26,15 @@ const schema = yup.object().shape({
   country: yupFilterSchemas.relationToOne(
     i18n('entities.vaccineTypes.fields.country'),
   ),
+  language: yupFilterSchemas.enumerator(
+    i18n('entities.vaccineTypes.fields.language'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   country: null,
+  language: null,
 }
 
 const previewRenders = {
@@ -40,6 +46,10 @@ const previewRenders = {
       label: i18n('entities.vaccineTypes.fields.country'),
       render: filterRenders.relationToOne(),
     },
+  language: {
+    label: i18n('entities.vaccineTypes.fields.language'),
+    render: filterRenders.enumerator('entities.vaccineTypes.enumerators.language',),
+  },
 }
 
 function VaccineTypesListFilter(props) {
@@ -107,6 +117,18 @@ function VaccineTypesListFilter(props) {
                 name="country"
                 label={i18n('entities.vaccineTypes.fields.country')}        
               />
+              <SelectFormItem
+                  name="language"
+                  label={i18n('entities.vaccineTypes.fields.language')}
+                  options={vaccineTypesEnumerators.language.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.vaccineTypes.enumerators.language.${value}`,
+                      ),
+                    }),
+                  )}
+                />
             </div>
 
             <div className="px-4 py-2 text-right">

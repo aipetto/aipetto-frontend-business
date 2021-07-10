@@ -16,6 +16,7 @@ import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
+import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 
 const schema = yup.object().shape({
   from: yupFilterSchemas.relationToOne(
@@ -27,12 +28,16 @@ const schema = yup.object().shape({
   message: yupFilterSchemas.string(
     i18n('entities.messages.fields.message'),
   ),
+  businessId: yupFilterSchemas.relationToOne(
+    i18n('entities.messages.fields.businessId'),
+  ),
 });
 
 const emptyValues = {
   from: null,
   to: null,
   message: null,
+  businessId: null,
 }
 
 const previewRenders = {
@@ -48,6 +53,10 @@ const previewRenders = {
     label: i18n('entities.messages.fields.message'),
     render: filterRenders.generic(),
   },
+  businessId: {
+      label: i18n('entities.messages.fields.businessId'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function MessagesListFilter(props) {
@@ -118,6 +127,10 @@ function MessagesListFilter(props) {
               <InputFormItem
                 name="message"
                 label={i18n('entities.messages.fields.message')}      
+              />
+              <BusinessAutocompleteFormItem
+                name="businessId"
+                label={i18n('entities.messages.fields.businessId')}
               />
             </div>
 

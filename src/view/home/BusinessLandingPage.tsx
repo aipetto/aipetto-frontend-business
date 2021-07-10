@@ -98,7 +98,7 @@ class BusinessLandingPage extends Component {
             ]};
         var survey = new Survey.Model(json);
 
-        survey.locale = localStorage.getItem('language') || getLangFromBrowserNavigator() || 'en';
+        survey.locale = localStorage.getItem('language') || 'es';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 
