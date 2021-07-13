@@ -16,9 +16,9 @@ export default function LandingNavbar(props) {
 
                         <Link
                             to="/"
-                            className="text-blueGray-700 font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+                            className="text-blueGray-700 font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
                         >
-                            <h1 className="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-4xl xl:mb-8">AIPETTO</h1>
+                            <h1 className="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-4xl xl:mb-8">aipetto</h1>
                         </Link>
 
                         <div className="">

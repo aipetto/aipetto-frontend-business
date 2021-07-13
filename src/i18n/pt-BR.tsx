@@ -62,7 +62,7 @@ const ptBR = {
     },
 
   app: {
-    title: 'AIPETTO',
+    title: 'aipetto',
   },
 
   businessSurvey: {
@@ -2682,7 +2682,7 @@ const ptBR = {
   },
     roles: {
         aipettoAdmin: {
-            label: 'AIPETTO Admin',
+            label: 'aipetto Admin',
             description: 'Acesso a todos os recursos da plataforma',
         },
         businessOwner: {

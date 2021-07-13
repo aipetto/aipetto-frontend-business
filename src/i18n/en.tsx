@@ -26,7 +26,7 @@ const en = {
   },
 
   app: {
-    title: 'AIPETTO',
+    title: 'aipetto',
   },
 
   public: {
@@ -2684,7 +2684,7 @@ const en = {
 
     roles: {
         aipettoAdmin: {
-            label: 'AIPETTO Admin',
+            label: 'aipetto Admin',
             description: 'Acesso a todos os recursos da plataforma',
         },
         businessOwner: {

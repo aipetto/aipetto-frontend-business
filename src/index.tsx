@@ -14,7 +14,7 @@ import './index.css';
   if (isSocialOnboardRequested) {
     await AuthService.socialOnboard();
   }
-  SettingsService.applyThemeFromTenant();
+  //SettingsService.applyThemeFromTenant();
   await i18nInit();
 
   const App = require('./App').default;
