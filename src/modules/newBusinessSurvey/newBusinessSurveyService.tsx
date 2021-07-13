@@ -42,7 +42,7 @@ export default class NewBusinessSurveyService {
 
     //const tenantId = AuthCurrentTenant.get();
 
-    // Survey is going to be only for AIPETTO MANAGEMENT Workspace
+    // Survey is going to be only for aipetto MANAGEMENT Workspace
     const tenantId = '606c9c61826963485fbde0ed';
 
     const response = await authAxios.post(

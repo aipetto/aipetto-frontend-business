@@ -26,7 +26,8 @@ const es = {
     filters: 'Filtros',
   },
   app: {
-    title: 'AIPETTO',
+    title: 'aipetto',
+    slogan: ''
   },
   public: {
     homeTitle: '¿Amas a las mascotas?¡Entonces este es tu lugar!',

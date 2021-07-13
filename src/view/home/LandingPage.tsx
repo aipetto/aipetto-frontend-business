@@ -59,7 +59,7 @@ class LandingPage extends Component {
 
                 <div className="text-center fade-in fade-in-second">
                     <div className="sm:hidden">
-                        <img src="images/woman-pet-searching.png" alt="AIPETTO" className="lazy"/>
+                        <img src="images/woman-pet-searching.png" alt="aipetto" className="lazy"/>
                     </div>
                 </div>
                 <div className="flex space-x-4 container mx-auto mt-8">
@@ -69,7 +69,7 @@ class LandingPage extends Component {
                     <div className="flex-1">
                         <div className="text-center fade-in fade-in-second">
                             <div className="w-1/2 md:w-full">
-                                <img src="images/woman-pet-searching.png" alt="AIPETTO" className="lazy"/>
+                                <img src="images/woman-pet-searching.png" alt="aipetto" className="lazy"/>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ class LandingPage extends Component {
                 <div className="container mx-auto">
                     <div className=" flex flex-col lg:flex-row content-center items-center justify-between">
                         <div className="flex items-center flex-col lg:flex-row mx-auto">
-                            <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">愛ペット AIPETTO, Copyright &copy; 2021</span>
+                            <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">愛ペット aipetto, Copyright &copy; 2021</span>
                         </div>
 
                     </div>

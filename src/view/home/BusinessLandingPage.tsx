@@ -126,7 +126,7 @@ class BusinessLandingPage extends Component {
                             <div className="text-center fade-in fade-in-second hidden md:block">
                                 <div className="">
                                     <div className="hero-mockup w-5/8 sm:col-4/6 w-4/5 lg:w-full mx-auto relative">
-                                        <img src="images/pet-business-services.png" alt="AIPETTO" className="lazy"/>
+                                        <img src="images/pet-business-services.png" alt="aipetto" className="lazy"/>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@ class BusinessLandingPage extends Component {
                 <div className="container mx-auto">
                     <div className=" flex flex-col lg:flex-row content-center items-center justify-between">
                         <div className="flex items-center flex-col lg:flex-row mx-auto">
-                            <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">愛ペット AIPETTO, Copyright &copy; 2021</span>
+                            <span className="ml-0 md:ml-4 text-sm text-gray-600 py-4 lg:py-0">愛ペット aipetto, Copyright &copy; 2021</span>
                         </div>
                     </div>
                 </div>
