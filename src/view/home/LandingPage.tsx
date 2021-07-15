@@ -66,7 +66,7 @@ class LandingPage extends Component {
                     <div className="flex-1">
                         <Survey.Survey model={survey} onComplete={this.onComplete} />
                     </div>
-                    <div className="flex-1">
+                    <div className="md:flex-1 flex-none">
                         <div className="text-center fade-in fade-in-second">
                             <div className="w-1/2 md:w-full">
                                 <img src="images/woman-pet-searching.png" alt="aipetto" className="lazy"/>
