@@ -18,7 +18,7 @@ function PublicRoute({
         );
 
         if (permissionChecker.isAuthenticated) {
-          return <Redirect to="/reservation" />;
+          return <Redirect to="/dashboard" />;
         }
 
         return <Component {...props} />;
