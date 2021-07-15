@@ -11,7 +11,13 @@ class Permissions {
     return {
       dashboardAccess: {
         id: 'dashboardAccess',
-        allowedRoles: [roles.aipettoAdmin],
+        allowedRoles: [
+            roles.aipettoAdmin,
+            roles.businessOwner,
+            roles.petOwner,
+            roles.veterinarian,
+            roles.transporter
+        ],
         allowedPlans: [
           plans.premium
         ],

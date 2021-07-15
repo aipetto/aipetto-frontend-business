@@ -44,7 +44,7 @@ const SettingsFormPage = (props) => {
         {!initLoading && settings && (
           <SettingsForm
             settings={settings}
-            onCancel={() => getHistory().push('/reservation')}
+            onCancel={() => getHistory().push('/dashboard')}
           />
         )}
       </div>
