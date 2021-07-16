@@ -7,6 +7,7 @@ import layoutActions from 'src/modules/layout/layoutActions';
 import { getHistory } from 'src/modules/store';
 import I18nSelect from 'src/view/layout/I18nSelect';
 import Avatar from 'src/view/shared/Avatar';
+import { Link } from 'react-router-dom';
 import config from 'src/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -15,7 +16,7 @@ import {
   faLock,
   faSignOutAlt,
   faThLarge,
-  faCode, faHeart, faBars, faShoppingCart,
+  faCode, faHeart, faBars, faShoppingCart, faArrowDown, faDoorOpen,
 } from '@fortawesome/free-solid-svg-icons';
 import { Menu } from '@headlessui/react';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
@@ -67,7 +68,7 @@ function Header(props) {
   );
 
   return (
-    <nav className="bg-white shadow dark:bg-gray-800">
+    <nav className="bg-green-300 shadow dark:bg-gray-800">
       <div className="px-6 py-3">
         <div className="md:flex md:items-center md:justify-between">
           <div className="w-full flex items-center justify-between">
@@ -97,53 +98,50 @@ function Header(props) {
 
               <Menu>
 
-                <div className="mr-6 ml-6 md:block lg:block">
-                  <I18nSelect />
-                </div>
-
-                <Menu.Button className="flex items-center focus:outline-none mr-6">
-                  <Avatar
-                      size="large"
-                      className="mr-9"
-                      src={userAvatar || undefined}
-                      alt="avatar"
-                  />
-                </Menu.Button>
-
-                <button className="flex items-center focus:outline-none mr-6"
-                        onClick={doToggleRightSidebarMenu}
+                <Link
+                    className="text-gray-900 dark:text-green-400 focus:text-blue-400 hover:text-blue-400"
+                    size="lg"
+                    to={`/aipetto-store`}
                 >
+
                   8500 <FontAwesomeIcon
-                    className="ml-1 mr-2"
+                    className="ml-1 mr-6"
                     size="lg"
                     icon={faPaw}
                 />
+                </Link>
+
+                <button
+                    className="focus:outline-none focus:text-blue-400 lg hover:text-blue-400 text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
+                    onClick={doToggleRightSidebarMenu}
+                >
+                  <FontAwesomeIcon icon={faShoppingCart} />
                 </button>
 
                 <Menu.Items>
                   <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800">
                     <Menu.Item>
                       <button
-                        onClick={doNavigateToProfile}
-                        className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
-                        type="button"
+                          onClick={doNavigateToProfile}
+                          className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+                          type="button"
                       >
                         <FontAwesomeIcon
-                          className="mr-2"
-                          icon={faUser}
+                            className="mr-2"
+                            icon={faUser}
                         />
                         {i18n('auth.profile.title')}
                       </button>
                     </Menu.Item>
                     <Menu.Item>
                       <button
-                        onClick={doNavigateToPasswordChange}
-                        className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
-                        type="button"
+                          onClick={doNavigateToPasswordChange}
+                          className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+                          type="button"
                       >
                         <FontAwesomeIcon
-                          className="mr-2"
-                          icon={faLock}
+                            className="mr-2"
+                            icon={faLock}
                         />
                         {i18n('auth.passwordChange.title')}
                       </button>
@@ -152,58 +150,68 @@ function Header(props) {
                       'multi',
                       'multi-with-subdomain',
                     ].includes(config.tenantMode) && hasPermissionToEdit && (
-                      <Menu.Item>
-                        <button
-                          onClick={doNavigateToTenants}
-                          className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
-                          type="button"
-                        >
-                          <FontAwesomeIcon
-                            className="mr-2"
-                            icon={faThLarge}
-                          />
-                          {i18n('auth.tenants')}
-                        </button>
-                      </Menu.Item>
+                        <Menu.Item>
+                          <button
+                              onClick={doNavigateToTenants}
+                              className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+                              type="button"
+                          >
+                            <FontAwesomeIcon
+                                className="mr-2"
+                                icon={faThLarge}
+                            />
+                            {i18n('auth.tenants')}
+                          </button>
+                        </Menu.Item>
                     )}
                     {config.apiDocumentationUrl && hasPermissionToEdit && (
-                      <Menu.Item>
-                        <a
-                          href={config.apiDocumentationUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
-                        >
-                          <FontAwesomeIcon
-                            className="mr-2"
-                            icon={faCode}
-                          />
-                          {i18n('api.menu')}
-                        </a>
-                      </Menu.Item>
+                        <Menu.Item>
+                          <a
+                              href={config.apiDocumentationUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+                          >
+                            <FontAwesomeIcon
+                                className="mr-2"
+                                icon={faCode}
+                            />
+                            {i18n('api.menu')}
+                          </a>
+                        </Menu.Item>
                     )}
                     <Menu.Item>
                       <button
-                        onClick={doSignout}
-                        className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
-                        type="button"
+                          onClick={doSignout}
+                          className="w-full text-left block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:text-white"
+                          type="button"
                       >
                         <FontAwesomeIcon
-                          className="mr-2"
-                          icon={faSignOutAlt}
+                            className="mr-2"
+                            icon={faSignOutAlt}
                         />
                         {i18n('auth.signout')}
                       </button>
                     </Menu.Item>
                   </div>
                 </Menu.Items>
+
+                <div className="mr-6 ml-6 md:block lg:block">
+                  <I18nSelect />
+                </div>
+
+                <Menu.Button className="flex items-center focus:outline-none mr-6">
+                  <Avatar
+                      size="5x"
+                      className="mr-9"
+                      src={userAvatar || undefined}
+                      alt="avatar"
+                  />
+                  <FontAwesomeIcon icon={faDoorOpen} />
+                </Menu.Button>
+
               </Menu>
-              <button
-                  className="focus:outline-none text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
-                  onClick={doToggleRightSidebarMenu}
-              >
-                <FontAwesomeIcon icon={faShoppingCart} />
-              </button>
+
             </div>
           </div>
         </div>

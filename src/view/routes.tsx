@@ -1473,6 +1473,13 @@ const privateRoutes = [
     permissionRequired: permissions.productCategoryCreate,
     exact: true,
   },
+  {
+    path: '/aipetto-store',
+    loader: () =>
+        import('src/view/aipettoStore/initialPageAipettoStore'),
+    permissionRequired: null,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [

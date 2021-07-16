@@ -2864,6 +2864,11 @@ const en = {
     notPlanUser: `You are not the manager of this subscription.`,
   },
 
+    aipettoStore: {
+        menu: 'aipetto Store',
+        title: 'Aipetto Store',
+    },
+
   auditLog: {
     menu: 'Audit Logs',
     title: 'Audit Logs',

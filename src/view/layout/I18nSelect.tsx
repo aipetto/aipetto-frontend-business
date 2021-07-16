@@ -9,7 +9,7 @@ function I18nSelect(props) {
 
   return (
     <select
-      className="cursor-pointer inline-block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+      className="cursor-pointer inline-block w-full px-4 py-2 text-gray-800 bg-white border border-green-700 rounded-md dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
       value={getLanguageCode()}
       onChange={(event) =>
         doChangeLanguage(event.target.value)
