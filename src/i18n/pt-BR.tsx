@@ -2856,7 +2856,12 @@ const ptBR = {
     notPlanUser: `Esta assinatura não é controlada por você.`,
   },
 
-  auditLog: {
+    aipettoStore: {
+        menu: 'aipetto Store',
+        title: 'Aipetto Store',
+    },
+
+    auditLog: {
     menu: 'Registros de Auditoria',
     title: 'Registros de Auditoria',
     exporterFileName: 'registros_autoria_exportados',

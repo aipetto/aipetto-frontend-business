@@ -2243,7 +2243,12 @@ const en = {
     notPlanUser: `You are not the manager of this subscription.`,
   },
 
-  auditLog: {
+    aipettoStore: {
+        menu: 'aipetto Store',
+        title: 'Aipetto Store',
+    },
+
+    auditLog: {
     menu: 'Audit Logs',
     title: 'Audit Logs',
     exporterFileName: 'audit_log_export',

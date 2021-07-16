@@ -2853,7 +2853,12 @@ const es = {
     demoHintHtml:
       'Sugerencia: Use esas <a href="https://stripe.com/docs/testing#cards" target="_blank" rel="noopener noreferrer">tarjetas de prueba</a> para la demostración.',
   },
-  auditLog: {
+    aipettoStore: {
+        menu: 'aipetto Store',
+        title: 'Aipetto Store',
+    },
+
+    auditLog: {
     menu: 'Registros de auditoría',
     title: 'Registros de auditoría',
     exporterFileName: 'audit_log_export',
