@@ -44,7 +44,25 @@ const SearchBusinessServicePage = (props) => {
     };
 
     return (
+
         <SearchProvider config={config}>
+            <div className='px-5 py-3'>
+                <h3 className="font-bold text-xs">Serviços</h3>
+                <div className='my-3 flex flex-wrap -m-1'>
+            <span
+                className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">#banhoetosa</span>
+                    <span
+                        className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">#vacinacontraraiva</span>
+                    <span
+                        className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">#microchip</span>
+                    <span
+                        className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">#sonografía</span>
+                    <span
+                        className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">#hotel</span>
+                    <span
+                        className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">#passeadores</span>
+                </div>
+            </div>
             <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
                 {({ wasSearched }) => {
                     return (

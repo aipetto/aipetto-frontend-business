@@ -48,45 +48,45 @@ const DashboardPage = (props) => {
       <>
         <div className="p-6 grid grid-cols-2 md:grid-cols-6 gap-4">
 
-              {menus
-                  .filter((menu) =>
-                      match(menu.permissionRequired),
-                  )
-                  .map((menu, index) => (
-                      <Link className='flex flex-col items-center w-40 h-32 border border-indigo-50 hover:bg-green-300 hover:text-black rounded-2xl cursor-pointer py-2 bg-white'
-                          onClick={doToggleMenuIfSmall}
-                          key={menu.path}
-                          to={menu.path}
-                      >
-                        <FontAwesomeIcon
-                            className="w-5 h-40 fa-2x"
-                            icon={menu.icon}
-                        />
-                        <span className="text-base md:text-lg text-black-800 text-sm">
-                    {menu.label}
-                  </span>
-                      </Link>
-                  ))}
+                {menus
+                    .filter((menu) =>
+                        match(menu.permissionRequired),
+                    )
+                    .map((menu, index) => (
+                        <Link className='flex flex-col items-center w-40 h-32 border border-indigo-50 hover:bg-green-300 hover:text-black rounded-2xl cursor-pointer py-2 bg-white'
+                            onClick={doToggleMenuIfSmall}
+                            key={menu.path}
+                            to={menu.path}
+                        >
+                          <FontAwesomeIcon
+                              className="w-5 h-40 fa-2x"
+                              icon={menu.icon}
+                          />
+                          <span className="text-base md:text-lg text-black-800 text-sm">
+                      {menu.label}
+                    </span>
+                        </Link>
+                    ))}
 
-              {menus
-                  .filter((menu) =>
-                      lockedForCurrentPlan(menu.permissionRequired),
-                  )
-                  .map((menu) => (
-                      <div
-                          className={`mt-4 opacity-50 flex items-center px-4 py-2 text-gray-600 rounded-md dark:text-gray-400`}
-                      >
-                        <FontAwesomeIcon
-                            className="w-5 h-5"
-                            icon={menu.icon}
-                        />
+                {menus
+                    .filter((menu) =>
+                        lockedForCurrentPlan(menu.permissionRequired),
+                    )
+                    .map((menu) => (
+                        <div
+                            className={`mt-4 opacity-50 flex items-center px-4 py-2 text-gray-600 rounded-md dark:text-gray-400`}
+                        >
+                          <FontAwesomeIcon
+                              className="w-5 h-5"
+                              icon={menu.icon}
+                          />
 
-                        <span className="mx-4 font-medium truncate">
-                    {menu.label}
-                  </span>
-                      </div>
-                  ))}
-            </div>
+                          <span className="mx-4 font-medium truncate">
+                      {menu.label}
+                    </span>
+                        </div>
+                    ))}
+              </div>
       </>
   );
 };
