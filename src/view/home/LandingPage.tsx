@@ -59,7 +59,7 @@ class LandingPage extends Component {
 
                 <div className="text-center fade-in fade-in-second">
                     <div className="sm:hidden">
-                        <img src="images/woman-pet-searching.png" alt="aipetto" className="lazy"/>
+                        <img src="images/illustrations/pet-ball-playing.png" alt="aipetto" className="lazy"/>
                     </div>
                 </div>
                 <div className="flex space-x-4 container mx-auto mt-8">
@@ -69,7 +69,7 @@ class LandingPage extends Component {
                     <div className="md:flex-1 flex-none">
                         <div className="text-center fade-in fade-in-second">
                             <div className="w-1/2 md:w-full">
-                                <img src="images/woman-pet-searching.png" alt="aipetto" className="lazy"/>
+                                <img src="images/illustrations/pet-ball-playing.png" alt="aipetto" className="lazy"/>
                             </div>
                         </div>
                     </div>

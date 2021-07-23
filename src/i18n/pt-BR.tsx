@@ -25,14 +25,14 @@ const ptBR = {
     filters: 'Filtros',
   },
   public: {
-    homeTitle: 'Você ama os animais de estimação? Então esse é seu lugar!',
-    homeSubtitle: 'Onde quer que seja, você encontrará veterinários para ajudar, melhores preços em comida e acessórios, encontrar lugares onde seu pet pode jogar e ter um corte bem legal, isso e muito mais...',
+    homeTitle: 'Você ama os animais? Esse é seu lugar!',
+    homeSubtitle: 'Onde quer que você esteja, encontrará veterinários, melhores preços em produtos e serviços, isso e muito mais.',
     reservationHomeTitle: 'Encontre e reserve um serviço para se pet de maneira fácil e rápida!',
     reservationHomeSubtitle: 'Banho e tosa, vacinação e muito mais',
-    landingTitle: 'Logo logo um lugar na internet para você e seus pets!',
-    landingSubtitle: 'Por favor colabore com seus comentários abaixo, não esqueceremos de vocês.',
-    landingBusinessTitle: 'Nossa missão é unificar serviços para os donos de animais de estimação',
-    landingBusinessSubtitle: 'Seja parte e permita que ajudemos seu negócio crescer.',
+    landingTitle: 'Um lugar na internet para você e seus pets!',
+    landingSubtitle: 'Faça parte deste projeto com sus sugestões.',
+    landingBusinessTitle: 'Nossa missão é dispobilizar informações e serviços de forma simples e direta para quem ama os pets',
+    landingBusinessSubtitle: 'Faça parte deste projeto e ofereça seus produtos e serviços',
     menu: {
           business: 'Negócios',
           petsSurvey: 'Home',
@@ -45,16 +45,16 @@ const ptBR = {
         emailTitle: 'Seu email',
         numberOfPets: 'Quantos pets você têm?',
         checkboxChoices: {
-            saveMoneyOnServices: 'Conseguir descontos especiais em serviços para pet',
+            saveMoneyOnServices: 'Conseguir descontos especiais em serviços seu pet',
             reserveServices: 'Agendar online a hora e lugar dos serviços (vacinação, exame médico, cirurgias, banho e tosa)',
             findTheClosestPlaceToGetServices: 'Ajudar a encontrar veterinárias, petshops mais próximas com disponibilidade de atendimento',
-            findWhereToPlayWithMyPet: 'Encontrar lugares para brincar de maneira segura',
-            knowMoreAboutPets: 'Ter mais informação sobre o meu pet e como cuidar dele melhor',
+            findWhereToPlayWithMyPet: 'Encontrar lugares para brincar com seu pet',
+            knowMoreAboutPets: 'Ter mais informação sobre o seu pet e como cuidar dele melhor',
             adoptAPet: 'Ter ajuda especializada ao adotar ou doar um pet',
             getMoreMedicalInformation: 'Ter a ficha médica em um lugar só e válido para diferentes países',
-            beAbleToChatWithAVeterinarian: 'Poder mandar mensagens ao meu veterinário a qualquer hora sem custo adicional',
+            beAbleToChatWithAVeterinarian: 'Poder mandar mensagens ao seu veterinário a qualquer hora sem custo adicional',
             seeWhatPetsMyFriendsHave: 'Saber quais pets têm meus amigos',
-            findATrustedPersonToWalkMyPet: 'Encontrar uma pessoa confiável para passear meu pet',
+            findATrustedPersonToWalkMyPet: 'Encontrar uma pessoa confiável para passear seu pet',
         },
         extraInfo: 'O que mais você gostaria de encontrar e não incluímos na lista?',
         surveyCompleteMessage: 'Obrigado por completar nosso formulário, tenha um ótimo dia!',
@@ -63,6 +63,7 @@ const ptBR = {
 
   app: {
     title: 'aipetto',
+    slogan: 'serviços e informações para seu pet onde quer que esteja',
   },
 
   businessSurvey: {

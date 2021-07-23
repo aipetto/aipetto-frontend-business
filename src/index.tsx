@@ -18,6 +18,6 @@ import './index.css';
   await i18nInit();
 
   const App = require('./App').default;
-  document.title = i18n('app.title');
+  document.title = `${i18n('app.title')} - ${i18n('app.slogan')}`;
   ReactDOM.render(<App />, document.getElementById('root'));
 })();

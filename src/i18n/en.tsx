@@ -27,15 +27,16 @@ const en = {
 
   app: {
     title: 'aipetto',
+    slogan: 'services and informations for your pet everywhere anytime',
   },
 
   public: {
       homeTitle: 'Do you love pets? Then this your place!',
       homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
-      landingTitle: 'Soon an awesome place on internet for you and your pets!',
-      landingSubtitle: 'Please help us with your comments below, we\'ll not forget you.',
-      landingBusinessTitle: 'Our mission is to unify services to pet owners',
-      landingBusinessSubtitle: 'Be part and let us help your business grow.',
+      landingTitle: 'An awesome place on internet for you and your pets!',
+      landingSubtitle: 'Be part of this project by sharing your comments',
+      landingBusinessTitle: 'Our mission is to share information and services in the easiest and direct way for those who love pets',
+      landingBusinessSubtitle: 'Be part of this project and provide your products and services',
       menu: {
           business: 'Business',
           petsSurvey: 'Home',
@@ -51,13 +52,13 @@ const en = {
         saveMoneyOnServices: 'Get discounts on pet services',
         reserveServices: 'Reserve online the time and place of the services (vaccine, medical exam, surgeries, grooming)',
         findTheClosestPlaceToGetServices: 'Find vet centers, pet stores, playgrounds nearby',
-        findWhereToPlayWithMyPet: 'Find where to take my pet to play safely',
+        findWhereToPlayWithMyPet: 'Find where to take your pet to play',
         knowMoreAboutPets: 'Have your pet medical history in one place wherever you go',
         adoptAPet: 'Have specialized help on how to adopt or donate a pet',
         getMoreMedicalInformation: 'Get more medical information',
         beAbleToChatWithAVeterinarian: 'Chat with your veterinarian in an emergency without extra cost',
         seeWhatPetsMyFriendsHave: 'See what pets my friends have',
-        findATrustedPersonToWalkMyPet: 'Find a trusted person to walk my pet',
+        findATrustedPersonToWalkMyPet: 'Find a trusted person to walk your pet',
     },
     extraInfo: 'Something you would like to find here and we didn\'t include?',
     surveyCompleteMessage: 'Thank you for completing our survey, have a nice day!',
