@@ -34,7 +34,7 @@ const es = {
         homeSubtitle: 'Donde quiera que estes, encontrá veterinários para ayudarte, obtené descuentos especiales en comida y accesorios, encontrá lugares donde tu mascota puede jugar y tener un lindo peinado, eso y mucho más...',
         landingTitle: '¡Un lugar en la web para vos y tus mascotas!',
         landingSubtitle: 'Haga parte de este proyecto con tus sugerencias',
-        landingBusinessTitle: 'Nuestra misión es disponibilizar informaciones y servicios de forma simples y directa para quien ama a los pets',
+        landingBusinessTitle: 'Nuestra misión es disponibilizar informaciones y servicios de forma simples y directa para quien ama a las mascotas',
         landingBusinessSubtitle: 'Haga parte de este proyecto y ofrezca tus productos y servicios',
         menu: {
             business: 'Empresas',
