@@ -2637,6 +2637,7 @@ const en = {
     signin: 'Sign in',
     signup: 'Sign up',
     signout: 'Sign out',
+    informationLoginBeta: '*To use the beta version, pre-register',
     alreadyHaveAnAccount:
       'Already have an account? Sign in.',
     createAnAccount: `Don't have an account? Create one.`,

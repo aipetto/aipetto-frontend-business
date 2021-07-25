@@ -2638,6 +2638,7 @@ const ptBR = {
     signin: 'Entrar',
     signup: 'Registrar',
     signout: 'Sair',
+    informationLoginBeta: '*Para utilizar a versão beta faça seu pré-cadastro.',
     alreadyHaveAnAccount: 'Já possui uma conta? Entre.',
     createAnAccount: 'Não possui conta? Criar uma.',
     social: {

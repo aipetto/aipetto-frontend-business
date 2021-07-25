@@ -162,6 +162,12 @@ function SigninPage() {
                           >
                             {i18n('auth.signin')}
                           </button>
+                          <Link
+                              className="cursor-pointer focus:text-green-600 hover:text-green-700 font-medium text-gray-600 dark:text-gray-400"
+                              to="/"
+                          >
+                            {i18n('auth.informationLoginBeta')}
+                          </Link>
                         </div>
                       </form>
                     </FormProvider>
