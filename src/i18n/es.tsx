@@ -59,6 +59,21 @@ const es = {
             seeWhatPetsMyFriendsHave: 'Conocer acerca de las mascotas de mis amigos',
             findATrustedPersonToWalkMyPet: 'Encontrar una persona confiable para pasear mi mascota',
         },
+        checkboxPetProfessionTitle: '¿Ejercés alguna profesión para pets?',
+        checkboxPetProfessionChoices: {
+            petTaxi: 'Pet Taxi',
+            petSitter: 'Pet Sitter',
+            dogWalker: 'Paseador',
+            veterinarian: 'Veterinario',
+            surgeon: 'Cirujano',
+            groomer: 'Groomer / Peluquero / Bañador',
+            animalBlogger: 'Blogger de mascotas',
+            photographer: 'Fotógrafo de mascotas',
+            petManicures: 'Manicura',
+            therapeuticMassagist: 'Terapeuta y Masagista'
+        },
+        whereAreYouLocated: '¿Cuál es tu dirección? Nosotros ofreceremos los mejores servicios más cercanos a vos y tu mascota.',
+        allowNotificationTitle: '¿Aceptás que te enviemos correos con precios promocionales e información para el mejor cuidado de tu pet?',
         extraInfo: '¿Algo que te gustaría encontrar en una plataforma de mascotas y no hemos incluido?',
         surveyCompleteMessage: '¡Muchas gracias por completar nuestro formulario, que tengas un excelente día!',
         surveyCompleteButton: 'Completar'

@@ -60,6 +60,21 @@ const en = {
         seeWhatPetsMyFriendsHave: 'See what pets my friends have',
         findATrustedPersonToWalkMyPet: 'Find a trusted person to walk your pet',
     },
+    checkboxPetProfessionTitle: 'Do you provide some pet service?',
+     checkboxPetProfessionChoices: {
+      petTaxi: 'Pet Taxi',
+      petSitter: 'Pet Sitter',
+      dogWalker: 'Dog Walker',
+      veterinarian: 'Veterinarian',
+      surgeon: 'Surgeon',
+      groomer: 'Groomer',
+      animalBlogger: 'Animal Blogger',
+      photographer: 'Fotógrafo de pets',
+      petManicures: 'Pet Manicures',
+      therapeuticMassagist: 'Therapeutic Massagist'
+    },
+    whereAreYouLocated: 'What is your address? We will offer the best services nearby you and your pet!',
+    allowNotificationTitle: 'Do you allow us to send emails with special prices and information for better taking care of your pet?',
     extraInfo: 'Something you would like to find here and we didn\'t include?',
     surveyCompleteMessage: 'Thank you for completing our survey, have a nice day!',
     surveyCompleteButton: 'Complete'
