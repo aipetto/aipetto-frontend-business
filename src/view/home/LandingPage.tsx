@@ -18,7 +18,7 @@ import Spinner from "../shared/Spinner";
 Survey.StylesManager.applyTheme("modern");
 
 async function onComplete(survey, options) {
-    const result = await getGeocode({address: survey.data.googleAddressSearch});
+    const result = await getGeocode({address: survey.data.address});
     const { lat, lng} = await getLatLng(result[0]);
     const surveyWithGoogleAddressGeoLocationsurvey = {...survey.data, latitude: lat, longitude: lng};
     await surveyService.create(surveyWithGoogleAddressGeoLocationsurvey);
@@ -39,7 +39,7 @@ function LandingPage() {
                 {type: "text", name: "name", title: i18n('survey.nameTitle'), isRequired: true},
                 {type: "text", name: "email", title: i18n('survey.emailTitle'), isRequired: true},
                 {type: "text", name: "numberOfPets", title: i18n('survey.numberOfPets'), isRequired: true},
-                {type: "text", name: "googleAddressSearch", title: i18n('survey.whereAreYouLocated')},
+                {type: "text", name: "address", title: i18n('survey.whereAreYouLocated')},
                 { type: "checkbox", name: "interests", title: i18n('survey.checkboxTitle'), isRequired: true, colCount: 6,
                     choices:
                         [
