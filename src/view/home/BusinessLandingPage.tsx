@@ -1,23 +1,29 @@
 import {
     faStore,
 } from '@fortawesome/free-solid-svg-icons';
-import React, {Component} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import LandingNavbar from "../layout/LandingNavbar";
 import * as Survey from "survey-react";
 import "survey-react/modern.css";
 import { i18n, getLangFromBrowserNavigator } from 'src/i18n';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import businessSurveyService from 'src/modules/newBusinessSurvey/newBusinessSurveyService';
+import {
+    GoogleReCaptchaProvider,
+    useGoogleReCaptcha
+} from 'react-google-recaptcha-v3';
+import config from 'src/config';
+import CookieConsent from "react-cookie-consent";
 
 Survey.StylesManager.applyTheme("modern");
 
-class BusinessLandingPage extends Component {
+async function onComplete(survey, options) {
+    await businessSurveyService.create(survey.data);
+}
 
-    async onComplete(survey, options) {
-        await businessSurveyService.create(survey.data);
-    }
+function BusinessLandingPage(){
 
-    render (){
+    const renderBusinessSurvey = () => {
         var json = { questions: [
                 {type: "text", name: "nameBusiness", title: i18n('businessSurvey.businessNameTitle'), isRequired: true},
                 {type: "text", name: "numberOfPlaces", title: i18n('businessSurvey.numberPlaces'), isRequired: true},
@@ -28,7 +34,7 @@ class BusinessLandingPage extends Component {
                 { type: "checkbox", name: "services", title: i18n('businessSurvey.checkboxTitle'), isRequired: true, colCount: 6,
                  choices:
                      [
-                         i18n('businessSurvey.checkboxChoices.acupultura'),
+                         i18n('businessSurvey.checkboxChoices.acupuntura'),
                          i18n('businessSurvey.checkboxChoices.analgesiaTratamentoDolor'),
                          i18n('businessSurvey.checkboxChoices.analisisDeHeces'),
                          i18n('businessSurvey.checkboxChoices.analisisDeOrina'),
@@ -64,7 +70,7 @@ class BusinessLandingPage extends Component {
                          i18n('businessSurvey.checkboxChoices.endoscopia'),
                          i18n('businessSurvey.checkboxChoices.entrenamientoDeEstabilidad'),
                          i18n('businessSurvey.checkboxChoices.estiramientos'),
-                         i18n('businessSurvey.checkboxChoices.eutanasiaEIncineracion'),
+                         i18n('businessSurvey.checkboxChoices.eutanasiaYCremacion'),
                          i18n('businessSurvey.checkboxChoices.examenMedico'),
                          i18n('businessSurvey.checkboxChoices.examenNeurologico'),
                          i18n('businessSurvey.checkboxChoices.examenOftalmologico'),
@@ -95,6 +101,7 @@ class BusinessLandingPage extends Component {
                          i18n('businessSurvey.checkboxChoices.vacunacionDeGato'),
                          i18n('businessSurvey.checkboxChoices.vacunacionDePerro'),
                    ]},
+                { type: "boolean", name: "allowReceiveNotifications", title: i18n('businessSurvey.allowNotificationTitle'), isRequired: true},
             ]};
         var survey = new Survey.Model(json);
 
@@ -120,7 +127,7 @@ class BusinessLandingPage extends Component {
                 <div className="container mx-auto mt-8">
                     <div className="flex space-x-4">
                         <div className="flex-1">
-                            <Survey.Survey model={survey} onComplete={this.onComplete} />
+                            <Survey.Survey model={survey} onComplete={onComplete} />
                         </div>
                         <div className="flex-1">
                             <div className="text-center fade-in fade-in-second hidden md:block">
@@ -148,6 +155,15 @@ class BusinessLandingPage extends Component {
         </>
         );
     };
+    return renderBusinessSurvey();
 };
 
-export default BusinessLandingPage;
+function BusinessLandingPageWithGoogleReCaptchProvider() {
+    return (
+        <GoogleReCaptchaProvider reCaptchaKey={config.clientGoogleRecaptchaV3}>
+            <BusinessLandingPage />
+        </GoogleReCaptchaProvider>
+    )
+}
+
+export default BusinessLandingPageWithGoogleReCaptchProvider;

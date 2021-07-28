@@ -12,6 +12,9 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import Message from 'src/view/shared/message';
 import * as yup from 'yup';
 import LandingNavbar from "../layout/LandingNavbar";
+import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
+import config from "../../config";
+import CookieConsent from "react-cookie-consent";
 
 const schema = yup.object().shape({
   email: yupFormSchemas.string(i18n('user.fields.email'), {
@@ -199,4 +202,13 @@ function SigninPage() {
     );
 };
 
-export default SigninPage;
+
+function SignInWithGoogleReCaptchProvider() {
+  return (
+      <GoogleReCaptchaProvider reCaptchaKey={config.clientGoogleRecaptchaV3}>
+        <SigninPage />
+      </GoogleReCaptchaProvider>
+  )
+}
+
+export default SignInWithGoogleReCaptchProvider;

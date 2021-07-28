@@ -1,7 +1,7 @@
 import {
     faGifts,
 } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
+import React, {useCallback, useEffect} from 'react';
 import LandingNavbar from "../layout/LandingNavbar";
 import * as Survey from "survey-react";
 import "survey-react/modern.css";
@@ -12,8 +12,13 @@ import {Libraries} from "@react-google-maps/api/dist/utils/make-load-script-url"
 import "@reach/combobox/styles.css";
 import {getGeocode, getLatLng} from "use-places-autocomplete";
 import {useLoadScript} from "@react-google-maps/api";
-import config from "../../config";
 import Spinner from "../shared/Spinner";
+import {
+    GoogleReCaptchaProvider,
+    useGoogleReCaptcha
+} from 'react-google-recaptcha-v3';
+import config from 'src/config';
+import CookieConsent from "react-cookie-consent";
 
 Survey.StylesManager.applyTheme("modern");
 
@@ -35,6 +40,7 @@ function LandingPage() {
     });
 
     const renderSurvey = () => {
+
         var json = { questions: [
                 {type: "text", name: "name", title: i18n('survey.nameTitle'), isRequired: true},
                 {type: "text", name: "email", title: i18n('survey.emailTitle'), isRequired: true},
@@ -107,6 +113,21 @@ function LandingPage() {
                             </div>
                         </div>
                     </div>
+                    <CookieConsent
+                        enableDeclineButton
+                        containerClasses="alert alert-warning col-lg-12"
+                        debug={true}
+                        buttonText={i18n('privacy.acceptButton')}
+                        declineButtonText={i18n('privacy.declineButtonText')}
+                        buttonStyle={{
+                            background: "green",
+                            color: "white",
+                        }}
+                        declineButtonStyle={{
+                            background: "gray",
+                            color: "white",
+                        }}
+                    >{i18n('privacy.cookiesConsent')}</CookieConsent>
                     <footer className="py-8 text-center md:text-left">
                         <div className="container mx-auto">
                             <div className=" flex flex-col lg:flex-row content-center items-center justify-between">
@@ -125,4 +146,12 @@ function LandingPage() {
     return isLoaded ? renderSurvey() : <Spinner/>
 };
 
-export default LandingPage;
+function LandingPageWithGoogleReCaptchProvider() {
+    return (
+        <GoogleReCaptchaProvider reCaptchaKey={config.clientGoogleRecaptchaV3}>
+            <LandingPage />
+        </GoogleReCaptchaProvider>
+    )
+}
+
+export default LandingPageWithGoogleReCaptchProvider;

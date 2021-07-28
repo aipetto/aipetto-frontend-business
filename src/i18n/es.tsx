@@ -29,6 +29,12 @@ const es = {
         title: 'aipetto',
         slogan: 'información y servicios para tu mascota donde quiera que vayas y a cualquier hora'
     },
+
+    privacy: {
+        cookiesConsent: 'Esta página utiliza cookies para brindar una mejor experiencia usuario en el sitio.',
+        acceptButton: 'Aceptar',
+        declineButtonText: 'No aceptar'
+    },
     public: {
         homeTitle: '¿Amás a las mascotas?¡Entonces este es tu lugar!',
         homeSubtitle: 'Donde quiera que estes, encontrá veterinários para ayudarte, obtené descuentos especiales en comida y accesorios, encontrá lugares donde tu mascota pueda jugar y tener un lindo peinado, eso y mucho más...',
@@ -130,10 +136,10 @@ const es = {
             ecografia: 'Ecografía',
             electroterapia: 'Electroterapia',
             endodoncia: 'Endodoncia',
-            endoscoíia: 'Endoscopía',
+            endoscopia: 'Endoscopía',
             entrenamientoDeEstabilidad: 'Entrenamiento de estabilidad',
             estiramientos: 'Estiramientos',
-            eutanasiaYcremación: 'Eutanasia y cremación',
+            eutanasiaYCremacion: 'Eutanasia y cremación',
             examenMedico: 'Examen médico',
             examenNeurologico: 'Examen neurológico',
             examenOftalmologico: 'Examen oftalmológico',
@@ -149,7 +155,7 @@ const es = {
             oncologia: 'Oncología',
             pasaporteComunitarioParaAnimalesDeCompania: 'Pasaporte comunitario para animales de compañía',
             pastillasAnticonceptivasParaGatas: 'Pastillas anticonceptivas para gatas',
-            peluqueria: 'Peluquería',
+            peluqueria: 'Peluquería y estética canina',
             programaDeReduccionDePeso: 'Programa de reducción de peso',
             pruebaDeAlergia: 'Prueba de alergia',
             quimioterapia: 'Quimioterapia',
@@ -157,13 +163,14 @@ const es = {
             radiografiaDeContraste: 'Radiografía de contraste',
             reconocimientoClinico: 'Reconocimiento clínico',
             rehabilitacion: 'Rehabilitación',
-            tienda: 'Tienda',
+            tienda: 'PetShop',
             tranquilizantes: 'Tranquilizantes',
             traumatologia: 'Traumatología',
             urgencias: 'Urgencias',
             vacunacionDeGato: 'Vacunación de gato',
             vacunacionDePerro: 'Vacunación de perro',
         },
+        allowNotificationTitle: '¿Aceptá que enviemos correos con información sobre las herramientas de aipetto?',
     },
 
     entities: {

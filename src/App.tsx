@@ -7,6 +7,7 @@ import React from 'react';
 import { Provider, useSelector } from 'react-redux';
 import RoutesComponent from 'src/view/shared/routes/RoutesComponent';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
+import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
 
 const store = configureStore();
 
@@ -14,7 +15,7 @@ const App = (props) => {
   return (
     <Provider store={store}>
       <ConnectedRouter history={getHistory()}>
-        <AppInnerComponent />
+         <AppInnerComponent />
       </ConnectedRouter>
     </Provider>
   );
