@@ -3553,7 +3553,7 @@ const ptBR = {
       businessPlace2: 'Negócio 2',
       businessPlace3: 'Negócio 3',
       reservations: 'Reservas de serviços',
-      top7Services: 'Top 7 serviçoes',
+      top7Services: 'Top 7 serviços',
       months: {
         1: 'Janeiro',
         2: 'Fevereiro',
