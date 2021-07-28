@@ -64,6 +64,31 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'currency',
+    label: i18n('entities.serviceReservation.fields.currency'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'digitalReservationDoc',
+    label: i18n('entities.serviceReservation.fields.digitalReservationDoc'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
+    name: 'totalPriceTransportartion',
+    label: i18n('entities.serviceReservation.fields.totalPriceTransportartion'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'ratingFromCustomer',
+    label: i18n('entities.serviceReservation.fields.ratingFromCustomer'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'country',
+    label: i18n('entities.serviceReservation.fields.country'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.serviceReservation.fields.createdAt'),
     render: exporterRenders.datetime(),

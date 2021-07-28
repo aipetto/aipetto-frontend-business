@@ -10,8 +10,10 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -29,6 +31,14 @@ const schema = yup.object().shape({
       "required": true
     },
   ),
+  currency: yupFormSchemas.relationToOne(
+    i18n('entities.businessServicesPrices.fields.currency'),
+    {},
+  ),
+  isFree: yupFormSchemas.boolean(
+    i18n('entities.businessServicesPrices.fields.isFree'),
+    {},
+  ),
 });
 
 function BusinessServicesPricesForm(props) {
@@ -41,6 +51,8 @@ function BusinessServicesPricesForm(props) {
       service: record.service,
       businessId: record.businessId,
       servicePrice: record.servicePrice,
+      currency: record.currency,
+      isFree: record.isFree,
     };
   });
 

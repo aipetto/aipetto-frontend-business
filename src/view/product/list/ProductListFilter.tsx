@@ -19,6 +19,8 @@ import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import InputNumberRangeFormItem from 'src/view/shared/form/items/InputNumberRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -36,6 +38,12 @@ const schema = yup.object().shape({
   pointsPriceRange: yupFilterSchemas.integerRange(
     i18n('entities.product.fields.pointsPriceRange'),
   ),
+  currency: yupFilterSchemas.relationToOne(
+    i18n('entities.product.fields.currency'),
+  ),
+  language: yupFilterSchemas.relationToOne(
+    i18n('entities.product.fields.language'),
+  ),
 });
 
 const emptyValues = {
@@ -44,6 +52,8 @@ const emptyValues = {
   businessId: null,
   acceptPointsToShop: null,
   pointsPriceRange: [],
+  currency: null,
+  language: null,
 }
 
 const previewRenders = {
@@ -67,6 +77,14 @@ const previewRenders = {
     label: i18n('entities.product.fields.pointsPriceRange'),
     render: filterRenders.range(),
   },
+  currency: {
+      label: i18n('entities.product.fields.currency'),
+      render: filterRenders.relationToOne(),
+    },
+  language: {
+      label: i18n('entities.product.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function ProductListFilter(props) {
@@ -155,6 +173,14 @@ function ProductListFilter(props) {
               <InputNumberRangeFormItem
                 name="pointsPriceRange"
                 label={i18n('entities.product.fields.pointsPriceRange')}
+              />
+              <CurrencyAutocompleteFormItem
+                name="currency"
+                label={i18n('entities.product.fields.currency')}
+              />
+              <LanguagesAutocompleteFormItem
+                name="language"
+                label={i18n('entities.product.fields.language')}
               />
             </div>
 

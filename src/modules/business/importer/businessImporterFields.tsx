@@ -116,4 +116,28 @@ export default [
       {},
     ),
   },
+  {
+    name: 'businessLogo',
+    label: i18n('entities.business.fields.businessLogo'),
+    schema: schemas.images(
+      i18n('entities.business.fields.businessLogo'),
+      {},
+    ),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.business.fields.latitude'),
+    schema: schemas.string(
+      i18n('entities.business.fields.latitude'),
+      {},
+    ),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.business.fields.longitude'),
+    schema: schemas.string(
+      i18n('entities.business.fields.longitude'),
+      {},
+    ),
+  },
 ];

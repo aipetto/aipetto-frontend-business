@@ -145,6 +145,26 @@ function LandingSurveyListTable(props) {
                     'entities.landingSurvey.fields.allowReceiveNotifications',
                   )}
                 />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'latitude'}
+                  label={i18n(
+                    'entities.landingSurvey.fields.latitude',
+                  )}
+                  align="right"
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'longitude'}
+                  label={i18n(
+                    'entities.landingSurvey.fields.longitude',
+                  )}
+                  align="right"
+                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -190,6 +210,12 @@ function LandingSurveyListTable(props) {
                     {row.allowReceiveNotifications
                       ? i18n('common.yes')
                       : i18n('common.no')}
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.latitude}
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.longitude}
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

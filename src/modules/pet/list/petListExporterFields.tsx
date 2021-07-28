@@ -154,6 +154,47 @@ export default [
     render: exporterRenders.relationToMany(),
   },
   {
+    name: 'governmentUniqueID',
+    label: i18n('entities.pet.fields.governmentUniqueID'),
+  },
+  {
+    name: 'bloodType',
+    label: i18n('entities.pet.fields.bloodType'),
+  },
+  {
+    name: 'hasMicrochip',
+    label: i18n('entities.pet.fields.hasMicrochip'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'weight',
+    label: i18n('entities.pet.fields.weight'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'weightUnit',
+    label: i18n('entities.pet.fields.weightUnit'),
+  },
+  {
+    name: 'height',
+    label: i18n('entities.pet.fields.height'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'heightUnit',
+    label: i18n('entities.pet.fields.heightUnit'),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.pet.fields.latitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.pet.fields.longitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.pet.fields.createdAt'),
     render: exporterRenders.datetime(),

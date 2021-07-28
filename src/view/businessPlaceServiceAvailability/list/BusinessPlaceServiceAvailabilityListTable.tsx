@@ -19,7 +19,6 @@ import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import BusinessListItem from 'src/view/business/list/BusinessListItem';
 import BusinessServicesTypesListItem from 'src/view/businessServicesTypes/list/BusinessServicesTypesListItem';
-import PlaceListItem from 'src/view/place/list/PlaceListItem';
 
 function BusinessPlaceServiceAvailabilityListTable(props) {
   const [
@@ -132,26 +131,7 @@ function BusinessPlaceServiceAvailabilityListTable(props) {
                 />
                 <TableColumnHeader
                   label={i18n(
-                    'entities.businessPlaceServiceAvailability.fields.days',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'workOnHolidays'}
-                  label={i18n(
-                    'entities.businessPlaceServiceAvailability.fields.workOnHolidays',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
                     'entities.businessPlaceServiceAvailability.fields.serviceType',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.businessPlaceServiceAvailability.fields.places',
                   )}
                 />
               <TableColumnHeader />
@@ -208,26 +188,7 @@ function BusinessPlaceServiceAvailabilityListTable(props) {
                     ))}
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {(row.days || []).map((value) => (
-                      <div key={value}>
-                        {value
-                          ? i18n(
-                            `entities.businessPlaceServiceAvailability.enumerators.days.${value}`,
-                            )
-                          : null}
-                      </div>
-                    ))}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.workOnHolidays
-                      ? i18n('common.yes')
-                      : i18n('common.no')}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessServicesTypesListItem value={row.serviceType} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <PlaceListItem value={row.places} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

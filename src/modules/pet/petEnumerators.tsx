@@ -55,6 +55,22 @@ const petEnumerators = {
     'serious_injury',
     'not_specified',
   ],
+  bloodType: [
+    'canine_DEA_1_1',
+    'canine_DEA_1_2',
+    'canine_DEA_3',
+    'canine_DEA_4',
+    'canine_DEA_5',
+    'canine_DEA_7',
+  ],
+  weightUnit: [
+    'kilograms',
+    'pounds',
+  ],
+  heightUnit: [
+    'meters',
+    'feet',
+  ],
 };
 
 export default petEnumerators;

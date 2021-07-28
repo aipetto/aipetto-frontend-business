@@ -3,7 +3,10 @@ import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import UserViewItem from 'src/view/user/view/UserViewItem';
+import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
+import CountryViewItem from 'src/view/country/view/CountryViewItem';
+import CurrencyViewItem from 'src/view/currency/view/CurrencyViewItem';
 
 function CustomerView(props) {
   const { record, loading } = props;
@@ -14,9 +17,24 @@ function CustomerView(props) {
 
   return (
     <div>
+      <TextViewItem
+        label={i18n('entities.customer.fields.name')}
+        value={record.name}
+      />
+
       <BusinessViewItem
         label={i18n('entities.customer.fields.businessId')}
         value={record.businessId}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.uniqueCustomIdentifier')}
+        value={record.uniqueCustomIdentifier}
+      />
+
+      <UserViewItem
+        label={i18n('entities.customer.fields.userId')}
+        value={record.userId}
       />
 
       <TextViewItem
@@ -27,16 +45,6 @@ function CustomerView(props) {
             `entities.customer.enumerators.source.${record.source}`,
           )
         }
-      />
-
-      <UserViewItem
-        label={i18n('entities.customer.fields.userId')}
-        value={record.userId}
-      />
-
-      <TextViewItem
-        label={i18n('entities.customer.fields.name')}
-        value={record.name}
       />
 
       <TextViewItem
@@ -65,6 +73,11 @@ function CustomerView(props) {
       />
 
       <TextViewItem
+        label={i18n('entities.customer.fields.smsPhoneNumber')}
+        value={record.smsPhoneNumber}
+      />
+
+      <TextViewItem
         label={i18n('entities.customer.fields.phoneNumber')}
         value={record.phoneNumber}
       />
@@ -72,6 +85,11 @@ function CustomerView(props) {
       <TextViewItem
         label={i18n('entities.customer.fields.address')}
         value={record.address}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.email')}
+        value={record.email}
       />
 
       <TextViewItem
@@ -89,7 +107,7 @@ function CustomerView(props) {
         value={record.state}
       />
 
-      <TextViewItem
+      <CountryViewItem
         label={i18n('entities.customer.fields.country')}
         value={record.country}
       />
@@ -142,6 +160,90 @@ function CustomerView(props) {
       <TextViewItem
         label={i18n('entities.customer.fields.shippingAddressCountry')}
         value={record.shippingAddressCountry}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.latitude')}
+        value={record.latitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.longitude')}
+        value={record.longitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.prospectStatus')}
+        value={
+          record.prospectStatus &&
+          i18n(
+            `entities.customer.enumerators.prospectStatus.${record.prospectStatus}`,
+          )
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.customerStatus')}
+        value={
+          record.customerStatus &&
+          i18n(
+            `entities.customer.enumerators.customerStatus.${record.customerStatus}`,
+          )
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.wantToReceiveNotifications')}
+        value={
+          record.wantToReceiveNotifications
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <CurrencyViewItem
+        label={i18n('entities.customer.fields.currency')}
+        value={record.currency}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.balance')}
+        value={record.balance}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.shippingAddressStreetNumber')}
+        value={record.shippingAddressStreetNumber}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.addressStreetNumber')}
+        value={record.addressStreetNumber}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.billingAddressStreetNumber')}
+        value={record.billingAddressStreetNumber}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.addressStreetComplement')}
+        value={record.addressStreetComplement}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.billingAddressStreetComplement')}
+        value={record.billingAddressStreetComplement}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.shippingAddressStreetComplement')}
+        value={record.shippingAddressStreetComplement}
+      />
+
+      <ImagesViewItem
+        label={i18n('entities.customer.fields.customerProfileImage')}
+        value={record.customerProfileImage}
       />
     </div>
   );

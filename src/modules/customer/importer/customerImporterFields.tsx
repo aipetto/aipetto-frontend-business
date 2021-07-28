@@ -5,6 +5,18 @@ import moment from 'moment';
 
 export default [
   {
+    name: 'name',
+    label: i18n('entities.customer.fields.name'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.name'),
+      {
+        "required": true,
+        "min": 2,
+        "max": 255
+      },
+    ),
+  },
+  {
     name: 'businessId',
     label: i18n('entities.customer.fields.businessId'),
     schema: schemas.relationToOne(
@@ -13,12 +25,12 @@ export default [
     ),
   },
   {
-    name: 'source',
-    label: i18n('entities.customer.fields.source'),
-    schema: schemas.enumerator(
-      i18n('entities.customer.fields.source'),
+    name: 'uniqueCustomIdentifier',
+    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.uniqueCustomIdentifier'),
       {
-        "options": customerEnumerators.source
+        "required": true
       },
     ),
   },
@@ -31,14 +43,12 @@ export default [
     ),
   },
   {
-    name: 'name',
-    label: i18n('entities.customer.fields.name'),
-    schema: schemas.string(
-      i18n('entities.customer.fields.name'),
+    name: 'source',
+    label: i18n('entities.customer.fields.source'),
+    schema: schemas.enumerator(
+      i18n('entities.customer.fields.source'),
       {
-        "required": true,
-        "min": 2,
-        "max": 255
+        "options": customerEnumerators.source
       },
     ),
   },
@@ -78,6 +88,14 @@ export default [
     ),
   },
   {
+    name: 'smsPhoneNumber',
+    label: i18n('entities.customer.fields.smsPhoneNumber'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.smsPhoneNumber'),
+      {},
+    ),
+  },
+  {
     name: 'phoneNumber',
     label: i18n('entities.customer.fields.phoneNumber'),
     schema: schemas.string(
@@ -90,6 +108,14 @@ export default [
     label: i18n('entities.customer.fields.address'),
     schema: schemas.string(
       i18n('entities.customer.fields.address'),
+      {},
+    ),
+  },
+  {
+    name: 'email',
+    label: i18n('entities.customer.fields.email'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.email'),
       {},
     ),
   },
@@ -120,7 +146,7 @@ export default [
   {
     name: 'country',
     label: i18n('entities.customer.fields.country'),
-    schema: schemas.string(
+    schema: schemas.relationToOne(
       i18n('entities.customer.fields.country'),
       {},
     ),
@@ -202,6 +228,122 @@ export default [
     label: i18n('entities.customer.fields.shippingAddressCountry'),
     schema: schemas.string(
       i18n('entities.customer.fields.shippingAddressCountry'),
+      {},
+    ),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.customer.fields.latitude'),
+    schema: schemas.decimal(
+      i18n('entities.customer.fields.latitude'),
+      {},
+    ),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.customer.fields.longitude'),
+    schema: schemas.decimal(
+      i18n('entities.customer.fields.longitude'),
+      {},
+    ),
+  },
+  {
+    name: 'prospectStatus',
+    label: i18n('entities.customer.fields.prospectStatus'),
+    schema: schemas.enumerator(
+      i18n('entities.customer.fields.prospectStatus'),
+      {
+        "options": customerEnumerators.prospectStatus
+      },
+    ),
+  },
+  {
+    name: 'customerStatus',
+    label: i18n('entities.customer.fields.customerStatus'),
+    schema: schemas.enumerator(
+      i18n('entities.customer.fields.customerStatus'),
+      {
+        "options": customerEnumerators.customerStatus
+      },
+    ),
+  },
+  {
+    name: 'wantToReceiveNotifications',
+    label: i18n('entities.customer.fields.wantToReceiveNotifications'),
+    schema: schemas.boolean(
+      i18n('entities.customer.fields.wantToReceiveNotifications'),
+      {},
+    ),
+  },
+  {
+    name: 'currency',
+    label: i18n('entities.customer.fields.currency'),
+    schema: schemas.relationToOne(
+      i18n('entities.customer.fields.currency'),
+      {},
+    ),
+  },
+  {
+    name: 'balance',
+    label: i18n('entities.customer.fields.balance'),
+    schema: schemas.decimal(
+      i18n('entities.customer.fields.balance'),
+      {},
+    ),
+  },
+  {
+    name: 'shippingAddressStreetNumber',
+    label: i18n('entities.customer.fields.shippingAddressStreetNumber'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.shippingAddressStreetNumber'),
+      {},
+    ),
+  },
+  {
+    name: 'addressStreetNumber',
+    label: i18n('entities.customer.fields.addressStreetNumber'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.addressStreetNumber'),
+      {},
+    ),
+  },
+  {
+    name: 'billingAddressStreetNumber',
+    label: i18n('entities.customer.fields.billingAddressStreetNumber'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.billingAddressStreetNumber'),
+      {},
+    ),
+  },
+  {
+    name: 'addressStreetComplement',
+    label: i18n('entities.customer.fields.addressStreetComplement'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.addressStreetComplement'),
+      {},
+    ),
+  },
+  {
+    name: 'billingAddressStreetComplement',
+    label: i18n('entities.customer.fields.billingAddressStreetComplement'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.billingAddressStreetComplement'),
+      {},
+    ),
+  },
+  {
+    name: 'shippingAddressStreetComplement',
+    label: i18n('entities.customer.fields.shippingAddressStreetComplement'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.shippingAddressStreetComplement'),
+      {},
+    ),
+  },
+  {
+    name: 'customerProfileImage',
+    label: i18n('entities.customer.fields.customerProfileImage'),
+    schema: schemas.images(
+      i18n('entities.customer.fields.customerProfileImage'),
       {},
     ),
   },

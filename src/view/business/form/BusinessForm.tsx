@@ -10,6 +10,8 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import Storage from 'src/security/storage';
+import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
 import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
 import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
@@ -76,6 +78,18 @@ const schema = yup.object().shape({
     i18n('entities.business.fields.country'),
     {},
   ),
+  businessLogo: yupFormSchemas.images(
+    i18n('entities.business.fields.businessLogo'),
+    {},
+  ),
+  latitude: yupFormSchemas.string(
+    i18n('entities.business.fields.latitude'),
+    {},
+  ),
+  longitude: yupFormSchemas.string(
+    i18n('entities.business.fields.longitude'),
+    {},
+  ),
 });
 
 function BusinessForm(props) {
@@ -99,6 +113,9 @@ function BusinessForm(props) {
       city: record.city,
       state: record.state,
       country: record.country,
+      businessLogo: record.businessLogo || [],
+      latitude: record.latitude,
+      longitude: record.longitude,
     };
   });
 
@@ -226,6 +243,29 @@ function BusinessForm(props) {
             label={i18n('entities.business.fields.country')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ImagesFormItem
+            name="businessLogo"
+            label={i18n('entities.business.fields.businessLogo')}
+            required={false}
+            storage={Storage.values.businessBusinessLogo}
+            max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="latitude"
+            label={i18n('entities.business.fields.latitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="longitude"
+            label={i18n('entities.business.fields.longitude')}
+            required={false}
           />
         </div>
 

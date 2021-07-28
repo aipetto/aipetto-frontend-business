@@ -8,6 +8,7 @@ import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/B
 import CityViewItem from 'src/view/city/view/CityViewItem';
 import StateViewItem from 'src/view/state/view/StateViewItem';
 import CountryViewItem from 'src/view/country/view/CountryViewItem';
+import CurrencyViewItem from 'src/view/currency/view/CurrencyViewItem';
 
 function ProvidersView(props) {
   const { record, loading } = props;
@@ -86,6 +87,31 @@ function ProvidersView(props) {
       <CountryViewItem
         label={i18n('entities.providers.fields.country')}
         value={record.country}
+      />
+
+      <TextViewItem
+        label={i18n('entities.providers.fields.email')}
+        value={record.email}
+      />
+
+      <TextViewItem
+        label={i18n('entities.providers.fields.latitude')}
+        value={record.latitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.providers.fields.longitude')}
+        value={record.longitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.providers.fields.basePricePerService')}
+        value={record.basePricePerService}
+      />
+
+      <CurrencyViewItem
+        label={i18n('entities.providers.fields.currency')}
+        value={record.currency}
       />
     </div>
   );

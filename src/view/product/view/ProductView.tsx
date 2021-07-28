@@ -4,6 +4,8 @@ import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
+import CurrencyViewItem from 'src/view/currency/view/CurrencyViewItem';
+import LanguagesViewItem from 'src/view/languages/view/LanguagesViewItem';
 
 function ProductView(props) {
   const { record, loading } = props;
@@ -51,6 +53,16 @@ function ProductView(props) {
       <TextViewItem
         label={i18n('entities.product.fields.pointsPrice')}
         value={record.pointsPrice}
+      />
+
+      <CurrencyViewItem
+        label={i18n('entities.product.fields.currency')}
+        value={record.currency}
+      />
+
+      <LanguagesViewItem
+        label={i18n('entities.product.fields.language')}
+        value={record.language}
       />
     </div>
   );

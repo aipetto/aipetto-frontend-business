@@ -123,6 +123,25 @@ function VaccineTypesListTable(props) {
                     'entities.vaccineTypes.fields.country',
                   )}
                 />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'isMandatory'}
+                  label={i18n(
+                    'entities.vaccineTypes.fields.isMandatory',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'vaccinePetTargetAgeInMonths'}
+                  label={i18n(
+                    'entities.vaccineTypes.fields.vaccinePetTargetAgeInMonths',
+                  )}
+                  align="right"
+                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -165,6 +184,12 @@ function VaccineTypesListTable(props) {
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <CountryListItem value={row.country} />
                   </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.isMandatory
+                      ? i18n('common.yes')
+                      : i18n('common.no')}
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.vaccinePetTargetAgeInMonths}</td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
                     align="right"

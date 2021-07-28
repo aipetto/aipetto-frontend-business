@@ -10,9 +10,13 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import InputNumberFormItem from 'src/view/shared/form/items/InputNumberFormItem';
+import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import vaccineTypesEnumerators from 'src/modules/vaccineTypes/vaccineTypesEnumerators';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
+import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
+import BreedAutocompleteFormItem from 'src/view/breed/autocomplete/BreedAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -32,6 +36,32 @@ const schema = yup.object().shape({
       "options": vaccineTypesEnumerators.language
     },
   ),
+  frequencyShotDosis: yupFormSchemas.enumerator(
+    i18n('entities.vaccineTypes.fields.frequencyShotDosis'),
+    {
+      "options": vaccineTypesEnumerators.frequencyShotDosis
+    },
+  ),
+  petSpecificType: yupFormSchemas.relationToMany(
+    i18n('entities.vaccineTypes.fields.petSpecificType'),
+    {},
+  ),
+  vaccineCustomUniqueID: yupFormSchemas.string(
+    i18n('entities.vaccineTypes.fields.vaccineCustomUniqueID'),
+    {},
+  ),
+  isMandatory: yupFormSchemas.boolean(
+    i18n('entities.vaccineTypes.fields.isMandatory'),
+    {},
+  ),
+  specificBreeds: yupFormSchemas.relationToMany(
+    i18n('entities.vaccineTypes.fields.specificBreeds'),
+    {},
+  ),
+  vaccinePetTargetAgeInMonths: yupFormSchemas.integer(
+    i18n('entities.vaccineTypes.fields.vaccinePetTargetAgeInMonths'),
+    {},
+  ),
 });
 
 function VaccineTypesForm(props) {
@@ -44,6 +74,12 @@ function VaccineTypesForm(props) {
       name: record.name,
       country: record.country,
       language: record.language,
+      frequencyShotDosis: record.frequencyShotDosis,
+      petSpecificType: record.petSpecificType || [],
+      vaccineCustomUniqueID: record.vaccineCustomUniqueID,
+      isMandatory: record.isMandatory,
+      specificBreeds: record.specificBreeds || [],
+      vaccinePetTargetAgeInMonths: record.vaccinePetTargetAgeInMonths,
     };
   });
 
@@ -94,6 +130,59 @@ function VaccineTypesForm(props) {
                 ),
               }),
             )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="frequencyShotDosis"
+            label={i18n('entities.vaccineTypes.fields.frequencyShotDosis')}
+            options={vaccineTypesEnumerators.frequencyShotDosis.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.vaccineTypes.enumerators.frequencyShotDosis.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PetTypesAutocompleteFormItem
+            name="petSpecificType"
+            label={i18n('entities.vaccineTypes.fields.petSpecificType')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="vaccineCustomUniqueID"
+            label={i18n('entities.vaccineTypes.fields.vaccineCustomUniqueID')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isMandatory"
+            label={i18n('entities.vaccineTypes.fields.isMandatory')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BreedAutocompleteFormItem
+            name="specificBreeds"
+            label={i18n('entities.vaccineTypes.fields.specificBreeds')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputNumberFormItem
+            name="vaccinePetTargetAgeInMonths"
+            label={i18n('entities.vaccineTypes.fields.vaccinePetTargetAgeInMonths')}
             required={false}
           />
         </div>

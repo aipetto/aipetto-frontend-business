@@ -133,6 +133,89 @@ function BusinessListTable(props) {
                 />
                 <TableColumnHeader
                   label={i18n(
+                    'entities.business.fields.services',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.business.fields.categories',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'contactName'}
+                  label={i18n(
+                    'entities.business.fields.contactName',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'contactPhone'}
+                  label={i18n(
+                    'entities.business.fields.contactPhone',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'contactWhatsApp'}
+                  label={i18n(
+                    'entities.business.fields.contactWhatsApp',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'contactEmail'}
+                  label={i18n(
+                    'entities.business.fields.contactEmail',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'addressStreet'}
+                  label={i18n(
+                    'entities.business.fields.addressStreet',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'addressStreetNumber'}
+                  label={i18n(
+                    'entities.business.fields.addressStreetNumber',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'addressPostCode'}
+                  label={i18n(
+                    'entities.business.fields.addressPostCode',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.business.fields.city',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.business.fields.state',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
                     'entities.business.fields.country',
                   )}
                 />
@@ -176,7 +259,25 @@ function BusinessListTable(props) {
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.businessID}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <BusinessServicesTypesListItem value={row.services} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <BusinessCategoryListItem value={row.categories} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactName}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactPhone}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactWhatsApp}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactEmail}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.addressStreet}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.addressStreetNumber}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.addressPostCode}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <CityListItem value={row.city} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <StateListItem value={row.state} />
+                  </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <CountryListItem value={row.country} />
                   </td>

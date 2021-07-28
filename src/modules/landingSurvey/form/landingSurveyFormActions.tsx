@@ -54,7 +54,6 @@ const landingSurveyFormActions = {
         type: landingSurveyFormActions.CREATE_STARTED,
       });
 
-      console.log("creating survey" + values);
       await LandingSurveyService.create(values);
 
       dispatch({

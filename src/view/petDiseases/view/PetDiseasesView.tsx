@@ -2,6 +2,8 @@ import React from 'react';
 import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
+import PetTypesViewItem from 'src/view/petTypes/view/PetTypesViewItem';
+import BreedViewItem from 'src/view/breed/view/BreedViewItem';
 
 function PetDiseasesView(props) {
   const { record, loading } = props;
@@ -48,6 +50,16 @@ function PetDiseasesView(props) {
             `entities.petDiseases.enumerators.language.${record.language}`,
           )
         }
+      />
+
+      <PetTypesViewItem
+        label={i18n('entities.petDiseases.fields.specificPetTypes')}
+        value={record.specificPetTypes}
+      />
+
+      <BreedViewItem
+        label={i18n('entities.petDiseases.fields.specificPetBreeds')}
+        value={record.specificPetBreeds}
       />
     </div>
   );

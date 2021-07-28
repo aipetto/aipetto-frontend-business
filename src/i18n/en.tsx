@@ -200,17 +200,20 @@ const en = {
         },
         fields: {
           id: 'Id',
-          'businessId': 'BusinessId',
-          'source': 'Source',
-          'userId': 'UserId',
           'name': 'Name',
+          'businessId': 'BusinessId',
+          'uniqueCustomIdentifier': 'UniqueCustomIdentifier',
+          'userId': 'UserId',
+          'source': 'Source',
           'surname': 'Surname',
           'birthdateRange': 'Birthdate',
           'birthdate': 'Birthdate',
           'gender': 'Gender',
           'whatsApp': 'WhatsApp',
+          'smsPhoneNumber': 'SmsPhoneNumber',
           'phoneNumber': 'PhoneNumber',
           'address': 'Address',
+          'email': 'Email',
           'zipCode': 'ZipCode',
           'city': 'City',
           'state': 'State',
@@ -225,34 +228,65 @@ const en = {
           'shippingAddressState': 'ShippingAddressState',
           'shippingAddressZipCode': 'ShippingAddressZipCode',
           'shippingAddressCountry': 'ShippingAddressCountry',
+          'latitudeRange': 'Latitude',
+          'latitude': 'Latitude',
+          'longitudeRange': 'Longitude',
+          'longitude': 'Longitude',
+          'prospectStatus': 'ProspectStatus',
+          'customerStatus': 'CustomerStatus',
+          'wantToReceiveNotifications': 'WantToReceiveNotifications',
+          'currency': 'Currency',
+          'balanceRange': 'Balance',
+          'balance': 'Balance',
+          'shippingAddressStreetNumber': 'ShippingAddressStreetNumber',
+          'addressStreetNumber': 'AddressStreetNumber',
+          'billingAddressStreetNumber': 'BillingAddressStreetNumber',
+          'addressStreetComplement': 'AddressStreetComplement',
+          'billingAddressStreetComplement': 'BillingAddressStreetComplement',
+          'shippingAddressStreetComplement': 'ShippingAddressStreetComplement',
+          'customerProfileImage': 'CustomerProfileImage',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
         },
         enumerators: {
           'source': {
-            'aipetto': 'Aipetto',
             'facebook': 'Facebook',
             'twitter': 'Twitter',
+            'linkedin': 'Linkedin',
+            'phone_call': 'Phone_call',
+            'aipetto': 'Aipetto',
             'instagram': 'Instagram',
-            'youtube': 'Youtube',
-            'telegram': 'Telegram',
-            'whatsapp': 'Whatsapp',
             'email': 'Email',
-            'phone': 'Phone',
-            'direct': 'Direct',
-            'friend_recomendation': 'Friend_recomendation',
+            'reddit': 'Reddit',
+            'in_person': 'In_person',
+            'recommended_by_friend': 'Recommended_by_friend',
+            'website': 'Website',
+            'youtube': 'Youtube',
+            'google': 'Google',
+            'whatsapp': 'Whatsapp',
           },
           'gender': {
             'male': 'Male',
             'female': 'Female',
           },
+          'prospectStatus': {
+            'current_prospect': 'Current_prospect',
+            'lost_prospect': 'Lost_prospect',
+            'non_prospect': 'Non_prospect',
+          },
+          'customerStatus': {
+            'current_customer': 'Current_customer',
+            'past_customer': 'Past_customer',
+            'non_customer': 'Non_customer',
+          },
         },
         placeholders: {
-
+          'balance': '0',
         },
         hints: {
-
+          'prospectStatus': 'Prospect means it has been associated with a deal. The customer remains a current prospect until the deal is closed or, for some reason, the customer is removed from the associated deal',
+          'customerStatus': 'Indicates if a deal has been won. The contact remains a current customer until you manually mark it as a past customer.',
         },
         new: {
           title: 'New Customer',
@@ -267,6 +301,7 @@ const en = {
             'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
+
     product: {
         name: 'product',
         label: 'Products',
@@ -302,6 +337,8 @@ const en = {
           'acceptPointsToShop': 'AcceptPointsToShop',
           'pointsPriceRange': 'PointsPrice',
           'pointsPrice': 'PointsPrice',
+          'currency': 'Currency',
+          'language': 'Language',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -449,6 +486,19 @@ const en = {
           'numberOfLikes': 'NumberOfLikes',
           'matches': 'Matches',
           'petFriends': 'PetFriends',
+          'governmentUniqueID': 'GovernmentUniqueID',
+          'bloodType': 'BloodType',
+          'hasMicrochip': 'HasMicrochip',
+          'weightRange': 'Weight',
+          'weight': 'Weight',
+          'weightUnit': 'WeightUnit',
+          'heightRange': 'Height',
+          'height': 'Height',
+          'heightUnit': 'HeightUnit',
+          'latitudeRange': 'Latitude',
+          'latitude': 'Latitude',
+          'longitudeRange': 'Longitude',
+          'longitude': 'Longitude',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -510,6 +560,22 @@ const en = {
             'serious_injury': 'Serious_injury',
             'not_specified': 'Not_specified',
           },
+          'bloodType': {
+            'canine_DEA_1_1': 'Canine_DEA_1_1',
+            'canine_DEA_1_2': 'Canine_DEA_1_2',
+            'canine_DEA_3': 'Canine_DEA_3',
+            'canine_DEA_4': 'Canine_DEA_4',
+            'canine_DEA_5': 'Canine_DEA_5',
+            'canine_DEA_7': 'Canine_DEA_7',
+          },
+          'weightUnit': {
+            'kilograms': 'Kilograms',
+            'pounds': 'Pounds',
+          },
+          'heightUnit': {
+            'meters': 'Meters',
+            'feet': 'Feet',
+          },
         },
         placeholders: {
           'age': 'Age in months',
@@ -519,6 +585,7 @@ const en = {
           'usersAuthorized': 'Users that can access this pet profile',
           'businessAuthorized': 'Business that are authorized to access this pet profile',
           'isLookingForMatch': 'Is your pet looking for a match?',
+          'governmentUniqueID': 'Government Pets Unique ID',
         },
         new: {
           title: 'New Pet',
@@ -745,6 +812,9 @@ const en = {
           'city': 'City',
           'state': 'State',
           'country': 'Country',
+          'businessLogo': 'BusinessLogo',
+          'latitude': 'Latitude',
+          'longitude': 'Longitude',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -819,6 +889,8 @@ const en = {
           'starsRange': 'Stars',
           'stars': 'Stars',
           'isOpen': 'IsOpen',
+          'photoLogo': 'PhotoLogo',
+          'photoStore': 'PhotoStore',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -944,6 +1016,13 @@ const en = {
           'totalPriceWithDiscountRange': 'TotalPriceWithDiscount',
           'totalPriceWithDiscount': 'TotalPriceWithDiscount',
           'discountCode': 'DiscountCode',
+          'currency': 'Currency',
+          'digitalReservationDoc': 'DigitalReservationDoc',
+          'totalPriceTransportartionRange': 'TotalPriceTransportartion',
+          'totalPriceTransportartion': 'TotalPriceTransportartion',
+          'ratingFromCustomerRange': 'RatingFromCustomer',
+          'ratingFromCustomer': 'RatingFromCustomer',
+          'country': 'Country',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -1338,6 +1417,7 @@ const en = {
           'to': 'To',
           'message': 'Message',
           'businessId': 'BusinessId',
+          'language': 'Language',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -1500,6 +1580,7 @@ const en = {
           id: 'Id',
           'name': 'Name',
           'active': 'Active',
+          'languageCode': 'LanguageCode',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -1797,6 +1878,14 @@ const en = {
           'city': 'City',
           'state': 'State',
           'country': 'Country',
+          'email': 'Email',
+          'latitudeRange': 'Latitude',
+          'latitude': 'Latitude',
+          'longitudeRange': 'Longitude',
+          'longitude': 'Longitude',
+          'basePricePerServiceRange': 'BasePricePerService',
+          'basePricePerService': 'BasePricePerService',
+          'currency': 'Currency',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -1853,6 +1942,13 @@ const en = {
           'name': 'Name',
           'country': 'Country',
           'language': 'Language',
+          'frequencyShotDosis': 'FrequencyShotDosis',
+          'petSpecificType': 'PetSpecificType',
+          'vaccineCustomUniqueID': 'VaccineCustomUniqueID',
+          'isMandatory': 'IsMandatory',
+          'specificBreeds': 'SpecificBreeds',
+          'vaccinePetTargetAgeInMonthsRange': 'VaccinePetTargetAgeInMonths',
+          'vaccinePetTargetAgeInMonths': 'VaccinePetTargetAgeInMonths',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -1862,6 +1958,12 @@ const en = {
             'en': 'En',
             'es': 'Es',
             'pt': 'Pt',
+          },
+          'frequencyShotDosis': {
+            'one_time': 'One_time',
+            'every_month': 'Every_month',
+            'every_six_months': 'Every_six_months',
+            'every_year': 'Every_year',
           },
         },
         placeholders: {
@@ -2034,12 +2136,22 @@ const en = {
           'interests': 'Interests',
           'extraInfo': 'ExtraInfo',
           'allowReceiveNotifications': 'AllowReceiveNotifications',
+          'latitudeRange': 'Latitude',
+          'latitude': 'Latitude',
+          'longitudeRange': 'Longitude',
+          'longitude': 'Longitude',
+          'petProfession': 'PetProfession',
+          'address': 'Address',
+          'country': 'Country',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
         },
         enumerators: {
           'interests': {
+            '': '',
+          },
+          'petProfession': {
             '': '',
           },
         },
@@ -2098,6 +2210,11 @@ const en = {
           'digitalNetworks': 'DigitalNetworks',
           'allowReceiveNotifications': 'AllowReceiveNotifications',
           'services': 'Services',
+          'address': 'Address',
+          'latitudeRange': 'Latitude',
+          'latitude': 'Latitude',
+          'longitudeRange': 'Longitude',
+          'longitude': 'Longitude',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -2216,6 +2333,8 @@ const en = {
           'isHumanContagious': 'IsHumanContagious',
           'isPetContagious': 'IsPetContagious',
           'language': 'Language',
+          'specificPetTypes': 'SpecificPetTypes',
+          'specificPetBreeds': 'SpecificPetBreeds',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -2277,6 +2396,8 @@ const en = {
           'businessId': 'BusinessId',
           'servicePriceRange': 'ServicePrice',
           'servicePrice': 'ServicePrice',
+          'currency': 'Currency',
+          'isFree': 'IsFree',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -2338,6 +2459,9 @@ const en = {
           'authors': 'Authors',
           'postCategory': 'PostCategory',
           'comments': 'Comments',
+          'source': 'Source',
+          'language': 'Language',
+          'country': 'Country',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -2640,6 +2764,487 @@ const en = {
         importer: {
           title: 'Import ProductCategories',
           fileName: 'productCategory_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    deals: {
+        name: 'deals',
+        label: 'Deals',
+        menu: 'Deals',
+        exporterFileName: 'deals_export',
+        list: {
+          menu: 'Deals',
+          title: 'Deals',
+        },
+        create: {
+          success: 'Deals successfully saved',
+        },
+        update: {
+          success: 'Deals successfully saved',
+        },
+        destroy: {
+          success: 'Deals successfully deleted',
+        },
+        destroyAll: {
+          success: 'Deals(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Deals',
+        },
+        fields: {
+          id: 'Id',
+          'status': 'Status',
+          'customer': 'Customer',
+          'digitalContracts': 'DigitalContracts',
+          'dateStartRange': 'DateStart',
+          'dateStart': 'DateStart',
+          'dateEndedRange': 'DateEnded',
+          'dateEnded': 'DateEnded',
+          'salesManagerResponsible': 'SalesManagerResponsible',
+          'businessID': 'BusinessID',
+          'country': 'Country',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'status': {
+            'open': 'Open',
+            'in_progress': 'In_progress',
+            'closed': 'Closed',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Deals',
+        },
+        view: {
+          title: 'View Deals',
+        },
+        importer: {
+          title: 'Import Deals',
+          fileName: 'deals_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    businessPaymentCycle: {
+        name: 'businessPaymentCycle',
+        label: 'BusinessPaymentCycles',
+        menu: 'BusinessPaymentCycles',
+        exporterFileName: 'businessPaymentCycle_export',
+        list: {
+          menu: 'BusinessPaymentCycles',
+          title: 'BusinessPaymentCycles',
+        },
+        create: {
+          success: 'BusinessPaymentCycle successfully saved',
+        },
+        update: {
+          success: 'BusinessPaymentCycle successfully saved',
+        },
+        destroy: {
+          success: 'BusinessPaymentCycle successfully deleted',
+        },
+        destroyAll: {
+          success: 'BusinessPaymentCycle(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit BusinessPaymentCycle',
+        },
+        fields: {
+          id: 'Id',
+          'businessID': 'BusinessID',
+          'cycleStartRange': 'CycleStart',
+          'cycleStart': 'CycleStart',
+          'cycleEndRange': 'CycleEnd',
+          'cycleEnd': 'CycleEnd',
+          'statusPayment': 'StatusPayment',
+          'totalBusinessServiceReservationPeriodRange': 'TotalBusinessServiceReservationPeriod',
+          'totalBusinessServiceReservationPeriod': 'TotalBusinessServiceReservationPeriod',
+          'totalCommisionCalculatedRange': 'TotalCommisionCalculated',
+          'totalCommisionCalculated': 'TotalCommisionCalculated',
+          'commisionRateUsedOnCalculationRange': 'CommisionRateUsedOnCalculation',
+          'commisionRateUsedOnCalculation': 'CommisionRateUsedOnCalculation',
+          'businessServiceReservationsUsed': 'BusinessServiceReservationsUsed',
+          'statusCyclePayment': 'StatusCyclePayment',
+          'customerID': 'CustomerID',
+          'paymentMethod': 'PaymentMethod',
+          'paymentGatewayReferenceCode': 'PaymentGatewayReferenceCode',
+          'paymentGatewayType': 'PaymentGatewayType',
+          'country': 'Country',
+          'currency': 'Currency',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'statusPayment': {
+            'requires_payment_method': 'Requires_payment_method',
+            'requires_confirmation': 'Requires_confirmation',
+            'requires_action': 'Requires_action',
+            'processing': 'Processing',
+            'requires_capture': 'Requires_capture',
+            'canceled': 'Canceled',
+            'succeeded': 'Succeeded',
+          },
+          'statusCyclePayment': {
+            'opened': 'Opened',
+            'closed': 'Closed',
+            'canceled': 'Canceled',
+          },
+          'paymentMethod': {
+            'acss_debit': 'Acss_debit',
+            'afterpay_clearpay': 'Afterpay_clearpay',
+            'alipay': 'Alipay',
+            'au_becs_debit': 'Au_becs_debit',
+            'bacs_debit': 'Bacs_debit',
+            'bancontact': 'Bancontact',
+            'boleto': 'Boleto',
+            'card': 'Card',
+            'card_present': 'Card_present',
+            'eps': 'Eps',
+            'fpx': 'Fpx',
+            'giropay': 'Giropay',
+            'grabpay': 'Grabpay',
+            'ideal': 'Ideal',
+            'interac_present': 'Interac_present',
+            'oxxo': 'Oxxo',
+            'p24': 'P24',
+            'sepa_debit': 'Sepa_debit',
+            'sofort': 'Sofort',
+            'wechat_pay': 'Wechat_pay',
+          },
+          'paymentGatewayType': {
+            'mercadopago': 'Mercadopago',
+            'stripe': 'Stripe',
+            'paypal': 'Paypal',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+          'statusPayment': 'Payment Status follow Stripe Status API format',
+        },
+        new: {
+          title: 'New BusinessPaymentCycle',
+        },
+        view: {
+          title: 'View BusinessPaymentCycle',
+        },
+        importer: {
+          title: 'Import BusinessPaymentCycles',
+          fileName: 'businessPaymentCycle_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    questions: {
+        name: 'questions',
+        label: 'Questions',
+        menu: 'Questions',
+        exporterFileName: 'questions_export',
+        list: {
+          menu: 'Questions',
+          title: 'Questions',
+        },
+        create: {
+          success: 'Questions successfully saved',
+        },
+        update: {
+          success: 'Questions successfully saved',
+        },
+        destroy: {
+          success: 'Questions successfully deleted',
+        },
+        destroyAll: {
+          success: 'Questions(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Questions',
+        },
+        fields: {
+          id: 'Id',
+          'question': 'Question',
+          'type': 'Type',
+          'userID': 'UserID',
+          'isActive': 'IsActive',
+          'language': 'Language',
+          'country': 'Country',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'type': {
+            'dynamic_from_user': 'Dynamic_from_user',
+            'static_system_faq': 'Static_system_faq',
+            'static_system_pet_info': 'Static_system_pet_info',
+            'static_system_pet_health': 'Static_system_pet_health',
+            'static_system_pet_grooming': 'Static_system_pet_grooming',
+            'static_system_pet_curiosities': 'Static_system_pet_curiosities',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Questions',
+        },
+        view: {
+          title: 'View Questions',
+        },
+        importer: {
+          title: 'Import Questions',
+          fileName: 'questions_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    answers: {
+        name: 'answers',
+        label: 'Answers',
+        menu: 'Answers',
+        exporterFileName: 'answers_export',
+        list: {
+          menu: 'Answers',
+          title: 'Answers',
+        },
+        create: {
+          success: 'Answers successfully saved',
+        },
+        update: {
+          success: 'Answers successfully saved',
+        },
+        destroy: {
+          success: 'Answers successfully deleted',
+        },
+        destroyAll: {
+          success: 'Answers(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Answers',
+        },
+        fields: {
+          id: 'Id',
+          'answer': 'Answer',
+          'userID': 'UserID',
+          'type': 'Type',
+          'isActive': 'IsActive',
+          'questionID': 'QuestionID',
+          'language': 'Language',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'type': {
+            'dynamic_from_user': 'Dynamic_from_user',
+            'static_system_faq': 'Static_system_faq',
+            'static_system_pet_info': 'Static_system_pet_info',
+            'static_system_pet_health': 'Static_system_pet_health',
+            'static_system_pet_grooming': 'Static_system_pet_grooming',
+            'static_system_pet_curiosities': 'Static_system_pet_curiosities',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Answers',
+        },
+        view: {
+          title: 'View Answers',
+        },
+        importer: {
+          title: 'Import Answers',
+          fileName: 'answers_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    petExamination: {
+        name: 'petExamination',
+        label: 'PetExaminations',
+        menu: 'PetExaminations',
+        exporterFileName: 'petExamination_export',
+        list: {
+          menu: 'PetExaminations',
+          title: 'PetExaminations',
+        },
+        create: {
+          success: 'PetExamination successfully saved',
+        },
+        update: {
+          success: 'PetExamination successfully saved',
+        },
+        destroy: {
+          success: 'PetExamination successfully deleted',
+        },
+        destroyAll: {
+          success: 'PetExamination(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit PetExamination',
+        },
+        fields: {
+          id: 'Id',
+          'petID': 'PetID',
+          'examinationInternalCode': 'ExaminationInternalCode',
+          'veterinariesResponsibleDiagnostic': 'VeterinariesResponsibleDiagnostic',
+          'businessID': 'BusinessID',
+          'language': 'Language',
+          'providersID': 'ProvidersID',
+          'statusExamination': 'StatusExamination',
+          'examinationsFiles': 'ExaminationsFiles',
+          'examinationImages': 'ExaminationImages',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'statusExamination': {
+            'open': 'Open',
+            'in_progress': 'In_progress',
+            'closed': 'Closed',
+            'canceled': 'Canceled',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New PetExamination',
+        },
+        view: {
+          title: 'View PetExamination',
+        },
+        importer: {
+          title: 'Import PetExaminations',
+          fileName: 'petExamination_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    contacts: {
+        name: 'contacts',
+        label: 'Contacts',
+        menu: 'Contacts',
+        exporterFileName: 'contacts_export',
+        list: {
+          menu: 'Contacts',
+          title: 'Contacts',
+        },
+        create: {
+          success: 'Contacts successfully saved',
+        },
+        update: {
+          success: 'Contacts successfully saved',
+        },
+        destroy: {
+          success: 'Contacts successfully deleted',
+        },
+        destroyAll: {
+          success: 'Contacts(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Contacts',
+        },
+        fields: {
+          id: 'Id',
+          'firstName': 'FirstName',
+          'lastName': 'LastName',
+          'email': 'Email',
+          'cellphone': 'Cellphone',
+          'whatsapp': 'Whatsapp',
+          'source': 'Source',
+          'country': 'Country',
+          'city': 'City',
+          'addressStreetName': 'AddressStreetName',
+          'addressStreetNumber': 'AddressStreetNumber',
+          'addressStreetComplement': 'AddressStreetComplement',
+          'latitudeRange': 'Latitude',
+          'latitude': 'Latitude',
+          'longitudeRange': 'Longitude',
+          'longitude': 'Longitude',
+          'statusContact': 'StatusContact',
+          'contactType': 'ContactType',
+          'customerID': 'CustomerID',
+          'businessID': 'BusinessID',
+          'companyName': 'CompanyName',
+          'website': 'Website',
+          'linkedinProfile': 'LinkedinProfile',
+          'instagramProfile': 'InstagramProfile',
+          'facebookProfile': 'FacebookProfile',
+          'isDeveloper': 'IsDeveloper',
+          'isActive': 'IsActive',
+          'contactProfilePhoto': 'ContactProfilePhoto',
+          'language': 'Language',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'source': {
+            'facebook': 'Facebook',
+            'twitter': 'Twitter',
+            'linkedin': 'Linkedin',
+            'phone_call': 'Phone_call',
+            'aipetto': 'Aipetto',
+            'instagram': 'Instagram',
+            'email': 'Email',
+            'reddit': 'Reddit',
+            'in_person': 'In_person',
+            'recommended_by_friend': 'Recommended_by_friend',
+            'website': 'Website',
+            'youtube': 'Youtube',
+            'google': 'Google',
+            'whatsapp': 'Whatsapp',
+          },
+          'contactType': {
+            'is_customer_prospect': 'Is_customer_prospect',
+            'is_customer': 'Is_customer',
+            'is_pet_professional_provider': 'Is_pet_professional_provider',
+            'is_pet_owner': 'Is_pet_owner',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Contacts',
+        },
+        view: {
+          title: 'View Contacts',
+        },
+        importer: {
+          title: 'Import Contacts',
+          fileName: 'contacts_import_template',
           hint:
             'Files/Images columns must be the URLs of the files separated by space.',
         },
@@ -2952,6 +3557,11 @@ const en = {
       grey: 'Grey',
       blue: 'Blue',
       orange: 'Orange',
+      businessPlace1: 'Place 1',
+      businessPlace2: 'Place 2',
+      businessPlace3: 'Place 3',
+      reservations: 'Service Reservations',
+      top7Services: 'Top 7 services',
       months: {
         1: 'January',
         2: 'February',

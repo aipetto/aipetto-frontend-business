@@ -15,6 +15,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
   title: yupFilterSchemas.string(
@@ -26,12 +28,24 @@ const schema = yup.object().shape({
   postUrl: yupFilterSchemas.string(
     i18n('entities.posts.fields.postUrl'),
   ),
+  source: yupFilterSchemas.string(
+    i18n('entities.posts.fields.source'),
+  ),
+  language: yupFilterSchemas.relationToOne(
+    i18n('entities.posts.fields.language'),
+  ),
+  country: yupFilterSchemas.relationToOne(
+    i18n('entities.posts.fields.country'),
+  ),
 });
 
 const emptyValues = {
   title: null,
   description: null,
   postUrl: null,
+  source: null,
+  language: null,
+  country: null,
 }
 
 const previewRenders = {
@@ -47,6 +61,18 @@ const previewRenders = {
     label: i18n('entities.posts.fields.postUrl'),
     render: filterRenders.generic(),
   },
+  source: {
+    label: i18n('entities.posts.fields.source'),
+    render: filterRenders.generic(),
+  },
+  language: {
+      label: i18n('entities.posts.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
+  country: {
+      label: i18n('entities.posts.fields.country'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function PostsListFilter(props) {
@@ -117,6 +143,18 @@ function PostsListFilter(props) {
               <InputFormItem
                 name="postUrl"
                 label={i18n('entities.posts.fields.postUrl')}      
+              />
+              <InputFormItem
+                name="source"
+                label={i18n('entities.posts.fields.source')}
+              />
+              <LanguagesAutocompleteFormItem
+                name="language"
+                label={i18n('entities.posts.fields.language')}
+              />
+              <CountryAutocompleteFormItem
+                name="country"
+                label={i18n('entities.posts.fields.country')}
               />
             </div>
 

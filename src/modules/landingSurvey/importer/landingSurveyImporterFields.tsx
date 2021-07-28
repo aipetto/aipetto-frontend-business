@@ -54,4 +54,44 @@ export default [
       {},
     ),
   },
+  {
+    name: 'latitude',
+    label: i18n('entities.landingSurvey.fields.latitude'),
+    schema: schemas.decimal(
+      i18n('entities.landingSurvey.fields.latitude'),
+      {},
+    ),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.landingSurvey.fields.longitude'),
+    schema: schemas.decimal(
+      i18n('entities.landingSurvey.fields.longitude'),
+      {},
+    ),
+  },
+  {
+    name: 'petProfession',
+    label: i18n('entities.landingSurvey.fields.petProfession'),
+    schema: schemas.stringArray(
+      i18n('entities.landingSurvey.fields.petProfession'),
+      {},
+    ),
+  },
+  {
+    name: 'address',
+    label: i18n('entities.landingSurvey.fields.address'),
+    schema: schemas.string(
+      i18n('entities.landingSurvey.fields.address'),
+      {},
+    ),
+  },
+  {
+    name: 'country',
+    label: i18n('entities.landingSurvey.fields.country'),
+    schema: schemas.relationToOne(
+      i18n('entities.landingSurvey.fields.country'),
+      {},
+    ),
+  },
 ];

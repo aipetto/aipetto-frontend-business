@@ -4,6 +4,7 @@ import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/BusinessServicesTypesViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
+import CurrencyViewItem from 'src/view/currency/view/CurrencyViewItem';
 
 function BusinessServicesPricesView(props) {
   const { record, loading } = props;
@@ -27,6 +28,20 @@ function BusinessServicesPricesView(props) {
       <TextViewItem
         label={i18n('entities.businessServicesPrices.fields.servicePrice')}
         value={record.servicePrice}
+      />
+
+      <CurrencyViewItem
+        label={i18n('entities.businessServicesPrices.fields.currency')}
+        value={record.currency}
+      />
+
+      <TextViewItem
+        label={i18n('entities.businessServicesPrices.fields.isFree')}
+        value={
+          record.isFree
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
       />
     </div>
   );

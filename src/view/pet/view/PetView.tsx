@@ -240,6 +240,70 @@ function PetView(props) {
         label={i18n('entities.pet.fields.petFriends')}
         value={record.petFriends}
       />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.governmentUniqueID')}
+        value={record.governmentUniqueID}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.bloodType')}
+        value={
+          record.bloodType &&
+          i18n(
+            `entities.pet.enumerators.bloodType.${record.bloodType}`,
+          )
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.hasMicrochip')}
+        value={
+          record.hasMicrochip
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.weight')}
+        value={record.weight}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.weightUnit')}
+        value={
+          record.weightUnit &&
+          i18n(
+            `entities.pet.enumerators.weightUnit.${record.weightUnit}`,
+          )
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.height')}
+        value={record.height}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.heightUnit')}
+        value={
+          record.heightUnit &&
+          i18n(
+            `entities.pet.enumerators.heightUnit.${record.heightUnit}`,
+          )
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.latitude')}
+        value={record.latitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.longitude')}
+        value={record.longitude}
+      />
     </div>
   );
 }

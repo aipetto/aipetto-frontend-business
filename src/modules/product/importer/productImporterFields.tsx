@@ -71,4 +71,20 @@ export default [
       {},
     ),
   },
+  {
+    name: 'currency',
+    label: i18n('entities.product.fields.currency'),
+    schema: schemas.relationToOne(
+      i18n('entities.product.fields.currency'),
+      {},
+    ),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.product.fields.language'),
+    schema: schemas.relationToOne(
+      i18n('entities.product.fields.language'),
+      {},
+    ),
+  },
 ];

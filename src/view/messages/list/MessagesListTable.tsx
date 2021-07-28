@@ -19,6 +19,7 @@ import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import UserListItem from 'src/view/user/list/UserListItem';
 import BusinessListItem from 'src/view/business/list/BusinessListItem';
+import LanguagesListItem from 'src/view/languages/list/LanguagesListItem';
 
 function MessagesListTable(props) {
   const [
@@ -134,6 +135,11 @@ function MessagesListTable(props) {
                     'entities.messages.fields.businessId',
                   )}
                 />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.messages.fields.language',
+                  )}
+                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -181,6 +187,9 @@ function MessagesListTable(props) {
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.message}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessListItem value={row.businessId} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <LanguagesListItem value={row.language} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

@@ -46,19 +46,19 @@ const options = {
 
 const data2 = {
   labels: [
-    i18n('dashboard.charts.months.1'),
-    i18n('dashboard.charts.months.2'),
-    i18n('dashboard.charts.months.3'),
-    i18n('dashboard.charts.months.4'),
-    i18n('dashboard.charts.months.5'),
-    i18n('dashboard.charts.months.6'),
-    i18n('dashboard.charts.months.7'),
+    i18n('businessSurvey.checkboxChoices.vacunacionDeGato'),
+    i18n('businessSurvey.checkboxChoices.castracionDePerros'),
+    i18n('businessSurvey.checkboxChoices.castracionDeGatos'),
+    i18n('businessSurvey.checkboxChoices.analisisDeSangre'),
+    i18n('businessSurvey.checkboxChoices.ecografia'),
+    i18n('businessSurvey.checkboxChoices.radiografia'),
+    i18n('businessSurvey.checkboxChoices.urgencias'),
   ],
   datasets: [
     {
-      label: i18n('dashboard.charts.orange'),
+      label: i18n('dashboard.charts.reservations'),
       type: 'line',
-      data: [51, 65, 40, 49, 60, 37, 40],
+      data: [51, 65, 90, 120, 133, 155, 160],
       fill: false,
       borderColor: '#EC932F',
       backgroundColor: '#EC932F',
@@ -67,17 +67,6 @@ const data2 = {
       pointHoverBackgroundColor: '#EC932F',
       pointHoverBorderColor: '#EC932F',
       yAxisID: 'y-axis-2',
-    },
-    {
-      type: 'line',
-      label: i18n('dashboard.charts.blue'),
-      data: [200, 185, 590, 621, 250, 400, 95],
-      fill: false,
-      backgroundColor: '#36A2EB',
-      borderColor: '#36A2EB',
-      hoverBackgroundColor: '#36A2EB',
-      hoverBorderColor: '#36A2EB',
-      yAxisID: 'y-axis-1',
     },
   ],
 };

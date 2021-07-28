@@ -15,8 +15,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import landingSurveyEnumerators from 'src/modules/landingSurvey/landingSurveyEnumerators';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -37,6 +39,21 @@ const schema = yup.object().shape({
   allowReceiveNotifications: yupFilterSchemas.boolean(
     i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
   ),
+  latitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.landingSurvey.fields.latitudeRange'),
+  ),
+  longitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.landingSurvey.fields.longitudeRange'),
+  ),
+  petProfession: yupFilterSchemas.stringArray(
+    i18n('entities.landingSurvey.fields.petProfession'),
+  ),
+  address: yupFilterSchemas.string(
+    i18n('entities.landingSurvey.fields.address'),
+  ),
+  country: yupFilterSchemas.relationToOne(
+    i18n('entities.landingSurvey.fields.country'),
+  ),
 });
 
 const emptyValues = {
@@ -46,6 +63,11 @@ const emptyValues = {
   interests: [],
   extraInfo: null,
   allowReceiveNotifications: null,
+  latitudeRange: [],
+  longitudeRange: [],
+  petProfession: [],
+  address: null,
+  country: null,
 }
 
 const previewRenders = {
@@ -73,6 +95,26 @@ const previewRenders = {
     label: i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
     render: filterRenders.boolean(),
   },
+  latitudeRange: {
+    label: i18n('entities.landingSurvey.fields.latitudeRange'),
+    render: filterRenders.decimalRange(),
+  },
+  longitudeRange: {
+    label: i18n('entities.landingSurvey.fields.longitudeRange'),
+    render: filterRenders.decimalRange(),
+  },
+  petProfession: {
+    label: i18n('entities.landingSurvey.fields.petProfession'),
+    render: filterRenders.enumeratorMultiple('entities.landingSurvey.enumerators.petProfession',),
+  },
+  address: {
+    label: i18n('entities.landingSurvey.fields.address'),
+    render: filterRenders.generic(),
+  },
+  country: {
+      label: i18n('entities.landingSurvey.fields.country'),
+      render: filterRenders.relationToOne(),
+    },
 }
 
 function LandingSurveyListFilter(props) {
@@ -174,6 +216,35 @@ function LandingSurveyListFilter(props) {
                     label: i18n('common.no'),
                   },
                 ]}
+              />
+              <InputRangeFormItem
+                name="latitudeRange"
+                label={i18n('entities.landingSurvey.fields.latitudeRange')}
+              />
+              <InputRangeFormItem
+                name="longitudeRange"
+                label={i18n('entities.landingSurvey.fields.longitudeRange')}
+              />
+              <SelectFormItem
+                name="petProfession"
+                label={i18n('entities.landingSurvey.fields.petProfession')}
+                options={landingSurveyEnumerators.petProfession.map(
+                  (value) => ({
+                    value,
+                    label: i18n(
+                      `entities.landingSurvey.enumerators.petProfession.${value}`,
+                    ),
+                  }),
+                )}
+                mode="multiple"
+              />
+              <InputFormItem
+                name="address"
+                label={i18n('entities.landingSurvey.fields.address')}
+              />
+              <CountryAutocompleteFormItem
+                name="country"
+                label={i18n('entities.landingSurvey.fields.country')}
               />
             </div>
 

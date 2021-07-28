@@ -316,4 +316,46 @@ export default [
     icon: faTags,
     label: i18n('entities.productCategory.menu'),
   },
+
+  {
+    path: '/deals',
+    permissionRequired: permissions.dealsRead,
+    icon: faChevronRight,
+    label: i18n('entities.deals.menu'),
+  },
+
+  {
+    path: '/business-payment-cycle',
+    permissionRequired: permissions.businessPaymentCycleRead,
+    icon: faChevronRight,
+    label: i18n('entities.businessPaymentCycle.menu'),
+  },
+
+  {
+    path: '/questions',
+    permissionRequired: permissions.questionsRead,
+    icon: faChevronRight,
+    label: i18n('entities.questions.menu'),
+  },
+
+  {
+    path: '/answers',
+    permissionRequired: permissions.answersRead,
+    icon: faChevronRight,
+    label: i18n('entities.answers.menu'),
+  },
+
+  {
+    path: '/pet-examination',
+    permissionRequired: permissions.petExaminationRead,
+    icon: faChevronRight,
+    label: i18n('entities.petExamination.menu'),
+  },
+
+  {
+    path: '/contacts',
+    permissionRequired: permissions.contactsRead,
+    icon: faChevronRight,
+    label: i18n('entities.contacts.menu'),
+  },
 ].filter(Boolean);

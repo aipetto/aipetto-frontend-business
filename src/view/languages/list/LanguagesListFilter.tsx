@@ -24,11 +24,15 @@ const schema = yup.object().shape({
   active: yupFilterSchemas.boolean(
     i18n('entities.languages.fields.active'),
   ),
+  languageCode: yupFilterSchemas.string(
+    i18n('entities.languages.fields.languageCode'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   active: null,
+  languageCode: null,
 }
 
 const previewRenders = {
@@ -39,6 +43,10 @@ const previewRenders = {
   active: {
     label: i18n('entities.languages.fields.active'),
     render: filterRenders.boolean(),
+  },
+  languageCode: {
+    label: i18n('entities.languages.fields.languageCode'),
+    render: filterRenders.generic(),
   },
 }
 
@@ -116,6 +124,10 @@ function LanguagesListFilter(props) {
                     label: i18n('common.no'),
                   },
                 ]}
+              />
+              <InputFormItem
+                name="languageCode"
+                label={i18n('entities.languages.fields.languageCode')}
               />
             </div>
 

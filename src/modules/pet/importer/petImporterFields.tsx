@@ -275,4 +275,82 @@ export default [
       {},
     ),
   },
+  {
+    name: 'governmentUniqueID',
+    label: i18n('entities.pet.fields.governmentUniqueID'),
+    schema: schemas.string(
+      i18n('entities.pet.fields.governmentUniqueID'),
+      {},
+    ),
+  },
+  {
+    name: 'bloodType',
+    label: i18n('entities.pet.fields.bloodType'),
+    schema: schemas.enumerator(
+      i18n('entities.pet.fields.bloodType'),
+      {
+        "options": petEnumerators.bloodType
+      },
+    ),
+  },
+  {
+    name: 'hasMicrochip',
+    label: i18n('entities.pet.fields.hasMicrochip'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.hasMicrochip'),
+      {},
+    ),
+  },
+  {
+    name: 'weight',
+    label: i18n('entities.pet.fields.weight'),
+    schema: schemas.decimal(
+      i18n('entities.pet.fields.weight'),
+      {},
+    ),
+  },
+  {
+    name: 'weightUnit',
+    label: i18n('entities.pet.fields.weightUnit'),
+    schema: schemas.enumerator(
+      i18n('entities.pet.fields.weightUnit'),
+      {
+        "options": petEnumerators.weightUnit
+      },
+    ),
+  },
+  {
+    name: 'height',
+    label: i18n('entities.pet.fields.height'),
+    schema: schemas.decimal(
+      i18n('entities.pet.fields.height'),
+      {},
+    ),
+  },
+  {
+    name: 'heightUnit',
+    label: i18n('entities.pet.fields.heightUnit'),
+    schema: schemas.enumerator(
+      i18n('entities.pet.fields.heightUnit'),
+      {
+        "options": petEnumerators.heightUnit
+      },
+    ),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.pet.fields.latitude'),
+    schema: schemas.decimal(
+      i18n('entities.pet.fields.latitude'),
+      {},
+    ),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.pet.fields.longitude'),
+    schema: schemas.decimal(
+      i18n('entities.pet.fields.longitude'),
+      {},
+    ),
+  },
 ];

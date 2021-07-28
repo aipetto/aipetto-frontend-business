@@ -3,6 +3,7 @@ import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import CustomViewItem from 'src/view/shared/view/CustomViewItem';
+import CountryViewItem from 'src/view/country/view/CountryViewItem';
 
 function LandingSurveyView(props) {
   const { record, loading } = props;
@@ -56,6 +57,42 @@ function LandingSurveyView(props) {
             ? i18n('common.yes')
             : i18n('common.no')
         }
+      />
+
+      <TextViewItem
+        label={i18n('entities.landingSurvey.fields.latitude')}
+        value={record.latitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.landingSurvey.fields.longitude')}
+        value={record.longitude}
+      />
+
+      <CustomViewItem
+        label={i18n('entities.landingSurvey.fields.petProfession')}
+        value={record.petProfession}
+        render={(values) =>
+          (values || []).map((value) => (
+            <div key={value}>
+              <span>{value
+                ? i18n(
+                  `entities.landingSurvey.enumerators.petProfession.${value}`,
+                  )
+                : null}</span>
+            </div>
+          ))
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.landingSurvey.fields.address')}
+        value={record.address}
+      />
+
+      <CountryViewItem
+        label={i18n('entities.landingSurvey.fields.country')}
+        value={record.country}
       />
     </div>
   );

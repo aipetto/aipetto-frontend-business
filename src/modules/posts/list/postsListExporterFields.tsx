@@ -44,6 +44,20 @@ export default [
     render: exporterRenders.relationToMany(),
   },
   {
+    name: 'source',
+    label: i18n('entities.posts.fields.source'),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.posts.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'country',
+    label: i18n('entities.posts.fields.country'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.posts.fields.createdAt'),
     render: exporterRenders.datetime(),

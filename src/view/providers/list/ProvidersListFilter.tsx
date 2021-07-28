@@ -15,10 +15,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -57,6 +59,21 @@ const schema = yup.object().shape({
   country: yupFilterSchemas.relationToOne(
     i18n('entities.providers.fields.country'),
   ),
+  email: yupFilterSchemas.string(
+    i18n('entities.providers.fields.email'),
+  ),
+  latitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.providers.fields.latitudeRange'),
+  ),
+  longitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.providers.fields.longitudeRange'),
+  ),
+  basePricePerServiceRange: yupFilterSchemas.decimalRange(
+    i18n('entities.providers.fields.basePricePerServiceRange'),
+  ),
+  currency: yupFilterSchemas.relationToOne(
+    i18n('entities.providers.fields.currency'),
+  ),
 });
 
 const emptyValues = {
@@ -72,6 +89,11 @@ const emptyValues = {
   city: null,
   state: null,
   country: null,
+  email: null,
+  latitudeRange: [],
+  longitudeRange: [],
+  basePricePerServiceRange: [],
+  currency: null,
 }
 
 const previewRenders = {
@@ -121,6 +143,26 @@ const previewRenders = {
     },
   country: {
       label: i18n('entities.providers.fields.country'),
+      render: filterRenders.relationToOne(),
+    },
+  email: {
+    label: i18n('entities.providers.fields.email'),
+    render: filterRenders.generic(),
+  },
+  latitudeRange: {
+    label: i18n('entities.providers.fields.latitudeRange'),
+    render: filterRenders.decimalRange(),
+  },
+  longitudeRange: {
+    label: i18n('entities.providers.fields.longitudeRange'),
+    render: filterRenders.decimalRange(),
+  },
+  basePricePerServiceRange: {
+    label: i18n('entities.providers.fields.basePricePerServiceRange'),
+    render: filterRenders.decimalRange(),
+  },
+  currency: {
+      label: i18n('entities.providers.fields.currency'),
       render: filterRenders.relationToOne(),
     },
 }
@@ -229,6 +271,26 @@ function ProvidersListFilter(props) {
               <CountryAutocompleteFormItem  
                 name="country"
                 label={i18n('entities.providers.fields.country')}        
+              />
+              <InputFormItem
+                name="email"
+                label={i18n('entities.providers.fields.email')}
+              />
+              <InputRangeFormItem
+                name="latitudeRange"
+                label={i18n('entities.providers.fields.latitudeRange')}
+              />
+              <InputRangeFormItem
+                name="longitudeRange"
+                label={i18n('entities.providers.fields.longitudeRange')}
+              />
+              <InputRangeFormItem
+                name="basePricePerServiceRange"
+                label={i18n('entities.providers.fields.basePricePerServiceRange')}
+              />
+              <CurrencyAutocompleteFormItem
+                name="currency"
+                label={i18n('entities.providers.fields.currency')}
               />
             </div>
 

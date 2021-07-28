@@ -42,6 +42,12 @@ import postComments from 'src/modules/postComments/postCommentsReducers';
 import pointsChallenges from 'src/modules/pointsChallenges/pointsChallengesReducers';
 import challengesCategories from 'src/modules/challengesCategories/challengesCategoriesReducers';
 import productCategory from 'src/modules/productCategory/productCategoryReducers';
+import deals from 'src/modules/deals/dealsReducers';
+import businessPaymentCycle from 'src/modules/businessPaymentCycle/businessPaymentCycleReducers';
+import questions from 'src/modules/questions/questionsReducers';
+import answers from 'src/modules/answers/answersReducers';
+import petExamination from 'src/modules/petExamination/petExaminationReducers';
+import contacts from 'src/modules/contacts/contactsReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -90,4 +96,10 @@ export default (history) =>
     pointsChallenges,
     challengesCategories,
     productCategory,
+    deals,
+    businessPaymentCycle,
+    questions,
+    answers,
+    petExamination,
+    contacts,
   });

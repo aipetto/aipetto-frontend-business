@@ -66,4 +66,28 @@ export default [
       {},
     ),
   },
+  {
+    name: 'source',
+    label: i18n('entities.posts.fields.source'),
+    schema: schemas.string(
+      i18n('entities.posts.fields.source'),
+      {},
+    ),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.posts.fields.language'),
+    schema: schemas.relationToOne(
+      i18n('entities.posts.fields.language'),
+      {},
+    ),
+  },
+  {
+    name: 'country',
+    label: i18n('entities.posts.fields.country'),
+    schema: schemas.relationToOne(
+      i18n('entities.posts.fields.country'),
+      {},
+    ),
+  },
 ];

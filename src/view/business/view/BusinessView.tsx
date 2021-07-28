@@ -2,6 +2,7 @@ import React from 'react';
 import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
+import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
 import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/BusinessServicesTypesViewItem';
 import BusinessCategoryViewItem from 'src/view/businessCategory/view/BusinessCategoryViewItem';
 import CityViewItem from 'src/view/city/view/CityViewItem';
@@ -85,6 +86,21 @@ function BusinessView(props) {
       <CountryViewItem
         label={i18n('entities.business.fields.country')}
         value={record.country}
+      />
+
+      <ImagesViewItem
+        label={i18n('entities.business.fields.businessLogo')}
+        value={record.businessLogo}
+      />
+
+      <TextViewItem
+        label={i18n('entities.business.fields.latitude')}
+        value={record.latitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.business.fields.longitude')}
+        value={record.longitude}
       />
     </div>
   );

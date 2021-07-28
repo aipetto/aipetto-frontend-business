@@ -11,35 +11,46 @@ import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
+import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import RadioFormItem from 'src/view/shared/form/items/RadioFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import customerEnumerators from 'src/modules/customer/customerEnumerators';
 import moment from 'moment';
 import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
+import Storage from 'src/security/storage';
+import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  businessId: yupFormSchemas.relationToOne(
-    i18n('entities.customer.fields.businessId'),
-    {},
-  ),
-  source: yupFormSchemas.enumerator(
-    i18n('entities.customer.fields.source'),
-    {
-      "options": customerEnumerators.source
-    },
-  ),
-  userId: yupFormSchemas.relationToOne(
-    i18n('entities.customer.fields.userId'),
-    {},
-  ),
   name: yupFormSchemas.string(
     i18n('entities.customer.fields.name'),
     {
       "required": true,
       "min": 2,
       "max": 255
+    },
+  ),
+  businessId: yupFormSchemas.relationToOne(
+    i18n('entities.customer.fields.businessId'),
+    {},
+  ),
+  uniqueCustomIdentifier: yupFormSchemas.string(
+    i18n('entities.customer.fields.uniqueCustomIdentifier'),
+    {
+      "required": true
+    },
+  ),
+  userId: yupFormSchemas.relationToOne(
+    i18n('entities.customer.fields.userId'),
+    {},
+  ),
+  source: yupFormSchemas.enumerator(
+    i18n('entities.customer.fields.source'),
+    {
+      "options": customerEnumerators.source
     },
   ),
   surname: yupFormSchemas.string(
@@ -60,12 +71,20 @@ const schema = yup.object().shape({
     i18n('entities.customer.fields.whatsApp'),
     {},
   ),
+  smsPhoneNumber: yupFormSchemas.string(
+    i18n('entities.customer.fields.smsPhoneNumber'),
+    {},
+  ),
   phoneNumber: yupFormSchemas.string(
     i18n('entities.customer.fields.phoneNumber'),
     {},
   ),
   address: yupFormSchemas.string(
     i18n('entities.customer.fields.address'),
+    {},
+  ),
+  email: yupFormSchemas.string(
+    i18n('entities.customer.fields.email'),
     {},
   ),
   zipCode: yupFormSchemas.string(
@@ -80,7 +99,7 @@ const schema = yup.object().shape({
     i18n('entities.customer.fields.state'),
     {},
   ),
-  country: yupFormSchemas.string(
+  country: yupFormSchemas.relationToOne(
     i18n('entities.customer.fields.country'),
     {},
   ),
@@ -124,6 +143,66 @@ const schema = yup.object().shape({
     i18n('entities.customer.fields.shippingAddressCountry'),
     {},
   ),
+  latitude: yupFormSchemas.decimal(
+    i18n('entities.customer.fields.latitude'),
+    {},
+  ),
+  longitude: yupFormSchemas.decimal(
+    i18n('entities.customer.fields.longitude'),
+    {},
+  ),
+  prospectStatus: yupFormSchemas.enumerator(
+    i18n('entities.customer.fields.prospectStatus'),
+    {
+      "options": customerEnumerators.prospectStatus
+    },
+  ),
+  customerStatus: yupFormSchemas.enumerator(
+    i18n('entities.customer.fields.customerStatus'),
+    {
+      "options": customerEnumerators.customerStatus
+    },
+  ),
+  wantToReceiveNotifications: yupFormSchemas.boolean(
+    i18n('entities.customer.fields.wantToReceiveNotifications'),
+    {},
+  ),
+  currency: yupFormSchemas.relationToOne(
+    i18n('entities.customer.fields.currency'),
+    {},
+  ),
+  balance: yupFormSchemas.decimal(
+    i18n('entities.customer.fields.balance'),
+    {},
+  ),
+  shippingAddressStreetNumber: yupFormSchemas.string(
+    i18n('entities.customer.fields.shippingAddressStreetNumber'),
+    {},
+  ),
+  addressStreetNumber: yupFormSchemas.string(
+    i18n('entities.customer.fields.addressStreetNumber'),
+    {},
+  ),
+  billingAddressStreetNumber: yupFormSchemas.string(
+    i18n('entities.customer.fields.billingAddressStreetNumber'),
+    {},
+  ),
+  addressStreetComplement: yupFormSchemas.string(
+    i18n('entities.customer.fields.addressStreetComplement'),
+    {},
+  ),
+  billingAddressStreetComplement: yupFormSchemas.string(
+    i18n('entities.customer.fields.billingAddressStreetComplement'),
+    {},
+  ),
+  shippingAddressStreetComplement: yupFormSchemas.string(
+    i18n('entities.customer.fields.shippingAddressStreetComplement'),
+    {},
+  ),
+  customerProfileImage: yupFormSchemas.images(
+    i18n('entities.customer.fields.customerProfileImage'),
+    {},
+  ),
 });
 
 function CustomerForm(props) {
@@ -133,16 +212,19 @@ function CustomerForm(props) {
     const record = props.record || {};
 
     return {
-      businessId: record.businessId,
-      source: record.source,
-      userId: record.userId,
       name: record.name,
+      businessId: record.businessId,
+      uniqueCustomIdentifier: record.uniqueCustomIdentifier,
+      userId: record.userId,
+      source: record.source,
       surname: record.surname,
       birthdate: record.birthdate ? moment(record.birthdate, 'YYYY-MM-DD').toDate() : null,
       gender: record.gender,
       whatsApp: record.whatsApp,
+      smsPhoneNumber: record.smsPhoneNumber,
       phoneNumber: record.phoneNumber,
       address: record.address,
+      email: record.email,
       zipCode: record.zipCode,
       city: record.city,
       state: record.state,
@@ -157,6 +239,20 @@ function CustomerForm(props) {
       shippingAddressState: record.shippingAddressState,
       shippingAddressZipCode: record.shippingAddressZipCode,
       shippingAddressCountry: record.shippingAddressCountry,
+      latitude: record.latitude,
+      longitude: record.longitude,
+      prospectStatus: record.prospectStatus,
+      customerStatus: record.customerStatus,
+      wantToReceiveNotifications: record.wantToReceiveNotifications,
+      currency: record.currency,
+      balance: record.balance,
+      shippingAddressStreetNumber: record.shippingAddressStreetNumber,
+      addressStreetNumber: record.addressStreetNumber,
+      billingAddressStreetNumber: record.billingAddressStreetNumber,
+      addressStreetComplement: record.addressStreetComplement,
+      billingAddressStreetComplement: record.billingAddressStreetComplement,
+      shippingAddressStreetComplement: record.shippingAddressStreetComplement,
+      customerProfileImage: record.customerProfileImage || [],
     };
   });
 
@@ -180,9 +276,32 @@ function CustomerForm(props) {
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="w-full sm:w-md md:w-md lg:w-md">
+          <InputFormItem
+            name="name"
+            label={i18n('entities.customer.fields.name')}
+            required={true}
+          autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <BusinessAutocompleteFormItem
             name="businessId"
             label={i18n('entities.customer.fields.businessId')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="uniqueCustomIdentifier"
+            label={i18n('entities.customer.fields.uniqueCustomIdentifier')}
+            required={true}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <UserAutocompleteFormItem
+            name="userId"
+            label={i18n('entities.customer.fields.userId')}
             required={false}
             showCreate={!props.modal}
           />
@@ -200,21 +319,6 @@ function CustomerForm(props) {
               }),
             )}
             required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <UserAutocompleteFormItem
-            name="userId"
-            label={i18n('entities.customer.fields.userId')}
-            required={false}
-            showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="name"
-            label={i18n('entities.customer.fields.name')}
-            required={true}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -255,6 +359,13 @@ function CustomerForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
+            name="smsPhoneNumber"
+            label={i18n('entities.customer.fields.smsPhoneNumber')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
             name="phoneNumber"
             label={i18n('entities.customer.fields.phoneNumber')}
             required={false}
@@ -264,6 +375,13 @@ function CustomerForm(props) {
           <InputFormItem
             name="address"
             label={i18n('entities.customer.fields.address')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="email"
+            label={i18n('entities.customer.fields.email')}
             required={false}
           />
         </div>
@@ -289,10 +407,11 @@ function CustomerForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
+          <CountryAutocompleteFormItem
             name="country"
             label={i18n('entities.customer.fields.country')}
             required={false}
+            showCreate={!props.modal}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -363,6 +482,125 @@ function CustomerForm(props) {
             name="shippingAddressCountry"
             label={i18n('entities.customer.fields.shippingAddressCountry')}
             required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="latitude"
+            label={i18n('entities.customer.fields.latitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="longitude"
+            label={i18n('entities.customer.fields.longitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="prospectStatus"
+            label={i18n('entities.customer.fields.prospectStatus')}
+          hint={i18n('entities.customer.hints.prospectStatus')}
+            options={customerEnumerators.prospectStatus.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.customer.enumerators.prospectStatus.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="customerStatus"
+            label={i18n('entities.customer.fields.customerStatus')}
+          hint={i18n('entities.customer.hints.customerStatus')}
+            options={customerEnumerators.customerStatus.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.customer.enumerators.customerStatus.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="wantToReceiveNotifications"
+            label={i18n('entities.customer.fields.wantToReceiveNotifications')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CurrencyAutocompleteFormItem
+            name="currency"
+            label={i18n('entities.customer.fields.currency')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="balance"
+            label={i18n('entities.customer.fields.balance')}
+          placeholder={i18n('entities.customer.placeholders.balance')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="shippingAddressStreetNumber"
+            label={i18n('entities.customer.fields.shippingAddressStreetNumber')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="addressStreetNumber"
+            label={i18n('entities.customer.fields.addressStreetNumber')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="billingAddressStreetNumber"
+            label={i18n('entities.customer.fields.billingAddressStreetNumber')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="addressStreetComplement"
+            label={i18n('entities.customer.fields.addressStreetComplement')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="billingAddressStreetComplement"
+            label={i18n('entities.customer.fields.billingAddressStreetComplement')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="shippingAddressStreetComplement"
+            label={i18n('entities.customer.fields.shippingAddressStreetComplement')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ImagesFormItem
+            name="customerProfileImage"
+            label={i18n('entities.customer.fields.customerProfileImage')}
+            required={false}
+            storage={Storage.values.customerCustomerProfileImage}
+            max={undefined}
           />
         </div>
 
