@@ -89,6 +89,16 @@ export default [
     render: exporterRenders.boolean(),
   },
   {
+    name: 'photoLogo',
+    label: i18n('entities.place.fields.photoLogo'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
+    name: 'photoStore',
+    label: i18n('entities.place.fields.photoStore'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.place.fields.createdAt'),
     render: exporterRenders.datetime(),

@@ -15,12 +15,16 @@ import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
 import moment from 'moment';
 import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
+import Storage from 'src/security/storage';
+import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
 import ProvidersAutocompleteFormItem from 'src/view/providers/autocomplete/ProvidersAutocompleteFormItem';
 import PlaceAutocompleteFormItem from 'src/view/place/autocomplete/PlaceAutocompleteFormItem';
 import DiscountsAutocompleteFormItem from 'src/view/discounts/autocomplete/DiscountsAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -77,6 +81,26 @@ const schema = yup.object().shape({
     i18n('entities.serviceReservation.fields.discountCode'),
     {},
   ),
+  currency: yupFormSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.currency'),
+    {},
+  ),
+  digitalReservationDoc: yupFormSchemas.files(
+    i18n('entities.serviceReservation.fields.digitalReservationDoc'),
+    {},
+  ),
+  totalPriceTransportartion: yupFormSchemas.decimal(
+    i18n('entities.serviceReservation.fields.totalPriceTransportartion'),
+    {},
+  ),
+  ratingFromCustomer: yupFormSchemas.decimal(
+    i18n('entities.serviceReservation.fields.ratingFromCustomer'),
+    {},
+  ),
+  country: yupFormSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.country'),
+    {},
+  ),
 });
 
 function ServiceReservationForm(props) {
@@ -98,6 +122,11 @@ function ServiceReservationForm(props) {
       totalPrice: record.totalPrice,
       totalPriceWithDiscount: record.totalPriceWithDiscount,
       discountCode: record.discountCode,
+      currency: record.currency,
+      digitalReservationDoc: record.digitalReservationDoc || [],
+      totalPriceTransportartion: record.totalPriceTransportartion,
+      ratingFromCustomer: record.ratingFromCustomer,
+      country: record.country,
     };
   });
 
@@ -223,6 +252,46 @@ function ServiceReservationForm(props) {
           <DiscountsAutocompleteFormItem
             name="discountCode"
             label={i18n('entities.serviceReservation.fields.discountCode')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CurrencyAutocompleteFormItem
+            name="currency"
+            label={i18n('entities.serviceReservation.fields.currency')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <FilesFormItem
+            name="digitalReservationDoc"
+            label={i18n('entities.serviceReservation.fields.digitalReservationDoc')}
+            required={false}
+            storage={Storage.values.serviceReservationDigitalReservationDoc}
+            max={undefined}
+            formats={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="totalPriceTransportartion"
+            label={i18n('entities.serviceReservation.fields.totalPriceTransportartion')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="ratingFromCustomer"
+            label={i18n('entities.serviceReservation.fields.ratingFromCustomer')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CountryAutocompleteFormItem
+            name="country"
+            label={i18n('entities.serviceReservation.fields.country')}
             required={false}
             showCreate={!props.modal}
           />

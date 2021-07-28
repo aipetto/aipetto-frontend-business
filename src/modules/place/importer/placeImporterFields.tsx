@@ -148,4 +148,20 @@ export default [
       {},
     ),
   },
+  {
+    name: 'photoLogo',
+    label: i18n('entities.place.fields.photoLogo'),
+    schema: schemas.images(
+      i18n('entities.place.fields.photoLogo'),
+      {},
+    ),
+  },
+  {
+    name: 'photoStore',
+    label: i18n('entities.place.fields.photoStore'),
+    schema: schemas.images(
+      i18n('entities.place.fields.photoStore'),
+      {},
+    ),
+  },
 ];

@@ -29,6 +29,16 @@ export default [
     label: i18n('entities.petDiseases.fields.language'),
   },
   {
+    name: 'specificPetTypes',
+    label: i18n('entities.petDiseases.fields.specificPetTypes'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
+    name: 'specificPetBreeds',
+    label: i18n('entities.petDiseases.fields.specificPetBreeds'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.petDiseases.fields.createdAt'),
     render: exporterRenders.datetime(),

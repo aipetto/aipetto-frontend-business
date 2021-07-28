@@ -15,8 +15,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 
 const schema = yup.object().shape({
   service: yupFilterSchemas.relationToOne(
@@ -28,12 +30,20 @@ const schema = yup.object().shape({
   servicePriceRange: yupFilterSchemas.decimalRange(
     i18n('entities.businessServicesPrices.fields.servicePriceRange'),
   ),
+  currency: yupFilterSchemas.relationToOne(
+    i18n('entities.businessServicesPrices.fields.currency'),
+  ),
+  isFree: yupFilterSchemas.boolean(
+    i18n('entities.businessServicesPrices.fields.isFree'),
+  ),
 });
 
 const emptyValues = {
   service: null,
   businessId: null,
   servicePriceRange: [],
+  currency: null,
+  isFree: null,
 }
 
 const previewRenders = {
@@ -48,6 +58,14 @@ const previewRenders = {
   servicePriceRange: {
     label: i18n('entities.businessServicesPrices.fields.servicePriceRange'),
     render: filterRenders.decimalRange(),
+  },
+  currency: {
+      label: i18n('entities.businessServicesPrices.fields.currency'),
+      render: filterRenders.relationToOne(),
+    },
+  isFree: {
+    label: i18n('entities.businessServicesPrices.fields.isFree'),
+    render: filterRenders.boolean(),
   },
 }
 
@@ -119,6 +137,24 @@ function BusinessServicesPricesListFilter(props) {
               <InputRangeFormItem
                 name="servicePriceRange"
                 label={i18n('entities.businessServicesPrices.fields.servicePriceRange')}      
+              />
+              <CurrencyAutocompleteFormItem
+                name="currency"
+                label={i18n('entities.businessServicesPrices.fields.currency')}
+              />
+              <SelectFormItem
+                name="isFree"
+                label={i18n('entities.businessServicesPrices.fields.isFree')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
               />
             </div>
 

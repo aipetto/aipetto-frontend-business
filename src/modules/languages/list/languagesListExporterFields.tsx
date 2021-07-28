@@ -16,6 +16,10 @@ export default [
     render: exporterRenders.boolean(),
   },
   {
+    name: 'languageCode',
+    label: i18n('entities.languages.fields.languageCode'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.languages.fields.createdAt'),
     render: exporterRenders.datetime(),

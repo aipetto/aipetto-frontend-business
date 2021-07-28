@@ -33,6 +33,30 @@ export default [
     render: exporterRenders.boolean(),
   },
   {
+    name: 'latitude',
+    label: i18n('entities.landingSurvey.fields.latitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.landingSurvey.fields.longitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'petProfession',
+    label: i18n('entities.landingSurvey.fields.petProfession'),
+    render: exporterRenders.stringArray(),
+  },
+  {
+    name: 'address',
+    label: i18n('entities.landingSurvey.fields.address'),
+  },
+  {
+    name: 'country',
+    label: i18n('entities.landingSurvey.fields.country'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.landingSurvey.fields.createdAt'),
     render: exporterRenders.datetime(),

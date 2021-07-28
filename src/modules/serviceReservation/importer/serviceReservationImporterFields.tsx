@@ -106,4 +106,44 @@ export default [
       {},
     ),
   },
+  {
+    name: 'currency',
+    label: i18n('entities.serviceReservation.fields.currency'),
+    schema: schemas.relationToOne(
+      i18n('entities.serviceReservation.fields.currency'),
+      {},
+    ),
+  },
+  {
+    name: 'digitalReservationDoc',
+    label: i18n('entities.serviceReservation.fields.digitalReservationDoc'),
+    schema: schemas.files(
+      i18n('entities.serviceReservation.fields.digitalReservationDoc'),
+      {},
+    ),
+  },
+  {
+    name: 'totalPriceTransportartion',
+    label: i18n('entities.serviceReservation.fields.totalPriceTransportartion'),
+    schema: schemas.decimal(
+      i18n('entities.serviceReservation.fields.totalPriceTransportartion'),
+      {},
+    ),
+  },
+  {
+    name: 'ratingFromCustomer',
+    label: i18n('entities.serviceReservation.fields.ratingFromCustomer'),
+    schema: schemas.decimal(
+      i18n('entities.serviceReservation.fields.ratingFromCustomer'),
+      {},
+    ),
+  },
+  {
+    name: 'country',
+    label: i18n('entities.serviceReservation.fields.country'),
+    schema: schemas.relationToOne(
+      i18n('entities.serviceReservation.fields.country'),
+      {},
+    ),
+  },
 ];

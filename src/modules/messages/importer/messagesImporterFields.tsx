@@ -40,4 +40,12 @@ export default [
       {},
     ),
   },
+  {
+    name: 'language',
+    label: i18n('entities.messages.fields.language'),
+    schema: schemas.relationToOne(
+      i18n('entities.messages.fields.language'),
+      {},
+    ),
+  },
 ];

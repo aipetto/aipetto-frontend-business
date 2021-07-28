@@ -22,6 +22,16 @@ export default [
     render: exporterRenders.decimal(),
   },
   {
+    name: 'currency',
+    label: i18n('entities.businessServicesPrices.fields.currency'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'isFree',
+    label: i18n('entities.businessServicesPrices.fields.isFree'),
+    render: exporterRenders.boolean(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.businessServicesPrices.fields.createdAt'),
     render: exporterRenders.datetime(),

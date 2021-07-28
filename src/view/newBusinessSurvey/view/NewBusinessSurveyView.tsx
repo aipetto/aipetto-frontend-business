@@ -72,6 +72,21 @@ function NewBusinessSurveyView(props) {
           ))
         }
       />
+
+      <TextViewItem
+        label={i18n('entities.newBusinessSurvey.fields.address')}
+        value={record.address}
+      />
+
+      <TextViewItem
+        label={i18n('entities.newBusinessSurvey.fields.latitude')}
+        value={record.latitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.newBusinessSurvey.fields.longitude')}
+        value={record.longitude}
+      />
     </div>
   );
 }

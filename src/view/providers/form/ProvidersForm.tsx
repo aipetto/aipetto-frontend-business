@@ -16,6 +16,7 @@ import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServices
 import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -79,6 +80,26 @@ const schema = yup.object().shape({
     i18n('entities.providers.fields.country'),
     {},
   ),
+  email: yupFormSchemas.string(
+    i18n('entities.providers.fields.email'),
+    {},
+  ),
+  latitude: yupFormSchemas.decimal(
+    i18n('entities.providers.fields.latitude'),
+    {},
+  ),
+  longitude: yupFormSchemas.decimal(
+    i18n('entities.providers.fields.longitude'),
+    {},
+  ),
+  basePricePerService: yupFormSchemas.decimal(
+    i18n('entities.providers.fields.basePricePerService'),
+    {},
+  ),
+  currency: yupFormSchemas.relationToOne(
+    i18n('entities.providers.fields.currency'),
+    {},
+  ),
 });
 
 function ProvidersForm(props) {
@@ -102,6 +123,11 @@ function ProvidersForm(props) {
       city: record.city,
       state: record.state,
       country: record.country,
+      email: record.email,
+      latitude: record.latitude,
+      longitude: record.longitude,
+      basePricePerService: record.basePricePerService,
+      currency: record.currency,
     };
   });
 
@@ -227,6 +253,42 @@ function ProvidersForm(props) {
           <CountryAutocompleteFormItem  
             name="country"
             label={i18n('entities.providers.fields.country')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="email"
+            label={i18n('entities.providers.fields.email')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="latitude"
+            label={i18n('entities.providers.fields.latitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="longitude"
+            label={i18n('entities.providers.fields.longitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="basePricePerService"
+            label={i18n('entities.providers.fields.basePricePerService')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CurrencyAutocompleteFormItem
+            name="currency"
+            label={i18n('entities.providers.fields.currency')}
             required={false}
             showCreate={!props.modal}
           />

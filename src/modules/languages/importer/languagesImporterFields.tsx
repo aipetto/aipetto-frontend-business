@@ -20,4 +20,12 @@ export default [
       {},
     ),
   },
+  {
+    name: 'languageCode',
+    label: i18n('entities.languages.fields.languageCode'),
+    schema: schemas.string(
+      i18n('entities.languages.fields.languageCode'),
+      {},
+    ),
+  },
 ];

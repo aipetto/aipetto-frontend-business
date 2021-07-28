@@ -174,6 +174,48 @@ const schema = yup.object().shape({
     i18n('entities.pet.fields.petFriends'),
     {},
   ),
+  governmentUniqueID: yupFormSchemas.string(
+    i18n('entities.pet.fields.governmentUniqueID'),
+    {},
+  ),
+  bloodType: yupFormSchemas.enumerator(
+    i18n('entities.pet.fields.bloodType'),
+    {
+      "options": petEnumerators.bloodType
+    },
+  ),
+  hasMicrochip: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.hasMicrochip'),
+    {},
+  ),
+  weight: yupFormSchemas.decimal(
+    i18n('entities.pet.fields.weight'),
+    {},
+  ),
+  weightUnit: yupFormSchemas.enumerator(
+    i18n('entities.pet.fields.weightUnit'),
+    {
+      "options": petEnumerators.weightUnit
+    },
+  ),
+  height: yupFormSchemas.decimal(
+    i18n('entities.pet.fields.height'),
+    {},
+  ),
+  heightUnit: yupFormSchemas.enumerator(
+    i18n('entities.pet.fields.heightUnit'),
+    {
+      "options": petEnumerators.heightUnit
+    },
+  ),
+  latitude: yupFormSchemas.decimal(
+    i18n('entities.pet.fields.latitude'),
+    {},
+  ),
+  longitude: yupFormSchemas.decimal(
+    i18n('entities.pet.fields.longitude'),
+    {},
+  ),
 });
 
 function PetForm(props) {
@@ -215,6 +257,15 @@ function PetForm(props) {
       numberOfLikes: record.numberOfLikes,
       matches: record.matches || [],
       petFriends: record.petFriends || [],
+      governmentUniqueID: record.governmentUniqueID,
+      bloodType: record.bloodType,
+      hasMicrochip: record.hasMicrochip,
+      weight: record.weight,
+      weightUnit: record.weightUnit,
+      height: record.height,
+      heightUnit: record.heightUnit,
+      latitude: record.latitude,
+      longitude: record.longitude,
     };
   });
 
@@ -537,6 +588,93 @@ function PetForm(props) {
             required={false}
             showCreate={!props.modal}
             mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="governmentUniqueID"
+            label={i18n('entities.pet.fields.governmentUniqueID')}
+          hint={i18n('entities.pet.hints.governmentUniqueID')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="bloodType"
+            label={i18n('entities.pet.fields.bloodType')}
+            options={petEnumerators.bloodType.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.pet.enumerators.bloodType.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="hasMicrochip"
+            label={i18n('entities.pet.fields.hasMicrochip')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="weight"
+            label={i18n('entities.pet.fields.weight')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="weightUnit"
+            label={i18n('entities.pet.fields.weightUnit')}
+            options={petEnumerators.weightUnit.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.pet.enumerators.weightUnit.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="height"
+            label={i18n('entities.pet.fields.height')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="heightUnit"
+            label={i18n('entities.pet.fields.heightUnit')}
+            options={petEnumerators.heightUnit.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.pet.enumerators.heightUnit.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="latitude"
+            label={i18n('entities.pet.fields.latitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="longitude"
+            label={i18n('entities.pet.fields.longitude')}
+            required={false}
           />
         </div>
 

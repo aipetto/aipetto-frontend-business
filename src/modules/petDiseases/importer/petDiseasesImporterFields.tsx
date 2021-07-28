@@ -44,4 +44,20 @@ export default [
       },
     ),
   },
+  {
+    name: 'specificPetTypes',
+    label: i18n('entities.petDiseases.fields.specificPetTypes'),
+    schema: schemas.relationToMany(
+      i18n('entities.petDiseases.fields.specificPetTypes'),
+      {},
+    ),
+  },
+  {
+    name: 'specificPetBreeds',
+    label: i18n('entities.petDiseases.fields.specificPetBreeds'),
+    schema: schemas.relationToMany(
+      i18n('entities.petDiseases.fields.specificPetBreeds'),
+      {},
+    ),
+  },
 ];

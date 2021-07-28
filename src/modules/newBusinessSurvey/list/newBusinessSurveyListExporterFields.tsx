@@ -45,6 +45,20 @@ export default [
     render: exporterRenders.stringArray(),
   },
   {
+    name: 'address',
+    label: i18n('entities.newBusinessSurvey.fields.address'),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.newBusinessSurvey.fields.latitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.newBusinessSurvey.fields.longitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.newBusinessSurvey.fields.createdAt'),
     render: exporterRenders.datetime(),

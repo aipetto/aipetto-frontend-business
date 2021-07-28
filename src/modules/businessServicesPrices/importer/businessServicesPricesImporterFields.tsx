@@ -28,4 +28,20 @@ export default [
       },
     ),
   },
+  {
+    name: 'currency',
+    label: i18n('entities.businessServicesPrices.fields.currency'),
+    schema: schemas.relationToOne(
+      i18n('entities.businessServicesPrices.fields.currency'),
+      {},
+    ),
+  },
+  {
+    name: 'isFree',
+    label: i18n('entities.businessServicesPrices.fields.isFree'),
+    schema: schemas.boolean(
+      i18n('entities.businessServicesPrices.fields.isFree'),
+      {},
+    ),
+  },
 ];

@@ -4,6 +4,7 @@ import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import UserViewItem from 'src/view/user/view/UserViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
+import LanguagesViewItem from 'src/view/languages/view/LanguagesViewItem';
 
 function MessagesView(props) {
   const { record, loading } = props;
@@ -32,6 +33,11 @@ function MessagesView(props) {
       <BusinessViewItem
         label={i18n('entities.messages.fields.businessId')}
         value={record.businessId}
+      />
+
+      <LanguagesViewItem
+        label={i18n('entities.messages.fields.language')}
+        value={record.language}
       />
     </div>
   );

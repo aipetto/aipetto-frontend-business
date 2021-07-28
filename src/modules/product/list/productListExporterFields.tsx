@@ -30,6 +30,25 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'acceptPointsToShop',
+    label: i18n('entities.product.fields.acceptPointsToShop'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'pointsPrice',
+    label: i18n('entities.product.fields.pointsPrice'),
+  },
+  {
+    name: 'currency',
+    label: i18n('entities.product.fields.currency'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.product.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.product.fields.createdAt'),
     render: exporterRenders.datetime(),

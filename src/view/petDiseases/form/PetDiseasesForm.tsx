@@ -13,6 +13,8 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import petDiseasesEnumerators from 'src/modules/petDiseases/petDiseasesEnumerators';
+import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
+import BreedAutocompleteFormItem from 'src/view/breed/autocomplete/BreedAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -38,6 +40,14 @@ const schema = yup.object().shape({
       "options": petDiseasesEnumerators.language
     },
   ),
+  specificPetTypes: yupFormSchemas.relationToMany(
+    i18n('entities.petDiseases.fields.specificPetTypes'),
+    {},
+  ),
+  specificPetBreeds: yupFormSchemas.relationToMany(
+    i18n('entities.petDiseases.fields.specificPetBreeds'),
+    {},
+  ),
 });
 
 function PetDiseasesForm(props) {
@@ -52,6 +62,8 @@ function PetDiseasesForm(props) {
       isHumanContagious: record.isHumanContagious,
       isPetContagious: record.isPetContagious,
       language: record.language,
+      specificPetTypes: record.specificPetTypes || [],
+      specificPetBreeds: record.specificPetBreeds || [],
     };
   });
 
@@ -114,6 +126,24 @@ function PetDiseasesForm(props) {
               }),
             )}
             required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PetTypesAutocompleteFormItem
+            name="specificPetTypes"
+            label={i18n('entities.petDiseases.fields.specificPetTypes')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BreedAutocompleteFormItem
+            name="specificPetBreeds"
+            label={i18n('entities.petDiseases.fields.specificPetBreeds')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
           />
         </div>
 

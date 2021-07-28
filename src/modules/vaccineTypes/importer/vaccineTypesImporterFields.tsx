@@ -30,4 +30,54 @@ export default [
       },
     ),
   },
+  {
+    name: 'frequencyShotDosis',
+    label: i18n('entities.vaccineTypes.fields.frequencyShotDosis'),
+    schema: schemas.enumerator(
+      i18n('entities.vaccineTypes.fields.frequencyShotDosis'),
+      {
+        "options": vaccineTypesEnumerators.frequencyShotDosis
+      },
+    ),
+  },
+  {
+    name: 'petSpecificType',
+    label: i18n('entities.vaccineTypes.fields.petSpecificType'),
+    schema: schemas.relationToMany(
+      i18n('entities.vaccineTypes.fields.petSpecificType'),
+      {},
+    ),
+  },
+  {
+    name: 'vaccineCustomUniqueID',
+    label: i18n('entities.vaccineTypes.fields.vaccineCustomUniqueID'),
+    schema: schemas.string(
+      i18n('entities.vaccineTypes.fields.vaccineCustomUniqueID'),
+      {},
+    ),
+  },
+  {
+    name: 'isMandatory',
+    label: i18n('entities.vaccineTypes.fields.isMandatory'),
+    schema: schemas.boolean(
+      i18n('entities.vaccineTypes.fields.isMandatory'),
+      {},
+    ),
+  },
+  {
+    name: 'specificBreeds',
+    label: i18n('entities.vaccineTypes.fields.specificBreeds'),
+    schema: schemas.relationToMany(
+      i18n('entities.vaccineTypes.fields.specificBreeds'),
+      {},
+    ),
+  },
+  {
+    name: 'vaccinePetTargetAgeInMonths',
+    label: i18n('entities.vaccineTypes.fields.vaccinePetTargetAgeInMonths'),
+    schema: schemas.integer(
+      i18n('entities.vaccineTypes.fields.vaccinePetTargetAgeInMonths'),
+      {},
+    ),
+  },
 ];

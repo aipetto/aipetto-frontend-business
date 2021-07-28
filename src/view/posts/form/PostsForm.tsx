@@ -17,6 +17,8 @@ import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
 import PostCategoriesAutocompleteFormItem from 'src/view/postCategories/autocomplete/PostCategoriesAutocompleteFormItem';
 import PostCommentsAutocompleteFormItem from 'src/view/postComments/autocomplete/PostCommentsAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -52,6 +54,18 @@ const schema = yup.object().shape({
     i18n('entities.posts.fields.comments'),
     {},
   ),
+  source: yupFormSchemas.string(
+    i18n('entities.posts.fields.source'),
+    {},
+  ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.posts.fields.language'),
+    {},
+  ),
+  country: yupFormSchemas.relationToOne(
+    i18n('entities.posts.fields.country'),
+    {},
+  ),
 });
 
 function PostsForm(props) {
@@ -69,6 +83,9 @@ function PostsForm(props) {
       authors: record.authors || [],
       postCategory: record.postCategory || [],
       comments: record.comments || [],
+      source: record.source,
+      language: record.language,
+      country: record.country,
     };
   });
 
@@ -157,6 +174,29 @@ function PostsForm(props) {
             required={false}
             showCreate={!props.modal}
             mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="source"
+            label={i18n('entities.posts.fields.source')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <LanguagesAutocompleteFormItem
+            name="language"
+            label={i18n('entities.posts.fields.language')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CountryAutocompleteFormItem
+            name="country"
+            label={i18n('entities.posts.fields.country')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

@@ -118,4 +118,44 @@ export default [
       {},
     ),
   },
+  {
+    name: 'email',
+    label: i18n('entities.providers.fields.email'),
+    schema: schemas.string(
+      i18n('entities.providers.fields.email'),
+      {},
+    ),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.providers.fields.latitude'),
+    schema: schemas.decimal(
+      i18n('entities.providers.fields.latitude'),
+      {},
+    ),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.providers.fields.longitude'),
+    schema: schemas.decimal(
+      i18n('entities.providers.fields.longitude'),
+      {},
+    ),
+  },
+  {
+    name: 'basePricePerService',
+    label: i18n('entities.providers.fields.basePricePerService'),
+    schema: schemas.decimal(
+      i18n('entities.providers.fields.basePricePerService'),
+      {},
+    ),
+  },
+  {
+    name: 'currency',
+    label: i18n('entities.providers.fields.currency'),
+    schema: schemas.relationToOne(
+      i18n('entities.providers.fields.currency'),
+      {},
+    ),
+  },
 ];

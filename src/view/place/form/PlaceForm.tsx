@@ -11,6 +11,8 @@ import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
+import Storage from 'src/security/storage';
+import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import PlaceTypeAutocompleteFormItem from 'src/view/placeType/autocomplete/PlaceTypeAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
@@ -93,6 +95,14 @@ const schema = yup.object().shape({
     i18n('entities.place.fields.isOpen'),
     {},
   ),
+  photoLogo: yupFormSchemas.images(
+    i18n('entities.place.fields.photoLogo'),
+    {},
+  ),
+  photoStore: yupFormSchemas.images(
+    i18n('entities.place.fields.photoStore'),
+    {},
+  ),
 });
 
 function PlaceForm(props) {
@@ -120,6 +130,8 @@ function PlaceForm(props) {
       is24hours: record.is24hours,
       stars: record.stars,
       isOpen: record.isOpen,
+      photoLogo: record.photoLogo || [],
+      photoStore: record.photoStore || [],
     };
   });
 

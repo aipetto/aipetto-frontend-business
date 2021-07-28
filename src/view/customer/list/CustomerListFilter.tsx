@@ -15,24 +15,30 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import customerEnumerators from 'src/modules/customer/customerEnumerators';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 
 const schema = yup.object().shape({
+  name: yupFilterSchemas.string(
+    i18n('entities.customer.fields.name'),
+  ),
   businessId: yupFilterSchemas.relationToOne(
     i18n('entities.customer.fields.businessId'),
   ),
-  source: yupFilterSchemas.enumerator(
-    i18n('entities.customer.fields.source'),
+  uniqueCustomIdentifier: yupFilterSchemas.string(
+    i18n('entities.customer.fields.uniqueCustomIdentifier'),
   ),
   userId: yupFilterSchemas.relationToOne(
     i18n('entities.customer.fields.userId'),
   ),
-  name: yupFilterSchemas.string(
-    i18n('entities.customer.fields.name'),
+  source: yupFilterSchemas.enumerator(
+    i18n('entities.customer.fields.source'),
   ),
   surname: yupFilterSchemas.string(
     i18n('entities.customer.fields.surname'),
@@ -46,11 +52,17 @@ const schema = yup.object().shape({
   whatsApp: yupFilterSchemas.string(
     i18n('entities.customer.fields.whatsApp'),
   ),
+  smsPhoneNumber: yupFilterSchemas.string(
+    i18n('entities.customer.fields.smsPhoneNumber'),
+  ),
   phoneNumber: yupFilterSchemas.string(
     i18n('entities.customer.fields.phoneNumber'),
   ),
   address: yupFilterSchemas.string(
     i18n('entities.customer.fields.address'),
+  ),
+  email: yupFilterSchemas.string(
+    i18n('entities.customer.fields.email'),
   ),
   zipCode: yupFilterSchemas.string(
     i18n('entities.customer.fields.zipCode'),
@@ -61,7 +73,7 @@ const schema = yup.object().shape({
   state: yupFilterSchemas.string(
     i18n('entities.customer.fields.state'),
   ),
-  country: yupFilterSchemas.string(
+  country: yupFilterSchemas.relationToOne(
     i18n('entities.customer.fields.country'),
   ),
   billingAddressStreet: yupFilterSchemas.string(
@@ -94,19 +106,61 @@ const schema = yup.object().shape({
   shippingAddressCountry: yupFilterSchemas.string(
     i18n('entities.customer.fields.shippingAddressCountry'),
   ),
+  latitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.customer.fields.latitudeRange'),
+  ),
+  longitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.customer.fields.longitudeRange'),
+  ),
+  prospectStatus: yupFilterSchemas.enumerator(
+    i18n('entities.customer.fields.prospectStatus'),
+  ),
+  customerStatus: yupFilterSchemas.enumerator(
+    i18n('entities.customer.fields.customerStatus'),
+  ),
+  wantToReceiveNotifications: yupFilterSchemas.boolean(
+    i18n('entities.customer.fields.wantToReceiveNotifications'),
+  ),
+  currency: yupFilterSchemas.relationToOne(
+    i18n('entities.customer.fields.currency'),
+  ),
+  balanceRange: yupFilterSchemas.decimalRange(
+    i18n('entities.customer.fields.balanceRange'),
+  ),
+  shippingAddressStreetNumber: yupFilterSchemas.string(
+    i18n('entities.customer.fields.shippingAddressStreetNumber'),
+  ),
+  addressStreetNumber: yupFilterSchemas.string(
+    i18n('entities.customer.fields.addressStreetNumber'),
+  ),
+  billingAddressStreetNumber: yupFilterSchemas.string(
+    i18n('entities.customer.fields.billingAddressStreetNumber'),
+  ),
+  addressStreetComplement: yupFilterSchemas.string(
+    i18n('entities.customer.fields.addressStreetComplement'),
+  ),
+  billingAddressStreetComplement: yupFilterSchemas.string(
+    i18n('entities.customer.fields.billingAddressStreetComplement'),
+  ),
+  shippingAddressStreetComplement: yupFilterSchemas.string(
+    i18n('entities.customer.fields.shippingAddressStreetComplement'),
+  ),
 });
 
 const emptyValues = {
-  businessId: null,
-  source: null,
-  userId: null,
   name: null,
+  businessId: null,
+  uniqueCustomIdentifier: null,
+  userId: null,
+  source: null,
   surname: null,
   birthdateRange: [],
   gender: null,
   whatsApp: null,
+  smsPhoneNumber: null,
   phoneNumber: null,
   address: null,
+  email: null,
   zipCode: null,
   city: null,
   state: null,
@@ -121,24 +175,41 @@ const emptyValues = {
   shippingAddressState: null,
   shippingAddressZipCode: null,
   shippingAddressCountry: null,
+  latitudeRange: [],
+  longitudeRange: [],
+  prospectStatus: null,
+  customerStatus: null,
+  wantToReceiveNotifications: null,
+  currency: null,
+  balanceRange: [],
+  shippingAddressStreetNumber: null,
+  addressStreetNumber: null,
+  billingAddressStreetNumber: null,
+  addressStreetComplement: null,
+  billingAddressStreetComplement: null,
+  shippingAddressStreetComplement: null,
 }
 
 const previewRenders = {
+  name: {
+    label: i18n('entities.customer.fields.name'),
+    render: filterRenders.generic(),
+  },
   businessId: {
       label: i18n('entities.customer.fields.businessId'),
       render: filterRenders.relationToOne(),
     },
-  source: {
-    label: i18n('entities.customer.fields.source'),
-    render: filterRenders.enumerator('entities.customer.enumerators.source',),
+  uniqueCustomIdentifier: {
+    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
+    render: filterRenders.generic(),
   },
   userId: {
     label: i18n('entities.customer.fields.userId'),
     render: filterRenders.relationToOne(),
   },
-  name: {
-    label: i18n('entities.customer.fields.name'),
-    render: filterRenders.generic(),
+  source: {
+    label: i18n('entities.customer.fields.source'),
+    render: filterRenders.enumerator('entities.customer.enumerators.source',),
   },
   surname: {
     label: i18n('entities.customer.fields.surname'),
@@ -156,12 +227,20 @@ const previewRenders = {
     label: i18n('entities.customer.fields.whatsApp'),
     render: filterRenders.generic(),
   },
+  smsPhoneNumber: {
+    label: i18n('entities.customer.fields.smsPhoneNumber'),
+    render: filterRenders.generic(),
+  },
   phoneNumber: {
     label: i18n('entities.customer.fields.phoneNumber'),
     render: filterRenders.generic(),
   },
   address: {
     label: i18n('entities.customer.fields.address'),
+    render: filterRenders.generic(),
+  },
+  email: {
+    label: i18n('entities.customer.fields.email'),
     render: filterRenders.generic(),
   },
   zipCode: {
@@ -177,9 +256,9 @@ const previewRenders = {
     render: filterRenders.generic(),
   },
   country: {
-    label: i18n('entities.customer.fields.country'),
-    render: filterRenders.generic(),
-  },
+      label: i18n('entities.customer.fields.country'),
+      render: filterRenders.relationToOne(),
+    },
   billingAddressStreet: {
     label: i18n('entities.customer.fields.billingAddressStreet'),
     render: filterRenders.generic(),
@@ -218,6 +297,58 @@ const previewRenders = {
   },
   shippingAddressCountry: {
     label: i18n('entities.customer.fields.shippingAddressCountry'),
+    render: filterRenders.generic(),
+  },
+  latitudeRange: {
+    label: i18n('entities.customer.fields.latitudeRange'),
+    render: filterRenders.decimalRange(),
+  },
+  longitudeRange: {
+    label: i18n('entities.customer.fields.longitudeRange'),
+    render: filterRenders.decimalRange(),
+  },
+  prospectStatus: {
+    label: i18n('entities.customer.fields.prospectStatus'),
+    render: filterRenders.enumerator('entities.customer.enumerators.prospectStatus',),
+  },
+  customerStatus: {
+    label: i18n('entities.customer.fields.customerStatus'),
+    render: filterRenders.enumerator('entities.customer.enumerators.customerStatus',),
+  },
+  wantToReceiveNotifications: {
+    label: i18n('entities.customer.fields.wantToReceiveNotifications'),
+    render: filterRenders.boolean(),
+  },
+  currency: {
+      label: i18n('entities.customer.fields.currency'),
+      render: filterRenders.relationToOne(),
+    },
+  balanceRange: {
+    label: i18n('entities.customer.fields.balanceRange'),
+    render: filterRenders.decimalRange(),
+  },
+  shippingAddressStreetNumber: {
+    label: i18n('entities.customer.fields.shippingAddressStreetNumber'),
+    render: filterRenders.generic(),
+  },
+  addressStreetNumber: {
+    label: i18n('entities.customer.fields.addressStreetNumber'),
+    render: filterRenders.generic(),
+  },
+  billingAddressStreetNumber: {
+    label: i18n('entities.customer.fields.billingAddressStreetNumber'),
+    render: filterRenders.generic(),
+  },
+  addressStreetComplement: {
+    label: i18n('entities.customer.fields.addressStreetComplement'),
+    render: filterRenders.generic(),
+  },
+  billingAddressStreetComplement: {
+    label: i18n('entities.customer.fields.billingAddressStreetComplement'),
+    render: filterRenders.generic(),
+  },
+  shippingAddressStreetComplement: {
+    label: i18n('entities.customer.fields.shippingAddressStreetComplement'),
     render: filterRenders.generic(),
   },
 }
@@ -279,9 +410,21 @@ function CustomerListFilter(props) {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+              <InputFormItem
+                name="name"
+                label={i18n('entities.customer.fields.name')}
+              />
               <BusinessAutocompleteFormItem
                 name="businessId"
                 label={i18n('entities.customer.fields.businessId')}
+              />
+              <InputFormItem
+                name="uniqueCustomIdentifier"
+                label={i18n('entities.customer.fields.uniqueCustomIdentifier')}
+              />
+              <UserAutocompleteFormItem
+                name="userId"
+                label={i18n('entities.customer.fields.userId')}
               />
               <SelectFormItem
                   name="source"
@@ -295,14 +438,6 @@ function CustomerListFilter(props) {
                     }),
                   )}
                 />
-              <UserAutocompleteFormItem
-                name="userId"
-                label={i18n('entities.customer.fields.userId')}
-              />
-              <InputFormItem
-                name="name"
-                label={i18n('entities.customer.fields.name')}      
-              />
               <InputFormItem
                 name="surname"
                 label={i18n('entities.customer.fields.surname')}
@@ -328,12 +463,20 @@ function CustomerListFilter(props) {
                 label={i18n('entities.customer.fields.whatsApp')}
               />
               <InputFormItem
+                name="smsPhoneNumber"
+                label={i18n('entities.customer.fields.smsPhoneNumber')}
+              />
+              <InputFormItem
                 name="phoneNumber"
                 label={i18n('entities.customer.fields.phoneNumber')}
               />
               <InputFormItem
                 name="address"
                 label={i18n('entities.customer.fields.address')}
+              />
+              <InputFormItem
+                name="email"
+                label={i18n('entities.customer.fields.email')}
               />
               <InputFormItem
                 name="zipCode"
@@ -347,7 +490,7 @@ function CustomerListFilter(props) {
                 name="state"
                 label={i18n('entities.customer.fields.state')}
               />
-              <InputFormItem
+              <CountryAutocompleteFormItem
                 name="country"
                 label={i18n('entities.customer.fields.country')}
               />
@@ -390,6 +533,84 @@ function CustomerListFilter(props) {
               <InputFormItem
                 name="shippingAddressCountry"
                 label={i18n('entities.customer.fields.shippingAddressCountry')}
+              />
+              <InputRangeFormItem
+                name="latitudeRange"
+                label={i18n('entities.customer.fields.latitudeRange')}
+              />
+              <InputRangeFormItem
+                name="longitudeRange"
+                label={i18n('entities.customer.fields.longitudeRange')}
+              />
+              <SelectFormItem
+                  name="prospectStatus"
+                  label={i18n('entities.customer.fields.prospectStatus')}
+                  options={customerEnumerators.prospectStatus.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.customer.enumerators.prospectStatus.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                  name="customerStatus"
+                  label={i18n('entities.customer.fields.customerStatus')}
+                  options={customerEnumerators.customerStatus.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.customer.enumerators.customerStatus.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                name="wantToReceiveNotifications"
+                label={i18n('entities.customer.fields.wantToReceiveNotifications')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <CurrencyAutocompleteFormItem
+                name="currency"
+                label={i18n('entities.customer.fields.currency')}
+              />
+              <InputRangeFormItem
+                name="balanceRange"
+                label={i18n('entities.customer.fields.balanceRange')}
+              />
+              <InputFormItem
+                name="shippingAddressStreetNumber"
+                label={i18n('entities.customer.fields.shippingAddressStreetNumber')}
+              />
+              <InputFormItem
+                name="addressStreetNumber"
+                label={i18n('entities.customer.fields.addressStreetNumber')}
+              />
+              <InputFormItem
+                name="billingAddressStreetNumber"
+                label={i18n('entities.customer.fields.billingAddressStreetNumber')}
+              />
+              <InputFormItem
+                name="addressStreetComplement"
+                label={i18n('entities.customer.fields.addressStreetComplement')}
+              />
+              <InputFormItem
+                name="billingAddressStreetComplement"
+                label={i18n('entities.customer.fields.billingAddressStreetComplement')}
+              />
+              <InputFormItem
+                name="shippingAddressStreetComplement"
+                label={i18n('entities.customer.fields.shippingAddressStreetComplement')}
               />
             </div>
 

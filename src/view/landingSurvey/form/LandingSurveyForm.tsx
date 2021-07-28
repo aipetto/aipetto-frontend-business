@@ -13,6 +13,7 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import landingSurveyEnumerators from 'src/modules/landingSurvey/landingSurveyEnumerators';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -44,6 +45,26 @@ const schema = yup.object().shape({
     i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
     {},
   ),
+  latitude: yupFormSchemas.decimal(
+    i18n('entities.landingSurvey.fields.latitude'),
+    {},
+  ),
+  longitude: yupFormSchemas.decimal(
+    i18n('entities.landingSurvey.fields.longitude'),
+    {},
+  ),
+  petProfession: yupFormSchemas.stringArray(
+    i18n('entities.landingSurvey.fields.petProfession'),
+    {},
+  ),
+  address: yupFormSchemas.string(
+    i18n('entities.landingSurvey.fields.address'),
+    {},
+  ),
+  country: yupFormSchemas.relationToOne(
+    i18n('entities.landingSurvey.fields.country'),
+    {},
+  ),
 });
 
 function LandingSurveyForm(props) {
@@ -59,6 +80,11 @@ function LandingSurveyForm(props) {
       interests: record.interests || [],
       extraInfo: record.extraInfo,
       allowReceiveNotifications: record.allowReceiveNotifications,
+      latitude: record.latitude,
+      longitude: record.longitude,
+      petProfession: record.petProfession || [],
+      address: record.address,
+      country: record.country,
     };
   });
 
@@ -130,6 +156,51 @@ function LandingSurveyForm(props) {
           <SwitchFormItem
             name="allowReceiveNotifications"
             label={i18n('entities.landingSurvey.fields.allowReceiveNotifications')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="latitude"
+            label={i18n('entities.landingSurvey.fields.latitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="longitude"
+            label={i18n('entities.landingSurvey.fields.longitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="petProfession"
+            label={i18n('entities.landingSurvey.fields.petProfession')}
+            options={landingSurveyEnumerators.petProfession.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.landingSurvey.enumerators.petProfession.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="address"
+            label={i18n('entities.landingSurvey.fields.address')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CountryAutocompleteFormItem
+            name="country"
+            label={i18n('entities.landingSurvey.fields.country')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

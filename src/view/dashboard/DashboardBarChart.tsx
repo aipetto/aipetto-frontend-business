@@ -4,21 +4,23 @@ import { i18n } from 'src/i18n';
 
 const data = {
   labels: [
-    `${i18n('dashboard.charts.day')} 1`,
-    `${i18n('dashboard.charts.day')} 2`,
-    `${i18n('dashboard.charts.day')} 3`,
-    `${i18n('dashboard.charts.day')} 4`,
-    `${i18n('dashboard.charts.day')} 5`,
+    i18n('businessSurvey.checkboxChoices.vacunacionDeGato'),
+    i18n('businessSurvey.checkboxChoices.castracionDePerros'),
+    i18n('businessSurvey.checkboxChoices.castracionDeGatos'),
+    i18n('businessSurvey.checkboxChoices.analisisDeSangre'),
+    i18n('businessSurvey.checkboxChoices.ecografia'),
+    i18n('businessSurvey.checkboxChoices.radiografia'),
+    i18n('businessSurvey.checkboxChoices.urgencias'),
   ],
   datasets: [
     {
-      label: i18n('dashboard.charts.red'),
-      backgroundColor: 'rgba(255,99,132,0.2)',
-      borderColor: 'rgba(255,99,132,1)',
+      label: i18n('dashboard.charts.top7Services'),
+      backgroundColor: 'rgb(18,201,61)',
+      borderColor: 'rgb(135,243,79)',
       borderWidth: 1,
-      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-      hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [65, 59, 80, 81, 82],
+      hoverBackgroundColor: 'rgb(13,227,76)',
+      hoverBorderColor: 'rgb(61,248,65)',
+      data: [65, 76, 86, 89, 95, 120, 150],
     },
   ],
 };

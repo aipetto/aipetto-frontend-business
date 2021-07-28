@@ -16,6 +16,8 @@ import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -60,6 +62,14 @@ const schema = yup.object().shape({
     i18n('entities.product.fields.pointsPrice'),
     {},
   ),
+  currency: yupFormSchemas.relationToOne(
+    i18n('entities.product.fields.currency'),
+    {},
+  ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.product.fields.language'),
+    {},
+  ),
 });
 
 function ProductForm(props) {
@@ -76,6 +86,8 @@ function ProductForm(props) {
       businessId: record.businessId,
       acceptPointsToShop: record.acceptPointsToShop,
       pointsPrice: record.pointsPrice,
+      currency: record.currency,
+      language: record.language,
     };
   });
 

@@ -76,4 +76,28 @@ export default [
       {},
     ),
   },
+  {
+    name: 'address',
+    label: i18n('entities.newBusinessSurvey.fields.address'),
+    schema: schemas.string(
+      i18n('entities.newBusinessSurvey.fields.address'),
+      {},
+    ),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.newBusinessSurvey.fields.latitude'),
+    schema: schemas.decimal(
+      i18n('entities.newBusinessSurvey.fields.latitude'),
+      {},
+    ),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.newBusinessSurvey.fields.longitude'),
+    schema: schemas.decimal(
+      i18n('entities.newBusinessSurvey.fields.longitude'),
+      {},
+    ),
+  },
 ];

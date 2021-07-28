@@ -2,6 +2,7 @@ import React from 'react';
 import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
+import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
 import PlaceTypeViewItem from 'src/view/placeType/view/PlaceTypeViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
 import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/BusinessServicesTypesViewItem';
@@ -113,6 +114,16 @@ function PlaceView(props) {
             ? i18n('common.yes')
             : i18n('common.no')
         }
+      />
+
+      <ImagesViewItem
+        label={i18n('entities.place.fields.photoLogo')}
+        value={record.photoLogo}
+      />
+
+      <ImagesViewItem
+        label={i18n('entities.place.fields.photoStore')}
+        value={record.photoStore}
       />
     </div>
   );

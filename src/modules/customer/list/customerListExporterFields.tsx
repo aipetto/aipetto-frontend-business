@@ -7,13 +7,17 @@ export default [
     label: i18n('entities.customer.fields.id'),
   },
   {
+    name: 'name',
+    label: i18n('entities.customer.fields.name'),
+  },
+  {
     name: 'businessId',
     label: i18n('entities.customer.fields.businessId'),
     render: exporterRenders.relationToOne(),
   },
   {
-    name: 'source',
-    label: i18n('entities.customer.fields.source'),
+    name: 'uniqueCustomIdentifier',
+    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
   },
   {
     name: 'userId',
@@ -21,8 +25,8 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
-    name: 'name',
-    label: i18n('entities.customer.fields.name'),
+    name: 'source',
+    label: i18n('entities.customer.fields.source'),
   },
   {
     name: 'surname',
@@ -41,12 +45,20 @@ export default [
     label: i18n('entities.customer.fields.whatsApp'),
   },
   {
+    name: 'smsPhoneNumber',
+    label: i18n('entities.customer.fields.smsPhoneNumber'),
+  },
+  {
     name: 'phoneNumber',
     label: i18n('entities.customer.fields.phoneNumber'),
   },
   {
     name: 'address',
     label: i18n('entities.customer.fields.address'),
+  },
+  {
+    name: 'email',
+    label: i18n('entities.customer.fields.email'),
   },
   {
     name: 'zipCode',
@@ -63,6 +75,7 @@ export default [
   {
     name: 'country',
     label: i18n('entities.customer.fields.country'),
+    render: exporterRenders.relationToOne(),
   },
   {
     name: 'billingAddressStreet',
@@ -103,6 +116,68 @@ export default [
   {
     name: 'shippingAddressCountry',
     label: i18n('entities.customer.fields.shippingAddressCountry'),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.customer.fields.latitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.customer.fields.longitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'prospectStatus',
+    label: i18n('entities.customer.fields.prospectStatus'),
+  },
+  {
+    name: 'customerStatus',
+    label: i18n('entities.customer.fields.customerStatus'),
+  },
+  {
+    name: 'wantToReceiveNotifications',
+    label: i18n('entities.customer.fields.wantToReceiveNotifications'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'currency',
+    label: i18n('entities.customer.fields.currency'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'balance',
+    label: i18n('entities.customer.fields.balance'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'shippingAddressStreetNumber',
+    label: i18n('entities.customer.fields.shippingAddressStreetNumber'),
+  },
+  {
+    name: 'addressStreetNumber',
+    label: i18n('entities.customer.fields.addressStreetNumber'),
+  },
+  {
+    name: 'billingAddressStreetNumber',
+    label: i18n('entities.customer.fields.billingAddressStreetNumber'),
+  },
+  {
+    name: 'addressStreetComplement',
+    label: i18n('entities.customer.fields.addressStreetComplement'),
+  },
+  {
+    name: 'billingAddressStreetComplement',
+    label: i18n('entities.customer.fields.billingAddressStreetComplement'),
+  },
+  {
+    name: 'shippingAddressStreetComplement',
+    label: i18n('entities.customer.fields.shippingAddressStreetComplement'),
+  },
+  {
+    name: 'customerProfileImage',
+    label: i18n('entities.customer.fields.customerProfileImage'),
+    render: exporterRenders.filesOrImages(),
   },
   {
     name: 'createdAt',

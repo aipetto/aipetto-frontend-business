@@ -12,6 +12,7 @@ import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -37,6 +38,10 @@ const schema = yup.object().shape({
     i18n('entities.messages.fields.businessId'),
     {},
   ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.messages.fields.language'),
+    {},
+  ),
 });
 
 function MessagesForm(props) {
@@ -50,6 +55,7 @@ function MessagesForm(props) {
       to: record.to,
       message: record.message,
       businessId: record.businessId,
+      language: record.language,
     };
   });
 
@@ -99,6 +105,14 @@ function MessagesForm(props) {
           <BusinessAutocompleteFormItem
             name="businessId"
             label={i18n('entities.messages.fields.businessId')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <LanguagesAutocompleteFormItem
+            name="language"
+            label={i18n('entities.messages.fields.language')}
             required={false}
             showCreate={!props.modal}
           />

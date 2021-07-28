@@ -56,6 +56,12 @@ const schema = yup.object().shape({
   country: yupFilterSchemas.relationToOne(
     i18n('entities.business.fields.country'),
   ),
+  latitude: yupFilterSchemas.string(
+    i18n('entities.business.fields.latitude'),
+  ),
+  longitude: yupFilterSchemas.string(
+    i18n('entities.business.fields.longitude'),
+  ),
 });
 
 const emptyValues = {
@@ -71,6 +77,8 @@ const emptyValues = {
   city: null,
   state: null,
   country: null,
+  latitude: null,
+  longitude: null,
 }
 
 const previewRenders = {
@@ -122,6 +130,14 @@ const previewRenders = {
       label: i18n('entities.business.fields.country'),
       render: filterRenders.relationToOne(),
     },
+  latitude: {
+    label: i18n('entities.business.fields.latitude'),
+    render: filterRenders.generic(),
+  },
+  longitude: {
+    label: i18n('entities.business.fields.longitude'),
+    render: filterRenders.generic(),
+  },
 }
 
 function BusinessListFilter(props) {
@@ -228,6 +244,14 @@ function BusinessListFilter(props) {
               <CountryAutocompleteFormItem
                 name="country"
                 label={i18n('entities.business.fields.country')}
+              />
+              <InputFormItem
+                name="latitude"
+                label={i18n('entities.business.fields.latitude')}
+              />
+              <InputFormItem
+                name="longitude"
+                label={i18n('entities.business.fields.longitude')}
               />
             </div>
 

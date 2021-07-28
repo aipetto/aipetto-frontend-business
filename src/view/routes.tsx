@@ -1480,6 +1480,257 @@ const privateRoutes = [
     permissionRequired: null,
     exact: true,
   },
+  {
+    path: '/product-category/importer',
+    loader: () =>
+        import(
+            'src/view/productCategory/importer/ProductCategoryImporterPage'
+            ),
+    permissionRequired: permissions.productCategoryImport,
+    exact: true,
+  },
+  {
+    path: '/product-category/:id/edit',
+    loader: () =>
+        import('src/view/productCategory/form/ProductCategoryFormPage'),
+    permissionRequired: permissions.productCategoryEdit,
+    exact: true,
+  },
+  {
+    path: '/product-category/:id',
+    loader: () =>
+        import('src/view/productCategory/view/ProductCategoryViewPage'),
+    permissionRequired: permissions.productCategoryRead,
+    exact: true,
+  },
+
+  {
+    path: '/deals',
+    loader: () =>
+        import('src/view/deals/list/DealsListPage'),
+    permissionRequired: permissions.dealsRead,
+    exact: true,
+  },
+  {
+    path: '/deals/new',
+    loader: () =>
+        import('src/view/deals/form/DealsFormPage'),
+    permissionRequired: permissions.dealsCreate,
+    exact: true,
+  },
+  {
+    path: '/deals/importer',
+    loader: () =>
+        import(
+            'src/view/deals/importer/DealsImporterPage'
+            ),
+    permissionRequired: permissions.dealsImport,
+    exact: true,
+  },
+  {
+    path: '/deals/:id/edit',
+    loader: () =>
+        import('src/view/deals/form/DealsFormPage'),
+    permissionRequired: permissions.dealsEdit,
+    exact: true,
+  },
+  {
+    path: '/deals/:id',
+    loader: () =>
+        import('src/view/deals/view/DealsViewPage'),
+    permissionRequired: permissions.dealsRead,
+    exact: true,
+  },
+
+  {
+    path: '/business-payment-cycle',
+    loader: () =>
+        import('src/view/businessPaymentCycle/list/BusinessPaymentCycleListPage'),
+    permissionRequired: permissions.businessPaymentCycleRead,
+    exact: true,
+  },
+  {
+    path: '/business-payment-cycle/new',
+    loader: () =>
+        import('src/view/businessPaymentCycle/form/BusinessPaymentCycleFormPage'),
+    permissionRequired: permissions.businessPaymentCycleCreate,
+    exact: true,
+  },
+  {
+    path: '/business-payment-cycle/importer',
+    loader: () =>
+        import(
+            'src/view/businessPaymentCycle/importer/BusinessPaymentCycleImporterPage'
+            ),
+    permissionRequired: permissions.businessPaymentCycleImport,
+    exact: true,
+  },
+  {
+    path: '/business-payment-cycle/:id/edit',
+    loader: () =>
+        import('src/view/businessPaymentCycle/form/BusinessPaymentCycleFormPage'),
+    permissionRequired: permissions.businessPaymentCycleEdit,
+    exact: true,
+  },
+  {
+    path: '/business-payment-cycle/:id',
+    loader: () =>
+        import('src/view/businessPaymentCycle/view/BusinessPaymentCycleViewPage'),
+    permissionRequired: permissions.businessPaymentCycleRead,
+    exact: true,
+  },
+
+  {
+    path: '/questions',
+    loader: () =>
+        import('src/view/questions/list/QuestionsListPage'),
+    permissionRequired: permissions.questionsRead,
+    exact: true,
+  },
+  {
+    path: '/questions/new',
+    loader: () =>
+        import('src/view/questions/form/QuestionsFormPage'),
+    permissionRequired: permissions.questionsCreate,
+    exact: true,
+  },
+  {
+    path: '/questions/importer',
+    loader: () =>
+        import(
+            'src/view/questions/importer/QuestionsImporterPage'
+            ),
+    permissionRequired: permissions.questionsImport,
+    exact: true,
+  },
+  {
+    path: '/questions/:id/edit',
+    loader: () =>
+        import('src/view/questions/form/QuestionsFormPage'),
+    permissionRequired: permissions.questionsEdit,
+    exact: true,
+  },
+  {
+    path: '/questions/:id',
+    loader: () =>
+        import('src/view/questions/view/QuestionsViewPage'),
+    permissionRequired: permissions.questionsRead,
+    exact: true,
+  },
+
+  {
+    path: '/answers',
+    loader: () =>
+        import('src/view/answers/list/AnswersListPage'),
+    permissionRequired: permissions.answersRead,
+    exact: true,
+  },
+  {
+    path: '/answers/new',
+    loader: () =>
+        import('src/view/answers/form/AnswersFormPage'),
+    permissionRequired: permissions.answersCreate,
+    exact: true,
+  },
+  {
+    path: '/answers/importer',
+    loader: () =>
+        import(
+            'src/view/answers/importer/AnswersImporterPage'
+            ),
+    permissionRequired: permissions.answersImport,
+    exact: true,
+  },
+  {
+    path: '/answers/:id/edit',
+    loader: () =>
+        import('src/view/answers/form/AnswersFormPage'),
+    permissionRequired: permissions.answersEdit,
+    exact: true,
+  },
+  {
+    path: '/answers/:id',
+    loader: () =>
+        import('src/view/answers/view/AnswersViewPage'),
+    permissionRequired: permissions.answersRead,
+    exact: true,
+  },
+
+  {
+    path: '/pet-examination',
+    loader: () =>
+        import('src/view/petExamination/list/PetExaminationListPage'),
+    permissionRequired: permissions.petExaminationRead,
+    exact: true,
+  },
+  {
+    path: '/pet-examination/new',
+    loader: () =>
+        import('src/view/petExamination/form/PetExaminationFormPage'),
+    permissionRequired: permissions.petExaminationCreate,
+    exact: true,
+  },
+  {
+    path: '/pet-examination/importer',
+    loader: () =>
+        import(
+            'src/view/petExamination/importer/PetExaminationImporterPage'
+            ),
+    permissionRequired: permissions.petExaminationImport,
+    exact: true,
+  },
+  {
+    path: '/pet-examination/:id/edit',
+    loader: () =>
+        import('src/view/petExamination/form/PetExaminationFormPage'),
+    permissionRequired: permissions.petExaminationEdit,
+    exact: true,
+  },
+  {
+    path: '/pet-examination/:id',
+    loader: () =>
+        import('src/view/petExamination/view/PetExaminationViewPage'),
+    permissionRequired: permissions.petExaminationRead,
+    exact: true,
+  },
+
+  {
+    path: '/contacts',
+    loader: () =>
+        import('src/view/contacts/list/ContactsListPage'),
+    permissionRequired: permissions.contactsRead,
+    exact: true,
+  },
+  {
+    path: '/contacts/new',
+    loader: () =>
+        import('src/view/contacts/form/ContactsFormPage'),
+    permissionRequired: permissions.contactsCreate,
+    exact: true,
+  },
+  {
+    path: '/contacts/importer',
+    loader: () =>
+        import(
+            'src/view/contacts/importer/ContactsImporterPage'
+            ),
+    permissionRequired: permissions.contactsImport,
+    exact: true,
+  },
+  {
+    path: '/contacts/:id/edit',
+    loader: () =>
+        import('src/view/contacts/form/ContactsFormPage'),
+    permissionRequired: permissions.contactsEdit,
+    exact: true,
+  },
+  {
+    path: '/contacts/:id',
+    loader: () =>
+        import('src/view/contacts/view/ContactsViewPage'),
+    permissionRequired: permissions.contactsRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [

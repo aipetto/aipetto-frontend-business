@@ -20,6 +20,33 @@ export default [
     label: i18n('entities.vaccineTypes.fields.language'),
   },
   {
+    name: 'frequencyShotDosis',
+    label: i18n('entities.vaccineTypes.fields.frequencyShotDosis'),
+  },
+  {
+    name: 'petSpecificType',
+    label: i18n('entities.vaccineTypes.fields.petSpecificType'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
+    name: 'vaccineCustomUniqueID',
+    label: i18n('entities.vaccineTypes.fields.vaccineCustomUniqueID'),
+  },
+  {
+    name: 'isMandatory',
+    label: i18n('entities.vaccineTypes.fields.isMandatory'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'specificBreeds',
+    label: i18n('entities.vaccineTypes.fields.specificBreeds'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
+    name: 'vaccinePetTargetAgeInMonths',
+    label: i18n('entities.vaccineTypes.fields.vaccinePetTargetAgeInMonths'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.vaccineTypes.fields.createdAt'),
     render: exporterRenders.datetime(),

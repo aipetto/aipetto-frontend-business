@@ -69,6 +69,30 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'email',
+    label: i18n('entities.providers.fields.email'),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.providers.fields.latitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.providers.fields.longitude'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'basePricePerService',
+    label: i18n('entities.providers.fields.basePricePerService'),
+    render: exporterRenders.decimal(),
+  },
+  {
+    name: 'currency',
+    label: i18n('entities.providers.fields.currency'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.providers.fields.createdAt'),
     render: exporterRenders.datetime(),

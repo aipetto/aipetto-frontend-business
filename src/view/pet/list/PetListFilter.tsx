@@ -15,6 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import InputNumberRangeFormItem from 'src/view/shared/form/items/InputNumberRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import petEnumerators from 'src/modules/pet/petEnumerators';
@@ -90,6 +91,33 @@ const schema = yup.object().shape({
   numberOfLikesRange: yupFilterSchemas.integerRange(
     i18n('entities.pet.fields.numberOfLikesRange'),
   ),
+  governmentUniqueID: yupFilterSchemas.string(
+    i18n('entities.pet.fields.governmentUniqueID'),
+  ),
+  bloodType: yupFilterSchemas.enumerator(
+    i18n('entities.pet.fields.bloodType'),
+  ),
+  hasMicrochip: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.hasMicrochip'),
+  ),
+  weightRange: yupFilterSchemas.decimalRange(
+    i18n('entities.pet.fields.weightRange'),
+  ),
+  weightUnit: yupFilterSchemas.enumerator(
+    i18n('entities.pet.fields.weightUnit'),
+  ),
+  heightRange: yupFilterSchemas.decimalRange(
+    i18n('entities.pet.fields.heightRange'),
+  ),
+  heightUnit: yupFilterSchemas.enumerator(
+    i18n('entities.pet.fields.heightUnit'),
+  ),
+  latitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.pet.fields.latitudeRange'),
+  ),
+  longitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.pet.fields.longitudeRange'),
+  ),
 });
 
 const emptyValues = {
@@ -115,6 +143,15 @@ const emptyValues = {
   isLookingForMatch: null,
   isGuideDog: null,
   numberOfLikesRange: [],
+  governmentUniqueID: null,
+  bloodType: null,
+  hasMicrochip: null,
+  weightRange: [],
+  weightUnit: null,
+  heightRange: [],
+  heightUnit: null,
+  latitudeRange: [],
+  longitudeRange: [],
 }
 
 const previewRenders = {
@@ -205,6 +242,42 @@ const previewRenders = {
   numberOfLikesRange: {
     label: i18n('entities.pet.fields.numberOfLikesRange'),
     render: filterRenders.range(),
+  },
+  governmentUniqueID: {
+    label: i18n('entities.pet.fields.governmentUniqueID'),
+    render: filterRenders.generic(),
+  },
+  bloodType: {
+    label: i18n('entities.pet.fields.bloodType'),
+    render: filterRenders.enumerator('entities.pet.enumerators.bloodType',),
+  },
+  hasMicrochip: {
+    label: i18n('entities.pet.fields.hasMicrochip'),
+    render: filterRenders.boolean(),
+  },
+  weightRange: {
+    label: i18n('entities.pet.fields.weightRange'),
+    render: filterRenders.decimalRange(),
+  },
+  weightUnit: {
+    label: i18n('entities.pet.fields.weightUnit'),
+    render: filterRenders.enumerator('entities.pet.enumerators.weightUnit',),
+  },
+  heightRange: {
+    label: i18n('entities.pet.fields.heightRange'),
+    render: filterRenders.decimalRange(),
+  },
+  heightUnit: {
+    label: i18n('entities.pet.fields.heightUnit'),
+    render: filterRenders.enumerator('entities.pet.enumerators.heightUnit',),
+  },
+  latitudeRange: {
+    label: i18n('entities.pet.fields.latitudeRange'),
+    render: filterRenders.decimalRange(),
+  },
+  longitudeRange: {
+    label: i18n('entities.pet.fields.longitudeRange'),
+    render: filterRenders.decimalRange(),
   },
 }
 

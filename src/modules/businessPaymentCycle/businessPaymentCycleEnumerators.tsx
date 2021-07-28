@@ -1,0 +1,45 @@
+const businessPaymentCycleEnumerators = {
+  statusPayment: [
+    'requires_payment_method',
+    'requires_confirmation',
+    'requires_action',
+    'processing',
+    'requires_capture',
+    'canceled',
+    'succeeded',
+  ],
+  statusCyclePayment: [
+    'opened',
+    'closed',
+    'canceled',
+  ],
+  paymentMethod: [
+    'acss_debit',
+    'afterpay_clearpay',
+    'alipay',
+    'au_becs_debit',
+    'bacs_debit',
+    'bancontact',
+    'boleto',
+    'card',
+    'card_present',
+    'eps',
+    'fpx',
+    'giropay',
+    'grabpay',
+    'ideal',
+    'interac_present',
+    'oxxo',
+    'p24',
+    'sepa_debit',
+    'sofort',
+    'wechat_pay',
+  ],
+  paymentGatewayType: [
+    'mercadopago',
+    'stripe',
+    'paypal',
+  ],
+};
+
+export default businessPaymentCycleEnumerators;

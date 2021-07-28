@@ -54,6 +54,18 @@ const schema = yup.object().shape({
     i18n('entities.newBusinessSurvey.fields.services'),
     {},
   ),
+  address: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.address'),
+    {},
+  ),
+  latitude: yupFormSchemas.decimal(
+    i18n('entities.newBusinessSurvey.fields.latitude'),
+    {},
+  ),
+  longitude: yupFormSchemas.decimal(
+    i18n('entities.newBusinessSurvey.fields.longitude'),
+    {},
+  ),
 });
 
 function NewBusinessSurveyForm(props) {
@@ -72,6 +84,9 @@ function NewBusinessSurveyForm(props) {
       digitalNetworks: record.digitalNetworks,
       allowReceiveNotifications: record.allowReceiveNotifications,
       services: record.services || [],
+      address: record.address,
+      latitude: record.latitude,
+      longitude: record.longitude,
     };
   });
 
@@ -164,6 +179,27 @@ function NewBusinessSurveyForm(props) {
             )}
             required={false}
             mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="address"
+            label={i18n('entities.newBusinessSurvey.fields.address')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="latitude"
+            label={i18n('entities.newBusinessSurvey.fields.latitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="longitude"
+            label={i18n('entities.newBusinessSurvey.fields.longitude')}
+            required={false}
           />
         </div>
 

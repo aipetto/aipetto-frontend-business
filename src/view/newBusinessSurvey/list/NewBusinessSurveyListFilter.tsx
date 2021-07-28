@@ -15,6 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import newBusinessSurveyEnumerators from 'src/modules/newBusinessSurvey/newBusinessSurveyEnumerators';
 
@@ -46,6 +47,15 @@ const schema = yup.object().shape({
   services: yupFilterSchemas.stringArray(
     i18n('entities.newBusinessSurvey.fields.services'),
   ),
+  address: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.address'),
+  ),
+  latitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.newBusinessSurvey.fields.latitudeRange'),
+  ),
+  longitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.newBusinessSurvey.fields.longitudeRange'),
+  ),
 });
 
 const emptyValues = {
@@ -58,6 +68,9 @@ const emptyValues = {
   digitalNetworks: null,
   allowReceiveNotifications: null,
   services: [],
+  address: null,
+  latitudeRange: [],
+  longitudeRange: [],
 }
 
 const previewRenders = {
@@ -96,6 +109,18 @@ const previewRenders = {
   services: {
     label: i18n('entities.newBusinessSurvey.fields.services'),
     render: filterRenders.enumeratorMultiple('entities.newBusinessSurvey.enumerators.services',),
+  },
+  address: {
+    label: i18n('entities.newBusinessSurvey.fields.address'),
+    render: filterRenders.generic(),
+  },
+  latitudeRange: {
+    label: i18n('entities.newBusinessSurvey.fields.latitudeRange'),
+    render: filterRenders.decimalRange(),
+  },
+  longitudeRange: {
+    label: i18n('entities.newBusinessSurvey.fields.longitudeRange'),
+    render: filterRenders.decimalRange(),
   },
 }
 
@@ -210,6 +235,18 @@ function NewBusinessSurveyListFilter(props) {
                   }),
                 )}
                 mode="multiple"
+              />
+              <InputFormItem
+                name="address"
+                label={i18n('entities.newBusinessSurvey.fields.address')}
+              />
+              <InputRangeFormItem
+                name="latitudeRange"
+                label={i18n('entities.newBusinessSurvey.fields.latitudeRange')}
+              />
+              <InputRangeFormItem
+                name="longitudeRange"
+                label={i18n('entities.newBusinessSurvey.fields.longitudeRange')}
               />
             </div>
 

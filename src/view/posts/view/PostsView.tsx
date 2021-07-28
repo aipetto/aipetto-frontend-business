@@ -7,6 +7,8 @@ import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
 import FilesViewItem from 'src/view/shared/view/FilesViewItem';
 import PostCategoriesViewItem from 'src/view/postCategories/view/PostCategoriesViewItem';
 import PostCommentsViewItem from 'src/view/postComments/view/PostCommentsViewItem';
+import LanguagesViewItem from 'src/view/languages/view/LanguagesViewItem';
+import CountryViewItem from 'src/view/country/view/CountryViewItem';
 
 function PostsView(props) {
   const { record, loading } = props;
@@ -57,6 +59,21 @@ function PostsView(props) {
       <PostCommentsViewItem
         label={i18n('entities.posts.fields.comments')}
         value={record.comments}
+      />
+
+      <TextViewItem
+        label={i18n('entities.posts.fields.source')}
+        value={record.source}
+      />
+
+      <LanguagesViewItem
+        label={i18n('entities.posts.fields.language')}
+        value={record.language}
+      />
+
+      <CountryViewItem
+        label={i18n('entities.posts.fields.country')}
+        value={record.country}
       />
     </div>
   );

@@ -26,6 +26,11 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'language',
+    label: i18n('entities.messages.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.messages.fields.createdAt'),
     render: exporterRenders.datetime(),

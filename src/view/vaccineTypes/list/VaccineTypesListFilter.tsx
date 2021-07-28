@@ -15,6 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import InputNumberRangeFormItem from 'src/view/shared/form/items/InputNumberRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import vaccineTypesEnumerators from 'src/modules/vaccineTypes/vaccineTypesEnumerators';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
@@ -29,12 +30,28 @@ const schema = yup.object().shape({
   language: yupFilterSchemas.enumerator(
     i18n('entities.vaccineTypes.fields.language'),
   ),
+  frequencyShotDosis: yupFilterSchemas.enumerator(
+    i18n('entities.vaccineTypes.fields.frequencyShotDosis'),
+  ),
+  vaccineCustomUniqueID: yupFilterSchemas.string(
+    i18n('entities.vaccineTypes.fields.vaccineCustomUniqueID'),
+  ),
+  isMandatory: yupFilterSchemas.boolean(
+    i18n('entities.vaccineTypes.fields.isMandatory'),
+  ),
+  vaccinePetTargetAgeInMonthsRange: yupFilterSchemas.integerRange(
+    i18n('entities.vaccineTypes.fields.vaccinePetTargetAgeInMonthsRange'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   country: null,
   language: null,
+  frequencyShotDosis: null,
+  vaccineCustomUniqueID: null,
+  isMandatory: null,
+  vaccinePetTargetAgeInMonthsRange: [],
 }
 
 const previewRenders = {
@@ -49,6 +66,22 @@ const previewRenders = {
   language: {
     label: i18n('entities.vaccineTypes.fields.language'),
     render: filterRenders.enumerator('entities.vaccineTypes.enumerators.language',),
+  },
+  frequencyShotDosis: {
+    label: i18n('entities.vaccineTypes.fields.frequencyShotDosis'),
+    render: filterRenders.enumerator('entities.vaccineTypes.enumerators.frequencyShotDosis',),
+  },
+  vaccineCustomUniqueID: {
+    label: i18n('entities.vaccineTypes.fields.vaccineCustomUniqueID'),
+    render: filterRenders.generic(),
+  },
+  isMandatory: {
+    label: i18n('entities.vaccineTypes.fields.isMandatory'),
+    render: filterRenders.boolean(),
+  },
+  vaccinePetTargetAgeInMonthsRange: {
+    label: i18n('entities.vaccineTypes.fields.vaccinePetTargetAgeInMonthsRange'),
+    render: filterRenders.range(),
   },
 }
 
@@ -129,6 +162,40 @@ function VaccineTypesListFilter(props) {
                     }),
                   )}
                 />
+              <SelectFormItem
+                  name="frequencyShotDosis"
+                  label={i18n('entities.vaccineTypes.fields.frequencyShotDosis')}
+                  options={vaccineTypesEnumerators.frequencyShotDosis.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.vaccineTypes.enumerators.frequencyShotDosis.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <InputFormItem
+                name="vaccineCustomUniqueID"
+                label={i18n('entities.vaccineTypes.fields.vaccineCustomUniqueID')}
+              />
+              <SelectFormItem
+                name="isMandatory"
+                label={i18n('entities.vaccineTypes.fields.isMandatory')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <InputNumberRangeFormItem
+                name="vaccinePetTargetAgeInMonthsRange"
+                label={i18n('entities.vaccineTypes.fields.vaccinePetTargetAgeInMonthsRange')}
+              />
             </div>
 
             <div className="px-4 py-2 text-right">

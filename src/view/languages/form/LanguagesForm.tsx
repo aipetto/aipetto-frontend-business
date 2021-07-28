@@ -24,6 +24,10 @@ const schema = yup.object().shape({
     i18n('entities.languages.fields.active'),
     {},
   ),
+  languageCode: yupFormSchemas.string(
+    i18n('entities.languages.fields.languageCode'),
+    {},
+  ),
 });
 
 function LanguagesForm(props) {
@@ -35,6 +39,7 @@ function LanguagesForm(props) {
     return {
       name: record.name,
       active: record.active,
+      languageCode: record.languageCode,
     };
   });
 
@@ -69,6 +74,13 @@ function LanguagesForm(props) {
           <SwitchFormItem
             name="active"
             label={i18n('entities.languages.fields.active')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="languageCode"
+            label={i18n('entities.languages.fields.languageCode')}
+            required={false}
           />
         </div>
 

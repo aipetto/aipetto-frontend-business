@@ -68,6 +68,19 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'businessLogo',
+    label: i18n('entities.business.fields.businessLogo'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.business.fields.latitude'),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.business.fields.longitude'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.business.fields.createdAt'),
     render: exporterRenders.datetime(),
