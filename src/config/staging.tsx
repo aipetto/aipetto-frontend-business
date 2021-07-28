@@ -7,6 +7,9 @@ const appSearchEndpoint = `https://aipetto-elastic-cluster-optimized.ent.us-west
 const appSearchKey = `search-rtc5zspn7h44e342hkhx8u93`;
 const appSearchBusinessEngineName = `aipetto-business-places`;
 
+// Google Recaptcha V3
+const clientGoogleRecaptchaV3 = '6LeBkMAbAAAAAITziX_o3xDZtAP5_MsQqZbtYnOr';
+
 // Google Maps API and Places API
 const credentialsGoogleMapsPlaceAPI = "AIzaSyCG-oM-y0fqNJ3ho5yUBy2eBgCN7UHDoGY";
 
@@ -42,6 +45,7 @@ export default {
   appSearchEndpoint,
   appSearchKey,
   appSearchBusinessEngineName,
+  clientGoogleRecaptchaV3,
   credentialsGoogleMapsPlaceAPI,
   apiDocumentationUrl,
   tenantMode,
