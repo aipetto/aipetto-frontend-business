@@ -55,16 +55,11 @@ const DashboardPage = (props) => {
   };
   return (
       <>
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="flex py-3">
+          <div className="grid w-full grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 m-4">
             <div>
               <div className="bg-white dark:bg-gray-800 p-2 border dark:border-gray-600 rounded">
                 <DashboardDoughnutChart />
-              </div>
-            </div>
-            <div>
-              <div className="bg-white dark:bg-gray-800 p-2 border dark:border-gray-600 rounded">
-                <DashboardMixChartTwo />
               </div>
             </div>
             <div>

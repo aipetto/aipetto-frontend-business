@@ -105,7 +105,7 @@ function BusinessLandingPage(){
             ]};
         var survey = new Survey.Model(json);
 
-        survey.locale = localStorage.getItem('language') || 'es';
+        survey.locale = localStorage.getItem('language') || 'pt';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 

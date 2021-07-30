@@ -9,7 +9,7 @@ function ProfileFormPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('services.reservation'), '/dashboard'],
+          [i18n('reservation.new'), '/dashboard'],
           [i18n('auth.profile.title')],
         ]}
       />

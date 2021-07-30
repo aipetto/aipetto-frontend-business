@@ -1096,28 +1096,28 @@ const es = {
         },
 
         businessPlaceServiceAvailability: {
-            name: 'Disponibilidad de Servicios Comerciales',
-            label: 'Disponibilidad de Servicios Comerciales',
-            menu: 'Disponibilidad de Servicios Comerciales',
+            name: 'Disponibilidad de Servicios',
+            label: 'Agenda de Servicios',
+            menu: 'Disponibilidad de Servicios',
             exporterFileName: 'Exportar Disponibilidad de Servicios Comerciales',
             list: {
-                menu: 'Lugar de Reserva',
-                title: 'BusinessPlaceServiceAvailabilities',
+                menu: 'Agenda de Servicios',
+                title: 'Agenda de Servicios',
             },
             create: {
-                success: 'BusinessPlaceServiceAvailability guardado con éxito',
+                success: 'Agenda de Servicios guardado con éxito',
             },
             update: {
-                success: 'BusinessPlaceServiceAvailability guardado con éxito',
+                success: 'Agenda de Servicios guardado con éxito',
             },
             destroy: {
-                success: 'BusinessPlaceServiceAvailability eliminado con éxito',
+                success: 'Agenda de Servicios eliminado con éxito',
             },
             destroyAll: {
-                success: 'BusinessPlaceServiceAvailability(s) eliminado con éxito',
+                success: 'Agenda de Servicios(s) eliminado con éxito',
             },
             edit: {
-                title: 'Editar BusinessPlaceServiceAvailability',
+                title: 'Editar Agenda de Servicios',
             },
             fields: {
                 id: 'Id',
@@ -1777,7 +1777,7 @@ const es = {
         businessCategory: {
             name: 'Categoría de Negocio',
             label: 'Categoría de Negocio',
-            menu: 'Categoría ne negocio',
+            menu: 'Categoría de negocio',
             exporterFileName: 'Exportar Categoría de Negocio',
             list: {
                 menu: 'Categoría de Negocio',
@@ -2483,28 +2483,28 @@ const es = {
         },
 
         postCategories: {
-            name: 'Categorías',
-            label: 'Categprías',
-            menu: 'Categorías',
-            exporterFileName: 'Exportar Categorías',
+            name: 'Categorías de Contenido',
+            label: 'Categorías de Contenido',
+            menu: 'Categorías de Contenidos',
+            exporterFileName: 'Exportar Categorías de Contenidos',
             list: {
-                menu: 'Categorías',
-                title: 'Categorías',
+                menu: 'Categorías de Contenidos',
+                title: 'Categorías de Contenidos',
             },
             create: {
-                success: 'PostCategories guardado con éxito',
+                success: 'Categoría de Contenidos guardado con éxito',
             },
             update: {
-                success: 'PostCategories guardado con éxito',
+                success: 'Categoría de Contenidos guardado con éxito',
             },
             destroy: {
-                success: 'PostCategories eliminado con éxito',
+                success: 'Categoría de Contenidos eliminado con éxito',
             },
             destroyAll: {
-                success: 'PostCategories(s) eliminado con éxito',
+                success: 'Categoría de Contenidos(s) eliminado con éxito',
             },
             edit: {
-                title: 'Editar PostCategories',
+                title: 'Editar Categoría de Contenidos',
             },
             fields: {
                 id: 'Id',
@@ -2832,7 +2832,7 @@ const es = {
         businessPaymentCycle: {
             name: 'businessPaymentCycle',
             label: 'BusinessPaymentCycles',
-            menu: 'BusinessPaymentCycles',
+            menu: 'Pagamentos',
             exporterFileName: 'businessPaymentCycle_export',
             list: {
                 menu: 'BusinessPaymentCycles',
@@ -3009,32 +3009,32 @@ const es = {
         },
 
         answers: {
-            name: 'answers',
-            label: 'Answers',
-            menu: 'Answers',
+            name: 'respuestas',
+            label: 'Respuestas',
+            menu: 'Respuestas',
             exporterFileName: 'answers_export',
             list: {
-                menu: 'Answers',
-                title: 'Answers',
+                menu: 'Respuestas',
+                title: 'Respuestas',
             },
             create: {
-                success: 'Answers successfully saved',
+                success: 'Respuestas guardadas con éxito',
             },
             update: {
-                success: 'Answers successfully saved',
+                success: 'Respuestas guardadas con éxito',
             },
             destroy: {
-                success: 'Answers successfully deleted',
+                success: 'Respuestas borradas con éxito',
             },
             destroyAll: {
-                success: 'Answers(s) successfully deleted',
+                success: 'Respuesta(s) borradas con éxito',
             },
             edit: {
-                title: 'Edit Answers',
+                title: 'Editar Respuestas',
             },
             fields: {
                 id: 'Id',
-                'answer': 'Answer',
+                'answer': 'Respuesta',
                 'userID': 'UserID',
                 'type': 'Type',
                 'isActive': 'IsActive',
@@ -3521,8 +3521,8 @@ const es = {
             yellow: 'Amarillo',
         },
     },
-    services: {
-        reservation: 'Reservas'
+    reservation: {
+        new: 'Nueva Reserva'
     },
     dashboard: {
         menu: 'Tablero',
@@ -3540,7 +3540,7 @@ const es = {
             businessPlace2: 'Sucursal Palermo',
             businessPlace3: 'Sucursal Recoleta',
             reservations: 'Reservas de servicios',
-            top7Services: 'Top 7 servicios',
+            top5Services: 'Top 5 servicios',
             months: {
                 '1': 'Enero',
                 '2': 'Febrero',

@@ -1105,7 +1105,7 @@ const en = {
     businessPlaceServiceAvailability: {
         name: 'businessPlaceServiceAvailability',
         label: 'BusinessPlaceServiceAvailabilities',
-        menu: 'BusinessPlaceServiceAvailabilities',
+        menu: 'Service Agenda',
         exporterFileName: 'businessPlaceServiceAvailability_export',
         list: {
           menu: 'BusinessPlaceServiceAvailabilities',
@@ -2839,7 +2839,7 @@ const en = {
     businessPaymentCycle: {
         name: 'businessPaymentCycle',
         label: 'BusinessPaymentCycles',
-        menu: 'BusinessPaymentCycles',
+        menu: 'Pagamentos',
         exporterFileName: 'businessPaymentCycle_export',
         list: {
           menu: 'BusinessPaymentCycles',
@@ -3543,8 +3543,8 @@ const en = {
       yellow: 'Yellow',
     },
   },
-  services: {
-    reservation: 'Reservas'
+  reservation: {
+    new: 'New Reservation'
   },
   dashboard: {
     menu: 'Dashboard',
@@ -3561,7 +3561,7 @@ const en = {
       businessPlace2: 'Place 2',
       businessPlace3: 'Place 3',
       reservations: 'Service Reservations',
-      top7Services: 'Top 7 services',
+      top5Services: 'Top 5 services',
       months: {
         1: 'January',
         2: 'February',

@@ -33,7 +33,7 @@ export default [
     path: '/reservation',
     exact: true,
     icon: faCalendarAlt,
-    label: i18n('services.reservation'),
+    label: i18n('reservation.new'),
     permissionRequired: null,
   },
 

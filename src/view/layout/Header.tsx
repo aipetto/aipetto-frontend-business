@@ -21,6 +21,7 @@ import {
 import { Menu } from '@headlessui/react';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
 import tenantSelectors from "../../modules/tenant/tenantSelectors";
+import I18nFlags from "./I18nFlags";
 
 function Header(props) {
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ function Header(props) {
   );
 
   return (
-    <nav className="bg-green-300 shadow dark:bg-gray-800">
+    <header className="bg-green-300 shadow dark:bg-gray-800">
       <div className="px-6 py-3">
         <div className="md:flex md:items-center md:justify-between">
           <div className="w-full flex items-center justify-between">
@@ -81,22 +82,16 @@ function Header(props) {
               </button>
             </div>
 
-         {/*   <div className="flex w-3/5 items-center mt-0">
-
-                  <svg className="h-4 w-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg"
-                       viewBox="0 0 20 20">
-                    <path
-                        d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
-                  </svg>
-                <input id="search-toggle" type="search" placeholder="Search for services"
-                       className="block w-full bg-white-200 focus:outline-none focus:bg-white focus:shadow-md text-white-700 font-bold rounded-full pl-12 pr-4 py-3"
-                      />
-
-            </div>*/}
-
             <div className="flex items-center mt-0">
 
               <Menu>
+
+                <button
+                    className="focus:outline-none focus:text-blue-400 hover:text-blue-400 text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
+                    onClick={doToggleRightSidebarMenu}
+                >
+                  <FontAwesomeIcon icon={faPaw} />
+                </button>
 
                 <Link
                     className="text-gray-900 dark:text-green-400 focus:text-blue-400 hover:text-blue-400"
@@ -104,19 +99,13 @@ function Header(props) {
                     to={`/aipetto-store`}
                 >
 
-                  8500 <FontAwesomeIcon
-                    className="ml-1 mr-6"
+                  <FontAwesomeIcon
+                    className="ml-5 mr-1"
                     size="lg"
-                    icon={faPaw}
+                    icon={faShoppingCart}
                 />
+                  8500
                 </Link>
-
-                <button
-                    className="focus:outline-none focus:text-blue-400 lg hover:text-blue-400 text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
-                    onClick={doToggleRightSidebarMenu}
-                >
-                  <FontAwesomeIcon icon={faShoppingCart} />
-                </button>
 
                 <Menu.Items>
                   <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800">
@@ -197,7 +186,7 @@ function Header(props) {
                 </Menu.Items>
 
                 <div className="mr-6 ml-6 md:block lg:block">
-                  <I18nSelect />
+                  <I18nFlags />
                 </div>
 
                 <Menu.Button className="flex items-center focus:outline-none mr-6">
@@ -216,7 +205,7 @@ function Header(props) {
           </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }
 

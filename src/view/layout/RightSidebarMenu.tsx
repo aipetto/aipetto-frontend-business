@@ -1,4 +1,4 @@
-import {faPaw, faTimes, faTrash} from '@fortawesome/free-solid-svg-icons';
+import {faPaw, faPlus, faTimes, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -85,27 +85,27 @@ function RightSidebarMenu(props) {
         <div className="w-full rounded-b mt-4">
           <div className="shadow-xl">
             <div
-                className="p-2 flex bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100">
+                className="p-2 flex bg-white hover:bg-red-100 cursor-pointer border-b border-gray-100">
               <div className="p-2 w-12"><img
                   src="/icons/beauty-saloon.png"
                   alt="beauty-saloon-category"/></div>
               <div className="flex-auto text-sm w-32">
                 <div className="font-bold">Peluquería</div>
                 <div className="truncate">Corte de Pelo</div>
-                <div className="text-gray-400">Qt: 1</div>
+                <div className="text-gray-400">Data:</div>
+                <div className="text-gray-400">Lugar: Veterinária Bons Amigos</div>
               </div>
               <div className="flex flex-col w-18 font-medium items-end">
                 <div
-                    className="w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700">
+                    className="w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-green-700">
                   <button>
                     <FontAwesomeIcon
                       className="ml-1 mr-2"
                       size="sm"
-                      icon={faTrash}
+                      icon={faPlus}
                   />
                   </button>
                 </div>
-                $150.00
               </div>
             </div>
 

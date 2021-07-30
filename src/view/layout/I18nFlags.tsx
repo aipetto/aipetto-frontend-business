@@ -11,7 +11,7 @@ function I18nFlags(props) {
     <div className="flex items-center justify-center w-full">
       {getLanguages().map((language) => (
         <img
-          className="mr-2 w-8 cursor-pointer"
+          className="mr-2 w-6 cursor-pointer"
           key={language.id}
           alt={language.label}
           title={language.label}
