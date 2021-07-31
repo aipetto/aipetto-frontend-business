@@ -793,8 +793,8 @@ const es = {
             },
             fields: {
                 id: 'Id',
-                'businessID': 'ID de Negocio',
-                'name': 'Nombre',
+                'businessID': 'Identificador del Negocio (CUIT)',
+                'name': 'Nombre del Negócio',
                 'services': 'Servicios',
                 'categories': 'Categorias',
                 'contactName': 'Nombre de contacto',
@@ -3365,9 +3365,17 @@ const es = {
             label: 'aipetto Admin',
             description: 'Acesso a todos os recursos da plataforma',
         },
+        aipettoManager: {
+            label: 'aipetto Manager',
+            description: 'Gerencia todos os módulos operacionais',
+        },
+        aipettoEditor: {
+            label: 'aipetto Editor',
+            description: 'Tem acesso a edição do dados de alguns módulos comerciais ou de conteúdo',
+        },
         businessAdmin: {
-            label: 'Dono dos negócios',
-            description: 'Donos de negócios',
+            label: 'Dono do negócio',
+            description: 'Dono do negócio',
         },
         petshopAdmin: {
             label: 'Admin Petshop',

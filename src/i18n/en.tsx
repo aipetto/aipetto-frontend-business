@@ -798,7 +798,7 @@ const en = {
         },
         fields: {
           id: 'Id',
-          'businessID': 'BusinessID',
+          'businessID': 'Business ID (CRN)',
           'name': 'Name',
           'services': 'Services',
           'categories': 'Categories',
