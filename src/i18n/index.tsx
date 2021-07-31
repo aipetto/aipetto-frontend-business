@@ -44,7 +44,7 @@ const languages: {
 export async function init() {
 
   currentLanguageCode =
-     localStorage.getItem('language') || 'pt';
+     localStorage.getItem('language') || 'pt-BR';
 
   setLanguageCode(currentLanguageCode);
 
