@@ -78,7 +78,7 @@ function LandingPage() {
             ]};
         var survey = new Survey.Model(json);
 
-        survey.locale =  localStorage.getItem('language') || 'pt';
+        survey.locale =  localStorage.getItem('language') || 'pt-BR';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 
