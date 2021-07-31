@@ -4,13 +4,17 @@ class Roles {
   static get values() {
     return {
       aipettoAdmin: 'aipettoAdmin',
-      businessOwner: 'businessOwner',
-      adminPetshop: 'adminPetshop',
-      employee: 'employee',
-      adminVeterinary: 'adminVeterinary',
-      petOwner: 'petOwner',
+      aipettoManager: 'aipettoManager',
+      aipettoEditor: 'aipettoEditor',
+      businessAdmin: 'businessAdmin',
+      businessManager: 'businessManager',
+      petshopAdmin: 'petshopAdmin',
+      businessEmployee: 'businessEmployee',
+      veterinaryAdmin: 'veterinaryAdmin',
       veterinarian: 'veterinarian',
-      transporter: 'transporter'
+      transporterAdmin: 'transporterAdmin',
+      transporter: 'transporter',
+      petOwner: 'petOwner'
     };
   }
 

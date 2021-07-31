@@ -125,7 +125,7 @@ function OrderListTable(props) {
                 />
                 <TableColumnHeader
                   label={i18n(
-                    'entities.order.fields.employee',
+                    'entities.order.fields.businessEmployee',
                   )}
                 />
                 <TableColumnHeader
@@ -183,7 +183,7 @@ function OrderListTable(props) {
                     <ProductListItem value={row.products} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <UserListItem value={row.employee} />
+                    <UserListItem value={row.businessEmployee} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <FilesListView

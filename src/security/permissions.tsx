@@ -13,10 +13,10 @@ class Permissions {
         id: 'dashboardAccess',
         allowedRoles: [
             roles.aipettoAdmin,
-            roles.businessOwner,
+            roles.businessAdmin,
             roles.petOwner,
             roles.veterinarian,
-            roles.transporter
+            roles.transporterAdmin
         ],
         allowedPlans: [
           plans.premium
