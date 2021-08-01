@@ -3362,16 +3362,16 @@ const es = {
     },
     roles: {
         aipettoAdmin: {
-            label: 'aipetto Admin',
+            label: 'Admin aipetto',
             description: 'Acesso a todos os recursos da plataforma',
         },
         aipettoManager: {
-            label: 'aipetto Manager',
-            description: 'Gerencia todos os módulos operacionais',
+            label: 'Gerente aipetto',
+            description: 'Gerencia todos los módulos operacionales',
         },
         aipettoEditor: {
-            label: 'aipetto Editor',
-            description: 'Tem acesso a edição do dados de alguns módulos comerciais ou de conteúdo',
+            label: 'Editor aipetto',
+            description: 'Tiene acceso a algunos módulos comerciales o de contenidos',
         },
         businessAdmin: {
             label: 'Dono do negócio',
@@ -3385,8 +3385,12 @@ const es = {
             label: 'Admin Veterinária',
             description: 'Admin para operações com veterinária',
         },
+        businessManager: {
+            label: 'Gerente del Negocio',
+            description: 'Gerencia todos los módulos operacionales del negocio',
+        },
         businessEmployee: {
-            label: 'Funcionário da Veterinária e Petshop',
+            label: 'Funcionário do negocio',
             description: 'Funcionário do veterinário e petshop',
         },
         petOwner: {
@@ -3398,7 +3402,11 @@ const es = {
             description: 'Veterinário',
         },
         transporterAdmin: {
-            label: 'Transportador',
+            label: 'Admin transportador',
+            description: 'Negocio que trabaja transportando animales de estimación',
+        },
+        transporter: {
+            label: 'Transportador - Motorista Taxi Dog',
             description: 'Negócio que trabalha transportando animais de estimação',
         },
     },

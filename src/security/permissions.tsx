@@ -14,9 +14,18 @@ class Permissions {
         allowedRoles: [
             roles.aipettoAdmin,
             roles.businessAdmin,
-            roles.petOwner,
             roles.veterinarian,
-            roles.transporterAdmin
+            roles.aipettoAdmin,
+            roles.aipettoManager,
+            roles.aipettoEditor,
+            roles.businessAdmin,
+            roles.businessManager,
+            roles.petshopAdmin,
+            roles.businessEmployee,
+            roles.veterinaryAdmin,
+            roles.veterinarian,
+            roles.transporterAdmin,
+            roles.transporter
         ],
         allowedPlans: [
           plans.premium

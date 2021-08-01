@@ -3315,6 +3315,14 @@ const en = {
             label: 'aipetto Admin',
             description: 'Acesso a todos os recursos da plataforma',
         },
+        aipettoManager: {
+            label: 'aipetto Manager',
+            description: 'Manage all operational modules',
+        },
+        aipettoEditor: {
+            label: 'aipetto Editor',
+            description: 'Have access to comercial and content modules',
+        },
         businessAdmin: {
             label: 'Business Owner',
             description: 'Business Owner',
@@ -3326,6 +3334,10 @@ const en = {
         veterinaryAdmin: {
             label: 'Admin Veterinarian',
             description: 'Admin Veterinarian',
+        },
+        businessManager: {
+            label: 'Business Manager',
+            description: 'Manage all operation modules of business',
         },
         businessEmployee: {
             label: 'Employee',
@@ -3342,6 +3354,10 @@ const en = {
         transporterAdmin: {
             label: 'Transporter',
             description: 'Transporter',
+        },
+        transporter: {
+            label: 'Transportador - Motorista Taxi Dog',
+            description: 'Negócio que trabalha transportando animais de estimação',
         },
     },
   user: {
