@@ -22,7 +22,7 @@ const privateRoutes = [
     path: '/reservation',
     loader: () =>
         import('src/view/serviceReservation/public/ReservationInitialPage'),
-    permissionRequired: null,
+    permissionRequired: permissions.reservationWebAccess,
     exact: true,
   },
   {

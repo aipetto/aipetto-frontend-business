@@ -7,13 +7,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import actions from 'src/modules/user/form/userFormActions';
 import userEnumerators from 'src/modules/user/userEnumerators';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
+import authSelectors from 'src/modules/auth/authSelectors';
+import PermissionChecker from 'src/modules/auth/permissionChecker';
 import * as yup from 'yup';
+import Roles from "../../../security/roles";
+import {createSelector} from "reselect";
+import Permissions from "../../../security/permissions";
 
 const schema = yup.object().shape({
   roles: yupFormSchemas.stringArray(
@@ -21,11 +26,26 @@ const schema = yup.object().shape({
   ),
 });
 
+const selectPermissionToAipettoStaffUsersRead = createSelector(
+    [
+      authSelectors.selectCurrentTenant,
+      authSelectors.selectCurrentUser,
+    ],
+    (currentTenant, currentUser) =>
+        new PermissionChecker(currentTenant, currentUser).match(
+            Permissions.values.aipettoStaffUsersRead,
+        ),
+);
+
 function UserEditForm(props) {
   const dispatch = useDispatch();
   const { saveLoading } = props;
 
   const [initialValues] = useState(() => props.user || {});
+
+  const hasPermissionToAipettoUsers = useSelector(
+      selectPermissionToAipettoStaffUsersRead,
+  );
 
   const form = useForm({
     resolver: yupResolver(schema),
@@ -48,6 +68,10 @@ function UserEditForm(props) {
     });
   };
 
+  const regexToFilterUsers = hasPermissionToAipettoUsers
+      ? new RegExp('.*', 'g')
+      : new RegExp('^(?!aipetto).*', 'g');
+
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -65,7 +89,9 @@ function UserEditForm(props) {
             options={userEnumerators.roles.map((value) => ({
               value,
               label: i18n(`roles.${value}.label`),
-            }))}
+            }))
+            .filter((role) => role.value.match(regexToFilterUsers))
+            }
             mode="multiple"
           />
         </div>

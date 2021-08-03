@@ -34,7 +34,7 @@ export default [
     exact: true,
     icon: faCalendarAlt,
     label: i18n('reservation.new'),
-    permissionRequired: null,
+    permissionRequired: permissions.reservationWebAccess,
   },
 
   config.isPlanEnabled && {
