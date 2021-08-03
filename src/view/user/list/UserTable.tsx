@@ -18,6 +18,21 @@ import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import UserStatusView from 'src/view/user/view/UserStatusView';
+import {createSelector} from "reselect";
+import authSelectors from "../../../modules/auth/authSelectors";
+import PermissionChecker from "../../../modules/auth/permissionChecker";
+import Permissions from "../../../security/permissions";
+
+const selectPermissionToAipettoStaffUsersRead = createSelector(
+    [
+      authSelectors.selectCurrentTenant,
+      authSelectors.selectCurrentUser,
+    ],
+    (currentTenant, currentUser) =>
+        new PermissionChecker(currentTenant, currentUser).match(
+            Permissions.values.aipettoStaffUsersRead,
+        ),
+);
 
 function UserTable() {
   const dispatch = useDispatch();
@@ -76,6 +91,24 @@ function UserTable() {
   const doToggleOneSelected = (id) => {
     dispatch(actions.doToggleOneSelected(id));
   };
+
+
+  const hasPermissionToAipettoUsers = useSelector(
+      selectPermissionToAipettoStaffUsersRead,
+  );
+
+  /// TODO Refactor this solution while adding Unit Tests
+  const roleAipettoAdminToExclude = hasPermissionToAipettoUsers
+      ? ''
+      : 'aipettoAdmin';
+
+  const roleAipettoManagerToExclude = hasPermissionToAipettoUsers
+      ? ''
+      : 'aipettoManager';
+
+  const roleAipettoEditorToExclude = hasPermissionToAipettoUsers
+      ? ''
+      : 'aipettoEditor';
 
   return (
     <>
@@ -139,7 +172,7 @@ function UserTable() {
               </tr>
             )}
             {!loading &&
-              rows.map((row) => (
+              rows.filter((row) => !row.roles.includes(roleAipettoAdminToExclude) && !row.roles.includes(roleAipettoManagerToExclude) && !row.roles.includes(roleAipettoEditorToExclude)).map((row) => (
                 <tr key={row.id}>
                   <th
                     className="w-12 border-b border-gray-200 dark:border-gray-800"
@@ -176,7 +209,7 @@ function UserTable() {
                     {row.fullName}
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.roles.map((roleId) => (
+                    {row.roles && row.roles.map((roleId) => (
                       <div key={roleId}>
                         <span>{Roles.labelOf(roleId)}</span>
                       </div>
