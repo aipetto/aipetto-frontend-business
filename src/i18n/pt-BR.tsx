@@ -980,8 +980,8 @@ const ptBR = {
 
     serviceReservation: {
         name: 'Reservas',
-        label: 'ServiceReservations',
-        menu: 'ServiceReservations',
+        label: 'Reservas',
+        menu: 'Reservas',
         exporterFileName: 'ServiceReservation_exportados',
         list: {
           menu: 'ServiceReservations',
@@ -1106,9 +1106,9 @@ const ptBR = {
       },
 
     businessPlaceServiceAvailability: {
-        name: 'Disponibilidade de Serviço',
-        label: 'Disponibilidade de Serviço',
-        menu: 'Disponibilidade de Serviço',
+        name: 'Disponibilidade',
+        label: 'Disponibilidade',
+        menu: 'Disponibilidade',
         exporterFileName: 'DisponibilidadedeServico_exportados',
         list: {
           menu: 'Disponibilidade de Serviço',
@@ -1842,9 +1842,9 @@ const ptBR = {
       },
 
     providers: {
-        name: 'Providers',
-        label: 'Providers',
-        menu: 'Providers',
+        name: 'Fornecedores',
+        label: 'Fornecedores',
+        menu: 'Fornecedores',
         exporterFileName: 'Providers_exportados',
         list: {
           menu: 'Providers',
@@ -2370,9 +2370,9 @@ const ptBR = {
       },
 
     businessServicesPrices: {
-        name: 'Preços dos Serviços',
-        label: 'Preços dos Serviços',
-        menu: 'Preços dos Serviços',
+        name: 'Preços',
+        label: 'Preços',
+        menu: 'Preços',
         exporterFileName: 'PrecosdosServicos_exportados',
         list: {
           menu: 'Preços dos Serviços',

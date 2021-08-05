@@ -86,26 +86,30 @@ function Header(props) {
 
               <Menu>
 
-                <button
-                    className="focus:outline-none focus:text-blue-400 hover:text-blue-400 text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
-                    onClick={doToggleRightSidebarMenu}
-                >
-                  <FontAwesomeIcon icon={faPaw} />
-                </button>
+                { hasPermissionToEdit && (
+                      <div>
+                        <button
+                            className="focus:outline-none focus:text-blue-400 hover:text-blue-400 text-xl font-bold text-gray-700 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
+                            onClick={doToggleRightSidebarMenu}
+                        >
+                          <FontAwesomeIcon icon={faPaw} />
+                        </button>
 
-                <Link
-                    className="text-gray-900 dark:text-green-400 focus:text-blue-400 hover:text-blue-400"
-                    size="lg"
-                    to={`/aipetto-store`}
-                >
+                        <Link
+                            className="text-gray-900 dark:text-green-400 focus:text-blue-400 hover:text-blue-400"
+                            size="lg"
+                            to={`/aipetto-store`}
+                        >
 
-                  <FontAwesomeIcon
-                    className="ml-5 mr-1"
-                    size="lg"
-                    icon={faShoppingCart}
-                />
-                  8500
-                </Link>
+                          <FontAwesomeIcon
+                            className="ml-5 mr-1"
+                            size="lg"
+                            icon={faShoppingCart}
+                        />
+                          8500
+                        </Link>
+                    </div>
+                ) }
 
                 <Menu.Items>
                   <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800">

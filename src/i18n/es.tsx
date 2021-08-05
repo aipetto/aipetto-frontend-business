@@ -969,9 +969,9 @@ const es = {
         },
 
         serviceReservation: {
-            name: 'Servicio de Reservas',
-            label: 'Servicio de Reservas',
-            menu: 'Servicio de Reservas',
+            name: 'Reservas',
+            label: 'Reservas',
+            menu: 'Reservas',
             exporterFileName: 'Exportar Servicio de Reservas',
             list: {
                 menu: 'Servicio de Reservas',
@@ -1096,9 +1096,9 @@ const es = {
         },
 
         businessPlaceServiceAvailability: {
-            name: 'Disponibilidad de Servicios',
-            label: 'Agenda de Servicios',
-            menu: 'Disponibilidad de Servicios',
+            name: 'Disponibilidad',
+            label: 'Disponibilidad',
+            menu: 'Disponibilidad',
             exporterFileName: 'Exportar Disponibilidad de Servicios Comerciales',
             list: {
                 menu: 'Agenda de Servicios',

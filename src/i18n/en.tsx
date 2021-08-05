@@ -29,7 +29,7 @@ const en = {
 
   app: {
     title: 'aipetto',
-    slogan: 'services and informations for your pet everywhere anytime',
+    slogan: 'services and information for your pet everywhere anytime',
   },
 
   privacy: {
@@ -1103,9 +1103,9 @@ const en = {
       },
 
     businessPlaceServiceAvailability: {
-        name: 'businessPlaceServiceAvailability',
-        label: 'BusinessPlaceServiceAvailabilities',
-        menu: 'Service Agenda',
+        name: 'Availability',
+        label: 'Availability',
+        menu: 'Availability',
         exporterFileName: 'businessPlaceServiceAvailability_export',
         list: {
           menu: 'BusinessPlaceServiceAvailabilities',

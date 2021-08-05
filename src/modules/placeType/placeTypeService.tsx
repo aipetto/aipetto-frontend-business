@@ -70,7 +70,7 @@ export default class PlaceTypeService {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
-      `/tenant/${tenantId}/place-type/${id}`,
+      `/tenant/place-type/${id}`,
     );
 
     return response.data;
@@ -105,7 +105,7 @@ export default class PlaceTypeService {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
-      `/tenant/${tenantId}/place-type/autocomplete`,
+      `/tenant/place-type/autocomplete`,
       {
         params,
       },
