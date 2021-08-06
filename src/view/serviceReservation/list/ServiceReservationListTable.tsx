@@ -150,21 +150,6 @@ function ServiceReservationListTable(props) {
                     'entities.serviceReservation.fields.discountCode',
                   )}
                 />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'ratingFromCustomer'}
-                  label={i18n(
-                    'entities.serviceReservation.fields.ratingFromCustomer',
-                  )}
-                  align="right"
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.serviceReservation.fields.country',
-                  )}
-                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -215,12 +200,6 @@ function ServiceReservationListTable(props) {
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <DiscountsListItem value={row.discountCode} />
-                  </td>
-                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.ratingFromCustomer}
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <CountryListItem value={row.country} />
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
