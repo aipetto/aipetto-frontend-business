@@ -21,6 +21,7 @@ import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -44,6 +45,9 @@ const schema = yup.object().shape({
   language: yupFilterSchemas.relationToOne(
     i18n('entities.product.fields.language'),
   ),
+  country: yupFilterSchemas.relationToOne(
+    i18n('entities.product.fields.country'),
+  ),
 });
 
 const emptyValues = {
@@ -54,6 +58,7 @@ const emptyValues = {
   pointsPriceRange: [],
   currency: null,
   language: null,
+  country: null,
 }
 
 const previewRenders = {
@@ -83,6 +88,10 @@ const previewRenders = {
     },
   language: {
       label: i18n('entities.product.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
+  country: {
+      label: i18n('entities.product.fields.country'),
       render: filterRenders.relationToOne(),
     },
 }
@@ -181,6 +190,10 @@ function ProductListFilter(props) {
               <LanguagesAutocompleteFormItem
                 name="language"
                 label={i18n('entities.product.fields.language')}
+              />
+              <CountryAutocompleteFormItem
+                name="country"
+                label={i18n('entities.product.fields.country')}
               />
             </div>
 

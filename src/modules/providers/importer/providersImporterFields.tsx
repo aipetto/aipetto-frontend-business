@@ -158,4 +158,36 @@ export default [
       {},
     ),
   },
+  {
+    name: 'profileImage',
+    label: i18n('entities.providers.fields.profileImage'),
+    schema: schemas.images(
+      i18n('entities.providers.fields.profileImage'),
+      {},
+    ),
+  },
+  {
+    name: 'attachedDoc',
+    label: i18n('entities.providers.fields.attachedDoc'),
+    schema: schemas.files(
+      i18n('entities.providers.fields.attachedDoc'),
+      {},
+    ),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.providers.fields.language'),
+    schema: schemas.relationToOne(
+      i18n('entities.providers.fields.language'),
+      {},
+    ),
+  },
+  {
+    name: 'isIndependent',
+    label: i18n('entities.providers.fields.isIndependent'),
+    schema: schemas.boolean(
+      i18n('entities.providers.fields.isIndependent'),
+      {},
+    ),
+  },
 ];

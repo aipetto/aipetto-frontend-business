@@ -52,6 +52,13 @@ const serviceReservationEnumerators = {
     'business_approved',
     'business_declined',
   ],
+  source: [
+    'aipetto_app',
+    'aipetto_web',
+    'manual',
+    'external_integration',
+    'facebook_reservation',
+  ],
 };
 
 export default serviceReservationEnumerators;

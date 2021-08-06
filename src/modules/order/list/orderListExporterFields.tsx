@@ -17,8 +17,8 @@ export default [
     render: exporterRenders.relationToMany(),
   },
   {
-    name: 'businessEmployee',
-    label: i18n('entities.order.fields.businessEmployee'),
+    name: 'employee',
+    label: i18n('entities.order.fields.employee'),
     render: exporterRenders.relationToOne(),
   },
   {

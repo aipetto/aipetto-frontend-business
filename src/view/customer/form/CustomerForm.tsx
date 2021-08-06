@@ -10,6 +10,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import RadioFormItem from 'src/view/shared/form/items/RadioFormItem';
@@ -39,9 +40,7 @@ const schema = yup.object().shape({
   ),
   uniqueCustomIdentifier: yupFormSchemas.string(
     i18n('entities.customer.fields.uniqueCustomIdentifier'),
-    {
-      "required": true
-    },
+    {},
   ),
   userId: yupFormSchemas.relationToOne(
     i18n('entities.customer.fields.userId'),
@@ -203,6 +202,30 @@ const schema = yup.object().shape({
     i18n('entities.customer.fields.customerProfileImage'),
     {},
   ),
+  facebook: yupFormSchemas.string(
+    i18n('entities.customer.fields.facebook'),
+    {},
+  ),
+  linkedin: yupFormSchemas.string(
+    i18n('entities.customer.fields.linkedin'),
+    {},
+  ),
+  instagram: yupFormSchemas.string(
+    i18n('entities.customer.fields.instagram'),
+    {},
+  ),
+  website: yupFormSchemas.string(
+    i18n('entities.customer.fields.website'),
+    {},
+  ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.customer.fields.language'),
+    {},
+  ),
+  notes: yupFormSchemas.string(
+    i18n('entities.customer.fields.notes'),
+    {},
+  ),
 });
 
 function CustomerForm(props) {
@@ -253,6 +276,12 @@ function CustomerForm(props) {
       billingAddressStreetComplement: record.billingAddressStreetComplement,
       shippingAddressStreetComplement: record.shippingAddressStreetComplement,
       customerProfileImage: record.customerProfileImage || [],
+      facebook: record.facebook,
+      linkedin: record.linkedin,
+      instagram: record.instagram,
+      website: record.website,
+      language: record.language,
+      notes: record.notes,
     };
   });
 
@@ -601,6 +630,49 @@ function CustomerForm(props) {
             required={false}
             storage={Storage.values.customerCustomerProfileImage}
             max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="facebook"
+            label={i18n('entities.customer.fields.facebook')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="linkedin"
+            label={i18n('entities.customer.fields.linkedin')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="instagram"
+            label={i18n('entities.customer.fields.instagram')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="website"
+            label={i18n('entities.customer.fields.website')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CurrencyAutocompleteFormItem
+            name="language"
+            label={i18n('entities.customer.fields.language')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <TextAreaFormItem
+            name="notes"
+            label={i18n('entities.customer.fields.notes')}
+            required={false}
           />
         </div>
 

@@ -158,7 +158,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin, roles.businessManager],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.customerCustomerProfileImage,
         ],
       },
       customerEdit: {
@@ -166,7 +166,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin, roles.businessManager],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.customerCustomerProfileImage,
         ],
       },
       customerDestroy: {
@@ -174,7 +174,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin, roles.businessManager],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.customerCustomerProfileImage,
         ],
       },
       customerRead: {
@@ -404,7 +404,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessBusinessLogo,
         ],
       },
       businessEdit: {
@@ -412,7 +412,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessBusinessLogo,
         ],
       },
       businessDestroy: {
@@ -420,7 +420,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessBusinessLogo,
         ],
       },
       businessRead: {
@@ -491,7 +491,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessServicesTypesServiceImage,
         ],
       },
       businessServicesTypesEdit: {
@@ -499,7 +499,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessServicesTypesServiceImage,
         ],
       },
       businessServicesTypesDestroy: {
@@ -507,7 +507,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessServicesTypesServiceImage,
         ],
       },
       businessServicesTypesRead: {
@@ -531,7 +531,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin, roles.businessAdmin, roles.businessManager],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.serviceReservationDigitalReservationDoc,
         ],
       },
       serviceReservationEdit: {
@@ -539,7 +539,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin, roles.businessAdmin, roles.businessManager],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.serviceReservationDigitalReservationDoc,
         ],
       },
       serviceReservationDestroy: {
@@ -547,7 +547,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.serviceReservationDigitalReservationDoc,
         ],
       },
       serviceReservationRead: {
@@ -977,7 +977,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessCategoryCategoryImage,
         ],
       },
       businessCategoryEdit: {
@@ -985,7 +985,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessCategoryCategoryImage,
         ],
       },
       businessCategoryDestroy: {
@@ -993,7 +993,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.businessCategoryCategoryImage,
         ],
       },
       businessCategoryRead: {
@@ -1017,7 +1017,8 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin, roles.businessManager],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.providersProfileImage,
+          storage.providersAttachedDoc,
         ],
       },
       providersEdit: {
@@ -1025,7 +1026,8 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin, roles.businessManager],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.providersProfileImage,
+          storage.providersAttachedDoc,
         ],
       },
       providersDestroy: {
@@ -1033,7 +1035,8 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin, roles.businessAdmin, roles.businessManager],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.providersProfileImage,
+          storage.providersAttachedDoc,
         ],
       },
       providersRead: {
@@ -1137,7 +1140,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.placeTypePlaceTypeImage,
         ],
       },
       placeTypeEdit: {
@@ -1145,7 +1148,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.placeTypePlaceTypeImage,
         ],
       },
       placeTypeDestroy: {
@@ -1153,7 +1156,7 @@ class Permissions {
         allowedRoles: [roles.aipettoAdmin],
         allowedPlans: [plans.free, plans.premium],
         allowedStorage: [
-
+          storage.placeTypePlaceTypeImage,
         ],
       },
       placeTypeRead: {

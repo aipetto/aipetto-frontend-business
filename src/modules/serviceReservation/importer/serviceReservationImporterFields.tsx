@@ -146,4 +146,14 @@ export default [
       {},
     ),
   },
+  {
+    name: 'source',
+    label: i18n('entities.serviceReservation.fields.source'),
+    schema: schemas.enumerator(
+      i18n('entities.serviceReservation.fields.source'),
+      {
+        "options": serviceReservationEnumerators.source
+      },
+    ),
+  },
 ];

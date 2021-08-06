@@ -24,10 +24,10 @@ export default [
     ),
   },
   {
-    name: 'businessEmployee',
-    label: i18n('entities.order.fields.businessEmployee'),
+    name: 'employee',
+    label: i18n('entities.order.fields.employee'),
     schema: schemas.relationToOne(
-      i18n('entities.order.fields.businessEmployee'),
+      i18n('entities.order.fields.employee'),
       {},
     ),
   },

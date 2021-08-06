@@ -2,6 +2,8 @@ import React from 'react';
 import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
+import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
+import FilesViewItem from 'src/view/shared/view/FilesViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
 import BusinessCategoryViewItem from 'src/view/businessCategory/view/BusinessCategoryViewItem';
 import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/BusinessServicesTypesViewItem';
@@ -9,6 +11,7 @@ import CityViewItem from 'src/view/city/view/CityViewItem';
 import StateViewItem from 'src/view/state/view/StateViewItem';
 import CountryViewItem from 'src/view/country/view/CountryViewItem';
 import CurrencyViewItem from 'src/view/currency/view/CurrencyViewItem';
+import LanguagesViewItem from "../../languages/view/LanguagesViewItem";
 
 function ProvidersView(props) {
   const { record, loading } = props;
@@ -112,6 +115,32 @@ function ProvidersView(props) {
       <CurrencyViewItem
         label={i18n('entities.providers.fields.currency')}
         value={record.currency}
+      />
+
+      <ImagesViewItem
+        label={i18n('entities.providers.fields.profileImage')}
+        value={record.profileImage}
+      />
+
+      <FilesViewItem
+        label={i18n(
+          'entities.providers.fields.attachedDoc',
+        )}
+        value={record.attachedDoc}
+      />
+
+      <LanguagesViewItem
+        label={i18n('entities.providers.fields.language')}
+        value={record.language}
+      />
+
+      <TextViewItem
+        label={i18n('entities.providers.fields.isIndependent')}
+        value={
+          record.isIndependent
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
       />
     </div>
   );

@@ -145,6 +145,24 @@ const schema = yup.object().shape({
   shippingAddressStreetComplement: yupFilterSchemas.string(
     i18n('entities.customer.fields.shippingAddressStreetComplement'),
   ),
+  facebook: yupFilterSchemas.string(
+    i18n('entities.customer.fields.facebook'),
+  ),
+  linkedin: yupFilterSchemas.string(
+    i18n('entities.customer.fields.linkedin'),
+  ),
+  instagram: yupFilterSchemas.string(
+    i18n('entities.customer.fields.instagram'),
+  ),
+  website: yupFilterSchemas.string(
+    i18n('entities.customer.fields.website'),
+  ),
+  language: yupFilterSchemas.relationToOne(
+    i18n('entities.customer.fields.language'),
+  ),
+  notes: yupFilterSchemas.string(
+    i18n('entities.customer.fields.notes'),
+  ),
 });
 
 const emptyValues = {
@@ -188,6 +206,12 @@ const emptyValues = {
   addressStreetComplement: null,
   billingAddressStreetComplement: null,
   shippingAddressStreetComplement: null,
+  facebook: null,
+  linkedin: null,
+  instagram: null,
+  website: null,
+  language: null,
+  notes: null,
 }
 
 const previewRenders = {
@@ -349,6 +373,30 @@ const previewRenders = {
   },
   shippingAddressStreetComplement: {
     label: i18n('entities.customer.fields.shippingAddressStreetComplement'),
+    render: filterRenders.generic(),
+  },
+  facebook: {
+    label: i18n('entities.customer.fields.facebook'),
+    render: filterRenders.generic(),
+  },
+  linkedin: {
+    label: i18n('entities.customer.fields.linkedin'),
+    render: filterRenders.generic(),
+  },
+  instagram: {
+    label: i18n('entities.customer.fields.instagram'),
+    render: filterRenders.generic(),
+  },
+  website: {
+    label: i18n('entities.customer.fields.website'),
+    render: filterRenders.generic(),
+  },
+  language: {
+      label: i18n('entities.customer.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
+  notes: {
+    label: i18n('entities.customer.fields.notes'),
     render: filterRenders.generic(),
   },
 }

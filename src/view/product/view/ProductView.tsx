@@ -6,6 +6,7 @@ import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
 import CurrencyViewItem from 'src/view/currency/view/CurrencyViewItem';
 import LanguagesViewItem from 'src/view/languages/view/LanguagesViewItem';
+import CountryViewItem from 'src/view/country/view/CountryViewItem';
 
 function ProductView(props) {
   const { record, loading } = props;
@@ -63,6 +64,11 @@ function ProductView(props) {
       <LanguagesViewItem
         label={i18n('entities.product.fields.language')}
         value={record.language}
+      />
+
+      <CountryViewItem
+        label={i18n('entities.product.fields.country')}
+        value={record.country}
       />
     </div>
   );

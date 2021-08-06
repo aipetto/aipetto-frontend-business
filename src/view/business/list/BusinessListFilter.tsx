@@ -18,6 +18,8 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 
 const schema = yup.object().shape({
   businessID: yupFilterSchemas.string(
@@ -44,6 +46,9 @@ const schema = yup.object().shape({
   addressStreetNumber: yupFilterSchemas.string(
     i18n('entities.business.fields.addressStreetNumber'),
   ),
+  streetComplement: yupFilterSchemas.string(
+    i18n('entities.business.fields.streetComplement'),
+  ),
   addressPostCode: yupFilterSchemas.string(
     i18n('entities.business.fields.addressPostCode'),
   ),
@@ -62,6 +67,27 @@ const schema = yup.object().shape({
   longitude: yupFilterSchemas.string(
     i18n('entities.business.fields.longitude'),
   ),
+  website: yupFilterSchemas.string(
+    i18n('entities.business.fields.website'),
+  ),
+  facebook: yupFilterSchemas.string(
+    i18n('entities.business.fields.facebook'),
+  ),
+  linkedin: yupFilterSchemas.string(
+    i18n('entities.business.fields.linkedin'),
+  ),
+  notes: yupFilterSchemas.string(
+    i18n('entities.business.fields.notes'),
+  ),
+  language: yupFilterSchemas.relationToOne(
+    i18n('entities.business.fields.language'),
+  ),
+  currency: yupFilterSchemas.relationToOne(
+    i18n('entities.business.fields.currency'),
+  ),
+  instagram: yupFilterSchemas.string(
+    i18n('entities.business.fields.instagram'),
+  ),
 });
 
 const emptyValues = {
@@ -73,12 +99,20 @@ const emptyValues = {
   contactEmail: null,
   addressStreet: null,
   addressStreetNumber: null,
+  streetComplement: null,
   addressPostCode: null,
   city: null,
   state: null,
   country: null,
   latitude: null,
   longitude: null,
+  website: null,
+  facebook: null,
+  linkedin: null,
+  notes: null,
+  language: null,
+  currency: null,
+  instagram: null,
 }
 
 const previewRenders = {
@@ -114,6 +148,10 @@ const previewRenders = {
     label: i18n('entities.business.fields.addressStreetNumber'),
     render: filterRenders.generic(),
   },
+  streetComplement: {
+    label: i18n('entities.business.fields.streetComplement'),
+    render: filterRenders.generic(),
+  },
   addressPostCode: {
     label: i18n('entities.business.fields.addressPostCode'),
     render: filterRenders.generic(),
@@ -136,6 +174,34 @@ const previewRenders = {
   },
   longitude: {
     label: i18n('entities.business.fields.longitude'),
+    render: filterRenders.generic(),
+  },
+  website: {
+    label: i18n('entities.business.fields.website'),
+    render: filterRenders.generic(),
+  },
+  facebook: {
+    label: i18n('entities.business.fields.facebook'),
+    render: filterRenders.generic(),
+  },
+  linkedin: {
+    label: i18n('entities.business.fields.linkedin'),
+    render: filterRenders.generic(),
+  },
+  notes: {
+    label: i18n('entities.business.fields.notes'),
+    render: filterRenders.generic(),
+  },
+  language: {
+      label: i18n('entities.business.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
+  currency: {
+      label: i18n('entities.business.fields.currency'),
+      render: filterRenders.relationToOne(),
+    },
+  instagram: {
+    label: i18n('entities.business.fields.instagram'),
     render: filterRenders.generic(),
   },
 }
@@ -230,6 +296,10 @@ function BusinessListFilter(props) {
                 label={i18n('entities.business.fields.addressStreetNumber')}
               />
               <InputFormItem
+                name="streetComplement"
+                label={i18n('entities.business.fields.streetComplement')}
+              />
+              <InputFormItem
                 name="addressPostCode"
                 label={i18n('entities.business.fields.addressPostCode')}
               />
@@ -252,6 +322,34 @@ function BusinessListFilter(props) {
               <InputFormItem
                 name="longitude"
                 label={i18n('entities.business.fields.longitude')}
+              />
+              <InputFormItem
+                name="website"
+                label={i18n('entities.business.fields.website')}
+              />
+              <InputFormItem
+                name="facebook"
+                label={i18n('entities.business.fields.facebook')}
+              />
+              <InputFormItem
+                name="linkedin"
+                label={i18n('entities.business.fields.linkedin')}
+              />
+              <InputFormItem
+                name="notes"
+                label={i18n('entities.business.fields.notes')}
+              />
+              <LanguagesAutocompleteFormItem
+                name="language"
+                label={i18n('entities.business.fields.language')}
+              />
+              <CurrencyAutocompleteFormItem
+                name="currency"
+                label={i18n('entities.business.fields.currency')}
+              />
+              <InputFormItem
+                name="instagram"
+                label={i18n('entities.business.fields.instagram')}
               />
             </div>
 

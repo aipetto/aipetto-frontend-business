@@ -347,4 +347,52 @@ export default [
       {},
     ),
   },
+  {
+    name: 'facebook',
+    label: i18n('entities.customer.fields.facebook'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.facebook'),
+      {},
+    ),
+  },
+  {
+    name: 'linkedin',
+    label: i18n('entities.customer.fields.linkedin'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.linkedin'),
+      {},
+    ),
+  },
+  {
+    name: 'instagram',
+    label: i18n('entities.customer.fields.instagram'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.instagram'),
+      {},
+    ),
+  },
+  {
+    name: 'website',
+    label: i18n('entities.customer.fields.website'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.website'),
+      {},
+    ),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.customer.fields.language'),
+    schema: schemas.relationToOne(
+      i18n('entities.customer.fields.language'),
+      {},
+    ),
+  },
+  {
+    name: 'notes',
+    label: i18n('entities.customer.fields.notes'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.notes'),
+      {},
+    ),
+  },
 ];

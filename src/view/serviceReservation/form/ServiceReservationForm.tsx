@@ -101,6 +101,12 @@ const schema = yup.object().shape({
     i18n('entities.serviceReservation.fields.country'),
     {},
   ),
+  source: yupFormSchemas.enumerator(
+    i18n('entities.serviceReservation.fields.source'),
+    {
+      "options": serviceReservationEnumerators.source
+    },
+  ),
 });
 
 function ServiceReservationForm(props) {
@@ -127,6 +133,7 @@ function ServiceReservationForm(props) {
       totalPriceTransportartion: record.totalPriceTransportartion,
       ratingFromCustomer: record.ratingFromCustomer,
       country: record.country,
+      source: record.source,
     };
   });
 
@@ -294,6 +301,21 @@ function ServiceReservationForm(props) {
             label={i18n('entities.serviceReservation.fields.country')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+            name="source"
+            label={i18n('entities.serviceReservation.fields.source')}
+            options={serviceReservationEnumerators.source.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `entities.serviceReservation.enumerators.source.${value}`,
+                ),
+              }),
+            )}
+            required={false}
           />
         </div>
 

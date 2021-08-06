@@ -85,6 +85,14 @@ export default [
     ),
   },
   {
+    name: 'streetComplement',
+    label: i18n('entities.business.fields.streetComplement'),
+    schema: schemas.string(
+      i18n('entities.business.fields.streetComplement'),
+      {},
+    ),
+  },
+  {
     name: 'addressPostCode',
     label: i18n('entities.business.fields.addressPostCode'),
     schema: schemas.string(
@@ -137,6 +145,62 @@ export default [
     label: i18n('entities.business.fields.longitude'),
     schema: schemas.string(
       i18n('entities.business.fields.longitude'),
+      {},
+    ),
+  },
+  {
+    name: 'website',
+    label: i18n('entities.business.fields.website'),
+    schema: schemas.string(
+      i18n('entities.business.fields.website'),
+      {},
+    ),
+  },
+  {
+    name: 'facebook',
+    label: i18n('entities.business.fields.facebook'),
+    schema: schemas.string(
+      i18n('entities.business.fields.facebook'),
+      {},
+    ),
+  },
+  {
+    name: 'linkedin',
+    label: i18n('entities.business.fields.linkedin'),
+    schema: schemas.string(
+      i18n('entities.business.fields.linkedin'),
+      {},
+    ),
+  },
+  {
+    name: 'notes',
+    label: i18n('entities.business.fields.notes'),
+    schema: schemas.string(
+      i18n('entities.business.fields.notes'),
+      {},
+    ),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.business.fields.language'),
+    schema: schemas.relationToOne(
+      i18n('entities.business.fields.language'),
+      {},
+    ),
+  },
+  {
+    name: 'currency',
+    label: i18n('entities.business.fields.currency'),
+    schema: schemas.relationToOne(
+      i18n('entities.business.fields.currency'),
+      {},
+    ),
+  },
+  {
+    name: 'instagram',
+    label: i18n('entities.business.fields.instagram'),
+    schema: schemas.string(
+      i18n('entities.business.fields.instagram'),
       {},
     ),
   },

@@ -89,6 +89,10 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'source',
+    label: i18n('entities.serviceReservation.fields.source'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.serviceReservation.fields.createdAt'),
     render: exporterRenders.datetime(),
