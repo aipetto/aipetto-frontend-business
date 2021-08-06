@@ -139,76 +139,12 @@ function ProvidersListTable(props) {
                 />
                 <TableColumnHeader
                   label={i18n(
-                    'entities.providers.fields.category',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
                     'entities.providers.fields.serviceTypes',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'contactName'}
-                  label={i18n(
-                    'entities.providers.fields.contactName',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'contactPhone'}
-                  label={i18n(
-                    'entities.providers.fields.contactPhone',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'contactWhatsApp'}
-                  label={i18n(
-                    'entities.providers.fields.contactWhatsApp',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'addressStreet'}
-                  label={i18n(
-                    'entities.providers.fields.addressStreet',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'addressStreetNumber'}
-                  label={i18n(
-                    'entities.providers.fields.addressStreetNumber',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'addressPostCode'}
-                  label={i18n(
-                    'entities.providers.fields.addressPostCode',
                   )}
                 />
                 <TableColumnHeader
                   label={i18n(
                     'entities.providers.fields.city',
-                  )}
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.providers.fields.state',
                   )}
                 />
                 <TableColumnHeader
@@ -260,22 +196,10 @@ function ProvidersListTable(props) {
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.providerID}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <BusinessCategoryListItem value={row.category} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessServicesTypesListItem value={row.serviceTypes} />
                   </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactName}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactPhone}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactWhatsApp}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.addressStreet}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.addressStreetNumber}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.addressPostCode}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <CityListItem value={row.city} />
-                  </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <StateListItem value={row.state} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <CountryListItem value={row.country} />

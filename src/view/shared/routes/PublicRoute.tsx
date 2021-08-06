@@ -22,8 +22,9 @@ function PublicRoute({
 
             if(permissionChecker.currentUserRolesIds.includes(Roles.values.petOwner)){
                 return <Redirect to="/home" />;
+            }else{
+                return <Redirect to="/dashboard" />;
             }
-            return <Redirect to="/dashboard" />;
         }
 
         return <Component {...props} />;

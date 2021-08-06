@@ -808,7 +808,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'businessID': 'Identificador do Negócio (CNPJ)',
+          'businessID': 'Identificador do Negócio',
           'name': 'Nome do Negócio',
           'services': 'Serviços',
           'categories': 'Categorias',

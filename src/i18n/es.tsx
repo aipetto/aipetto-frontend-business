@@ -800,7 +800,7 @@ const es = {
             },
             fields: {
                 id: 'Id',
-                'businessID': 'Identificador del Negocio (CUIT)',
+                'businessID': 'Identificador del Negocio',
                 'name': 'Nombre del Negócio',
                 'services': 'Servicios',
                 'categories': 'Categorias',
