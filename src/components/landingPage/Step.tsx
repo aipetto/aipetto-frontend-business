@@ -5,7 +5,7 @@ const Step = ({title, heading, description, img, alternate}) => {
     const rowReverse = "lg:items-center lg:flex lg:flex-row-reverse lg:justify-center";
 
     return (
-        <div className={alternate?row : rowReverse}>
+        <div className={alternate ? row : rowReverse}>
           <div className="lg:w-2/6 lg:-ml-20 lg:-mt-10 lg:flex lg:flex-col lg:justify-center lg:items-start">
             <p className="pb-5 text-2xl font-semibold text-center text-orange-400 lg:pb-0 lg:-mb-3 lg:text-lg lg:font-bold lg:text-left">{title}</p>
             <p className="p-5 text-4xl font-semibold leading-relaxed text-center text-blue-800 lg:pb-4 lg:text-3xl lg:pl-0 lg:font-bold lg:text-left">{heading}</p>

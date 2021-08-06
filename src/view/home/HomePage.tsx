@@ -1,11 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import IndexNavbar from "../layout/IndexNavbar";
 import { i18n } from 'src/i18n';
-import AnimatedLogoExample from '../../socialpets.svg';
-import ProgressBar from "../serviceReservation/steps/ProgressBar";
-
-import detectBrowserLanguage from 'detect-browser-language';
 import Navbar from "../../components/landingPage/Navbar";
 import Hero from "../../components/landingPage/Hero";
 import Step from "../../components/landingPage/Step";
@@ -26,35 +20,35 @@ const HomePage = (props) => {
             heading: i18n('homeDownloadApp.step1.heading'),
             description: i18n('homeDownloadApp.step1.description'),
             img: i18n('homeDownloadApp.step1.img'),
-            alternate: i18n('homeDownloadApp.step1.alternate'),
+            alternate: false,
         },
         step2: {
             title: i18n('homeDownloadApp.step2.title'),
             heading: i18n('homeDownloadApp.step2.heading'),
             description: i18n('homeDownloadApp.step2.description'),
             img: i18n('homeDownloadApp.step2.img'),
-            alternate: i18n('homeDownloadApp.step2.alternate'),
+            alternate: true,
         },
         step3: {
             title: i18n('homeDownloadApp.step3.title'),
             heading: i18n('homeDownloadApp.step3.heading'),
             description: i18n('homeDownloadApp.step3.description'),
             img: i18n('homeDownloadApp.step3.img'),
-            alternate: i18n('homeDownloadApp.step3.alternate'),
+            alternate: false,
         },
         step4: {
             title: i18n('homeDownloadApp.step4.title'),
             heading: i18n('homeDownloadApp.step4.heading'),
             description: i18n('homeDownloadApp.step4.description'),
             img: i18n('homeDownloadApp.step4.img'),
-            alternate: i18n('homeDownloadApp.step4.alternate'),
+            alternate: true,
         },
         step5: {
             title: i18n('homeDownloadApp.step5.title'),
             heading: i18n('homeDownloadApp.step5.heading'),
             description: i18n('homeDownloadApp.step5.description'),
             img: i18n('homeDownloadApp.step5.img'),
-            alternate: i18n('homeDownloadApp.step1.alternate'),
+            alternate: false,
         },
         bottomLead: {
             actionText: 'Download the app.',
