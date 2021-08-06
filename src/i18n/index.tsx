@@ -1,6 +1,7 @@
 import React from 'react';
 import _get from 'lodash/get';
 import moment from 'moment';
+import detectBrowserLanguage from 'detect-browser-language';
 import {
   registerLocale,
   setDefaultLocale,
@@ -44,7 +45,7 @@ const languages: {
 export async function init() {
 
   currentLanguageCode =
-     localStorage.getItem('language') || 'pt-BR';
+     localStorage.getItem('language') || getLangFromBrowserNavigator() || 'pt-BR';
 
   setLanguageCode(currentLanguageCode);
 
@@ -172,12 +173,7 @@ function checkAgainstOurSystemLanguages(lang) {
 }
 
 export function getLangFromBrowserNavigator(){
-  if(navigator.languages !== undefined){
-    return checkAgainstOurSystemLanguages(navigator.languages[0]);
-  }else{
-    // Backward compatibility with older browsers
-    return checkAgainstOurSystemLanguages(navigator.language);
-  }
+    return checkAgainstOurSystemLanguages(detectBrowserLanguage());
 }
 
 export function getLanguages() {

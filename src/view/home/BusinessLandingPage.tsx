@@ -14,6 +14,7 @@ import {
 } from 'react-google-recaptcha-v3';
 import config from 'src/config';
 import CookieConsent from "react-cookie-consent";
+import detectBrowserLanguage from 'detect-browser-language';
 
 Survey.StylesManager.applyTheme("modern");
 
@@ -105,7 +106,7 @@ function BusinessLandingPage(){
             ]};
         var survey = new Survey.Model(json);
 
-        survey.locale = localStorage.getItem('language') || 'pt-BR';
+        survey.locale = localStorage.getItem('language') || getLangFromBrowserNavigator() || 'pt-BR';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 

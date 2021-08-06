@@ -13,6 +13,8 @@ import "@reach/combobox/styles.css";
 import {getGeocode, getLatLng} from "use-places-autocomplete";
 import {useLoadScript} from "@react-google-maps/api";
 import Spinner from "../shared/Spinner";
+import detectBrowserLanguage from 'detect-browser-language';
+
 import {
     GoogleReCaptchaProvider,
     useGoogleReCaptcha
@@ -78,7 +80,7 @@ function LandingPage() {
             ]};
         var survey = new Survey.Model(json);
 
-        survey.locale =  localStorage.getItem('language') || 'pt-BR';
+        survey.locale =  localStorage.getItem('language') || getLangFromBrowserNavigator() || 'pt-BR';
         survey.completeText = i18n('survey.surveyCompleteButton');
         survey.completedHtml = i18n('survey.surveyCompleteMessage');
 

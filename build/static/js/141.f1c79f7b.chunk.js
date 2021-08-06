@@ -1,1 +1,0 @@
-(this["webpackJsonpapp-frontend"]=this["webpackJsonpapp-frontend"]||[]).push([[141],{935:function(n,t,e){"use strict";e.r(t);e(6);var p=e(13);t.default=function(n){return Object(p.jsx)(p.Fragment,{})}}}]);

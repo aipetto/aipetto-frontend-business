@@ -9,7 +9,7 @@ function ProfileFormPage() {
     <>
       <Breadcrumb
         items={[
-          [i18n('dashboard.menu'), '/dashboard'],
+          [i18n('dashboard.menu'), '/'],
           [i18n('auth.profile.title')],
         ]}
       />
@@ -20,7 +20,7 @@ function ProfileFormPage() {
         </h1>
 
         <ProfileForm
-          onCancel={() => getHistory().push('/dashboard')}
+          onCancel={() => getHistory().push('/')}
         />
       </div>
     </>

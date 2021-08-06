@@ -81,6 +81,55 @@ const ptBR = {
     slogan: 'serviços e informações para seu pet onde quer que esteja',
   },
 
+  homeDownloadApp: {
+    title: 'aipetto app',
+    tagline: 'Services for your pet everywhere anytime',
+    description: 'Download it',
+    mainActionText: 'Playstore',
+    extraActionText: 'App Store',
+      step1: {
+          title: 'Create an account',
+          heading: 'Create/login to an existing account to get started',
+          description: 'An account is created with your email and a desired password',
+          img: '/images/Rectangle_3.png',
+          alternate: false,
+      },
+      step2: {
+          title: 'Explore while shopping',
+          heading: 'Shop for your favorites meal as e dey hot.',
+          description: 'Shop for your favorite meals or drinks and enjoy while doing it.',
+          img: '/images/Rectangle_4.png',
+          alternate: true,
+      },
+      step3: {
+          title: 'Checkout',
+          heading: "When you're done, check out and get it delivered.",
+          description: "When you're done, check out and get it  delivered with ease.",
+          img: '/images/Rectangle_5.png',
+          alternate: false,
+      },
+      step4: {
+          title: 'Book the appointment',
+          heading: "When you're done, check out and get it delivered.",
+          description: "When you're done, check out and get it  delivered with ease.",
+          img: '/images/Rectangle_5.png',
+          alternate: false,
+      },
+      step5: {
+          title: 'Book the appointment',
+          heading: "When you're done, check out and get it delivered.",
+          description: "When you're done, check out and get it  delivered with ease.",
+          img: '/images/Rectangle_5.png',
+          alternate: false,
+      },
+      bottomLead: {
+          actionText: 'Download the app.',
+          description: 'Available on your favourite store.',
+          mainActionText: 'Playstore',
+          extraActionText: 'App Store',
+      },
+  },
+
   privacy: {
     cookiesConsent: 'Esta página utiliza cookies para poder oferecer uma melhor experiência de usuário no site.',
     acceptButton: 'Aceitar',
