@@ -5,19 +5,18 @@ import PermissionChecker from 'src/modules/auth/permissionChecker';
 import menus from 'src/view/menus';
 import {useDispatch, useSelector} from "react-redux";
 import {default as authSelectors, default as selectors} from "../../modules/auth/authSelectors";
+import dashSelectors from "../../modules/dashboard/dashboardSelectors";
 import layoutSelectors from "../../modules/layout/layoutSelectors";
 import layoutActions from "../../modules/layout/layoutActions";
 import { i18n } from 'src/i18n';
 import DashboardBarChart from 'src/view/dashboard/DashboardBarChart';
 import DashboardDoughnutChart from 'src/view/dashboard/DashboardDoughnutChart';
-import DashboardHorizontalBarChart from 'src/view/dashboard/DashboardHorizontalBarChart';
-import DashboardLineChart from 'src/view/dashboard/DashboardLineChart';
-import DashboardMixChartOne from 'src/view/dashboard/DashboardMixChartOne';
-import DashboardMixChartTwo from 'src/view/dashboard/DashboardMixChartTwo';
-import DashboardPolarChart from 'src/view/dashboard/DashboardPolarChart';
-import DashboardRadarChart from 'src/view/dashboard/DashboardRadarChart';
 
 const DashboardPage = (props) => {
+
+  const hasPermissionToAccessGraph = useSelector(
+    dashSelectors.selectPermissionToRead,
+  );
 
   const dispatch = useDispatch();
 
@@ -26,9 +25,11 @@ const DashboardPage = (props) => {
   const currentTenant = useSelector(
       authSelectors.selectCurrentTenant,
   );
+
   const currentUser = useSelector(
       authSelectors.selectCurrentUser,
   );
+
   const menuVisible = useSelector(
       layoutSelectors.selectMenuVisible,
   );
@@ -53,22 +54,31 @@ const DashboardPage = (props) => {
         permission,
     );
   };
-  return (
-      <>
-        <div className="flex py-3">
-          <div className="grid w-full grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 m-4">
-            <div>
-              <div className="bg-white dark:bg-gray-800 p-2 border dark:border-gray-600 rounded">
-                <DashboardDoughnutChart />
+
+  const displayDashboardGraph = () => {
+    if (hasPermissionToAccessGraph) {
+      return (
+          <div className="flex py-3">
+            <div className="grid w-full grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 m-4">
+              <div>
+                <div className="bg-white dark:bg-gray-800 p-2 border dark:border-gray-600 rounded">
+                  <DashboardDoughnutChart />
+                </div>
               </div>
-            </div>
-            <div>
-              <div className="bg-white dark:bg-gray-800 p-2 border dark:border-gray-600 rounded">
-                <DashboardBarChart />
+              <div>
+                <div className="bg-white dark:bg-gray-800 p-2 border dark:border-gray-600 rounded">
+                  <DashboardBarChart />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+      );
+    }
+  }
+
+  return (
+      <>
+        {displayDashboardGraph()}
         <div className="p-6 grid grid-cols-2 md:grid-cols-6 gap-4">
 
                 {menus
@@ -96,6 +106,7 @@ const DashboardPage = (props) => {
                     .filter((menu) =>
                         lockedForCurrentPlan(menu.permissionRequired),
                     )
+                    .sort((menuLabelFirst, menuLabelSecond) => menuLabelFirst.label.localeCompare(menuLabelSecond.label))
                     .map((menu) => (
                         <div
                             className={`mt-4 opacity-50 flex items-center px-4 py-2 text-gray-600 rounded-md dark:text-gray-400`}

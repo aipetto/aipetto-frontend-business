@@ -14,7 +14,7 @@ const data = {
   ],
   datasets: [
     {
-      label: i18n('dashboard.charts.top5Services'),
+      label: i18n('dashboard.charts.topServices'),
       backgroundColor: 'rgb(110,231,183)',
       borderColor: 'rgb(135,243,79)',
       borderWidth: 1,

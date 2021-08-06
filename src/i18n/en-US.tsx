@@ -321,7 +321,7 @@ const en = {
           id: 'Id',
           'customer': 'Customer',
           'products': 'Products',
-          'employee': 'Employee',
+          'businessEmployee': 'Employee',
           'delivered': 'Delivered',
           'attachments': 'Attachments',
           'businessId': 'BusinessId',
@@ -2066,19 +2066,19 @@ const en = {
             label: 'aipetto Admin',
             description: 'Acesso a todos os recursos da plataforma',
         },
-        businessOwner: {
+        businessAdmin: {
             label: 'Business Owner',
             description: 'Business Owner',
         },
-        adminPetshop: {
+        petshopAdmin: {
             label: 'Admin Petshop',
             description: 'Admin Petshop',
         },
-        adminVeterinary: {
+        veterinaryAdmin: {
             label: 'Admin Veterinarian',
             description: 'Admin Veterinarian',
         },
-        employee: {
+        businessEmployee: {
             label: 'Employee',
             description: 'Employee',
         },
@@ -2090,7 +2090,7 @@ const en = {
             label: 'Veterinarian',
             description: 'Veterinarian',
         },
-        transporter: {
+        transporterAdmin: {
             label: 'Transporter',
             description: 'Transporter',
         },

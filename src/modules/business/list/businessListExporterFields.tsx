@@ -49,6 +49,10 @@ export default [
     label: i18n('entities.business.fields.addressStreetNumber'),
   },
   {
+    name: 'streetComplement',
+    label: i18n('entities.business.fields.streetComplement'),
+  },
+  {
     name: 'addressPostCode',
     label: i18n('entities.business.fields.addressPostCode'),
   },
@@ -79,6 +83,36 @@ export default [
   {
     name: 'longitude',
     label: i18n('entities.business.fields.longitude'),
+  },
+  {
+    name: 'website',
+    label: i18n('entities.business.fields.website'),
+  },
+  {
+    name: 'facebook',
+    label: i18n('entities.business.fields.facebook'),
+  },
+  {
+    name: 'linkedin',
+    label: i18n('entities.business.fields.linkedin'),
+  },
+  {
+    name: 'notes',
+    label: i18n('entities.business.fields.notes'),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.business.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'currency',
+    label: i18n('entities.business.fields.currency'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'instagram',
+    label: i18n('entities.business.fields.instagram'),
   },
   {
     name: 'createdAt',

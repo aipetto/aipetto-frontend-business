@@ -8,6 +8,8 @@ import BusinessCategoryViewItem from 'src/view/businessCategory/view/BusinessCat
 import CityViewItem from 'src/view/city/view/CityViewItem';
 import StateViewItem from 'src/view/state/view/StateViewItem';
 import CountryViewItem from 'src/view/country/view/CountryViewItem';
+import LanguagesViewItem from 'src/view/languages/view/LanguagesViewItem';
+import CurrencyViewItem from 'src/view/currency/view/CurrencyViewItem';
 
 function BusinessView(props) {
   const { record, loading } = props;
@@ -69,6 +71,11 @@ function BusinessView(props) {
       />
 
       <TextViewItem
+        label={i18n('entities.business.fields.streetComplement')}
+        value={record.streetComplement}
+      />
+
+      <TextViewItem
         label={i18n('entities.business.fields.addressPostCode')}
         value={record.addressPostCode}
       />
@@ -101,6 +108,41 @@ function BusinessView(props) {
       <TextViewItem
         label={i18n('entities.business.fields.longitude')}
         value={record.longitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.business.fields.website')}
+        value={record.website}
+      />
+
+      <TextViewItem
+        label={i18n('entities.business.fields.facebook')}
+        value={record.facebook}
+      />
+
+      <TextViewItem
+        label={i18n('entities.business.fields.linkedin')}
+        value={record.linkedin}
+      />
+
+      <TextViewItem
+        label={i18n('entities.business.fields.notes')}
+        value={record.notes}
+      />
+
+      <LanguagesViewItem
+        label={i18n('entities.business.fields.language')}
+        value={record.language}
+      />
+
+      <CurrencyViewItem
+        label={i18n('entities.business.fields.currency')}
+        value={record.currency}
+      />
+
+      <TextViewItem
+        label={i18n('entities.business.fields.instagram')}
+        value={record.instagram}
       />
     </div>
   );

@@ -121,6 +121,16 @@ function ServiceReservationView(props) {
         label={i18n('entities.serviceReservation.fields.country')}
         value={record.country}
       />
+
+      <TextViewItem
+        label={i18n('entities.serviceReservation.fields.source')}
+        value={
+          record.source &&
+          i18n(
+            `entities.serviceReservation.enumerators.source.${record.source}`,
+          )
+        }
+      />
     </div>
   );
 }

@@ -16,11 +16,13 @@ import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -74,6 +76,12 @@ const schema = yup.object().shape({
   currency: yupFilterSchemas.relationToOne(
     i18n('entities.providers.fields.currency'),
   ),
+  language: yupFilterSchemas.relationToOne(
+    i18n('entities.providers.fields.language'),
+  ),
+  isIndependent: yupFilterSchemas.boolean(
+    i18n('entities.providers.fields.isIndependent'),
+  ),
 });
 
 const emptyValues = {
@@ -94,6 +102,8 @@ const emptyValues = {
   longitudeRange: [],
   basePricePerServiceRange: [],
   currency: null,
+  language: null,
+  isIndependent: null,
 }
 
 const previewRenders = {
@@ -165,6 +175,14 @@ const previewRenders = {
       label: i18n('entities.providers.fields.currency'),
       render: filterRenders.relationToOne(),
     },
+  language: {
+      label: i18n('entities.providers.fields.language'),
+      render: filterRenders.relationToOne(),
+    },
+  isIndependent: {
+    label: i18n('entities.providers.fields.isIndependent'),
+    render: filterRenders.boolean(),
+  },
 }
 
 function ProvidersListFilter(props) {
@@ -291,6 +309,24 @@ function ProvidersListFilter(props) {
               <CurrencyAutocompleteFormItem
                 name="currency"
                 label={i18n('entities.providers.fields.currency')}
+              />
+              <LanguagesAutocompleteFormItem
+                name="language"
+                label={i18n('entities.providers.fields.language')}
+              />
+              <SelectFormItem
+                name="isIndependent"
+                label={i18n('entities.providers.fields.isIndependent')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
               />
             </div>
 

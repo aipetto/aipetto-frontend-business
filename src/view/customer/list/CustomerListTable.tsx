@@ -131,15 +131,6 @@ function CustomerListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'surname'}
-                  label={i18n(
-                    'entities.customer.fields.surname',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
                   name={'email'}
                   label={i18n(
                     'entities.customer.fields.email',
@@ -148,15 +139,6 @@ function CustomerListTable(props) {
                 <TableColumnHeader
                   label={i18n(
                     'entities.customer.fields.country',
-                  )}
-                />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'shippingAddressStreet'}
-                  label={i18n(
-                    'entities.customer.fields.shippingAddressStreet',
                   )}
                 />
                 <TableColumnHeader
@@ -217,12 +199,10 @@ function CustomerListTable(props) {
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.uniqueCustomIdentifier}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.surname}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.email}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <CountryListItem value={row.country} />
                   </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.shippingAddressStreet}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.prospectStatus
                       ? i18n(

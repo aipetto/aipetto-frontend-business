@@ -12,10 +12,17 @@ const privateRoutes = [
     exact: true,
   },
   {
+    path: '/home',
+    loader: () =>
+        import('src/view/home/HomePage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     path: '/reservation',
     loader: () =>
         import('src/view/serviceReservation/public/ReservationInitialPage'),
-    permissionRequired: null,
+    permissionRequired: permissions.reservationWebAccess,
     exact: true,
   },
   {
@@ -1749,13 +1756,6 @@ const publicRoutes = [
     path: '/business',
     loader: () =>
         import('src/view/home/BusinessLandingPage'),
-    permissionRequired: null,
-    exact: true,
-  },
-  {
-    path: '/home',
-    loader: () =>
-        import('src/view/home/HomePage'),
     permissionRequired: null,
     exact: true,
   },

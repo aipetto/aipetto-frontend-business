@@ -18,6 +18,7 @@ import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
+import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -70,6 +71,10 @@ const schema = yup.object().shape({
     i18n('entities.product.fields.language'),
     {},
   ),
+  country: yupFormSchemas.relationToOne(
+    i18n('entities.product.fields.country'),
+    {},
+  ),
 });
 
 function ProductForm(props) {
@@ -88,6 +93,7 @@ function ProductForm(props) {
       pointsPrice: record.pointsPrice,
       currency: record.currency,
       language: record.language,
+      country: record.country,
     };
   });
 
@@ -160,6 +166,30 @@ function ProductForm(props) {
             name="pointsPrice"
             label={i18n('entities.product.fields.pointsPrice')}
             required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CurrencyAutocompleteFormItem
+            name="currency"
+            label={i18n('entities.product.fields.currency')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <LanguagesAutocompleteFormItem
+            name="language"
+            label={i18n('entities.product.fields.language')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CountryAutocompleteFormItem
+            name="country"
+            label={i18n('entities.product.fields.country')}
+            required={false}
+            showCreate={!props.modal}
           />
         </div>
 

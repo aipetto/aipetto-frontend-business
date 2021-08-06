@@ -14,6 +14,11 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import TagsFormItem from 'src/view/shared/form/items/TagsFormItem';
 import * as yup from 'yup';
+import {createSelector} from "reselect";
+import authSelectors from "../../../modules/auth/authSelectors";
+import PermissionChecker from "../../../modules/auth/permissionChecker";
+import Permissions from "../../../security/permissions";
+import {useSelector} from "react-redux";
 
 const singleSchema = yup.object().shape({
   email: yupFormSchemas.email(i18n('user.fields.email')),
@@ -22,6 +27,17 @@ const singleSchema = yup.object().shape({
     { required: true, min: 1 },
   ),
 });
+
+const selectPermissionToAipettoStaffUsersRead = createSelector(
+    [
+      authSelectors.selectCurrentTenant,
+      authSelectors.selectCurrentUser,
+    ],
+    (currentTenant, currentUser) =>
+        new PermissionChecker(currentTenant, currentUser).match(
+            Permissions.values.aipettoStaffUsersRead,
+        ),
+);
 
 const multipleSchema = yup.object().shape({
   emails: yup
@@ -59,6 +75,10 @@ function UserNewForm(props) {
     roles: [],
   }));
 
+  const hasPermissionToAipettoUsers = useSelector(
+      selectPermissionToAipettoStaffUsersRead,
+  );
+
   const form = useForm({
     resolver: yupResolver(schema),
     mode: 'all',
@@ -81,6 +101,10 @@ function UserNewForm(props) {
       form.setValue(key, initialValues[key]);
     });
   };
+
+  const regexToFilterUsers = hasPermissionToAipettoUsers
+      ? new RegExp('.*', 'g')
+      : new RegExp('^(?!aipetto).*', 'g');
 
   return (
     <FormProvider {...form}>
@@ -110,7 +134,9 @@ function UserNewForm(props) {
             options={userEnumerators.roles.map((value) => ({
               value,
               label: i18n(`roles.${value}.label`),
-            }))}
+            }))
+            .filter((role) => role.value.match(regexToFilterUsers))
+            }
             mode="multiple"
           />
         </div>

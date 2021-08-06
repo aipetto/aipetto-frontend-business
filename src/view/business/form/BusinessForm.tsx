@@ -10,6 +10,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
@@ -17,6 +18,8 @@ import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/auto
 import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
+import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -62,6 +65,10 @@ const schema = yup.object().shape({
     i18n('entities.business.fields.addressStreetNumber'),
     {},
   ),
+  streetComplement: yupFormSchemas.string(
+    i18n('entities.business.fields.streetComplement'),
+    {},
+  ),
   addressPostCode: yupFormSchemas.string(
     i18n('entities.business.fields.addressPostCode'),
     {},
@@ -90,6 +97,34 @@ const schema = yup.object().shape({
     i18n('entities.business.fields.longitude'),
     {},
   ),
+  website: yupFormSchemas.string(
+    i18n('entities.business.fields.website'),
+    {},
+  ),
+  facebook: yupFormSchemas.string(
+    i18n('entities.business.fields.facebook'),
+    {},
+  ),
+  linkedin: yupFormSchemas.string(
+    i18n('entities.business.fields.linkedin'),
+    {},
+  ),
+  notes: yupFormSchemas.string(
+    i18n('entities.business.fields.notes'),
+    {},
+  ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.business.fields.language'),
+    {},
+  ),
+  currency: yupFormSchemas.relationToOne(
+    i18n('entities.business.fields.currency'),
+    {},
+  ),
+  instagram: yupFormSchemas.string(
+    i18n('entities.business.fields.instagram'),
+    {},
+  ),
 });
 
 function BusinessForm(props) {
@@ -109,6 +144,7 @@ function BusinessForm(props) {
       contactEmail: record.contactEmail,
       addressStreet: record.addressStreet,
       addressStreetNumber: record.addressStreetNumber,
+      streetComplement: record.streetComplement,
       addressPostCode: record.addressPostCode,
       city: record.city,
       state: record.state,
@@ -116,6 +152,13 @@ function BusinessForm(props) {
       businessLogo: record.businessLogo || [],
       latitude: record.latitude,
       longitude: record.longitude,
+      website: record.website,
+      facebook: record.facebook,
+      linkedin: record.linkedin,
+      notes: record.notes,
+      language: record.language,
+      currency: record.currency,
+      instagram: record.instagram,
     };
   });
 
@@ -216,6 +259,13 @@ function BusinessForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
+            name="streetComplement"
+            label={i18n('entities.business.fields.streetComplement')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
             name="addressPostCode"
             label={i18n('entities.business.fields.addressPostCode')}
             required={false}
@@ -265,6 +315,57 @@ function BusinessForm(props) {
           <InputFormItem
             name="longitude"
             label={i18n('entities.business.fields.longitude')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="website"
+            label={i18n('entities.business.fields.website')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="facebook"
+            label={i18n('entities.business.fields.facebook')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="linkedin"
+            label={i18n('entities.business.fields.linkedin')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <TextAreaFormItem
+            name="notes"
+            label={i18n('entities.business.fields.notes')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <LanguagesAutocompleteFormItem
+            name="language"
+            label={i18n('entities.business.fields.language')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CurrencyAutocompleteFormItem
+            name="currency"
+            label={i18n('entities.business.fields.currency')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="instagram"
+            label={i18n('entities.business.fields.instagram')}
             required={false}
           />
         </div>

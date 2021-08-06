@@ -29,7 +29,7 @@ const en = {
 
   app: {
     title: 'aipetto',
-    slogan: 'services and informations for your pet everywhere anytime',
+    slogan: 'services and information for your pet everywhere anytime',
   },
 
   privacy: {
@@ -245,6 +245,12 @@ const en = {
           'billingAddressStreetComplement': 'BillingAddressStreetComplement',
           'shippingAddressStreetComplement': 'ShippingAddressStreetComplement',
           'customerProfileImage': 'CustomerProfileImage',
+          'facebook': 'Facebook',
+          'linkedin': 'Linkedin',
+          'instagram': 'Instagram',
+          'website': 'Website',
+          'language': 'Language',
+          'notes': 'Notes',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -339,6 +345,7 @@ const en = {
           'pointsPrice': 'PointsPrice',
           'currency': 'Currency',
           'language': 'Language',
+          'country': 'Country',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -394,7 +401,7 @@ const en = {
           id: 'Id',
           'customer': 'Customer',
           'products': 'Products',
-          'employee': 'Employee',
+          'businessEmployee': 'Employee',
           'delivered': 'Delivered',
           'attachments': 'Attachments',
           'businessId': 'BusinessId',
@@ -798,7 +805,7 @@ const en = {
         },
         fields: {
           id: 'Id',
-          'businessID': 'BusinessID',
+          'businessID': 'Business ID (CRN)',
           'name': 'Name',
           'services': 'Services',
           'categories': 'Categories',
@@ -808,6 +815,7 @@ const en = {
           'contactEmail': 'ContactEmail',
           'addressStreet': 'AddressStreet',
           'addressStreetNumber': 'AddressStreetNumber',
+          'streetComplement': 'StreetComplement',
           'addressPostCode': 'AddressPostCode',
           'city': 'City',
           'state': 'State',
@@ -815,6 +823,13 @@ const en = {
           'businessLogo': 'BusinessLogo',
           'latitude': 'Latitude',
           'longitude': 'Longitude',
+          'website': 'Website',
+          'facebook': 'Facebook',
+          'linkedin': 'Linkedin',
+          'notes': 'Notes',
+          'language': 'Language',
+          'currency': 'Currency',
+          'instagram': 'Instagram',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -1023,6 +1038,7 @@ const en = {
           'ratingFromCustomerRange': 'RatingFromCustomer',
           'ratingFromCustomer': 'RatingFromCustomer',
           'country': 'Country',
+          'source': 'Source',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -1081,6 +1097,13 @@ const en = {
             'business_approved': 'Business_approved',
             'business_declined': 'Business_declined',
           },
+          'source': {
+            'aipetto_app': 'Aipetto_app',
+            'aipetto_web': 'Aipetto_web',
+            'manual': 'Manual',
+            'external_integration': 'External_integration',
+            'facebook_reservation': 'Facebook_reservation',
+          },
         },
         placeholders: {
 
@@ -1103,9 +1126,9 @@ const en = {
       },
 
     businessPlaceServiceAvailability: {
-        name: 'businessPlaceServiceAvailability',
-        label: 'BusinessPlaceServiceAvailabilities',
-        menu: 'Service Agenda',
+        name: 'Availability',
+        label: 'Availability',
+        menu: 'Availability',
         exporterFileName: 'businessPlaceServiceAvailability_export',
         list: {
           menu: 'BusinessPlaceServiceAvailabilities',
@@ -1886,6 +1909,10 @@ const en = {
           'basePricePerServiceRange': 'BasePricePerService',
           'basePricePerService': 'BasePricePerService',
           'currency': 'Currency',
+          'profileImage': 'ProfileImage',
+          'attachedDoc': 'AttachedDoc',
+          'language': 'Language',
+          'isIndependent': 'IsIndependent',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -3315,19 +3342,31 @@ const en = {
             label: 'aipetto Admin',
             description: 'Acesso a todos os recursos da plataforma',
         },
-        businessOwner: {
+        aipettoManager: {
+            label: 'aipetto Manager',
+            description: 'Manage all operational modules',
+        },
+        aipettoEditor: {
+            label: 'aipetto Editor',
+            description: 'Have access to comercial and content modules',
+        },
+        businessAdmin: {
             label: 'Business Owner',
             description: 'Business Owner',
         },
-        adminPetshop: {
+        petshopAdmin: {
             label: 'Admin Petshop',
             description: 'Admin Petshop',
         },
-        adminVeterinary: {
+        veterinaryAdmin: {
             label: 'Admin Veterinarian',
             description: 'Admin Veterinarian',
         },
-        employee: {
+        businessManager: {
+            label: 'Business Manager',
+            description: 'Manage all operation modules of business',
+        },
+        businessEmployee: {
             label: 'Employee',
             description: 'Employee',
         },
@@ -3339,9 +3378,13 @@ const en = {
             label: 'Veterinarian',
             description: 'Veterinarian',
         },
-        transporter: {
+        transporterAdmin: {
             label: 'Transporter',
             description: 'Transporter',
+        },
+        transporter: {
+            label: 'Transportador - Motorista Taxi Dog',
+            description: 'Negócio que trabalha transportando animais de estimação',
         },
     },
   user: {
@@ -3561,7 +3604,7 @@ const en = {
       businessPlace2: 'Place 2',
       businessPlace3: 'Place 3',
       reservations: 'Service Reservations',
-      top5Services: 'Top 5 services',
+      topServices: 'Top Services',
       months: {
         1: 'January',
         2: 'February',

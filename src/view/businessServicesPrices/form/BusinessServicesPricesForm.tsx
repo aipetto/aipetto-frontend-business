@@ -98,6 +98,20 @@ function BusinessServicesPricesForm(props) {
             required={true}
           />
         </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CurrencyAutocompleteFormItem
+            name="currency"
+            label={i18n('entities.businessServicesPrices.fields.currency')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isFree"
+            label={i18n('entities.businessServicesPrices.fields.isFree')}
+          />
+        </div>
 
         <div className="pt-4">
           <button

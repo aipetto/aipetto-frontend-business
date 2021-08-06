@@ -32,8 +32,8 @@ const schema = yup.object().shape({
       "min": 1
     },
   ),
-  employee: yupFormSchemas.relationToOne(
-    i18n('entities.order.fields.employee'),
+  businessEmployee: yupFormSchemas.relationToOne(
+    i18n('entities.order.fields.businessEmployee'),
     {},
   ),
   delivered: yupFormSchemas.boolean(
@@ -61,7 +61,7 @@ function OrderForm(props) {
     return {
       customer: record.customer,
       products: record.products || [],
-      employee: record.employee,
+      businessEmployee: record.businessEmployee,
       delivered: record.delivered,
       attachments: record.attachments || [],
       businessId: record.businessId,
@@ -106,8 +106,8 @@ function OrderForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <UserAutocompleteFormItem  
-            name="employee"
-            label={i18n('entities.order.fields.employee')}
+            name="businessEmployee"
+            label={i18n('entities.order.fields.businessEmployee')}
             required={false}
             showCreate={!props.modal}
           />

@@ -87,4 +87,12 @@ export default [
       {},
     ),
   },
+  {
+    name: 'country',
+    label: i18n('entities.product.fields.country'),
+    schema: schemas.relationToOne(
+      i18n('entities.product.fields.country'),
+      {},
+    ),
+  },
 ];

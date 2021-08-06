@@ -93,6 +93,26 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'profileImage',
+    label: i18n('entities.providers.fields.profileImage'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
+    name: 'attachedDoc',
+    label: i18n('entities.providers.fields.attachedDoc'),
+    render: exporterRenders.filesOrImages(),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.providers.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'isIndependent',
+    label: i18n('entities.providers.fields.isIndependent'),
+    render: exporterRenders.boolean(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.providers.fields.createdAt'),
     render: exporterRenders.datetime(),

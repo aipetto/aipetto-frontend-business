@@ -49,6 +49,11 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'country',
+    label: i18n('entities.product.fields.country'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.product.fields.createdAt'),
     render: exporterRenders.datetime(),

@@ -245,6 +245,36 @@ function CustomerView(props) {
         label={i18n('entities.customer.fields.customerProfileImage')}
         value={record.customerProfileImage}
       />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.facebook')}
+        value={record.facebook}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.linkedin')}
+        value={record.linkedin}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.instagram')}
+        value={record.instagram}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.website')}
+        value={record.website}
+      />
+
+      <CurrencyViewItem
+        label={i18n('entities.customer.fields.language')}
+        value={record.language}
+      />
+
+      <TextViewItem
+        label={i18n('entities.customer.fields.notes')}
+        value={record.notes}
+      />
     </div>
   );
 }

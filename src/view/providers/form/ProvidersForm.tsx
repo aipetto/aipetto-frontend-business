@@ -10,6 +10,10 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
+import Storage from 'src/security/storage';
+import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
+import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
@@ -17,6 +21,7 @@ import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocomplet
 import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
+import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -100,6 +105,22 @@ const schema = yup.object().shape({
     i18n('entities.providers.fields.currency'),
     {},
   ),
+  profileImage: yupFormSchemas.images(
+    i18n('entities.providers.fields.profileImage'),
+    {},
+  ),
+  attachedDoc: yupFormSchemas.files(
+    i18n('entities.providers.fields.attachedDoc'),
+    {},
+  ),
+  language: yupFormSchemas.relationToOne(
+    i18n('entities.providers.fields.language'),
+    {},
+  ),
+  isIndependent: yupFormSchemas.boolean(
+    i18n('entities.providers.fields.isIndependent'),
+    {},
+  ),
 });
 
 function ProvidersForm(props) {
@@ -128,6 +149,10 @@ function ProvidersForm(props) {
       longitude: record.longitude,
       basePricePerService: record.basePricePerService,
       currency: record.currency,
+      profileImage: record.profileImage || [],
+      attachedDoc: record.attachedDoc || [],
+      language: record.language,
+      isIndependent: record.isIndependent,
     };
   });
 
@@ -291,6 +316,39 @@ function ProvidersForm(props) {
             label={i18n('entities.providers.fields.currency')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ImagesFormItem
+            name="profileImage"
+            label={i18n('entities.providers.fields.profileImage')}
+            required={false}
+            storage={Storage.values.providersProfileImage}
+            max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <FilesFormItem
+            name="attachedDoc"
+            label={i18n('entities.providers.fields.attachedDoc')}
+            required={false}
+            storage={Storage.values.providersAttachedDoc}
+            max={undefined}
+            formats={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <LanguagesAutocompleteFormItem
+            name="language"
+            label={i18n('entities.providers.fields.language')}
+            required={false}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isIndependent"
+            label={i18n('entities.providers.fields.isIndependent')}
           />
         </div>
 

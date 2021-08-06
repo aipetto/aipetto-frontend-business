@@ -1,6 +1,7 @@
 import PermissionChecker from 'src/modules/auth/permissionChecker';
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import Roles from "../../../security/roles";
 
 function PublicRoute({
   component: Component,
@@ -18,7 +19,11 @@ function PublicRoute({
         );
 
         if (permissionChecker.isAuthenticated) {
-          return <Redirect to="/dashboard" />;
+
+            if(permissionChecker.currentUserRolesIds.includes(Roles.values.petOwner)){
+                return <Redirect to="/home" />;
+            }
+            return <Redirect to="/dashboard" />;
         }
 
         return <Component {...props} />;

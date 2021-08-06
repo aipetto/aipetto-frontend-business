@@ -180,6 +180,31 @@ export default [
     render: exporterRenders.filesOrImages(),
   },
   {
+    name: 'facebook',
+    label: i18n('entities.customer.fields.facebook'),
+  },
+  {
+    name: 'linkedin',
+    label: i18n('entities.customer.fields.linkedin'),
+  },
+  {
+    name: 'instagram',
+    label: i18n('entities.customer.fields.instagram'),
+  },
+  {
+    name: 'website',
+    label: i18n('entities.customer.fields.website'),
+  },
+  {
+    name: 'language',
+    label: i18n('entities.customer.fields.language'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'notes',
+    label: i18n('entities.customer.fields.notes'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.customer.fields.createdAt'),
     render: exporterRenders.datetime(),

@@ -175,13 +175,13 @@ const es = {
 
     entities: {
         customer: {
-            name: 'customer',
-            label: 'Customers',
-            menu: 'Customers',
-            exporterFileName: 'exportacion_customer',
+            name: 'Clientes',
+            label: 'Clientes',
+            menu: 'Clientes',
+            exporterFileName: 'exportacion_clientes',
             list: {
-                menu: 'Customers',
-                title: 'Customers',
+                menu: 'Clientes',
+                title: 'Clientes',
             },
             create: {
                 success: 'Cliente guardado con éxito',
@@ -202,10 +202,10 @@ const es = {
                 id: 'Id',
                 'name': 'Nombre',
                 'businessId': 'Identificador del negocio',
-                'source': 'fuente',
+                'source': 'Fuente',
                 'userId': 'Usuario',
                 'surname': 'Apellido',
-                'birthdateRange': 'Fecha de nacimiento',
+                'birthdateRange': 'Fecha de Nacimiento',
                 'birthdate': 'Cumpleaños',
                 'gender': 'Género',
                 'whatsApp': 'WhatsApp',
@@ -220,23 +220,23 @@ const es = {
                 'billingAddressStreet': 'Dirección de facturación',
                 'billingAddressCity': 'Ciudad',
                 'billingAddressState': 'Privincia',
-                'billingAddressZipCode': 'Código postal',
+                'billingAddressZipCode': 'Código Postal de Facturación',
                 'billingAddressCountry': 'País',
                 'shippingAddressStreet': 'Dirección de envío',
                 'shippingAddressCity': 'Ciudad',
                 'shippingAddressState': 'Provincia',
-                'shippingAddressZipCode': 'Código postal',
+                'shippingAddressZipCode': 'Código postal de Envío',
                 'shippingAddressCountry': 'País',
                 'latitudeRange': 'Latitude',
                 'latitude': 'Latitude',
                 'longitudeRange': 'Longitude',
                 'longitude': 'Longitude',
                 'prospectStatus': 'ProspectStatus',
-                'customerStatus': 'CustomerStatus',
-                'wantToReceiveNotifications': 'WantToReceiveNotifications',
-                'currency': 'Currency',
-                'balanceRange': 'Balance',
-                'balance': 'Balance',
+                'customerStatus': 'Status del Cliente',
+                'wantToReceiveNotifications': 'Quiere recibir notificaciones',
+                'currency': 'Moneda',
+                'balanceRange': 'Rango de Saldo',
+                'balance': 'Salgo',
                 'shippingAddressStreetNumber': 'ShippingAddressStreetNumber',
                 'addressStreetNumber': 'AddressStreetNumber',
                 'billingAddressStreetNumber': 'BillingAddressStreetNumber',
@@ -244,6 +244,12 @@ const es = {
                 'billingAddressStreetComplement': 'BillingAddressStreetComplement',
                 'shippingAddressStreetComplement': 'ShippingAddressStreetComplement',
                 'customerProfileImage': 'CustomerProfileImage',
+                'facebook': 'Facebook',
+                'linkedin': 'Linkedin',
+                'instagram': 'Instagram',
+                'website': 'Website',
+                'language': 'Language',
+                'notes': 'Notes',
                 createdAt: 'Creado el',
                 updatedAt: 'Actualizado el',
                 createdAtRange: 'Creado el',
@@ -334,6 +340,7 @@ const es = {
                 'pointsPrice': 'Precio de los puntos',
                 'currency': 'Currency',
                 'language': 'Language',
+                'country': 'País',
                 createdAt: 'Creado el',
                 updatedAt: 'Actualizado el',
                 createdAtRange: 'Creado el',
@@ -389,7 +396,7 @@ const es = {
                 id: 'Id',
                 'customer': 'Usuario',
                 'products': 'Productos',
-                'employee': 'Empleo',
+                'businessEmployee': 'Empleo',
                 'delivered': 'Entregado',
                 'attachments': 'Adjunto',
                 'businessId': 'BusinessId',
@@ -793,8 +800,8 @@ const es = {
             },
             fields: {
                 id: 'Id',
-                'businessID': 'ID de Negocio',
-                'name': 'Nombre',
+                'businessID': 'Identificador del Negocio (CUIT)',
+                'name': 'Nombre del Negócio',
                 'services': 'Servicios',
                 'categories': 'Categorias',
                 'contactName': 'Nombre de contacto',
@@ -810,6 +817,13 @@ const es = {
                 'businessLogo': 'BusinessLogo',
                 'latitude': 'Latitude',
                 'longitude': 'Longitude',
+                'website': 'Website',
+                'facebook': 'Facebook',
+                'linkedin': 'Linkedin',
+                'notes': 'Notes',
+                'language': 'Language',
+                'currency': 'Currency',
+                'instagram': 'Instagram',
                 createdAt: 'Creado el',
                 updatedAt: 'Actualizado el',
                 createdAtRange: 'Creado el',
@@ -969,9 +983,9 @@ const es = {
         },
 
         serviceReservation: {
-            name: 'Servicio de Reservas',
-            label: 'Servicio de Reservas',
-            menu: 'Servicio de Reservas',
+            name: 'Reservas',
+            label: 'Reservas',
+            menu: 'Reservas',
             exporterFileName: 'Exportar Servicio de Reservas',
             list: {
                 menu: 'Servicio de Reservas',
@@ -1016,6 +1030,7 @@ const es = {
                 'ratingFromCustomerRange': 'RatingFromCustomer',
                 'ratingFromCustomer': 'RatingFromCustomer',
                 'country': 'Country',
+                'source': 'Source',
                 createdAt: 'Creado el',
                 updatedAt: 'Actualizado el',
                 createdAtRange: 'Creado el',
@@ -1096,9 +1111,9 @@ const es = {
         },
 
         businessPlaceServiceAvailability: {
-            name: 'Disponibilidad de Servicios',
-            label: 'Agenda de Servicios',
-            menu: 'Disponibilidad de Servicios',
+            name: 'Disponibilidad',
+            label: 'Disponibilidad',
+            menu: 'Disponibilidad',
             exporterFileName: 'Exportar Disponibilidad de Servicios Comerciales',
             list: {
                 menu: 'Agenda de Servicios',
@@ -1761,7 +1776,7 @@ const es = {
 
             },
             new: {
-                title: 'Nueva Billeterat',
+                title: 'Nueva Billeterata',
             },
             view: {
                 title: 'Ver Billetera',
@@ -1879,6 +1894,10 @@ const es = {
                 'basePricePerServiceRange': 'BasePricePerService',
                 'basePricePerService': 'BasePricePerService',
                 'currency': 'Currency',
+                'profileImage': 'ProfileImage',
+                'attachedDoc': 'AttachedDoc',
+                'language': 'Language',
+                'isIndependent': 'IsIndependent',
                 createdAt: 'Creado el',
                 updatedAt: 'Actualizado el',
                 createdAtRange: 'Creado el',
@@ -1980,28 +1999,28 @@ const es = {
         },
 
         petVaccines: {
-            name: 'Vacunas de mascota',
-            label: 'Vacunas de mascota',
-            menu: 'Vacunas de mascota',
-            exporterFileName: 'Exportar Vacunas de mascota',
+            name: 'Vacunas ministradas',
+            label: 'Vacunas ministradas',
+            menu: 'Vacunas ministradas',
+            exporterFileName: 'Exportar Vacunas ministradas',
             list: {
-                menu: 'Vacunas de mascota',
-                title: 'Vacunas de mascota',
+                menu: 'Vacunas ministradas',
+                title: 'Vacunas ministradas',
             },
             create: {
-                success: 'Vacunas de mascota  guardado con éxito',
+                success: 'Vacunas ministradas  guardado con éxito',
             },
             update: {
-                success: 'Vacunas de mascota guardado con éxito',
+                success: 'Vacunas ministradas guardado con éxito',
             },
             destroy: {
-                success: 'Vacunas de mascota eliminado con éxito',
+                success: 'Vacunas ministradas eliminado con éxito',
             },
             destroyAll: {
-                success: 'Vacunas de mascota eliminado con éxito',
+                success: 'Vacunas ministradas eliminado con éxito',
             },
             edit: {
-                title: 'Vacunas de mascota',
+                title: 'Vacunas ministradas',
             },
             fields: {
                 id: 'Id',
@@ -3361,13 +3380,53 @@ const es = {
         },
     },
     roles: {
-        admin: {
-            label: 'Administración',
-            description: 'Acceso total a todos los recursos.',
+        aipettoAdmin: {
+            label: 'Admin aipetto',
+            description: 'Acesso a todos os recursos da plataforma',
         },
-        custom: {
-            label: 'Rol personalizado',
-            description: 'Acceso personalizado a recursos',
+        aipettoManager: {
+            label: 'Gerente aipetto',
+            description: 'Gerencia todos los módulos operacionales',
+        },
+        aipettoEditor: {
+            label: 'Editor aipetto',
+            description: 'Tiene acceso a algunos módulos comerciales o de contenidos',
+        },
+        businessAdmin: {
+            label: 'Dono do negócio',
+            description: 'Dono do negócio',
+        },
+        petshopAdmin: {
+            label: 'Admin Petshop',
+            description: 'Admin para operações com petshop',
+        },
+        veterinaryAdmin: {
+            label: 'Admin Veterinária',
+            description: 'Admin para operações com veterinária',
+        },
+        businessManager: {
+            label: 'Gerente del Negocio',
+            description: 'Gerencia todos los módulos operacionales del negocio',
+        },
+        businessEmployee: {
+            label: 'Funcionário do negocio',
+            description: 'Funcionário do veterinário e petshop',
+        },
+        petOwner: {
+            label: 'Dono do pet',
+            description: 'Dono de animais de estimação',
+        },
+        veterinarian: {
+            label: 'Veterinário',
+            description: 'Veterinário',
+        },
+        transporterAdmin: {
+            label: 'Admin transportador',
+            description: 'Negocio que trabaja transportando animales de estimación',
+        },
+        transporter: {
+            label: 'Transportador - Motorista Taxi Dog',
+            description: 'Negócio que trabalha transportando animais de estimação',
         },
     },
     user: {
@@ -3540,7 +3599,7 @@ const es = {
             businessPlace2: 'Sucursal Palermo',
             businessPlace3: 'Sucursal Recoleta',
             reservations: 'Reservas de servicios',
-            top5Services: 'Top 5 servicios',
+            topServices: 'Top Servicios',
             months: {
                 '1': 'Enero',
                 '2': 'Febrero',

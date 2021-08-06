@@ -9,7 +9,7 @@ function PasswordChangeFormPage(props) {
     <>
       <Breadcrumb
         items={[
-          [i18n('reservation.new'), '/dashboard'],
+          [i18n('dashboard.menu'), '/dashboard'],
           [i18n('auth.passwordChange.title')],
         ]}
       />
