@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from "react";
+import {i18n} from "../../i18n";
 
 function useOutsideAlerter(ref, setOpenNav) {
   useEffect(() => {
@@ -43,7 +44,7 @@ const Navbar = ({logo}) => {
                 <div onClick={()=>setOpenNav(false)} className="absolute right-12 top-9"><img height="30" width="30" src={`url(/images/close_icon.svg)`} alt="" /></div>
                 <div className="flex flex-col items-center justify-around h-full pt-5">
                   <a onClick={()=>setOpenNav(false)} href="#product" className="text-lg font-semibold text-blue-500 transition-all hover:text-orange-500"></a>
-                  <a onClick={()=>setOpenNav(false)} href="#faq" className="text-lg font-semibold text-blue-500 transition-all hover:text-orange-500">Faq</a>
+                  <a onClick={()=>setOpenNav(false)} href="#faq" className="text-lg font-semibold text-blue-500 transition-all hover:text-orange-500">{i18n('homeDownloadApp.howTheAppWorks')}</a>
                 </div>
               </div>
           }
@@ -53,7 +54,7 @@ const Navbar = ({logo}) => {
 
           <div className="flex justify-around w-2/5 mr-12 lg:visible sm:invisible">
               <a href="#product" className="text-lg font-semibold text-blue-500 transition-all hover:text-orange-500">Download</a>
-              <a href="#faq" className="text-lg font-semibold text-blue-500 transition-all hover:text-orange-500">How it works</a>
+              <a href="#faq" className="text-lg font-semibold text-blue-500 transition-all hover:text-orange-500">{i18n('homeDownloadApp.howTheAppWorks')}</a>
           </div>
 
     </div>

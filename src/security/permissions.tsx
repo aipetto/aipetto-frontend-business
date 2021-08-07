@@ -39,6 +39,18 @@ class Permissions {
         ],
       },
 
+      fieldIsDisplayedOnlyForAipettoTeam: {
+        id: 'fieldIsDisplayedDependOnRole',
+        allowedRoles: [
+          roles.aipettoAdmin,
+          roles.aipettoManager,
+          roles.aipettoEditor
+        ],
+        allowedPlans: [
+          plans.free, plans.premium
+        ],
+      },
+
       tenantEdit: {
         id: 'tenantEdit',
         allowedRoles: [roles.aipettoAdmin],

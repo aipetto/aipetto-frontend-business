@@ -304,12 +304,96 @@ function CustomerForm(props) {
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <ImagesFormItem
+              name="customerProfileImage"
+              label={i18n('entities.customer.fields.customerProfileImage')}
+              required={false}
+              storage={Storage.values.customerCustomerProfileImage}
+              max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+              name="prospectStatus"
+              label={i18n('entities.customer.fields.prospectStatus')}
+              hint={i18n('entities.customer.hints.prospectStatus')}
+              options={customerEnumerators.prospectStatus.map(
+                  (value) => ({
+                    value,
+                    label: i18n(
+                        `entities.customer.enumerators.prospectStatus.${value}`,
+                    ),
+                  }),
+              )}
+              required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SelectFormItem
+              name="customerStatus"
+              label={i18n('entities.customer.fields.customerStatus')}
+              hint={i18n('entities.customer.hints.customerStatus')}
+              options={customerEnumerators.customerStatus.map(
+                  (value) => ({
+                    value,
+                    label: i18n(
+                        `entities.customer.enumerators.customerStatus.${value}`,
+                    ),
+                  }),
+              )}
+              required={false}
+          />
+        </div>
         <div className="w-full sm:w-md md:w-md lg:w-md">
           <InputFormItem
             name="name"
             label={i18n('entities.customer.fields.name')}
             required={true}
           autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+              name="surname"
+              label={i18n('entities.customer.fields.surname')}
+              required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+              name="email"
+              label={i18n('entities.customer.fields.email')}
+              required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+              name="whatsApp"
+              label={i18n('entities.customer.fields.whatsApp')}
+              required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+              name="facebook"
+              label={i18n('entities.customer.fields.facebook')}
+              required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+              name="instagram"
+              label={i18n('entities.customer.fields.instagram')}
+              required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <CountryAutocompleteFormItem
+              name="country"
+              label={i18n('entities.customer.fields.country')}
+              required={false}
+              showCreate={!props.modal}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -324,7 +408,7 @@ function CustomerForm(props) {
           <InputFormItem
             name="uniqueCustomIdentifier"
             label={i18n('entities.customer.fields.uniqueCustomIdentifier')}
-            required={true}
+            required={false}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -333,28 +417,6 @@ function CustomerForm(props) {
             label={i18n('entities.customer.fields.userId')}
             required={false}
             showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <SelectFormItem
-            name="source"
-            label={i18n('entities.customer.fields.source')}
-            options={customerEnumerators.source.map(
-              (value) => ({
-                value,
-                label: i18n(
-                  `entities.customer.enumerators.source.${value}`,
-                ),
-              }),
-            )}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="surname"
-            label={i18n('entities.customer.fields.surname')}
-            required={false}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -381,13 +443,6 @@ function CustomerForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
-            name="whatsApp"
-            label={i18n('entities.customer.fields.whatsApp')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
             name="smsPhoneNumber"
             label={i18n('entities.customer.fields.smsPhoneNumber')}
             required={false}
@@ -409,9 +464,9 @@ function CustomerForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
-            name="email"
-            label={i18n('entities.customer.fields.email')}
-            required={false}
+              name="addressStreetComplement"
+              label={i18n('entities.customer.fields.addressStreetComplement')}
+              required={false}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -433,14 +488,6 @@ function CustomerForm(props) {
             name="state"
             label={i18n('entities.customer.fields.state')}
             required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <CountryAutocompleteFormItem
-            name="country"
-            label={i18n('entities.customer.fields.country')}
-            required={false}
-            showCreate={!props.modal}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -487,6 +534,20 @@ function CustomerForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
+              name="shippingAddressStreetNumber"
+              label={i18n('entities.customer.fields.shippingAddressStreetNumber')}
+              required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+              name="shippingAddressStreetComplement"
+              label={i18n('entities.customer.fields.shippingAddressStreetComplement')}
+              required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
             name="shippingAddressCity"
             label={i18n('entities.customer.fields.shippingAddressCity')}
             required={false}
@@ -524,38 +585,6 @@ function CustomerForm(props) {
           <InputFormItem
             name="longitude"
             label={i18n('entities.customer.fields.longitude')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <SelectFormItem
-            name="prospectStatus"
-            label={i18n('entities.customer.fields.prospectStatus')}
-          hint={i18n('entities.customer.hints.prospectStatus')}
-            options={customerEnumerators.prospectStatus.map(
-              (value) => ({
-                value,
-                label: i18n(
-                  `entities.customer.enumerators.prospectStatus.${value}`,
-                ),
-              }),
-            )}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <SelectFormItem
-            name="customerStatus"
-            label={i18n('entities.customer.fields.customerStatus')}
-          hint={i18n('entities.customer.hints.customerStatus')}
-            options={customerEnumerators.customerStatus.map(
-              (value) => ({
-                value,
-                label: i18n(
-                  `entities.customer.enumerators.customerStatus.${value}`,
-                ),
-              }),
-            )}
             required={false}
           />
         </div>
@@ -604,52 +633,16 @@ function CustomerForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
-            name="addressStreetComplement"
-            label={i18n('entities.customer.fields.addressStreetComplement')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
             name="billingAddressStreetComplement"
             label={i18n('entities.customer.fields.billingAddressStreetComplement')}
             required={false}
           />
         </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="shippingAddressStreetComplement"
-            label={i18n('entities.customer.fields.shippingAddressStreetComplement')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <ImagesFormItem
-            name="customerProfileImage"
-            label={i18n('entities.customer.fields.customerProfileImage')}
-            required={false}
-            storage={Storage.values.customerCustomerProfileImage}
-            max={undefined}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="facebook"
-            label={i18n('entities.customer.fields.facebook')}
-            required={false}
-          />
-        </div>
+
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
             name="linkedin"
             label={i18n('entities.customer.fields.linkedin')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="instagram"
-            label={i18n('entities.customer.fields.instagram')}
             required={false}
           />
         </div>

@@ -50,6 +50,13 @@ const HomePage = (props) => {
             img: i18n('homeDownloadApp.step5.img'),
             alternate: false,
         },
+        step6: {
+            title: i18n('homeDownloadApp.step6.title'),
+            heading: i18n('homeDownloadApp.step6.heading'),
+            description: i18n('homeDownloadApp.step6.description'),
+            img: i18n('homeDownloadApp.step6.img'),
+            alternate: true,
+        },
         bottomLead: {
             actionText: 'Download the app.',
             description: 'Available on your favourite store.',
@@ -73,7 +80,7 @@ const HomePage = (props) => {
 
                 <div id="divider" className="rounded-full ring-2 ring-gray-200 lg:w-1/2 lg:mx-auto "></div>
 
-                <div id="faq" className="pt-20 mb-20 text-3xl font-semibold text-center text-blue-800 lg:font-bold">How the app works </div>
+                <div id="faq" className="pt-20 mb-20 text-3xl font-semibold text-center text-blue-800 lg:font-bold">{i18n('homeDownloadApp.howTheAppWorks')}</div>
 
                 <Step
                     title={data.step1.title}
@@ -111,6 +118,14 @@ const HomePage = (props) => {
                     description={data.step5.description}
                     img={data.step5.img}
                     alternate={data.step5.alternate}
+                />
+
+                <Step
+                    title={data.step6.title}
+                    heading={data.step6.heading}
+                    description={data.step6.description}
+                    img={data.step6.img}
+                    alternate={data.step6.alternate}
                 />
 
                 <BottomLead
