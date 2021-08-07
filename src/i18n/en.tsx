@@ -72,7 +72,7 @@ const en = {
       step6: {
           title: 'Reservation Booked!',
           heading: "The business will confirm it, then just bring or wait for the taxi dog arrive",
-          description: "You'll receive a push notification and email",
+          description: "You let you know via push notification and email",
           img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
       },
       bottomLead: {

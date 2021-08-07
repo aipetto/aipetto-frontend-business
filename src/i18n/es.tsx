@@ -39,18 +39,18 @@ const es = {
         extraActionText: 'App Store',
         step1: {
             title: 'Creá tu cuenta',
-            heading: 'Creá/Entrar a una cuenta existente para empezar',
-            description: 'Una cuenta es creada con un correo y una contraseña deseada',
+            heading: 'Creá/Entrá a una cuenta existente para empezar',
+            description: 'Una cuenta es creada con un correo y una contraseña',
             img: '/images/app-screenshots/pt-BR/pt_login.jpg',
         },
         step2: {
-            title: 'Elija un servicio',
+            title: 'Eligí un servicio',
             heading: 'Encontrá todos los lugares más cercanos que ofrecen el servicio',
             description: 'Aprovechá promociones especiales',
             img: '/images/app-screenshots/pt-BR/pt_pet_services.jpg'
         },
         step3: {
-            title: 'Mires más informaciones',
+            title: 'Información del negócio',
             heading: "Agendá una reserva",
             description: "Sencillo y rápido",
             img: '/images/app-screenshots/pt-BR/pt_pet_business_profile.jpg',
@@ -63,18 +63,18 @@ const es = {
         },
         step5: {
             title: 'Confirmar reserva',
-            heading: "Agregue los últimos detalles del pet y de contacto",
+            heading: "Agregá los últimos detalles del pet y de contacto",
             description: "Estás a un paso de reservar",
             img: '/images/app-screenshots/pt-BR/pt_pet_reservation_form.jpg',
         },
         step6: {
             title: '¡Reserva agendada!',
             heading: "El negocio irá confirmar, entonces sólo queda traer tu mascota o esperar el taxi dog llegar",
-            description: "Recibirás un push notification y correo",
+            description: "Te avisamos por push notification y correo",
             img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
         },
         bottomLead: {
-            actionText: 'Descarga la app',
+            actionText: 'Descargá la app',
             description: 'Disponible en tu tienda favorita',
             mainActionText: 'Playstore',
             extraActionText: 'App Store',

@@ -121,11 +121,11 @@ const ptBR = {
       step6: {
           title: 'Reservation Booked!',
           heading: "O negócio irá confirmar, então é só trazer seu bichinho ou esperar o taxi dog chegar",
-          description: "Receberá um push notification e email",
+          description: "Te avisamos por push notification e email",
           img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
       },
       bottomLead: {
-          actionText: 'Download da app',
+          actionText: 'Faça download da app',
           description: 'Disponível na sua loja favorita.',
           mainActionText: 'Playstore',
           extraActionText: 'App Store',

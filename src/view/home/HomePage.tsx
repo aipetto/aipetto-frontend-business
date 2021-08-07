@@ -58,10 +58,10 @@ const HomePage = (props) => {
             alternate: true,
         },
         bottomLead: {
-            actionText: 'Download the app.',
-            description: 'Available on your favourite store.',
-            mainActionText: 'Playstore',
-            extraActionText: 'App Store',
+            actionText: i18n('homeDownloadApp.bottomLead.actionText'),
+            description: i18n('homeDownloadApp.bottomLead.description'),
+            mainActionText: i18n('homeDownloadApp.bottomLead.mainActionText'),
+            extraActionText: i18n('homeDownloadApp.bottomLead.extraActionText'),
         },
     }
 

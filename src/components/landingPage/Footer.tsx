@@ -1,5 +1,4 @@
 import React from "react";
-import {faHistory} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faInstagram} from "@fortawesome/free-brands-svg-icons";
 import I18nFlags from "../../view/layout/I18nFlags";
@@ -14,14 +13,14 @@ const Footer = ({logo}) => {
         <a href="https://www.facebook.com/aipetto" target="_blank">
             <FontAwesomeIcon
                 className="mr-2"
-                size='lg'
+                size='4x'
                 icon={faFacebook}
             />
         </a>
         <a href="https://www.instagram.com/aipetto_network" target="_blank">
             <FontAwesomeIcon
                 className="mr-2"
-                size='lg'
+                size='4x'
                 icon={faInstagram}
             />
         </a>
