@@ -186,7 +186,7 @@ function BusinessForm(props) {
             name="businessID"
             label={i18n('entities.business.fields.businessID')}
             required={true}
-          autoFocus
+            autoFocus
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -194,7 +194,7 @@ function BusinessForm(props) {
             name="name"
             label={i18n('entities.business.fields.name')}
             required={false}
-          autoFocus
+            autoFocus
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">

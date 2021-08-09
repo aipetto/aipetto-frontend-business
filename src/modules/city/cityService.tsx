@@ -84,10 +84,8 @@ export default class CityService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/city`,
+      `/city`,
       {
         params,
       },
@@ -102,10 +100,8 @@ export default class CityService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/city/autocomplete`,
+      `/city/autocomplete`,
       {
         params,
       },

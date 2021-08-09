@@ -84,10 +84,8 @@ export default class ServiceReservationService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/service-reservation`,
+      `/service-reservation`,
       {
         params,
       },
@@ -102,10 +100,8 @@ export default class ServiceReservationService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/service-reservation/autocomplete`,
+      `/service-reservation/autocomplete`,
       {
         params,
       },

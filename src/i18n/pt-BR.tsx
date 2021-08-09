@@ -869,6 +869,7 @@ const ptBR = {
           'contactEmail': 'Email',
           'addressStreet': 'Endereço',
           'addressStreetNumber': 'Número de Endereço',
+          'streetComplement': 'Complemento',
           'addressPostCode': 'Código Posta',
           'city': 'Cidade',
           'state': 'Estado',

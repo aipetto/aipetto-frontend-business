@@ -84,10 +84,8 @@ export default class StateService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/state`,
+      `/state`,
       {
         params,
       },
@@ -102,10 +100,8 @@ export default class StateService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/state/autocomplete`,
+      `/state/autocomplete`,
       {
         params,
       },

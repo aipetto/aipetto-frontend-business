@@ -8,10 +8,8 @@ export default class LanguagesService {
       data,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.put(
-      `/tenant/${tenantId}/languages/${id}`,
+      `/tenant/languages/${id}`,
       body,
     );
 
@@ -84,10 +82,8 @@ export default class LanguagesService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/languages`,
+      `/languages`,
       {
         params,
       },
@@ -102,10 +98,8 @@ export default class LanguagesService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/languages/autocomplete`,
+      `/languages/autocomplete`,
       {
         params,
       },

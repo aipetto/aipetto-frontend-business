@@ -866,7 +866,7 @@ const en = {
           'contactEmail': 'ContactEmail',
           'addressStreet': 'AddressStreet',
           'addressStreetNumber': 'AddressStreetNumber',
-          'streetComplement': 'StreetComplement',
+          'streetComplement': 'Street Complement',
           'addressPostCode': 'AddressPostCode',
           'city': 'City',
           'state': 'State',

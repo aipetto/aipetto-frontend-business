@@ -8,10 +8,8 @@ export default class BreedService {
       data,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.put(
-      `/tenant/${tenantId}/breed/${id}`,
+      `/tenant/breed/${id}`,
       body,
     );
 
@@ -84,10 +82,8 @@ export default class BreedService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/breed`,
+      `/breed`,
       {
         params,
       },
@@ -102,10 +98,8 @@ export default class BreedService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/breed/autocomplete`,
+      `/breed/autocomplete`,
       {
         params,
       },

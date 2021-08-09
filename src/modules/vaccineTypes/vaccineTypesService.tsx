@@ -8,10 +8,8 @@ export default class VaccineTypesService {
       data,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.put(
-      `/tenant/${tenantId}/vaccine-types/${id}`,
+      `/tenant/vaccine-types/${id}`,
       body,
     );
 
@@ -84,10 +82,8 @@ export default class VaccineTypesService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/vaccine-types`,
+      `/vaccine-types`,
       {
         params,
       },
@@ -102,10 +98,8 @@ export default class VaccineTypesService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/vaccine-types/autocomplete`,
+      `/vaccine-types/autocomplete`,
       {
         params,
       },

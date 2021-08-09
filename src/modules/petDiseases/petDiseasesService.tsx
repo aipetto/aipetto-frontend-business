@@ -87,7 +87,7 @@ export default class PetDiseasesService {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
-      `/tenant/${tenantId}/pet-diseases`,
+      `/pet-diseases`,
       {
         params,
       },
@@ -105,7 +105,7 @@ export default class PetDiseasesService {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
-      `/tenant/${tenantId}/pet-diseases/autocomplete`,
+      `/pet-diseases/autocomplete`,
       {
         params,
       },

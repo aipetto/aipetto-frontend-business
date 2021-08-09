@@ -8,10 +8,8 @@ export default class CountryService {
       data,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.put(
-      `/tenant/${tenantId}/country/${id}`,
+      `/tenant/country/${id}`,
       body,
     );
 
@@ -84,10 +82,8 @@ export default class CountryService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/country`,
+      `/country`,
       {
         params,
       },
@@ -102,10 +98,8 @@ export default class CountryService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/country/autocomplete`,
+      `/country/autocomplete`,
       {
         params,
       },

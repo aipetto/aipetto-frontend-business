@@ -8,10 +8,8 @@ export default class BusinessCategoryService {
       data,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.put(
-      `/tenant/${tenantId}/business-category/${id}`,
+      `/tenant/business-category/${id}`,
       body,
     );
 
@@ -84,10 +82,8 @@ export default class BusinessCategoryService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/business-category`,
+      `/business-category`,
       {
         params,
       },
@@ -102,10 +98,8 @@ export default class BusinessCategoryService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/business-category/autocomplete`,
+      `/business-category/autocomplete`,
       {
         params,
       },

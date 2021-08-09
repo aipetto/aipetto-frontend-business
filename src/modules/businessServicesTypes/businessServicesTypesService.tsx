@@ -84,10 +84,8 @@ export default class BusinessServicesTypesService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/business-services-types`,
+      `/business-services-types`,
       {
         params,
       },
@@ -97,15 +95,17 @@ export default class BusinessServicesTypesService {
   }
 
   static async listAutocomplete(query, limit) {
+    const test = {
+      language: "6096a50fb57043bb3ae7b537"
+    };
+
     const params = {
       query,
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/business-services-types/autocomplete`,
+      `/business-services-types/autocomplete`,
       {
         params,
       },

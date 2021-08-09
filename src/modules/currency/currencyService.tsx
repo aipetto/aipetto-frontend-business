@@ -8,10 +8,8 @@ export default class CurrencyService {
       data,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.put(
-      `/tenant/${tenantId}/currency/${id}`,
+      `/tenant/currency/${id}`,
       body,
     );
 
@@ -84,10 +82,8 @@ export default class CurrencyService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/currency`,
+      `/currency`,
       {
         params,
       },
@@ -102,10 +98,8 @@ export default class CurrencyService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/currency/autocomplete`,
+      `/currency/autocomplete`,
       {
         params,
       },

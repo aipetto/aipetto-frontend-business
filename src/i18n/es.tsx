@@ -865,6 +865,7 @@ const es = {
                 'contactEmail': 'Correo de contacto',
                 'addressStreet': 'Calle',
                 'addressStreetNumber': 'Número',
+                'streetComplement': 'Complemento',
                 'addressPostCode': 'Código postal',
                 'city': 'Ciudad',
                 'state': 'Provincia',
@@ -1698,7 +1699,7 @@ const es = {
             fields: {
                 id: 'Id',
                 'name': 'Nombre',
-                'symbol': 'Símbolol',
+                'symbol': 'Símbolo',
                 'active': 'Activo',
                 createdAt: 'Creado el',
                 updatedAt: 'Actualizado el',
@@ -2460,7 +2461,7 @@ const es = {
             fields: {
                 id: 'Id',
                 'service': 'Servicio',
-                'businessId': 'Id del servicio',
+                'businessId': 'ID del negocio',
                 'servicePriceRange': 'Costo',
                 'servicePrice': 'Valor',
                 'currency': 'Currency',

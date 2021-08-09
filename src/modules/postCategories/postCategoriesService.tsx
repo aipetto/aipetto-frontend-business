@@ -84,10 +84,8 @@ export default class PostCategoriesService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/post-categories`,
+      `/post-categories`,
       {
         params,
       },
@@ -102,10 +100,8 @@ export default class PostCategoriesService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/post-categories/autocomplete`,
+      `/post-categories/autocomplete`,
       {
         params,
       },

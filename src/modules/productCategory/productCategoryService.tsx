@@ -84,10 +84,8 @@ export default class ProductCategoryService {
       offset,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/product-category`,
+      `/product-category`,
       {
         params,
       },
@@ -102,10 +100,8 @@ export default class ProductCategoryService {
       limit,
     };
 
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/product-category/autocomplete`,
+      `/product-category/autocomplete`,
       {
         params,
       },
