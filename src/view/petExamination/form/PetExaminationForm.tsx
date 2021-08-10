@@ -124,7 +124,7 @@ function PetExaminationForm(props) {
           <UserAutocompleteFormItem  
             name="veterinariesResponsibleDiagnostic"
             label={i18n('entities.petExamination.fields.veterinariesResponsibleDiagnostic')}
-            required={true}
+            required={false}
             showCreate={!props.modal}
             mode="multiple"
           />

@@ -2055,13 +2055,13 @@ const es = {
         },
 
         petVaccines: {
-            name: 'Vacunas ministradas',
-            label: 'Vacunas ministradas',
-            menu: 'Vacunas ministradas',
+            name: 'Vacunas',
+            label: 'Vacunas',
+            menu: 'Vacunas',
             exporterFileName: 'Exportar Vacunas ministradas',
             list: {
-                menu: 'Vacunas ministradas',
-                title: 'Vacunas ministradas',
+                menu: 'Vacunas',
+                title: 'Vacunas',
             },
             create: {
                 success: 'Vacunas ministradas  guardado con éxito',
@@ -2080,8 +2080,8 @@ const es = {
             },
             fields: {
                 id: 'Id',
-                'name': 'Nonmbre',
-                'uniqueVetVaccineCode': 'Código único de vacuna veterinaria',
+                'name': 'Tipo Vacuna',
+                'uniqueVetVaccineCode': 'Código único de la vacuna',
                 'datetimeTakenRange': 'Fecha y hora tomada',
                 'datetimeTaken': 'Fecha y hora tomada',
                 'veterinarianID': 'ID veterinario',
@@ -2435,13 +2435,13 @@ const es = {
         },
 
         businessServicesPrices: {
-            name: 'Costos por servicio',
-            label: 'Valores por servicio',
-            menu: 'Valor del servicio',
-            exporterFileName: 'Exportar Costo por servicio',
+            name: 'Precios',
+            label: 'Precios',
+            menu: 'Precios',
+            exporterFileName: 'precios_services_export',
             list: {
-                menu: 'Costo del servicio',
-                title: 'Precio',
+                menu: 'Precios',
+                title: 'Precios',
             },
             create: {
                 success: 'Costo del servicio guardado con éxito',
@@ -3150,43 +3150,43 @@ const es = {
         },
 
         petExamination: {
-            name: 'petExamination',
-            label: 'PetExaminations',
-            menu: 'PetExaminations',
-            exporterFileName: 'petExamination_export',
+            name: 'Exámenes',
+            label: 'Exámenes',
+            menu: 'Exámenes',
+            exporterFileName: 'examenes_export',
             list: {
-                menu: 'PetExaminations',
-                title: 'PetExaminations',
+                menu: 'Exámenes',
+                title: 'Exámenes',
             },
             create: {
-                success: 'PetExamination successfully saved',
+                success: 'Examen guardado con éxito!',
             },
             update: {
-                success: 'PetExamination successfully saved',
+                success: 'Examen actualizado con éxito!',
             },
             destroy: {
-                success: 'PetExamination successfully deleted',
+                success: 'Examen borrado con éxito!',
             },
             destroyAll: {
-                success: 'PetExamination(s) successfully deleted',
+                success: 'Exámenes guardados con éxito!',
             },
             edit: {
                 title: 'Edit PetExamination',
             },
             fields: {
                 id: 'Id',
-                'petID': 'PetID',
-                'examinationInternalCode': 'ExaminationInternalCode',
-                'veterinariesResponsibleDiagnostic': 'VeterinariesResponsibleDiagnostic',
-                'businessID': 'BusinessID',
-                'language': 'Language',
-                'providersID': 'ProvidersID',
-                'statusExamination': 'StatusExamination',
-                'examinationsFiles': 'ExaminationsFiles',
-                'examinationImages': 'ExaminationImages',
-                createdAt: 'Created at',
-                updatedAt: 'Updated at',
-                createdAtRange: 'Created at',
+                'petID': 'ID de la mascota',
+                'examinationInternalCode': 'Código Interno del examen',
+                'veterinariesResponsibleDiagnostic': 'Veterinario Responsable por Diagnostico',
+                'businessID': 'ID del Negocio',
+                'language': 'Idioma',
+                'providersID': 'ID del proveedor',
+                'statusExamination': 'Status del examen',
+                'examinationsFiles': 'Archivos del examen',
+                'examinationImages': 'Imágenes del examen',
+                createdAt: 'Creado en',
+                updatedAt: 'Actualizado en',
+                createdAtRange: 'Creado en',
             },
             enumerators: {
                 'statusExamination': {
