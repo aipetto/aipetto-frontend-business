@@ -982,28 +982,28 @@ const es = {
         },
 
         businessServicesTypes: {
-            name: 'Tipos de Servicios Empresariales',
-            label: 'Tipos de Servicios Empresariales',
-            menu: 'Tipos de Servicios Empresariales',
-            exporterFileName: 'Exportar plantilla de Servicios Empresariales',
+            name: 'Tipos de Servicios',
+            label: 'Tipos de Servicios',
+            menu: 'Tipos de Servicios',
+            exporterFileName: 'Exportar Plantilla de Servicios',
             list: {
                 menu: 'Tipos de Servicios empresariales',
                 title: 'Tipos de Servicios Empresariales ',
             },
             create: {
-                success: 'Tipos de servicios empresariales guardado con éxito',
+                success: 'Tipos de servicios guardado con éxito',
             },
             update: {
-                success: 'Tipos de servicios empresariales guardado con éxito',
+                success: 'Tipos de Servicios guardado con éxito',
             },
             destroy: {
-                success: 'Tipos de Servicios Empresariales eliminado con éxito',
+                success: 'Tipos de Servicio seliminado con éxito',
             },
             destroyAll: {
-                success: 'Tipos de servicios empresariales eliminado con éxito',
+                success: 'Tipos de Servicios eliminado con éxito',
             },
             edit: {
-                title: 'Editar Tipos de Servicios Empresariales',
+                title: 'Editar Tipos de Servicios',
             },
             fields: {
                 id: 'Id',
@@ -1025,14 +1025,14 @@ const es = {
 
             },
             new: {
-                title: 'Nuevo tipo de servicio de Negocio ',
+                title: 'Tipo de Servicios',
             },
             view: {
-                title: 'Ver Tipos de Servicio de Negocio',
+                title: 'Tipos de Servicio',
             },
             importer: {
-                title: 'Importar tipos de Servicio de Negocio',
-                fileName: 'Importar plantilla de Servicio de Negocios',
+                title: 'Importar Tipos de Servicios',
+                fileName: 'Importar Plantillas de Servicios',
                 hint:
                     'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
             },

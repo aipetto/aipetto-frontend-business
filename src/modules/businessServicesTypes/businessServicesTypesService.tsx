@@ -95,6 +95,8 @@ export default class BusinessServicesTypesService {
   }
 
   static async listAutocomplete(query, limit) {
+
+    // TODO show data on autocomplete filtering by user`s language
     const test = {
       language: "6096a50fb57043bb3ae7b537"
     };
