@@ -254,7 +254,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'businessId': 'ID Negócio',
           'uniqueCustomIdentifier': 'Identificador Único para o Cliente',
           'userId': 'Id do Usuário',
@@ -2067,37 +2067,37 @@ const ptBR = {
       },
 
     petVaccines: {
-        name: 'PetVaccines',
-        label: 'PetVaccines',
-        menu: 'PetVaccines',
-        exporterFileName: 'PetVaccines_exportados',
+        name: 'Vacinas',
+        label: 'Vacinas',
+        menu: 'Vacinas',
+        exporterFileName: 'vacinas_exportados',
         list: {
-          menu: 'PetVaccines',
-          title: 'PetVaccines',
+          menu: 'Vacinas',
+          title: 'Vacinas',
         },
         create: {
-          success: 'PetVaccines salvo com sucesso',
+          success: 'Vacina salva com sucesso',
         },
         update: {
-          success: 'PetVaccines salvo com sucesso',
+          success: 'Vacina salva com sucesso',
         },
         destroy: {
-          success: 'PetVaccines deletado com sucesso',
+          success: 'Vacina deletada com sucesso',
         },
         destroyAll: {
-          success: 'PetVaccines(s) deletado com sucesso',
+          success: 'Vacina(s) deletada com sucesso',
         },
         edit: {
-          title: 'Editar PetVaccines',
+          title: 'Editar Vacina',
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
-          'uniqueVetVaccineCode': 'UniqueVetVaccineCode',
-          'datetimeTakenRange': 'DatetimeTaken',
-          'datetimeTaken': 'DatetimeTaken',
-          'veterinarianID': 'VeterinarianID',
-          'placeTaken': 'PlaceTaken',
+          'name': 'Nome',
+          'uniqueVetVaccineCode': 'Código Único da Vacina',
+          'datetimeTakenRange': 'Faixa de data e hora aplicada',
+          'datetimeTaken': 'Data e hora aplicada',
+          'veterinarianID': 'ID do veterinário',
+          'placeTaken': 'Lugar de aplicação',
           'businessID': 'ID Negócio',
           'country': 'País',
           createdAt: 'Criado em',
