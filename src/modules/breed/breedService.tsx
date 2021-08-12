@@ -67,10 +67,8 @@ export default class BreedService {
   }
 
   static async find(id) {
-    const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.get(
-      `/tenant/${tenantId}/breed/${id}`,
+      `/breed/${id}`,
     );
 
     return response.data;

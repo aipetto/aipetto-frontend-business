@@ -1,13 +1,10 @@
-import { faSave } from '@fortawesome/free-regular-svg-icons';
-import {
-  faTimes,
-  faUndo,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { yupResolver } from '@hookform/resolvers/yup';
-import React, { useState } from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import { i18n } from 'src/i18n';
+import {faSave} from '@fortawesome/free-regular-svg-icons';
+import {faTimes, faUndo,} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {yupResolver} from '@hookform/resolvers/yup';
+import React, {useState} from 'react';
+import {FormProvider, useForm} from 'react-hook-form';
+import {i18n} from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
@@ -15,8 +12,10 @@ import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
-import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
-import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
+import BusinessCategoryAutocompleteFormItem
+  from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
+import BusinessServicesTypesAutocompleteFormItem
+  from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
 import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
@@ -175,6 +174,13 @@ function ProvidersForm(props) {
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+              name="providerID"
+              label={i18n('entities.providers.fields.providerID')}
+              required={true}
+          />
+        </div>
         <div className="w-full sm:w-md md:w-md lg:w-md">
           <InputFormItem
             name="name"
@@ -189,13 +195,6 @@ function ProvidersForm(props) {
             label={i18n('entities.providers.fields.businessID')}
             required={false}
             showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="providerID"
-            label={i18n('entities.providers.fields.providerID')}
-            required={true}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
