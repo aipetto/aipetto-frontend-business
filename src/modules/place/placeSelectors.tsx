@@ -58,10 +58,22 @@ const selectPermissionToDestroy = createSelector(
     ),
 );
 
+const selectPermissionToShowField = createSelector(
+    [
+        authSelectors.selectCurrentTenant,
+        authSelectors.selectCurrentUser,
+    ],
+    (currentTenant, currentUser) =>
+        new PermissionChecker(currentTenant, currentUser).match(
+            Permissions.values.fieldIsDisplayedOnlyForAipettoTeam,
+        ),
+);
+
 const placeSelectors = {
   selectPermissionToRead,
   selectPermissionToEdit,
   selectPermissionToCreate,
+  selectPermissionToShowField,
   selectPermissionToDestroy,
   selectPermissionToImport,
 };

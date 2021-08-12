@@ -1,21 +1,17 @@
-import {
-  faSearch,
-  faUndo,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';    
-import { i18n } from 'src/i18n';
+import {faSearch, faUndo,} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {i18n} from 'src/i18n';
 import actions from 'src/modules/city/list/cityListActions';
 import selectors from 'src/modules/city/list/cityListSelectors';
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useForm, FormProvider } from 'react-hook-form';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {FormProvider, useForm} from 'react-hook-form';
 import yupFilterSchemas from 'src/modules/shared/yup/yupFilterSchemas';
 import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
+import {yupResolver} from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
-import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
@@ -123,14 +119,6 @@ function CityListFilter(props) {
               <InputFormItem
                 name="name"
                 label={i18n('entities.city.fields.name')}      
-              />
-              <InputRangeFormItem
-                name="latitudeRange"
-                label={i18n('entities.city.fields.latitudeRange')}      
-              />
-              <InputRangeFormItem
-                name="longitudeRange"
-                label={i18n('entities.city.fields.longitudeRange')}      
               />
             </div>
 

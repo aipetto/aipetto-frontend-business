@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {yupResolver} from '@hookform/resolvers/yup';
 import React, {useState} from 'react';
 import {FormProvider, useForm} from 'react-hook-form';
-import {i18n} from 'src/i18n';
+import {getLanguageCode, i18n} from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
@@ -22,6 +22,13 @@ import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAu
 import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 import * as yup from 'yup';
+import {getGeocode, getLatLng} from "use-places-autocomplete";
+import {Libraries} from "@react-google-maps/api/dist/utils/make-load-script-url";
+import {useLoadScript} from "@react-google-maps/api";
+import config from "../../../config";
+import Spinner from "../../shared/Spinner";
+import {useSelector} from "react-redux";
+import providersSelectors from "../../../modules/providers/providersSelectors";
 
 const schema = yup.object().shape({
   name: yupFormSchemas.string(
@@ -125,6 +132,17 @@ const schema = yup.object().shape({
 function ProvidersForm(props) {
   const { saveLoading } = props;
 
+  const libraries: Libraries = ["places"];
+  const { isLoaded, loadError} = useLoadScript({
+    googleMapsApiKey: config.credentialsGoogleMapsPlaceAPI,
+    libraries,
+    language: getLanguageCode()
+  });
+
+  const hasPermissionToReadField = useSelector(
+      providersSelectors.selectPermissionToShowField,
+  );
+
   const [initialValues] = useState(() => {
     const record = props.record || {};
 
@@ -161,8 +179,15 @@ function ProvidersForm(props) {
     defaultValues: initialValues,
   });
 
+  async function getLatLngFromAddress(addressAndNumber){
+    const result = await getGeocode({address: addressAndNumber});
+    return await getLatLng(result[0]);
+  }
+
   const onSubmit = (values) => {
-    props.onSubmit(props.record?.id, values);
+    getLatLngFromAddress(values.addressStreet + ' ' + values.addressStreetNumber + ' ' + values.addressCity + ' ' + values.addressCountry).then(latLng => {
+      props.onSubmit(props.record?.id, Object.assign(values, {latitude: latLng.lat, longitude: latLng.lng}));
+    });
   };
 
   const onReset = () => {
@@ -171,231 +196,253 @@ function ProvidersForm(props) {
     });
   };
 
-  return (
-    <FormProvider {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-              name="providerID"
-              label={i18n('entities.providers.fields.providerID')}
+
+  const displayOnlyAdminAipettoFields = () => {
+
+    if (hasPermissionToReadField) {
+      return (
+          <>
+            <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+              <InputFormItem
+                  name="latitude"
+                  label={i18n('entities.providers.fields.latitude')}
+                  required={false}
+              />
+            </div>
+            <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+              <InputFormItem
+                  name="longitude"
+                  label={i18n('entities.providers.fields.longitude')}
+                  required={false}
+              />
+            </div>
+          </>
+      );
+    }
+  }
+
+  const renderForm = () => {
+
+    return (
+      <FormProvider {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+                name="providerID"
+                label={i18n('entities.providers.fields.providerID')}
+                required={true}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md">
+            <InputFormItem
+              name="name"
+              label={i18n('entities.providers.fields.name')}
               required={true}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md">
-          <InputFormItem
-            name="name"
-            label={i18n('entities.providers.fields.name')}
-            required={true}
-          autoFocus
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <BusinessAutocompleteFormItem  
-            name="businessID"
-            label={i18n('entities.providers.fields.businessID')}
-            required={false}
-            showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <BusinessCategoryAutocompleteFormItem  
-            name="category"
-            label={i18n('entities.providers.fields.category')}
-            required={false}
-            showCreate={!props.modal}
-            mode="multiple"
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <BusinessServicesTypesAutocompleteFormItem  
-            name="serviceTypes"
-            label={i18n('entities.providers.fields.serviceTypes')}
-            required={false}
-            showCreate={!props.modal}
-            mode="multiple"
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="contactName"
-            label={i18n('entities.providers.fields.contactName')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="contactPhone"
-            label={i18n('entities.providers.fields.contactPhone')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="contactWhatsApp"
-            label={i18n('entities.providers.fields.contactWhatsApp')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="addressStreet"
-            label={i18n('entities.providers.fields.addressStreet')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="addressStreetNumber"
-            label={i18n('entities.providers.fields.addressStreetNumber')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="addressPostCode"
-            label={i18n('entities.providers.fields.addressPostCode')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <CityAutocompleteFormItem  
-            name="city"
-            label={i18n('entities.providers.fields.city')}
-            required={false}
-            showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <StateAutocompleteFormItem  
-            name="state"
-            label={i18n('entities.providers.fields.state')}
-            required={false}
-            showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <CountryAutocompleteFormItem  
-            name="country"
-            label={i18n('entities.providers.fields.country')}
-            required={false}
-            showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="email"
-            label={i18n('entities.providers.fields.email')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="latitude"
-            label={i18n('entities.providers.fields.latitude')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="longitude"
-            label={i18n('entities.providers.fields.longitude')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="basePricePerService"
-            label={i18n('entities.providers.fields.basePricePerService')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <CurrencyAutocompleteFormItem
-            name="currency"
-            label={i18n('entities.providers.fields.currency')}
-            required={false}
-            showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <ImagesFormItem
-            name="profileImage"
-            label={i18n('entities.providers.fields.profileImage')}
-            required={false}
-            storage={Storage.values.providersProfileImage}
-            max={undefined}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <FilesFormItem
-            name="attachedDoc"
-            label={i18n('entities.providers.fields.attachedDoc')}
-            required={false}
-            storage={Storage.values.providersAttachedDoc}
-            max={undefined}
-            formats={undefined}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <LanguagesAutocompleteFormItem
-            name="language"
-            label={i18n('entities.providers.fields.language')}
-            required={false}
-            showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <SwitchFormItem
-            name="isIndependent"
-            label={i18n('entities.providers.fields.isIndependent')}
-          />
-        </div>
-
-        <div className="pt-4">
-          <button
-            className="mr-2 mb-2 text-sm disabled:opacity-50 disabled:cursor-default px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-            disabled={saveLoading}
-            type="button"
-            onClick={form.handleSubmit(onSubmit)}
-          >
-            <FontAwesomeIcon
-              className="mr-2"
-              icon={faSave}
+            autoFocus
             />
-            {i18n('common.save')}
-          </button>
-
-          <button
-            disabled={saveLoading}
-            onClick={onReset}
-            className="mr-2 mb-2 text-sm disabled:opacity-50 disabled:cursor-default px-4 py-2 tracking-wide dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-600 dark:text-white text-gray-700 border border-gray-300 transition-colors duration-200 transform bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-            type="button"
-          >
-            <FontAwesomeIcon
-              className="mr-2"
-              icon={faUndo}
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <BusinessAutocompleteFormItem
+              name="businessID"
+              label={i18n('entities.providers.fields.businessID')}
+              required={false}
+              showCreate={!props.modal}
             />
-            {i18n('common.reset')}
-          </button>
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <BusinessCategoryAutocompleteFormItem
+              name="category"
+              label={i18n('entities.providers.fields.category')}
+              required={false}
+              showCreate={!props.modal}
+              mode="multiple"
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <BusinessServicesTypesAutocompleteFormItem
+              name="serviceTypes"
+              label={i18n('entities.providers.fields.serviceTypes')}
+              required={false}
+              showCreate={!props.modal}
+              mode="multiple"
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+              name="contactName"
+              label={i18n('entities.providers.fields.contactName')}
+              required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+              name="contactPhone"
+              label={i18n('entities.providers.fields.contactPhone')}
+              required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+              name="contactWhatsApp"
+              label={i18n('entities.providers.fields.contactWhatsApp')}
+              required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+              name="addressStreet"
+              label={i18n('entities.providers.fields.addressStreet')}
+              required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+              name="addressStreetNumber"
+              label={i18n('entities.providers.fields.addressStreetNumber')}
+              required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+              name="addressPostCode"
+              label={i18n('entities.providers.fields.addressPostCode')}
+              required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <CityAutocompleteFormItem
+              name="city"
+              label={i18n('entities.providers.fields.city')}
+              required={false}
+              showCreate={!props.modal}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <StateAutocompleteFormItem
+              name="state"
+              label={i18n('entities.providers.fields.state')}
+              required={false}
+              showCreate={!props.modal}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <CountryAutocompleteFormItem
+              name="country"
+              label={i18n('entities.providers.fields.country')}
+              required={false}
+              showCreate={!props.modal}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+              name="email"
+              label={i18n('entities.providers.fields.email')}
+              required={false}
+            />
+          </div>
 
-          {props.onCancel ? (
+
+
+          {displayOnlyAdminAipettoFields()}
+
+
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+              name="basePricePerService"
+              label={i18n('entities.providers.fields.basePricePerService')}
+              required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <CurrencyAutocompleteFormItem
+              name="currency"
+              label={i18n('entities.providers.fields.currency')}
+              required={false}
+              showCreate={!props.modal}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <ImagesFormItem
+              name="profileImage"
+              label={i18n('entities.providers.fields.profileImage')}
+              required={false}
+              storage={Storage.values.providersProfileImage}
+              max={undefined}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <FilesFormItem
+              name="attachedDoc"
+              label={i18n('entities.providers.fields.attachedDoc')}
+              required={false}
+              storage={Storage.values.providersAttachedDoc}
+              max={undefined}
+              formats={undefined}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <LanguagesAutocompleteFormItem
+              name="language"
+              label={i18n('entities.providers.fields.language')}
+              required={false}
+              showCreate={!props.modal}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <SwitchFormItem
+              name="isIndependent"
+              label={i18n('entities.providers.fields.isIndependent')}
+            />
+          </div>
+
+          <div className="pt-4">
+            <button
+              className="mr-2 mb-2 text-sm disabled:opacity-50 disabled:cursor-default px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+              disabled={saveLoading}
+              type="button"
+              onClick={form.handleSubmit(onSubmit)}
+            >
+              <FontAwesomeIcon
+                className="mr-2"
+                icon={faSave}
+              />
+              {i18n('common.save')}
+            </button>
+
             <button
               disabled={saveLoading}
-              onClick={() => props.onCancel()}
+              onClick={onReset}
               className="mr-2 mb-2 text-sm disabled:opacity-50 disabled:cursor-default px-4 py-2 tracking-wide dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-600 dark:text-white text-gray-700 border border-gray-300 transition-colors duration-200 transform bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
               type="button"
             >
               <FontAwesomeIcon
                 className="mr-2"
-                icon={faTimes}
+                icon={faUndo}
               />
-              {i18n('common.cancel')}
+              {i18n('common.reset')}
             </button>
-          ) : null}
-        </div>
-      </form>
-    </FormProvider>
-  );
+
+            {props.onCancel ? (
+              <button
+                disabled={saveLoading}
+                onClick={() => props.onCancel()}
+                className="mr-2 mb-2 text-sm disabled:opacity-50 disabled:cursor-default px-4 py-2 tracking-wide dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-600 dark:text-white text-gray-700 border border-gray-300 transition-colors duration-200 transform bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                type="button"
+              >
+                <FontAwesomeIcon
+                  className="mr-2"
+                  icon={faTimes}
+                />
+                {i18n('common.cancel')}
+              </button>
+            ) : null}
+          </div>
+        </form>
+      </FormProvider>
+    );
+  }
+
+  return isLoaded ? renderForm() : <Spinner />
 }
 
 export default ProvidersForm;
