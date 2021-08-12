@@ -72,7 +72,7 @@ export default class BusinessServicesTypesService {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
-      `/tenant/${tenantId}/business-services-types/${id}`,
+      `/business-services-types/${id}`,
     );
 
     return response.data;

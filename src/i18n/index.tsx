@@ -7,6 +7,7 @@ import {
   setDefaultLocale,
 } from 'react-datepicker';
 import { setLocale as setYupLocale } from 'yup';
+import LanguagesService from "../modules/languages/languagesService";
 
 let currentLanguageCode = '';
 
@@ -60,6 +61,14 @@ export async function init() {
   if (currentLanguageCode === 'es') {
     await initEs();
   }
+}
+
+// TODO this function when used on businessServiceTypesService for example returns undefined
+// Maybe because of the await/async promise resolution
+export async function getLanguageObjectId(){
+  const languageService = await LanguagesService.listAutocomplete({}, {});
+  const language = languageService.filter(langCode => langCode.label == getLanguageCode());
+  return language[0].id;
 }
 
 async function initEs() {
