@@ -1,5 +1,7 @@
 import authAxios from 'src/modules/shared/axios/authAxios';
 import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
+import LanguagesService from "../languages/languagesService";
+import {getLanguageCode} from "../../i18n";
 
 export default class PlaceTypeService {
   static async update(id, data) {
@@ -67,10 +69,9 @@ export default class PlaceTypeService {
   }
 
   static async find(id) {
-    const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
-      `/tenant/place-type/${id}`,
+      `/place-type/${id}`,
     );
 
     return response.data;
@@ -95,6 +96,14 @@ export default class PlaceTypeService {
   }
 
   static async listAutocomplete(query, limit) {
+
+    const languageService = await LanguagesService.listAutocomplete({}, {});
+    const language = languageService.filter(langCode => langCode.label == getLanguageCode());
+
+    query = {
+      language: language[0].id
+    };
+
     const params = {
       query,
       limit,

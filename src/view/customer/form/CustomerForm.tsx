@@ -24,6 +24,7 @@ import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/Busines
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 import * as yup from 'yup';
+import LanguagesAutocompleteFormItem from "../../languages/autocomplete/LanguagesAutocompleteFormItem";
 
 const schema = yup.object().shape({
   name: yupFormSchemas.string(
@@ -654,7 +655,7 @@ function CustomerForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <CurrencyAutocompleteFormItem
+          <LanguagesAutocompleteFormItem
             name="language"
             label={i18n('entities.customer.fields.language')}
             required={false}

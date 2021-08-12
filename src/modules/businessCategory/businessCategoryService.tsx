@@ -1,5 +1,7 @@
 import authAxios from 'src/modules/shared/axios/authAxios';
 import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
+import LanguagesService from "../languages/languagesService";
+import {getLanguageCode} from "../../i18n";
 
 export default class BusinessCategoryService {
   static async update(id, data) {
@@ -93,6 +95,14 @@ export default class BusinessCategoryService {
   }
 
   static async listAutocomplete(query, limit) {
+
+    const languageService = await LanguagesService.listAutocomplete({}, {});
+    const language = languageService.filter(langCode => langCode.label == getLanguageCode());
+
+    query = {
+      language: language[0].id
+    };
+
     const params = {
       query,
       limit,

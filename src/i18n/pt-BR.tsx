@@ -254,7 +254,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'businessId': 'ID Negócio',
           'uniqueCustomIdentifier': 'Identificador Único para o Cliente',
           'userId': 'Id do Usuário',
@@ -388,7 +388,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'description': 'Description',
           'unitPriceRange': 'Unit Price',
           'unitPrice': 'Unit Price',
@@ -512,7 +512,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'nickname': 'Nickname',
           'profileImage': 'ProfileImage',
           'birthdateRange': 'Birthdate',
@@ -803,7 +803,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'image': 'Image',
           'language': 'Idioma',
           createdAt: 'Criado em',
@@ -937,7 +937,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'placeType': 'PlaceType',
           'businessId': 'ID Negócio',
           'services': 'Services',
@@ -1013,7 +1013,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'category': 'Category',
           'language': 'Idioma',
           'serviceImage': 'ServiceImage',
@@ -1319,7 +1319,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'initials': 'Initials',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
@@ -1375,7 +1375,7 @@ const ptBR = {
         fields: {
           id: 'Id',
           'country': 'País',
-          'name': 'Name',
+          'name': 'Nome',
           'latitudeRange': 'Latitude',
           'latitude': 'Latitude',
           'longitudeRange': 'Longitude',
@@ -1433,7 +1433,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'country': 'País',
           'initials': 'Initials',
           createdAt: 'Criado em',
@@ -1654,7 +1654,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'active': 'Active',
           'languageCode': 'LanguageCode',
           createdAt: 'Criado em',
@@ -1710,7 +1710,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'symbol': 'Symbol',
           'active': 'Active',
           createdAt: 'Criado em',
@@ -1940,9 +1940,9 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'businessID': 'ID Negócio',
-          'providerID': 'ProviderID',
+          'providerID': 'Identificador para o fornecedor',
           'category': 'Category',
           'serviceTypes': 'ServiceTypes',
           'contactName': 'ContactName',
@@ -2019,7 +2019,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'country': 'País',
           'language': 'Idioma',
           'frequencyShotDosis': 'FrequencyShotDosis',
@@ -2067,37 +2067,37 @@ const ptBR = {
       },
 
     petVaccines: {
-        name: 'PetVaccines',
-        label: 'PetVaccines',
-        menu: 'PetVaccines',
-        exporterFileName: 'PetVaccines_exportados',
+        name: 'Vacinas',
+        label: 'Vacinas',
+        menu: 'Vacinas',
+        exporterFileName: 'vacinas_exportados',
         list: {
-          menu: 'PetVaccines',
-          title: 'PetVaccines',
+          menu: 'Vacinas',
+          title: 'Vacinas',
         },
         create: {
-          success: 'PetVaccines salvo com sucesso',
+          success: 'Vacina salva com sucesso',
         },
         update: {
-          success: 'PetVaccines salvo com sucesso',
+          success: 'Vacina salva com sucesso',
         },
         destroy: {
-          success: 'PetVaccines deletado com sucesso',
+          success: 'Vacina deletada com sucesso',
         },
         destroyAll: {
-          success: 'PetVaccines(s) deletado com sucesso',
+          success: 'Vacina(s) deletada com sucesso',
         },
         edit: {
-          title: 'Editar PetVaccines',
+          title: 'Editar Vacina',
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
-          'uniqueVetVaccineCode': 'UniqueVetVaccineCode',
-          'datetimeTakenRange': 'DatetimeTaken',
-          'datetimeTaken': 'DatetimeTaken',
-          'veterinarianID': 'VeterinarianID',
-          'placeTaken': 'PlaceTaken',
+          'name': 'Nome',
+          'uniqueVetVaccineCode': 'Código Único da Vacina',
+          'datetimeTakenRange': 'Faixa de data e hora aplicada',
+          'datetimeTaken': 'Data e hora aplicada',
+          'veterinarianID': 'ID do veterinário',
+          'placeTaken': 'Lugar de aplicação',
           'businessID': 'ID Negócio',
           'country': 'País',
           createdAt: 'Criado em',
@@ -2153,7 +2153,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'language': 'Idioma',
           'placeTypeImage': 'PlaceTypeImage',
           'isPublicPlace': 'IsPublicPlace',
@@ -2210,7 +2210,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'email': 'Email',
           'numberOfPets': 'NumberOfPets',
           'interests': 'Interests',
@@ -2595,7 +2595,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'description': 'Description',
           'categoryUrl': 'CategoryUrl',
           'language': 'Idioma',
@@ -2707,7 +2707,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'pointsRange': 'Points',
           'points': 'Points',
           'country': 'País',
@@ -2764,7 +2764,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'language': 'Idioma',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
@@ -2819,7 +2819,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Name',
+          'name': 'Nome',
           'description': 'Description',
           'language': 'Idioma',
           createdAt: 'Criado em',

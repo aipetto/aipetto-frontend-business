@@ -1,5 +1,6 @@
 import authAxios from 'src/modules/shared/axios/authAxios';
 import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
+import TenantService from "../tenant/tenantService";
 
 export default class LanguagesService {
   static async update(id, data) {
@@ -8,8 +9,10 @@ export default class LanguagesService {
       data,
     };
 
+    const tenantId = AuthCurrentTenant.get();
+
     const response = await authAxios.put(
-      `/tenant/languages/${id}`,
+      `/tenant/${tenantId}/languages/${id}`,
       body,
     );
 
@@ -24,7 +27,7 @@ export default class LanguagesService {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.delete(
-      `/tenant/${tenantId}/languages`,
+      `/languages`,
       {
         params,
       },

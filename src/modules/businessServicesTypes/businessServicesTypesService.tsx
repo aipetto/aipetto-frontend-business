@@ -1,5 +1,7 @@
 import authAxios from 'src/modules/shared/axios/authAxios';
 import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
+import {getLanguageCode} from "../../i18n";
+import LanguagesService from "../languages/languagesService";
 
 export default class BusinessServicesTypesService {
   static async update(id, data) {
@@ -70,7 +72,7 @@ export default class BusinessServicesTypesService {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
-      `/tenant/${tenantId}/business-services-types/${id}`,
+      `/business-services-types/${id}`,
     );
 
     return response.data;
@@ -96,9 +98,11 @@ export default class BusinessServicesTypesService {
 
   static async listAutocomplete(query, limit) {
 
-    // TODO show data on autocomplete filtering by user`s language
-    const test = {
-      language: "6096a50fb57043bb3ae7b537"
+    const languageService = await LanguagesService.listAutocomplete({}, {});
+    const language = languageService.filter(langCode => langCode.label == getLanguageCode());
+
+    query = {
+      language: language[0].id
     };
 
     const params = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import PermissionChecker from 'src/modules/auth/permissionChecker';
 import menus from 'src/view/menus';
@@ -8,7 +8,6 @@ import {default as authSelectors, default as selectors} from "../../modules/auth
 import dashSelectors from "../../modules/dashboard/dashboardSelectors";
 import layoutSelectors from "../../modules/layout/layoutSelectors";
 import layoutActions from "../../modules/layout/layoutActions";
-import { i18n } from 'src/i18n';
 import DashboardBarChart from 'src/view/dashboard/DashboardBarChart';
 import DashboardDoughnutChart from 'src/view/dashboard/DashboardDoughnutChart';
 
