@@ -104,14 +104,6 @@ const previewRenders = {
       label: i18n('entities.place.fields.businessId'),
       render: filterRenders.relationToOne(),
     },
-  latitudeRange: {
-    label: i18n('entities.place.fields.latitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
-  longitudeRange: {
-    label: i18n('entities.place.fields.longitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
   address: {
     label: i18n('entities.place.fields.address'),
     render: filterRenders.generic(),
@@ -226,14 +218,6 @@ function PlaceListFilter(props) {
               <BusinessAutocompleteFormItem
                 name="businessId"
                 label={i18n('entities.place.fields.businessId')}        
-              />
-              <InputRangeFormItem
-                name="latitudeRange"
-                label={i18n('entities.place.fields.latitudeRange')}      
-              />
-              <InputRangeFormItem
-                name="longitudeRange"
-                label={i18n('entities.place.fields.longitudeRange')}      
               />
               <InputFormItem
                 name="address"

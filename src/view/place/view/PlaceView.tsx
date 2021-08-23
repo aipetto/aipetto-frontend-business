@@ -44,16 +44,6 @@ function PlaceView(props) {
       />
 
       <TextViewItem
-        label={i18n('entities.place.fields.latitude')}
-        value={record.latitude}
-      />
-
-      <TextViewItem
-        label={i18n('entities.place.fields.longitude')}
-        value={record.longitude}
-      />
-
-      <TextViewItem
         label={i18n('entities.place.fields.address')}
         value={record.address}
       />

@@ -165,7 +165,8 @@ function PlaceForm(props) {
 
   const onSubmit = (values) => {
     getLatLngFromAddress(values.addressStreet + ' ' + values.addressStreetNumber + ' ' + values.addressCity + ' ' + values.addressCountry).then(latLng => {
-      props.onSubmit(props.record?.id, Object.assign(values, {latitude: latLng.lat, longitude: latLng.lng}));
+      props.onSubmit(props.record?.id, Object.assign(values,
+      { location: { type: "Point", coordinates: [latLng.lng, latLng.lat]},}));
     });
   };
 
