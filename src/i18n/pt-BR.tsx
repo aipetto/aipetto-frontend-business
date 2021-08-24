@@ -86,8 +86,8 @@ const ptBR = {
     title: 'aipetto app',
     tagline: 'Serviços para seu pet onde quer que você esteja e a qualquer momento',
     description: 'Download it',
-    mainActionText: 'Playstore',
-    extraActionText: 'App Store',
+    downloadAppInGooglePlayStoreButton: 'Playstore',
+    downloadAppInAppleStoreButton: 'App Store',
       step1: {
           title: 'Crie sua conta',
           heading: 'Criar/Entrar a uma conta existente para começar',
@@ -127,8 +127,8 @@ const ptBR = {
       bottomLead: {
           actionText: 'Faça download da app',
           description: 'Disponível na sua loja favorita.',
-          mainActionText: 'Playstore',
-          extraActionText: 'App Store',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+          downloadAppInAppleStoreButton: 'Apple Store',
       },
   },
 

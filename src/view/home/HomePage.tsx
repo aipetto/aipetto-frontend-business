@@ -12,8 +12,8 @@ const HomePage = (props) => {
             appType: i18n('homeDownloadApp.title'),
             tagLine: i18n('homeDownloadApp.tagline'),
             description: i18n('homeDownloadApp.description'),
-            mainActionText: i18n('homeDownloadApp.mainActionText'),
-            extraActionText: i18n('homeDownloadApp.extraActionText'),
+            downloadAppInGooglePlayStoreButton: i18n('homeDownloadApp.downloadAppInGooglePlayStoreButton'),
+            downloadAppInAppleStoreButton: i18n('homeDownloadApp.downloadAppInAppleStoreButton'),
         },
         step1: {
             title: i18n('homeDownloadApp.step1.title'),
@@ -60,8 +60,8 @@ const HomePage = (props) => {
         bottomLead: {
             actionText: i18n('homeDownloadApp.bottomLead.actionText'),
             description: i18n('homeDownloadApp.bottomLead.description'),
-            mainActionText: i18n('homeDownloadApp.bottomLead.mainActionText'),
-            extraActionText: i18n('homeDownloadApp.bottomLead.extraActionText'),
+            downloadAppInGooglePlayStoreButton: i18n('homeDownloadApp.bottomLead.downloadAppInGooglePlayStoreButton'),
+            downloadAppInAppleStoreButton: i18n('homeDownloadApp.bottomLead.downloadAppInAppleStoreButton'),
         },
     }
 
@@ -74,8 +74,8 @@ const HomePage = (props) => {
                     appType={data.hero.appType}
                     tagLine={data.hero.tagLine}
                     description={data.hero.description}
-                    mainActionText={data.hero.mainActionText}
-                    extraActionText={data.hero.extraActionText}
+                    downloadAppInGooglePlayStoreButton={data.hero.downloadAppInGooglePlayStoreButton}
+                    downloadAppInAppleStoreButton={data.hero.downloadAppInAppleStoreButton}
                 />
 
                 <div id="divider" className="rounded-full ring-2 ring-gray-200 lg:w-1/2 lg:mx-auto "></div>
@@ -131,8 +131,8 @@ const HomePage = (props) => {
                 <BottomLead
                     actionText={data.bottomLead.actionText}
                     description={data.bottomLead.description}
-                    mainActionText={data.bottomLead.mainActionText}
-                    extraActionText={data.bottomLead.extraActionText}
+                    downloadAppInGooglePlayStoreButton={data.bottomLead.downloadAppInGooglePlayStoreButton}
+                    downloadAppInAppleStoreButton={data.bottomLead.downloadAppInAppleStoreButton}
                 />
 
                 <Footer logo='/images/logos/aipetto/aipetto-boarder.png'/>

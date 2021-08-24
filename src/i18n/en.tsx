@@ -37,8 +37,8 @@ const en = {
       title: 'aipetto app',
       tagline: 'Services for your pet everywhere anytime',
       description: 'Download it',
-      mainActionText: 'Playstore',
-      extraActionText: 'App Store',
+      downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+      downloadAppInAppleStoreButton: 'Apple Store',
       step1: {
           title: 'Create an account',
           heading: 'Create/login to an existing account to get started',
@@ -78,8 +78,8 @@ const en = {
       bottomLead: {
           actionText: 'Download the app.',
           description: 'Available on your favourite store.',
-          mainActionText: 'Playstore',
-          extraActionText: 'App Store',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+          downloadAppInAppleStoreButton: 'Apple Store',
       },
   },
 
