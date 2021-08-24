@@ -119,6 +119,7 @@ function LandingPage() {
                         enableDeclineButton
                         containerClasses="alert alert-warning col-lg-12"
                         debug={true}
+                        style={{ width: 400 }}
                         buttonText={i18n('privacy.acceptButton')}
                         declineButtonText={i18n('privacy.declineButtonText')}
                         buttonStyle={{
