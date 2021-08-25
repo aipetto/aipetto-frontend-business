@@ -300,10 +300,15 @@ function CustomerForm(props) {
   }
 
   const onSubmit = (values) => {
-    getLatLngFromAddress(values.address + ' ' + values.addressStreetNumber + ' ' + values.city + ' ' + values.country).then(latLng => {
-      props.onSubmit(props.record?.id, Object.assign(values,
-          { location: { type: "Point", coordinates: [latLng.lng, latLng.lat]},}));
-    });
+
+    if(values.address != undefined && !values.address.isEmpty){
+      getLatLngFromAddress(values.address + ' ' + values.addressStreetNumber + ' ' + values.city + ' ' + values.country).then(latLng => {
+        props.onSubmit(props.record?.id, Object.assign(values,
+            { location: { type: "Point", coordinates: [latLng.lng, latLng.lat]},}));
+      });
+    }else{
+      props.onSubmit(props.record?.id, values);
+    }
   };
 
   const onReset = () => {
