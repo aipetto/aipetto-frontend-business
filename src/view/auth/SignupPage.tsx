@@ -11,6 +11,7 @@ import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import * as yup from 'yup';
 import IndexNavbar from "../layout/IndexNavbar";
+import AuthInvitationTokenEmail from "../../modules/auth/authInvitationTokenEmail";
 
 const schema = yup.object().shape({
   email: yupFormSchemas.string(i18n('user.fields.email'), {
@@ -36,7 +37,9 @@ function SignupPage() {
 
   const emailFromInvitation = queryString.parse(
     location.search,
-  ).email;
+  ).email || AuthInvitationTokenEmail.getEmail();
+
+  console.log(emailFromInvitation);
 
   const backgroundImageUrl = useSelector(
     selectors.selectBackgroundImageUrl,

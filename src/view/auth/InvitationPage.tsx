@@ -28,27 +28,22 @@ function InviationPage() {
   const logoUrl = useSelector(selectors.selectLogoUrl);
 
   const token = queryString.parse(location.search).token;
+  const email = queryString.parse(location.search).email;
 
   useEffect(() => {
-    dispatch(invitationActions.doAcceptFromAuth(token));
+    dispatch(invitationActions.doAcceptFromAuth(token, email));
   }, [dispatch, token]);
-
-  const doAcceptWithWrongEmail = () => {
-    dispatch(
-      invitationActions.doAcceptFromAuth(token, true),
-    );
-  };
 
   const doSignout = async () => {
     await dispatch(authActions.doSignout());
-    getHistory().push('/network');
+    getHistory().push('/beta');
   };
 
   return (
     <div
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/invitation.jpg'
+            backgroundImageUrl || '/images/pets-background.jpeg'
         })`,
       }}
       className="bg-cover h-screen flex items-center justify-center"
@@ -78,18 +73,6 @@ function InviationPage() {
               </div>
             )}
           </div>
-
-          {Boolean(warningMessage) && (
-            <div className="mt-6">
-              <button
-                type="submit"
-                className="disabled:opacity-50 disabled:cursor-default w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-                onClick={doAcceptWithWrongEmail}
-              >
-                {i18n('tenant.invitation.acceptWrongEmail')}
-              </button>
-            </div>
-          )}
         </div>
         {!loading && (
           <div className="bg-gray-100 dark:bg-gray-700 py-4 rounded-b-md flex justify-center">
