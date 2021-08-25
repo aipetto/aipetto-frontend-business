@@ -122,6 +122,7 @@ const schema = yup.object().shape({
 });
 
 function ProvidersForm(props) {
+
   const { saveLoading } = props;
 
   const libraries: Libraries = ["places"];
@@ -175,7 +176,7 @@ function ProvidersForm(props) {
   }
 
   const onSubmit = (values) => {
-    getLatLngFromAddress(values.addressStreet + ' ' + values.addressStreetNumber + ' ' + values.addressCity + ' ' + values.addressCountry).then(latLng => {
+    getLatLngFromAddress(values.addressStreet + ' ' + values.addressStreetNumber + ' ' + values.city + ' ' + values.state).then(latLng => {
       props.onSubmit(props.record?.id, Object.assign(values, {latitude: latLng.lat, longitude: latLng.lng}));
     });
   };

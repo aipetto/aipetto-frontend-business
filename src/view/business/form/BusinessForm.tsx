@@ -95,14 +95,6 @@ const schema = yup.object().shape({
     i18n('entities.business.fields.businessLogo'),
     {},
   ),
-  latitude: yupFormSchemas.string(
-    i18n('entities.business.fields.latitude'),
-    {},
-  ),
-  longitude: yupFormSchemas.string(
-    i18n('entities.business.fields.longitude'),
-    {},
-  ),
   website: yupFormSchemas.string(
     i18n('entities.business.fields.website'),
     {},
@@ -190,7 +182,7 @@ function BusinessForm(props) {
   }
 
   const onSubmit = (values) => {
-    getLatLngFromAddress(values.addressStreet + ' ' + values.addressStreetNumber + ' ' + values.addressCity + ' ' + values.addressCountry).then(latLng => {
+    getLatLngFromAddress(values.addressStreet + ' ' + values.addressStreetNumber + ' ' + values.city + ' ' + values.country).then(latLng => {
       props.onSubmit(props.record?.id, Object.assign(values, {latitude: latLng.lat, longitude: latLng.lng}));
     });
   };
