@@ -6,7 +6,7 @@ import { i18n } from 'src/i18n';
 import authActions from 'src/modules/auth/authActions';
 import authSelectors from 'src/modules/auth/authSelectors';
 import selectors from 'src/modules/tenant/invitation/tenantInvitationSelectors';
-import AuthInvitationToken from 'src/modules/auth/authInvitationToken';
+import AuthInvitationTokenEmail from "src/modules/auth/authInvitationTokenEmail";
 
 const prefix = 'TENANT_INVITATION';
 
@@ -28,6 +28,7 @@ const tenantInvitationActions = {
 
   doAcceptFromAuth: (
     token,
+    email,
     forceAcceptOtherEmail = false,
   ) => async (dispatch, getState) => {
     try {
@@ -42,7 +43,8 @@ const tenantInvitationActions = {
       );
 
       if (!isSignedIn) {
-        AuthInvitationToken.set(token);
+        AuthInvitationTokenEmail.set(token);
+        AuthInvitationTokenEmail.setEmail(email);
         getHistory().push('/auth/signup');
         return;
       }
@@ -63,7 +65,7 @@ const tenantInvitationActions = {
       });
     } catch (error) {
       if (Errors.errorCode(error) === 404) {
-        getHistory().push('/network');
+        getHistory().push('/beta');
         return;
       }
 
@@ -80,7 +82,7 @@ const tenantInvitationActions = {
       dispatch({
         type: tenantInvitationActions.ACCEPT_FROM_AUTH_ERROR,
       });
-      getHistory().push('/network');
+      getHistory().push('/beta');
     }
   },
 
