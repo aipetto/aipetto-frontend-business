@@ -1,7 +1,6 @@
 import authAxios from 'src/modules/shared/axios/authAxios';
 import { AuthToken } from 'src/modules/auth/authToken';
 import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
-import AuthInvitationToken from 'src/modules/auth/authInvitationTokenEmail';
 import { tenantSubdomain } from '../tenant/tenantSubdomain';
 import AuthInvitationTokenEmail from "./authInvitationTokenEmail";
 
@@ -54,7 +53,7 @@ export default class AuthService {
   }
 
   static async signinWithEmailAndPassword(email, password) {
-    const invitationToken = AuthInvitationToken.get();
+    const invitationToken = AuthInvitationTokenEmail.get();
 
     const response = await authAxios.post('/auth/sign-in', {
       email,
@@ -65,7 +64,7 @@ export default class AuthService {
         : undefined,
     });
 
-    AuthInvitationToken.clear();
+    AuthInvitationTokenEmail.clear();
 
     return response.data;
   }
@@ -136,7 +135,7 @@ export default class AuthService {
   }
 
   static async socialOnboard() {
-    const invitationToken = AuthInvitationToken.get();
+    const invitationToken = AuthInvitationTokenEmail.get();
 
     const response = await authAxios.post(
       '/auth/social/onboard',
@@ -148,7 +147,7 @@ export default class AuthService {
       },
     );
 
-    AuthInvitationToken.clear();
+    AuthInvitationTokenEmail.clear();
 
     return response.data;
   }

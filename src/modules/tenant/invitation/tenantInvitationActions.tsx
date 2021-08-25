@@ -6,7 +6,7 @@ import { i18n } from 'src/i18n';
 import authActions from 'src/modules/auth/authActions';
 import authSelectors from 'src/modules/auth/authSelectors';
 import selectors from 'src/modules/tenant/invitation/tenantInvitationSelectors';
-import AuthInvitationTokenEmail from "src/modules/auth/authInvitationTokenEmail";
+import AuthInvitationTokenEmail from "../../auth/authInvitationTokenEmail";
 
 const prefix = 'TENANT_INVITATION';
 
