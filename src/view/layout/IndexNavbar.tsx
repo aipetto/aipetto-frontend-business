@@ -23,9 +23,6 @@ export default function Navbar(props) {
 
             <div className="hidden md:block">
               <ul className="flex flex-row">
-                <li>
-                  <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/business">Business</a>
-                </li>
                 <I18nFlags />
               </ul>
             </div>
@@ -33,10 +30,10 @@ export default function Navbar(props) {
             <div className="hidden md:block">
               <ul className="flex flex-">
                 <li>
-                  <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded text-gray-900" href="/">Login</a>
+                  <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded text-gray-900" href="/beta">Login</a>
                 </li>
                 <li className="nav-item px-2 signup">
-                  <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/auth/signup">{i18n('auth.signup')}</a>
+                  <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/">Home</a>
                 </li>
               </ul>
             </div>

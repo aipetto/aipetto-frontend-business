@@ -3343,7 +3343,7 @@ const ptBR = {
     signup: 'Registrar',
     signout: 'Sair',
     informationLoginBeta: '*Para utilizar a versão beta faça seu pré-cadastro.',
-    alreadyHaveAnAccount: 'Já possui uma conta? Entre.',
+    alreadyHaveAnAccount: 'Já possui uma conta? Entrar.',
     createAnAccount: 'Não possui conta? Criar uma.',
     social: {
       header: 'ou entrar com uma rede social',

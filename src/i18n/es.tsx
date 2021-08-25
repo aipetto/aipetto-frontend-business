@@ -3332,7 +3332,7 @@ const es = {
         signout: 'Desconectar',
         informationLoginBeta: 'Registrate para usar la versión beta',
         alreadyHaveAnAccount:
-            '¿Ya tienes una cuenta? Registrarse.',
+            '¿Ya tienes una cuenta? Ingresar.',
         createAnAccount: '¿No tienes una cuenta? Crea uno.',
         social: {
             header: 'o inicia sesión con las redes sociales',
