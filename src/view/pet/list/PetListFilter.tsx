@@ -112,12 +112,6 @@ const schema = yup.object().shape({
   heightUnit: yupFilterSchemas.enumerator(
     i18n('entities.pet.fields.heightUnit'),
   ),
-  latitudeRange: yupFilterSchemas.decimalRange(
-    i18n('entities.pet.fields.latitudeRange'),
-  ),
-  longitudeRange: yupFilterSchemas.decimalRange(
-    i18n('entities.pet.fields.longitudeRange'),
-  ),
 });
 
 const emptyValues = {
@@ -150,8 +144,6 @@ const emptyValues = {
   weightUnit: null,
   heightRange: [],
   heightUnit: null,
-  latitudeRange: [],
-  longitudeRange: [],
 }
 
 const previewRenders = {
@@ -270,14 +262,6 @@ const previewRenders = {
   heightUnit: {
     label: i18n('entities.pet.fields.heightUnit'),
     render: filterRenders.enumerator('entities.pet.enumerators.heightUnit',),
-  },
-  latitudeRange: {
-    label: i18n('entities.pet.fields.latitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
-  longitudeRange: {
-    label: i18n('entities.pet.fields.longitudeRange'),
-    render: filterRenders.decimalRange(),
   },
 }
 

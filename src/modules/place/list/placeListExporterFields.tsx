@@ -31,16 +31,6 @@ export default [
     render: exporterRenders.relationToMany(),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.place.fields.latitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.place.fields.longitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
     name: 'address',
     label: i18n('entities.place.fields.address'),
   },

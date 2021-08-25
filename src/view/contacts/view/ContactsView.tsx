@@ -78,16 +78,6 @@ function ContactsView(props) {
       />
 
       <TextViewItem
-        label={i18n('entities.contacts.fields.latitude')}
-        value={record.latitude}
-      />
-
-      <TextViewItem
-        label={i18n('entities.contacts.fields.longitude')}
-        value={record.longitude}
-      />
-
-      <TextViewItem
         label={i18n('entities.contacts.fields.statusContact')}
         value={
           record.statusContact

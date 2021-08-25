@@ -118,16 +118,6 @@ export default [
     label: i18n('entities.customer.fields.shippingAddressCountry'),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.customer.fields.latitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.customer.fields.longitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
     name: 'prospectStatus',
     label: i18n('entities.customer.fields.prospectStatus'),
   },

@@ -22,16 +22,6 @@ function CityView(props) {
         label={i18n('entities.city.fields.name')}
         value={record.name}
       />
-
-      <TextViewItem
-        label={i18n('entities.city.fields.latitude')}
-        value={record.latitude}
-      />
-
-      <TextViewItem
-        label={i18n('entities.city.fields.longitude')}
-        value={record.longitude}
-      />
     </div>
   );
 }

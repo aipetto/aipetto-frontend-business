@@ -21,14 +21,6 @@ export default [
     render: exporterRenders.filesOrImages(),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.petPhotos.fields.latitude'),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.petPhotos.fields.longitude'),
-  },
-  {
     name: 'createdAt',
     label: i18n('entities.petPhotos.fields.createdAt'),
     render: exporterRenders.datetime(),

@@ -28,16 +28,6 @@ function PetPhotosView(props) {
         label={i18n('entities.petPhotos.fields.photo')}
         value={record.photo}
       />
-
-      <TextViewItem
-        label={i18n('entities.petPhotos.fields.latitude')}
-        value={record.latitude}
-      />
-
-      <TextViewItem
-        label={i18n('entities.petPhotos.fields.longitude')}
-        value={record.longitude}
-      />
     </div>
   );
 }

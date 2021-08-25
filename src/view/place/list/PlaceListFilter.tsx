@@ -31,12 +31,6 @@ const schema = yup.object().shape({
   businessId: yupFilterSchemas.relationToOne(
     i18n('entities.place.fields.businessId'),
   ),
-  latitudeRange: yupFilterSchemas.decimalRange(
-    i18n('entities.place.fields.latitudeRange'),
-  ),
-  longitudeRange: yupFilterSchemas.decimalRange(
-    i18n('entities.place.fields.longitudeRange'),
-  ),
   address: yupFilterSchemas.string(
     i18n('entities.place.fields.address'),
   ),
@@ -76,8 +70,6 @@ const emptyValues = {
   name: null,
   placeType: null,
   businessId: null,
-  latitudeRange: [],
-  longitudeRange: [],
   address: null,
   addressNumber: null,
   addressZipCode: null,

@@ -295,15 +295,6 @@ function PetView(props) {
         }
       />
 
-      <TextViewItem
-        label={i18n('entities.pet.fields.latitude')}
-        value={record.latitude}
-      />
-
-      <TextViewItem
-        label={i18n('entities.pet.fields.longitude')}
-        value={record.longitude}
-      />
     </div>
   );
 }

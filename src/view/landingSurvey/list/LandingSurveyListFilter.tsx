@@ -95,14 +95,6 @@ const previewRenders = {
     label: i18n('entities.landingSurvey.fields.allowReceiveNotifications'),
     render: filterRenders.boolean(),
   },
-  latitudeRange: {
-    label: i18n('entities.landingSurvey.fields.latitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
-  longitudeRange: {
-    label: i18n('entities.landingSurvey.fields.longitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
   petProfession: {
     label: i18n('entities.landingSurvey.fields.petProfession'),
     render: filterRenders.enumeratorMultiple('entities.landingSurvey.enumerators.petProfession',),

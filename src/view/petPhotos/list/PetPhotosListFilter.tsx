@@ -24,19 +24,11 @@ const schema = yup.object().shape({
   petId: yupFilterSchemas.relationToOne(
     i18n('entities.petPhotos.fields.petId'),
   ),
-  latitude: yupFilterSchemas.string(
-    i18n('entities.petPhotos.fields.latitude'),
-  ),
-  longitude: yupFilterSchemas.string(
-    i18n('entities.petPhotos.fields.longitude'),
-  ),
 });
 
 const emptyValues = {
   description: null,
   petId: null,
-  latitude: null,
-  longitude: null,
 }
 
 const previewRenders = {
@@ -48,14 +40,6 @@ const previewRenders = {
       label: i18n('entities.petPhotos.fields.petId'),
       render: filterRenders.relationToOne(),
     },
-  latitude: {
-    label: i18n('entities.petPhotos.fields.latitude'),
-    render: filterRenders.generic(),
-  },
-  longitude: {
-    label: i18n('entities.petPhotos.fields.longitude'),
-    render: filterRenders.generic(),
-  },
 }
 
 function PetPhotosListFilter(props) {
@@ -122,14 +106,6 @@ function PetPhotosListFilter(props) {
               <PetAutocompleteFormItem  
                 name="petId"
                 label={i18n('entities.petPhotos.fields.petId')}        
-              />
-              <InputFormItem
-                name="latitude"
-                label={i18n('entities.petPhotos.fields.latitude')}      
-              />
-              <InputFormItem
-                name="longitude"
-                label={i18n('entities.petPhotos.fields.longitude')}      
               />
             </div>
 

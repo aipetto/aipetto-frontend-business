@@ -208,14 +208,6 @@ const schema = yup.object().shape({
       "options": petEnumerators.heightUnit
     },
   ),
-  latitude: yupFormSchemas.decimal(
-    i18n('entities.pet.fields.latitude'),
-    {},
-  ),
-  longitude: yupFormSchemas.decimal(
-    i18n('entities.pet.fields.longitude'),
-    {},
-  ),
 });
 
 function PetForm(props) {
@@ -264,8 +256,6 @@ function PetForm(props) {
       weightUnit: record.weightUnit,
       height: record.height,
       heightUnit: record.heightUnit,
-      latitude: record.latitude,
-      longitude: record.longitude,
     };
   });
 
@@ -660,20 +650,6 @@ function PetForm(props) {
                 ),
               }),
             )}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="latitude"
-            label={i18n('entities.pet.fields.latitude')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="longitude"
-            label={i18n('entities.pet.fields.longitude')}
             required={false}
           />
         </div>

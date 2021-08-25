@@ -95,22 +95,6 @@ export default [
     ),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.contacts.fields.latitude'),
-    schema: schemas.decimal(
-      i18n('entities.contacts.fields.latitude'),
-      {},
-    ),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.contacts.fields.longitude'),
-    schema: schemas.decimal(
-      i18n('entities.contacts.fields.longitude'),
-      {},
-    ),
-  },
-  {
     name: 'statusContact',
     label: i18n('entities.contacts.fields.statusContact'),
     schema: schemas.boolean(

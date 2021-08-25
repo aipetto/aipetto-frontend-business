@@ -80,20 +80,6 @@ function CityForm(props) {
             required={false}
           />
         </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="latitude"
-            label={i18n('entities.city.fields.latitude')}  
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="longitude"
-            label={i18n('entities.city.fields.longitude')}  
-            required={false}
-          />
-        </div>
 
         <div className="pt-4">
           <button

@@ -98,16 +98,6 @@ function ProvidersView(props) {
       />
 
       <TextViewItem
-        label={i18n('entities.providers.fields.latitude')}
-        value={record.latitude}
-      />
-
-      <TextViewItem
-        label={i18n('entities.providers.fields.longitude')}
-        value={record.longitude}
-      />
-
-      <TextViewItem
         label={i18n('entities.providers.fields.basePricePerService')}
         value={record.basePricePerService}
       />

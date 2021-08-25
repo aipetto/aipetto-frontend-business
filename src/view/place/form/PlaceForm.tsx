@@ -47,14 +47,6 @@ const schema = yup.object().shape({
     i18n('entities.place.fields.categories'),
     {},
   ),
-  latitude: yupFormSchemas.decimal(
-    i18n('entities.place.fields.latitude'),
-    {},
-  ),
-  longitude: yupFormSchemas.decimal(
-    i18n('entities.place.fields.longitude'),
-    {},
-  ),
   address: yupFormSchemas.string(
     i18n('entities.place.fields.address'),
     {},
@@ -134,8 +126,6 @@ function PlaceForm(props) {
       businessId: record.businessId,
       services: record.services || [],
       categories: record.categories || [],
-      latitude: record.latitude,
-      longitude: record.longitude,
       address: record.address,
       addressNumber: record.addressNumber,
       addressZipCode: record.addressZipCode,
@@ -181,20 +171,6 @@ function PlaceForm(props) {
     if (hasPermissionToReadField) {
     return (
         <>
-          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-              name="latitude"
-              label={i18n('entities.place.fields.latitude')}
-              required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-              name="longitude"
-              label={i18n('entities.place.fields.longitude')}
-              required={false}
-          />
-        </div>
         </>
       );
     }

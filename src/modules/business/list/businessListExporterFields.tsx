@@ -77,14 +77,6 @@ export default [
     render: exporterRenders.filesOrImages(),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.business.fields.latitude'),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.business.fields.longitude'),
-  },
-  {
     name: 'website',
     label: i18n('entities.business.fields.website'),
   },

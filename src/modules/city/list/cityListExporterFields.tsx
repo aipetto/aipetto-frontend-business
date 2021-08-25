@@ -16,16 +16,6 @@ export default [
     label: i18n('entities.city.fields.name'),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.city.fields.latitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.city.fields.longitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
     name: 'createdAt',
     label: i18n('entities.city.fields.createdAt'),
     render: exporterRenders.datetime(),

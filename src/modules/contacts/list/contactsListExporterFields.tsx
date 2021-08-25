@@ -52,16 +52,6 @@ export default [
     label: i18n('entities.contacts.fields.addressStreetComplement'),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.contacts.fields.latitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.contacts.fields.longitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
     name: 'statusContact',
     label: i18n('entities.contacts.fields.statusContact'),
     render: exporterRenders.boolean(),

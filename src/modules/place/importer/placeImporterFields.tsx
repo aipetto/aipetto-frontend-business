@@ -45,22 +45,6 @@ export default [
     ),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.place.fields.latitude'),
-    schema: schemas.decimal(
-      i18n('entities.place.fields.latitude'),
-      {},
-    ),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.place.fields.longitude'),
-    schema: schemas.decimal(
-      i18n('entities.place.fields.longitude'),
-      {},
-    ),
-  },
-  {
     name: 'address',
     label: i18n('entities.place.fields.address'),
     schema: schemas.string(

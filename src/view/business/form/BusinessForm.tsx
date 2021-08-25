@@ -168,8 +168,6 @@ function BusinessForm(props) {
       state: record.state,
       country: record.country,
       businessLogo: record.businessLogo || [],
-      latitude: record.latitude,
-      longitude: record.longitude,
       website: record.website,
       facebook: record.facebook,
       linkedin: record.linkedin,
@@ -207,20 +205,6 @@ function BusinessForm(props) {
     if (hasPermissionToReadField) {
       return (
           <>
-            <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-              <InputFormItem
-                  name="latitude"
-                  label={i18n('entities.business.fields.latitude')}
-                  required={false}
-              />
-            </div>
-            <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-              <InputFormItem
-                  name="longitude"
-                  label={i18n('entities.business.fields.longitude')}
-                  required={false}
-              />
-            </div>
           </>
       );
     }

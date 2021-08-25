@@ -185,16 +185,6 @@ export default [
     label: i18n('entities.pet.fields.heightUnit'),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.pet.fields.latitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.pet.fields.longitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
     name: 'createdAt',
     label: i18n('entities.pet.fields.createdAt'),
     render: exporterRenders.datetime(),

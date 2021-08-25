@@ -70,14 +70,6 @@ const schema = yup.object().shape({
     i18n('entities.contacts.fields.addressStreetComplement'),
     {},
   ),
-  latitude: yupFormSchemas.decimal(
-    i18n('entities.contacts.fields.latitude'),
-    {},
-  ),
-  longitude: yupFormSchemas.decimal(
-    i18n('entities.contacts.fields.longitude'),
-    {},
-  ),
   statusContact: yupFormSchemas.boolean(
     i18n('entities.contacts.fields.statusContact'),
     {},

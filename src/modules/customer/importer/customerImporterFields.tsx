@@ -232,22 +232,6 @@ export default [
     ),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.customer.fields.latitude'),
-    schema: schemas.decimal(
-      i18n('entities.customer.fields.latitude'),
-      {},
-    ),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.customer.fields.longitude'),
-    schema: schemas.decimal(
-      i18n('entities.customer.fields.longitude'),
-      {},
-    ),
-  },
-  {
     name: 'prospectStatus',
     label: i18n('entities.customer.fields.prospectStatus'),
     schema: schemas.enumerator(

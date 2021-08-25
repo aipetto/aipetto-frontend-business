@@ -106,12 +106,6 @@ const schema = yup.object().shape({
   shippingAddressCountry: yupFilterSchemas.string(
     i18n('entities.customer.fields.shippingAddressCountry'),
   ),
-  latitudeRange: yupFilterSchemas.decimalRange(
-    i18n('entities.customer.fields.latitudeRange'),
-  ),
-  longitudeRange: yupFilterSchemas.decimalRange(
-    i18n('entities.customer.fields.longitudeRange'),
-  ),
   prospectStatus: yupFilterSchemas.enumerator(
     i18n('entities.customer.fields.prospectStatus'),
   ),
@@ -193,8 +187,6 @@ const emptyValues = {
   shippingAddressState: null,
   shippingAddressZipCode: null,
   shippingAddressCountry: null,
-  latitudeRange: [],
-  longitudeRange: [],
   prospectStatus: null,
   customerStatus: null,
   wantToReceiveNotifications: null,
@@ -322,14 +314,6 @@ const previewRenders = {
   shippingAddressCountry: {
     label: i18n('entities.customer.fields.shippingAddressCountry'),
     render: filterRenders.generic(),
-  },
-  latitudeRange: {
-    label: i18n('entities.customer.fields.latitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
-  longitudeRange: {
-    label: i18n('entities.customer.fields.longitudeRange'),
-    render: filterRenders.decimalRange(),
   },
   prospectStatus: {
     label: i18n('entities.customer.fields.prospectStatus'),
@@ -581,14 +565,6 @@ function CustomerListFilter(props) {
               <InputFormItem
                 name="shippingAddressCountry"
                 label={i18n('entities.customer.fields.shippingAddressCountry')}
-              />
-              <InputRangeFormItem
-                name="latitudeRange"
-                label={i18n('entities.customer.fields.latitudeRange')}
-              />
-              <InputRangeFormItem
-                name="longitudeRange"
-                label={i18n('entities.customer.fields.longitudeRange')}
               />
               <SelectFormItem
                   name="prospectStatus"

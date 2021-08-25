@@ -73,16 +73,6 @@ export default [
     label: i18n('entities.providers.fields.email'),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.providers.fields.latitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.providers.fields.longitude'),
-    render: exporterRenders.decimal(),
-  },
-  {
     name: 'basePricePerService',
     label: i18n('entities.providers.fields.basePricePerService'),
     render: exporterRenders.decimal(),

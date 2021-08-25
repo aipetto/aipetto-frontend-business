@@ -133,22 +133,6 @@ export default [
     ),
   },
   {
-    name: 'latitude',
-    label: i18n('entities.business.fields.latitude'),
-    schema: schemas.string(
-      i18n('entities.business.fields.latitude'),
-      {},
-    ),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.business.fields.longitude'),
-    schema: schemas.string(
-      i18n('entities.business.fields.longitude'),
-      {},
-    ),
-  },
-  {
     name: 'website',
     label: i18n('entities.business.fields.website'),
     schema: schemas.string(

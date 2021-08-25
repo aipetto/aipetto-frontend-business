@@ -56,12 +56,6 @@ const schema = yup.object().shape({
   addressStreetComplement: yupFilterSchemas.string(
     i18n('entities.contacts.fields.addressStreetComplement'),
   ),
-  latitudeRange: yupFilterSchemas.decimalRange(
-    i18n('entities.contacts.fields.latitudeRange'),
-  ),
-  longitudeRange: yupFilterSchemas.decimalRange(
-    i18n('entities.contacts.fields.longitudeRange'),
-  ),
   statusContact: yupFilterSchemas.boolean(
     i18n('entities.contacts.fields.statusContact'),
   ),
@@ -109,8 +103,6 @@ const emptyValues = {
   addressStreetName: null,
   addressStreetNumber: null,
   addressStreetComplement: null,
-  latitudeRange: [],
-  longitudeRange: [],
   statusContact: null,
   contactType: null,
   businessID: null,
@@ -168,14 +160,6 @@ const previewRenders = {
   addressStreetComplement: {
     label: i18n('entities.contacts.fields.addressStreetComplement'),
     render: filterRenders.generic(),
-  },
-  latitudeRange: {
-    label: i18n('entities.contacts.fields.latitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
-  longitudeRange: {
-    label: i18n('entities.contacts.fields.longitudeRange'),
-    render: filterRenders.decimalRange(),
   },
   statusContact: {
     label: i18n('entities.contacts.fields.statusContact'),
@@ -331,14 +315,6 @@ function ContactsListFilter(props) {
               <InputFormItem
                 name="addressStreetComplement"
                 label={i18n('entities.contacts.fields.addressStreetComplement')}      
-              />
-              <InputRangeFormItem
-                name="latitudeRange"
-                label={i18n('entities.contacts.fields.latitudeRange')}      
-              />
-              <InputRangeFormItem
-                name="longitudeRange"
-                label={i18n('entities.contacts.fields.longitudeRange')}      
               />
               <SelectFormItem
                 name="statusContact"

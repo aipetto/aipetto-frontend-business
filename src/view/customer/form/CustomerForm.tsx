@@ -143,14 +143,6 @@ const schema = yup.object().shape({
     i18n('entities.customer.fields.shippingAddressCountry'),
     {},
   ),
-  latitude: yupFormSchemas.decimal(
-    i18n('entities.customer.fields.latitude'),
-    {},
-  ),
-  longitude: yupFormSchemas.decimal(
-    i18n('entities.customer.fields.longitude'),
-    {},
-  ),
   prospectStatus: yupFormSchemas.enumerator(
     i18n('entities.customer.fields.prospectStatus'),
     {
@@ -263,8 +255,6 @@ function CustomerForm(props) {
       shippingAddressState: record.shippingAddressState,
       shippingAddressZipCode: record.shippingAddressZipCode,
       shippingAddressCountry: record.shippingAddressCountry,
-      latitude: record.latitude,
-      longitude: record.longitude,
       prospectStatus: record.prospectStatus,
       customerStatus: record.customerStatus,
       wantToReceiveNotifications: record.wantToReceiveNotifications,
@@ -572,20 +562,6 @@ function CustomerForm(props) {
           <InputFormItem
             name="shippingAddressCountry"
             label={i18n('entities.customer.fields.shippingAddressCountry')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="latitude"
-            label={i18n('entities.customer.fields.latitude')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="longitude"
-            label={i18n('entities.customer.fields.longitude')}
             required={false}
           />
         </div>

@@ -28,14 +28,6 @@ const schema = yup.object().shape({
     i18n('entities.petPhotos.fields.photo'),
     {},
   ),
-  latitude: yupFormSchemas.string(
-    i18n('entities.petPhotos.fields.latitude'),
-    {},
-  ),
-  longitude: yupFormSchemas.string(
-    i18n('entities.petPhotos.fields.longitude'),
-    {},
-  ),
 });
 
 function PetPhotosForm(props) {
@@ -48,8 +40,6 @@ function PetPhotosForm(props) {
       description: record.description,
       petId: record.petId,
       photo: record.photo || [],
-      latitude: record.latitude,
-      longitude: record.longitude,
     };
   });
 
@@ -96,20 +86,6 @@ function PetPhotosForm(props) {
             required={false}
             storage={Storage.values.petPhotosPhoto}
             max={undefined}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="latitude"
-            label={i18n('entities.petPhotos.fields.latitude')}
-            required={false}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="longitude"
-            label={i18n('entities.petPhotos.fields.longitude')}
-            required={false}
           />
         </div>
 

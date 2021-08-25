@@ -163,16 +163,6 @@ function CustomerView(props) {
       />
 
       <TextViewItem
-        label={i18n('entities.customer.fields.latitude')}
-        value={record.latitude}
-      />
-
-      <TextViewItem
-        label={i18n('entities.customer.fields.longitude')}
-        value={record.longitude}
-      />
-
-      <TextViewItem
         label={i18n('entities.customer.fields.prospectStatus')}
         value={
           record.prospectStatus &&

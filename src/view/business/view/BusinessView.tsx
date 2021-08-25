@@ -101,16 +101,6 @@ function BusinessView(props) {
       />
 
       <TextViewItem
-        label={i18n('entities.business.fields.latitude')}
-        value={record.latitude}
-      />
-
-      <TextViewItem
-        label={i18n('entities.business.fields.longitude')}
-        value={record.longitude}
-      />
-
-      <TextViewItem
         label={i18n('entities.business.fields.website')}
         value={record.website}
       />

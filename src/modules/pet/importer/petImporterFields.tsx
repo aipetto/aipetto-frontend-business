@@ -337,20 +337,4 @@ export default [
       },
     ),
   },
-  {
-    name: 'latitude',
-    label: i18n('entities.pet.fields.latitude'),
-    schema: schemas.decimal(
-      i18n('entities.pet.fields.latitude'),
-      {},
-    ),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.pet.fields.longitude'),
-    schema: schemas.decimal(
-      i18n('entities.pet.fields.longitude'),
-      {},
-    ),
-  },
 ];

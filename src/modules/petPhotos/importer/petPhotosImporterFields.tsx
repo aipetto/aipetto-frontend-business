@@ -26,20 +26,4 @@ export default [
       {},
     ),
   },
-  {
-    name: 'latitude',
-    label: i18n('entities.petPhotos.fields.latitude'),
-    schema: schemas.string(
-      i18n('entities.petPhotos.fields.latitude'),
-      {},
-    ),
-  },
-  {
-    name: 'longitude',
-    label: i18n('entities.petPhotos.fields.longitude'),
-    schema: schemas.string(
-      i18n('entities.petPhotos.fields.longitude'),
-      {},
-    ),
-  },
 ];

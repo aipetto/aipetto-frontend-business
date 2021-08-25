@@ -159,14 +159,6 @@ const previewRenders = {
     label: i18n('entities.providers.fields.email'),
     render: filterRenders.generic(),
   },
-  latitudeRange: {
-    label: i18n('entities.providers.fields.latitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
-  longitudeRange: {
-    label: i18n('entities.providers.fields.longitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
   basePricePerServiceRange: {
     label: i18n('entities.providers.fields.basePricePerServiceRange'),
     render: filterRenders.decimalRange(),
@@ -293,14 +285,6 @@ function ProvidersListFilter(props) {
               <InputFormItem
                 name="email"
                 label={i18n('entities.providers.fields.email')}
-              />
-              <InputRangeFormItem
-                name="latitudeRange"
-                label={i18n('entities.providers.fields.latitudeRange')}
-              />
-              <InputRangeFormItem
-                name="longitudeRange"
-                label={i18n('entities.providers.fields.longitudeRange')}
               />
               <InputRangeFormItem
                 name="basePricePerServiceRange"

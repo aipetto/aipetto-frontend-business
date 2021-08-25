@@ -45,14 +45,6 @@ const previewRenders = {
     label: i18n('entities.city.fields.name'),
     render: filterRenders.generic(),
   },
-  latitudeRange: {
-    label: i18n('entities.city.fields.latitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
-  longitudeRange: {
-    label: i18n('entities.city.fields.longitudeRange'),
-    render: filterRenders.decimalRange(),
-  },
 }
 
 function CityListFilter(props) {
