@@ -10,9 +10,11 @@ export default class BreedService {
       data,
     };
 
+    const tenantId = AuthCurrentTenant.get();
+
     const response = await authAxios.put(
-      `/tenant/breed/${id}`,
-      body,
+        `/tenant/${tenantId}/breed/${id}`,
+        body,
     );
 
     return response.data;
