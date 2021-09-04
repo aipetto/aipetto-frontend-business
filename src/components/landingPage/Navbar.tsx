@@ -28,9 +28,6 @@ const Navbar = ({logo}) => {
 
   return (
     <div className="flex flex-row items-center justify-between h-28">
-      <a href="/" className="pl-7 logo lg:ml-10">
-        <img height="80" width="80" src={logo} alt="aipetto logo" />
-      </a>
 
           {/* Mobile Nav */}
 

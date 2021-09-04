@@ -5,6 +5,9 @@ import Hero from "../../components/landingPage/Hero";
 import Step from "../../components/landingPage/Step";
 import BottomLead from "../../components/landingPage/BottomLead";
 import Footer from "../../components/landingPage/Footer";
+import Zendesk from "react-zendesk";
+import LandingNavbar from "../layout/LandingNavbar";
+const ZENDESK_KEY = "1df1c63f-c930-4a11-8d6f-6e3b242b7303";
 
 const HomePage = (props) => {
     const data = {
@@ -67,6 +70,7 @@ const HomePage = (props) => {
 
     return (
         <div className="box-border">
+            <LandingNavbar fixed />
             <div className="flex flex-col">
 
                 <Navbar logo='/images/logos/aipetto/aipetto-boarder.png'/>
@@ -136,6 +140,7 @@ const HomePage = (props) => {
                 />
 
                 <Footer logo='/images/logos/aipetto/aipetto-boarder.png'/>
+                <Zendesk defer zendeskKey={ZENDESK_KEY} onLoaded={() => console.log('Aipetto Zen up and running')} />
             </div>
         </div>
 

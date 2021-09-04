@@ -89,14 +89,15 @@ const es = {
     public: {
         homeTitle: '¿Amás a las mascotas?¡Entonces este es tu lugar!',
         homeSubtitle: 'Donde quiera que estés, encontrá veterinarios para ayudarte, obtené descuentos especiales en comida y accesorios, encontrá lugares en donde tu mascota pueda jugar y tener un lindo peinado y mucho más...',
-        landingTitle: '¡Un lugar en la web para vos y tus mascotas!',
-        landingSubtitle: 'Sé parte de este proyecto con tus sugerencias',
+        landingTitle: '¡Ofrezca tus servicios!',
+        landingSubtitle: 'Sé parte de la plataforma',
         landingBusinessTitle: 'Nuestra misión es disponibilizar informaciones y servicios de forma simples y directa para quien ama a las mascotas',
         landingBusinessSubtitle: 'Sé parte de este proyecto y vende tus productos y servicios',
         menu: {
             business: 'Empresas',
             petsSurvey: 'Inicio',
-        }
+        },
+        professionals: "Profesionales"
     },
 
     survey: {
@@ -129,8 +130,9 @@ const es = {
             petManicures: 'Manicura',
             therapeuticMassagist: 'Terapeuta y Masagista'
         },
-        whereAreYouLocated: '¿Cuál es tu dirección? Nosotros ofreceremos los mejores servicios más cercanos a vos y tu mascota.',
-        allowNotificationTitle: '¿Aceptás que te enviemos correos con precios promocionales e información para el mejor cuidado de tu pet?',
+        whereAreYouLocated: '¿Dónde ofreces tus servicios?',
+        whereAreYouLocatedPlaceholder: 'Barrio, Ciudad, Provincia...',
+        allowNotificationTitle: '¿Aceptás que te enviemos correos?',
         extraInfo: '¿Algo que te gustaría encontrar en una plataforma de mascotas y no hemos incluido?',
         surveyCompleteMessage: '¡Muchas gracias por completar nuestro formulario, que tengas un excelente día!',
         surveyCompleteButton: 'Completar'

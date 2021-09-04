@@ -46,22 +46,7 @@ function LandingPage() {
         var json = { questions: [
                 {type: "text", name: "name", title: i18n('survey.nameTitle'), isRequired: true},
                 {type: "text", name: "email", title: i18n('survey.emailTitle'), isRequired: true},
-                {type: "text", name: "numberOfPets", title: i18n('survey.numberOfPets'), isRequired: true},
-                {type: "text", name: "address", title: i18n('survey.whereAreYouLocated')},
-                { type: "checkbox", name: "interests", title: i18n('survey.checkboxTitle'), isRequired: true, colCount: 6,
-                    choices:
-                        [
-                            i18n('survey.checkboxChoices.saveMoneyOnServices'),
-                            i18n('survey.checkboxChoices.findTheClosestPlaceToGetServices'),
-                            i18n('survey.checkboxChoices.findWhereToPlayWithMyPet'),
-                            i18n('survey.checkboxChoices.knowMoreAboutPets'),
-                            i18n('survey.checkboxChoices.adoptAPet'),
-                            i18n('survey.checkboxChoices.getMoreMedicalInformation'),
-                            i18n('survey.checkboxChoices.beAbleToChatWithAVeterinarian'),
-                            i18n('survey.checkboxChoices.seeWhatPetsMyFriendsHave'),
-                            i18n('survey.checkboxChoices.findATrustedPersonToWalkMyPet'),
-                        ]},
-                {type: "text", name: "extraInfo", title: i18n('survey.extraInfo')},
+                {type: "text", placeHolder: i18n('survey.whereAreYouLocatedPlaceholder'), name: "address", title: i18n('survey.whereAreYouLocated')},
                 { type: "checkbox", name: "petProfession", title: i18n('survey.checkboxPetProfessionTitle'), isRequired: false, colCount: 6,
                     choices:
                         [
@@ -93,7 +78,7 @@ function LandingPage() {
                         <div className="container mx-auto mt-8">
                             <div className="py-0 md:py-16 hero__content text-center w-4/5 mx-auto fade-in fade-in-first">
                                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{i18n('public.landingTitle')}</h1>
-                                <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingSubtitle')} <FontAwesomeIcon icon={faGifts} /></p>
+                                <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.landingSubtitle')}</p>
                             </div>
                         </div>
 
