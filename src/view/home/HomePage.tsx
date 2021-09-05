@@ -72,8 +72,6 @@ const HomePage = (props) => {
         <div className="box-border">
             <LandingNavbar fixed />
             <div className="flex flex-col">
-
-                <Navbar logo='/images/logos/aipetto/aipetto-boarder.png'/>
                 <Hero
                     appType={data.hero.appType}
                     tagLine={data.hero.tagLine}
