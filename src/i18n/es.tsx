@@ -94,7 +94,7 @@ const es = {
         landingBusinessTitle: 'Nuestra misión es disponibilizar informaciones y servicios de forma simples y directa para quien ama a las mascotas',
         landingBusinessSubtitle: 'Sé parte de este proyecto y vende tus productos y servicios',
         menu: {
-            business: 'Empresas',
+            business: 'Negocios',
             petsSurvey: 'Inicio',
         },
         professionals: "Profesionales"
