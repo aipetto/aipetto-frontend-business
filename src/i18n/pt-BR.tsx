@@ -29,14 +29,15 @@ const ptBR = {
     homeSubtitle: 'Onde quer que você esteja, encontrará veterinários, melhores preços em produtos e serviços, isso e muito mais.',
     reservationHomeTitle: 'Encontre e reserve um serviço para se pet de maneira fácil e rápida!',
     reservationHomeSubtitle: 'Banho e tosa, vacinação e muito mais',
-    landingTitle: 'Um lugar na internet para você e seus pets!',
-    landingSubtitle: 'Faça parte deste projeto com sus sugestões.',
+    landingTitle: 'Forneça seus serviços',
+    landingSubtitle: 'Faça parte da plataforma',
     landingBusinessTitle: 'Nossa missão é dispobilizar informações e serviços de forma simples e direta para quem ama os pets',
     landingBusinessSubtitle: 'Faça parte deste projeto e ofereça seus produtos e serviços',
     menu: {
           business: 'Negócios',
           petsSurvey: 'Home',
-      }
+      },
+    professionals: "Profissionais"
   },
 
     survey: {
@@ -69,8 +70,9 @@ const ptBR = {
             photographer: 'Fotógrafo de pets',
             therapeuticMassagist: 'Massagista terapêutico',
         },
-        whereAreYouLocated: 'Qual o seu endereço? Nós iremos oferecer os melhores serviços perto de você e seu pet',
-        allowNotificationTitle: 'Você aceita receber emails com promoções e informações para o melhor cuidado do seu pet?',
+        whereAreYouLocated: 'Onde você oferece seus serviços?',
+        whereAreYouLocatedPlaceholder: 'Bairro, Cidade, Estado...',
+        allowNotificationTitle: 'Você aceita receber emails?',
         extraInfo: 'O que mais você gostaria de encontrar e não incluímos na lista?',
         surveyCompleteMessage: 'Obrigado por completar nosso formulário, tenha um ótimo dia!',
         surveyCompleteButton: 'Completar'
@@ -82,7 +84,7 @@ const ptBR = {
   },
 
   homeDownloadApp: {
-    howTheAppWorks: 'Como funciona a app',
+    howTheAppWorks: 'Como funciona a app?',
     title: 'aipetto app',
     tagline: 'Serviços para seu pet onde quer que você esteja e a qualquer momento',
     description: 'Download it',

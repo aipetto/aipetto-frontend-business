@@ -92,14 +92,15 @@ const en = {
   public: {
       homeTitle: 'Do you love pets? Then this your place!',
       homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
-      landingTitle: 'An awesome place on internet for you and your pets!',
-      landingSubtitle: 'Be part of this project by sharing your comments',
+      landingTitle: 'Provide your services',
+      landingSubtitle: 'Be part of the platform',
       landingBusinessTitle: 'Our mission is to share information and services in the easiest and direct way for those who love pets',
       landingBusinessSubtitle: 'Be part of this project and provide your products and services',
       menu: {
           business: 'Business',
           petsSurvey: 'Home',
-      }
+      },
+      professionals: "Professionals"
   },
 
   survey: {
@@ -133,7 +134,8 @@ const en = {
       therapeuticMassagist: 'Therapeutic Massagist'
     },
     whereAreYouLocated: 'What is your address? We will offer the best services nearby you and your pet!',
-    allowNotificationTitle: 'Do you allow us to send emails with special prices and information for better taking care of your pet?',
+    allowNotificationTitle: 'Do you allow us to contact you via email?',
+    whereAreYouLocatedPlaceholder: 'Neighborhood, City, State...',
     extraInfo: 'Something you would like to find here and we didn\'t include?',
     surveyCompleteMessage: 'Thank you for completing our survey, have a nice day!',
     surveyCompleteButton: 'Complete'

@@ -34,6 +34,13 @@ const en = {
       homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
       landingTitle: 'Soon an awesome place on internet for you and your pets!',
       landingSubtitle: 'Please help us with your comments below, we\'ll not forget you.',
+      landingBusinessTitle: 'Our mission is to make available information and services for those who love pets',
+      landingBusinessSubtitle: 'Be part of our platform and sell your products and services',
+      menu: {
+          business: 'Businesses',
+          petsSurvey: 'Home',
+      },
+      professionals: "Professionals"
   },
 
   survey: {
@@ -54,6 +61,7 @@ const en = {
         findATrustedPersonToWalkMyPet: 'Find a trusted person to walk my pet',
     },
     extraInfo: 'Something you would like to find here and we didn\'t include?',
+    whereAreYouLocatedPlaceholder: 'Neighborhood, City, State...',
     surveyCompleteMessage: 'Thank you for completing our survey, have a nice day!',
     surveyCompleteButton: 'Complete'
   },
