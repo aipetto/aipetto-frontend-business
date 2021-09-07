@@ -88,7 +88,7 @@ const ptBR = {
     title: 'aipetto app',
     tagline: 'Serviços para seu pet onde quer que você esteja e a qualquer momento',
     description: 'Download it',
-    downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+    downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
     downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       step1: {
           title: 'Crie sua conta',
@@ -127,9 +127,9 @@ const ptBR = {
           img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
       },
       bottomLead: {
-          actionText: 'Faça download da app',
-          description: 'Disponível na sua loja favorita.',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+          actionText: 'Seja o primeiro em usar a app',
+          description: 'Aproveite promoções e novidades especiais para você e seus pets',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
           downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       },
   },

@@ -37,7 +37,7 @@ const en = {
       title: 'aipetto app',
       tagline: 'Services for your pet everywhere anytime',
       description: 'Download it',
-      downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+      downloadAppInGooglePlayStoreButton: 'Google PlayStore (Soon)',
       downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       step1: {
           title: 'Create an account',
@@ -76,9 +76,9 @@ const en = {
           img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
       },
       bottomLead: {
-          actionText: 'Download the app.',
-          description: 'Available on your favourite store.',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+          actionText: 'Let us tell you when the app is available',
+          description: 'Enjoy special prices and new features for you and your pets',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Soon)',
           downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       },
   },

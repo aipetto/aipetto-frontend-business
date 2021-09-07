@@ -62,6 +62,7 @@ const HomePage = (props) => {
         },
         bottomLead: {
             actionText: i18n('homeDownloadApp.bottomLead.actionText'),
+            description: i18n('homeDownloadApp.bottomLead.description'),
             downloadAppInGooglePlayStoreButton: i18n('homeDownloadApp.bottomLead.downloadAppInGooglePlayStoreButton'),
             downloadAppInAppleStoreButton: i18n('homeDownloadApp.bottomLead.downloadAppInAppleStoreButton'),
         },
@@ -131,10 +132,10 @@ const HomePage = (props) => {
 
                 <BottomLead
                     actionText={data.bottomLead.actionText}
+                    description={data.bottomLead.description}
                     downloadAppInGooglePlayStoreButton={data.bottomLead.downloadAppInGooglePlayStoreButton}
                     downloadAppInAppleStoreButton={data.bottomLead.downloadAppInAppleStoreButton}
                 />
-
                 <Footer logo='/images/logos/aipetto/aipetto-boarder.png'/>
                 <Zendesk defer zendeskKey={ZENDESK_KEY} onLoaded={() => console.log('Aipetto Zen up and running')} />
             </div>
