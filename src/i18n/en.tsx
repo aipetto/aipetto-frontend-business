@@ -38,7 +38,7 @@ const en = {
       tagline: 'Services for your pet everywhere anytime',
       description: 'Download it',
       downloadAppInGooglePlayStoreButton: 'Google PlayStore',
-      downloadAppInAppleStoreButton: 'Apple Store',
+      downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       step1: {
           title: 'Create an account',
           heading: 'Create/login to an existing account to get started',
@@ -72,14 +72,14 @@ const en = {
       step6: {
           title: 'Reservation Booked!',
           heading: "The business will confirm it, then just bring or wait for the taxi dog arrive",
-          description: "You let you know via push notification and email",
+          description: "We let you know via push notification and email",
           img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
       },
       bottomLead: {
           actionText: 'Download the app.',
           description: 'Available on your favourite store.',
           downloadAppInGooglePlayStoreButton: 'Google PlayStore',
-          downloadAppInAppleStoreButton: 'Apple Store',
+          downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       },
   },
 

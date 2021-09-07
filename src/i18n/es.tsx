@@ -36,7 +36,7 @@ const es = {
         tagline: 'Servicios para tu pet donde quiera que estés y en cualquier momento.',
         description: 'Descargar',
         downloadAppInGooglePlayStoreButton: 'Google PlayStore',
-        downloadAppInAppleStoreButton: 'Apple Store',
+        downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
         step1: {
             title: 'Creá tu cuenta',
             heading: 'Creá/Entrá a una cuenta existente para empezar',
@@ -77,7 +77,7 @@ const es = {
             actionText: 'Descargá la app',
             description: 'Disponible en tu tienda favorita',
             downloadAppInGooglePlayStoreButton: 'Google PlayStore',
-            downloadAppInAppleStoreButton: 'Apple Store',
+            downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
         },
     },
 

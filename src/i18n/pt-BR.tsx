@@ -89,7 +89,7 @@ const ptBR = {
     tagline: 'Serviços para seu pet onde quer que você esteja e a qualquer momento',
     description: 'Download it',
     downloadAppInGooglePlayStoreButton: 'Google PlayStore',
-    downloadAppInAppleStoreButton: 'Apple Store',
+    downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       step1: {
           title: 'Crie sua conta',
           heading: 'Criar/Entrar a uma conta existente para começar',
@@ -130,7 +130,7 @@ const ptBR = {
           actionText: 'Faça download da app',
           description: 'Disponível na sua loja favorita.',
           downloadAppInGooglePlayStoreButton: 'Google PlayStore',
-          downloadAppInAppleStoreButton: 'Apple Store',
+          downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       },
   },
 
