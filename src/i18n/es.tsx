@@ -222,6 +222,7 @@ const es = {
             urgencias: 'Urgencias',
             vacunacionDeGato: 'Vacunación de gato',
             vacunacionDePerro: 'Vacunación de perro',
+            mais: 'Y mucho mas...',
         },
         allowNotificationTitle: '¿Aceptá que enviemos correos con información sobre las herramientas de aipetto?',
     },

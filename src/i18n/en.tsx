@@ -36,7 +36,7 @@ const en = {
       howTheAppWorks: 'How does the app work?',
       title: 'aipetto app',
       tagline: 'Services for your pet everywhere anytime',
-      description: 'Download it',
+      description: 'Download our app',
       downloadAppInGooglePlayStoreButton: 'Google PlayStore (Soon)',
       downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       step1: {
@@ -215,6 +215,7 @@ const en = {
         urgencias: 'Emergencies',
         vacunacionDeGato: 'Cat vaccination',
         vacunacionDePerro: 'Dog vaccination',
+        mais: 'And much more...',
     },
     allowNotificationTitle: 'Do you allow us to send emails with information about aipetto tools?',
   },

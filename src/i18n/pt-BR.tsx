@@ -87,7 +87,7 @@ const ptBR = {
     howTheAppWorks: 'Como funciona a app?',
     title: 'aipetto app',
     tagline: 'Serviços para seu pet onde quer que você esteja e a qualquer momento',
-    description: 'Download it',
+    description: 'Baixar app',
     downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
     downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       step1: {
@@ -215,6 +215,7 @@ const ptBR = {
         urgencias: 'Emergências',
         vacunacionDeGato: 'Vacinação de gato',
         vacunacionDePerro: 'Vacinação canina',
+        mais: 'E muito mais...',
     },
       allowNotificationTitle: 'Aceita que enviemos emails com informação sobre as ferramentas que aipetto oferece?',
   },

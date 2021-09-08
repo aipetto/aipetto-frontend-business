@@ -97,8 +97,6 @@ function SigninPage() {
             <div className="hero w-full">
               <div className="container mx-auto mt-8">
                 <div className="py-0 md:py-16 hero__content text-center w-4/5 mx-auto fade-in fade-in-first">
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{i18n('public.homeTitle')}</h1>
-                  <p className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.homeSubtitle')}</p>
 
               <div className="text-center fade-in fade-in-second">
                 <div className="sm:hidden">

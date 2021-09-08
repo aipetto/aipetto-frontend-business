@@ -21,7 +21,7 @@ const HomePage = (props) => {
         step1: {
             title: i18n('homeDownloadApp.step1.title'),
             heading: i18n('homeDownloadApp.step1.heading'),
-            description: i18n('homeDownloadApp.step1.description'),
+                description: i18n('homeDownloadApp.step1.description'),
             img: i18n('homeDownloadApp.step1.img'),
             alternate: false,
         },

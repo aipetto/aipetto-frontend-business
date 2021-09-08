@@ -1737,7 +1737,7 @@ const publicRoutes = [
   {
     path: '/',
     loader: () =>
-        import('src/view/home/HomePage'),
+        import('src/view/home/HomePageNew'),
     permissionRequired: null,
     exact: true,
   },

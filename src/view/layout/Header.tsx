@@ -1,24 +1,26 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { i18n } from 'src/i18n';
+import {useDispatch, useSelector} from 'react-redux';
+import {i18n} from 'src/i18n';
 import authActions from 'src/modules/auth/authActions';
 import authSelectors from 'src/modules/auth/authSelectors';
 import layoutActions from 'src/modules/layout/layoutActions';
-import { getHistory } from 'src/modules/store';
-import I18nSelect from 'src/view/layout/I18nSelect';
+import {getHistory} from 'src/modules/store';
 import Avatar from 'src/view/shared/Avatar';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import config from 'src/config';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faUser,
-  faPaw,
+  faBars,
+  faCode,
+  faDoorOpen,
   faLock,
+  faPaw,
+  faShoppingCart,
   faSignOutAlt,
   faThLarge,
-  faCode, faHeart, faBars, faShoppingCart, faArrowDown, faDoorOpen,
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import { Menu } from '@headlessui/react';
+import {Menu} from '@headlessui/react';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
 import tenantSelectors from "../../modules/tenant/tenantSelectors";
 import I18nFlags from "./I18nFlags";
