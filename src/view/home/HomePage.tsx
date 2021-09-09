@@ -1,13 +1,13 @@
 import React from 'react';
-import { i18n } from 'src/i18n';
-import Navbar from "../../components/landingPage/Navbar";
+import {i18n} from 'src/i18n';
 import Hero from "../../components/landingPage/Hero";
 import Step from "../../components/landingPage/Step";
 import BottomLead from "../../components/landingPage/BottomLead";
 import Footer from "../../components/landingPage/Footer";
 import Zendesk from "react-zendesk";
 import LandingNavbar from "../layout/LandingNavbar";
-const ZENDESK_KEY = "1df1c63f-c930-4a11-8d6f-6e3b242b7303";
+
+const ZENDESK_KEY = "";
 
 const HomePage = (props) => {
     const data = {
@@ -137,7 +137,6 @@ const HomePage = (props) => {
                     downloadAppInAppleStoreButton={data.bottomLead.downloadAppInAppleStoreButton}
                 />
                 <Footer logo='/images/logos/aipetto/aipetto-boarder.png'/>
-                <Zendesk defer zendeskKey={ZENDESK_KEY} onLoaded={() => console.log('Aipetto Zen up and running')} />
             </div>
         </div>
 

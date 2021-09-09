@@ -1,21 +1,12 @@
 import React from 'react';
-import { i18n } from 'src/i18n';
-import { Link, useHistory } from "react-router-dom";
-import Navbar from "../../components/landingPage/Navbar";
-import Hero from "../../components/landingPage/Hero";
-import Step from "../../components/landingPage/Step";
-import BottomLead from "../../components/landingPage/BottomLead";
+import {i18n} from 'src/i18n';
+import {Link} from "react-router-dom";
 import Footer from "../../components/landingPage/Footer";
-import Zendesk from "react-zendesk";
-import LandingNavbar from "../layout/LandingNavbar";
-import Header from "../layout/Header";
 import I18nFlags from "../layout/I18nFlags";
-const ZENDESK_KEY = "1df1c63f-c930-4a11-8d6f-6e3b242b7303";
+
+const ZENDESK_KEY = "";
 
 const HomePageNew = (props) => {
-
-
-
 
     return (
         <div className="antialiased overflow-hidden overflow-y-scroll">
@@ -144,7 +135,6 @@ const HomePageNew = (props) => {
             </div>
 
             <Footer logo='/images/logos/aipetto/aipetto-boarder.png'/>
-            <Zendesk defer zendeskKey={ZENDESK_KEY} onLoaded={() => console.log('Aipetto Zen up and running')} />
         </div>
     );
 };
