@@ -37,7 +37,7 @@ function HomePageNew() {
             {type: "text", name: "name", title: i18n('survey.nameTitle'), isRequired: true},
             {type: "text", name: "email", title: i18n('survey.emailTitle'), isRequired: true},
             {type: "text", name: "numberOfPets", title: i18n('survey.numberOfPets'), isRequired: true},
-            {type: "text", placeHolder: i18n('survey.whereAreYouLocatedPlaceholder'), name: "address", title: i18n('survey.whereAreYouLocated')},
+            {type: "text", placeHolder: i18n('survey.whereAreYouLocatedPlaceholder'), name: "address", title: i18n('survey.whereAreYouLocatedPlaceholder')},
             { type: "checkbox", name: "interests", title: i18n('survey.checkboxTitle'), isRequired: true, colCount: 6,
                 choices:
                     [
@@ -50,20 +50,6 @@ function HomePageNew() {
                         i18n('survey.checkboxChoices.beAbleToChatWithAVeterinarian'),
                         i18n('survey.checkboxChoices.seeWhatPetsMyFriendsHave'),
                         i18n('survey.checkboxChoices.findATrustedPersonToWalkMyPet'),
-                    ]},
-            { type: "checkbox", name: "petProfession", title: i18n('survey.checkboxPetProfessionTitle'), isRequired: false, colCount: 6,
-                choices:
-                    [
-                        i18n('survey.checkboxPetProfessionChoices.petTaxi'),
-                        i18n('survey.checkboxPetProfessionChoices.petSitter'),
-                        i18n('survey.checkboxPetProfessionChoices.dogWalker'),
-                        i18n('survey.checkboxPetProfessionChoices.veterinarian'),
-                        i18n('survey.checkboxPetProfessionChoices.surgeon'),
-                        i18n('survey.checkboxPetProfessionChoices.groomer'),
-                        i18n('survey.checkboxPetProfessionChoices.animalBlogger'),
-                        i18n('survey.checkboxPetProfessionChoices.photographer'),
-                        i18n('survey.checkboxPetProfessionChoices.petManicures'),
-                        i18n('survey.checkboxPetProfessionChoices.therapeuticMassagist'),
                     ]},
             {type: "text", name: "extraInfo", title: i18n('survey.extraInfo')},
             { type: "boolean", name: "allowReceiveNotifications", title: i18n('survey.allowNotificationTitle'), isRequired: true},
