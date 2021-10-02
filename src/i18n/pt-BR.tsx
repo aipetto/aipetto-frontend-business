@@ -41,6 +41,7 @@ const ptBR = {
   },
 
     survey: {
+        title: '🐾 Conte mais de você para a gente 🐾',
         checkboxTitle: 'O que você gostaria de encontrar na nossa plataforma?',
         nameTitle: 'Seu nome',
         emailTitle: 'Seu email',

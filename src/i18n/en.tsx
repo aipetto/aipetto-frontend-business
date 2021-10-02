@@ -104,6 +104,7 @@ const en = {
   },
 
   survey: {
+    title: '🐾 Tell us more about you 🐾',
     checkboxTitle: 'What would you like us to provide for you and your pets?',
     nameTitle: 'Your name',
     emailTitle: 'Your email',
@@ -120,7 +121,7 @@ const en = {
         seeWhatPetsMyFriendsHave: 'See what pets my friends have',
         findATrustedPersonToWalkMyPet: 'Find a trusted person to walk your pet',
     },
-    checkboxPetProfessionTitle: 'Do you provide some pet service?',
+    checkboxPetProfessionTitle: 'Do you provide any pet service?',
      checkboxPetProfessionChoices: {
       petTaxi: 'Pet Taxi',
       petSitter: 'Pet Sitter',

@@ -101,6 +101,7 @@ const es = {
     },
 
     survey: {
+        title: '🐾 Cuéntanos más de vos 🐾 ',
         checkboxTitle: '¿Qué te gustaría que nuestra plataforma hiciera por vos y tus mascotas?',
         nameTitle: 'Tu nombre',
         emailTitle: 'Tu correo',

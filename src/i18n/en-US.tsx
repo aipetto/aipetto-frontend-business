@@ -45,8 +45,8 @@ const en = {
 
   survey: {
     checkboxTitle: 'What would you like us to provide for you and your pets?',
-    nameTitle: 'Your name',
-    emailTitle: 'Your email',
+    nameTitle: 'What\'s your name?',
+    emailTitle: 'What\'s your email?',
     numberOfPets: 'How many pets do you have?',
     checkboxChoices: {
         saveMoneyOnServices: 'Get discounts on pet services',
@@ -67,9 +67,9 @@ const en = {
   },
   businessSurvey: {
     checkboxTitle: 'What services do you provide?',
-    nameTitle: 'Your name',
-    emailTitle: 'Your email',
-    businessNameTitle: 'Your business name',
+    nameTitle: 'What\'s your name?',
+    emailTitle: 'What\'s your email?',
+    businessNameTitle: 'What\'s your business name?',
     numberPlaces: 'How many places do you have?',
     checkboxChoices: {
         acupultura: 'Acupultura',

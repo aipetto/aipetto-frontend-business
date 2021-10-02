@@ -2,6 +2,7 @@
   "name": "app-frontend",
   "version": "v1.0.5-alpha",
   "private": true,
+  "homepage": "https://aipetto.com",
   "dependencies": {
     "@craco/craco": "6.1.1",
     "@elastic/react-search-ui": "^1.6.0",
