@@ -21,7 +21,7 @@ const apiDocumentationUrl = ``;
  * Frontend URL.
  */
 const frontendUrl = {
-  host: 'https://aipetto-frontend-business.vercel.app',
+  host: 'aipetto.com',
   protocol: 'https',
 };
 

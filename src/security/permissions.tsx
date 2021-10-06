@@ -69,7 +69,7 @@ class Permissions {
       },
       planEdit: {
         id: 'planEdit',
-        allowedRoles: [roles.aipettoAdmin],
+        allowedRoles: [roles.aipettoAdmin, roles.businessAdmin],
          allowedPlans: [
           plans.free,
           plans.premium
@@ -77,7 +77,7 @@ class Permissions {
       },
       planRead: {
         id: 'planRead',
-        allowedRoles: [roles.aipettoAdmin],
+        allowedRoles: [roles.aipettoAdmin, roles.businessAdmin],
          allowedPlans: [
           plans.free,
           plans.premium
