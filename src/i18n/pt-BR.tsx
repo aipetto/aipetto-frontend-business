@@ -2096,7 +2096,7 @@ const ptBR = {
         },
         fields: {
           id: 'Id',
-          'name': 'Nome',
+          'name': 'Nome da vacina',
           'uniqueVetVaccineCode': 'Código Único da Vacina',
           'datetimeTakenRange': 'Faixa da data e hora Aplicada',
           'datetimeTaken': 'Data e hora aplicada',
