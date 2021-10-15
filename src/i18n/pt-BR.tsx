@@ -838,13 +838,13 @@ const ptBR = {
       },
 
     business: {
-        name: 'Negócios',
-        label: 'Negócios',
-        menu: 'Negócios',
+        name: 'Negócio',
+        label: 'Negócio',
+        menu: 'Negócio',
         exporterFileName: 'Negocios_exportados',
         list: {
-          menu: 'Negócios',
-          title: 'Negócios',
+          menu: 'Negócio',
+          title: 'Negócio',
         },
         create: {
           success: 'Negócio salvo com sucesso',

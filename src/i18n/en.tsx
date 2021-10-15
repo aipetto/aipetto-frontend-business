@@ -836,12 +836,12 @@ const en = {
 
     business: {
         name: 'business',
-        label: 'Businesses',
-        menu: 'Businesses',
+        label: 'Business',
+        menu: 'Business',
         exporterFileName: 'business_export',
         list: {
-          menu: 'Businesses',
-          title: 'Businesses',
+          menu: 'Business',
+          title: 'Business',
         },
         create: {
           success: 'Business successfully saved',

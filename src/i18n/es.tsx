@@ -834,13 +834,13 @@ const es = {
         },
 
         business: {
-            name: 'Negocios',
-            label: 'Negocios',
-            menu: 'Negocios',
+            name: 'Negocio',
+            label: 'Negocio',
+            menu: 'Negocio',
             exporterFileName: 'Exportar lista de negocios',
             list: {
-                menu: 'Negocios',
-                title: 'Negocios',
+                menu: 'Negocio',
+                title: 'Negocio',
             },
             create: {
                 success: 'Negocio guardado con éxito',
