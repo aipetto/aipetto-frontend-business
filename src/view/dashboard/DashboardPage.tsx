@@ -11,6 +11,9 @@ import DashboardBarChart from 'src/view/dashboard/DashboardBarChart';
 import DashboardDoughnutChart from 'src/view/dashboard/DashboardDoughnutChart';
 import {faBarcode, faBook, faCalendarCheck, faMapMarkedAlt, faStore} from "@fortawesome/free-solid-svg-icons";
 import {i18n} from "../../i18n";
+import Zendesk from "react-zendesk";
+
+const ZENDESK_KEY = "1363fd8f-edc4-4fae-ba20-1a85a17887ee";
 
 const DashboardPage = (props) => {
 
@@ -210,6 +213,7 @@ const DashboardPage = (props) => {
           </div>
 
         </div>
+        <Zendesk defer zendeskKey={ZENDESK_KEY} onLoaded={() => console.log('Aipetto Zen up and running')} />
       </>
   );
 };
