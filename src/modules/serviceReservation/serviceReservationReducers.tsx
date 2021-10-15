@@ -8,6 +8,8 @@ import { combineReducers } from 'redux';
 export default combineReducers({
   list,
   form,
+  // TODO add reducer calendar,
+  // TODO add reducer reminders,
   view,
   destroy,
   importer: importerReducer,

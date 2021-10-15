@@ -8,6 +8,7 @@ import { getHistory } from 'src/modules/store';
 import CustomerForm from 'src/view/customer/form/CustomerForm';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import Spinner from 'src/view/shared/Spinner';
+import {FormProvider} from "react-hook-form";
 
 function CustomerFormPage(props) {
   const [dispatched, setDispatched] = useState(false);
@@ -51,22 +52,21 @@ function CustomerFormPage(props) {
       />
 
       <div className="mt-4 p-6 bg-white dark:bg-gray-800 dark:border-gray-800 text-gray-900 dark:text-gray-200 border-gray-200 border rounded-md">
-        <h1 className="text-lg font-medium mb-6">
-          {title}
-        </h1>
+        <div className="h-full w-full flex justify-center">
 
-        {initLoading && <Spinner />}
+            {initLoading && <Spinner />}
 
-        {dispatched && !initLoading && (
-          <CustomerForm
-            saveLoading={saveLoading}
-            initLoading={initLoading}
-            record={record}
-            isEditing={isEditing}
-            onSubmit={doSubmit}
-            onCancel={() => getHistory().push('/customer')}
-          />
-        )}
+            {dispatched && !initLoading && (
+              <CustomerForm
+                saveLoading={saveLoading}
+                initLoading={initLoading}
+                record={record}
+                isEditing={isEditing}
+                onSubmit={doSubmit}
+                onCancel={() => getHistory().push('/customer')}
+              />
+            )}
+          </div>
       </div>
     </>
   );

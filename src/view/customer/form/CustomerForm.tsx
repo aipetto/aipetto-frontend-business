@@ -331,6 +331,13 @@ function CustomerForm(props) {
             />
           </div>
           <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+                name="uniqueCustomIdentifier"
+                label={i18n('entities.customer.fields.uniqueCustomIdentifier')}
+                required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
             <SelectFormItem
                 name="prospectStatus"
                 label={i18n('entities.customer.fields.prospectStatus')}
@@ -419,13 +426,6 @@ function CustomerForm(props) {
               label={i18n('entities.customer.fields.businessId')}
               required={false}
               showCreate={!props.modal}
-            />
-          </div>
-          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-            <InputFormItem
-              name="uniqueCustomIdentifier"
-              label={i18n('entities.customer.fields.uniqueCustomIdentifier')}
-              required={false}
             />
           </div>
           <div className="w-full sm:w-md md:w-md lg:w-md mt-4">

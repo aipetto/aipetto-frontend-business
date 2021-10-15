@@ -32,7 +32,7 @@ class Permissions {
       dashboardGraphRead: {
         id: 'dashboardGraphRead',
         allowedRoles: [
-          roles.aipettoAdmin,
+          roles.aipettoAdmin
         ],
         allowedPlans: [
           plans.free, plans.premium
