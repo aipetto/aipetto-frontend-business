@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import PermissionChecker from 'src/modules/auth/permissionChecker';
-import menus from 'src/view/menus';
 import {useDispatch, useSelector} from "react-redux";
 import {default as authSelectors, default as selectors} from "../../modules/auth/authSelectors";
 import dashSelectors from "../../modules/dashboard/dashboardSelectors";
@@ -10,7 +9,7 @@ import layoutSelectors from "../../modules/layout/layoutSelectors";
 import layoutActions from "../../modules/layout/layoutActions";
 import DashboardBarChart from 'src/view/dashboard/DashboardBarChart';
 import DashboardDoughnutChart from 'src/view/dashboard/DashboardDoughnutChart';
-import {faBarcode, faCalendarCheck, faMapMarkedAlt, faStore} from "@fortawesome/free-solid-svg-icons";
+import {faBarcode, faBook, faCalendarCheck, faMapMarkedAlt, faStore} from "@fortawesome/free-solid-svg-icons";
 import {i18n} from "../../i18n";
 
 const DashboardPage = (props) => {
@@ -105,7 +104,7 @@ const DashboardPage = (props) => {
                 </span>
                 </Link>
                 <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
-                  Cadastre seu negócios
+                  Verifique os dados do seu negócio
                 </p>
               </div>
             </div>
@@ -184,6 +183,32 @@ const DashboardPage = (props) => {
               </div>
             </div>
           </div>
+
+          <div className="mb-8 flex justify-between items-center w-full right-timeline">
+            <div className="order-1 w-5/12"></div>
+            <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+              <h1 className="mx-auto font-semibold text-lg text-white">5</h1>
+            </div>
+            <div className="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <Link className='flex flex-col items-center w-40 h-32 border border-indigo-50 hover:bg-green-300 hover:text-black rounded-2xl cursor-pointer py-2 bg-white'
+                    onClick={doToggleMenuIfSmall}
+                    key='/service-reservation'
+                    to='/service-reservation'
+              >
+                <FontAwesomeIcon
+                    className="w-5 h-40 fa-2x"
+                    icon={faBook}
+                />
+                <span className="text-base md:text-lg text-black-800 text-sm">
+                    {i18n('entities.serviceReservation.menu')}
+                </span>
+              </Link>
+              <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
+                Controle as reservas que são recebidas pela app ou web
+              </p>
+            </div>
+          </div>
+
         </div>
       </>
   );

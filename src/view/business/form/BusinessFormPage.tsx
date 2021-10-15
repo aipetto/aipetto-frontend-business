@@ -51,22 +51,21 @@ function BusinessFormPage(props) {
       />
 
       <div className="mt-4 p-6 bg-white dark:bg-gray-800 dark:border-gray-800 text-gray-900 dark:text-gray-200 border-gray-200 border rounded-md">
-        <h1 className="text-lg font-medium mb-6">
-          {title}
-        </h1>
+          <div className="h-full w-full flex justify-center">
 
-        {initLoading && <Spinner />}
+                {initLoading && <Spinner />}
 
-        {dispatched && !initLoading && (
-          <BusinessForm
-            saveLoading={saveLoading}
-            initLoading={initLoading}
-            record={record}
-            isEditing={isEditing}
-            onSubmit={doSubmit}
-            onCancel={() => getHistory().push('/business-list')}
-          />
-        )}
+                {dispatched && !initLoading && (
+                  <BusinessForm
+                    saveLoading={saveLoading}
+                    initLoading={initLoading}
+                    record={record}
+                    isEditing={isEditing}
+                    onSubmit={doSubmit}
+                    onCancel={() => getHistory().push('/business-list')}
+                  />
+                )}
+            </div>
       </div>
     </>
   );

@@ -1096,6 +1096,7 @@ const ptBR = {
           'ratingFromCustomerRange': 'Faixa da Pontuação dos Clientes',
           'ratingFromCustomer': 'Pontuação do Cliente',
           'country': 'País',
+          'source': 'Origem da Reserva',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
@@ -1148,19 +1149,19 @@ const ptBR = {
             '05_00AM': '05:00AM',
             '05_30AM': '05:30AM',
           },
-          'status': {
+        'status': {
             'user_approval_pending': 'User_approval_pending',
             'business_approval_pending': 'Business_approval_pending',
             'business_approved': 'Business_approved',
             'business_declined': 'Business_declined',
-          },
-          'source': {
-            'aipetto_app': 'Aipetto_app',
-            'aipetto_web': 'Aipetto_web',
+        },
+        'source': {
+            'aipetto_app': 'App Aipetto',
+            'aipetto_web': 'Web Aipetto',
             'manual': 'Manual',
-            'external_integration': 'External_integration',
-            'facebook_reservation': 'Facebook_reservation',
-          },
+            'external_integration': 'Integração Externa',
+            'facebook_reservation': 'Reserva via Facebook Page',
+        },
         },
         placeholders: {
 

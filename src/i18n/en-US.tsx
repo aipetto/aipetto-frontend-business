@@ -896,6 +896,13 @@ const en = {
             'business_approved': 'Business_approved',
             'business_declined': 'Business_declined',
           },
+         'source': {
+            'aipetto_app': 'Aipetto App',
+            'aipetto_web': 'Aipetto Web',
+            'manual': 'Manual',
+            'external_integration': 'Extenal Integration',
+            'facebook_reservation': 'Facebook Reservation',
+         },
         },
         placeholders: {
 

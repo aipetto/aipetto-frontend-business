@@ -94,7 +94,7 @@ function Menu(props) {
     <div
       className={`${
         menuVisible ? 'flex flex-col w-full' : 'hidden'
-      } sm:w-64 md:w-64 transition-opacity duration-200 rounded-full lg:w-64 flex-shrink-0 min-h-screen px-4 py-4 border-0 sm:border-r md:border-r lg:border-r bg-white dark:border-gray-600`}
+      } sm:w-64 md:w-64 transition-opacity duration-200 lg:w-64 flex-shrink-0 min-h-screen px-4 py-4 bg-gray-100`}
     >
       <div className="w-full flex justify-between sm:justify-center md:justify-center lg:justify-center items-center">
         <Link onClick={doToggleMenuIfSmall} to="/">
@@ -118,7 +118,7 @@ function Menu(props) {
         </div>
       </div>
 
-      <div className="flex flex-col justify-between flex-1 mt-6">
+      <div className="flex flex-col justify-between flex-1 mt-6 bg-gray-100">
         <nav>
           {menus
             .filter((menu) =>
