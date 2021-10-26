@@ -1749,6 +1749,13 @@ const publicRoutes = [
     exact: true,
   },
   {
+    path: '/privacy-policy',
+    loader: () =>
+        import('src/view/gdpr/PrivacyPolicyPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     path: '/professionals',
     loader: () => import('src/view/home/LandingPage'),
   },
