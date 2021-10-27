@@ -134,7 +134,7 @@ const en = {
       petManicures: 'Pet Manicures',
       therapeuticMassagist: 'Therapeutic Massagist'
     },
-    whereAreYouLocated: 'Nearby which location do you provide your services?',
+    whereAreYouLocated: 'Which location do you provide your services?',
     allowNotificationTitle: 'Do you allow us to contact you via email?',
     whereAreYouLocatedPlaceholder: 'Neighborhood, City, State...',
     extraInfo: 'Something you would like to find here and we didn\'t include?',

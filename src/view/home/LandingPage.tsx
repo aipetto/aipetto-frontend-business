@@ -100,22 +100,6 @@ function LandingPage() {
                             </div>
                         </div>
                     </div>
-                    <CookieConsent
-                        enableDeclineButton
-                        containerClasses="alert alert-warning col-lg-12"
-                        debug={true}
-                        style={{ width: 400 }}
-                        buttonText={i18n('privacy.acceptButton')}
-                        declineButtonText={i18n('privacy.declineButtonText')}
-                        buttonStyle={{
-                            background: "green",
-                            color: "white",
-                        }}
-                        declineButtonStyle={{
-                            background: "gray",
-                            color: "white",
-                        }}
-                    >{i18n('privacy.cookiesConsent')}</CookieConsent>
                     <footer className="py-8 text-center md:text-left">
                         <div className="container mx-auto">
                             <div className=" flex flex-col lg:flex-row content-center items-center justify-between">
