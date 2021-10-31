@@ -78,9 +78,20 @@ const en = {
       bottomLead: {
           actionText: 'Let us tell you when the app is available',
           description: 'Enjoy special prices and new features for you and your pets',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Soon)',
           downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       },
+  },
+
+  featuresHome: {
+    ourFeatures: 'Our Features',
+    checkOurList: ' Check out our list of awesome features below.',
+    bookingSystem: 'Pet Services Booking',
+    bookingSystemDescription: 'All the places are prevalidated to guarantee your pet safety',
+    notifications: 'Notifications',
+    notificationsDescription: 'Never lost an appointment or stay waiting until you pet can be attended',
+    petProfile: 'Pet Profile',
+    petProfileDescription: 'Manage your pet vaccines, exams and allow veterinarians access it in real-time'
   },
 
   privacy: {

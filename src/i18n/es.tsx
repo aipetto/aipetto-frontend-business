@@ -35,7 +35,7 @@ const es = {
         title: 'aipetto app',
         tagline: 'Agendá los servicios de tu mascota',
         description: 'Descargar',
-        downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+        downloadAppInGooglePlayStoreButton: 'Google PlayStore (Pronto)',
         downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
         step1: {
             title: 'Creá tu cuenta',
@@ -76,9 +76,20 @@ const es = {
         bottomLead: {
             actionText: 'Te avisaremos cuando este la app',
             description: 'Aproveche promociones especiales y novedades para vos y tus mascotas',
-            downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+            downloadAppInGooglePlayStoreButton: 'Google PlayStore (Pronto)',
             downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
         },
+    },
+
+    featuresHome: {
+        ourFeatures: 'Recursos',
+        checkOurList: ' Mire algunos de los beneficios abajo',
+        bookingSystem: 'Agendamiento de Servicios',
+        bookingSystemDescription: 'Todos los negocios son verificados para garantizar la seguridad de tu mascota',
+        notifications: 'Notificaciones',
+        notificationsDescription: 'No pierdas un agendamiento o quedes esperando hasta que tu mascota sea atendida',
+        petProfile: 'Perfil de la mascota',
+        petProfileDescription: 'Gerencie las vacunas, examenes y permita que veterinarios accedan en tiempo real'
     },
 
     privacy: {

@@ -81,7 +81,6 @@ function HomePageNew() {
                                     <div className="hidden md:flex flex flex-col items-center justify-center w-full h-full mt-12 text-center text-green-400 md:text-green-50 md:w-2/3 md:mt-0 md:flex-row md:items-center">
                                         <a className="px-4 py-2 md:text-white text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/">{i18n('public.menu.petsSurvey')}</a>
                                         <a href="/business" className="md:text-white px-4 py-2 text-gray-900 font-semibold hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded">{i18n('public.menu.business')}</a>
-                                        <a className="px-4 py-2 md:text-white text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/professionals">{i18n('public.professionals')}</a>
                                     </div>
                                     <I18nFlags />
                                     <div className="flex flex-col items-center justify-end w-full h-full pt-4 md:w-1/3 md:flex-row md:py-0">
@@ -99,9 +98,6 @@ function HomePageNew() {
                             {i18n('public.homeSubtitle')}
                         </span>
                         </h2>
-                        <div className="relative flex items-center mt-10 max-w-md mx-auto overflow-hidden text-center">
-                            <img src="images/qr-aipetto-internaltest.png" alt="aipetto" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
-                        </div>
 
                         <div className="mt-8 text-black-100">
 
@@ -122,10 +118,9 @@ function HomePageNew() {
 
             <section className="py-20 bg-white">
                 <div className="container max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold tracking-tight text-center">Our Features</h2>
+                    <h2 className="text-4xl font-bold tracking-tight text-center">{i18n('featuresHome.ourFeatures')}</h2>
                     <p className="mt-2 text-lg text-center text-gray-600">
-                        Check out our list of awesome features
-                        below.
+                        {i18n('featuresHome.checkOurList')}
                     </p>
                     <div className="grid grid-cols-4 gap-8 mt-10 sm:grid-cols-8 lg:grid-cols-12 sm:px-8 xl:px-0">
 
@@ -142,8 +137,8 @@ function HomePageNew() {
                                     <path d="M4.5 17l-1.5 5l3 -1.5l3 1.5l-1.5 -5"></path>
                                 </svg>
                             </div>
-                            <h4 className="text-xl font-medium text-gray-700">Pet Services Booking</h4>
-                            <p className="text-base text-center text-gray-500">All the places are prevalidated to guarantee your pet safety</p>
+                            <h4 className="text-xl font-medium text-gray-700"> {i18n('featuresHome.bookingSystem')}</h4>
+                            <p className="text-base text-center text-gray-500">{i18n('featuresHome.bookingSystemDescription')}</p>
                         </div>
 
                         <div
@@ -159,8 +154,8 @@ function HomePageNew() {
                                         d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8"></path>
                                 </svg>
                             </div>
-                            <h4 className="text-xl font-medium text-gray-700">Notifications</h4>
-                            <p className="text-base text-center text-gray-500">Never lost an appointment or stay waiting until you pet can be attended</p>
+                            <h4 className="text-xl font-medium text-gray-700">{i18n('featuresHome.notifications')}</h4>
+                            <p className="text-base text-center text-gray-500">{i18n('featuresHome.notificationsDescription')}</p>
                         </div>
 
                         <div
@@ -177,8 +172,8 @@ function HomePageNew() {
                                     <line x1="16" y1="5.25" x2="8" y2="9.75"></line>
                                 </svg>
                             </div>
-                            <h4 className="text-xl font-medium text-gray-700">Pet Profile</h4>
-                            <p className="text-base text-center text-gray-500">Manage your pet vaccines, exams and allow veterinarians access in real-time</p>
+                            <h4 className="text-xl font-medium text-gray-700">{i18n('featuresHome.petProfile')}</h4>
+                            <p className="text-base text-center text-gray-500">{i18n('featuresHome.petProfileDescription')}</p>
                         </div>
 
                     </div>

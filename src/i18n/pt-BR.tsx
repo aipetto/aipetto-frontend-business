@@ -89,7 +89,7 @@ const ptBR = {
     title: 'aipetto app',
     tagline: 'Simplifique a maneira de agendar',
     description: 'Baixar app',
-    downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+    downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
     downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       step1: {
           title: 'Crie sua conta',
@@ -130,9 +130,20 @@ const ptBR = {
       bottomLead: {
           actionText: 'Seja o primeiro em usar a app',
           description: 'Aproveite promoções e novidades especiais para você e seus pets',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
           downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       },
+  },
+
+  featuresHome: {
+      ourFeatures: 'Recursos',
+      checkOurList: 'Confira alguns dos benefícios abaixo',
+      bookingSystem: 'Agendamento de Serviços',
+      bookingSystemDescription: 'Todos os negócios são verificados para garantir a segurança do seu pet',
+      notifications: 'Notificações',
+      notificationsDescription: 'Nunca perca um agendamento ou fique esperando para que seu pet seja atendido',
+      petProfile: 'Perfil',
+      petProfileDescription: 'Controle as vacinas, exames e permita que veterinários possam acessar em tempo real'
   },
 
   privacy: {
