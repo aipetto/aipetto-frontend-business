@@ -8,7 +8,7 @@ function I18nFlags(props) {
   };
 
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center">
       {getLanguages().map((language) => (
         <img
           className="mr-2 w-6 cursor-pointer"

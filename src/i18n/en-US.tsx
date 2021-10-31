@@ -31,7 +31,7 @@ const en = {
 
   public: {
       homeTitle: 'Do you love pets? Then this your place!',
-      homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
+      homeSubtitle: 'schedule your pet services',
       landingTitle: 'Soon an awesome place on internet for you and your pets!',
       landingSubtitle: 'Please help us with your comments below, we\'ll not forget you.',
       landingBusinessTitle: 'Our mission is to make available information and services for those who love pets',
@@ -62,7 +62,7 @@ const en = {
     },
     extraInfo: 'Something you would like to find here and we didn\'t include?',
     whereAreYouLocatedPlaceholder: 'Neighborhood, City, State...',
-    surveyCompleteMessage: 'Thank you for completing our survey, have a nice day!',
+    surveyCompleteMessage: 'Thank you for completing your registration, we soon will get in contact!',
     surveyCompleteButton: 'Complete'
   },
   businessSurvey: {

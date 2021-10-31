@@ -64,142 +64,243 @@ function HomePageNew() {
     return (
         <div className="antialiased overflow-hidden overflow-y-scroll">
 
+            <section className="w-full px-3 antialiased bg-green-400 lg:px-6">
+                <div className="mx-auto max-w-7xl">
 
-            <nav className="p-4 nav-section w-full">
-                <div className="container mx-auto">
-                    <div className="flex justify-between flex- content-center items-center py-2 lg:py-0 px-0 lg:px-0">
+                    <nav className="flex items-center w-full h-24 select-none">
                         <Link
                             to="/"
-                            className="text-blueGray-700 font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
+                            className="text-blueGray-700 pl-6 pr-4 font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
                         >
-                            <h1 className="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-4xl xl:mb-8">aipetto</h1>
+                            <h1 className="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-4xl xl:mb-8">Aipetto</h1>
                         </Link>
-                        <div className="hidden md:block">
-                            <ul className="flex flex-row">
-                                <li className="active">
-                                    <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/">{i18n('public.menu.petsSurvey')}</a>
-                                </li>
-                                <li>
-                                    <a href="/business" className="px-4 py-2 text-gray-900 font-semibold hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded">{i18n('public.menu.business')}</a>
-                                </li>
-                                <li>
-                                    <a className="px-4 py-2 text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/professionals">{i18n('public.professionals')}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="md:block">
-                            <ul className="flex flex-">
+                        <div className="relative flex flex-wrap items-center justify-between w-full h-24 mx-auto font-medium md:justify-center">
 
-                                <li>
+                            <div className="top-0 left-0 z-40 items-center w-full h-full p-3 text-xl md:text-sm lg:text-base md:w-3/4 md:bg-transparent md:p-0 md:relative md:flex">
+
+                                    <div className="hidden md:flex flex flex-col items-center justify-center w-full h-full mt-12 text-center text-green-400 md:text-green-50 md:w-2/3 md:mt-0 md:flex-row md:items-center">
+                                        <a className="px-4 py-2 md:text-white text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/">{i18n('public.menu.petsSurvey')}</a>
+                                        <a href="/business" className="md:text-white px-4 py-2 text-gray-900 font-semibold hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded">{i18n('public.menu.business')}</a>
+                                        <a className="px-4 py-2 md:text-white text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/professionals">{i18n('public.professionals')}</a>
+                                    </div>
                                     <I18nFlags />
-                                </li>
-                                <li className="nav-item px-2 signup">
-                                    <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/beta">Beta</a>
-                                </li>
-                            </ul>
+                                    <div className="flex flex-col items-center justify-end w-full h-full pt-4 md:w-1/3 md:flex-row md:py-0">
+                                        <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border-transparent border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/beta">Beta</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </nav>
+                    <div className="container py-32 mx-auto text-center sm:px-4">
+
+                        <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-white sm:text-5xl sm:leading-none md:text-6xl xl:text-7xl">
+
+                            <span className="block ">{i18n('homeDownloadApp.tagline')}</span> <span
+                            className="relative inline-block mt-3 text-transparent text-white">
+                            {i18n('public.homeSubtitle')}
+                        </span>
+                        </h2>
+                        <div className="relative flex items-center mt-10 max-w-md mx-auto overflow-hidden text-center">
+                            <img src="images/qr-aipetto-internaltest.png" alt="aipetto" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
+                        </div>
+
+                        <div className="mt-8 text-black-100">
+
+                            <a href="#" className="bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 hover:border-yellow-700 shadow font-semibold px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">
+                                  <span className="flex h-3 w-3">
+                                        <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-purple-500"/>
+                                  </span>
+                                {i18n('homeDownloadApp.bottomLead.downloadAppInGooglePlayStoreButton')}
+                            </a>
+                            <a href="#"
+                               className="rounded border border-gray-700 hover:bg-blue-300 px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">
+                                {i18n('homeDownloadApp.bottomLead.downloadAppInAppleStoreButton')}</a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-20 bg-white">
+                <div className="container max-w-6xl mx-auto">
+                    <h2 className="text-4xl font-bold tracking-tight text-center">Our Features</h2>
+                    <p className="mt-2 text-lg text-center text-gray-600">
+                        Check out our list of awesome features
+                        below.
+                    </p>
+                    <div className="grid grid-cols-4 gap-8 mt-10 sm:grid-cols-8 lg:grid-cols-12 sm:px-8 xl:px-0">
+
+                        <div
+                            className="relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 sm:rounded-xl">
+                            <div className="p-3 text-white bg-green-400 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 " viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                                    <path d="M5 8v-3a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5"></path>
+                                    <circle cx="6" cy="14" r="3"></circle>
+                                    <path d="M4.5 17l-1.5 5l3 -1.5l3 1.5l-1.5 -5"></path>
+                                </svg>
+                            </div>
+                            <h4 className="text-xl font-medium text-gray-700">Pet Services Booking</h4>
+                            <p className="text-base text-center text-gray-500">All the places are prevalidated to guarantee your pet is safety</p>
+                        </div>
+
+                        <div
+                            className="flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 bg-gray-100 sm:rounded-xl">
+                            <div className="p-3 text-white bg-green-400 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 " viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M18 8a3 3 0 0 1 0 6"></path>
+                                    <path d="M10 8v11a1 1 0 0 1 -1 1h-1a1 1 0 0 1 -1 -1v-5"></path>
+                                    <path
+                                        d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8"></path>
+                                </svg>
+                            </div>
+                            <h4 className="text-xl font-medium text-gray-700">Notifications</h4>
+                            <p className="text-base text-center text-gray-500">Never lost an appointment or stay waiting until you pet can be attended</p>
+                        </div>
+
+                        <div
+                            className="flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 bg-gray-100 sm:rounded-xl">
+                            <div className="p-3 text-white bg-green-400 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 " viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
+                                    <line x1="12" y1="12" x2="20" y2="7.5"></line>
+                                    <line x1="12" y1="12" x2="12" y2="21"></line>
+                                    <line x1="12" y1="12" x2="4" y2="7.5"></line>
+                                    <line x1="16" y1="5.25" x2="8" y2="9.75"></line>
+                                </svg>
+                            </div>
+                            <h4 className="text-xl font-medium text-gray-700">Pet Profile</h4>
+                            <p className="text-base text-center text-gray-500">Manage your pet vaccines, exams and allow veterinarians access in real-time</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section className="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24">
+                <div
+                    className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
+
+                    <div
+                        className="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">
+                        <div className="z-20 flex items-center order-1 bg-green-400 shadow-xl w-80 h-80 rounded-full">
+                            <h2 className="mx-auto animate-pulse text-white font-semibold text-6xl">
+                                1
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div
+                        className="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none">
+                        <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+                            {i18n('homeDownloadApp.step3.heading')}
+
+
+                        </h2>
+                        <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
+                            {i18n('homeDownloadApp.step3.description')}
+                        </p>
+                        <ul className="usps">
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>
+                                {i18n('businessSurvey.checkboxChoices.peluqueria')}</li>
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>{i18n('businessSurvey.checkboxChoices.vacunacionDeGato')}</li>
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>{i18n('businessSurvey.checkboxChoices.castracionDePerros')}</li>
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>{i18n('businessSurvey.checkboxChoices.castracionDeGatos')}</li>
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>{i18n('businessSurvey.checkboxChoices.analisisDeSangre')}</li>
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>{i18n('businessSurvey.checkboxChoices.ecografia')}</li>
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>{ i18n('businessSurvey.checkboxChoices.radiografia')}</li>
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>{i18n('businessSurvey.checkboxChoices.urgencias')}</li>
+                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid"><span
+                                className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-green-300 rounded-full"><span
+                                className="text-sm font-bold">✓</span></span>{i18n('businessSurvey.checkboxChoices.mais')}</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <div
+                    className="box-border flex flex-col items-center content-center px-20 mx-auto mt-20 leading-6 text-black border-0 border-gray-300 border-solid xl:mt-20 md:flex-row max-w-7xl lg:px-16">
+                    <div className="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
+                        <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+                            {i18n('homeDownloadApp.step2.heading')}
+                        </h2>
+                        <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
+                            {i18n('homeDownloadApp.step2.description')}
+                        </p>
+
+                    </div>
+                    <div
+                        className="box-border relative w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-2 md:w-1/2">
+                        <div className="z-20 flex items-center order-1 bg-gray-300 shadow-xl w-80 h-80 rounded-full">
+                            <h2 className="mx-auto animate-pulse text-white font-semibold text-6xl">2</h2>
                         </div>
                     </div>
                 </div>
-            </nav>
 
-            <div className="container bg-green-300 mx-auto mt-4">
-                <div className="py-8 md:py-16 hero__content text-center w-4/5 mx-auto fade-in fade-in-first">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{i18n('homeDownloadApp.tagline')}</h2>
-                    <h3 className="text-xl pt-4 pb-8 text-gray-700">{i18n('public.homeSubtitle')}</h3>
 
-                    <div className="text-center fade-in fade-in-second">
-                        <div className="">
-                            <img src="images/conifer-1097.png" alt="aipetto" className="lazy mx-auto z-10 relative w-2/3 md:w-4/5 lg:w-1/3"/>
+                <div
+                    className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
+                    <div
+                        className="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-20 md:w-1/2 xl:pl-10">
+                        <div className="z-20 flex items-center order-1 bg-gray-300 shadow-xl w-80 h-80 rounded-full">
+                            <h2 className="mx-auto text-white animate-pulse font-semibold text-6xl">3</h2>
                         </div>
                     </div>
-
-
-                    <div className="flex justify-center items-center flex- mb-2">
-                        <a href="#" className="bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 hover:border-yellow-700 shadow font-semibold px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">
-                            {i18n('homeDownloadApp.bottomLead.downloadAppInGooglePlayStoreButton')}</a>
-                        <a href="#"
-                           className="rounded border border-gray-700 hover:bg-blue-300 px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">
-                            {i18n('homeDownloadApp.bottomLead.downloadAppInAppleStoreButton')}</a>
+                    <div
+                        className="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none">
+                        <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+                            {i18n('homeDownloadApp.step4.heading')}
+                        </h2>
+                        <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
+                            {i18n('homeDownloadApp.step4.description')}
+                        </p>
                     </div>
                 </div>
 
-            </div>
 
-            <div className="features px-4 md:px-8">
-                <div className="container mx-auto">
-
-
-                    <div className="flex flex-col md:flex-row items-center content-center py-12 lg:pt-16 lg:pb-32">
-                        <div className="feature-1 md:w-1/2 text-center mb-4 lg:mb-0 relative">
-                            <img src={i18n('homeDownloadApp.step2.img')} className="lazy mx-auto z-10 relative w-2/3 lg:w-1/3" alt="Aipetto Vet Petshop Services"/>
-
-                        </div>
-                        <div className="w-full md:w-1/2 ">
-                            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold"> {i18n('homeDownloadApp.step3.heading')}</h2>
-                            <p className="text-md lg:text-lg pt-4 pb-8 text-gray-700">
-                                {i18n('homeDownloadApp.step3.description')}
-                            </p>
-                            <ul className="usps">
-                                <li className="text-gray-900 py-1">{i18n('businessSurvey.checkboxChoices.peluqueria')}</li>
-                                <li className="text-gray-900 py-1">{i18n('businessSurvey.checkboxChoices.vacunacionDeGato')}</li>
-                                <li className="text-gray-900 py-1">{i18n('businessSurvey.checkboxChoices.castracionDePerros')}</li>
-                                <li className="text-gray-900 py-1">{i18n('businessSurvey.checkboxChoices.castracionDeGatos')}</li>
-                                <li className="text-gray-900 py-1">{i18n('businessSurvey.checkboxChoices.analisisDeSangre')}</li>
-                                <li className="text-gray-900 py-1">{i18n('businessSurvey.checkboxChoices.ecografia')}</li>
-                                <li className="text-gray-900 py-1">{ i18n('businessSurvey.checkboxChoices.radiografia')}</li>
-                                <li className="text-gray-900 py-1">{i18n('businessSurvey.checkboxChoices.urgencias')}</li>
-                                <li className="text-gray-900 py-1">{i18n('businessSurvey.checkboxChoices.mais')}</li>
-                            </ul>
-                        </div>
+                <div
+                    className="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-20 md:flex-row max-w-7xl lg:px-16">
+                    <div className="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
+                        <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+                            {i18n('homeDownloadApp.step6.heading')}
+                        </h2>
+                        <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
+                            {i18n('homeDownloadApp.step6.description')}
+                        </p>
                     </div>
-                    <div className="flex flex-col md:flex-row items-center content-center py-12 lg:pb-16 lg:pt-16">
-                        <div className="feature-2 md:w-1/2 text-center order-first md:order-last mb-4 lg:mb-0 relative">
-                            <img src={i18n('homeDownloadApp.step3.img')} className="lazy mx-auto z-10 relative w-2/3 lg:w-1/3" alt="Prices and Promos"/>
-                        </div>
-                        <div className="w-full md:w-1/2 order-last md:order-first">
-                            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">{i18n('homeDownloadApp.step2.heading')}</h2>
-                            <p className="text-md lg:text-lg pt-4 pb-8 text-gray-700">
-                                {i18n('homeDownloadApp.step2.description')}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col md:flex-row items-center content-center py-12 lg:pt-16 lg:pb-32">
-                        <div className="feature-3 w-full md:w-1/2 text-center px-4 px-md-0 mb-4 lg:mb-0 relative">
-                            <img src={i18n('homeDownloadApp.step4.img')} className="lazy mx-auto z-10 relative w-2/3 lg:w-1/3" alt="Pick Day and Time"/>
-                        </div>
-                        <div className="w-full md:w-1/2">
-                            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold"> {i18n('homeDownloadApp.step4.heading')}</h2>
-                            <p className="text-md lg:text-lg pt-4 pb-8 text-gray-700">
-                                {i18n('homeDownloadApp.step4.description')}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col md:flex-row items-center content-center py-12 lg:pb-16 lg:pt-16">
-                        <div className="feature-2 md:w-1/2 text-center order-first md:order-last mb-4 lg:mb-0 relative">
-                            <img src={i18n('homeDownloadApp.step6.img')} className="lazy mx-auto z-10 relative w-2/3 lg:w-1/3" alt="Booking Confirmation"/>
-                        </div>
-                        <div className="w-full md:w-1/2 order-last md:order-first">
-                            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold"> {i18n('homeDownloadApp.step6.heading')}</h2>
-                            <p className="text-md lg:text-lg pt-4 pb-8 text-gray-700">
-                                {i18n('homeDownloadApp.step6.description')}
-                            </p>
-                        </div>
+                    <div
+                        className="box-border relative w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-20 md:w-1/2">
+                            <img src="images/petAnimationHappiness.gif" className="rounded-full w-80 h-80"/>
                     </div>
                 </div>
-            </div>
 
-            <div className="container mx-auto">
-                <div className="py-8 hero__content text-center w-4/5 mx-auto fade-in fade-in-first">
-                    <h3 className="object-center text-xl pt-4 pb-8 text-gray-700">{i18n('survey.title')}</h3>
-                </div>
-
-            </div>
-
-            <div className="flex space-x-4 container mx-auto mt-8">
-                <div className="flex-1">
-                    <Survey.Survey model={survey} onComplete={onComplete} />
-                </div>
-            </div>
+            </section>
 
             <Footer logo='/images/logos/aipetto/aipetto-boarder.png'/>
         </div>

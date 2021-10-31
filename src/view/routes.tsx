@@ -1756,6 +1756,13 @@ const publicRoutes = [
     exact: true,
   },
   {
+    path: '/blank-page',
+    loader: () =>
+        import('src/view/blank/BlankPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     path: '/professionals',
     loader: () => import('src/view/home/LandingPage'),
   },

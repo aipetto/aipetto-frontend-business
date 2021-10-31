@@ -26,7 +26,7 @@ const ptBR = {
   },
   public: {
     homeTitle: 'Você ama os animais? Esse é seu lugar!',
-    homeSubtitle: 'Onde quer que você esteja, encontrará veterinários, melhores preços em produtos e serviços, isso e muito mais.',
+    homeSubtitle: 'os serviços do seu pet',
     reservationHomeTitle: 'Encontre e reserve um serviço para se pet de maneira fácil e rápida!',
     reservationHomeSubtitle: 'Banho e tosa, vacinação e muito mais',
     landingTitle: 'Forneça seus serviços',
@@ -87,9 +87,9 @@ const ptBR = {
   homeDownloadApp: {
     howTheAppWorks: 'Como funciona a app?',
     title: 'aipetto app',
-    tagline: 'Serviços para seu pet onde quer que você esteja e a qualquer momento',
+    tagline: 'Simplifique a maneira de agendar',
     description: 'Baixar app',
-    downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
+    downloadAppInGooglePlayStoreButton: 'Google PlayStore',
     downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       step1: {
           title: 'Crie sua conta',
@@ -105,7 +105,7 @@ const ptBR = {
       },
       step3: {
           title: 'Confira mais informação',
-          heading: "Agende uma reserva",
+          heading: "Escolha uma serviço",
           description: "Simples e rápido",
           img: '/images/app-screenshots/pt-BR/pt_pet_business_profile.jpg',
       },
@@ -123,14 +123,14 @@ const ptBR = {
       },
       step6: {
           title: 'Reservation Booked!',
-          heading: "O negócio irá confirmar, então é só trazer seu bichinho ou esperar o taxi dog chegar",
+          heading: "O negócio irá confirmar, então é só trazer seu bichinho ou esperar o transporte chegar",
           description: "Te avisamos por push notification e email",
           img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
       },
       bottomLead: {
           actionText: 'Seja o primeiro em usar a app',
           description: 'Aproveite promoções e novidades especiais para você e seus pets',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore',
           downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       },
   },

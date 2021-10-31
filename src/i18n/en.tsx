@@ -35,7 +35,7 @@ const en = {
   homeDownloadApp: {
       howTheAppWorks: 'How does the app work?',
       title: 'aipetto app',
-      tagline: 'Services for your pet everywhere anytime',
+      tagline: 'Simplify the way you',
       description: 'Download our app',
       downloadAppInGooglePlayStoreButton: 'Google PlayStore (Soon)',
       downloadAppInAppleStoreButton: 'Apple Store (Soon)',
@@ -53,7 +53,7 @@ const en = {
       },
       step3: {
           title: 'More info about the business',
-          heading: "Book an appointment",
+          heading: "Pick a service up",
           description: "Very quick and simple",
           img: '/images/app-screenshots/en/en_pet_business_profile.jpg',
       },
@@ -71,14 +71,14 @@ const en = {
       },
       step6: {
           title: 'Reservation Booked!',
-          heading: "The business will confirm it, then just bring or wait for the taxi dog arrive",
+          heading: "The business will confirm it, then just bring or wait for the transport arrive",
           description: "We let you know via push notification and email",
           img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
       },
       bottomLead: {
           actionText: 'Let us tell you when the app is available',
           description: 'Enjoy special prices and new features for you and your pets',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Soon)',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore',
           downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       },
   },
@@ -91,7 +91,7 @@ const en = {
 
   public: {
       homeTitle: 'Do you love pets? Then this your place!',
-      homeSubtitle: 'Wherever you are, you\'ll find local vets to help you out, get special prices in food and accessories, find places where your pet can play and get a nice hair cut, this and much more...',
+      homeSubtitle: 'schedule your pet services',
       landingTitle: 'Provide your services',
       landingSubtitle: 'Be part of the platform',
       landingBusinessTitle: 'Our mission is to share information and services in the easiest and direct way for those who love pets',

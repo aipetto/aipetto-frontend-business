@@ -33,9 +33,9 @@ const es = {
     homeDownloadApp: {
         howTheAppWorks: '¿Cómo funciona la app?',
         title: 'aipetto app',
-        tagline: 'Servicios para tu pet donde quiera que estés y en cualquier momento.',
+        tagline: 'Agendá los servicios de tu mascota',
         description: 'Descargar',
-        downloadAppInGooglePlayStoreButton: 'Google PlayStore (Pronto)',
+        downloadAppInGooglePlayStoreButton: 'Google PlayStore',
         downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
         step1: {
             title: 'Creá tu cuenta',
@@ -51,7 +51,7 @@ const es = {
         },
         step3: {
             title: 'Información del negócio',
-            heading: "Agendá una reserva",
+            heading: "Elegí un servicio",
             description: "Sencillo y rápido",
             img: '/images/app-screenshots/pt-BR/pt_pet_business_profile.jpg',
         },
@@ -69,14 +69,14 @@ const es = {
         },
         step6: {
             title: '¡Reserva agendada!',
-            heading: "El negocio irá confirmar, entonces sólo queda traer tu mascota o esperar el taxi dog llegar",
+            heading: "El negocio irá confirmar, entonces sólo queda traer tu mascota o esperar el transporte",
             description: "Te avisamos por push notification y correo",
             img: '/images/app-screenshots/en/en_pet_reservation_confirmation.jpg',
         },
         bottomLead: {
             actionText: 'Te avisaremos cuando este la app',
             description: 'Aproveche promociones especiales y novedades para vos y tus mascotas',
-            downloadAppInGooglePlayStoreButton: 'Google PlayStore (Pronto)',
+            downloadAppInGooglePlayStoreButton: 'Google PlayStore',
             downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
         },
     },
@@ -88,7 +88,7 @@ const es = {
     },
     public: {
         homeTitle: '¿Amás a las mascotas?¡Entonces este es tu lugar!',
-        homeSubtitle: 'Donde quiera que estés, encontrá veterinarios para ayudarte, obtené descuentos especiales en comida y accesorios, encontrá lugares en donde tu mascota pueda jugar y tener un lindo peinado y mucho más...',
+        homeSubtitle: 'de manera simplificada',
         landingTitle: '¡Ofrezca tus servicios!',
         landingSubtitle: 'Sé parte de la plataforma',
         landingBusinessTitle: 'Nuestra misión es disponibilizar informaciones y servicios de forma simples y directa para quien ama a las mascotas',
