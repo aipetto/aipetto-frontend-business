@@ -143,7 +143,7 @@ function HomePageNew() {
                                 </svg>
                             </div>
                             <h4 className="text-xl font-medium text-gray-700">Pet Services Booking</h4>
-                            <p className="text-base text-center text-gray-500">All the places are prevalidated to guarantee your pet is safety</p>
+                            <p className="text-base text-center text-gray-500">All the places are prevalidated to guarantee your pet safety</p>
                         </div>
 
                         <div

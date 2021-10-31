@@ -53,7 +53,7 @@ const en = {
       },
       step3: {
           title: 'More info about the business',
-          heading: "Pick a service up",
+          heading: "Choose a service",
           description: "Very quick and simple",
           img: '/images/app-screenshots/en/en_pet_business_profile.jpg',
       },
