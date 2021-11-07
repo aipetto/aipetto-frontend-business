@@ -1102,6 +1102,8 @@ const es = {
                 'ratingFromCustomer': 'Votación del Cliente',
                 'country': 'País',
                 'source': 'Origen de la Reserva',
+                'notes': 'Notas',
+                'customerQuestions': 'Preguntas del cliente',
                 createdAt: 'Creado el',
                 updatedAt: 'Actualizado el',
                 createdAtRange: 'Creado el',

@@ -14,6 +14,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
+import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
@@ -56,6 +57,27 @@ const schema = yup.object().shape({
   discountCode: yupFilterSchemas.relationToOne(
     i18n('entities.serviceReservation.fields.discountCode'),
   ),
+  currency: yupFilterSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.currency'),
+  ),
+  totalPriceTransportartionRange: yupFilterSchemas.decimalRange(
+    i18n('entities.serviceReservation.fields.totalPriceTransportartionRange'),
+  ),
+  ratingFromCustomerRange: yupFilterSchemas.decimalRange(
+    i18n('entities.serviceReservation.fields.ratingFromCustomerRange'),
+  ),
+  country: yupFilterSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.country'),
+  ),
+  source: yupFilterSchemas.enumerator(
+    i18n('entities.serviceReservation.fields.source'),
+  ),
+  notes: yupFilterSchemas.string(
+    i18n('entities.serviceReservation.fields.notes'),
+  ),
+  customerQuestions: yupFilterSchemas.string(
+    i18n('entities.serviceReservation.fields.customerQuestions'),
+  ),
 });
 
 const emptyValues = {
@@ -69,6 +91,13 @@ const emptyValues = {
   totalPriceRange: [],
   totalPriceWithDiscountRange: [],
   discountCode: null,
+  currency: null,
+  totalPriceTransportartionRange: [],
+  ratingFromCustomerRange: [],
+  country: null,
+  source: null,
+  notes: null,
+  customerQuestions: null,
 }
 
 const previewRenders = {
@@ -112,6 +141,34 @@ const previewRenders = {
       label: i18n('entities.serviceReservation.fields.discountCode'),
       render: filterRenders.relationToOne(),
     },
+  currency: {
+      label: i18n('entities.serviceReservation.fields.currency'),
+      render: filterRenders.relationToOne(),
+    },
+  totalPriceTransportartionRange: {
+    label: i18n('entities.serviceReservation.fields.totalPriceTransportartionRange'),
+    render: filterRenders.decimalRange(),
+  },
+  ratingFromCustomerRange: {
+    label: i18n('entities.serviceReservation.fields.ratingFromCustomerRange'),
+    render: filterRenders.decimalRange(),
+  },
+  country: {
+      label: i18n('entities.serviceReservation.fields.country'),
+      render: filterRenders.relationToOne(),
+    },
+  source: {
+    label: i18n('entities.serviceReservation.fields.source'),
+    render: filterRenders.enumerator('entities.serviceReservation.enumerators.source',),
+  },
+  notes: {
+    label: i18n('entities.serviceReservation.fields.notes'),
+    render: filterRenders.generic(),
+  },
+  customerQuestions: {
+    label: i18n('entities.serviceReservation.fields.customerQuestions'),
+    render: filterRenders.generic(),
+  },
 }
 
 function ServiceReservationListFilter(props) {
@@ -236,6 +293,42 @@ function ServiceReservationListFilter(props) {
               <DiscountsAutocompleteFormItem
                 name="discountCode"
                 label={i18n('entities.serviceReservation.fields.discountCode')}
+              />
+              <CurrencyAutocompleteFormItem
+                name="currency"
+                label={i18n('entities.serviceReservation.fields.currency')}
+              />
+              <InputRangeFormItem
+                name="totalPriceTransportartionRange"
+                label={i18n('entities.serviceReservation.fields.totalPriceTransportartionRange')}
+              />
+              <InputRangeFormItem
+                name="ratingFromCustomerRange"
+                label={i18n('entities.serviceReservation.fields.ratingFromCustomerRange')}
+              />
+              <CountryAutocompleteFormItem
+                name="country"
+                label={i18n('entities.serviceReservation.fields.country')}
+              />
+              <SelectFormItem
+                  name="source"
+                  label={i18n('entities.serviceReservation.fields.source')}
+                  options={serviceReservationEnumerators.source.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.serviceReservation.enumerators.source.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <InputFormItem
+                name="notes"
+                label={i18n('entities.serviceReservation.fields.notes')}
+              />
+              <InputFormItem
+                name="customerQuestions"
+                label={i18n('entities.serviceReservation.fields.customerQuestions')}
               />
             </div>
 

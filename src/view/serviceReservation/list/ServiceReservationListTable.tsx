@@ -1,13 +1,10 @@
-import {
-  faEdit,
-  faTrashAlt,
-} from '@fortawesome/free-regular-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { i18n } from 'src/i18n';
+import {faEdit, faTrashAlt,} from '@fortawesome/free-regular-svg-icons';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import React, {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {i18n} from 'src/i18n';
 import serviceReservationSelectors from 'src/modules/serviceReservation/serviceReservationSelectors';
 import destroyActions from 'src/modules/serviceReservation/destroy/serviceReservationDestroyActions';
 import destroySelectors from 'src/modules/serviceReservation/destroy/serviceReservationDestroySelectors';
@@ -17,9 +14,8 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
-import BusinessListItem from 'src/view/business/list/BusinessListItem';
 import DiscountsListItem from 'src/view/discounts/list/DiscountsListItem';
-import CountryListItem from 'src/view/country/list/CountryListItem';
+import CustomerListItem from "../../customer/list/CustomerListItem";
 
 function ServiceReservationListTable(props) {
   const [
@@ -122,9 +118,19 @@ function ServiceReservationListTable(props) {
                 />
                 <TableColumnHeader
                   label={i18n(
-                    'entities.serviceReservation.fields.businessId',
+                    'entities.serviceReservation.fields.customerId',
                   )}
                 />
+               <TableColumnHeader
+                  label={i18n(
+                      'entities.serviceReservation.fields.time',
+                  )}
+               />
+                <TableColumnHeader
+                  label={i18n(
+                      'entities.serviceReservation.fields.needTransportation',
+                  )}
+               />
                 <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
@@ -190,7 +196,13 @@ function ServiceReservationListTable(props) {
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.date}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <BusinessListItem value={row.businessId} />
+                    <CustomerListItem value={row.customerId} />
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.time}
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.needTransportation}
                   </td>
                   <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.totalPrice}

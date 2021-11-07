@@ -107,6 +107,14 @@ const schema = yup.object().shape({
       "options": serviceReservationEnumerators.source
     },
   ),
+  notes: yupFormSchemas.string(
+    i18n('entities.serviceReservation.fields.notes'),
+    {},
+  ),
+  customerQuestions: yupFormSchemas.string(
+    i18n('entities.serviceReservation.fields.customerQuestions'),
+    {},
+  ),
 });
 
 function ServiceReservationForm(props) {
@@ -134,6 +142,8 @@ function ServiceReservationForm(props) {
       ratingFromCustomer: record.ratingFromCustomer,
       country: record.country,
       source: record.source,
+      notes: record.notes,
+      customerQuestions: record.customerQuestions,
     };
   });
 
@@ -315,6 +325,20 @@ function ServiceReservationForm(props) {
                 ),
               }),
             )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="notes"
+            label={i18n('entities.serviceReservation.fields.notes')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="customerQuestions"
+            label={i18n('entities.serviceReservation.fields.customerQuestions')}
             required={false}
           />
         </div>

@@ -131,6 +131,16 @@ function ServiceReservationView(props) {
           )
         }
       />
+
+      <TextViewItem
+        label={i18n('entities.serviceReservation.fields.notes')}
+        value={record.notes}
+      />
+
+      <TextViewItem
+        label={i18n('entities.serviceReservation.fields.customerQuestions')}
+        value={record.customerQuestions}
+      />
     </div>
   );
 }

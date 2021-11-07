@@ -108,7 +108,7 @@ const en = {
       landingBusinessTitle: 'Our mission is to share information and services in the easiest and direct way for those who love pets',
       landingBusinessSubtitle: 'Be part of this project and provide your products and services',
       menu: {
-          business: 'Business',
+          business: 'Businesses',
           petsSurvey: 'Home',
       },
       professionals: "Professionals"
@@ -1105,6 +1105,8 @@ const en = {
           'ratingFromCustomer': 'Rating from Customer',
           'country': 'Country',
           'source': 'Reservation Origin',
+          'notes': 'Notes',
+          'customerQuestions': 'CustomerQuestions',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',

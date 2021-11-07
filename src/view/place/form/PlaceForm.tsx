@@ -7,7 +7,9 @@ import {FormProvider, useForm} from 'react-hook-form';
 import {getLanguageCode, i18n} from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import Storage from 'src/security/storage';
 import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
+import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import PlaceTypeAutocompleteFormItem from 'src/view/placeType/autocomplete/PlaceTypeAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import BusinessServicesTypesAutocompleteFormItem
@@ -307,6 +309,25 @@ function PlaceForm(props) {
               label={i18n('entities.place.fields.isOpen')}
             />
           </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <ImagesFormItem
+                name="photoLogo"
+                label={i18n('entities.place.fields.photoLogo')}
+                required={false}
+                storage={Storage.values.placePhotoLogo}
+                max={undefined}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <ImagesFormItem
+                name="photoStore"
+                label={i18n('entities.place.fields.photoStore')}
+                required={false}
+                storage={Storage.values.placePhotoStore}
+                max={undefined}
+            />
+          </div>
+
 
           <div className="pt-4">
             <button

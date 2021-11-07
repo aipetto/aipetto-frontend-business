@@ -1108,6 +1108,8 @@ const ptBR = {
           'ratingFromCustomer': 'Pontuação do Cliente',
           'country': 'País',
           'source': 'Origem da Reserva',
+          'notes': 'Notas',
+          'customerQuestions': 'Perguntas do cliente',
           createdAt: 'Criado em',
           updatedAt: 'Atualizado em',
           createdAtRange: 'Criado em',
