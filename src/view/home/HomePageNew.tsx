@@ -82,13 +82,14 @@ function HomePageNew() {
                                         <a className="px-4 py-2 md:text-white text-gray-700 hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded" href="/">{i18n('public.menu.petsSurvey')}</a>
                                         <a href="/business" className="md:text-white px-4 py-2 text-gray-900 font-semibold hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded">{i18n('public.menu.business')}</a>
                                     </div>
-                                    <I18nFlags />
                                     <div className="flex flex-col items-center justify-end w-full h-full pt-4 md:w-1/3 md:flex-row md:py-0">
                                         <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border-transparent border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/beta">Beta</a>
                                     </div>
                                 </div>
                         </div>
                     </nav>
+                    <I18nFlags />
+
                     <div className="container py-32 mx-auto text-center sm:px-4">
 
                         <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-white sm:text-5xl sm:leading-none md:text-6xl xl:text-7xl">
@@ -98,6 +99,9 @@ function HomePageNew() {
                             {i18n('public.homeSubtitle')}
                         </span>
                         </h2>
+                        <div className="relative flex items-center mt-10 max-w-md mx-auto overflow-hidden text-center">
+                            <img src="images/qr-aipetto-internaltest.png" alt="aipetto" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
+                        </div>
 
                         <div className="mt-8 text-black-100">
 
