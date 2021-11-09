@@ -37,7 +37,7 @@ const en = {
       title: 'aipetto app',
       tagline: 'Simplify the way you',
       description: 'Download our app',
-      downloadAppInGooglePlayStoreButton: 'Google PlayStore (Soon)',
+      downloadAppInGooglePlayStoreButton: 'Google PlayStore (Beta)',
       downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       step1: {
           title: 'Create an account',
@@ -78,7 +78,7 @@ const en = {
       bottomLead: {
           actionText: 'Let us tell you when the app is available',
           description: 'Enjoy special prices and new features for you and your pets',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Soon)',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Beta)',
           downloadAppInAppleStoreButton: 'Apple Store (Soon)',
       },
   },
