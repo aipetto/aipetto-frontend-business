@@ -89,7 +89,7 @@ const ptBR = {
     title: 'aipetto app',
     tagline: 'Simplifique a maneira de agendar',
     description: 'Baixar app',
-    downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
+    downloadAppInGooglePlayStoreButton: 'Google PlayStore (Beta)',
     downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       step1: {
           title: 'Crie sua conta',
@@ -130,7 +130,7 @@ const ptBR = {
       bottomLead: {
           actionText: 'Seja o primeiro em usar a app',
           description: 'Aproveite promoções e novidades especiais para você e seus pets',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Em breve)',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Beta)',
           downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       },
   },

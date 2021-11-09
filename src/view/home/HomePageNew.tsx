@@ -100,7 +100,7 @@ function HomePageNew() {
                         </span>
                         </h2>
                         <div className="relative flex items-center mt-10 max-w-md mx-auto overflow-hidden text-center">
-                            <img src="images/qr-aipetto-internaltest.png" alt="aipetto" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
+                            <img src="images/qr-aipetto-internaltest-with-many-providers.png" alt="Aipetto QR" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
                         </div>
 
                         <div className="mt-8 text-black-100">
