@@ -10,12 +10,13 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
-import RadioFormItem from 'src/view/shared/form/items/RadioFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import businessPlaceServiceAvailabilityEnumerators from 'src/modules/businessPlaceServiceAvailability/businessPlaceServiceAvailabilityEnumerators';
+import moment from 'moment';
+import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
+import PlaceAutocompleteFormItem from 'src/view/place/autocomplete/PlaceAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
-import PlaceAutocompleteFormItem from 'src/view/place/autocomplete/PlaceAutocompleteFormItem';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -23,28 +24,32 @@ const schema = yup.object().shape({
     i18n('entities.businessPlaceServiceAvailability.fields.name'),
     {},
   ),
+  places: yupFormSchemas.relationToMany(
+    i18n('entities.businessPlaceServiceAvailability.fields.places'),
+    {},
+  ),
   businessId: yupFormSchemas.relationToOne(
     i18n('entities.businessPlaceServiceAvailability.fields.businessId'),
     {},
+  ),
+  dateStart: yupFormSchemas.date(
+    i18n('entities.businessPlaceServiceAvailability.fields.dateStart'),
+    {
+      "required": true
+    },
+  ),
+  dateEnd: yupFormSchemas.date(
+    i18n('entities.businessPlaceServiceAvailability.fields.dateEnd'),
+    {
+      "required": true
+    },
   ),
   timeSlot: yupFormSchemas.stringArray(
     i18n('entities.businessPlaceServiceAvailability.fields.timeSlot'),
     {},
   ),
-  days: yupFormSchemas.stringArray(
-    i18n('entities.businessPlaceServiceAvailability.fields.days'),
-    {},
-  ),
-  workOnHolidays: yupFormSchemas.boolean(
-    i18n('entities.businessPlaceServiceAvailability.fields.workOnHolidays'),
-    {},
-  ),
   serviceType: yupFormSchemas.relationToOne(
     i18n('entities.businessPlaceServiceAvailability.fields.serviceType'),
-    {},
-  ),
-  places: yupFormSchemas.relationToMany(
-    i18n('entities.businessPlaceServiceAvailability.fields.places'),
     {},
   ),
 });
@@ -57,12 +62,12 @@ function BusinessPlaceServiceAvailabilityForm(props) {
 
     return {
       name: record.name,
-      businessId: record.businessId,
-      timeSlot: record.timeSlot || [],
-      days: record.days || [],
-      workOnHolidays: record.workOnHolidays,
-      serviceType: record.serviceType,
       places: record.places || [],
+      businessId: record.businessId,
+      dateStart: record.dateStart ? moment(record.dateStart, 'YYYY-MM-DD').toDate() : null,
+      dateEnd: record.dateEnd ? moment(record.dateEnd, 'YYYY-MM-DD').toDate() : null,
+      timeSlot: record.timeSlot || [],
+      serviceType: record.serviceType,
     };
   });
 
@@ -95,11 +100,34 @@ function BusinessPlaceServiceAvailabilityForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <PlaceAutocompleteFormItem
+            name="places"
+            label={i18n('entities.businessPlaceServiceAvailability.fields.places')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <BusinessAutocompleteFormItem  
             name="businessId"
             label={i18n('entities.businessPlaceServiceAvailability.fields.businessId')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <DatePickerFormItem
+            name="dateStart"
+            label={i18n('entities.businessPlaceServiceAvailability.fields.dateStart')}
+            required={true}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <DatePickerFormItem
+            name="dateEnd"
+            label={i18n('entities.businessPlaceServiceAvailability.fields.dateEnd')}
+            required={true}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -119,52 +147,11 @@ function BusinessPlaceServiceAvailabilityForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <SelectFormItem
-            name="days"
-            label={i18n('entities.businessPlaceServiceAvailability.fields.days')}
-            options={businessPlaceServiceAvailabilityEnumerators.days.map(
-              (value) => ({
-                value,
-                label: i18n(
-                  `entities.businessPlaceServiceAvailability.enumerators.days.${value}`,
-                ),
-              }),
-            )}
-            required={false}
-            mode="multiple"
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <RadioFormItem
-            name="workOnHolidays"
-            label={i18n('entities.businessPlaceServiceAvailability.fields.workOnHolidays')}
-            options={[
-              {
-                value: true,
-                label: i18n('common.yes'),
-              },
-              {
-                value: false,
-                label: i18n('common.no'),
-              },
-            ]}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <BusinessServicesTypesAutocompleteFormItem  
             name="serviceType"
             label={i18n('entities.businessPlaceServiceAvailability.fields.serviceType')}
             required={false}
             showCreate={!props.modal}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <PlaceAutocompleteFormItem  
-            name="places"
-            label={i18n('entities.businessPlaceServiceAvailability.fields.places')}
-            required={false}
-            showCreate={!props.modal}
-            mode="multiple"
           />
         </div>
 

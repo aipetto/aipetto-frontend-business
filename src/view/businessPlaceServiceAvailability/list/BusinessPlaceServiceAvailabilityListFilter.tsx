@@ -17,6 +17,7 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import businessPlaceServiceAvailabilityEnumerators from 'src/modules/businessPlaceServiceAvailability/businessPlaceServiceAvailabilityEnumerators';
+import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
 
@@ -27,14 +28,14 @@ const schema = yup.object().shape({
   businessId: yupFilterSchemas.relationToOne(
     i18n('entities.businessPlaceServiceAvailability.fields.businessId'),
   ),
+  dateStartRange: yupFilterSchemas.dateRange(
+    i18n('entities.businessPlaceServiceAvailability.fields.dateStartRange'),
+  ),
+  dateEndRange: yupFilterSchemas.dateRange(
+    i18n('entities.businessPlaceServiceAvailability.fields.dateEndRange'),
+  ),
   timeSlot: yupFilterSchemas.stringArray(
     i18n('entities.businessPlaceServiceAvailability.fields.timeSlot'),
-  ),
-  days: yupFilterSchemas.stringArray(
-    i18n('entities.businessPlaceServiceAvailability.fields.days'),
-  ),
-  workOnHolidays: yupFilterSchemas.boolean(
-    i18n('entities.businessPlaceServiceAvailability.fields.workOnHolidays'),
   ),
   serviceType: yupFilterSchemas.relationToOne(
     i18n('entities.businessPlaceServiceAvailability.fields.serviceType'),
@@ -44,9 +45,9 @@ const schema = yup.object().shape({
 const emptyValues = {
   name: null,
   businessId: null,
+  dateStartRange: [],
+  dateEndRange: [],
   timeSlot: [],
-  days: [],
-  workOnHolidays: null,
   serviceType: null,
 }
 
@@ -59,17 +60,17 @@ const previewRenders = {
       label: i18n('entities.businessPlaceServiceAvailability.fields.businessId'),
       render: filterRenders.relationToOne(),
     },
+  dateStartRange: {
+    label: i18n('entities.businessPlaceServiceAvailability.fields.dateStartRange'),
+    render: filterRenders.dateRange(),
+  },
+  dateEndRange: {
+    label: i18n('entities.businessPlaceServiceAvailability.fields.dateEndRange'),
+    render: filterRenders.dateRange(),
+  },
   timeSlot: {
     label: i18n('entities.businessPlaceServiceAvailability.fields.timeSlot'),
     render: filterRenders.enumeratorMultiple('entities.businessPlaceServiceAvailability.enumerators.timeSlot',),
-  },
-  days: {
-    label: i18n('entities.businessPlaceServiceAvailability.fields.days'),
-    render: filterRenders.enumeratorMultiple('entities.businessPlaceServiceAvailability.enumerators.days',),
-  },
-  workOnHolidays: {
-    label: i18n('entities.businessPlaceServiceAvailability.fields.workOnHolidays'),
-    render: filterRenders.boolean(),
   },
   serviceType: {
       label: i18n('entities.businessPlaceServiceAvailability.fields.serviceType'),
@@ -142,6 +143,14 @@ function BusinessPlaceServiceAvailabilityListFilter(props) {
                 name="businessId"
                 label={i18n('entities.businessPlaceServiceAvailability.fields.businessId')}        
               />
+              <DatePickerRangeFormItem
+                name="dateStartRange"
+                label={i18n('entities.businessPlaceServiceAvailability.fields.dateStartRange')}
+              />
+              <DatePickerRangeFormItem
+                name="dateEndRange"
+                label={i18n('entities.businessPlaceServiceAvailability.fields.dateEndRange')}
+              />
               <SelectFormItem
                 name="timeSlot"
                 label={i18n('entities.businessPlaceServiceAvailability.fields.timeSlot')}
@@ -154,33 +163,6 @@ function BusinessPlaceServiceAvailabilityListFilter(props) {
                   }),
                 )}
                 mode="multiple"
-              />
-              <SelectFormItem
-                name="days"
-                label={i18n('entities.businessPlaceServiceAvailability.fields.days')}
-                options={businessPlaceServiceAvailabilityEnumerators.days.map(
-                  (value) => ({
-                    value,
-                    label: i18n(
-                      `entities.businessPlaceServiceAvailability.enumerators.days.${value}`,
-                    ),
-                  }),
-                )}
-                mode="multiple"
-              />
-              <SelectFormItem
-                name="workOnHolidays"
-                label={i18n('entities.businessPlaceServiceAvailability.fields.workOnHolidays')}
-                options={[
-                  {
-                    value: true,
-                    label: i18n('common.yes'),
-                  },
-                  {
-                    value: false,
-                    label: i18n('common.no'),
-                  },
-                ]}
               />
               <BusinessServicesTypesAutocompleteFormItem  
                 name="serviceType"

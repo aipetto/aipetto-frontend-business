@@ -125,6 +125,24 @@ function BusinessPlaceServiceAvailabilityListTable(props) {
                   )}
                 />
                 <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'dateStart'}
+                  label={i18n(
+                    'entities.businessPlaceServiceAvailability.fields.dateStart',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'dateEnd'}
+                  label={i18n(
+                    'entities.businessPlaceServiceAvailability.fields.dateEnd',
+                  )}
+                />
+                <TableColumnHeader
                   label={i18n(
                     'entities.businessPlaceServiceAvailability.fields.timeSlot',
                   )}
@@ -176,6 +194,8 @@ function BusinessPlaceServiceAvailabilityListTable(props) {
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BusinessListItem value={row.businessId} />
                   </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.dateStart}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.dateEnd}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {(row.timeSlot || []).map((value) => (
                       <div key={value}>

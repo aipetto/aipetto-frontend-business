@@ -21,9 +21,24 @@ function BusinessPlaceServiceAvailabilityView(props) {
         value={record.name}
       />
 
+      <PlaceViewItem
+        label={i18n('entities.businessPlaceServiceAvailability.fields.places')}
+        value={record.places}
+      />
+
       <BusinessViewItem
         label={i18n('entities.businessPlaceServiceAvailability.fields.businessId')}
         value={record.businessId}
+      />
+
+      <TextViewItem
+        label={i18n('entities.businessPlaceServiceAvailability.fields.dateStart')}
+        value={record.dateStart}
+      />
+
+      <TextViewItem
+        label={i18n('entities.businessPlaceServiceAvailability.fields.dateEnd')}
+        value={record.dateEnd}
       />
 
       <CustomViewItem
@@ -42,39 +57,9 @@ function BusinessPlaceServiceAvailabilityView(props) {
         }
       />
 
-      <CustomViewItem
-        label={i18n('entities.businessPlaceServiceAvailability.fields.days')}
-        value={record.days}
-        render={(values) =>
-          (values || []).map((value) => (
-            <div key={value}>
-              <span>{value
-                ? i18n(
-                  `entities.businessPlaceServiceAvailability.enumerators.days.${value}`,
-                  )
-                : null}</span>
-            </div>
-          ))
-        }
-      />
-
-      <TextViewItem
-        label={i18n('entities.businessPlaceServiceAvailability.fields.workOnHolidays')}
-        value={
-          record.workOnHolidays
-            ? i18n('common.yes')
-            : i18n('common.no')
-        }
-      />
-
       <BusinessServicesTypesViewItem
         label={i18n('entities.businessPlaceServiceAvailability.fields.serviceType')}
         value={record.serviceType}
-      />
-
-      <PlaceViewItem
-        label={i18n('entities.businessPlaceServiceAvailability.fields.places')}
-        value={record.places}
       />
     </div>
   );

@@ -19,7 +19,9 @@ import * as yup from 'yup';
 const schema = yup.object().shape({
   service: yupFormSchemas.relationToOne(
     i18n('entities.businessServicesPrices.fields.service'),
-    {},
+    {
+      "required": true
+    },
   ),
   businessId: yupFormSchemas.relationToOne(
     i18n('entities.businessServicesPrices.fields.businessId'),
@@ -33,10 +35,16 @@ const schema = yup.object().shape({
   ),
   currency: yupFormSchemas.relationToOne(
     i18n('entities.businessServicesPrices.fields.currency'),
-    {},
+    {
+      "required": true
+    },
   ),
   isFree: yupFormSchemas.boolean(
     i18n('entities.businessServicesPrices.fields.isFree'),
+    {},
+  ),
+  notesToCustomersOnThisService: yupFormSchemas.string(
+    i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService'),
     {},
   ),
 });
@@ -53,6 +61,7 @@ function BusinessServicesPricesForm(props) {
       servicePrice: record.servicePrice,
       currency: record.currency,
       isFree: record.isFree,
+      notesToCustomersOnThisService: record.notesToCustomersOnThisService,
     };
   });
 
@@ -79,7 +88,7 @@ function BusinessServicesPricesForm(props) {
           <BusinessServicesTypesAutocompleteFormItem  
             name="service"
             label={i18n('entities.businessServicesPrices.fields.service')}
-            required={false}
+            required={true}
             showCreate={!props.modal}
           />
         </div>
@@ -102,7 +111,7 @@ function BusinessServicesPricesForm(props) {
           <CurrencyAutocompleteFormItem
             name="currency"
             label={i18n('entities.businessServicesPrices.fields.currency')}
-            required={false}
+            required={true}
             showCreate={!props.modal}
           />
         </div>
@@ -110,6 +119,13 @@ function BusinessServicesPricesForm(props) {
           <SwitchFormItem
             name="isFree"
             label={i18n('entities.businessServicesPrices.fields.isFree')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="notesToCustomersOnThisService"
+            label={i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService')}
+            required={false}
           />
         </div>
 
