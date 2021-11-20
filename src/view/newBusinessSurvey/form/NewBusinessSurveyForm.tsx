@@ -22,8 +22,8 @@ const schema = yup.object().shape({
       "required": true
     },
   ),
-  numberOfPlaces: yupFormSchemas.string(
-    i18n('entities.newBusinessSurvey.fields.numberOfPlaces'),
+  numberOfEmployees: yupFormSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.numberOfEmployees'),
     {},
   ),
   contactName: yupFormSchemas.string(
@@ -76,7 +76,7 @@ function NewBusinessSurveyForm(props) {
 
     return {
       nameBusiness: record.nameBusiness,
-      numberOfPlaces: record.numberOfPlaces,
+      numberOfEmployees: record.numberOfEmployees,
       contactName: record.contactName,
       contactEmail: record.contactEmail,
       contactPhone: record.contactPhone,
@@ -119,8 +119,8 @@ function NewBusinessSurveyForm(props) {
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
-            name="numberOfPlaces"
-            label={i18n('entities.newBusinessSurvey.fields.numberOfPlaces')}
+            name="numberOfEmployees"
+            label={i18n('entities.newBusinessSurvey.fields.numberOfEmployees')}
             required={false}
           />
         </div>

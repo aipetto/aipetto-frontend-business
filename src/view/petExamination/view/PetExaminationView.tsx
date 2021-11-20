@@ -9,6 +9,7 @@ import PetViewItem from 'src/view/pet/view/PetViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
 import LanguagesViewItem from 'src/view/languages/view/LanguagesViewItem';
 import ProvidersViewItem from 'src/view/providers/view/ProvidersViewItem';
+import moment from "moment";
 
 function PetExaminationView(props) {
   const { record, loading } = props;
@@ -70,6 +71,25 @@ function PetExaminationView(props) {
         label={i18n('entities.petExamination.fields.examinationImages')}
         value={record.examinationImages}
       />
+
+      <TextViewItem
+        label={i18n('entities.petExamination.fields.examinationDiagnosticNotes')}
+        value={record.examinationDiagnosticNotes}
+      />
+
+      <TextViewItem
+        label={i18n('entities.petExamination.fields.examinationRecommendationNotes')}
+        value={record.examinationRecommendationNotes}
+      />
+
+      {record.nextExaminationSession && <TextViewItem
+        label={i18n(
+          'entities.petExamination.fields.nextExaminationSession',
+        )}
+        value={moment(record.nextExaminationSession).format(
+          'YYYY-MM-DD HH:mm',
+        )}
+      />}
     </div>
   );
 }

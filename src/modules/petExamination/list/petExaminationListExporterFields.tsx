@@ -50,6 +50,19 @@ export default [
     render: exporterRenders.filesOrImages(),
   },
   {
+    name: 'examinationDiagnosticNotes',
+    label: i18n('entities.petExamination.fields.examinationDiagnosticNotes'),
+  },
+  {
+    name: 'examinationRecommendationNotes',
+    label: i18n('entities.petExamination.fields.examinationRecommendationNotes'),
+  },
+  {
+    name: 'nextExaminationSession',
+    label: i18n('entities.petExamination.fields.nextExaminationSession'),
+    render: exporterRenders.datetime(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.petExamination.fields.createdAt'),
     render: exporterRenders.datetime(),

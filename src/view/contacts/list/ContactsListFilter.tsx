@@ -89,6 +89,9 @@ const schema = yup.object().shape({
   language: yupFilterSchemas.relationToOne(
     i18n('entities.contacts.fields.language'),
   ),
+  campaignTrackerID: yupFilterSchemas.string(
+    i18n('entities.contacts.fields.campaignTrackerID'),
+  ),
 });
 
 const emptyValues = {
@@ -114,6 +117,7 @@ const emptyValues = {
   isDeveloper: null,
   isActive: null,
   language: null,
+  campaignTrackerID: null,
 }
 
 const previewRenders = {
@@ -205,6 +209,10 @@ const previewRenders = {
       label: i18n('entities.contacts.fields.language'),
       render: filterRenders.relationToOne(),
     },
+  campaignTrackerID: {
+    label: i18n('entities.contacts.fields.campaignTrackerID'),
+    render: filterRenders.generic(),
+  },
 }
 
 function ContactsListFilter(props) {
@@ -397,6 +405,10 @@ function ContactsListFilter(props) {
               <LanguagesAutocompleteFormItem  
                 name="language"
                 label={i18n('entities.contacts.fields.language')}        
+              />
+              <InputFormItem
+                name="campaignTrackerID"
+                label={i18n('entities.contacts.fields.campaignTrackerID')}
               />
             </div>
 

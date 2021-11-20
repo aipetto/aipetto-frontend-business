@@ -5,6 +5,16 @@ import moment from 'moment';
 
 export default [
   {
+    name: 'uniqueCustomIdentifier',
+    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.uniqueCustomIdentifier'),
+      {
+        "required": true
+      },
+    ),
+  },
+  {
     name: 'name',
     label: i18n('entities.customer.fields.name'),
     schema: schemas.string(
@@ -22,16 +32,6 @@ export default [
     schema: schemas.relationToOne(
       i18n('entities.customer.fields.businessId'),
       {},
-    ),
-  },
-  {
-    name: 'uniqueCustomIdentifier',
-    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
-    schema: schemas.string(
-      i18n('entities.customer.fields.uniqueCustomIdentifier'),
-      {
-        "required": true
-      },
     ),
   },
   {
@@ -376,6 +376,22 @@ export default [
     label: i18n('entities.customer.fields.notes'),
     schema: schemas.string(
       i18n('entities.customer.fields.notes'),
+      {},
+    ),
+  },
+  {
+    name: 'campaignTrackerID',
+    label: i18n('entities.customer.fields.campaignTrackerID'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.campaignTrackerID'),
+      {},
+    ),
+  },
+  {
+    name: 'pets',
+    label: i18n('entities.customer.fields.pets'),
+    schema: schemas.relationToMany(
+      i18n('entities.customer.fields.pets'),
       {},
     ),
   },

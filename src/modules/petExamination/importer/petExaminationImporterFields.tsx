@@ -1,5 +1,6 @@
 import schemas from 'src/modules/shared/yup/yupImporterSchemas';
 import { i18n } from 'src/i18n';import petExaminationEnumerators from 'src/modules/petExamination/petExaminationEnumerators';
+import moment from "moment";
 
 export default [
   {
@@ -79,5 +80,30 @@ export default [
       i18n('entities.petExamination.fields.examinationImages'),
       {},
     ),
+  },
+  {
+    name: 'examinationDiagnosticNotes',
+    label: i18n('entities.petExamination.fields.examinationDiagnosticNotes'),
+    schema: schemas.string(
+      i18n('entities.petExamination.fields.examinationDiagnosticNotes'),
+      {},
+    ),
+  },
+  {
+    name: 'examinationRecommendationNotes',
+    label: i18n('entities.petExamination.fields.examinationRecommendationNotes'),
+    schema: schemas.string(
+      i18n('entities.petExamination.fields.examinationRecommendationNotes'),
+      {},
+    ),
+  },
+  {
+    name: 'nextExaminationSession',
+    label: i18n('entities.petExamination.fields.nextExaminationSession'),
+    schema: schemas.datetime(
+      i18n('entities.petExamination.fields.nextExaminationSession'),
+      {},
+    ),
+   render: (value) => value && value instanceof Date ? moment(value).format('YYYY-MM-DD HH:mm') : value,
   },
 ];

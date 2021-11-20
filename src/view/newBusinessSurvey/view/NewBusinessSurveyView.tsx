@@ -19,8 +19,8 @@ function NewBusinessSurveyView(props) {
       />
 
       <TextViewItem
-        label={i18n('entities.newBusinessSurvey.fields.numberOfPlaces')}
-        value={record.numberOfPlaces}
+        label={i18n('entities.newBusinessSurvey.fields.numberOfEmployees')}
+        value={record.numberOfEmployees}
       />
 
       <TextViewItem

@@ -159,6 +159,7 @@ const en = {
     contactPhone: 'Phone',
     businessNameTitle: 'Your business name',
     numberPlaces: 'How many places do you have?',
+    numberEmployees: 'How many employees do you have?',
     websiteSocialNetwork: 'Website / Social Network',
     checkboxChoices: {
         acupuntura: 'Acupuncture',
@@ -2495,6 +2496,7 @@ const en = {
           'servicePrice': 'Service Price',
           'currency': 'Currency',
           'isFree': 'Is Free',
+          'notesToCustomersOnThisService': 'Extra Info to show customer on this service',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',

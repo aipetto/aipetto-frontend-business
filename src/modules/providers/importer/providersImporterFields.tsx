@@ -190,4 +190,20 @@ export default [
       {},
     ),
   },
+  {
+    name: 'campaignTrackerID',
+    label: i18n('entities.providers.fields.campaignTrackerID'),
+    schema: schemas.string(
+      i18n('entities.providers.fields.campaignTrackerID'),
+      {},
+    ),
+  },
+  {
+    name: 'isAvailable',
+    label: i18n('entities.providers.fields.isAvailable'),
+    schema: schemas.boolean(
+      i18n('entities.providers.fields.isAvailable'),
+      {},
+    ),
+  },
 ];

@@ -18,6 +18,7 @@ import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
 import Storage from 'src/security/storage';
 import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import PetAutocompleteFormItem from 'src/view/pet/autocomplete/PetAutocompleteFormItem';
 import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
 import ProvidersAutocompleteFormItem from 'src/view/providers/autocomplete/ProvidersAutocompleteFormItem';
@@ -32,12 +33,18 @@ const schema = yup.object().shape({
     i18n('entities.serviceReservation.fields.date'),
     {},
   ),
-  businessId: yupFormSchemas.relationToOne(
-    i18n('entities.serviceReservation.fields.businessId'),
-    {},
-  ),
   customerId: yupFormSchemas.relationToOne(
     i18n('entities.serviceReservation.fields.customerId'),
+    {},
+  ),
+  pet: yupFormSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.pet'),
+    {
+      "required": true
+    },
+  ),
+  businessId: yupFormSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.businessId'),
     {},
   ),
   serviceType: yupFormSchemas.relationToMany(
@@ -127,6 +134,7 @@ function ServiceReservationForm(props) {
       date: record.date ? moment(record.date, 'YYYY-MM-DD').toDate() : null,
       businessId: record.businessId,
       customerId: record.customerId,
+      pet: record.pet,
       serviceType: record.serviceType || [],
       serviceProviderIDs: record.serviceProviderIDs || [],
       time: record.time,
@@ -174,17 +182,25 @@ function ServiceReservationForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <BusinessAutocompleteFormItem  
-            name="businessId"
-            label={i18n('entities.serviceReservation.fields.businessId')}
+          <CustomerAutocompleteFormItem
+            name="customerId"
+            label={i18n('entities.serviceReservation.fields.customerId')}
             required={false}
             showCreate={!props.modal}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <CustomerAutocompleteFormItem  
-            name="customerId"
-            label={i18n('entities.serviceReservation.fields.customerId')}
+          <PetAutocompleteFormItem
+            name="pet"
+            label={i18n('entities.serviceReservation.fields.pet')}
+            required={true}
+            showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessAutocompleteFormItem
+            name="businessId"
+            label={i18n('entities.serviceReservation.fields.businessId')}
             required={false}
             showCreate={!props.modal}
           />

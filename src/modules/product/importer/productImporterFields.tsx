@@ -3,6 +3,14 @@ import { i18n } from 'src/i18n';
 
 export default [
   {
+    name: 'sku',
+    label: i18n('entities.product.fields.sku'),
+    schema: schemas.string(
+      i18n('entities.product.fields.sku'),
+      {},
+    ),
+  },
+  {
     name: 'name',
     label: i18n('entities.product.fields.name'),
     schema: schemas.string(
@@ -92,6 +100,34 @@ export default [
     label: i18n('entities.product.fields.country'),
     schema: schemas.relationToOne(
       i18n('entities.product.fields.country'),
+      {},
+    ),
+  },
+  {
+    name: 'barcode',
+    label: i18n('entities.product.fields.barcode'),
+    schema: schemas.integer(
+      i18n('entities.product.fields.barcode'),
+      {
+        "max": 13
+      },
+    ),
+  },
+  {
+    name: 'productNCM',
+    label: i18n('entities.product.fields.productNCM'),
+    schema: schemas.integer(
+      i18n('entities.product.fields.productNCM'),
+      {
+        "max": 6
+      },
+    ),
+  },
+  {
+    name: 'inStock',
+    label: i18n('entities.product.fields.inStock'),
+    schema: schemas.integer(
+      i18n('entities.product.fields.inStock'),
       {},
     ),
   },

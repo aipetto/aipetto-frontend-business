@@ -32,13 +32,13 @@ function CustomerListItem(props) {
             className="text-blue-500 dark:text-blue-400 focus:text-blue-400 hover:text-blue-400"
             to={`/customer/${record.id}`}
           >
-            {record.name}
+            {record.uniqueCustomIdentifier}
           </Link>
         </div>
       );
     }
 
-    return <div key={record.id}>{record.name}</div>;
+    return <div key={record.id}>{record.uniqueCustomIdentifier}</div>;
   };
 
   if (!valueAsArray().length) {

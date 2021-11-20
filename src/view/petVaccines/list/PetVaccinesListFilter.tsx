@@ -26,7 +26,7 @@ const schema = yup.object().shape({
   name: yupFilterSchemas.relationToOne(
     i18n('entities.petVaccines.fields.name'),
   ),
-  uniqueVetVaccineCode: yupFilterSchemas.string(
+  uniqueVetVaccineCode: yupFilterSchemas.relationToOne(
     i18n('entities.petVaccines.fields.uniqueVetVaccineCode'),
   ),
   datetimeTakenRange: yupFilterSchemas.datetimeRange(
@@ -44,6 +44,9 @@ const schema = yup.object().shape({
   country: yupFilterSchemas.relationToOne(
     i18n('entities.petVaccines.fields.country'),
   ),
+  vaccinationNotes: yupFilterSchemas.string(
+    i18n('entities.petVaccines.fields.vaccinationNotes'),
+  ),
 });
 
 const emptyValues = {
@@ -54,6 +57,7 @@ const emptyValues = {
   placeTaken: null,
   businessID: null,
   country: null,
+  vaccinationNotes: null,
 }
 
 const previewRenders = {
@@ -62,9 +66,9 @@ const previewRenders = {
       render: filterRenders.relationToOne(),
     },
   uniqueVetVaccineCode: {
-    label: i18n('entities.petVaccines.fields.uniqueVetVaccineCode'),
-    render: filterRenders.generic(),
-  },
+      label: i18n('entities.petVaccines.fields.uniqueVetVaccineCode'),
+      render: filterRenders.relationToOne(),
+    },
   datetimeTakenRange: {
     label: i18n('entities.petVaccines.fields.datetimeTakenRange'),
     render: filterRenders.datetimeRange(),
@@ -85,6 +89,10 @@ const previewRenders = {
       label: i18n('entities.petVaccines.fields.country'),
       render: filterRenders.relationToOne(),
     },
+  vaccinationNotes: {
+    label: i18n('entities.petVaccines.fields.vaccinationNotes'),
+    render: filterRenders.generic(),
+  },
 }
 
 function PetVaccinesListFilter(props) {
@@ -148,9 +156,9 @@ function PetVaccinesListFilter(props) {
                 name="name"
                 label={i18n('entities.petVaccines.fields.name')}        
               />
-              <InputFormItem
+              <VaccineTypesAutocompleteFormItem
                 name="uniqueVetVaccineCode"
-                label={i18n('entities.petVaccines.fields.uniqueVetVaccineCode')}      
+                label={i18n('entities.petVaccines.fields.uniqueVetVaccineCode')}
               />
               <DatePickerRangeFormItem
                 name="datetimeTakenRange"
@@ -172,6 +180,10 @@ function PetVaccinesListFilter(props) {
               <CountryAutocompleteFormItem  
                 name="country"
                 label={i18n('entities.petVaccines.fields.country')}        
+              />
+              <InputFormItem
+                name="vaccinationNotes"
+                label={i18n('entities.petVaccines.fields.vaccinationNotes')}
               />
             </div>
 

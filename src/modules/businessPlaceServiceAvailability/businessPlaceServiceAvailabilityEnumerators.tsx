@@ -46,15 +46,6 @@ const businessPlaceServiceAvailabilityEnumerators = {
     '05_00',
     '05_30AM',
   ],
-  days: [
-    'sunday',
-    'monday',
-    'tuesday',
-    'wednesday',
-    'thursday',
-    'friday',
-    'saturday',
-  ],
 };
 
 export default businessPlaceServiceAvailabilityEnumerators;

@@ -71,6 +71,7 @@ const en = {
     emailTitle: 'What\'s your email?',
     businessNameTitle: 'What\'s your business name?',
     numberPlaces: 'How many places do you have?',
+    numberEmployees: 'How many employees do you have?',
     checkboxChoices: {
         acupultura: 'Acupultura',
         analgesiaTratamentoDolor: 'Analgesia/Tratamiento del dolor',

@@ -22,8 +22,8 @@ const schema = yup.object().shape({
   customer: yupFilterSchemas.relationToOne(
     i18n('entities.order.fields.customer'),
   ),
-  businessEmployee: yupFilterSchemas.relationToOne(
-    i18n('entities.order.fields.businessEmployee'),
+  employee: yupFilterSchemas.relationToOne(
+    i18n('entities.order.fields.employee'),
   ),
   businessId: yupFilterSchemas.relationToOne(
     i18n('entities.order.fields.businessId'),
@@ -32,7 +32,7 @@ const schema = yup.object().shape({
 
 const emptyValues = {
   customer: null,
-  businessEmployee: null,
+  employee: null,
   businessId: null,
 }
 
@@ -41,8 +41,8 @@ const previewRenders = {
       label: i18n('entities.order.fields.customer'),
       render: filterRenders.relationToOne(),
     },
-  businessEmployee: {
-    label: i18n('entities.order.fields.businessEmployee'),
+  employee: {
+    label: i18n('entities.order.fields.employee'),
     render: filterRenders.relationToOne(),
   },
   businessId: {
@@ -113,8 +113,8 @@ function OrderListFilter(props) {
                 label={i18n('entities.order.fields.customer')}        
               />
               <UserAutocompleteFormItem  
-                name="businessEmployee"
-                label={i18n('entities.order.fields.businessEmployee')}
+                name="employee"
+                label={i18n('entities.order.fields.employee')}
               />
               <BusinessAutocompleteFormItem
                 name="businessId"

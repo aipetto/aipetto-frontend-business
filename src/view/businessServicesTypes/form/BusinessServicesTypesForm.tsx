@@ -10,6 +10,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SwitchFormItem from 'src/view/shared/form/items/SwitchFormItem';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
@@ -33,6 +34,10 @@ const schema = yup.object().shape({
     i18n('entities.businessServicesTypes.fields.serviceImage'),
     {},
   ),
+  isEnabled: yupFormSchemas.boolean(
+    i18n('entities.businessServicesTypes.fields.isEnabled'),
+    {},
+  ),
 });
 
 function BusinessServicesTypesForm(props) {
@@ -46,6 +51,7 @@ function BusinessServicesTypesForm(props) {
       category: record.category,
       language: record.language,
       serviceImage: record.serviceImage || [],
+      isEnabled: record.isEnabled,
     };
   });
 
@@ -99,6 +105,12 @@ function BusinessServicesTypesForm(props) {
             required={false}
             storage={Storage.values.businessServicesTypesServiceImage}
             max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isEnabled"
+            label={i18n('entities.businessServicesTypes.fields.isEnabled')}
           />
         </div>
 

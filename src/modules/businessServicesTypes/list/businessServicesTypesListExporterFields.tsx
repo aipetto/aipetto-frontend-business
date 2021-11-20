@@ -26,6 +26,11 @@ export default [
     render: exporterRenders.filesOrImages(),
   },
   {
+    name: 'isEnabled',
+    label: i18n('entities.businessServicesTypes.fields.isEnabled'),
+    render: exporterRenders.boolean(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.businessServicesTypes.fields.createdAt'),
     render: exporterRenders.datetime(),

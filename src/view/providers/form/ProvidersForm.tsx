@@ -119,6 +119,14 @@ const schema = yup.object().shape({
     i18n('entities.providers.fields.isIndependent'),
     {},
   ),
+  campaignTrackerID: yupFormSchemas.string(
+    i18n('entities.providers.fields.campaignTrackerID'),
+    {},
+  ),
+  isAvailable: yupFormSchemas.boolean(
+    i18n('entities.providers.fields.isAvailable'),
+    {},
+  ),
 });
 
 function ProvidersForm(props) {
@@ -161,6 +169,8 @@ function ProvidersForm(props) {
       attachedDoc: record.attachedDoc || [],
       language: record.language,
       isIndependent: record.isIndependent,
+      campaignTrackerID: record.campaignTrackerID,
+      isAvailable: record.isAvailable,
     };
   });
 
@@ -375,6 +385,20 @@ function ProvidersForm(props) {
             <SwitchFormItem
               name="isIndependent"
               label={i18n('entities.providers.fields.isIndependent')}
+            />
+          </div>
+
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+                name="campaignTrackerID"
+                label={i18n('entities.providers.fields.campaignTrackerID')}
+                required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <SwitchFormItem
+                name="isAvailable"
+                label={i18n('entities.providers.fields.isAvailable')}
             />
           </div>
 

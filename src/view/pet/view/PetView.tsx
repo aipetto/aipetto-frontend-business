@@ -3,6 +3,7 @@ import { i18n } from 'src/i18n';
 import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import UserViewItem from 'src/view/user/view/UserViewItem';
+import moment from 'moment';
 import ImagesViewItem from 'src/view/shared/view/ImagesViewItem';
 import BreedViewItem from 'src/view/breed/view/BreedViewItem';
 import PetTypesViewItem from 'src/view/petTypes/view/PetTypesViewItem';
@@ -30,6 +31,11 @@ function PetView(props) {
       <TextViewItem
         label={i18n('entities.pet.fields.nickname')}
         value={record.nickname}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.uniqueIdentifier')}
+        value={record.uniqueIdentifier}
       />
 
       <ImagesViewItem
@@ -103,8 +109,8 @@ function PetView(props) {
       />
 
       <CustomerViewItem
-        label={i18n('entities.pet.fields.customerId')}
-        value={record.customerId}
+        label={i18n('entities.pet.fields.customerIds')}
+        value={record.customerIds}
       />
 
       <UserViewItem
@@ -295,6 +301,117 @@ function PetView(props) {
         }
       />
 
+      <TextViewItem
+        label={i18n('entities.pet.fields.latitude')}
+        value={record.latitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.longitude')}
+        value={record.longitude}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.microchipNumber')}
+        value={record.microchipNumber}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.isDead')}
+        value={
+          record.isDead
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      {record.deathDate && <TextViewItem
+        label={i18n(
+          'entities.pet.fields.deathDate',
+        )}
+        value={moment(record.deathDate).format(
+          'YYYY-MM-DD HH:mm',
+        )}
+      />}
+
+      <BusinessViewItem
+        label={i18n('entities.pet.fields.allowedBusinessesAccess')}
+        value={record.allowedBusinessesAccess}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.hasPedigree')}
+        value={
+          record.hasPedigree
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.isAggressive')}
+        value={
+          record.isAggressive
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.isHyperActive')}
+        value={
+          record.isHyperActive
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.allowedToGrooming')}
+        value={
+          record.allowedToGrooming
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.phobias')}
+        value={record.phobias}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.feeding')}
+        value={record.feeding}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.isObsessive')}
+        value={
+          record.isObsessive
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.isAntiSocial')}
+        value={
+          record.isAntiSocial
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.generalNotes')}
+        value={record.generalNotes}
+      />
+
+      <TextViewItem
+        label={i18n('entities.pet.fields.problemsAndRestrinctions')}
+        value={record.problemsAndRestrinctions}
+      />
     </div>
   );
 }

@@ -113,6 +113,15 @@ function CustomerListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
+                  name={'uniqueCustomIdentifier'}
+                  label={i18n(
+                    'entities.customer.fields.uniqueCustomIdentifier',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
                   name={'name'}
                   label={i18n(
                     'entities.customer.fields.name',
@@ -122,9 +131,9 @@ function CustomerListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'uniqueCustomIdentifier'}
+                  name={'surname'}
                   label={i18n(
-                    'entities.customer.fields.uniqueCustomIdentifier',
+                    'entities.customer.fields.surname',
                   )}
                 />
                 <TableColumnHeader
@@ -145,6 +154,15 @@ function CustomerListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
+                  name={'shippingAddressStreet'}
+                  label={i18n(
+                    'entities.customer.fields.shippingAddressStreet',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
                   name={'prospectStatus'}
                   label={i18n(
                     'entities.customer.fields.prospectStatus',
@@ -157,6 +175,15 @@ function CustomerListTable(props) {
                   name={'customerStatus'}
                   label={i18n(
                     'entities.customer.fields.customerStatus',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'notes'}
+                  label={i18n(
+                    'entities.customer.fields.notes',
                   )}
                 />
               <TableColumnHeader />
@@ -197,12 +224,14 @@ function CustomerListTable(props) {
                       }
                     />
                   </th>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.uniqueCustomIdentifier}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.surname}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.email}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <CountryListItem value={row.country} />
                   </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.shippingAddressStreet}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.prospectStatus
                       ? i18n(
@@ -217,6 +246,7 @@ function CustomerListTable(props) {
                         )
                       : null}
                   </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.notes}</td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
                     align="right"

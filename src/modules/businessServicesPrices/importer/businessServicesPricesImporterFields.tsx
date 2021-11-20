@@ -7,7 +7,9 @@ export default [
     label: i18n('entities.businessServicesPrices.fields.service'),
     schema: schemas.relationToOne(
       i18n('entities.businessServicesPrices.fields.service'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -33,7 +35,9 @@ export default [
     label: i18n('entities.businessServicesPrices.fields.currency'),
     schema: schemas.relationToOne(
       i18n('entities.businessServicesPrices.fields.currency'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -41,6 +45,14 @@ export default [
     label: i18n('entities.businessServicesPrices.fields.isFree'),
     schema: schemas.boolean(
       i18n('entities.businessServicesPrices.fields.isFree'),
+      {},
+    ),
+  },
+  {
+    name: 'notesToCustomersOnThisService',
+    label: i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService'),
+    schema: schemas.string(
+      i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService'),
       {},
     ),
   },

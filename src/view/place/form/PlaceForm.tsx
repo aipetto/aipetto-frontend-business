@@ -35,27 +35,39 @@ const schema = yup.object().shape({
   ),
   placeType: yupFormSchemas.relationToOne(
     i18n('entities.place.fields.placeType'),
-    {},
+    {
+      "required": true
+    },
   ),
   businessId: yupFormSchemas.relationToOne(
     i18n('entities.place.fields.businessId'),
-    {},
+    {
+      "required": true
+    },
   ),
   services: yupFormSchemas.relationToMany(
     i18n('entities.place.fields.services'),
-    {},
+    {
+      "required": true
+    },
   ),
   categories: yupFormSchemas.relationToMany(
     i18n('entities.place.fields.categories'),
-    {},
+    {
+      "required": true
+    },
   ),
   address: yupFormSchemas.string(
     i18n('entities.place.fields.address'),
-    {},
+    {
+      "required": true
+    },
   ),
   addressNumber: yupFormSchemas.string(
     i18n('entities.place.fields.addressNumber'),
-    {},
+    {
+      "required": true
+    },
   ),
   addressZipCode: yupFormSchemas.string(
     i18n('entities.place.fields.addressZipCode'),
@@ -63,15 +75,21 @@ const schema = yup.object().shape({
   ),
   addressCity: yupFormSchemas.string(
     i18n('entities.place.fields.addressCity'),
-    {},
+    {
+      "required": true
+    },
   ),
   addressState: yupFormSchemas.string(
     i18n('entities.place.fields.addressState'),
-    {},
+    {
+      "required": true
+    },
   ),
   addressCountry: yupFormSchemas.relationToOne(
     i18n('entities.place.fields.addressCountry'),
-    {},
+    {
+      "required": true
+    },
   ),
   openTime: yupFormSchemas.string(
     i18n('entities.place.fields.openTime'),
@@ -95,7 +113,9 @@ const schema = yup.object().shape({
   ),
   photoLogo: yupFormSchemas.images(
     i18n('entities.place.fields.photoLogo'),
-    {},
+    {
+      "required": true
+    },
   ),
   photoStore: yupFormSchemas.images(
     i18n('entities.place.fields.photoStore'),

@@ -17,6 +17,7 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import petExaminationEnumerators from 'src/modules/petExamination/petExaminationEnumerators';
+import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import PetAutocompleteFormItem from 'src/view/pet/autocomplete/PetAutocompleteFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
@@ -37,6 +38,15 @@ const schema = yup.object().shape({
   statusExamination: yupFilterSchemas.enumerator(
     i18n('entities.petExamination.fields.statusExamination'),
   ),
+  examinationDiagnosticNotes: yupFilterSchemas.string(
+    i18n('entities.petExamination.fields.examinationDiagnosticNotes'),
+  ),
+  examinationRecommendationNotes: yupFilterSchemas.string(
+    i18n('entities.petExamination.fields.examinationRecommendationNotes'),
+  ),
+  nextExaminationSessionRange: yupFilterSchemas.datetimeRange(
+    i18n('entities.petExamination.fields.nextExaminationSessionRange'),
+  ),
 });
 
 const emptyValues = {
@@ -45,6 +55,9 @@ const emptyValues = {
   businessID: null,
   language: null,
   statusExamination: null,
+  examinationDiagnosticNotes: null,
+  examinationRecommendationNotes: null,
+  nextExaminationSessionRange: [],
 }
 
 const previewRenders = {
@@ -67,6 +80,18 @@ const previewRenders = {
   statusExamination: {
     label: i18n('entities.petExamination.fields.statusExamination'),
     render: filterRenders.enumerator('entities.petExamination.enumerators.statusExamination',),
+  },
+  examinationDiagnosticNotes: {
+    label: i18n('entities.petExamination.fields.examinationDiagnosticNotes'),
+    render: filterRenders.generic(),
+  },
+  examinationRecommendationNotes: {
+    label: i18n('entities.petExamination.fields.examinationRecommendationNotes'),
+    render: filterRenders.generic(),
+  },
+  nextExaminationSessionRange: {
+    label: i18n('entities.petExamination.fields.nextExaminationSessionRange'),
+    render: filterRenders.datetimeRange(),
   },
 }
 
@@ -155,6 +180,19 @@ function PetExaminationListFilter(props) {
                     }),
                   )}
                 />
+              <InputFormItem
+                name="examinationDiagnosticNotes"
+                label={i18n('entities.petExamination.fields.examinationDiagnosticNotes')}
+              />
+              <InputFormItem
+                name="examinationRecommendationNotes"
+                label={i18n('entities.petExamination.fields.examinationRecommendationNotes')}
+              />
+              <DatePickerRangeFormItem
+                name="nextExaminationSessionRange"
+                label={i18n('entities.petExamination.fields.nextExaminationSessionRange')}
+                showTimeInput
+              />
             </div>
 
             <div className="px-4 py-2 text-right">

@@ -103,6 +103,15 @@ export default [
     render: exporterRenders.boolean(),
   },
   {
+    name: 'campaignTrackerID',
+    label: i18n('entities.providers.fields.campaignTrackerID'),
+  },
+  {
+    name: 'isAvailable',
+    label: i18n('entities.providers.fields.isAvailable'),
+    render: exporterRenders.boolean(),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.providers.fields.createdAt'),
     render: exporterRenders.datetime(),

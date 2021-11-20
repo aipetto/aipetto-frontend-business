@@ -15,6 +15,10 @@ export default [
     label: i18n('entities.pet.fields.nickname'),
   },
   {
+    name: 'uniqueIdentifier',
+    label: i18n('entities.pet.fields.uniqueIdentifier'),
+  },
+  {
     name: 'profileImage',
     label: i18n('entities.pet.fields.profileImage'),
     render: exporterRenders.filesOrImages(),
@@ -59,9 +63,9 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
-    name: 'customerId',
-    label: i18n('entities.pet.fields.customerId'),
-    render: exporterRenders.relationToOne(),
+    name: 'customerIds',
+    label: i18n('entities.pet.fields.customerIds'),
+    render: exporterRenders.relationToMany(),
   },
   {
     name: 'petOwners',
@@ -183,6 +187,71 @@ export default [
   {
     name: 'heightUnit',
     label: i18n('entities.pet.fields.heightUnit'),
+  },
+  {
+    name: 'microchipNumber',
+    label: i18n('entities.pet.fields.microchipNumber'),
+  },
+  {
+    name: 'isDead',
+    label: i18n('entities.pet.fields.isDead'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'deathDate',
+    label: i18n('entities.pet.fields.deathDate'),
+    render: exporterRenders.datetime(),
+  },
+  {
+    name: 'allowedBusinessesAccess',
+    label: i18n('entities.pet.fields.allowedBusinessesAccess'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
+    name: 'hasPedigree',
+    label: i18n('entities.pet.fields.hasPedigree'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'isAggressive',
+    label: i18n('entities.pet.fields.isAggressive'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'isHyperActive',
+    label: i18n('entities.pet.fields.isHyperActive'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'allowedToGrooming',
+    label: i18n('entities.pet.fields.allowedToGrooming'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'phobias',
+    label: i18n('entities.pet.fields.phobias'),
+  },
+  {
+    name: 'feeding',
+    label: i18n('entities.pet.fields.feeding'),
+  },
+  {
+    name: 'isObsessive',
+    label: i18n('entities.pet.fields.isObsessive'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'isAntiSocial',
+    label: i18n('entities.pet.fields.isAntiSocial'),
+    render: exporterRenders.boolean(),
+  },
+  {
+    name: 'generalNotes',
+    label: i18n('entities.pet.fields.generalNotes'),
+  },
+  {
+    name: 'problemsAndRestrinctions',
+    label: i18n('entities.pet.fields.problemsAndRestrinctions'),
   },
   {
     name: 'createdAt',

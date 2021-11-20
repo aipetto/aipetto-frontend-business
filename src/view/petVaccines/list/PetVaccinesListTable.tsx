@@ -115,10 +115,6 @@ function PetVaccinesListTable(props) {
                   )}
                 />
                 <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'uniqueVetVaccineCode'}
                   label={i18n(
                     'entities.petVaccines.fields.uniqueVetVaccineCode',
                   )}
@@ -164,7 +160,9 @@ function PetVaccinesListTable(props) {
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <VaccineTypesListItem value={row.name} />
                   </td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.uniqueVetVaccineCode}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <VaccineTypesListItem value={row.uniqueVetVaccineCode} />
+                  </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"
                     align="right"

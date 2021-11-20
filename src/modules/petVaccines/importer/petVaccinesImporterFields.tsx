@@ -13,7 +13,7 @@ export default [
   {
     name: 'uniqueVetVaccineCode',
     label: i18n('entities.petVaccines.fields.uniqueVetVaccineCode'),
-    schema: schemas.string(
+    schema: schemas.relationToOne(
       i18n('entities.petVaccines.fields.uniqueVetVaccineCode'),
       {},
     ),
@@ -56,6 +56,14 @@ export default [
     label: i18n('entities.petVaccines.fields.country'),
     schema: schemas.relationToOne(
       i18n('entities.petVaccines.fields.country'),
+      {},
+    ),
+  },
+  {
+    name: 'vaccinationNotes',
+    label: i18n('entities.petVaccines.fields.vaccinationNotes'),
+    schema: schemas.string(
+      i18n('entities.petVaccines.fields.vaccinationNotes'),
       {},
     ),
   },

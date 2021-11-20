@@ -17,7 +17,9 @@ export default [
     label: i18n('entities.place.fields.placeType'),
     schema: schemas.relationToOne(
       i18n('entities.place.fields.placeType'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -25,7 +27,9 @@ export default [
     label: i18n('entities.place.fields.businessId'),
     schema: schemas.relationToOne(
       i18n('entities.place.fields.businessId'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -33,7 +37,9 @@ export default [
     label: i18n('entities.place.fields.services'),
     schema: schemas.relationToMany(
       i18n('entities.place.fields.services'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -41,7 +47,9 @@ export default [
     label: i18n('entities.place.fields.categories'),
     schema: schemas.relationToMany(
       i18n('entities.place.fields.categories'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -49,7 +57,9 @@ export default [
     label: i18n('entities.place.fields.address'),
     schema: schemas.string(
       i18n('entities.place.fields.address'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -57,7 +67,9 @@ export default [
     label: i18n('entities.place.fields.addressNumber'),
     schema: schemas.string(
       i18n('entities.place.fields.addressNumber'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -73,7 +85,9 @@ export default [
     label: i18n('entities.place.fields.addressCity'),
     schema: schemas.string(
       i18n('entities.place.fields.addressCity'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -81,7 +95,9 @@ export default [
     label: i18n('entities.place.fields.addressState'),
     schema: schemas.string(
       i18n('entities.place.fields.addressState'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -89,7 +105,9 @@ export default [
     label: i18n('entities.place.fields.addressCountry'),
     schema: schemas.relationToOne(
       i18n('entities.place.fields.addressCountry'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -137,7 +155,9 @@ export default [
     label: i18n('entities.place.fields.photoLogo'),
     schema: schemas.images(
       i18n('entities.place.fields.photoLogo'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {

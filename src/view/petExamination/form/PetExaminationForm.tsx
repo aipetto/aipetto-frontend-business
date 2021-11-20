@@ -13,6 +13,8 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import UserAutocompleteFormItem from 'src/view/user/autocomplete/UserAutocompleteFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import petExaminationEnumerators from 'src/modules/petExamination/petExaminationEnumerators';
+import moment from 'moment';
+import DatePickerFormItem from 'src/view/shared/form/items/DatePickerFormItem';
 import Storage from 'src/security/storage';
 import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
@@ -65,6 +67,18 @@ const schema = yup.object().shape({
     i18n('entities.petExamination.fields.examinationImages'),
     {},
   ),
+  examinationDiagnosticNotes: yupFormSchemas.string(
+    i18n('entities.petExamination.fields.examinationDiagnosticNotes'),
+    {},
+  ),
+  examinationRecommendationNotes: yupFormSchemas.string(
+    i18n('entities.petExamination.fields.examinationRecommendationNotes'),
+    {},
+  ),
+  nextExaminationSession: yupFormSchemas.datetime(
+    i18n('entities.petExamination.fields.nextExaminationSession'),
+    {},
+  ),
 });
 
 function PetExaminationForm(props) {
@@ -83,6 +97,9 @@ function PetExaminationForm(props) {
       statusExamination: record.statusExamination,
       examinationsFiles: record.examinationsFiles || [],
       examinationImages: record.examinationImages || [],
+      examinationDiagnosticNotes: record.examinationDiagnosticNotes,
+      examinationRecommendationNotes: record.examinationRecommendationNotes,
+      nextExaminationSession: record.nextExaminationSession ? moment(record.nextExaminationSession).toDate() : null,
     };
   });
 
@@ -186,6 +203,28 @@ function PetExaminationForm(props) {
             required={false}
             storage={Storage.values.petExaminationExaminationImages}
             max={undefined}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="examinationDiagnosticNotes"
+            label={i18n('entities.petExamination.fields.examinationDiagnosticNotes')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="examinationRecommendationNotes"
+            label={i18n('entities.petExamination.fields.examinationRecommendationNotes')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <DatePickerFormItem
+            name="nextExaminationSession"
+            label={i18n('entities.petExamination.fields.nextExaminationSession')}
+            required={false}
+            showTimeInput
           />
         </div>
 

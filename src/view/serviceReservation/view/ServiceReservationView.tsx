@@ -4,6 +4,7 @@ import Spinner from 'src/view/shared/Spinner';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import FilesViewItem from 'src/view/shared/view/FilesViewItem';
 import BusinessViewItem from 'src/view/business/view/BusinessViewItem';
+import PetViewItem from 'src/view/pet/view/PetViewItem';
 import CustomerViewItem from 'src/view/customer/view/CustomerViewItem';
 import BusinessServicesTypesViewItem from 'src/view/businessServicesTypes/view/BusinessServicesTypesViewItem';
 import ProvidersViewItem from 'src/view/providers/view/ProvidersViewItem';
@@ -26,14 +27,19 @@ function ServiceReservationView(props) {
         value={record.date}
       />
 
-      <BusinessViewItem
-        label={i18n('entities.serviceReservation.fields.businessId')}
-        value={record.businessId}
-      />
-
       <CustomerViewItem
         label={i18n('entities.serviceReservation.fields.customerId')}
         value={record.customerId}
+      />
+
+      <PetViewItem
+        label={i18n('entities.serviceReservation.fields.pet')}
+        value={record.pet}
+      />
+
+      <BusinessViewItem
+        label={i18n('entities.serviceReservation.fields.businessId')}
+        value={record.businessId}
       />
 
       <BusinessServicesTypesViewItem

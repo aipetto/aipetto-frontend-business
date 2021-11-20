@@ -11,13 +11,18 @@ export default [
     label: i18n('entities.serviceReservation.fields.date'),
   },
   {
-    name: 'businessId',
-    label: i18n('entities.serviceReservation.fields.businessId'),
+    name: 'customerId',
+    label: i18n('entities.serviceReservation.fields.customerId'),
     render: exporterRenders.relationToOne(),
   },
   {
-    name: 'customerId',
-    label: i18n('entities.serviceReservation.fields.customerId'),
+    name: 'pet',
+    label: i18n('entities.serviceReservation.fields.pet'),
+    render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'businessId',
+    label: i18n('entities.serviceReservation.fields.businessId'),
     render: exporterRenders.relationToOne(),
   },
   {
@@ -91,6 +96,14 @@ export default [
   {
     name: 'source',
     label: i18n('entities.serviceReservation.fields.source'),
+  },
+  {
+    name: 'notes',
+    label: i18n('entities.serviceReservation.fields.notes'),
+  },
+  {
+    name: 'customerQuestions',
+    label: i18n('entities.serviceReservation.fields.customerQuestions'),
   },
   {
     name: 'createdAt',

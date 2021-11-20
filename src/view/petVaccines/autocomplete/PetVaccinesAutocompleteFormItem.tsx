@@ -51,8 +51,8 @@ function PetVaccinesAutocompleteFormItem(props) {
       const value = originalValue.id;
       let label = originalValue.label;
 
-      if (originalValue.uniqueVetVaccineCode) {
-        label = originalValue.uniqueVetVaccineCode;
+      if (originalValue.id) {
+        label = originalValue.id;
       }
 
       return {

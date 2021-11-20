@@ -22,6 +22,10 @@ import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAu
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
+  sku: yupFormSchemas.string(
+    i18n('entities.product.fields.sku'),
+    {},
+  ),
   name: yupFormSchemas.string(
     i18n('entities.product.fields.name'),
     {
@@ -75,6 +79,22 @@ const schema = yup.object().shape({
     i18n('entities.product.fields.country'),
     {},
   ),
+  barcode: yupFormSchemas.integer(
+    i18n('entities.product.fields.barcode'),
+    {
+      "max": 13
+    },
+  ),
+  productNCM: yupFormSchemas.integer(
+    i18n('entities.product.fields.productNCM'),
+    {
+      "max": 6
+    },
+  ),
+  inStock: yupFormSchemas.integer(
+    i18n('entities.product.fields.inStock'),
+    {},
+  ),
 });
 
 function ProductForm(props) {
@@ -84,6 +104,7 @@ function ProductForm(props) {
     const record = props.record || {};
 
     return {
+      sku: record.sku,
       name: record.name,
       description: record.description,
       unitPrice: record.unitPrice,
@@ -94,6 +115,9 @@ function ProductForm(props) {
       currency: record.currency,
       language: record.language,
       country: record.country,
+      barcode: record.barcode,
+      productNCM: record.productNCM,
+      inStock: record.inStock,
     };
   });
 
@@ -117,6 +141,14 @@ function ProductForm(props) {
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="w-full sm:w-md md:w-md lg:w-md">
+          <InputFormItem
+            name="sku"
+            label={i18n('entities.product.fields.sku')}
+            required={false}
+          autoFocus
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <InputFormItem
             name="name"
             label={i18n('entities.product.fields.name')}
@@ -190,6 +222,27 @@ function ProductForm(props) {
             label={i18n('entities.product.fields.country')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputNumberFormItem
+            name="barcode"
+            label={i18n('entities.product.fields.barcode')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputNumberFormItem
+            name="productNCM"
+            label={i18n('entities.product.fields.productNCM')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputNumberFormItem
+            name="inStock"
+            label={i18n('entities.product.fields.inStock')}
+            required={false}
           />
         </div>
 

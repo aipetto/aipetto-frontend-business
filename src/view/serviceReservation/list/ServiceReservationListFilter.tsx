@@ -20,6 +20,7 @@ import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import BusinessAutocompleteFormItem from 'src/view/business/autocomplete/BusinessAutocompleteFormItem';
+import PetAutocompleteFormItem from 'src/view/pet/autocomplete/PetAutocompleteFormItem';
 import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 import PlaceAutocompleteFormItem from 'src/view/place/autocomplete/PlaceAutocompleteFormItem';
 import DiscountsAutocompleteFormItem from 'src/view/discounts/autocomplete/DiscountsAutocompleteFormItem';
@@ -30,11 +31,14 @@ const schema = yup.object().shape({
   dateRange: yupFilterSchemas.dateRange(
     i18n('entities.serviceReservation.fields.dateRange'),
   ),
-  businessId: yupFilterSchemas.relationToOne(
-    i18n('entities.serviceReservation.fields.businessId'),
-  ),
   customerId: yupFilterSchemas.relationToOne(
     i18n('entities.serviceReservation.fields.customerId'),
+  ),
+  pet: yupFilterSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.pet'),
+  ),
+  businessId: yupFilterSchemas.relationToOne(
+    i18n('entities.serviceReservation.fields.businessId'),
   ),
   time: yupFilterSchemas.enumerator(
     i18n('entities.serviceReservation.fields.time'),
@@ -82,8 +86,9 @@ const schema = yup.object().shape({
 
 const emptyValues = {
   dateRange: [],
-  businessId: null,
   customerId: null,
+  pet: null,
+  businessId: null,
   time: null,
   needTransportation: null,
   place: null,
@@ -105,12 +110,16 @@ const previewRenders = {
     label: i18n('entities.serviceReservation.fields.dateRange'),
     render: filterRenders.dateRange(),
   },
-  businessId: {
-      label: i18n('entities.serviceReservation.fields.businessId'),
-      render: filterRenders.relationToOne(),
-    },
   customerId: {
       label: i18n('entities.serviceReservation.fields.customerId'),
+      render: filterRenders.relationToOne(),
+    },
+  pet: {
+      label: i18n('entities.serviceReservation.fields.pet'),
+      render: filterRenders.relationToOne(),
+    },
+  businessId: {
+      label: i18n('entities.serviceReservation.fields.businessId'),
       render: filterRenders.relationToOne(),
     },
   time: {
@@ -239,6 +248,14 @@ function ServiceReservationListFilter(props) {
               <CustomerAutocompleteFormItem  
                 name="customerId"
                 label={i18n('entities.serviceReservation.fields.customerId')}        
+              />
+              <PetAutocompleteFormItem
+                name="pet"
+                label={i18n('entities.serviceReservation.fields.pet')}
+              />
+              <BusinessAutocompleteFormItem
+                name="businessId"
+                label={i18n('entities.serviceReservation.fields.businessId')}
               />
               <SelectFormItem
                   name="time"

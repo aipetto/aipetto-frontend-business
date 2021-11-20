@@ -7,6 +7,10 @@ export default [
     label: i18n('entities.product.fields.id'),
   },
   {
+    name: 'sku',
+    label: i18n('entities.product.fields.sku'),
+  },
+  {
     name: 'name',
     label: i18n('entities.product.fields.name'),
   },
@@ -52,6 +56,18 @@ export default [
     name: 'country',
     label: i18n('entities.product.fields.country'),
     render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'barcode',
+    label: i18n('entities.product.fields.barcode'),
+  },
+  {
+    name: 'productNCM',
+    label: i18n('entities.product.fields.productNCM'),
+  },
+  {
+    name: 'inStock',
+    label: i18n('entities.product.fields.inStock'),
   },
   {
     name: 'createdAt',

@@ -32,6 +32,10 @@ export default [
     render: exporterRenders.boolean(),
   },
   {
+    name: 'notesToCustomersOnThisService',
+    label: i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.businessServicesPrices.fields.createdAt'),
     render: exporterRenders.datetime(),

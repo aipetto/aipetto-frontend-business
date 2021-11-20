@@ -14,6 +14,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
+import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import BusinessServicesTypesAutocompleteFormItem from 'src/view/businessServicesTypes/autocomplete/BusinessServicesTypesAutocompleteFormItem';
@@ -36,6 +37,9 @@ const schema = yup.object().shape({
   isFree: yupFilterSchemas.boolean(
     i18n('entities.businessServicesPrices.fields.isFree'),
   ),
+  notesToCustomersOnThisService: yupFilterSchemas.string(
+    i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService'),
+  ),
 });
 
 const emptyValues = {
@@ -44,6 +48,7 @@ const emptyValues = {
   servicePriceRange: [],
   currency: null,
   isFree: null,
+  notesToCustomersOnThisService: null,
 }
 
 const previewRenders = {
@@ -66,6 +71,10 @@ const previewRenders = {
   isFree: {
     label: i18n('entities.businessServicesPrices.fields.isFree'),
     render: filterRenders.boolean(),
+  },
+  notesToCustomersOnThisService: {
+    label: i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService'),
+    render: filterRenders.generic(),
   },
 }
 
@@ -155,6 +164,10 @@ function BusinessServicesPricesListFilter(props) {
                     label: i18n('common.no'),
                   },
                 ]}
+              />
+              <InputFormItem
+                name="notesToCustomersOnThisService"
+                label={i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService')}
               />
             </div>
 

@@ -51,8 +51,8 @@ function PetAutocompleteFormItem(props) {
       const value = originalValue.id;
       let label = originalValue.label;
 
-      if (originalValue.name) {
-        label = originalValue.name;
+      if (originalValue.uniqueIdentifier) {
+        label = originalValue.uniqueIdentifier;
       }
 
       return {

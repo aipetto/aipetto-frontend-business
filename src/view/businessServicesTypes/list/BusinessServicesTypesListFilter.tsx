@@ -15,6 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import BusinessCategoryAutocompleteFormItem from 'src/view/businessCategory/autocomplete/BusinessCategoryAutocompleteFormItem';
 import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/LanguagesAutocompleteFormItem';
 
@@ -28,12 +29,16 @@ const schema = yup.object().shape({
   language: yupFilterSchemas.relationToOne(
     i18n('entities.businessServicesTypes.fields.language'),
   ),
+  isEnabled: yupFilterSchemas.boolean(
+    i18n('entities.businessServicesTypes.fields.isEnabled'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   category: null,
   language: null,
+  isEnabled: null,
 }
 
 const previewRenders = {
@@ -49,6 +54,10 @@ const previewRenders = {
       label: i18n('entities.businessServicesTypes.fields.language'),
       render: filterRenders.relationToOne(),
     },
+  isEnabled: {
+    label: i18n('entities.businessServicesTypes.fields.isEnabled'),
+    render: filterRenders.boolean(),
+  },
 }
 
 function BusinessServicesTypesListFilter(props) {
@@ -119,6 +128,20 @@ function BusinessServicesTypesListFilter(props) {
               <LanguagesAutocompleteFormItem
                 name="language"
                 label={i18n('entities.businessServicesTypes.fields.language')}
+              />
+              <SelectFormItem
+                name="isEnabled"
+                label={i18n('entities.businessServicesTypes.fields.isEnabled')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
               />
             </div>
 

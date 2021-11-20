@@ -34,4 +34,12 @@ export default [
       {},
     ),
   },
+  {
+    name: 'isEnabled',
+    label: i18n('entities.businessServicesTypes.fields.isEnabled'),
+    schema: schemas.boolean(
+      i18n('entities.businessServicesTypes.fields.isEnabled'),
+      {},
+    ),
+  },
 ];

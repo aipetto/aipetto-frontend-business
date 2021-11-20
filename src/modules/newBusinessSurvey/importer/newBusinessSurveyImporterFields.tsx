@@ -13,10 +13,10 @@ export default [
     ),
   },
   {
-    name: 'numberOfPlaces',
-    label: i18n('entities.newBusinessSurvey.fields.numberOfPlaces'),
+    name: 'numberOfEmployees',
+    label: i18n('entities.newBusinessSurvey.fields.numberOfEmployees'),
     schema: schemas.string(
-      i18n('entities.newBusinessSurvey.fields.numberOfPlaces'),
+      i18n('entities.newBusinessSurvey.fields.numberOfEmployees'),
       {},
     ),
   },

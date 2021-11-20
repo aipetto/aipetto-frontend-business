@@ -18,6 +18,11 @@ function ProductView(props) {
   return (
     <div>
       <TextViewItem
+        label={i18n('entities.product.fields.sku')}
+        value={record.sku}
+      />
+
+      <TextViewItem
         label={i18n('entities.product.fields.name')}
         value={record.name}
       />
@@ -69,6 +74,21 @@ function ProductView(props) {
       <CountryViewItem
         label={i18n('entities.product.fields.country')}
         value={record.country}
+      />
+
+      <TextViewItem
+        label={i18n('entities.product.fields.barcode')}
+        value={record.barcode}
+      />
+
+      <TextViewItem
+        label={i18n('entities.product.fields.productNCM')}
+        value={record.productNCM}
+      />
+
+      <TextViewItem
+        label={i18n('entities.product.fields.inStock')}
+        value={record.inStock}
       />
     </div>
   );

@@ -21,6 +21,16 @@ export default [
     ),
   },
   {
+    name: 'uniqueIdentifier',
+    label: i18n('entities.pet.fields.uniqueIdentifier'),
+    schema: schemas.string(
+      i18n('entities.pet.fields.uniqueIdentifier'),
+      {
+        "required": true
+      },
+    ),
+  },
+  {
     name: 'profileImage',
     label: i18n('entities.pet.fields.profileImage'),
     schema: schemas.images(
@@ -110,10 +120,10 @@ export default [
     ),
   },
   {
-    name: 'customerId',
-    label: i18n('entities.pet.fields.customerId'),
-    schema: schemas.relationToOne(
-      i18n('entities.pet.fields.customerId'),
+    name: 'customerIds',
+    label: i18n('entities.pet.fields.customerIds'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.customerIds'),
       {},
     ),
   },
@@ -335,6 +345,121 @@ export default [
       {
         "options": petEnumerators.heightUnit
       },
+    ),
+  },
+  {
+    name: 'microchipNumber',
+    label: i18n('entities.pet.fields.microchipNumber'),
+    schema: schemas.integer(
+      i18n('entities.pet.fields.microchipNumber'),
+      {
+        "max": 15
+      },
+    ),
+  },
+  {
+    name: 'isDead',
+    label: i18n('entities.pet.fields.isDead'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.isDead'),
+      {},
+    ),
+  },
+  {
+    name: 'deathDate',
+    label: i18n('entities.pet.fields.deathDate'),
+    schema: schemas.datetime(
+      i18n('entities.pet.fields.deathDate'),
+      {},
+    ),
+   render: (value) => value && value instanceof Date ? moment(value).format('YYYY-MM-DD HH:mm') : value,
+  },
+  {
+    name: 'allowedBusinessesAccess',
+    label: i18n('entities.pet.fields.allowedBusinessesAccess'),
+    schema: schemas.relationToMany(
+      i18n('entities.pet.fields.allowedBusinessesAccess'),
+      {},
+    ),
+  },
+  {
+    name: 'hasPedigree',
+    label: i18n('entities.pet.fields.hasPedigree'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.hasPedigree'),
+      {},
+    ),
+  },
+  {
+    name: 'isAggressive',
+    label: i18n('entities.pet.fields.isAggressive'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.isAggressive'),
+      {},
+    ),
+  },
+  {
+    name: 'isHyperActive',
+    label: i18n('entities.pet.fields.isHyperActive'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.isHyperActive'),
+      {},
+    ),
+  },
+  {
+    name: 'allowedToGrooming',
+    label: i18n('entities.pet.fields.allowedToGrooming'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.allowedToGrooming'),
+      {},
+    ),
+  },
+  {
+    name: 'phobias',
+    label: i18n('entities.pet.fields.phobias'),
+    schema: schemas.string(
+      i18n('entities.pet.fields.phobias'),
+      {},
+    ),
+  },
+  {
+    name: 'feeding',
+    label: i18n('entities.pet.fields.feeding'),
+    schema: schemas.string(
+      i18n('entities.pet.fields.feeding'),
+      {},
+    ),
+  },
+  {
+    name: 'isObsessive',
+    label: i18n('entities.pet.fields.isObsessive'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.isObsessive'),
+      {},
+    ),
+  },
+  {
+    name: 'isAntiSocial',
+    label: i18n('entities.pet.fields.isAntiSocial'),
+    schema: schemas.boolean(
+      i18n('entities.pet.fields.isAntiSocial'),
+      {},
+    ),
+  },
+  {
+    name: 'generalNotes',
+    label: i18n('entities.pet.fields.generalNotes'),
+    schema: schemas.string(
+      i18n('entities.pet.fields.generalNotes'),
+      {},
+    ),
+  },
+  {
+    name: 'problemsAndRestrinctions',
+    label: i18n('entities.pet.fields.problemsAndRestrinctions'),
+    schema: schemas.string(
+      i18n('entities.pet.fields.problemsAndRestrinctions'),
+      {},
     ),
   },
 ];

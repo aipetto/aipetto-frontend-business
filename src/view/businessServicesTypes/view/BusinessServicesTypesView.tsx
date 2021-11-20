@@ -34,6 +34,15 @@ function BusinessServicesTypesView(props) {
         label={i18n('entities.businessServicesTypes.fields.serviceImage')}
         value={record.serviceImage}
       />
+
+      <TextViewItem
+        label={i18n('entities.businessServicesTypes.fields.isEnabled')}
+        value={
+          record.isEnabled
+            ? i18n('common.yes')
+            : i18n('common.no')
+        }
+      />
     </div>
   );
 }

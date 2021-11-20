@@ -11,9 +11,22 @@ export default [
     label: i18n('entities.businessPlaceServiceAvailability.fields.name'),
   },
   {
+    name: 'places',
+    label: i18n('entities.businessPlaceServiceAvailability.fields.places'),
+    render: exporterRenders.relationToMany(),
+  },
+  {
     name: 'businessId',
     label: i18n('entities.businessPlaceServiceAvailability.fields.businessId'),
     render: exporterRenders.relationToOne(),
+  },
+  {
+    name: 'dateStart',
+    label: i18n('entities.businessPlaceServiceAvailability.fields.dateStart'),
+  },
+  {
+    name: 'dateEnd',
+    label: i18n('entities.businessPlaceServiceAvailability.fields.dateEnd'),
   },
   {
     name: 'timeSlot',
@@ -21,24 +34,9 @@ export default [
     render: exporterRenders.stringArray(),
   },
   {
-    name: 'days',
-    label: i18n('entities.businessPlaceServiceAvailability.fields.days'),
-    render: exporterRenders.stringArray(),
-  },
-  {
-    name: 'workOnHolidays',
-    label: i18n('entities.businessPlaceServiceAvailability.fields.workOnHolidays'),
-    render: exporterRenders.boolean(),
-  },
-  {
     name: 'serviceType',
     label: i18n('entities.businessPlaceServiceAvailability.fields.serviceType'),
     render: exporterRenders.relationToOne(),
-  },
-  {
-    name: 'places',
-    label: i18n('entities.businessPlaceServiceAvailability.fields.places'),
-    render: exporterRenders.relationToMany(),
   },
   {
     name: 'createdAt',

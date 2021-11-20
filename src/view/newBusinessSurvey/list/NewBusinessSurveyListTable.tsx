@@ -122,9 +122,9 @@ function NewBusinessSurveyListTable(props) {
                   onSort={doChangeSort}
                   hasRows={hasRows}
                   sorter={sorter}
-                  name={'numberOfPlaces'}
+                  name={'numberOfEmployees'}
                   label={i18n(
-                    'entities.newBusinessSurvey.fields.numberOfPlaces',
+                    'entities.newBusinessSurvey.fields.numberOfEmployees',
                   )}
                 />
                 <TableColumnHeader
@@ -220,7 +220,7 @@ function NewBusinessSurveyListTable(props) {
                     />
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.nameBusiness}</td>
-                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.numberOfPlaces}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.numberOfEmployees}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactName}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactEmail}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.contactPhone}</td>

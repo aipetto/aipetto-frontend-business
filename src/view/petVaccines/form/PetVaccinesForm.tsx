@@ -24,7 +24,7 @@ const schema = yup.object().shape({
     i18n('entities.petVaccines.fields.name'),
     {},
   ),
-  uniqueVetVaccineCode: yupFormSchemas.string(
+  uniqueVetVaccineCode: yupFormSchemas.relationToOne(
     i18n('entities.petVaccines.fields.uniqueVetVaccineCode'),
     {},
   ),
@@ -48,6 +48,10 @@ const schema = yup.object().shape({
     i18n('entities.petVaccines.fields.country'),
     {},
   ),
+  vaccinationNotes: yupFormSchemas.string(
+    i18n('entities.petVaccines.fields.vaccinationNotes'),
+    {},
+  ),
 });
 
 function PetVaccinesForm(props) {
@@ -64,6 +68,7 @@ function PetVaccinesForm(props) {
       placeTaken: record.placeTaken,
       businessID: record.businessID,
       country: record.country,
+      vaccinationNotes: record.vaccinationNotes,
     };
   });
 
@@ -95,10 +100,11 @@ function PetVaccinesForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
+          <VaccineTypesAutocompleteFormItem
             name="uniqueVetVaccineCode"
             label={i18n('entities.petVaccines.fields.uniqueVetVaccineCode')}
             required={false}
+            showCreate={!props.modal}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -139,6 +145,13 @@ function PetVaccinesForm(props) {
             label={i18n('entities.petVaccines.fields.country')}
             required={false}
             showCreate={!props.modal}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="vaccinationNotes"
+            label={i18n('entities.petVaccines.fields.vaccinationNotes')}
+            required={false}
           />
         </div>
 

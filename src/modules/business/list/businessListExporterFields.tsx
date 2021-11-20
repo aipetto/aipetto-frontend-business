@@ -107,6 +107,10 @@ export default [
     label: i18n('entities.business.fields.instagram'),
   },
   {
+    name: 'campaingTrackerID',
+    label: i18n('entities.business.fields.campaingTrackerID'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.business.fields.createdAt'),
     render: exporterRenders.datetime(),

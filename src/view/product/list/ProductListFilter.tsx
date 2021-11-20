@@ -24,6 +24,9 @@ import LanguagesAutocompleteFormItem from 'src/view/languages/autocomplete/Langu
 import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAutocompleteFormItem';
 
 const schema = yup.object().shape({
+  sku: yupFilterSchemas.string(
+    i18n('entities.product.fields.sku'),
+  ),
   name: yupFilterSchemas.string(
     i18n('entities.product.fields.name'),
   ),
@@ -48,9 +51,19 @@ const schema = yup.object().shape({
   country: yupFilterSchemas.relationToOne(
     i18n('entities.product.fields.country'),
   ),
+  barcodeRange: yupFilterSchemas.integerRange(
+    i18n('entities.product.fields.barcodeRange'),
+  ),
+  productNCMRange: yupFilterSchemas.integerRange(
+    i18n('entities.product.fields.productNCMRange'),
+  ),
+  inStockRange: yupFilterSchemas.integerRange(
+    i18n('entities.product.fields.inStockRange'),
+  ),
 });
 
 const emptyValues = {
+  sku: null,
   name: null,
   unitPriceRange: [],
   businessId: null,
@@ -59,9 +72,16 @@ const emptyValues = {
   currency: null,
   language: null,
   country: null,
+  barcodeRange: [],
+  productNCMRange: [],
+  inStockRange: [],
 }
 
 const previewRenders = {
+  sku: {
+    label: i18n('entities.product.fields.sku'),
+    render: filterRenders.generic(),
+  },
   name: {
     label: i18n('entities.product.fields.name'),
     render: filterRenders.generic(),
@@ -94,6 +114,18 @@ const previewRenders = {
       label: i18n('entities.product.fields.country'),
       render: filterRenders.relationToOne(),
     },
+  barcodeRange: {
+    label: i18n('entities.product.fields.barcodeRange'),
+    render: filterRenders.range(),
+  },
+  productNCMRange: {
+    label: i18n('entities.product.fields.productNCMRange'),
+    render: filterRenders.range(),
+  },
+  inStockRange: {
+    label: i18n('entities.product.fields.inStockRange'),
+    render: filterRenders.range(),
+  },
 }
 
 function ProductListFilter(props) {
@@ -154,6 +186,10 @@ function ProductListFilter(props) {
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
               <InputFormItem
+                name="sku"
+                label={i18n('entities.product.fields.sku')}
+              />
+              <InputFormItem
                 name="name"
                 label={i18n('entities.product.fields.name')}      
               />
@@ -194,6 +230,18 @@ function ProductListFilter(props) {
               <CountryAutocompleteFormItem
                 name="country"
                 label={i18n('entities.product.fields.country')}
+              />
+              <InputNumberRangeFormItem
+                name="barcodeRange"
+                label={i18n('entities.product.fields.barcodeRange')}
+              />
+              <InputNumberRangeFormItem
+                name="productNCMRange"
+                label={i18n('entities.product.fields.productNCMRange')}
+              />
+              <InputNumberRangeFormItem
+                name="inStockRange"
+                label={i18n('entities.product.fields.inStockRange')}
               />
             </div>
 

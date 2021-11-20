@@ -111,6 +111,10 @@ export default [
     render: exporterRenders.relationToOne(),
   },
   {
+    name: 'campaignTrackerID',
+    label: i18n('entities.contacts.fields.campaignTrackerID'),
+  },
+  {
     name: 'createdAt',
     label: i18n('entities.contacts.fields.createdAt'),
     render: exporterRenders.datetime(),

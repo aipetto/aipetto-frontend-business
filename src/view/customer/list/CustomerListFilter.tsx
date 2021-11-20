@@ -25,14 +25,14 @@ import CountryAutocompleteFormItem from 'src/view/country/autocomplete/CountryAu
 import CurrencyAutocompleteFormItem from 'src/view/currency/autocomplete/CurrencyAutocompleteFormItem';
 
 const schema = yup.object().shape({
+  uniqueCustomIdentifier: yupFilterSchemas.string(
+    i18n('entities.customer.fields.uniqueCustomIdentifier'),
+  ),
   name: yupFilterSchemas.string(
     i18n('entities.customer.fields.name'),
   ),
   businessId: yupFilterSchemas.relationToOne(
     i18n('entities.customer.fields.businessId'),
-  ),
-  uniqueCustomIdentifier: yupFilterSchemas.string(
-    i18n('entities.customer.fields.uniqueCustomIdentifier'),
   ),
   userId: yupFilterSchemas.relationToOne(
     i18n('entities.customer.fields.userId'),
@@ -157,12 +157,15 @@ const schema = yup.object().shape({
   notes: yupFilterSchemas.string(
     i18n('entities.customer.fields.notes'),
   ),
+  campaignTrackerID: yupFilterSchemas.string(
+    i18n('entities.customer.fields.campaignTrackerID'),
+  ),
 });
 
 const emptyValues = {
+  uniqueCustomIdentifier: null,
   name: null,
   businessId: null,
-  uniqueCustomIdentifier: null,
   userId: null,
   source: null,
   surname: null,
@@ -204,9 +207,14 @@ const emptyValues = {
   website: null,
   language: null,
   notes: null,
+  campaignTrackerID: null,
 }
 
 const previewRenders = {
+  uniqueCustomIdentifier: {
+    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
+    render: filterRenders.generic(),
+  },
   name: {
     label: i18n('entities.customer.fields.name'),
     render: filterRenders.generic(),
@@ -215,10 +223,6 @@ const previewRenders = {
       label: i18n('entities.customer.fields.businessId'),
       render: filterRenders.relationToOne(),
     },
-  uniqueCustomIdentifier: {
-    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
-    render: filterRenders.generic(),
-  },
   userId: {
     label: i18n('entities.customer.fields.userId'),
     render: filterRenders.relationToOne(),
@@ -383,6 +387,10 @@ const previewRenders = {
     label: i18n('entities.customer.fields.notes'),
     render: filterRenders.generic(),
   },
+  campaignTrackerID: {
+    label: i18n('entities.customer.fields.campaignTrackerID'),
+    render: filterRenders.generic(),
+  },
 }
 
 function CustomerListFilter(props) {
@@ -442,6 +450,10 @@ function CustomerListFilter(props) {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="pl-4 pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+              <InputFormItem
+                name="uniqueCustomIdentifier"
+                label={i18n('entities.customer.fields.uniqueCustomIdentifier')}
+              />
               <InputFormItem
                 name="name"
                 label={i18n('entities.customer.fields.name')}
@@ -635,6 +647,34 @@ function CustomerListFilter(props) {
               <InputFormItem
                 name="shippingAddressStreetComplement"
                 label={i18n('entities.customer.fields.shippingAddressStreetComplement')}
+              />
+              <InputFormItem
+                name="facebook"
+                label={i18n('entities.customer.fields.facebook')}
+              />
+              <InputFormItem
+                name="linkedin"
+                label={i18n('entities.customer.fields.linkedin')}
+              />
+              <InputFormItem
+                name="instagram"
+                label={i18n('entities.customer.fields.instagram')}
+              />
+              <InputFormItem
+                name="website"
+                label={i18n('entities.customer.fields.website')}
+              />
+              <CurrencyAutocompleteFormItem
+                name="language"
+                label={i18n('entities.customer.fields.language')}
+              />
+              <InputFormItem
+                name="notes"
+                label={i18n('entities.customer.fields.notes')}
+              />
+              <InputFormItem
+                name="campaignTrackerID"
+                label={i18n('entities.customer.fields.campaignTrackerID')}
               />
             </div>
 

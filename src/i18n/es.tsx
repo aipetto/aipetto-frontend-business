@@ -166,6 +166,7 @@ const es = {
         contactPhone: 'Teléfono',
         businessNameTitle: 'Nombre de tu negocio',
         numberPlaces: '¿Cuántas sucursales tienes?',
+        numberEmployees: '¿Cuántos empleados tienen?',
         websiteSocialNetwork: 'Sitio web / Red social',
         checkboxChoices: {
             acupuntura: 'Acupuntura',
@@ -2492,6 +2493,7 @@ const es = {
                 'servicePrice': 'Valor',
                 'currency': 'Moneda',
                 'isFree': '¿Es gratuito?',
+                'notesToCustomersOnThisService': 'Información extra para mostrar al usuário en este servicio',
                 createdAt: 'Creado el',
                 updatedAt: 'Actualizado el',
                 createdAtRange: 'Creado el',

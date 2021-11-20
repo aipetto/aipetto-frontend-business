@@ -7,6 +7,10 @@ export default [
     label: i18n('entities.customer.fields.id'),
   },
   {
+    name: 'uniqueCustomIdentifier',
+    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
+  },
+  {
     name: 'name',
     label: i18n('entities.customer.fields.name'),
   },
@@ -14,10 +18,6 @@ export default [
     name: 'businessId',
     label: i18n('entities.customer.fields.businessId'),
     render: exporterRenders.relationToOne(),
-  },
-  {
-    name: 'uniqueCustomIdentifier',
-    label: i18n('entities.customer.fields.uniqueCustomIdentifier'),
   },
   {
     name: 'userId',
@@ -193,6 +193,15 @@ export default [
   {
     name: 'notes',
     label: i18n('entities.customer.fields.notes'),
+  },
+  {
+    name: 'campaignTrackerID',
+    label: i18n('entities.customer.fields.campaignTrackerID'),
+  },
+  {
+    name: 'pets',
+    label: i18n('entities.customer.fields.pets'),
+    render: exporterRenders.relationToMany(),
   },
   {
     name: 'createdAt',

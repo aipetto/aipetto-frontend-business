@@ -37,7 +37,9 @@ const schema = yup.object().shape({
   ),
   name: yupFormSchemas.string(
     i18n('entities.business.fields.name'),
-    {},
+    {
+      "required": true
+    },
   ),
   services: yupFormSchemas.relationToMany(
     i18n('entities.business.fields.services'),
@@ -93,6 +95,16 @@ const schema = yup.object().shape({
   ),
   businessLogo: yupFormSchemas.images(
     i18n('entities.business.fields.businessLogo'),
+    {
+      "required": true
+    },
+  ),
+  latitude: yupFormSchemas.string(
+    i18n('entities.business.fields.latitude'),
+    {},
+  ),
+  longitude: yupFormSchemas.string(
+    i18n('entities.business.fields.longitude'),
     {},
   ),
   website: yupFormSchemas.string(
@@ -121,6 +133,10 @@ const schema = yup.object().shape({
   ),
   instagram: yupFormSchemas.string(
     i18n('entities.business.fields.instagram'),
+    {},
+  ),
+  campaingTrackerID: yupFormSchemas.string(
+    i18n('entities.business.fields.campaingTrackerID'),
     {},
   ),
 });
@@ -167,6 +183,7 @@ function BusinessForm(props) {
       language: record.language,
       currency: record.currency,
       instagram: record.instagram,
+      campaingTrackerID: record.campaingTrackerID,
     };
   });
 
@@ -387,6 +404,13 @@ function BusinessForm(props) {
               name="instagram"
               label={i18n('entities.business.fields.instagram')}
               required={false}
+            />
+          </div>
+          <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+            <InputFormItem
+                name="campaingTrackerID"
+                label={i18n('entities.business.fields.campaingTrackerID')}
+                required={false}
             />
           </div>
 

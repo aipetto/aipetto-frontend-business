@@ -82,6 +82,12 @@ const schema = yup.object().shape({
   isIndependent: yupFilterSchemas.boolean(
     i18n('entities.providers.fields.isIndependent'),
   ),
+  campaignTrackerID: yupFilterSchemas.string(
+    i18n('entities.providers.fields.campaignTrackerID'),
+  ),
+  isAvailable: yupFilterSchemas.boolean(
+    i18n('entities.providers.fields.isAvailable'),
+  ),
 });
 
 const emptyValues = {
@@ -104,6 +110,8 @@ const emptyValues = {
   currency: null,
   language: null,
   isIndependent: null,
+  campaignTrackerID: null,
+  isAvailable: null,
 }
 
 const previewRenders = {
@@ -173,6 +181,14 @@ const previewRenders = {
     },
   isIndependent: {
     label: i18n('entities.providers.fields.isIndependent'),
+    render: filterRenders.boolean(),
+  },
+  campaignTrackerID: {
+    label: i18n('entities.providers.fields.campaignTrackerID'),
+    render: filterRenders.generic(),
+  },
+  isAvailable: {
+    label: i18n('entities.providers.fields.isAvailable'),
     render: filterRenders.boolean(),
   },
 }
@@ -301,6 +317,24 @@ function ProvidersListFilter(props) {
               <SelectFormItem
                 name="isIndependent"
                 label={i18n('entities.providers.fields.isIndependent')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <InputFormItem
+                name="campaignTrackerID"
+                label={i18n('entities.providers.fields.campaignTrackerID')}
+              />
+              <SelectFormItem
+                name="isAvailable"
+                label={i18n('entities.providers.fields.isAvailable')}
                 options={[
                   {
                     value: true,

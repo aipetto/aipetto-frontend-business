@@ -43,6 +43,11 @@ function BusinessServicesPricesView(props) {
             : i18n('common.no')
         }
       />
+
+      <TextViewItem
+        label={i18n('entities.businessServicesPrices.fields.notesToCustomersOnThisService')}
+        value={record.notesToCustomersOnThisService}
+      />
     </div>
   );
 }

@@ -129,6 +129,10 @@ const schema = yup.object().shape({
     i18n('entities.contacts.fields.language'),
     {},
   ),
+  campaignTrackerID: yupFormSchemas.string(
+    i18n('entities.contacts.fields.campaignTrackerID'),
+    {},
+  ),
 });
 
 function ContactsForm(props) {
@@ -170,6 +174,7 @@ function ContactsForm(props) {
       isActive: record.isActive,
       contactProfilePhoto: record.contactProfilePhoto || [],
       language: record.language,
+      campaignTrackerID: record.campaignTrackerID,
     };
   });
 

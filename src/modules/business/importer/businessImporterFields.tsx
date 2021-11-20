@@ -17,7 +17,9 @@ export default [
     label: i18n('entities.business.fields.name'),
     schema: schemas.string(
       i18n('entities.business.fields.name'),
-      {},
+      {
+        "required": true
+      },
     ),
   },
   {
@@ -129,6 +131,24 @@ export default [
     label: i18n('entities.business.fields.businessLogo'),
     schema: schemas.images(
       i18n('entities.business.fields.businessLogo'),
+      {
+        "required": true
+      },
+    ),
+  },
+  {
+    name: 'latitude',
+    label: i18n('entities.business.fields.latitude'),
+    schema: schemas.string(
+      i18n('entities.business.fields.latitude'),
+      {},
+    ),
+  },
+  {
+    name: 'longitude',
+    label: i18n('entities.business.fields.longitude'),
+    schema: schemas.string(
+      i18n('entities.business.fields.longitude'),
       {},
     ),
   },
@@ -185,6 +205,14 @@ export default [
     label: i18n('entities.business.fields.instagram'),
     schema: schemas.string(
       i18n('entities.business.fields.instagram'),
+      {},
+    ),
+  },
+  {
+    name: 'campaingTrackerID',
+    label: i18n('entities.business.fields.campaingTrackerID'),
+    schema: schemas.string(
+      i18n('entities.business.fields.campaingTrackerID'),
       {},
     ),
   },

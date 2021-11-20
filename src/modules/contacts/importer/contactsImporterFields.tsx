@@ -200,4 +200,12 @@ export default [
       {},
     ),
   },
+  {
+    name: 'campaignTrackerID',
+    label: i18n('entities.contacts.fields.campaignTrackerID'),
+    schema: schemas.string(
+      i18n('entities.contacts.fields.campaignTrackerID'),
+      {},
+    ),
+  },
 ];

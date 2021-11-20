@@ -14,8 +14,8 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
+import PetListItem from 'src/view/pet/list/PetListItem';
 import DiscountsListItem from 'src/view/discounts/list/DiscountsListItem';
-import CustomerListItem from "../../customer/list/CustomerListItem";
 
 function ServiceReservationListTable(props) {
   const [
@@ -118,19 +118,14 @@ function ServiceReservationListTable(props) {
                 />
                 <TableColumnHeader
                   label={i18n(
-                    'entities.serviceReservation.fields.customerId',
+                    'entities.serviceReservation.fields.pet',
                   )}
                 />
-               <TableColumnHeader
-                  label={i18n(
-                      'entities.serviceReservation.fields.time',
-                  )}
-               />
                 <TableColumnHeader
                   label={i18n(
-                      'entities.serviceReservation.fields.needTransportation',
+                    'entities.serviceReservation.fields.businessId',
                   )}
-               />
+                />
                 <TableColumnHeader
                   onSort={doChangeSort}
                   hasRows={hasRows}
@@ -154,6 +149,21 @@ function ServiceReservationListTable(props) {
                 <TableColumnHeader
                   label={i18n(
                     'entities.serviceReservation.fields.discountCode',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'ratingFromCustomer'}
+                  label={i18n(
+                    'entities.serviceReservation.fields.ratingFromCustomer',
+                  )}
+                  align="right"
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.serviceReservation.fields.country',
                   )}
                 />
               <TableColumnHeader />
@@ -196,10 +206,7 @@ function ServiceReservationListTable(props) {
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.date}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    <CustomerListItem value={row.customerId} />
-                  </td>
-                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
-                    {row.time}
+                    <PetListItem value={row.pet} />
                   </td>
                   <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     {row.needTransportation}

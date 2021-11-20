@@ -1,7 +1,7 @@
 import schemas from 'src/modules/shared/yup/yupImporterSchemas';
 import { i18n } from 'src/i18n';
-import moment from 'moment';
 import serviceReservationEnumerators from 'src/modules/serviceReservation/serviceReservationEnumerators';
+import moment from 'moment';
 
 export default [
   {
@@ -14,18 +14,28 @@ export default [
    render: (value) => value && value instanceof Date ? moment(value).format('YYYY-MM-DD') : value,
   },
   {
-    name: 'businessId',
-    label: i18n('entities.serviceReservation.fields.businessId'),
-    schema: schemas.relationToOne(
-      i18n('entities.serviceReservation.fields.businessId'),
-      {},
-    ),
-  },
-  {
     name: 'customerId',
     label: i18n('entities.serviceReservation.fields.customerId'),
     schema: schemas.relationToOne(
       i18n('entities.serviceReservation.fields.customerId'),
+      {},
+    ),
+  },
+  {
+    name: 'pet',
+    label: i18n('entities.serviceReservation.fields.pet'),
+    schema: schemas.relationToOne(
+      i18n('entities.serviceReservation.fields.pet'),
+      {
+        "required": true
+      },
+    ),
+  },
+  {
+    name: 'businessId',
+    label: i18n('entities.serviceReservation.fields.businessId'),
+    schema: schemas.relationToOne(
+      i18n('entities.serviceReservation.fields.businessId'),
       {},
     ),
   },
@@ -154,6 +164,22 @@ export default [
       {
         "options": serviceReservationEnumerators.source
       },
+    ),
+  },
+  {
+    name: 'notes',
+    label: i18n('entities.serviceReservation.fields.notes'),
+    schema: schemas.string(
+      i18n('entities.serviceReservation.fields.notes'),
+      {},
+    ),
+  },
+  {
+    name: 'customerQuestions',
+    label: i18n('entities.serviceReservation.fields.customerQuestions'),
+    schema: schemas.string(
+      i18n('entities.serviceReservation.fields.customerQuestions'),
+      {},
     ),
   },
 ];

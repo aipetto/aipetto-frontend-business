@@ -40,6 +40,12 @@ const schema = yup.object().shape({
     i18n('entities.pet.fields.nickname'),
     {},
   ),
+  uniqueIdentifier: yupFormSchemas.string(
+    i18n('entities.pet.fields.uniqueIdentifier'),
+    {
+      "required": true
+    },
+  ),
   profileImage: yupFormSchemas.images(
     i18n('entities.pet.fields.profileImage'),
     {},
@@ -88,8 +94,8 @@ const schema = yup.object().shape({
     i18n('entities.pet.fields.type'),
     {},
   ),
-  customerId: yupFormSchemas.relationToOne(
-    i18n('entities.pet.fields.customerId'),
+  customerIds: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.customerIds'),
     {},
   ),
   petOwners: yupFormSchemas.relationToMany(
@@ -208,6 +214,72 @@ const schema = yup.object().shape({
       "options": petEnumerators.heightUnit
     },
   ),
+  latitude: yupFormSchemas.decimal(
+    i18n('entities.pet.fields.latitude'),
+    {},
+  ),
+  longitude: yupFormSchemas.decimal(
+    i18n('entities.pet.fields.longitude'),
+    {},
+  ),
+  microchipNumber: yupFormSchemas.integer(
+    i18n('entities.pet.fields.microchipNumber'),
+    {
+      "max": 15
+    },
+  ),
+  isDead: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.isDead'),
+    {},
+  ),
+  deathDate: yupFormSchemas.datetime(
+    i18n('entities.pet.fields.deathDate'),
+    {},
+  ),
+  allowedBusinessesAccess: yupFormSchemas.relationToMany(
+    i18n('entities.pet.fields.allowedBusinessesAccess'),
+    {},
+  ),
+  hasPedigree: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.hasPedigree'),
+    {},
+  ),
+  isAggressive: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.isAggressive'),
+    {},
+  ),
+  isHyperActive: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.isHyperActive'),
+    {},
+  ),
+  allowedToGrooming: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.allowedToGrooming'),
+    {},
+  ),
+  phobias: yupFormSchemas.string(
+    i18n('entities.pet.fields.phobias'),
+    {},
+  ),
+  feeding: yupFormSchemas.string(
+    i18n('entities.pet.fields.feeding'),
+    {},
+  ),
+  isObsessive: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.isObsessive'),
+    {},
+  ),
+  isAntiSocial: yupFormSchemas.boolean(
+    i18n('entities.pet.fields.isAntiSocial'),
+    {},
+  ),
+  generalNotes: yupFormSchemas.string(
+    i18n('entities.pet.fields.generalNotes'),
+    {},
+  ),
+  problemsAndRestrinctions: yupFormSchemas.string(
+    i18n('entities.pet.fields.problemsAndRestrinctions'),
+    {},
+  ),
 });
 
 function PetForm(props) {
@@ -219,6 +291,7 @@ function PetForm(props) {
     return {
       name: record.name,
       nickname: record.nickname,
+      uniqueIdentifier: record.uniqueIdentifier,
       profileImage: record.profileImage || [],
       birthdate: record.birthdate ? moment(record.birthdate, 'YYYY-MM-DD').toDate() : null,
       age: record.age,
@@ -229,7 +302,7 @@ function PetForm(props) {
       breed: record.breed,
       secondBreedMixed: record.secondBreedMixed,
       type: record.type,
-      customerId: record.customerId,
+      customerIds: record.customerIds || [],
       petOwners: record.petOwners || [],
       photos: record.photos || [],
       vaccines: record.vaccines || [],
@@ -256,6 +329,20 @@ function PetForm(props) {
       weightUnit: record.weightUnit,
       height: record.height,
       heightUnit: record.heightUnit,
+      microchipNumber: record.microchipNumber,
+      isDead: record.isDead,
+      deathDate: record.deathDate ? moment(record.deathDate).toDate() : null,
+      allowedBusinessesAccess: record.allowedBusinessesAccess || [],
+      hasPedigree: record.hasPedigree,
+      isAggressive: record.isAggressive,
+      isHyperActive: record.isHyperActive,
+      allowedToGrooming: record.allowedToGrooming,
+      phobias: record.phobias,
+      feeding: record.feeding,
+      isObsessive: record.isObsessive,
+      isAntiSocial: record.isAntiSocial,
+      generalNotes: record.generalNotes,
+      problemsAndRestrinctions: record.problemsAndRestrinctions,
     };
   });
 
@@ -291,6 +378,13 @@ function PetForm(props) {
             name="nickname"
             label={i18n('entities.pet.fields.nickname')}
             required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+            name="uniqueIdentifier"
+            label={i18n('entities.pet.fields.uniqueIdentifier')}
+            required={true}
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
@@ -650,6 +744,101 @@ function PetForm(props) {
                 ),
               }),
             )}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputNumberFormItem
+            name="microchipNumber"
+            label={i18n('entities.pet.fields.microchipNumber')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isDead"
+            label={i18n('entities.pet.fields.isDead')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <DatePickerFormItem
+            name="deathDate"
+            label={i18n('entities.pet.fields.deathDate')}
+            required={false}
+            showTimeInput
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <BusinessAutocompleteFormItem
+            name="allowedBusinessesAccess"
+            label={i18n('entities.pet.fields.allowedBusinessesAccess')}
+            required={false}
+            showCreate={!props.modal}
+            mode="multiple"
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="hasPedigree"
+            label={i18n('entities.pet.fields.hasPedigree')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isAggressive"
+            label={i18n('entities.pet.fields.isAggressive')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isHyperActive"
+            label={i18n('entities.pet.fields.isHyperActive')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="allowedToGrooming"
+            label={i18n('entities.pet.fields.allowedToGrooming')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <TextAreaFormItem
+            name="phobias"
+            label={i18n('entities.pet.fields.phobias')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <TextAreaFormItem
+            name="feeding"
+            label={i18n('entities.pet.fields.feeding')}
+          hint={i18n('entities.pet.hints.feeding')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isObsessive"
+            label={i18n('entities.pet.fields.isObsessive')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <SwitchFormItem
+            name="isAntiSocial"
+            label={i18n('entities.pet.fields.isAntiSocial')}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <TextAreaFormItem
+            name="generalNotes"
+            label={i18n('entities.pet.fields.generalNotes')}
+            required={false}
+          />
+        </div>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <TextAreaFormItem
+            name="problemsAndRestrinctions"
+            label={i18n('entities.pet.fields.problemsAndRestrinctions')}
             required={false}
           />
         </div>

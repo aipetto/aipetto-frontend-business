@@ -23,8 +23,8 @@ const schema = yup.object().shape({
   nameBusiness: yupFilterSchemas.string(
     i18n('entities.newBusinessSurvey.fields.nameBusiness'),
   ),
-  numberOfPlaces: yupFilterSchemas.string(
-    i18n('entities.newBusinessSurvey.fields.numberOfPlaces'),
+  numberOfEmployees: yupFilterSchemas.string(
+    i18n('entities.newBusinessSurvey.fields.numberOfEmployees'),
   ),
   contactName: yupFilterSchemas.string(
     i18n('entities.newBusinessSurvey.fields.contactName'),
@@ -60,7 +60,7 @@ const schema = yup.object().shape({
 
 const emptyValues = {
   nameBusiness: null,
-  numberOfPlaces: null,
+  numberOfEmployees: null,
   contactName: null,
   contactEmail: null,
   contactPhone: null,
@@ -78,8 +78,8 @@ const previewRenders = {
     label: i18n('entities.newBusinessSurvey.fields.nameBusiness'),
     render: filterRenders.generic(),
   },
-  numberOfPlaces: {
-    label: i18n('entities.newBusinessSurvey.fields.numberOfPlaces'),
+  numberOfEmployees: {
+    label: i18n('entities.newBusinessSurvey.fields.numberOfEmployees'),
     render: filterRenders.generic(),
   },
   contactName: {
@@ -186,8 +186,8 @@ function NewBusinessSurveyListFilter(props) {
                 label={i18n('entities.newBusinessSurvey.fields.nameBusiness')}      
               />
               <InputFormItem
-                name="numberOfPlaces"
-                label={i18n('entities.newBusinessSurvey.fields.numberOfPlaces')}      
+                name="numberOfEmployees"
+                label={i18n('entities.newBusinessSurvey.fields.numberOfEmployees')}
               />
               <InputFormItem
                 name="contactName"

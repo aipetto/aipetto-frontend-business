@@ -28,8 +28,8 @@ function OrderView(props) {
       />
 
       <UserViewItem
-        label={i18n('entities.order.fields.businessEmployee')}
-        value={record.businessEmployee}
+        label={i18n('entities.order.fields.employee')}
+        value={record.employee}
       />
 
       <TextViewItem

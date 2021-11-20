@@ -135,6 +135,15 @@ function BusinessServicesTypesListTable(props) {
                     'entities.businessServicesTypes.fields.serviceImage',
                   )}
                 />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'isEnabled'}
+                  label={i18n(
+                    'entities.businessServicesTypes.fields.isEnabled',
+                  )}
+                />
               <TableColumnHeader />
             </tr>
           </thead>
@@ -182,6 +191,11 @@ function BusinessServicesTypesListTable(props) {
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <ImagesListView value={row.serviceImage} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.isEnabled
+                      ? i18n('common.yes')
+                      : i18n('common.no')}
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

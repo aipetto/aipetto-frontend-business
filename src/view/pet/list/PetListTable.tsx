@@ -19,6 +19,7 @@ import Spinner from 'src/view/shared/Spinner';
 import Pagination from 'src/view/shared/table/Pagination';
 import BreedListItem from 'src/view/breed/list/BreedListItem';
 import PetTypesListItem from 'src/view/petTypes/list/PetTypesListItem';
+import CustomerListItem from 'src/view/customer/list/CustomerListItem';
 import PetDiseasesListItem from 'src/view/petDiseases/list/PetDiseasesListItem';
 
 function PetListTable(props) {
@@ -121,6 +122,15 @@ function PetListTable(props) {
                   )}
                 />
                 <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'uniqueIdentifier'}
+                  label={i18n(
+                    'entities.pet.fields.uniqueIdentifier',
+                  )}
+                />
+                <TableColumnHeader
                   label={i18n(
                     'entities.pet.fields.breed',
                   )}
@@ -128,6 +138,11 @@ function PetListTable(props) {
                 <TableColumnHeader
                   label={i18n(
                     'entities.pet.fields.type',
+                  )}
+                />
+                <TableColumnHeader
+                  label={i18n(
+                    'entities.pet.fields.customerIds',
                   )}
                 />
                 <TableColumnHeader
@@ -143,6 +158,35 @@ function PetListTable(props) {
                   label={i18n(
                     'entities.pet.fields.hasMicrochip',
                   )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'heightUnit'}
+                  label={i18n(
+                    'entities.pet.fields.heightUnit',
+                  )}
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'latitude'}
+                  label={i18n(
+                    'entities.pet.fields.latitude',
+                  )}
+                  align="right"
+                />
+                <TableColumnHeader
+                  onSort={doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={'longitude'}
+                  label={i18n(
+                    'entities.pet.fields.longitude',
+                  )}
+                  align="right"
                 />
               <TableColumnHeader />
             </tr>
@@ -183,11 +227,15 @@ function PetListTable(props) {
                     />
                   </th>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.name}</td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">{row.uniqueIdentifier}</td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <BreedListItem value={row.breed} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <PetTypesListItem value={row.type} />
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    <CustomerListItem value={row.customerIds} />
                   </td>
                   <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
                     <PetDiseasesListItem value={row.diseases} />
@@ -196,6 +244,19 @@ function PetListTable(props) {
                     {row.hasMicrochip
                       ? i18n('common.yes')
                       : i18n('common.no')}
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.heightUnit
+                      ? i18n(
+                          `entities.pet.enumerators.heightUnit.${row.heightUnit}`,
+                        )
+                      : null}
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.latitude}
+                  </td>
+                  <td align="right" className="whitespace-nowrap px-5 py-5 border-b border-gray-200 dark:border-gray-800 text-sm">
+                    {row.longitude}
                   </td>
                   <td
                     className="w-56 whitespace-nowrap border-b px-5 py-5 border-gray-200 dark:border-gray-800"

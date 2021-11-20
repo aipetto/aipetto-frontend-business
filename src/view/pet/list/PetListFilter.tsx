@@ -22,7 +22,6 @@ import petEnumerators from 'src/modules/pet/petEnumerators';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import BreedAutocompleteFormItem from 'src/view/breed/autocomplete/BreedAutocompleteFormItem';
 import PetTypesAutocompleteFormItem from 'src/view/petTypes/autocomplete/PetTypesAutocompleteFormItem';
-import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -30,6 +29,9 @@ const schema = yup.object().shape({
   ),
   nickname: yupFilterSchemas.string(
     i18n('entities.pet.fields.nickname'),
+  ),
+  uniqueIdentifier: yupFilterSchemas.string(
+    i18n('entities.pet.fields.uniqueIdentifier'),
   ),
   birthdateRange: yupFilterSchemas.dateRange(
     i18n('entities.pet.fields.birthdateRange'),
@@ -57,9 +59,6 @@ const schema = yup.object().shape({
   ),
   type: yupFilterSchemas.relationToOne(
     i18n('entities.pet.fields.type'),
-  ),
-  customerId: yupFilterSchemas.relationToOne(
-    i18n('entities.pet.fields.customerId'),
   ),
   maturitySize: yupFilterSchemas.enumerator(
     i18n('entities.pet.fields.maturitySize'),
@@ -112,11 +111,57 @@ const schema = yup.object().shape({
   heightUnit: yupFilterSchemas.enumerator(
     i18n('entities.pet.fields.heightUnit'),
   ),
+  latitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.pet.fields.latitudeRange'),
+  ),
+  longitudeRange: yupFilterSchemas.decimalRange(
+    i18n('entities.pet.fields.longitudeRange'),
+  ),
+  microchipNumberRange: yupFilterSchemas.integerRange(
+    i18n('entities.pet.fields.microchipNumberRange'),
+  ),
+  isDead: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.isDead'),
+  ),
+  deathDateRange: yupFilterSchemas.datetimeRange(
+    i18n('entities.pet.fields.deathDateRange'),
+  ),
+  hasPedigree: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.hasPedigree'),
+  ),
+  isAggressive: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.isAggressive'),
+  ),
+  isHyperActive: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.isHyperActive'),
+  ),
+  allowedToGrooming: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.allowedToGrooming'),
+  ),
+  phobias: yupFilterSchemas.string(
+    i18n('entities.pet.fields.phobias'),
+  ),
+  feeding: yupFilterSchemas.string(
+    i18n('entities.pet.fields.feeding'),
+  ),
+  isObsessive: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.isObsessive'),
+  ),
+  isAntiSocial: yupFilterSchemas.boolean(
+    i18n('entities.pet.fields.isAntiSocial'),
+  ),
+  generalNotes: yupFilterSchemas.string(
+    i18n('entities.pet.fields.generalNotes'),
+  ),
+  problemsAndRestrinctions: yupFilterSchemas.string(
+    i18n('entities.pet.fields.problemsAndRestrinctions'),
+  ),
 });
 
 const emptyValues = {
   name: null,
   nickname: null,
+  uniqueIdentifier: null,
   birthdateRange: [],
   ageRange: [],
   color: null,
@@ -126,7 +171,6 @@ const emptyValues = {
   breed: null,
   secondBreedMixed: null,
   type: null,
-  customerId: null,
   maturitySize: null,
   furLength: null,
   hasBeenVaccinated: null,
@@ -144,6 +188,21 @@ const emptyValues = {
   weightUnit: null,
   heightRange: [],
   heightUnit: null,
+  latitudeRange: [],
+  longitudeRange: [],
+  microchipNumberRange: [],
+  isDead: null,
+  deathDateRange: [],
+  hasPedigree: null,
+  isAggressive: null,
+  isHyperActive: null,
+  allowedToGrooming: null,
+  phobias: null,
+  feeding: null,
+  isObsessive: null,
+  isAntiSocial: null,
+  generalNotes: null,
+  problemsAndRestrinctions: null,
 }
 
 const previewRenders = {
@@ -153,6 +212,10 @@ const previewRenders = {
   },
   nickname: {
     label: i18n('entities.pet.fields.nickname'),
+    render: filterRenders.generic(),
+  },
+  uniqueIdentifier: {
+    label: i18n('entities.pet.fields.uniqueIdentifier'),
     render: filterRenders.generic(),
   },
   birthdateRange: {
@@ -189,10 +252,6 @@ const previewRenders = {
     },
   type: {
       label: i18n('entities.pet.fields.type'),
-      render: filterRenders.relationToOne(),
-    },
-  customerId: {
-      label: i18n('entities.pet.fields.customerId'),
       render: filterRenders.relationToOne(),
     },
   maturitySize: {
@@ -263,6 +322,58 @@ const previewRenders = {
     label: i18n('entities.pet.fields.heightUnit'),
     render: filterRenders.enumerator('entities.pet.enumerators.heightUnit',),
   },
+  microchipNumberRange: {
+    label: i18n('entities.pet.fields.microchipNumberRange'),
+    render: filterRenders.range(),
+  },
+  isDead: {
+    label: i18n('entities.pet.fields.isDead'),
+    render: filterRenders.boolean(),
+  },
+  deathDateRange: {
+    label: i18n('entities.pet.fields.deathDateRange'),
+    render: filterRenders.datetimeRange(),
+  },
+  hasPedigree: {
+    label: i18n('entities.pet.fields.hasPedigree'),
+    render: filterRenders.boolean(),
+  },
+  isAggressive: {
+    label: i18n('entities.pet.fields.isAggressive'),
+    render: filterRenders.boolean(),
+  },
+  isHyperActive: {
+    label: i18n('entities.pet.fields.isHyperActive'),
+    render: filterRenders.boolean(),
+  },
+  allowedToGrooming: {
+    label: i18n('entities.pet.fields.allowedToGrooming'),
+    render: filterRenders.boolean(),
+  },
+  phobias: {
+    label: i18n('entities.pet.fields.phobias'),
+    render: filterRenders.generic(),
+  },
+  feeding: {
+    label: i18n('entities.pet.fields.feeding'),
+    render: filterRenders.generic(),
+  },
+  isObsessive: {
+    label: i18n('entities.pet.fields.isObsessive'),
+    render: filterRenders.boolean(),
+  },
+  isAntiSocial: {
+    label: i18n('entities.pet.fields.isAntiSocial'),
+    render: filterRenders.boolean(),
+  },
+  generalNotes: {
+    label: i18n('entities.pet.fields.generalNotes'),
+    render: filterRenders.generic(),
+  },
+  problemsAndRestrinctions: {
+    label: i18n('entities.pet.fields.problemsAndRestrinctions'),
+    render: filterRenders.generic(),
+  },
 }
 
 function PetListFilter(props) {
@@ -329,6 +440,10 @@ function PetListFilter(props) {
               <InputFormItem
                 name="nickname"
                 label={i18n('entities.pet.fields.nickname')}      
+              />
+              <InputFormItem
+                name="uniqueIdentifier"
+                label={i18n('entities.pet.fields.uniqueIdentifier')}
               />
               <DatePickerRangeFormItem
                 name="birthdateRange"
@@ -397,10 +512,6 @@ function PetListFilter(props) {
               <PetTypesAutocompleteFormItem
                 name="type"
                 label={i18n('entities.pet.fields.type')}        
-              />
-              <CustomerAutocompleteFormItem
-                name="customerId"
-                label={i18n('entities.pet.fields.customerId')}
               />
               <SelectFormItem
                   name="maturitySize"
@@ -525,6 +636,199 @@ function PetListFilter(props) {
               <InputNumberRangeFormItem
                 name="numberOfLikesRange"
                 label={i18n('entities.pet.fields.numberOfLikesRange')}
+              />
+              <InputFormItem
+                name="governmentUniqueID"
+                label={i18n('entities.pet.fields.governmentUniqueID')}
+              />
+              <SelectFormItem
+                  name="bloodType"
+                  label={i18n('entities.pet.fields.bloodType')}
+                  options={petEnumerators.bloodType.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.pet.enumerators.bloodType.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <SelectFormItem
+                name="hasMicrochip"
+                label={i18n('entities.pet.fields.hasMicrochip')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <InputRangeFormItem
+                name="weightRange"
+                label={i18n('entities.pet.fields.weightRange')}
+              />
+              <SelectFormItem
+                  name="weightUnit"
+                  label={i18n('entities.pet.fields.weightUnit')}
+                  options={petEnumerators.weightUnit.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.pet.enumerators.weightUnit.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <InputRangeFormItem
+                name="heightRange"
+                label={i18n('entities.pet.fields.heightRange')}
+              />
+              <SelectFormItem
+                  name="heightUnit"
+                  label={i18n('entities.pet.fields.heightUnit')}
+                  options={petEnumerators.heightUnit.map(
+                    (value) => ({
+                      value,
+                      label: i18n(
+                        `entities.pet.enumerators.heightUnit.${value}`,
+                      ),
+                    }),
+                  )}
+                />
+              <InputRangeFormItem
+                name="latitudeRange"
+                label={i18n('entities.pet.fields.latitudeRange')}
+              />
+              <InputRangeFormItem
+                name="longitudeRange"
+                label={i18n('entities.pet.fields.longitudeRange')}
+              />
+              <InputNumberRangeFormItem
+                name="microchipNumberRange"
+                label={i18n('entities.pet.fields.microchipNumberRange')}
+              />
+              <SelectFormItem
+                name="isDead"
+                label={i18n('entities.pet.fields.isDead')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <DatePickerRangeFormItem
+                name="deathDateRange"
+                label={i18n('entities.pet.fields.deathDateRange')}
+                showTimeInput
+              />
+              <SelectFormItem
+                name="hasPedigree"
+                label={i18n('entities.pet.fields.hasPedigree')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                name="isAggressive"
+                label={i18n('entities.pet.fields.isAggressive')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                name="isHyperActive"
+                label={i18n('entities.pet.fields.isHyperActive')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                name="allowedToGrooming"
+                label={i18n('entities.pet.fields.allowedToGrooming')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <InputFormItem
+                name="phobias"
+                label={i18n('entities.pet.fields.phobias')}
+              />
+              <InputFormItem
+                name="feeding"
+                label={i18n('entities.pet.fields.feeding')}
+              />
+              <SelectFormItem
+                name="isObsessive"
+                label={i18n('entities.pet.fields.isObsessive')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <SelectFormItem
+                name="isAntiSocial"
+                label={i18n('entities.pet.fields.isAntiSocial')}
+                options={[
+                  {
+                    value: true,
+                    label: i18n('common.yes'),
+                  },
+                  {
+                    value: false,
+                    label: i18n('common.no'),
+                  },
+                ]}
+              />
+              <InputFormItem
+                name="generalNotes"
+                label={i18n('entities.pet.fields.generalNotes')}
+              />
+              <InputFormItem
+                name="problemsAndRestrinctions"
+                label={i18n('entities.pet.fields.problemsAndRestrinctions')}
               />
             </div>
 
