@@ -90,33 +90,49 @@ function HomePageNew() {
                     </nav>
                     <I18nFlags />
 
-                    <div className="container py-32 mx-auto text-center sm:px-4">
-
+                    <div className="container py-20 mx-auto text-center sm:px-4">
                         <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-white sm:text-5xl sm:leading-none md:text-6xl xl:text-7xl">
-
                             <span className="block ">{i18n('homeDownloadApp.tagline')}</span> <span
                             className="relative inline-block mt-3 text-transparent text-white">
                             {i18n('public.homeSubtitle')}
                         </span>
                         </h2>
-                        <div className="relative flex items-center mt-10 max-w-md mx-auto overflow-hidden text-center">
-                            <img src="images/qr-aipetto-internaltest-with-many-providers.png" alt="Aipetto QR" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
-                        </div>
-
-                        <div className="mt-8 text-black-100">
-
-                            <a href="#" className="bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 hover:border-yellow-700 shadow font-semibold px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">
-                                  <span className="flex h-3 w-3">
-                                        <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-purple-500"/>
-                                  </span>
-                                {i18n('homeDownloadApp.bottomLead.downloadAppInGooglePlayStoreButton')}
-                            </a>
-                            <a href="#"
-                               className="rounded border border-gray-700 hover:bg-blue-300 px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">
-                                {i18n('homeDownloadApp.bottomLead.downloadAppInAppleStoreButton')}</a>
-                        </div>
-
                     </div>
+
+
+                    <section className="px-2 py-5 bg-transparent md:px-0">
+                        <div className="container items-center max-w-6xl px-8 mx-auto xl:px-5">
+                            <div className="flex flex-wrap items-center sm:-mx-3">
+                                <div className="w-full md:w-1/2 md:px-3">
+                                    <div className="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
+                                        <div className="relative flex items-center mt-10 max-w-md mx-auto overflow-hidden text-center">
+                                            <img src="images/qr-aipetto-internaltest-with-many-providers.png" alt="Aipetto QR" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
+                                        </div>
+                                        <div className="mt-8 text-black-100">
+
+                                            <a href="#" className="bg-yellow-500 hover:bg-yellow-600 rounded border border-yellow-600 hover:border-yellow-700 shadow font-semibold px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">
+                                              <span className="flex h-3 w-3">
+                                                    <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-purple-500"/>
+                                              </span>
+                                                {i18n('homeDownloadApp.bottomLead.downloadAppInGooglePlayStoreButton')}
+                                            </a>
+                                            <a href="#"
+                                               className="rounded border border-gray-700 hover:bg-blue-300 px-4 py-2 inline-block mx-2 cursor-pointer transition duration-500 ease-in-out">
+                                                {i18n('homeDownloadApp.bottomLead.downloadAppInAppleStoreButton')}</a>
+                                        </div>
+                                        <div className="relative flex flex-col sm:flex-row sm:space-x-4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="w-full md:w-1/2">
+                                    <div className="">
+                                        <img src="images/dog_home_grooming.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
             </section>
 
@@ -298,7 +314,7 @@ function HomePageNew() {
                             <img src="images/petAnimationHappiness.gif" className="rounded-full w-80 h-80"/>
                     </div>
                 </div>
-
+                <img src="images/cat_home_page.png"/>
             </section>
 
             <Footer logo='/images/logos/aipetto/aipetto-boarder.png'/>

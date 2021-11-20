@@ -151,21 +151,6 @@ function ServiceReservationListTable(props) {
                     'entities.serviceReservation.fields.discountCode',
                   )}
                 />
-                <TableColumnHeader
-                  onSort={doChangeSort}
-                  hasRows={hasRows}
-                  sorter={sorter}
-                  name={'ratingFromCustomer'}
-                  label={i18n(
-                    'entities.serviceReservation.fields.ratingFromCustomer',
-                  )}
-                  align="right"
-                />
-                <TableColumnHeader
-                  label={i18n(
-                    'entities.serviceReservation.fields.country',
-                  )}
-                />
               <TableColumnHeader />
             </tr>
           </thead>
