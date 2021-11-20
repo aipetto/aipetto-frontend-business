@@ -83,7 +83,7 @@ function HomePageNew() {
                                         <a href="/business" className="md:text-white px-4 py-2 text-gray-900 font-semibold hover:text-gray-900 transition duration-500 ease-in-out hover:rounded hover:bg-gray-200 rounded">{i18n('public.menu.business')}</a>
                                     </div>
                                     <div className="flex flex-col items-center justify-end w-full h-full pt-4 md:w-1/3 md:flex-row md:py-0">
-                                        <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border-transparent border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/beta">Beta</a>
+                                        <a className="text-gray-900 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 rounded border-transparent border-yellow-600 shadow font-semibold transition duration-500 ease-in-out cursor-pointer" href="/beta">{i18n('auth.signin')}</a>
                                     </div>
                                 </div>
                         </div>

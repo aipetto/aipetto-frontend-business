@@ -3355,7 +3355,7 @@ const es = {
         },
         rememberMe: 'Recuérdame',
         forgotPassword: '¿Olvidaste tu contraseña?',
-        signin: 'Iniciar Sesión',
+        signin: 'Ingresar',
         signup: 'Registrarse',
         signout: 'Desconectar',
         informationLoginBeta: 'Registrate para usar la versión beta',
