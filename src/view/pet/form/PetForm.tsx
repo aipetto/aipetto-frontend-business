@@ -381,13 +381,6 @@ function PetForm(props) {
           />
         </div>
         <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
-          <InputFormItem
-            name="uniqueIdentifier"
-            label={i18n('entities.pet.fields.uniqueIdentifier')}
-            required={true}
-          />
-        </div>
-        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
           <ImagesFormItem
             name="profileImage"
             label={i18n('entities.pet.fields.profileImage')}
