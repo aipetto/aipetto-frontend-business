@@ -43,7 +43,7 @@ const schema = yup.object().shape({
   uniqueIdentifier: yupFormSchemas.string(
     i18n('entities.pet.fields.uniqueIdentifier'),
     {
-      "required": true
+      "required": false
     },
   ),
   profileImage: yupFormSchemas.images(
@@ -365,6 +365,14 @@ function PetForm(props) {
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="w-full sm:w-md md:w-md lg:w-md mt-4">
+          <InputFormItem
+              name="uniqueIdentifier"
+              disabled={true}
+              label={i18n('entities.pet.fields.uniqueIdentifier')}
+              required={false}
+          />
+        </div>
         <div className="w-full sm:w-md md:w-md lg:w-md">
           <InputFormItem
             name="name"
