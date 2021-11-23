@@ -106,7 +106,7 @@ function HomePageNew() {
                                 <div className="w-full md:w-1/2 md:px-3">
                                     <div className="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
                                         <div className="relative flex items-center mt-10 max-w-md mx-auto overflow-hidden text-center">
-                                            <img src="images/qr-aipetto-internaltest-with-many-providers.png" alt="Aipetto QR" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
+                                            <img src="images/aipetto-internal-test-qr.png" alt="Aipetto QR" className="lazy mx-auto z-10 relative w-2/3 md:w-3/5 lg:w-2/3"/>
                                         </div>
                                         <div className="mt-8 text-black-100">
 

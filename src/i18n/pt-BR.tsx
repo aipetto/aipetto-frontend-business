@@ -89,7 +89,7 @@ const ptBR = {
     title: 'aipetto app',
     tagline: 'Simplifique a maneira de agendar',
     description: 'Baixar app',
-    downloadAppInGooglePlayStoreButton: 'Google PlayStore (Beta)',
+    downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
     downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       step1: {
           title: 'Crie sua conta',
@@ -130,7 +130,7 @@ const ptBR = {
       bottomLead: {
           actionText: 'Seja o primeiro em usar a app',
           description: 'Aproveite promoções e novidades especiais para você e seus pets',
-          downloadAppInGooglePlayStoreButton: 'Google PlayStore (Beta)',
+          downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
           downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
       },
   },
@@ -3367,7 +3367,7 @@ const ptBR = {
     signin: 'Entrar',
     signup: 'Registrar',
     signout: 'Sair',
-    informationLoginBeta: '*Para utilizar a versão beta faça seu pré-cadastro.',
+    informationLoginBeta: '*Para utilizar a versão MVP faça seu pré-cadastro.',
     alreadyHaveAnAccount: 'Já possui uma conta? Entrar.',
     createAnAccount: 'Não possui conta? Criar uma.',
     social: {

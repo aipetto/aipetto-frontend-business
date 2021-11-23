@@ -35,7 +35,7 @@ const es = {
         title: 'aipetto app',
         tagline: 'Agendá los servicios de tu mascota',
         description: 'Descargar',
-        downloadAppInGooglePlayStoreButton: 'Google PlayStore (Pronto)',
+        downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
         downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
         step1: {
             title: 'Creá tu cuenta',
@@ -76,7 +76,7 @@ const es = {
         bottomLead: {
             actionText: 'Te avisaremos cuando este la app',
             description: 'Aproveche promociones especiales y novedades para vos y tus mascotas',
-            downloadAppInGooglePlayStoreButton: 'Google PlayStore (Pronto)',
+            downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
             downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
         },
     },
@@ -3384,7 +3384,7 @@ const es = {
         signin: 'Ingresar',
         signup: 'Registrarse',
         signout: 'Desconectar',
-        informationLoginBeta: 'Registrate para usar la versión beta',
+        informationLoginBeta: 'Registrate para usar la versión MVP',
         alreadyHaveAnAccount:
             '¿Ya tienes una cuenta? Ingresar.',
         createAnAccount: '¿No tienes una cuenta? Crea uno.',
