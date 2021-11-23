@@ -40,7 +40,7 @@ const Footer = ({logo}) => {
                          </a>
                      </div>
                      <div className="px-5 py-2">
-                         <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                         <a href="https://aipetto.co" target="_blank" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                              Blog
                          </a>
                      </div>
