@@ -35,7 +35,7 @@ const en = {
   homeDownloadApp: {
       howTheAppWorks: 'How does the app work?',
       title: 'aipetto app',
-      tagline: 'Simplify the way you',
+      tagline: 'All your pet needs',
       description: 'Download our app',
       downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
       downloadAppInAppleStoreButton: 'Apple Store (Soon)',
@@ -102,7 +102,7 @@ const en = {
 
   public: {
       homeTitle: 'Do you love pets? Then this your place!',
-      homeSubtitle: 'schedule your pet services',
+      homeSubtitle: 'in one single place!',
       landingTitle: 'Provide your services',
       landingSubtitle: 'Be part of the platform',
       landingBusinessTitle: 'Our mission is to share information and services in the easiest and direct way for those who love pets',

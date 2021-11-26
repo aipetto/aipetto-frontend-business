@@ -31,7 +31,7 @@ const en = {
 
   public: {
       homeTitle: 'Do you love pets? Then this your place!',
-      homeSubtitle: 'schedule your pet services',
+      homeSubtitle: 'in one single place',
       landingTitle: 'Soon an awesome place on internet for you and your pets!',
       landingSubtitle: 'Please help us with your comments below, we\'ll not forget you.',
       landingBusinessTitle: 'Our mission is to make available information and services for those who love pets',

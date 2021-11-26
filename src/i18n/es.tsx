@@ -33,7 +33,7 @@ const es = {
     homeDownloadApp: {
         howTheAppWorks: '¿Cómo funciona la app?',
         title: 'aipetto app',
-        tagline: 'Agendá los servicios de tu mascota',
+        tagline: '¡Todo lo que tu mascota necesita',
         description: 'Descargar',
         downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
         downloadAppInAppleStoreButton: 'Apple Store (Pronto)',
@@ -99,7 +99,7 @@ const es = {
     },
     public: {
         homeTitle: '¿Amás a las mascotas?¡Entonces este es tu lugar!',
-        homeSubtitle: 'de manera simplificada',
+        homeSubtitle: 'en un sólo lugar!',
         landingTitle: '¡Ofrezca tus servicios!',
         landingSubtitle: 'Sé parte de la plataforma',
         landingBusinessTitle: 'Nuestra misión es disponibilizar informaciones y servicios de forma simples y directa para quien ama a las mascotas',

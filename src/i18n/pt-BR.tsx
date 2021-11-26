@@ -26,7 +26,7 @@ const ptBR = {
   },
   public: {
     homeTitle: 'Você ama os animais? Esse é seu lugar!',
-    homeSubtitle: 'os serviços do seu pet',
+    homeSubtitle: 'num lugar só!',
     reservationHomeTitle: 'Encontre e reserve um serviço para se pet de maneira fácil e rápida!',
     reservationHomeSubtitle: 'Banho e tosa, vacinação e muito mais',
     landingTitle: 'Forneça seus serviços',
@@ -87,7 +87,7 @@ const ptBR = {
   homeDownloadApp: {
     howTheAppWorks: 'Como funciona a app?',
     title: 'aipetto app',
-    tagline: 'Simplifique a maneira de agendar',
+    tagline: 'Tudo o que seu pet precisa',
     description: 'Baixar app',
     downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
     downloadAppInAppleStoreButton: 'Apple Store (Em breve)',
