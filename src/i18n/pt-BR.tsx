@@ -87,7 +87,7 @@ const ptBR = {
   homeDownloadApp: {
     howTheAppWorks: 'Como funciona a app?',
     title: 'aipetto app',
-    tagline: 'Tudo o que seu pet precisa',
+    tagline: 'Logo um lugar para você e seu pet aqui',
     description: 'Baixar app',
     downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
     downloadAppInAppleStoreButton: 'Apple Store (Em breve)',

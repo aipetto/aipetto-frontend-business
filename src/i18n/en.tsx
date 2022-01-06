@@ -35,7 +35,7 @@ const en = {
   homeDownloadApp: {
       howTheAppWorks: 'How does the app work?',
       title: 'aipetto app',
-      tagline: 'All your pet needs',
+      tagline: 'Soon a place for you and your pet here!',
       description: 'Download our app',
       downloadAppInGooglePlayStoreButton: 'Google PlayStore (MVP)',
       downloadAppInAppleStoreButton: 'Apple Store (Soon)',
